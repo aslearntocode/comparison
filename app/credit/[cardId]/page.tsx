@@ -1,10 +1,16 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState, use, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
 import { creditCards, type UserFeedback } from '../../data/creditCards'
+import { auth } from '@/lib/firebase'
+import { onAuthStateChanged, User } from 'firebase/auth'
+import { Button } from '../../../components/ui/button'
+import { Textarea } from '../../../components/ui/textarea'
+import { Input } from '../../../components/ui/input'
+import { supabase, type Review } from '@/lib/supabase'
 
 export default function CreditCardDetail({ params }: { params: Promise<{ cardId: string }> }) {
   const [activeTab, setActiveTab] = useState<
@@ -12,11 +18,45 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     | 'milestone'
     | 'rewards'
     | 'fees'
+    | 'reviews'
   >('welcome-annual');
   
   const { cardId } = use(params)
   const card = creditCards.find(c => c.id === cardId)
+  const [user, setUser] = useState<User | null>(null)
+  const [newReview, setNewReview] = useState({
+    rating: 0,
+    comment: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [error, setError] = useState<string | null>(null)
   
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    // Fetch reviews when component mounts
+    const fetchReviews = async () => {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('card_id', cardId)
+        .order('created_at', { ascending: false })
+
+      if (!error && data) {
+        setReviews(data)
+      }
+    }
+
+    fetchReviews()
+  }, [cardId])
+
   if (!card) {
     return (
       <div className="min-h-screen flex flex-col bg-gray-50">
@@ -33,10 +73,10 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     )
   }
 
-  const getAverageRating = (feedback: UserFeedback[]): number => {
-    if (feedback.length === 0) return 0;
-    const sum = feedback.reduce((acc, curr) => acc + curr.rating, 0);
-    return Math.round((sum / feedback.length) * 10) / 10;
+  const getAverageRating = (reviews: Review[]): number => {
+    if (reviews.length === 0) return 0;
+    const sum = reviews.reduce((acc, curr) => acc + curr.rating, 0);
+    return Math.round((sum / reviews.length) * 10) / 10;
   }
 
   const getSentimentColor = (rating: number): string => {
@@ -45,6 +85,86 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     if (rating >= 4) return 'text-yellow-600';
     return 'text-red-600';
   }
+
+  const handleReviewSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!user || !card) return;
+
+    if (newReview.rating < 1 || newReview.rating > 10) {
+      setError('Rating must be between 1 and 10');
+      return;
+    }
+
+    if (!newReview.comment.trim()) {
+      setError('Please provide a review comment');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const review: Review = {
+        user_id: user.uid,
+        user_name: user.displayName || 'Anonymous',
+        card_id: card.id,
+        card_name: card.name,
+        rating: newReview.rating,
+        comment: newReview.comment.trim(),
+      };
+
+      console.log('Submitting review:', review);
+
+      const { data, error: submitError } = await supabase
+        .from('reviews')
+        .insert([review])
+        .select()
+
+      if (submitError) {
+        console.error('Supabase error details:', {
+          code: submitError.code,
+          message: submitError.message,
+          details: submitError.details,
+          hint: submitError.hint
+        });
+        throw new Error(submitError.message || 'Error submitting review. Please try again.');
+      }
+
+      console.log('Review submitted successfully:', data);
+
+      // Refresh reviews
+      const { data: updatedReviews, error: fetchError } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('card_id', card.id)
+        .order('created_at', { ascending: false })
+
+      if (fetchError) {
+        console.error('Error fetching updated reviews:', fetchError);
+        throw new Error(fetchError.message || 'Error fetching updated reviews');
+      }
+
+      if (updatedReviews) {
+        console.log('Updated reviews:', updatedReviews);
+        setReviews(updatedReviews);
+      }
+
+      // Reset form
+      setNewReview({
+        rating: 0,
+        comment: '',
+      });
+
+      // Show success message
+      alert('Review submitted successfully!');
+
+    } catch (error: any) {
+      console.error('Error in handleReviewSubmit:', error);
+      setError(error.message || 'An error occurred while submitting your review. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -222,11 +342,103 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
             </div>
           </div>
         );
+      case 'reviews':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <span className="text-2xl">⭐</span>
+                User Reviews
+              </h3>
+
+              {/* Review Submission Form */}
+              {user ? (
+                <div className="bg-white rounded-lg p-6 shadow-sm mb-8">
+                  <h4 className="text-lg font-semibold mb-4">Write a Review</h4>
+                  {error && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-800">{error}</p>
+                    </div>
+                  )}
+                  <form onSubmit={handleReviewSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Rating (1-10)
+                      </label>
+                      <Input
+                        type="number"
+                        min="1"
+                        max="10"
+                        value={newReview.rating}
+                        onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                        required
+                        className="w-24"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Your Review
+                      </label>
+                      <Textarea
+                        value={newReview.comment}
+                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => 
+                          setNewReview({ ...newReview, comment: e.target.value })
+                        }
+                        required
+                        placeholder="Share your experience with this card..."
+                        className="min-h-[100px]"
+                      />
+                    </div>
+                    <Button type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? 'Submitting...' : 'Submit Review'}
+                    </Button>
+                  </form>
+                </div>
+              ) : (
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8">
+                  <p className="text-yellow-800">
+                    Please <Link href="/login" className="text-blue-600 hover:underline">sign in</Link> to write a review.
+                  </p>
+                </div>
+              )}
+
+              <div className="space-y-6">
+                {reviews.map((review) => (
+                  <div key={review.id} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2">
+                        <div className={`text-lg font-bold ${getSentimentColor(review.rating)}`}>
+                          {review.rating} / 10
+                        </div>
+                        <span className="text-gray-600">by {review.user_name}</span>
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        {new Date(review.created_at!).toLocaleDateString('en-IN', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </div>
+                    </div>
+                    <p className="text-gray-700">{review.comment}</p>
+                  </div>
+                ))}
+
+                {reviews.length === 0 && (
+                  <div className="text-center text-gray-500 py-8">
+                    No reviews yet. Be the first to review this card!
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        );
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <Header />
       <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4">
@@ -265,15 +477,30 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     </div>
                   </div>
                   <div className="mt-4 sm:mt-0 sm:text-right">
-                    <div className="flex items-center justify-center sm:justify-end gap-2">
-                      <span className={`text-4xl font-bold ${getSentimentColor(getAverageRating(card.feedback))}`}>
-                        {getAverageRating(card.feedback)}
-                      </span>
-                      <div className="flex flex-col items-start">
-                        <span className="text-gray-500">/ 10</span>
-                        <span className="text-sm text-gray-500">{card.feedback.length} reviews</span>
-                      </div>
-                    </div>
+                    <button 
+                      onClick={() => setActiveTab('reviews')}
+                      className="group hover:opacity-90 transition-opacity"
+                    >
+                      {reviews.length > 0 ? (
+                        <>
+                          <div className="flex items-center justify-center sm:justify-end gap-1">
+                            <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(reviews))}`}>
+                              {getAverageRating(reviews)}
+                            </span>
+                            <div className="flex flex-col items-start justify-center">
+                              <span className="text-gray-500 text-base">/ 10</span>
+                            </div>
+                          </div>
+                          <div className="text-xs text-blue-600 group-hover:underline text-center sm:text-right whitespace-nowrap">
+                            {reviews.length} reviews
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-sm text-gray-500 whitespace-nowrap">
+                          no reviews yet
+                        </div>
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -385,6 +612,16 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   }`}
                 >
                   Joining and Annual Fees
+                </button>
+                <button
+                  onClick={() => setActiveTab('reviews')}
+                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                    activeTab === 'reviews'
+                      ? 'border-b-2 border-blue-500 text-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Reviews ({reviews.length > 0 ? reviews.length : 'no'})
                 </button>
               </div>
             </div>

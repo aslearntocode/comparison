@@ -67,6 +67,18 @@ export function ProfileDropdown({ user }: ProfileDropdownProps) {
                 </Link>
               )}
             </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <Link
+                  href="/profile#reviews"
+                  className={`${
+                    active ? 'bg-blue-500 text-white' : 'text-gray-100'
+                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                >
+                  My Reviews
+                </Link>
+              )}
+            </Menu.Item>
           </div>
           <div className="px-1 py-1">
             <Menu.Item>

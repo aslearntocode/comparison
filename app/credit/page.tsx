@@ -2,10 +2,11 @@
 
 import Header from "@/components/Header"
 import { useRouter } from 'next/navigation'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { creditCards, type CreditCard, type UserFeedback } from '../data/creditCards'
+import { supabase, type Review } from '@/lib/supabase'
 
 type SortField = 'apr' | 'annualFee' | 'joiningFee' | 'rewards' | 'sentiment';
 type SortDirection = 'asc' | 'desc';
@@ -15,20 +16,75 @@ export default function CreditProductComparison() {
   const [searchQuery, setSearchQuery] = useState('')
   const [sortField, setSortField] = useState<SortField | null>(null)
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
+  const [cardReviews, setCardReviews] = useState<{ [key: string]: Review[] }>({})
 
-  // Calculate average rating from feedback
-  const getAverageRating = (feedback: UserFeedback[]): number => {
-    if (feedback.length === 0) return 0;
-    const sum = feedback.reduce((acc, curr) => acc + curr.rating, 0);
-    return Math.round((sum / feedback.length) * 10) / 10;
+  useEffect(() => {
+    // Fetch all reviews when component mounts
+    const fetchAllReviews = async () => {
+      try {
+        console.log('Fetching reviews...')
+        const { data, error } = await supabase
+          .from('reviews')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+        if (error) {
+          console.error('Error fetching reviews:', error)
+          return
+        }
+
+        if (!data) {
+          console.log('No reviews data returned')
+          return
+        }
+
+        console.log('Fetched reviews:', data)
+
+        // Group reviews by card_id
+        const reviewsByCard = data.reduce((acc: { [key: string]: Review[] }, review) => {
+          if (!acc[review.card_id]) {
+            acc[review.card_id] = []
+          }
+          acc[review.card_id].push(review)
+          return acc
+        }, {})
+
+        console.log('Grouped reviews:', reviewsByCard)
+        setCardReviews(reviewsByCard)
+      } catch (err) {
+        console.error('Error in fetchAllReviews:', err)
+      }
+    }
+
+    fetchAllReviews()
+  }, [])
+
+  // Debug log when cardReviews changes
+  useEffect(() => {
+    console.log('cardReviews state updated:', cardReviews)
+  }, [cardReviews])
+
+  // Calculate average rating from reviews
+  const getAverageRating = (cardId: string): number | undefined => {
+    const reviews = cardReviews[cardId] || []
+    if (reviews.length === 0) return undefined
+    const sum = reviews.reduce((acc, curr) => acc + curr.rating, 0)
+    const average = sum / reviews.length
+    return isNaN(average) ? undefined : Math.round(average * 10) / 10
+  }
+
+  // Get number of reviews for a card
+  const getReviewCount = (cardId: string): number => {
+    return (cardReviews[cardId] || []).length
   }
 
   // Get sentiment color based on rating
-  const getSentimentColor = (rating: number): string => {
-    if (rating >= 8) return 'text-green-600';
-    if (rating >= 6) return 'text-blue-600';
-    if (rating >= 4) return 'text-yellow-600';
-    return 'text-red-600';
+  const getSentimentColor = (rating: number | undefined): string => {
+    if (!rating) return 'text-gray-500'
+    if (rating >= 8) return 'text-green-600'
+    if (rating >= 6) return 'text-blue-600'
+    if (rating >= 4) return 'text-yellow-600'
+    return 'text-red-600'
   }
 
   // Sort function
@@ -57,8 +113,10 @@ export default function CreditProductComparison() {
           compareB = b.rewards === 'None' ? '' : b.rewards;
           break;
         case 'sentiment':
-          compareA = getAverageRating(a.feedback);
-          compareB = getAverageRating(b.feedback);
+          const ratingA = getAverageRating(a.id)
+          const ratingB = getAverageRating(b.id)
+          compareA = ratingA ?? 0
+          compareB = ratingB ?? 0
           break;
       }
 
@@ -233,14 +291,26 @@ export default function CreditProductComparison() {
                           <div className="flex-1">
                             <h3 className="text-xl font-bold text-gray-900 mb-1">{card.name}</h3>
                             <p className="text-gray-600 mb-4">{card.bank}</p>
-                            <div className="flex items-center gap-2">
-                              <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.feedback))}`}>
-                                {getAverageRating(card.feedback)}
-                              </span>
-                              <span className="text-gray-500">/ 10</span>
-                              <span className="text-blue-600 ml-1">
-                                ({card.feedback.length} reviews)
-                              </span>
+                            <div className="flex flex-col">
+                              {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
+                                <>
+                                  <div className="flex items-center gap-1">
+                                    <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
+                                      {getAverageRating(card.id)}
+                                    </span>
+                                    <div className="flex flex-col items-start justify-center">
+                                      <span className="text-gray-500 text-base">/ 10</span>
+                                    </div>
+                                  </div>
+                                  <div className="text-xs text-blue-600 whitespace-nowrap">
+                                    {getReviewCount(card.id)} reviews
+                                  </div>
+                                </>
+                              ) : (
+                                <div className="text-sm text-gray-500">
+                                  No Reviews Yet
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -328,17 +398,25 @@ export default function CreditProductComparison() {
                         </ul>
                       </div>
                       <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xl font-bold ${getSentimentColor(getAverageRating(card.feedback))}`}>
-                            {getAverageRating(card.feedback)}
-                          </span>
-                          <span className="text-xs text-gray-500">/ 10</span>
-                        </div>
-                        <div className="mt-1">
-                          <span className="text-xs text-blue-600">
-                            {card.feedback.length} reviews
-                          </span>
-                        </div>
+                        {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
+                          <>
+                            <div className="flex items-center gap-1">
+                              <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
+                                {getAverageRating(card.id)}
+                              </span>
+                              <div className="flex flex-col items-start justify-center">
+                                <span className="text-gray-500 text-base">/ 10</span>
+                              </div>
+                            </div>
+                            <div className="text-xs text-blue-600 whitespace-nowrap">
+                              {getReviewCount(card.id)} reviews
+                            </div>
+                          </>
+                        ) : (
+                          <div className="text-sm text-gray-500">
+                            No Reviews Yet
+                          </div>
+                        )}
                       </div>
                     </div>
 

@@ -13,6 +13,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { PieChart } from "@/components/PieChart"
 import { supabase } from '@/lib/supabase'
 import LearningCenterPreview from '@/components/LearningCenterPreview'
+import CreditCardVsLoanComparison from '@/components/CreditCardVsLoanComparison'
 
 interface AllocationItem {
   name: string;
@@ -770,6 +771,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Credit Card vs Personal Loan Comparison Section */}
+      <CreditCardVsLoanComparison />
 
       {/* Learning Center Preview Section */}
       <LearningCenterPreview />

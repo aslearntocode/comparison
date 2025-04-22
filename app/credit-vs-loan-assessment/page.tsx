@@ -1,0 +1,226 @@
+'use client';
+
+import { useState } from 'react';
+import Header from '@/components/Header';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+
+type Question = {
+  id: number;
+  text: string;
+  options: {
+    value: string;
+    label: string;
+  }[];
+};
+
+const questions: Question[] = [
+  {
+    id: 1,
+    text: "What is your primary purpose for borrowing?",
+    options: [
+      { value: "emergency", label: "Emergency expenses" },
+      { value: "planned", label: "Planned purchase" },
+      { value: "debt", label: "Debt consolidation" },
+      { value: "travel", label: "Travel" },
+      { value: "regular", label: "Regular expenses" }
+    ]
+  },
+  {
+    id: 2,
+    text: "What is your approximate monthly income?",
+    options: [
+      { value: "low", label: "Less than ₹25,000" },
+      { value: "medium", label: "₹25,000 - ₹50,000" },
+      { value: "medium_high", label: "₹50,000 - ₹1,00,000" },
+      { value: "high", label: "₹1,00,000 - ₹2,00,000" },
+      { value: "very_high", label: "More than ₹2,00,000" }
+    ]
+  },
+  {
+    id: 3,
+    text: "How much do you need to borrow?",
+    options: [
+      { value: "small", label: "Less than ₹50,000" },
+      { value: "medium", label: "₹50,000 - ₹2,00,000" },
+      { value: "large", label: "₹2,00,000 - ₹5,00,000" },
+      { value: "very_large", label: "More than ₹5,00,000" }
+    ]
+  },
+  {
+    id: 4,
+    text: "How quickly do you plan to repay?",
+    options: [
+      { value: "very_short", label: "Within 1 month" },
+      { value: "short", label: "1-6 months" },
+      { value: "medium", label: "6-12 months" },
+      { value: "medium_long", label: "12-24 months" },
+      { value: "long", label: "24-36 months" },
+      { value: "very_long", label: "More than 36 months" }
+    ]
+  },
+  {
+    id: 5,
+    text: "What is your credit score (CIBIL Score) range?",
+    options: [
+      { value: "poor", label: "Below 600" },
+      { value: "fair", label: "600-700" },
+      { value: "good", label: "700-750" },
+      { value: "excellent", label: "750-800" },
+      { value: "outstanding", label: "Above 800" }
+    ]
+  },
+  {
+    id: 6,
+    text: "Do you have any existing credit card?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" }
+    ]
+  },
+  {
+    id: 7,
+    text: "Have you ever defaulted on a loan or a credit card?",
+    options: [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" }
+    ]
+  }
+];
+export default function CreditVsLoanAssessment() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [showResult, setShowResult] = useState(false);
+
+  const handleAnswer = (value: string) => {
+    setAnswers(prev => ({
+      ...prev,
+      [questions[currentQuestion].id]: value
+    }));
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(prev => prev + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  const getRecommendation = () => {
+    const purpose = answers[1];
+    const amount = answers[3];
+    const repayment = answers[4];
+    const creditScore = answers[5];
+
+    if (purpose === "regular" || (amount === "small" && repayment === "very_short")) {
+      return {
+        product: "Credit Card",
+        reason: "Your needs align better with a credit card for regular expenses and short-term borrowing."
+      };
+    } else if (purpose === "debt" || amount === "very_large" || repayment === "long") {
+      return {
+        product: "Personal Loan",
+        reason: "A personal loan would be more suitable for your larger borrowing needs and longer repayment period."
+      };
+    } else {
+      return {
+        product: "Credit Card",
+        reason: "Based on your responses, a credit card would be more appropriate for your financial needs."
+      };
+    }
+  };
+
+  if (showResult) {
+    const recommendation = getRecommendation();
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <Header />
+        <main className="max-w-4xl mx-auto px-4 py-12">
+          <Card className="p-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">Your Recommendation</h1>
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                {recommendation.product}
+              </h2>
+              <p className="text-gray-600">{recommendation.reason}</p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-gray-800">Next Steps</h3>
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Compare different {recommendation.product.toLowerCase()} options</li>
+                <li>Check your eligibility</li>
+                <li>Review interest rates and fees</li>
+                <li>Understand the terms and conditions</li>
+              </ul>
+            </div>
+            <div className="mt-8">
+              <Button
+                onClick={() => {
+                  setCurrentQuestion(0);
+                  setAnswers({});
+                  setShowResult(false);
+                }}
+                className="w-full"
+              >
+                Take Assessment Again
+              </Button>
+            </div>
+          </Card>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Header />
+      <main className="max-w-4xl mx-auto px-4 py-12">
+        <Card className="p-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+              Credit Card vs Personal Loan Assessment
+            </h1>
+            <p className="text-gray-600">
+              Answer a few questions to get personalized recommendations
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <div className="flex justify-between mb-4">
+              <span className="text-sm text-gray-500">
+                Question {currentQuestion + 1} of {questions.length}
+              </span>
+              <span className="text-sm text-gray-500">
+                {Math.round(((currentQuestion + 1) / questions.length) * 100)}% Complete
+              </span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div
+                className="bg-blue-600 h-2 rounded-full"
+                style={{
+                  width: `${((currentQuestion + 1) / questions.length) * 100}%`
+                }}
+              />
+            </div>
+          </div>
+
+          <h2 className="text-xl font-semibold text-gray-800 mb-6">
+            {questions[currentQuestion].text}
+          </h2>
+
+          <div className="space-y-4">
+            {questions[currentQuestion].options.map((option) => (
+              <Button
+                key={option.value}
+                onClick={() => handleAnswer(option.value)}
+                className="w-full justify-start text-left p-4 h-auto"
+                variant="outline"
+              >
+                {option.label}
+              </Button>
+            ))}
+          </div>
+        </Card>
+      </main>
+    </div>
+  );
+} 

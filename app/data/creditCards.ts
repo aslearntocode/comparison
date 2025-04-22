@@ -2,6 +2,10 @@ export interface UserFeedback {
   comment: string;
   rating: number;
   date: string;
+  userId: string;
+  userName: string;
+  cardId: string;
+  cardName: string;
 }
 
 export interface CreditCard {
@@ -59,9 +63,9 @@ export const creditCards: CreditCard[] = [
       'Concierge Services'
     ],
     feedback: [
-      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15" },
-      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10" },
-      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05" }
+      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "times-black", cardName: "Times Black ICICI Bank Credit Card" },
+      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "times-black", cardName: "Times Black ICICI Bank Credit Card" },
+      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "times-black", cardName: "Times Black ICICI Bank Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: [
@@ -128,8 +132,8 @@ export const creditCards: CreditCard[] = [
     rupay: true,
     features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
     feedback: [
-      { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12" },
-      { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08" }
+      { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
+      { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08", userId: "user456", userName: "Jane Smith", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments\n\nRedemption:\n• 1 Reward Point = up to ₹1 for flights, hotels, and select brand vouchers\n• ₹0.60 for rewards catalogue\n• ₹0.40 for statement credit\n\nCaps:\n• 1,000 points per category per statement cycle for grocery, education, and utilities\n• 5,000 points per statement cycle for insurance payments',
@@ -190,9 +194,9 @@ export const creditCards: CreditCard[] = [
     rupay: true,
     features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
     feedback: [
-      { comment: "Decent cashback but customer service needs improvement", rating: 6, date: "2024-03-14" },
-      { comment: "Good value for money", rating: 7.5, date: "2024-03-11" },
-      { comment: "Processing time for cashback is too long", rating: 5, date: "2024-03-07" }
+      { comment: "Decent cashback but customer service needs improvement", rating: 6, date: "2024-03-14", userId: "user789", userName: "Bob Johnson", cardId: "emeralde", cardName: "Emeralde Credit Card" },
+      { comment: "Good value for money", rating: 7.5, date: "2024-03-11", userId: "user123", userName: "John Doe", cardId: "emeralde", cardName: "Emeralde Credit Card" },
+      { comment: "Processing time for cashback is too long", rating: 5, date: "2024-03-07", userId: "user456", userName: "Jane Smith", cardId: "emeralde", cardName: "Emeralde Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Flat 2% cashback on all spends, credited monthly',
@@ -239,9 +243,9 @@ export const creditCards: CreditCard[] = [
       'Chip and PIN Security'
     ],
     feedback: [
-      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15" },
-      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10" },
-      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05" }
+      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
@@ -299,9 +303,9 @@ export const creditCards: CreditCard[] = [
       'Welcome Benefits'
     ],
     feedback: [
-      { comment: "Great for fuel savings at IndianOil", rating: 8, date: "2024-03-15" },
-      { comment: "Good dining discounts with EazyDiner", rating: 7, date: "2024-03-10" },
-      { comment: "UPI linkage is very convenient", rating: 8.5, date: "2024-03-05" }
+      { comment: "Great for fuel savings at IndianOil", rating: 8, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "axis-indian-oil", cardName: "Axis Bank Indian Oil Credit Card" },
+      { comment: "Good dining discounts with EazyDiner", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "axis-indian-oil", cardName: "Axis Bank Indian Oil Credit Card" },
+      { comment: "UPI linkage is very convenient", rating: 8.5, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "axis-indian-oil", cardName: "Axis Bank Indian Oil Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 20 EDGE Reward Points per ₹100 spent at IndianOil outlets (equivalent to 4% value back)\n• 5 EDGE Reward Points per ₹100 spent on online shopping\n• 1 EDGE Reward Point per ₹100 spent on other transactions',
@@ -345,9 +349,9 @@ export const creditCards: CreditCard[] = [
       'Milestone Benefits'
     ],
     feedback: [
-      { comment: "Great balance of benefits for moderate spenders", rating: 8, date: "2024-03-15" },
-      { comment: "Good dining discounts with Dining Delights", rating: 7.5, date: "2024-03-10" },
-      { comment: "Decent rewards redemption options", rating: 7, date: "2024-03-05" }
+      { comment: "Great balance of benefits for moderate spenders", rating: 8, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" },
+      { comment: "Good dining discounts with Dining Delights", rating: 7.5, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" },
+      { comment: "Decent rewards redemption options", rating: 7, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10 EDGE Points per ₹200 spent on all purchases\n\nRedemption:\n• Points can be redeemed for a variety of products and vouchers\n• Option to convert points to air miles',
@@ -398,9 +402,9 @@ export const creditCards: CreditCard[] = [
       'SmartBuy Portal Access'
     ],
     feedback: [
-      { comment: "Great travel benefits and lounge access", rating: 8.5, date: "2024-03-15" },
-      { comment: "Good rewards redemption value on SmartBuy", rating: 8, date: "2024-03-10" },
-      { comment: "Excellent insurance coverage", rating: 8, date: "2024-03-05" }
+      { comment: "Great travel benefits and lounge access", rating: 8.5, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" },
+      { comment: "Good rewards redemption value on SmartBuy", rating: 8, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" },
+      { comment: "Excellent insurance coverage", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" }
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
@@ -430,6 +434,43 @@ export const creditCards: CreditCard[] = [
         'Those primarily interested in cashback or fuel-specific benefits'
       ],
       summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
+    }
+  },
+  {
+    id: 'hdfc-moneyback-plus',
+    name: 'HDFC Bank MoneyBack+ Credit Card',
+    bank: 'HDFC Bank',
+    image: '/credit-cards/HDFC-MoneyBack+.png',
+    apr: '42% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rewards: '2 Reward Points for every ₹150 spent on UPI transactions (excluding fuel, wallet/prepaid card loads, or voucher purchases)',
+    rupay: true,
+    features: [
+      'UPI Transactions',
+      'Zero Lost Card Liability',
+      'Basic Credit Card Features'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 2 Reward Points per ₹150 spent on UPI transactions\n• Excludes fuel, wallet/prepaid card loads, and voucher purchases\n• Capped at 500 reward points per calendar month',
+      welcomeBonus: '500 Cash Points (applicable only  on payment of membership fee)',
+      milestoneBenefits: [
+        'Get renewal membership fee waived off by spending ₹50,000 and above in an annual year'
+      ],
+      minimumSpend: '₹50,000 for annual fee waiver',
+      additionalServices: 'Zero Lost Card Liability: Report card loss immediately to avoid liability on fraudulent transactions',
+      idealFor: [
+        'Budget-conscious individuals seeking a low annual fee card',
+        'Users preferring straightforward reward structures',
+        'Individuals looking for basic credit card features with essential benefits'
+      ],
+      notIdealFor: [
+        'Users seeking premium travel or lifestyle benefits',
+        'High spenders looking for accelerated rewards',
+        'Individuals requiring extensive insurance coverage'
+      ],
+      summary: 'A budget-friendly credit card offering basic features and straightforward rewards on UPI transactions, ideal for cost-conscious users.'
     }
   }
 ]; 
