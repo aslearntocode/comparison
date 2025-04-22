@@ -779,7 +779,31 @@ export default function Home() {
       <LearningCenterPreview />
 
       {/* Testimonials Section */}
-      <Testimonials />
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
+          <div className="relative overflow-hidden">
+            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTestimonialIndex * 33.33}%)` }}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="w-1/3 px-4 flex-shrink-0">
+                  <div className="bg-white rounded-xl shadow-lg p-6 h-full">
+                    <div className="flex items-center mb-4">
+                      <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-bold mr-4`}>
+                        {testimonial.initial}
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-gray-900">{testimonial.name}</h3>
+                        <p className="text-xs text-gray-500">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">{testimonial.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
