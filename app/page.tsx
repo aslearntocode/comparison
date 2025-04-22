@@ -77,35 +77,42 @@ export default function Home() {
       name: 'Rahul Sharma',
       role: 'Software Engineer',
       color: 'bg-blue-600',
-      text: 'This platform helped me diversify my investment portfolio perfectly. The AI-driven recommendations aligned well with my risk tolerance and retirement goals.'
+      text: 'I appreciate that this app doesn\'t share my data with other companies. Unlike other platforms, I haven\'t received any unsolicited calls from lenders. It\'s refreshing to use a service that respects user privacy!'
     },
     {
       initial: 'P',
       name: 'Priya Patel',
       role: 'Business Owner',
       color: 'bg-purple-600',
-      text: 'As a busy entrepreneur, I needed guidance on balancing my investments. This tool provided clear, actionable advice that helped me achieve a 15% better return on my portfolio.'
+      text: 'The ability to compare all credit cards in one place saved me so much time! I could easily see the benefits, fees, and rewards of each card without visiting multiple websites. Found my perfect card in minutes!'
     },
     {
       initial: 'A',
       name: 'Amit Kumar',
       role: 'Medical Professional',
       color: 'bg-green-600',
-      text: 'The personalized investment strategy considered my age, goals, and risk appetite. It\'s been 6 months, and my portfolio is much more balanced than before.'
+      text: 'The personalized recommendations were spot-on! The app understood my spending habits and suggested cards that perfectly matched my lifestyle. No more guesswork in choosing the right credit card.'
     },
     {
       initial: 'N',
       name: 'Neha Gupta',
       role: 'Financial Analyst',
       color: 'bg-red-600',
-      text: 'The portfolio rebalancing suggestions are spot-on. I\'ve recommended this tool to many of my clients for its accurate and personalized approach.'
+      text: 'What impressed me most was the transparency. No hidden charges, no spam calls, and clear comparison of all features. It\'s rare to find such an honest financial comparison platform.'
     },
     {
       initial: 'S',
       name: 'Suresh Reddy',
       role: 'Retired Professional',
       color: 'bg-yellow-600',
-      text: 'The retirement planning features gave me confidence in my financial future. The recommendations were practical and easy to implement.'
+      text: 'The user-friendly interface made it easy for me to understand different credit card options. I could filter cards based on my needs and compare them side by side. Highly recommended!'
+    },
+    {
+      initial: 'M',
+      name: 'Meera Desai',
+      role: 'Freelancer',
+      color: 'bg-indigo-600',
+      text: 'I was skeptical at first, but the app proved me wrong. No unwanted calls, no data sharing, and most importantly, it helped me find a card with great rewards for my business expenses.'
     }
   ]
 
@@ -148,7 +155,7 @@ export default function Home() {
       setCurrentTestimonialIndex((current) => 
         current === testimonials.length - 3 ? 0 : current + 1
       )
-    }, 5000) // Rotate every 5 seconds
+    }, 8000) // Increased from 5000 to 8000 milliseconds (8 seconds)
 
     return () => clearInterval(timer)
   }, [testimonials.length])
@@ -608,7 +615,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div>
-              <h1 className="text-[64px] leading-tight font-bold mb-8">
+              <h1 className="text-[32px] md:text-[64px] leading-tight font-bold mb-8">
                 <span className="text-black">Find The Right</span>
                 <br />
                 <span className="text-[#4F46E5]">Credit Product</span>
@@ -783,20 +790,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
           <div className="relative overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentTestimonialIndex * 33.33}%)` }}>
+            <div className="flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${currentTestimonialIndex * (isMobile ? 100 : 33.33)}%)` }}>
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-1/3 px-4 flex-shrink-0">
-                  <div className="bg-white rounded-xl shadow-lg p-6 h-full">
-                    <div className="flex items-center mb-4">
-                      <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-bold mr-4`}>
+                <div key={index} className="w-full md:w-1/3 px-2 md:px-4 flex-shrink-0">
+                  <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 h-full">
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <div className={`w-8 h-8 md:w-10 md:h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-bold mr-3 md:mr-4`}>
                         {testimonial.initial}
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-gray-900">{testimonial.name}</h3>
-                        <p className="text-xs text-gray-500">{testimonial.role}</p>
+                        <h3 className="text-base md:text-sm font-semibold text-gray-900">{testimonial.name}</h3>
+                        <p className="text-sm md:text-xs text-gray-500">{testimonial.role}</p>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600">{testimonial.text}</p>
+                    <p className="text-base md:text-sm text-gray-600 leading-relaxed">{testimonial.text}</p>
                   </div>
                 </div>
               ))}
