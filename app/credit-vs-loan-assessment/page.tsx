@@ -105,26 +105,43 @@ export default function CreditVsLoanAssessment() {
     }
   };
 
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(prev => prev - 1);
+    }
+  };
+
   const getRecommendation = () => {
     const purpose = answers[1];
     const amount = answers[3];
     const repayment = answers[4];
     const creditScore = answers[5];
 
+    if (creditScore === "poor") {
+      return {
+        product: "Credit Score Improvement Required",
+        reason: "Based on your credit score (below 600), lenders might not be able to approve your application at this time. It's recommended to work on improving your credit score first.",
+        isLowScore: true
+      };
+    }
+
     if (purpose === "regular" || (amount === "small" && repayment === "very_short")) {
       return {
         product: "Credit Card",
-        reason: "Your needs align better with a credit card for regular expenses and short-term borrowing."
+        reason: "Your needs align better with a credit card for regular expenses and short-term borrowing.",
+        isLowScore: false
       };
     } else if (purpose === "debt" || amount === "very_large" || repayment === "long") {
       return {
         product: "Personal Loan",
-        reason: "A personal loan would be more suitable for your larger borrowing needs and longer repayment period."
+        reason: "A personal loan would be more suitable for your larger borrowing needs and longer repayment period.",
+        isLowScore: false
       };
     } else {
       return {
         product: "Credit Card",
-        reason: "Based on your responses, a credit card would be more appropriate for your financial needs."
+        reason: "Based on your responses, a credit card would be more appropriate for your financial needs.",
+        isLowScore: false
       };
     }
   };
@@ -137,7 +154,7 @@ export default function CreditVsLoanAssessment() {
         <main className="max-w-4xl mx-auto px-4 py-12">
           <Card className="p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">Your Recommendation</h1>
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-8">
+            <div className={`p-6 rounded-lg mb-8 ${recommendation.isLowScore ? 'bg-red-50' : 'bg-gradient-to-r from-blue-50 to-indigo-50'}`}>
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">
                 {recommendation.product}
               </h2>
@@ -146,10 +163,21 @@ export default function CreditVsLoanAssessment() {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-800">Next Steps</h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Compare different {recommendation.product.toLowerCase()} options</li>
-                <li>Check your eligibility</li>
-                <li>Review interest rates and fees</li>
-                <li>Understand the terms and conditions</li>
+                {recommendation.isLowScore ? (
+                  <>
+                    <li>Check your credit report for errors</li>
+                    <li>Pay your bills on time</li>
+                    <li>Reduce your credit utilization</li>
+                    <li>Maintain a good mix of credit</li>
+                  </>
+                ) : (
+                  <>
+                    <li>Compare different {recommendation.product.toLowerCase()} options</li>
+                    <li>Check your eligibility</li>
+                    <li>Review interest rates and fees</li>
+                    <li>Understand the terms and conditions</li>
+                  </>
+                )}
               </ul>
             </div>
             <div className="mt-8">
@@ -161,7 +189,7 @@ export default function CreditVsLoanAssessment() {
                 }}
                 className="w-full"
               >
-                Take Assessment Again
+                {recommendation.isLowScore ? "Click here to learn how to increase your score" : "Look at Some Products and Apply"}
               </Button>
             </div>
           </Card>
@@ -218,6 +246,15 @@ export default function CreditVsLoanAssessment() {
                 {option.label}
               </Button>
             ))}
+          </div>
+          <div className="mt-6 flex justify-between">
+            <Button
+              onClick={handleBack}
+              variant="outline"
+              disabled={currentQuestion === 0}
+            >
+              Back
+            </Button>
           </div>
         </Card>
       </main>
