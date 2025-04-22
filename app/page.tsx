@@ -114,9 +114,9 @@ export default function Home() {
     {
       type: 'credit-cards',
       images: [
-        '/credit-card-1.png',
-        '/credit-card-2.png',
-        '/credit-card-3.png'
+        '/Credit-card-1.png',
+        '/Credit-card-2.png',
+        '/Credit-card-3.png'
       ]
     },
     {
