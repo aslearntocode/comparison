@@ -73,13 +73,12 @@ interface UserFeedback {
   comment: string;
 }
 
-export default async function PersonalLoanDetail({ 
-  params,
-  searchParams 
-}: {
+interface PageProps {
   params: { loanId: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default function PersonalLoanDetail({ params }: PageProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'eligibility' | 'documents' | 'reviews'>('overview')
   const [reviews, setReviews] = useState<Review[]>([])
   const [newReview, setNewReview] = useState({ rating: 0, comment: '' })
