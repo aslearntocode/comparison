@@ -654,14 +654,17 @@ export default function Home() {
                     <span className="text-base text-white font-medium">Fintech Credit Cards</span>
                   </div>
                 </Link>
-                <Link href="/loans/auto" className="col-span-1">
+                <Link href="/loans/personal" className="col-span-1">
                   <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-4 h-[80px] flex items-center gap-3 cursor-pointer">
                     <div className="bg-white/20 p-1.5 rounded-lg">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
-                    <span className="text-base text-white font-medium">Personal Loans</span>
+                    <div className="flex flex-col">
+                      <span className="text-base text-white font-medium">Personal Loans</span>
+                      <span className="text-xs text-white/80">Coming Soon</span>
+                    </div>
                   </div>
                 </Link>
               </div>
