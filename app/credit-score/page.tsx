@@ -126,7 +126,6 @@ export default function CreditScorePage() {
 
         if (error) {
           if (error.code === 'PGRST116') {
-            // No data found - this is expected for new users
             console.log('No credit report found for user');
             return;
           }
@@ -135,12 +134,14 @@ export default function CreditScorePage() {
         }
 
         if (data) {
-          // Log the data structure to understand what we're receiving
           console.log('Credit report data from Supabase:', data);
           
-          // Set the report data, ensuring we're using the correct structure
+          // Extract report_created_date from report_analysis if it exists
+          const reportAnalysis = data.report_analysis || {};
+          const reportCreatedDate = reportAnalysis.report_created_date || data.report_created_date;
+          
           setReportData({
-            report_created_date: data.report_created_date,
+            report_created_date: reportCreatedDate,
             credit_score: data.credit_score,
             total_accounts: data.total_accounts,
             active_accounts: data.active_accounts || [],
@@ -157,7 +158,6 @@ export default function CreditScorePage() {
       }
     };
 
-    // Wait for auth state to be ready
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         fetchLatestCreditReport();
@@ -246,11 +246,24 @@ export default function CreditScorePage() {
         // Save to Supabase with better error handling
         const saveReportToSupabase = async (reportData: any) => {
           try {
-            // Convert date format from DD-MM-YYYY to YYYY-MM-DD
+            // Convert date format from DD-MM-YYYY or DD/MM/YYYY to YYYY-MM-DD
             const convertDateFormat = (dateStr: string) => {
               if (!dateStr) return null;
-              const [day, month, year] = dateStr.split('-');
-              return `${year}-${month}-${day}`;
+              try {
+                // Replace both - and / with a standard separator
+                const normalizedDate = dateStr.replace(/[-\/]/g, '-');
+                const [day, month, year] = normalizedDate.split('-').map(num => num.padStart(2, '0'));
+                // Validate date components
+                const date = new Date(`${year}-${month}-${day}`);
+                if (isNaN(date.getTime())) {
+                  console.error('Invalid date:', dateStr);
+                  return null;
+                }
+                return `${year}-${month}-${day}`;
+              } catch (error) {
+                console.error('Error converting date:', dateStr, error);
+                return null;
+              }
             };
 
             const { data, error } = await supabase
@@ -626,20 +639,69 @@ export default function CreditScorePage() {
                           <p className="text-xs text-gray-500">Recent Enquiries</p>
                           {reportData?.enquiries && reportData.enquiries.length > 0 ? (
                             (() => {
-                              const reportDate = new Date(reportData.report_created_date);
-                              const sixMonthsAgo = new Date(reportDate);
-                              sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
-                              
-                              const recentEnquiries = reportData.enquiries.filter(enquiry => {
-                                const enquiryDate = new Date(enquiry.enquiry_date);
-                                return enquiryDate >= sixMonthsAgo && enquiryDate <= reportDate;
-                              });
+                              try {
+                                // Convert date from DD/MM/YYYY to YYYY-MM-DD
+                                const convertDateFormat = (dateStr: string) => {
+                                  if (!dateStr) return null;
+                                  const [day, month, year] = dateStr.split(/[-\/]/);
+                                  return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+                                };
 
-                              return (
-                                <p className="text-sm font-medium text-gray-800 mt-1">
-                                  {recentEnquiries.length} enquiries
-                                </p>
-                              );
+                                // Get report date from the analysis data
+                                const reportDateStr = convertDateFormat(reportData.report_created_date);
+                                if (!reportDateStr) {
+                                  console.error('Invalid report date format:', reportData.report_created_date);
+                                  return <p className="text-sm font-medium text-gray-800 mt-1">--</p>;
+                                }
+                                
+                                const reportDate = new Date(reportDateStr);
+                                if (isNaN(reportDate.getTime())) {
+                                  console.error('Invalid report date:', reportDateStr);
+                                  return <p className="text-sm font-medium text-gray-800 mt-1">--</p>;
+                                }
+                                
+                                // Filter enquiries from last 6 months
+                                const recentEnquiries = reportData.enquiries.filter(enquiry => {
+                                  try {
+                                    const enquiryDateStr = convertDateFormat(enquiry.enquiry_date);
+                                    if (!enquiryDateStr) {
+                                      console.error('Invalid enquiry date format:', enquiry.enquiry_date);
+                                      return false;
+                                    }
+                                    
+                                    const enquiryDate = new Date(enquiryDateStr);
+                                    if (isNaN(enquiryDate.getTime())) {
+                                      console.error('Invalid enquiry date:', enquiryDateStr);
+                                      return false;
+                                    }
+                                    
+                                    // Calculate difference in months
+                                    const diffTime = Math.abs(reportDate.getTime() - enquiryDate.getTime());
+                                    const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30.44)); // Average days in a month
+                                    
+                                    console.log('Report Date:', reportDate.toLocaleDateString());
+                                    console.log('Enquiry Date:', enquiryDate.toLocaleDateString());
+                                    console.log('Difference in months:', diffMonths);
+                                    
+                                    return diffMonths <= 6;
+                                  } catch (error) {
+                                    console.error('Error processing enquiry date:', error);
+                                    return false;
+                                  }
+                                });
+
+                                console.log('Total enquiries:', reportData.enquiries.length);
+                                console.log('Recent enquiries:', recentEnquiries.length);
+
+                                return (
+                                  <p className="text-sm font-medium text-gray-800 mt-1">
+                                    {recentEnquiries.length} enquiries
+                                  </p>
+                                );
+                              } catch (error) {
+                                console.error('Error processing dates:', error);
+                                return <p className="text-sm font-medium text-gray-800 mt-1">--</p>;
+                              }
                             })()
                           ) : (
                             <p className="text-sm font-medium text-gray-800 mt-1">--</p>
