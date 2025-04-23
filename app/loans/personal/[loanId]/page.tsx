@@ -75,6 +75,7 @@ interface PageProps {
   params: {
     loanId: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function PersonalLoanDetail({ params }: PageProps) {
