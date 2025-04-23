@@ -1,121 +1,50 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState, use, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
-
-interface UserFeedback {
-  comment: string;
-  rating: number;
-  date: string;
-}
-
-interface PersonalLoan {
-  id: string;
-  bankName: string;
-  logo: string;
-  interestRate: string;
-  processingFee: string;
-  maxAmount: string;
-  minAmount: string;
-  maxTenure: string;
-  minTenure: string;
-  features: string[];
-  feedback: UserFeedback[];
-  additionalDetails: {
-    prepaymentCharges: string;
-    foreclosureCharges: string;
-    disbursalTime: string;
-    requiredDocuments: string[];
-    eligibility: {
-      minIncome: string;
-      minAge: string;
-      maxAge: string;
-      employmentType: string[];
-      creditScore: string;
-    };
-  };
-}
-
-// Sample personal loan data - in a real app, this would come from an API or database
-const personalLoans: { [key: string]: PersonalLoan } = {
-  'loan1': {
-    id: 'loan1',
-    bankName: 'ABC Bank',
-    logo: '/bank-logos/abc-bank.png',
-    interestRate: '10.75% p.a.',
-    processingFee: '1% of loan amount',
-    maxAmount: '₹25,00,000',
-    minAmount: '₹50,000',
-    maxTenure: '60 months',
-    minTenure: '12 months',
-    features: ['Quick Approval', 'Minimal Documentation', 'No Collateral Required'],
-    feedback: [
-      { comment: "Quick processing and minimal documentation", rating: 8.5, date: "2024-03-15" },
-      { comment: "Good interest rates but high processing fees", rating: 7, date: "2024-03-10" }
-    ],
-    additionalDetails: {
-      prepaymentCharges: 'Nil for floating rate loans',
-      foreclosureCharges: '2% of outstanding amount',
-      disbursalTime: '24-48 hours',
-      requiredDocuments: [
-        'Identity Proof',
-        'Address Proof',
-        'Income Proof',
-        'Bank Statements (3 months)',
-        'Salary Slips (3 months)'
-      ],
-      eligibility: {
-        minIncome: '₹25,000 per month',
-        minAge: '21 years',
-        maxAge: '60 years',
-        employmentType: ['Salaried', 'Self-Employed'],
-        creditScore: '700+'
-      }
-    }
-  },
-  'loan2': {
-    id: 'loan2',
-    bankName: 'XYZ Bank',
-    logo: '/bank-logos/xyz-bank.png',
-    interestRate: '11.25% p.a.',
-    processingFee: '0.75% of loan amount',
-    maxAmount: '₹20,00,000',
-    minAmount: '₹1,00,000',
-    maxTenure: '72 months',
-    minTenure: '12 months',
-    features: ['Zero Prepayment Charges', 'Flexible Tenure', 'Digital Process'],
-    feedback: [
-      { comment: "Excellent digital process, very convenient", rating: 9, date: "2024-03-14" },
-      { comment: "Competitive interest rates", rating: 8, date: "2024-03-09" }
-    ],
-    additionalDetails: {
-      prepaymentCharges: 'Nil',
-      foreclosureCharges: 'Nil after 12 months',
-      disbursalTime: '72 hours',
-      requiredDocuments: [
-        'PAN Card',
-        'Aadhaar Card',
-        'Income Tax Returns (2 years)',
-        'Bank Statements (6 months)',
-        'Salary Slips (3 months)'
-      ],
-      eligibility: {
-        minIncome: '₹30,000 per month',
-        minAge: '23 years',
-        maxAge: '58 years',
-        employmentType: ['Salaried'],
-        creditScore: '725+'
-      }
-    }
-  }
-};
+import Image from 'next/image'
+import { personalLoans, type PersonalLoan, type UserFeedback } from '@/app/data/personalLoans'
+import { supabase, type Review } from '@/lib/supabase'
+import { auth } from '@/lib/firebase'
+import { onAuthStateChanged, User } from 'firebase/auth'
+import { Input } from '@/components/ui/input'
 
 export default function PersonalLoanDetail({ params }: { params: Promise<{ loanId: string }> }) {
-  const [activeTab, setActiveTab] = useState<'overview' | 'reviews'>('overview')
+  const [activeTab, setActiveTab] = useState<'overview' | 'eligibility' | 'documents' | 'reviews'>('overview')
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [newReview, setNewReview] = useState({ rating: 0, comment: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [user, setUser] = useState<User | null>(null)
   
   const { loanId } = use(params)
-  const loan = personalLoans[loanId]
+  const loan = personalLoans.find(l => l.id === loanId)
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    // Fetch reviews when component mounts
+    const fetchReviews = async () => {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('card_id', loanId)
+        .order('created_at', { ascending: false })
+
+      if (!error && data) {
+        setReviews(data)
+      }
+    }
+
+    fetchReviews()
+  }, [loanId])
   
   if (!loan) {
     return (
@@ -146,6 +75,287 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
     return 'text-red-600';
   }
 
+  const handleReviewSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!user || !loan) return;
+
+    if (newReview.rating < 1 || newReview.rating > 10) {
+      setError('Rating must be between 1 and 10');
+      return;
+    }
+
+    if (!newReview.comment.trim()) {
+      setError('Please provide a review comment');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const review: Review = {
+        user_id: user.uid,
+        user_name: user.displayName || 'Anonymous',
+        card_id: loan.id,
+        card_name: loan.name,
+        rating: newReview.rating,
+        comment: newReview.comment.trim(),
+      };
+
+      const { data, error: submitError } = await supabase
+        .from('reviews')
+        .insert([review])
+        .select()
+
+      if (submitError) {
+        throw new Error(submitError.message || 'Error submitting review. Please try again.');
+      }
+
+      // Refresh reviews
+      const { data: updatedReviews, error: fetchError } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('card_id', loan.id)
+        .order('created_at', { ascending: false })
+
+      if (fetchError) {
+        throw new Error(fetchError.message || 'Error fetching updated reviews');
+      }
+
+      if (updatedReviews) {
+        setReviews(updatedReviews);
+      }
+
+      // Reset form
+      setNewReview({
+        rating: 0,
+        comment: '',
+      });
+
+      // Show success message
+      alert('Review submitted successfully!');
+
+    } catch (error: any) {
+      console.error('Error in handleReviewSubmit:', error);
+      setError(error.message || 'An error occurred while submitting your review. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'overview':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Loan Details</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Loan Amount Range</h4>
+                  <p className="text-gray-600">₹{loan.minAmount} - {loan.maxAmount}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Tenure Range</h4>
+                  <p className="text-gray-600">{loan.minTenure} - {loan.maxTenure}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Prepayment Charges</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.prepaymentCharges}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Foreclosure Charges</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.foreclosureCharges}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Disbursal Time</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.disbursalTime}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+              <div className="flex flex-wrap gap-3">
+                {loan.features.map((feature, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Ideal For Column - Takes 2/3 of space */}
+              <div className="md:col-span-1">
+                <div className="bg-green-50 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+                    <span>✨</span>
+                    Ideal For
+                  </h4>
+                  <div className="space-y-4">
+                    {loan.additionalDetails?.idealFor?.map((profile, index) => {
+                      const [title, description] = profile.split(': ');
+                      return (
+                        <div key={index} className="flex gap-4">
+                          <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <span className="text-xl">✨</span>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-900 text-lg">{title}</span>
+                            <p className="text-gray-700 mt-1">{description}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Not Ideal For Column - Takes 1/3 of space */}
+              <div className="md:col-span-1">
+                <div className="bg-red-50 rounded-xl p-6">
+                  <h4 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
+                    <span>🚫</span>
+                    Not Ideal For
+                  </h4>
+                  <ul className="space-y-3">
+                    {loan.additionalDetails?.notIdealFor?.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2 text-red-700">
+                        <span className="mt-1.5">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'eligibility':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Eligibility Criteria</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Income Requirement</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.eligibility?.minIncome}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Age</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.eligibility?.minAge} - {loan.additionalDetails?.eligibility?.maxAge}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Employment Type</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.eligibility?.employmentType?.join(', ')}</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Credit Score</h4>
+                  <p className="text-gray-600">{loan.additionalDetails?.eligibility?.creditScore}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'documents':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Required Documents</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-600">
+                {loan.additionalDetails?.requiredDocuments?.map((doc, index) => (
+                  <li key={index}>{doc}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      case 'reviews':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <span className="text-2xl">⭐</span>
+                User Reviews
+              </h3>
+
+              {/* Review Submission Form */}
+              {user ? (
+                <div className="bg-white rounded-lg p-6 shadow-sm mb-8">
+                  <h4 className="text-lg font-semibold mb-4">Write a Review</h4>
+                  {error && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-800">{error}</p>
+                    </div>
+                  )}
+                  <form onSubmit={handleReviewSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Rating (1-10)
+                      </label>
+                      <Input
+                        type="number"
+                        min="1"
+                        max="10"
+                        value={newReview.rating}
+                        onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                        required
+                        className="w-24"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Comment
+                      </label>
+                      <textarea
+                        value={newReview.comment}
+                        onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                        required
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        rows={4}
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Submit Review'}
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="bg-gray-50 rounded-lg p-6 text-center">
+                  <p className="text-gray-600">Please sign in to write a review</p>
+                </div>
+              )}
+
+              {/* Reviews List */}
+              <div className="space-y-6">
+                {loan.feedback.map((review, index) => (
+                  <div key={index} className="border-b border-gray-100 last:border-0 pb-6 last:pb-0">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className={`text-lg font-bold ${getSentimentColor(review.rating)}`}>
+                        {review.rating} / 10
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        {new Date(review.date).toLocaleDateString()}
+                      </div>
+                    </div>
+                    <p className="text-gray-600">{review.comment}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
@@ -169,14 +379,14 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
             <div className="flex items-start gap-8">
               <div className="w-24 h-24 bg-gray-100 rounded-xl flex items-center justify-center">
                 <span className="text-4xl font-bold text-gray-700">
-                  {loan.bankName.charAt(0)}
+                  {loan.bank.charAt(0)}
                 </span>
               </div>
               <div className="flex-1">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">{loan.bankName}</h1>
-                    <p className="text-xl text-gray-600 mb-4">Personal Loan</p>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">{loan.name}</h1>
+                    <p className="text-xl text-gray-600 mb-4">{loan.bank}</p>
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-2 mb-2">
@@ -218,6 +428,26 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
                   Overview
                 </button>
                 <button
+                  onClick={() => setActiveTab('eligibility')}
+                  className={`px-6 py-4 text-sm font-medium ${
+                    activeTab === 'eligibility'
+                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Eligibility
+                </button>
+                <button
+                  onClick={() => setActiveTab('documents')}
+                  className={`px-6 py-4 text-sm font-medium ${
+                    activeTab === 'documents'
+                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Documents
+                </button>
+                <button
                   onClick={() => setActiveTab('reviews')}
                   className={`px-6 py-4 text-sm font-medium ${
                     activeTab === 'reviews'
@@ -231,100 +461,7 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
             </div>
 
             <div className="p-8">
-              {activeTab === 'overview' ? (
-                <div className="space-y-8">
-                  {/* Key Features */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Key Features</h2>
-                    <div className="flex flex-wrap gap-3">
-                      {loan.features.map((feature, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Loan Details */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Loan Details</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Loan Amount Range</h3>
-                        <p className="text-gray-600">₹{loan.minAmount} - {loan.maxAmount}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Tenure Range</h3>
-                        <p className="text-gray-600">{loan.minTenure} - {loan.maxTenure}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Prepayment Charges</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.prepaymentCharges}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Foreclosure Charges</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.foreclosureCharges}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Disbursal Time</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.disbursalTime}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Required Documents */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Required Documents</h2>
-                    <ul className="list-disc list-inside space-y-2 text-gray-600">
-                      {loan.additionalDetails.requiredDocuments.map((doc, index) => (
-                        <li key={index}>{doc}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Eligibility */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Eligibility Criteria</h2>
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Income Requirement</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.eligibility.minIncome}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Age</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.eligibility.minAge} - {loan.additionalDetails.eligibility.maxAge}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Employment Type</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.eligibility.employmentType.join(', ')}</p>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900 mb-2">Credit Score</h3>
-                        <p className="text-gray-600">{loan.additionalDetails.eligibility.creditScore}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-6">
-                  {loan.feedback.map((review, index) => (
-                    <div key={index} className="border-b border-gray-100 last:border-0 pb-6 last:pb-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className={`text-lg font-bold ${getSentimentColor(review.rating)}`}>
-                          {review.rating} / 10
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {new Date(review.date).toLocaleDateString()}
-                        </div>
-                      </div>
-                      <p className="text-gray-600">{review.comment}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {renderTabContent()}
             </div>
           </div>
         </div>

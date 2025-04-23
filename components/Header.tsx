@@ -226,7 +226,7 @@ export default function Header() {
                     onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
                     className="text-black hover:text-gray-700 py-2 text-lg mr-1"
                   >
-                    Credit
+                    Credit Products
                   </button>
                   <button 
                     onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
@@ -258,25 +258,25 @@ export default function Header() {
                     href="/credit" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                   >
-                    <span className="ml-3">Credit Cards</span>
+                    <span className="ml-3">Branded Credit Cards</span>
+                  </Link>
+                  <Link 
+                    href="/cobrand_credit" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                  >
+                    <span className="ml-3">Co-Branded Credit Cards</span>
+                  </Link>
+                  <Link 
+                    href="/fintech-credit" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                  >
+                    <span className="ml-3">Fintech Credit Cards</span>
                   </Link>
                   <Link 
                     href="/loans/personal" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                   >
                     <span className="ml-3">Personal Loans</span>
-                  </Link>
-                  <Link 
-                    href="/loans/home" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                  >
-                    <span className="ml-3">Home Loans</span>
-                  </Link>
-                  <Link 
-                    href="/loans/auto" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                  >
-                    <span className="ml-3">Auto Loans</span>
                   </Link>
                 </div>
               </div>
@@ -348,6 +348,10 @@ export default function Header() {
                 </div>
               </div>
               */}
+
+              <Link href="/credit-score" className="text-black hover:text-gray-700 py-2 text-lg">
+                Credit Score
+              </Link>
               <Link href="/learning-center" className="text-black hover:text-gray-700 py-2 text-lg">
                 Learning Center
               </Link>
@@ -484,7 +488,7 @@ export default function Header() {
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                 </svg>
-                <span className="text-xs mt-1">Credit</span>
+                <span className="text-xs mt-1">Credit Products</span>
               </button>
               {isCreditDropdownOpen && (
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
@@ -495,22 +499,22 @@ export default function Header() {
                     Credit Cards
                   </Link>
                   <Link
-                    href="/credit"
+                    href="/cobrand_credit"
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                   >
-                    Personal Loans
+                    Co-Branded Credit Cards
                   </Link>
                   <Link
-                    href="/credit"
+                    href="/fintech-credit"
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                   >
-                    Home Loans
+                    Fintech Credit Cards
                   </Link>
                   <Link
-                    href="/credit"
+                    href="/loans/auto" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                   >
-                    Auto Loans
+                    <span className="text-base">Personal Loans</span>
                   </Link>
                 </div>
               )}
@@ -563,6 +567,14 @@ export default function Header() {
               )}
             </div>
             */}
+
+
+            <Link href="/credit-score" className="text-black hover:text-gray-700 flex flex-col items-center">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <span className="text-xs mt-1">Credit Score</span>
+            </Link>
 
             <Link href="/learning-center" className="text-black hover:text-gray-700 flex flex-col items-center">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
