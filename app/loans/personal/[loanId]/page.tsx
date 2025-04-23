@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
-import { personalLoans } from '@/app/data/personalLoans'
+import { personalLoans, type PersonalLoan as ImportedPersonalLoan } from '@/app/data/personalLoans'
 import { supabase, type Review as SupabaseReview } from '@/lib/supabase'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
@@ -64,6 +64,8 @@ interface Review {
   rating: number;
   comment: string;
   date: string;
+  cardId: string;
+  cardName: string;
 }
 
 interface UserFeedback {
@@ -122,7 +124,7 @@ export default function PersonalLoanDetail({ params }: PageProps) {
       try {
         const foundLoan = personalLoans.find((l) => l.id === params.loanId)
         if (foundLoan) {
-          setLoan(foundLoan as PersonalLoan)
+          setLoan(foundLoan as unknown as PersonalLoan)
         } else {
           setError('Loan not found')
         }
@@ -182,12 +184,14 @@ export default function PersonalLoanDetail({ params }: PageProps) {
 
     try {
       const review: Review = {
-        user_id: user.uid,
-        user_name: user.displayName || 'Anonymous',
-        card_id: loan.id,
-        card_name: loan.name,
+        id: '', // Will be set by Supabase
+        userId: user.uid,
+        userName: user.displayName || 'Anonymous',
         rating: newReview.rating,
         comment: newReview.comment.trim(),
+        date: new Date().toISOString(),
+        cardId: loan.id,
+        cardName: loan.name
       };
 
       const { data, error: submitError } = await supabase
@@ -487,12 +491,12 @@ export default function PersonalLoanDetail({ params }: PageProps) {
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(loan.feedback))}`}>
-                        {getAverageRating(loan.feedback)}
+                      <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(loan.feedback ? [{ rating: loan.feedback.rating, comment: '' }] : []))}`}>
+                        {getAverageRating(loan.feedback ? [{ rating: loan.feedback.rating, comment: '' }] : [])}
                       </span>
                       <span className="text-gray-500">/ 10</span>
                     </div>
-                    <p className="text-sm text-gray-500">{loan.feedback.length} reviews</p>
+                    <p className="text-sm text-gray-500">{loan.feedback ? 1 : 0} reviews</p>
                   </div>
                 </div>
                 
