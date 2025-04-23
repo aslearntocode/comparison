@@ -106,6 +106,67 @@ export default function CreditScorePage() {
     return () => unsubscribe()
   }, [])
 
+  // Update useEffect to handle authentication state
+  useEffect(() => {
+    const fetchLatestCreditReport = async () => {
+      try {
+        const user = auth.currentUser;
+        if (!user) {
+          console.log('No authenticated user found');
+          return;
+        }
+
+        const { data, error } = await supabase
+          .from('credit_reports_pdf')
+          .select('*')
+          .eq('user_id', user.uid)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .single();
+
+        if (error) {
+          if (error.code === 'PGRST116') {
+            // No data found - this is expected for new users
+            console.log('No credit report found for user');
+            return;
+          }
+          console.error('Error fetching credit report:', error);
+          return;
+        }
+
+        if (data) {
+          // Log the data structure to understand what we're receiving
+          console.log('Credit report data from Supabase:', data);
+          
+          // Set the report data, ensuring we're using the correct structure
+          setReportData({
+            report_created_date: data.report_created_date,
+            credit_score: data.credit_score,
+            total_accounts: data.total_accounts,
+            active_accounts: data.active_accounts || [],
+            credit_limit: data.credit_limit,
+            closed_accounts: data.closed_accounts,
+            current_balance: data.current_balance,
+            overdue_accounts: data.overdue_accounts || [],
+            written_off_accounts: data.written_off_accounts || [],
+            enquiries: data.enquiries || []
+          });
+        }
+      } catch (error) {
+        console.error('Error in fetchLatestCreditReport:', error);
+      }
+    };
+
+    // Wait for auth state to be ready
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        fetchLatestCreditReport();
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handlePageClick = () => {
     const user = auth.currentUser
     if (!user) {
@@ -156,56 +217,90 @@ export default function CreditScorePage() {
       })
 
       // Upload PDF and get analysis
-      const analysisResponse = await fetch('/api/analyze/pdf', {
-        method: 'POST',
-        body: pdfFormData
-      })
+      try {
+        const analysisResponse = await fetch('/api/analyze/pdf', {
+          method: 'POST',
+          body: pdfFormData
+        })
 
-      const responseData = await analysisResponse.json()
+        if (!analysisResponse.ok) {
+          const errorText = await analysisResponse.text();
+          console.error('PDF Analysis Error:', {
+            status: analysisResponse.status,
+            statusText: analysisResponse.statusText,
+            errorText
+          });
+          throw new Error(`Server error: ${analysisResponse.status} ${analysisResponse.statusText}`);
+        }
 
-      if (!analysisResponse.ok || !responseData.success) {
-        throw new Error(responseData.details || responseData.error || 'Failed to analyze PDF')
-      }
+        const responseData = await analysisResponse.json()
 
-      // Set the report data from the response
-      setReportData(responseData.data)
+        if (!responseData.success) {
+          console.error('PDF Analysis Failed:', responseData);
+          throw new Error(responseData.details || responseData.error || 'Failed to analyze PDF')
+        }
 
-      // Save to Supabase with better error handling
-      const saveReportToSupabase = async (reportData: any) => {
-        try {
-          const { data, error } = await supabase
-            .from('credit_reports')
-            .insert({
-              user_id: auth.currentUser?.uid,
-              report_analysis: reportData,
-              mobile: formData.mobile,
-              name: formData.name,
-              dob: formData.dob,
-              created_at: new Date().toISOString()
-            })
+        // Set the report data from the response
+        setReportData(responseData.data)
 
-          if (error) {
-            console.error('Supabase error details:', error);
+        // Save to Supabase with better error handling
+        const saveReportToSupabase = async (reportData: any) => {
+          try {
+            // Convert date format from DD-MM-YYYY to YYYY-MM-DD
+            const convertDateFormat = (dateStr: string) => {
+              if (!dateStr) return null;
+              const [day, month, year] = dateStr.split('-');
+              return `${year}-${month}-${day}`;
+            };
+
+            const { data, error } = await supabase
+              .from('credit_reports_pdf')
+              .insert({
+                user_id: auth.currentUser?.uid,
+                report_analysis: reportData,
+                mobile: formData.mobile,
+                name: formData.name,
+                dob: formData.dob,
+                created_at: new Date().toISOString(),
+                report_created_date: convertDateFormat(reportData.report_created_date),
+                credit_score: reportData.credit_score,
+                total_accounts: reportData.total_accounts,
+                active_accounts: reportData.active_accounts,
+                credit_limit: reportData.credit_limit,
+                closed_accounts: reportData.closed_accounts,
+                current_balance: reportData.current_balance,
+                overdue_accounts: reportData.overdue_accounts,
+                written_off_accounts: reportData.written_off_accounts,
+                enquiries: reportData.enquiries
+              })
+
+            if (error) {
+              console.error('Supabase error details:', error);
+              throw error;
+            }
+            return data;
+          } catch (error: any) {
+            console.error('Error saving report:', {
+              message: error.message,
+              details: error.details,
+              hint: error.hint,
+              code: error.code
+            });
             throw error;
           }
-          return data;
-        } catch (error: any) {
-          console.error('Error saving report:', {
-            message: error.message,
-            details: error.details,
-            hint: error.hint,
-            code: error.code
-          });
-          throw error;
-        }
-      };
+        };
 
-      const savedData = await saveReportToSupabase(responseData.data);
-      console.log('Successfully saved report:', savedData);
+        const savedData = await saveReportToSupabase(responseData.data);
+        console.log('Successfully saved report:', savedData);
 
-      // Store the analysis data in localStorage for immediate access
-      localStorage.setItem('latestCreditReport', JSON.stringify(responseData.data))
-
+      } catch (fetchError: any) {
+        console.error('Fetch Error:', {
+          message: fetchError.message,
+          stack: fetchError.stack,
+          name: fetchError.name
+        });
+        throw new Error('Failed to connect to the server. Please check your internet connection and try again.');
+      }
     } catch (err: any) {
       console.error('Raw error:', err);
       const errorDetails = {
@@ -222,6 +317,8 @@ export default function CreditScorePage() {
         userMessage += 'Please check your internet connection.';
       } else if (err?.message?.includes('validation')) {
         userMessage += 'Please check your input details.';
+      } else if (err?.message?.includes('Server error')) {
+        userMessage += 'The server encountered an error. Please try again later.';
       } else {
         userMessage += err.message || 'Please try again later.';
       }
@@ -521,24 +618,58 @@ export default function CreditScorePage() {
                         <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Recent Activity
+                        Recent Activity (Last 6 Months)
                       </h3>
-                      <div className="space-y-2">
-                        {reportData?.enquiries && reportData.enquiries.length > 0 ? (
-                          reportData.enquiries.map((enquiry, index) => (
-                            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-lg p-3 shadow-sm">
-                              <p className="text-xs text-gray-500">Recent Enquiry</p>
-                              <p className="text-sm font-medium text-gray-800 mt-1">
-                                {enquiry.enquiry_type} on {enquiry.enquiry_date}
-                              </p>
-                            </div>
-                          ))
-                        ) : (
-                          <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 shadow-sm">
-                            <p className="text-xs text-gray-500">No recent activity</p>
-                            <p className="text-xs text-gray-400 mt-1">Upload your report to see your recent credit activities</p>
-                          </div>
-                        )}
+                      <div className="grid grid-cols-2 gap-3">
+                        {/* Enquiries Card */}
+                        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+                          <p className="text-xs text-gray-500">Recent Enquiries</p>
+                          {reportData?.enquiries && reportData.enquiries.length > 0 ? (
+                            (() => {
+                              const reportDate = new Date(reportData.report_created_date);
+                              const sixMonthsAgo = new Date(reportDate);
+                              sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+                              
+                              const recentEnquiries = reportData.enquiries.filter(enquiry => {
+                                const enquiryDate = new Date(enquiry.enquiry_date);
+                                return enquiryDate >= sixMonthsAgo && enquiryDate <= reportDate;
+                              });
+
+                              return (
+                                <p className="text-sm font-medium text-gray-800 mt-1">
+                                  {recentEnquiries.length} enquiries
+                                </p>
+                              );
+                            })()
+                          ) : (
+                            <p className="text-sm font-medium text-gray-800 mt-1">--</p>
+                          )}
+                        </div>
+
+                        {/* New Accounts Card */}
+                        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+                          <p className="text-xs text-gray-500">New Accounts</p>
+                          {reportData?.active_accounts && reportData.active_accounts.length > 0 ? (
+                            (() => {
+                              const reportDate = new Date(reportData.report_created_date);
+                              const sixMonthsAgo = new Date(reportDate);
+                              sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+                              
+                              const newAccounts = reportData.active_accounts.filter(account => {
+                                const accountOpenDate = new Date(account.date_opened);
+                                return accountOpenDate >= sixMonthsAgo && accountOpenDate <= reportDate;
+                              });
+
+                              return (
+                                <p className="text-sm font-medium text-gray-800 mt-1">
+                                  {newAccounts.length} accounts
+                                </p>
+                              );
+                            })()
+                          ) : (
+                            <p className="text-sm font-medium text-gray-800 mt-1">--</p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

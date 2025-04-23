@@ -45,72 +45,10 @@ export interface CreditCard {
 
 export const creditCards: CreditCard[] = [
   {
-    id: 'emeralde-private-metal',
-    name: 'Emeralde Private Metal Credit Card',
-    bank: 'ICICI Bank',
-    image: '/credit-cards/ICICI-Emeralde-Metal.png',
-    apr: '41.88% p.a.',
-    annualFee: '₹12,499 + GST',
-    joiningFee: '₹12,499 + GST',
-    rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
-    rupay: true,
-    features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
-    feedback: [
-      { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
-      { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08", userId: "user456", userName: "Jane Smith", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" }
-    ],
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments\n\nRedemption:\n• 1 Reward Point = up to ₹1 for flights, hotels, and select brand vouchers\n• ₹0.60 for rewards catalogue\n• ₹0.40 for statement credit\n\nCaps:\n• 1,000 points per category per statement cycle for grocery, education, and utilities\n• 5,000 points per statement cycle for insurance payments',
-      welcomeBonus: '12,500 ICICI Reward Points: Credited upon payment of joining or annual fee\n Taj Epicure Membership:\n• 25% off on F&B\n• 20% off on Qmin App orders, spa, and salon services\n• One-time 20% off on room/suite bookings at select Taj properties\n EazyDiner Prime Membership:\n• 25%-50% discounts at 3,000+ restaurants in India and Dubai\n• Complimentary cake/dessert on special occasions\n• 2,000 EazyPoints as a welcome bonus',
-      milestoneBenefits: [
-        '₹3,000 EaseMyTrip Voucher on spending ₹4 lakh annually',
-        'Additional ₹3,000 Voucher on reaching ₹8 lakh annual spend',
-        'Total travel vouchers worth ₹6,000 per year'
-      ],
-      airportLounge: 'Travel & Lifestyle Benefits:\n\nUnlimited Airport Lounge Access:\n• Domestic: via Mastercard\n• International: via Priority Pass for primary and add-on cardholders\n\nGolf Privileges:\n• Unlimited complimentary rounds and lessons each month\n\nBookMyShow Offer:\n• Buy 1 ticket, get up to ₹750 off on the second ticket, twice a month\n\nConcierge Services:\n• 24x7 assistance for travel bookings, reservations, and more',
-      insuranceCover: [
-        'Air Accident Cover: ₹3 crore',
-        'Purchase Protection: ₹1.4 lakh',
-        'Credit Shield: ₹1 lakh',
-        'Travel Inconvenience Covers:',
-        '• Baggage loss/delay',
-        '• Passport loss',
-        '• Missed connections',
-        '• Flight delays'
-      ],
-      additionalServices: 'Additional Features:\n\n• Foreign Currency Mark-up: 2% + GST\n• Fuel Surcharge Waiver: 1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle\n• Zero Cancellation Charges: Refunds up to ₹12,000 annually for flight/hotel bookings canceled (maximum of two transactions per year)',
-      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
-      internationalTransactionFee: '2% + GST',
-      interestRate: '3.49% per month',
-      emiOptions: 'Available on airline tickets above ₹20,000',
-      diningPrivileges: [
-        '20% discount at airport restaurants',
-        'Complimentary drinks at partner lounges'
-      ],
-      minimumSpend: '₹40,000 per month',
-      paymentDueDays: '25 days',
-      creditLimit: 'Up to ₹10,00,000',
-      domesticTransactionFee: 'Nil',
-      idealFor: [
-        'High Net-Worth Individuals: Perfect for those with significant annual spending who demand the finest in travel and lifestyle benefits',
-        'Luxury Travel Enthusiasts: Get unlimited domestic and international lounge access, comprehensive travel insurance, and premium concierge services',
-        'Golf Lovers: Enjoy unlimited complimentary golf rounds and lessons each month',
-        'Premium Dining Connoisseurs: Access exclusive dining privileges with Taj Epicure membership and EazyDiner Prime benefits'
-      ],
-      notIdealFor: [
-        'Users with annual spending below ₹6L',
-        'Those seeking basic rewards or cashback features',
-        'Budget-conscious travelers',
-        'Users who will not utilize premium lifestyle benefits'
-      ],
-      summary: 'Ideal for high-income individuals who travel frequently, enjoy luxury experiences, and seek premium lifestyle and concierge benefits.'
-    }
-  },
-  {
     id: 'uni-pay-1-3rd',
     name: 'Uni Pay 1/3rd Card',
     bank: 'Uni Cards',
-    image: '/credit-cards/uni-pay-1-3rd.png',
+    image: '/credit-cards/Uni-Pay.png',
     apr: 'N/A',
     annualFee: 'Lifetime Free',
     joiningFee: 'Lifetime Free',
@@ -164,7 +102,7 @@ export const creditCards: CreditCard[] = [
     id: 'uni-goldx',
     name: 'Uni GoldX Credit Card',
     bank: 'Uni Cards',
-    image: '/credit-cards/uni-goldx.png',
+    image: '/credit-cards/Uni-Gold.png',
     apr: 'N/A',
     annualFee: 'Lifetime Free',
     joiningFee: 'Lifetime Free',
@@ -213,6 +151,57 @@ export const creditCards: CreditCard[] = [
         'Individuals who don\'t shop frequently on Uni Store'
       ],
       summary: 'A unique credit card that rewards spending with digital gold, offering zero forex markup and enhanced rewards on store purchases, making it ideal for those looking to accumulate gold while spending.'
+    }
+  },
+  {
+    id: 'kiwi-upi',
+    name: 'Kiwi UPI Credit Card',
+    bank: 'Axis Bank and Yes Bank',
+    image: '/credit-cards/Kiwi.png',
+    apr: '52.86% p.a.',
+    annualFee: 'Lifetime Free',
+    joiningFee: 'Lifetime Free',
+    rewards: '1% cashback on all UPI transactions\n2% cashback on Scan & Pay transactions at large merchants',
+    rupay: true,
+    features: [
+      'UPI Integration',
+      'Virtual Card',
+      'Instant Issuance',
+      'NPCI Certified'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Rewards Structure:\n• 1% cashback on all UPI transactions\n• 2% cashback on Scan & Pay transactions at large merchants\n• Up to 5% cashback on achieving specific spend thresholds under Kiwi Neon membership\n• Rewards earned in Kiwis (1 Kiwi = ₹0.25)\n• Cashback credited directly to bank account',
+      welcomeBonus: 'N/A',
+      milestoneBenefits: [
+        'Up to 5% cashback on achieving specific spend thresholds under Kiwi Neon membership',
+        'Complimentary airport lounge access upon meeting certain spend milestones (for Kiwi Neon members)'
+      ],
+      airportLounge: 'Complimentary access upon meeting certain spend milestones (available to Kiwi Neon members)',
+      insuranceCover: [
+        'Basic purchase protection included'
+      ],
+      movieBenefits: 'N/A',
+      diningPrivileges: [],
+      minimumSpend: 'No minimum spend requirement',
+      paymentDueDays: '25 days',
+      creditLimit: 'Based on credit assessment',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: 'N/A (UPI only)',
+      interestRate: '3.6% per month',
+      emiOptions: 'Available on eligible transactions',
+      additionalServices: 'Additional Features:\n\n• Instant Card Issuance: Virtual card issued instantly upon approval\n• UPI Compatibility: Works with all major UPI apps\n• Security: NPCI certified for secure transactions\n• Late Payment Charges:\n  - Up to ₹500: ₹0\n  - ₹501–₹5,000: ₹500\n  - ₹5,001–₹10,000: ₹750\n  - Above ₹10,000: ₹1,200',
+      idealFor: [
+        'Individuals seeking a lifetime-free credit card with UPI integration',
+        'Users who frequently make UPI transactions and wish to earn cashback',
+        'Salaried professionals with a good credit score looking for a virtual credit card solution'
+      ],
+      notIdealFor: [
+        'Individuals without a smartphone or access to UPI apps',
+        'Users who prefer physical credit cards',
+        'Those with a credit score below 720 or annual income less than ₹3 lakh'
+      ],
+      summary: 'A unique virtual RuPay credit card that integrates with UPI, offering cashback rewards on UPI transactions and instant issuance, making it ideal for digital-first users who prefer UPI payments.'
     }
   }
 ]; 
