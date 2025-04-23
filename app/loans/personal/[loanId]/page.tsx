@@ -1,25 +1,94 @@
 'use client'
 
-import { useState, use, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
-import { personalLoans, type PersonalLoan, type UserFeedback } from '@/app/data/personalLoans'
-import { supabase, type Review } from '@/lib/supabase'
+import { personalLoans } from '@/app/data/personalLoans'
+import { supabase, type Review as SupabaseReview } from '@/lib/supabase'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { Input } from '@/components/ui/input'
 
-export default function PersonalLoanDetail({ params }: { params: Promise<{ loanId: string }> }) {
+interface PersonalLoan {
+  id: string;
+  name: string;
+  description: string;
+  provider: string;
+  minAmount: number;
+  maxAmount: number;
+  minTenure: number;
+  maxTenure: number;
+  interestRate: number;
+  processingFee: number;
+  requirements: string[];
+  features: string[];
+  documents: string[];
+  bank: string;
+  feedback?: {
+    rating: number;
+    count: number;
+  };
+  eligibilityProfiles: Array<{
+    name: string;
+    minIncome: number;
+    minAge: number;
+    maxAge: number;
+    employmentType: string;
+  }>;
+  requiredItems: Array<{
+    name: string;
+    description: string;
+  }>;
+  additionalDetails?: {
+    idealFor?: string[];
+    notIdealFor?: string[];
+    requiredDocuments?: string[];
+    prepaymentCharges?: string;
+    foreclosureCharges?: string;
+    disbursalTime?: string;
+    eligibility?: {
+      minAge?: number;
+      maxAge?: number;
+      minIncome?: number;
+      employmentType?: string[];
+      creditScore?: number;
+    };
+  };
+}
+
+interface Review {
+  id: string;
+  userId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+interface UserFeedback {
+  rating: number;
+  comment: string;
+}
+
+interface PageProps {
+  params: {
+    loanId: string;
+  };
+}
+
+export default function PersonalLoanDetail({ params }: PageProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'eligibility' | 'documents' | 'reviews'>('overview')
   const [reviews, setReviews] = useState<Review[]>([])
   const [newReview, setNewReview] = useState({ rating: 0, comment: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [user, setUser] = useState<User | null>(null)
+  const [loan, setLoan] = useState<PersonalLoan | null>(null)
+  const [rating, setRating] = useState<string>('5')
+  const [comment, setComment] = useState<string>('')
   
-  const { loanId } = use(params)
-  const loan = personalLoans.find(l => l.id === loanId)
+  const { loanId } = params
   
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -45,6 +114,24 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
 
     fetchReviews()
   }, [loanId])
+  
+  // Find loan by ID
+  useEffect(() => {
+    const fetchLoan = () => {
+      try {
+        const foundLoan = personalLoans.find((l) => l.id === params.loanId)
+        if (foundLoan) {
+          setLoan(foundLoan as PersonalLoan)
+        } else {
+          setError('Loan not found')
+        }
+      } catch (err) {
+        setError('Error fetching loan details')
+      }
+    }
+
+    fetchLoan()
+  }, [params.loanId])
   
   if (!loan) {
     return (
@@ -153,11 +240,11 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Loan Amount Range</h4>
-                  <p className="text-gray-600">₹{loan.minAmount} - {loan.maxAmount}</p>
+                  <p className="text-gray-600">₹{loan.minAmount?.toLocaleString('en-IN')} - ₹{loan.maxAmount?.toLocaleString('en-IN')}</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Tenure Range</h4>
-                  <p className="text-gray-600">{loan.minTenure} - {loan.maxTenure}</p>
+                  <p className="text-gray-600">{loan.minTenure} - {loan.maxTenure} months</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Prepayment Charges</h4>
@@ -177,7 +264,7 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
               <div className="flex flex-wrap gap-3">
-                {loan.features.map((feature, index) => (
+                {loan.features.map((feature: string, index: number) => (
                   <span
                     key={index}
                     className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
@@ -197,8 +284,14 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
                     Ideal For
                   </h4>
                   <div className="space-y-4">
-                    {loan.additionalDetails?.idealFor?.map((profile, index) => {
-                      const [title, description] = profile.split(': ');
+                    {loan.eligibilityProfiles.map((profile: {
+                      name: string;
+                      minIncome: number;
+                      minAge: number;
+                      maxAge: number;
+                      employmentType: string;
+                    }, index: number) => {
+                      const [title, description] = profile.name.split(': ');
                       return (
                         <div key={index} className="flex gap-4">
                           <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -223,10 +316,13 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
                     Not Ideal For
                   </h4>
                   <ul className="space-y-3">
-                    {loan.additionalDetails?.notIdealFor?.map((item, index) => (
+                    {loan.requiredItems.map((item: {
+                      name: string;
+                      description: string;
+                    }, index: number) => (
                       <li key={index} className="flex items-start gap-2 text-red-700">
                         <span className="mt-1.5">•</span>
-                        <span>{item}</span>
+                        <span>{item.name}</span>
                       </li>
                     ))}
                   </ul>
@@ -267,7 +363,7 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Required Documents</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-600">
-                {loan.additionalDetails?.requiredDocuments?.map((doc, index) => (
+                {loan.documents.map((doc: string, index: number) => (
                   <li key={index}>{doc}</li>
                 ))}
               </ul>
@@ -336,7 +432,7 @@ export default function PersonalLoanDetail({ params }: { params: Promise<{ loanI
 
               {/* Reviews List */}
               <div className="space-y-6">
-                {loan.feedback.map((review, index) => (
+                {reviews.map((review: Review, index: number) => (
                   <div key={index} className="border-b border-gray-100 last:border-0 pb-6 last:pb-0">
                     <div className="flex items-center justify-between mb-2">
                       <div className={`text-lg font-bold ${getSentimentColor(review.rating)}`}>
