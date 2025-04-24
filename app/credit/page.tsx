@@ -171,47 +171,8 @@ function CreditProductComparisonContent() {
 
     // Filter by category if specified
     if (category) {
-      switch (category) {
-        case 'fintech':
-          filtered = filtered.filter(card => card.categories.includes('fintech'));
-          break;
-        case 'airlines':
-          filtered = filtered.filter(card => card.categories.includes('airlines'));
-          break;
-        case 'hotels':
-          filtered = filtered.filter(card => card.categories.includes('hotels'));
-          break;
-        case 'premium':
-          filtered = filtered.filter(card => card.categories.includes('premium'));
-          break;
-        case 'rewards':
-          filtered = filtered.filter(card => card.categories.includes('rewards'));
-          break;
-        case 'cashback':
-          filtered = filtered.filter(card => card.categories.includes('cashback'));
-          break;
-        case 'fuel':
-          filtered = filtered.filter(card => card.categories.includes('fuel'));
-          break;
-        case 'lifetime-free':
-          filtered = filtered.filter(card => card.categories.includes('lifetime-free'));
-          break;
-        case 'forex':
-          filtered = filtered.filter(card => card.categories.includes('forex'));
-          break;
-        case 'upi':
-          filtered = filtered.filter(card => card.rupay === true || card.categories.includes('upi'));
-          break;
-        case 'emi':
-          filtered = filtered.filter(card => card.categories.includes('emi'));
-          break;
-        case 'domestic-lounge':
-          filtered = filtered.filter(card => card.categories.includes('domestic-lounge'));
-          break;
-        case 'international-lounge':
-          filtered = filtered.filter(card => card.categories.includes('international-lounge'));
-          break;
-      }
+      // Only show cards that have the specified category in their categories array
+      filtered = filtered.filter(card => card.categories.includes(category))
     }
 
     // Filter by search query

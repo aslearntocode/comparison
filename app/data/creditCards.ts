@@ -176,7 +176,7 @@ export const creditCards: CreditCard[] = [
     name: 'Axis Bank Privilege Credit Card',
     bank: 'Axis Bank',
     category: 'airlines',
-    image: '/credit-cards/ICICI-Sapphiro.png',
+    image: '/credit-cards/Axis-Privilege.png',
     apr: '42% p.a.',
     annualFee: '₹3,500 + GST',
     joiningFee: '₹6,000 + GST',
@@ -326,7 +326,7 @@ export const creditCards: CreditCard[] = [
     rupay: true,
     features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
     categories: [
-      'premium',
+      // 'premium',
       'rewards',
       'cashback',
       'fuel'
@@ -456,7 +456,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'domestic-lounge',
       'international-lounge',
-      'fuel'
+      'fuel',
+      'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -525,7 +526,9 @@ export const creditCards: CreditCard[] = [
       'international-lounge',
       'hotel',
       'hotels',
-      'emi'
+      'emi',
+      'upi',
+      'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -584,8 +587,7 @@ export const creditCards: CreditCard[] = [
       'international-travel',
       'domestic-lounge',
       'international-lounge',
-      'hotel',
-      'hotels'
+      'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -643,7 +645,8 @@ export const creditCards: CreditCard[] = [
       'travel',
       'domestic-lounge',
       'upi',
-      'lifetime-free'
+      'lifetime-free',
+      'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -900,9 +903,10 @@ export const creditCards: CreditCard[] = [
       'Contactless Payments'
     ],
     categories: [
-      'premium',
+      // 'premium',
       'lifestyle',
-      'domestic-lounge'
+      'domestic-lounge',
+      'upi'
     ],
     feedback: [],
     additionalDetails: {
@@ -951,7 +955,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'customizable',
       'fuel',
-      'emi'
+      'emi',
+      'upi'
     ],
     feedback: [],
     additionalDetails: {
