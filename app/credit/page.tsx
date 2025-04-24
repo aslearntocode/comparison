@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header"
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { creditCards, type CreditCard, type UserFeedback } from '../data/creditCards'
@@ -11,7 +11,7 @@ import { supabase, type Review } from '@/lib/supabase'
 type SortField = 'apr' | 'annualFee' | 'joiningFee' | 'rewards' | 'sentiment';
 type SortDirection = 'asc' | 'desc';
 
-export default function CreditProductComparison() {
+function CreditProductComparisonContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = useState('')
@@ -532,5 +532,13 @@ export default function CreditProductComparison() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function CreditProductComparison() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CreditProductComparisonContent />
+    </Suspense>
   )
 }
