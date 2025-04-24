@@ -194,10 +194,7 @@ function CreditProductComparisonContent() {
           filtered = filtered.filter(card => card.categories.includes('fuel'));
           break;
         case 'lifetime-free':
-          filtered = filtered.filter(card => 
-            card.annualFee.toLowerCase().includes('free') || 
-            card.features.some(f => f.toLowerCase().includes('lifetime free'))
-          );
+          filtered = filtered.filter(card => card.categories.includes('lifetime-free'));
           break;
         case 'forex':
           filtered = filtered.filter(card => card.categories.includes('forex'));
@@ -205,11 +202,8 @@ function CreditProductComparisonContent() {
         case 'upi':
           filtered = filtered.filter(card => card.rupay === true || card.categories.includes('upi'));
           break;
-        case 'international-travel':
-          filtered = filtered.filter(card => card.categories.includes('international-travel'));
-          break;
-        case 'travel':
-          filtered = filtered.filter(card => card.categories.includes('travel'));
+        case 'emi':
+          filtered = filtered.filter(card => card.categories.includes('emi'));
           break;
         case 'domestic-lounge':
           filtered = filtered.filter(card => card.categories.includes('domestic-lounge'));
@@ -246,10 +240,8 @@ function CreditProductComparisonContent() {
       case 'fuel': return 'Fuel Credit Cards'
       case 'lifetime-free': return 'Lifetime Free Credit Cards'
       case 'forex': return 'Forex Credit Cards'
-      // case 'upi': return 'RuPay Credit Cards'
       case 'upi': return 'UPI Credit Cards'
-      case 'international-travel': return 'International Travel Credit Cards'
-      case 'travel': return 'Travel Credit Cards'
+      case 'emi': return 'EMI Credit Cards'
       case 'domestic-lounge': return 'Domestic Lounge Access Credit Cards'
       case 'international-lounge': return 'International Lounge Access Credit Cards'
       case 'airlines': return 'Airlines Credit Cards'

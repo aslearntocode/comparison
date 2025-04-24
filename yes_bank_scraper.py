@@ -1,98 +1,39 @@
-import os
 import requests
 from bs4 import BeautifulSoup
-import json
-from dotenv import load_dotenv
+import pandas as pd
 
-# Load environment variables from .env.local
-load_dotenv('.env.local')
+# URL for BankBazaar credit cards page
+url = 'https://www.bankbazaar.com/credit-card.html'
 
-def scrape_credit_cards():
-    url = "https://www.yesbank.in/personal-banking/yes-individual/cards/credit-cards"
+# Send request to the website
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Find all card containers in the page (this may vary depending on the website structure)
+cards = soup.find_all('div', class_='card-listing')
+
+# Initialize list to store card details
+card_data = []
+
+# Loop through each card and extract details
+for card in cards:
+    card_name = card.find('h3').text.strip() if card.find('h3') else 'N/A'
+    bank_name = card.find('p', class_='card-provider').text.strip() if card.find('p', class_='card-provider') else 'N/A'
+    annual_fee = card.find('div', class_='annual-fee').text.strip() if card.find('div', class_='annual-fee') else 'N/A'
+    reward_points = card.find('div', class_='reward-points').text.strip() if card.find('div', class_='reward-points') else 'N/A'
     
-    try:
-        print("Sending request to Yes Bank website...")
-        # Send GET request to the URL
-        response = requests.get(url)
-        response.raise_for_status()
-        print("Received response from website")
-        
-        # Parse the HTML content
-        soup = BeautifulSoup(response.text, 'html.parser')
-        print("Parsed HTML content")
-        
-        # Find all credit card sections
-        card_sections = soup.find_all('div', class_='card-section')
-        print(f"Found {len(card_sections)} card sections")
-        
-        if len(card_sections) == 0:
-            print("No card sections found. Printing page structure:")
-            print(soup.prettify()[:1000])  # Print first 1000 characters of HTML
-        
-        cards_data = []
-        
-        for section in card_sections:
-            try:
-                # Extract card name
-                card_name = section.find('h3').text.strip()
-                print(f"Processing card: {card_name}")
-                
-                # Extract card image URL
-                card_image = section.find('img')['src']
-                if not card_image.startswith('http'):
-                    card_image = f"https://www.yesbank.in{card_image}"
-                
-                # Extract card features
-                features = []
-                feature_list = section.find_all('li')
-                for feature in feature_list:
-                    features.append(feature.text.strip())
-                
-                # Extract card benefits
-                benefits = []
-                benefit_list = section.find_all('div', class_='benefit-item')
-                for benefit in benefit_list:
-                    benefits.append(benefit.text.strip())
-                
-                # Create card data dictionary
-                card_data = {
-                    'card_name': card_name,
-                    'card_image': card_image,
-                    'features': features,
-                    'benefits': benefits
-                }
-                
-                cards_data.append(card_data)
-                print(f"Successfully processed card: {card_name}")
-                
-            except Exception as e:
-                print(f"Error processing card section: {str(e)}")
-                continue
-        
-        return cards_data
-    
-    except Exception as e:
-        print(f"Error scraping website: {str(e)}")
-        return []
+    # Append data to list
+    card_data.append({
+        'Card Name': card_name,
+        'Bank Name': bank_name,
+        'Annual Fee': annual_fee,
+        'Reward Points': reward_points
+    })
 
-def save_to_json(cards_data):
-    try:
-        with open('yes_bank_cards.json', 'w', encoding='utf-8') as f:
-            json.dump(cards_data, f, indent=4, ensure_ascii=False)
-        print("Data successfully saved to yes_bank_cards.json")
-    
-    except Exception as e:
-        print(f"Error saving data to JSON: {str(e)}")
+# Convert the list of cards into a DataFrame
+df = pd.DataFrame(card_data)
 
-def main():
-    # Scrape credit card data
-    cards_data = scrape_credit_cards()
-    
-    if cards_data:
-        # Save data to JSON file
-        save_to_json(cards_data)
-    else:
-        print("No credit card data found")
+# Save to Excel
+df.to_excel('bankbazaar_credit_cards.xlsx', index=False)
 
-if __name__ == "__main__":
-    main() 
+print("Data scraped and saved to bankbazaar_credit_cards.xlsx")

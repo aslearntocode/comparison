@@ -303,18 +303,11 @@ export default function Header() {
                     <span className="ml-3">UPI</span>
                   </Link>
                   <Link 
-                    href="/credit?category=international-travel" 
+                    href="/credit?category=emi" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">International Travel</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=travel" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Travel</span>
+                    <span className="ml-3">EMI</span>
                   </Link>
                   <Link 
                     href="/credit?category=domestic-lounge" 
@@ -612,18 +605,11 @@ export default function Header() {
                     UPI
                   </Link>
                   <Link 
-                    href="/credit?category=international-travel" 
+                    href="/credit?category=emi" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    International Travel
-                  </Link>
-                  <Link 
-                    href="/credit?category=travel" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    Travel
+                    EMI
                   </Link>
                   <Link 
                     href="/credit?category=domestic-lounge" 
