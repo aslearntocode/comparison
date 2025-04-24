@@ -1161,5 +1161,215 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A super-premium lifestyle credit card offering comprehensive travel benefits, exclusive event access, and premium lifestyle privileges, ideal for ultra-HNIs and frequent travelers who can meet the high annual spend requirement.'
     }
+  },
+  {
+    id: 'hdfc-indigo-6e-rewards',
+    name: 'HDFC Bank IndiGo 6E Rewards Credit Card',
+    bank: 'HDFC Bank',
+    category: 'airlines',
+    image: '/credit-cards/HDFC-Indigo.png',
+    apr: '42% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rewards: '2.5% 6E Rewards on IndiGo bookings\n2% on dining, groceries, and entertainment\n1% on other spends',
+    rupay: false,
+    features: [
+      'Complimentary IndiGo Flight Ticket',
+      '6E Prime Add-on Voucher',
+      'Interest-free Credit Period',
+      'Zero Lost Card Liability',
+      'Partner Benefits',
+      'Contactless Payments'
+    ],
+    categories: [
+      'airlines',
+      'rewards',
+      'travel',
+      'domestic-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 2.5% 6E Rewards on IndiGo bookings\n• 2% on dining, groceries, and entertainment\n• 1% on other spends\n\nRedemption:\n• 6E Rewards can be redeemed for IndiGo flight bookings and other services via the IndiGo website or app',
+      welcomeBonus: 'Welcome Benefits:\n• Complimentary IndiGo flight ticket worth ₹1,500 (on meeting spend criteria)\n• 6E Prime Add-on voucher worth ₹899',
+      airportLounge: 'Not specified',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Zero lost card liability on reporting'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Up to 50 days interest-free credit period',
+      additionalServices: 'Additional Benefits:\n• Up to 10% 6E Rewards on IndiGo feature partners\n• Interest-free credit period up to 50 days\n• Zero lost card liability on reporting',
+      idealFor: [
+        'Frequent IndiGo flyers',
+        'Regular travelers on domestic routes',
+        'Those seeking airline-specific rewards'
+      ],
+      notIdealFor: [
+        'International travelers',
+        'Those seeking premium travel benefits',
+        'Users who rarely fly with IndiGo'
+      ],
+      summary: 'A co-branded credit card offering enhanced rewards on IndiGo bookings and partner spends, ideal for frequent IndiGo flyers.'
+    }
+  },
+  {
+    id: 'sbi-krisflyer',
+    name: 'SBI Card KrisFlyer Credit Card',
+    bank: 'SBI Card',
+    category: 'airlines',
+    image: '/credit-cards/SBI-KrisFlyer.png',
+    apr: '42% p.a.',
+    annualFee: '₹2,999 + GST',
+    joiningFee: '₹2,999 + GST',
+    rewards: '5 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n2 KrisFlyer miles per ₹200 on other spends',
+    rupay: false,
+    features: [
+      'KrisFlyer Miles',
+      'Domestic Lounge Access',
+      'Air Accident Insurance',
+      'Travel Benefits',
+      'Contactless Payments',
+      'EMI Options'
+    ],
+    categories: [
+      'airlines',
+      'rewards',
+      'travel',
+      'domestic-lounge',
+      'international-travel'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 5 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 2 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
+      welcomeBonus: 'Welcome Benefits:\n• 3,000 KrisFlyer miles on first spend within 60 days',
+      airportLounge: 'Complimentary domestic lounge access',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air accident insurance cover up to ₹3.5 crore'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      additionalServices: 'Additional Benefits:\n• Complimentary domestic lounge access\n• Air accident insurance cover up to ₹3.5 crore',
+      idealFor: [
+        'Frequent Singapore Airlines flyers',
+        'International travelers',
+        'Those seeking airline miles'
+      ],
+      notIdealFor: [
+        'Domestic-only travelers',
+        'Budget-conscious users',
+        'Those who rarely fly with Singapore Airlines'
+      ],
+      summary: 'A co-branded credit card offering KrisFlyer miles on spends, ideal for frequent Singapore Airlines flyers and international travelers.'
+    }
+  },
+  {
+    id: 'sbi-krisflyer-apex',
+    name: 'SBI Card KrisFlyer Apex Credit Card',
+    bank: 'SBI Card',
+    category: 'airlines',
+    image: '/credit-cards/SBI-Apex.png',
+    apr: '42% p.a.',
+    annualFee: '₹9,999 + GST',
+    joiningFee: '₹9,999 + GST',
+    rewards: '10 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n8 KrisFlyer miles per ₹200 on overseas spends\n6 KrisFlyer miles per ₹200 on other spends',
+    rupay: false,
+    features: [
+      'KrisFlyer Miles',
+      'International Lounge Access',
+      'Air Accident Insurance',
+      'Travel Benefits',
+      'Contactless Payments',
+      'EMI Options'
+    ],
+    categories: [
+      'airlines',
+      'rewards',
+      'travel',
+      'domestic-lounge',
+      'international-lounge',
+      'international-travel'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 10 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 8 KrisFlyer miles per ₹200 on overseas spends\n• 6 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
+      welcomeBonus: 'Welcome Benefits:\n• 10,000 KrisFlyer miles on first spend within 60 days',
+      milestoneBenefits: [
+        '10,000 KrisFlyer miles on annual spend of ₹5 lakh'
+      ],
+      airportLounge: 'Complimentary domestic and international lounge access',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air accident insurance cover up to ₹3.5 crore'
+      ],
+      minimumSpend: '₹5,00,000 for milestone benefits',
+      paymentDueDays: 'Not specified',
+      additionalServices: 'Additional Benefits:\n• Complimentary domestic and international lounge access\n• Air accident insurance cover up to ₹3.5 crore\n• Milestone benefits: 10,000 KrisFlyer miles on annual spend of ₹5 lakh',
+      idealFor: [
+        'Frequent Singapore Airlines flyers',
+        'International travelers',
+        'High-spending individuals',
+        'Those seeking premium travel benefits'
+      ],
+      notIdealFor: [
+        'Domestic-only travelers',
+        'Budget-conscious users',
+        'Those who rarely fly with Singapore Airlines'
+      ],
+      summary: 'A premium co-branded credit card offering enhanced KrisFlyer miles on spends, comprehensive travel benefits, and milestone rewards, ideal for frequent international travelers.'
+    }
+  },
+  {
+    id: 'indusind-avios-visa-infinite',
+    name: 'IndusInd Bank Avios Visa Infinite Credit Card',
+    bank: 'IndusInd Bank',
+    category: 'airlines',
+    image: '/credit-cards/IndusInd-Avios.png',
+    apr: '42% p.a.',
+    annualFee: '₹5,000 + GST',
+    joiningFee: '₹10,000 + GST',
+    rewards: 'Up to 5X Avios on spends with British Airways and Qatar Airways\n1.5 Avios per ₹100 on other spends',
+    rupay: false,
+    features: [
+      'Avios Points',
+      'International Lounge Access',
+      'Airport Fast Track',
+      'Airport Transfer Discounts',
+      'Travel Insurance',
+      'Contactless Payments'
+    ],
+    categories: [
+      'airlines',
+      'rewards',
+      'travel',
+      'domestic-lounge',
+      'international-lounge',
+      'international-travel'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• Up to 5X Avios on spends with British Airways and Qatar Airways\n• 1.5 Avios per ₹100 on other spends\n\nRedemption:\n• Avios points can be redeemed for flights, upgrades, and other services with partner airlines like British Airways and Qatar Airways',
+      welcomeBonus: 'Welcome Benefits:\n• 20,000 Avios points on card activation',
+      airportLounge: 'Complimentary domestic and international lounge access',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Personal air accident insurance cover up to ₹25 lakh'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      additionalServices: 'Additional Benefits:\n• 1.5% discounted forex markup fee\n• 25% discount on Airport Fast Track immigration services at over 450 destinations\n• 20% discount on airport transfer services in major cities worldwide',
+      idealFor: [
+        'Frequent British Airways and Qatar Airways flyers',
+        'International travelers',
+        'Those seeking premium travel benefits',
+        'High-spending individuals'
+      ],
+      notIdealFor: [
+        'Domestic-only travelers',
+        'Budget-conscious users',
+        'Those who rarely fly with partner airlines'
+      ],
+      summary: 'A premium credit card offering Avios points on spends, comprehensive travel benefits, and exclusive airport services, ideal for frequent international travelers.'
+    }
   }
 ]; 
