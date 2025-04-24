@@ -351,5 +351,54 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A budget-friendly credit card offering basic features and straightforward rewards on UPI transactions, ideal for cost-conscious users.'
     }
+  },
+  {
+    id: 'au-zenith-plus',
+    name: 'AU Zenith+ Credit Card',
+    bank: 'AU Small Finance Bank',
+    image: '/credit-cards/AU-Zenith.png',
+    apr: '42% p.a.',
+    annualFee: '₹4,999 + GST',
+    joiningFee: '₹4,999 + GST',
+    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Railway Lounge Access',
+      'Travel Insurance',
+      'Lifestyle Privileges',
+      'Forex Benefits',
+      'Lifetime Free Add-on Cards'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air Accident Cover: ₹2 crore',
+        'Credit Shield: ₹15 lakh',
+        'Purchase Protection: ₹50,000',
+        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+      ],
+      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+      diningPrivileges: [
+        'Exclusive dining privileges and offers'
+      ],
+      minimumSpend: '₹8,00,000 for annual fee waiver',
+      internationalTransactionFee: '0.99%',
+      additionalServices: 'Lifetime free add-on cards for family members',
+      idealFor: [
+        'High-income individuals with substantial monthly expenditures',
+        'Frequent travelers seeking lounge access and travel-related perks',
+        'Users who prioritize dining and lifestyle benefits'
+      ],
+      notIdealFor: [
+        'Individuals with moderate or low spending habits',
+        'Those seeking a no-frills, low-fee credit card'
+      ],
+      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+    }
   }
 ]; 

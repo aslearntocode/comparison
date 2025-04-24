@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation'
 import { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { creditCards, type CreditCard, type UserFeedback } from '../data/cobrand'
+import { type CreditCard, type UserFeedback } from '../data/creditCards'
+import { cobrandedCards } from '../data/cobrandedCards'
 import { supabase, type Review } from '@/lib/supabase'
 
 type SortField = 'apr' | 'annualFee' | 'joiningFee' | 'rewards' | 'sentiment';
@@ -163,7 +164,7 @@ export default function CreditProductComparison() {
   // Filter and sort credit cards
   const filteredCards = useMemo(() => {
     const query = searchQuery.toLowerCase()
-    const filtered = creditCards.filter(card => 
+    const filtered = cobrandedCards.filter(card => 
       card.name.toLowerCase().includes(query) ||
       card.features.some(feature => feature.toLowerCase().includes(query)) ||
       card.rewards.toLowerCase().includes(query) ||

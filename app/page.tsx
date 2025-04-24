@@ -17,6 +17,9 @@ import CreditCardVsLoanComparison from '@/components/CreditCardVsLoanComparison'
 import RewardPointsComparison from '@/components/RewardPointsComparison'
 import { useRouter } from 'next/navigation'
 import { Dialog } from '@headlessui/react'
+import { creditCards, type CreditCard } from '@/app/data/creditCards'
+import { cobrandedCards } from '@/app/data/cobrandedCards'
+import { fintechCards } from '@/app/data/fintechCards'
 
 interface AllocationItem {
   name: string;
@@ -83,6 +86,9 @@ export default function Home() {
     issuer: '',
     complaint: ''
   })
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<CreditCard[]>([])
+  const [isSearching, setIsSearching] = useState(false)
 
   const testimonials = [
     {
@@ -698,10 +704,160 @@ export default function Home() {
     }))
   }
 
+  // Improved search function
+  const handleSearch = (query: string) => {
+    setSearchQuery(query)
+    if (query.trim() === '') {
+      setSearchResults([])
+      setIsSearching(false)
+      return
+    }
+
+    setIsSearching(true)
+    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0)
+    
+    // Combine all card types for searching
+    const allCards = [
+      ...creditCards,
+      ...cobrandedCards,
+      ...fintechCards
+    ]
+    
+    // Search across all credit cards with improved matching
+    const results = allCards.filter(card => {
+      // Create a comprehensive searchable text that includes all relevant fields
+      const searchableText = `
+        ${card.name.toLowerCase()} 
+        ${card.bank.toLowerCase()} 
+        ${card.rewards.toLowerCase()} 
+        ${card.features.join(' ').toLowerCase()} 
+        ${card.additionalDetails?.rewardsProgram?.toLowerCase() || ''} 
+        ${card.additionalDetails?.welcomeBonus?.toLowerCase() || ''} 
+        ${card.additionalDetails?.airportLounge?.toLowerCase() || ''}
+        ${card.additionalDetails?.insuranceCover?.join(' ').toLowerCase() || ''}
+        ${card.additionalDetails?.diningPrivileges?.join(' ').toLowerCase() || ''}
+        ${card.additionalDetails?.movieBenefits?.toLowerCase() || ''}
+        ${card.additionalDetails?.idealFor?.join(' ').toLowerCase() || ''}
+        ${card.additionalDetails?.notIdealFor?.join(' ').toLowerCase() || ''}
+        ${card.additionalDetails?.summary?.toLowerCase() || ''}
+      `.replace(/\s+/g, ' ').trim()
+
+      // Check if all search terms are present in the searchable text
+      return searchTerms.every(term => searchableText.includes(term))
+    }).sort((a, b) => {
+      // Score each card based on where the match was found
+      const scoreCard = (card: CreditCard, term: string) => {
+        let score = 0
+        const termLower = term.toLowerCase()
+        
+        // Highest priority - card name and bank
+        if (card.name.toLowerCase().includes(termLower)) score += 10
+        if (card.bank.toLowerCase().includes(termLower)) score += 8
+        
+        // High priority - rewards and features
+        if (card.rewards.toLowerCase().includes(termLower)) score += 6
+        if (card.features.some(f => f.toLowerCase().includes(termLower))) score += 5
+        
+        // Medium priority - additional details
+        if (card.additionalDetails?.summary?.toLowerCase().includes(termLower)) score += 4
+        if (card.additionalDetails?.rewardsProgram?.toLowerCase().includes(termLower)) score += 3
+        
+        // Lower priority - other fields
+        if (card.additionalDetails?.idealFor?.some(f => f.toLowerCase().includes(termLower))) score += 2
+        if (card.additionalDetails?.welcomeBonus?.toLowerCase().includes(termLower)) score += 1
+        
+        return score
+      }
+
+      // Calculate total score for all search terms
+      const scoreA = searchTerms.reduce((sum, term) => sum + scoreCard(a, term), 0)
+      const scoreB = searchTerms.reduce((sum, term) => sum + scoreCard(b, term), 0)
+      
+      return scoreB - scoreA
+    })
+
+    setSearchResults(results)
+  }
+
   return (
     <div className="min-h-screen">
       <Header />
       
+      {/* Search Box Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 py-8 md:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleSearch(e.target.value)}
+                placeholder="Search for credit cards by name, bank, rewards..."
+                className="w-full px-6 py-4 md:py-4 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-base md:text-lg border-0 md:border-none"
+                style={{
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  appearance: 'none'
+                }}
+              />
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Search Results Dropdown - Mobile Optimized */}
+            {isSearching && searchResults.length > 0 && (
+              <div className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-xl max-h-[70vh] md:max-h-96 overflow-y-auto">
+                {searchResults.map((card: CreditCard) => (
+                  <Link
+                    key={card.id}
+                    href={`/credit/${card.id}`}
+                    className="block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 active:bg-gray-100"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-10 relative flex-shrink-0">
+                        <Image
+                          src={card.image}
+                          alt={card.name}
+                          fill
+                          className="object-contain rounded-lg"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-gray-900 truncate text-base md:text-base">{card.name}</h3>
+                        <p className="text-sm text-gray-500 truncate">{card.bank}</p>
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {card.features.slice(0, 2).map((feature: string, index: number) => (
+                            <span
+                              key={index}
+                              className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs whitespace-nowrap"
+                            >
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* No Results Message - Mobile Optimized */}
+            {isSearching && searchQuery.trim() !== '' && searchResults.length === 0 && (
+              <div className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-xl p-6 text-center">
+                <svg className="w-12 h-12 mx-auto text-gray-400 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="text-gray-500 text-base">No credit cards found matching your search criteria.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -910,7 +1066,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">AI-Powered Analysis</h3>
-                    <p className="text-gray-600">Our AI analyzes your report and generates a personalized video summary explaining your credit score, factors affecting it, and areas for improvement.</p>
+                    <p className="text-gray-600">Our AI analyzes your report and generates a personalized summary explaining your credit score, factors affecting it, and areas for improvement.</p>
                   </div>
                 </div>
 

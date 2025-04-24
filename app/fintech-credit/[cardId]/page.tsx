@@ -4,7 +4,8 @@ import { useState, use, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
-import { creditCards, type UserFeedback } from '../../data/fintech'
+import { type CreditCard, type UserFeedback } from '../../data/creditCards'
+import { fintechCards } from '../../data/fintechCards'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { Button } from '../../../components/ui/button'
@@ -22,7 +23,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   >('welcome-annual');
   
   const { cardId } = use(params)
-  const card = creditCards.find(c => c.id === cardId)
+  const card = fintechCards.find((c: CreditCard) => c.id === cardId)
   const [user, setUser] = useState<User | null>(null)
   const [newReview, setNewReview] = useState({
     rating: 0,
@@ -174,7 +175,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Welcome Benefits</h3>
               <div className="space-y-6">
-                {card.additionalDetails?.welcomeBonus?.split('\n').map((benefit, index) => {
+                {card.additionalDetails?.welcomeBonus?.split('\n').map((benefit: string, index: number) => {
                   if (benefit.endsWith(':')) {
                     // This is a section header (like "Taj Epicure Membership:" or "EazyDiner Prime Membership:")
                     return (
@@ -211,7 +212,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Milestone Benefits</h3>
               <ul className="list-disc list-inside space-y-2">
-                {card.additionalDetails?.milestoneBenefits?.map((benefit, index) => (
+                {card.additionalDetails?.milestoneBenefits?.map((benefit: string, index: number) => (
                   <li key={index} className="text-gray-700">{benefit}</li>
                 ))}
               </ul>
@@ -231,7 +232,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 {/* Rewards Program Section */}
                 <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
-                  {card.additionalDetails?.rewardsProgram?.split('\n').map((line, index) => {
+                  {card.additionalDetails?.rewardsProgram?.split('\n').map((line: string, index: number) => {
                     if (line.endsWith(':')) {
                       return (
                         <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
@@ -291,7 +292,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 {/* Travel & Lifestyle Benefits Section */}
                 <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
-                  {card.additionalDetails?.airportLounge?.split('\n').map((line, index) => {
+                  {card.additionalDetails?.airportLounge?.split('\n').map((line: string, index: number) => {
                     if (line.endsWith(':')) {
                       return (
                         <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
@@ -312,7 +313,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
                   <div className="space-y-2">
-                    {card.additionalDetails?.insuranceCover?.map((item, index) => (
+                    {card.additionalDetails?.insuranceCover?.map((item: string, index: number) => (
                       <div key={index}>
                         {item.startsWith('•') ? (
                           <div className="flex gap-2 ml-4">
@@ -332,7 +333,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 {/* Additional Features Section */}
                 <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
-                  {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
+                  {card.additionalDetails?.additionalServices?.split('\n').map((line: string, index: number) => {
                     if (line.endsWith(':')) {
                       return (
                         <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
@@ -558,7 +559,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Who Should Get Column - Takes 2/3 of space */}
                 <div className="md:col-span-2 space-y-6">
-                  {card.additionalDetails?.idealFor?.map((profile, index) => {
+                  {card.additionalDetails?.idealFor?.map((profile: string, index: number) => {
                     const [title, description] = profile.split(': ');
                     const icons = {
                       'High Net-Worth Professionals': '💼',
@@ -596,7 +597,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                       Not Ideal For
                     </h4>
                     <ul className="space-y-3">
-                      {card.additionalDetails?.notIdealFor?.map((item, index) => (
+                      {card.additionalDetails?.notIdealFor?.map((item: string, index: number) => (
                         <li key={index} className="flex items-start gap-2 text-red-700">
                           <span className="mt-1.5">•</span>
                           <span>{item}</span>

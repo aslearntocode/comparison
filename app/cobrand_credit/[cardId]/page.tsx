@@ -4,7 +4,8 @@ import { useState, use, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
-import { creditCards, type UserFeedback } from '../../data/cobrand'
+import { type CreditCard, type UserFeedback } from '../../data/creditCards'
+import { cobrandedCards } from '../../data/cobrandedCards'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { Button } from '../../../components/ui/button'
@@ -23,7 +24,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   >('welcome-annual');
   
   const { cardId } = use(params)
-  const card = creditCards.find(c => c.id === cardId)
+  const card = cobrandedCards.find(c => c.id === cardId)
   const [user, setUser] = useState<User | null>(null)
   const [newReview, setNewReview] = useState({
     rating: 0,
