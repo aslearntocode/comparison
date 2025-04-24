@@ -1101,5 +1101,65 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A budget-friendly fuel credit card offering basic savings on fuel purchases and surcharge waiver, ideal for budget-conscious drivers.'
     }
+  },
+  {
+    id: 'icici-times-black',
+    name: 'ICICI Bank Times Black Credit Card',
+    bank: 'ICICI Bank',
+    category: 'airlines',
+    image: '/credit-cards/ICICI-Black.png',
+    apr: '42% p.a.',
+    annualFee: '₹20,000 + GST',
+    joiningFee: '₹20,000 + GST',
+    rewards: '2.5% reward points on international spends\n2% reward points on domestic spends\nAccelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)',
+    rupay: false,
+    features: [
+      'Unlimited Lounge Access',
+      'Concierge Services',
+      'Fuel Surcharge Waiver',
+      'Zero Cancellation Charges',
+      'Premium Event Access',
+      'Luxury Transfers'
+    ],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 2.5% reward points on international spends\n• 2% reward points on domestic spends\n• Accelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)\n\nRedemption:\n• Flights, hotels, and premium brand vouchers (1 RP = ₹1)\n• Statement credit redemption at ₹0.40 per RP',
+      welcomeBonus: 'Welcome Benefits:\n• EaseMyTrip luxury hotel voucher worth ₹10,000\n• Visa assistance services via Atlys and OneVasco worth ₹10,000\n• Zomato Gold annual membership\n• Lifestyle gift cards (e.g., Toni&Guy, Interflora) worth ₹4,000\n• Exclusive access to The Quorum Club',
+      milestoneBenefits: [
+        'Klook experiences worth ₹10,000',
+        'Luxury airport transfers via BLADE India/Avis/Indian Travel House worth ₹10,000',
+        'Tata CLiQ Luxury gift card worth ₹10,000',
+        'One-night luxury stay at Ayatana Resorts worth ₹20,000',
+        'Annual fee waiver on spends of ₹25 lakh'
+      ],
+      airportLounge: 'Unlimited complimentary access to domestic and international airport lounges',
+      fuelSurcharge: '1% fuel surcharge waiver (up to ₹1,000 per statement cycle)',
+      insuranceCover: [
+        'Zero cancellation charges on select flight and hotel bookings (limited to 2 incidents per year, up to ₹12,000)'
+      ],
+      minimumSpend: '₹25,00,000 for annual fee waiver',
+      internationalTransactionFee: '1.49% forex markup fee on international transactions',
+      additionalServices: 'Additional Features:\n• 24x7 concierge services via i-Assist\n• Special discounts on brands like Apple, Tumi, Interflora, Kaya Skin Clinic\n• Access to premium events organized by The Times Group, including Times Lit Fest and ET Startup Awards',
+      idealFor: [
+        'Ultra-HNIs and frequent travelers',
+        'High-spending individuals who can meet the ₹25 lakh annual spend requirement',
+        'Those seeking premium lifestyle benefits and exclusive event access',
+        'International travelers looking for comprehensive travel benefits'
+      ],
+      notIdealFor: [
+        'Budget-conscious individuals',
+        'Those with annual spending below ₹25 lakh',
+        'Users seeking basic credit card features',
+        'Individuals who cannot utilize premium lifestyle benefits'
+      ],
+      summary: 'A super-premium lifestyle credit card offering comprehensive travel benefits, exclusive event access, and premium lifestyle privileges, ideal for ultra-HNIs and frequent travelers who can meet the high annual spend requirement.'
+    }
   }
 ]; 
