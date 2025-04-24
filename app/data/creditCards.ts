@@ -233,7 +233,7 @@ export const creditCards: CreditCard[] = [
       { comment: "Decent rewards redemption options", rating: 7, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" }
     ],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10 EDGE Points per ₹200 spent on all purchases\n\nRedemption:\n• Points can be redeemed for a variety of products and vouchers\n• Option to convert points to air miles',
+      rewardsProgram: 'Earning Rate:\n• 10 EDGE Points per ₹200 spent on all purchases\n\nRedemption:\n• Points can be redeemed for a variety of products and vouchers\n• Option to convert points to air miles\n\nEDGE Points Conversion Rates:\n• 1 EDGE Point = ₹0.20 for vouchers and products\n• 1 EDGE Point = ₹0.25 for air miles conversion\n• 1 EDGE Point = ₹0.30 for premium hotel bookings\n• 1 EDGE Point = ₹0.35 for premium flight bookings',
       welcomeBonus: 'Welcome Benefits:\n• 12,500 EDGE Reward Points on first transaction within 30 days (redeemable for vouchers worth ₹2,500)\n\nRenewal Benefits:\n• 3,000 EDGE Reward Points upon card renewal',
       milestoneBenefits: [
         'Earn 10,000 EDGE Reward Points (worth ₹2,000) on annual spends of ₹2.5 lakh'

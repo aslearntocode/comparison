@@ -5,12 +5,14 @@ import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
 import { creditCards, type UserFeedback } from '../../data/creditCards'
+import { creditCards as cobrandCards } from '../../data/cobrand'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { Button } from '../../../components/ui/button'
 import { Textarea } from '../../../components/ui/textarea'
 import { Input } from '../../../components/ui/input'
 import { supabase, type Review } from '@/lib/supabase'
+import RewardPointsCard from '@/components/RewardPointsCard'
 
 export default function CreditCardDetail({ params }: { params: Promise<{ cardId: string }> }) {
   const [activeTab, setActiveTab] = useState<
@@ -22,7 +24,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   >('welcome-annual');
   
   const { cardId } = use(params)
-  const card = creditCards.find(c => c.id === cardId)
+  const card = creditCards.find(c => c.id === cardId) || cobrandCards.find(c => c.id === cardId)
   const [user, setUser] = useState<User | null>(null)
   const [newReview, setNewReview] = useState({
     rating: 0,
@@ -227,87 +229,96 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 Reward Points & Other Benefits
               </h3>
               
-              <div className="space-y-8">
-                {/* Rewards Program Section */}
-                <div className="bg-white rounded-lg">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
-                  {card.additionalDetails?.rewardsProgram?.split('\n').map((line, index) => {
-                    if (line.endsWith(':')) {
-                      return (
-                        <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                      );
-                    } else if (line.startsWith('•')) {
-                      return (
-                        <div key={index} className="flex gap-2 ml-4 mb-2">
-                          <span className="text-blue-600">•</span>
-                          <span className="text-gray-700">{line.substring(1).trim()}</span>
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
-
-                {/* Travel & Lifestyle Benefits Section */}
-                <div className="bg-white rounded-lg">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
-                  {card.additionalDetails?.airportLounge?.split('\n').map((line, index) => {
-                    if (line.endsWith(':')) {
-                      return (
-                        <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                      );
-                    } else if (line.startsWith('•')) {
-                      return (
-                        <div key={index} className="flex gap-2 ml-4 mb-2">
-                          <span className="text-blue-600">•</span>
-                          <span className="text-gray-700">{line.substring(1).trim()}</span>
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
-
-                {/* Insurance & Protection Section */}
-                <div className="bg-white rounded-lg">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
-                  <div className="space-y-2">
-                    {card.additionalDetails?.insuranceCover?.map((item, index) => (
-                      <div key={index}>
-                        {item.startsWith('•') ? (
-                          <div className="flex gap-2 ml-4">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Left Column - Rewards Program Details */}
+                <div className="lg:col-span-2 space-y-8">
+                  {/* Rewards Program Section */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
+                    {card.additionalDetails?.rewardsProgram?.split('\n').map((line, index) => {
+                      if (line.endsWith(':')) {
+                        return (
+                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
+                        );
+                      } else if (line.startsWith('•')) {
+                        return (
+                          <div key={index} className="flex gap-2 ml-4 mb-2">
                             <span className="text-blue-600">•</span>
-                            <span className="text-gray-700">{item.substring(1).trim()}</span>
+                            <span className="text-gray-700">{line.substring(1).trim()}</span>
                           </div>
-                        ) : item.endsWith(':') ? (
-                          <h5 className="font-medium text-gray-900 mt-4 mb-2">{item}</h5>
-                        ) : (
-                          <div className="text-gray-700">{item}</div>
-                        )}
-                      </div>
-                    ))}
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
+
+                  {/* Travel & Lifestyle Benefits Section */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
+                    {card.additionalDetails?.airportLounge?.split('\n').map((line, index) => {
+                      if (line.endsWith(':')) {
+                        return (
+                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
+                        );
+                      } else if (line.startsWith('•')) {
+                        return (
+                          <div key={index} className="flex gap-2 ml-4 mb-2">
+                            <span className="text-blue-600">•</span>
+                            <span className="text-gray-700">{line.substring(1).trim()}</span>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
+
+                  {/* Insurance & Protection Section */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
+                    <div className="space-y-2">
+                      {card.additionalDetails?.insuranceCover?.map((item, index) => (
+                        <div key={index}>
+                          {item.startsWith('•') ? (
+                            <div className="flex gap-2 ml-4">
+                              <span className="text-blue-600">•</span>
+                              <span className="text-gray-700">{item.substring(1).trim()}</span>
+                            </div>
+                          ) : item.endsWith(':') ? (
+                            <h5 className="font-medium text-gray-900 mt-4 mb-2">{item}</h5>
+                          ) : (
+                            <div className="text-gray-700">{item}</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Additional Features Section */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
+                    {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
+                      if (line.endsWith(':')) {
+                        return (
+                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
+                        );
+                      } else if (line.startsWith('•')) {
+                        return (
+                          <div key={index} className="flex gap-2 ml-4 mb-2">
+                            <span className="text-blue-600">•</span>
+                            <span className="text-gray-700">{line.substring(1).trim()}</span>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
                   </div>
                 </div>
 
-                {/* Additional Features Section */}
-                <div className="bg-white rounded-lg">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
-                  {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
-                    if (line.endsWith(':')) {
-                      return (
-                        <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                      );
-                    } else if (line.startsWith('•')) {
-                      return (
-                        <div key={index} className="flex gap-2 ml-4 mb-2">
-                          <span className="text-blue-600">•</span>
-                          <span className="text-gray-700">{line.substring(1).trim()}</span>
-                        </div>
-                      );
-                    }
-                    return null;
-                  })}
-                </div>
+                {/* Right Column - Reward Points Card */}
+                {(() => {
+                  console.log('Card details:', { bank: card.bank, id: card.id });
+                  return <RewardPointsCard bank={card.bank} cardId={card.id} />;
+                })()}
               </div>
             </div>
           </div>

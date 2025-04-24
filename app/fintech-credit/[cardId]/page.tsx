@@ -229,7 +229,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               
               <div className="space-y-8">
                 {/* Rewards Program Section */}
-                <div className="bg-white rounded-lg">
+                <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
                   {card.additionalDetails?.rewardsProgram?.split('\n').map((line, index) => {
                     if (line.endsWith(':')) {
@@ -248,8 +248,48 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   })}
                 </div>
 
+                {/* Redemption Options Section - Only show for Kiwi card */}
+                {card.id === 'kiwi-upi' && (
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <span>🔄</span>
+                      Redemption Options
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-600">•</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Convert Kiwis to cash:</span>
+                          <span className="text-gray-700"> Direct transfer to bank account</span>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-600">•</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Redeem for vouchers:</span>
+                          <span className="text-gray-700"> Amazon, Flipkart, Swiggy, etc.</span>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-600">•</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Buy Gold:</span>
+                          <span className="text-gray-700"> Option to use Kiwis to buy digital gold</span>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-600">•</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Gift Kiwis:</span>
+                          <span className="text-gray-700"> Send rewards to friends within the app</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Travel & Lifestyle Benefits Section */}
-                <div className="bg-white rounded-lg">
+                <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
                   {card.additionalDetails?.airportLounge?.split('\n').map((line, index) => {
                     if (line.endsWith(':')) {
@@ -269,7 +309,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </div>
 
                 {/* Insurance & Protection Section */}
-                <div className="bg-white rounded-lg">
+                <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
                   <div className="space-y-2">
                     {card.additionalDetails?.insuranceCover?.map((item, index) => (
@@ -290,7 +330,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </div>
 
                 {/* Additional Features Section */}
-                <div className="bg-white rounded-lg">
+                <div className="bg-white rounded-lg p-6 shadow-sm">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
                   {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
                     if (line.endsWith(':')) {

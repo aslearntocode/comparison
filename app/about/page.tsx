@@ -4,22 +4,27 @@ import Header from "@/components/Header"
 
 export default function AboutPage() {
   return (
-    <div>
-      {/* Blue section with fixed height */}
-      <div className="bg-[#2563eb] h-[400px]">
-        <Header />
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Header />
+      
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
         
-        {/* Hero Section */}
-        <div className="text-center text-white pt-20 px-4">
-          
-          <p className="text-3xl max-w-3xl mx-auto">
-            Welcome to Financial Health, where smart investing meets precision and personalization.
-          </p>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center pt-10">
+            <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+              About Us
+            </h1>
+            
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+              
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="max-w-4xl mx-auto px-4 py-12 -mt-20 bg-white rounded-lg shadow-lg">
+      <div className="max-w-4xl mx-auto px-4 py-8 bg-white rounded-lg shadow-lg mt-8">
         {/* Audio Player */}
         <div className="mb-8">
           <h3 className="text-lg font-medium mb-2">Listen to Our Story</h3>

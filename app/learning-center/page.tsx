@@ -178,15 +178,24 @@ function LearningCenter() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       
-      <main className="flex-1 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Learning Center</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore our comprehensive guides and articles to enhance your investment knowledge
-            </p>
-          </div>
+      <main className="flex-1">
+        <div className="relative">
+          <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
           
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center pt-10">
+              <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+                Learning Center
+              </h1>
+              
+              <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+                Explore our comprehensive guides and articles to enhance your investment knowledge
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Mobile Category Menu Button */}
             <div className="lg:hidden mb-4">

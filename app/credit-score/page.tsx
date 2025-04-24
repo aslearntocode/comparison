@@ -370,46 +370,61 @@ export default function CreditScorePage() {
         className="flex-1 bg-gray-50"
         onClick={handlePageClick}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col gap-4">
-            {/* Steps Section */}
-            <div className="w-full">
-              <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
-                <h2 className="text-lg font-semibold mb-3 text-gray-800">How It Works</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <div className="flex items-start p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center font-medium text-xs">
+        <div className="relative">
+          <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center pt-10">
+              <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+                Credit Score
+              </h1>
+              
+              <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+                Check and analyze your credit score to make informed financial decisions
+              </p>
+
+              {/* How It Works Section */}
+              <div className="bg-white rounded-xl p-6 max-w-4xl mx-auto shadow-lg">
+                <h2 className="text-lg font-semibold mb-4 text-gray-800">How It Works</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center font-medium text-sm">
                       1
                     </div>
-                    <div className="ml-2">
+                    <div className="ml-3">
                       <h3 className="font-medium text-sm text-gray-800">Login and Enter Details</h3>
-                      <p className="text-xs text-gray-600 mt-0.5">Fill in your personal details including name, date of birth, and mobile number</p>
+                      <p className="text-xs text-gray-600 mt-1">Fill in your personal details including name, date of birth, and mobile number</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center font-medium text-xs">
+                  <div className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center font-medium text-sm">
                       2
                     </div>
-                    <div className="ml-2">
+                    <div className="ml-3">
                       <h3 className="font-medium text-sm text-gray-800">Upload Credit Report</h3>
-                      <p className="text-xs text-gray-600 mt-0.5">Upload your credit report PDF file</p>
+                      <p className="text-xs text-gray-600 mt-1">Upload your credit report PDF file</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div className="flex-shrink-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center font-medium text-xs">
+                  <div className="flex items-start p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center font-medium text-sm">
                       3
                     </div>
-                    <div className="ml-2">
+                    <div className="ml-3">
                       <h3 className="font-medium text-sm text-gray-800">Provide Password</h3>
-                      <p className="text-xs text-gray-600 mt-0.5">Enter password if your PDF is password protected</p>
+                      <p className="text-xs text-gray-600 mt-1">Enter password if your PDF is password protected</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* Form Section */}
             {/* Main Content Section */}
             <div className="flex flex-col md:flex-row gap-4">
               {/* Form Section */}

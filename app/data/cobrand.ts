@@ -143,7 +143,7 @@ export const creditCards: CreditCard[] = [
       { comment: "UPI linkage is very convenient", rating: 8.5, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "axis-indian-oil", cardName: "Axis Bank Indian Oil Credit Card" }
     ],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 20 EDGE Reward Points per ₹100 spent at IndianOil outlets (equivalent to 4% value back)\n• 5 EDGE Reward Points per ₹100 spent on online shopping\n• 1 EDGE Reward Point per ₹100 spent on other transactions',
+      rewardsProgram: 'Earning Rate:\n• 20 EDGE Reward Points per ₹100 spent at IndianOil outlets (equivalent to 4% value back)\n• 5 EDGE Reward Points per ₹100 spent on online shopping\n• 1 EDGE Reward Point per ₹100 spent on other transactions\n\nEDGE Points Conversion Rates:\n• Vouchers & Products: ₹0.20 per point\n• Air Miles: ₹0.25 per point\n• Premium Hotels: ₹0.30 per point\n• Premium Flights: ₹0.35 per point',
       welcomeBonus: '• 100% Cashback up to ₹250 on first fuel transaction within 30 days\n• ₹500 Amazon voucher as a limited-time welcome offer',
       fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹4,000, capped at ₹50 per statement cycle',
       movieBenefits: '10% off on movie ticket bookings through BookMyShow',
