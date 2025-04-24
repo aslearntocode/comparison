@@ -12,18 +12,18 @@ export default function FAQPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How much life insurance coverage should I have?",
+        "name": "What is a credit score and why is it important?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You should have at least 5 multiples of your annual income as Life Cover. If you haven't secured this level of coverage yet, it's recommended to purchase Life Insurance that can provide the required protection for your family."
+          "text": "A credit score is a three-digit number that represents your creditworthiness. It ranges from 300 to 900, with higher scores indicating better credit health. A good credit score is crucial for getting approved for credit cards, loans, and better interest rates. It also affects your ability to rent apartments, get insurance, and even secure certain jobs."
         }
       },
       {
         "@type": "Question",
-        "name": "What is an AI-Powered Credit Score Video?",
+        "name": "How can I get my credit report from CIBIL?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The video summarizes the key elements of the credit report and presents the metrics in an understandable way. The video also gives recommendations to improve the score by using various strategies."
+          "text": "You can get your CIBIL credit report in three ways:\n1. Visit the official CIBIL website (www.cibil.com)\n2. Use the CIBIL mobile app\n3. Request through your bank's website\n\nYou're entitled to one free credit report per year. Additional reports can be purchased for a nominal fee."
         }
       },
       // Add more FAQ items...
@@ -38,53 +38,85 @@ export default function FAQPage() {
           Frequently Asked Questions
         </h1>
         <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Find answers to common questions about investments, credit and financial planning.
+          Find answers to common questions about credit cards, credit scores, and financial planning.
         </p>
         
         <div className="space-y-6">
-          {/* Investment Related FAQs */}
           <section>
-            {/* <h2 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-              <span className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
-                </svg>
-              </span>
-              Investment Considerations
-            </h2> */}
             <div className="space-y-4">
               {[
                 {
-                  question: "How much life insurance coverage should I have?",
-                  answer: "You should have at least 5 multiples of your annual income as Life Cover. If you haven't secured this level of coverage yet, it's recommended to purchase Life Insurance that can provide the required protection for your family."
+                  question: "What is a credit score and why is it important?",
+                  answer: "A credit score is a three-digit number that represents your creditworthiness. It ranges from 300 to 900, with higher scores indicating better credit health. A good credit score is crucial for getting approved for credit cards, loans, and better interest rates. It also affects your ability to rent apartments, get insurance, and even secure certain jobs."
                 },
                 {
-                  question: "How often should I review my investment allocation?",
-                  answer: "You should review your allocation every 3 months to check if market conditions have changed or if your risk profile has evolved. Additionally, review your allocation immediately if there's a life-altering event such as a significant change in savings, marriage, having a child, etc., regardless of the regular review schedule."
-                },
-                {
-                  question: "What should I do about my existing debt before investing?",
-                  answer: "If you have any high-interest debt, it's recommended to pay it off first before starting your investment journey. High-interest debt can offset any potential returns from your investments and create financial strain."
-                },
-                {
-                  question: "When should I reassess my investment strategy?",
+                  question: "How can I get my credit report from CIBIL?",
                   answer: (
                     <div>
-                      You should reassess your investment strategy in the following situations:
+                      You can get your CIBIL credit report in three ways:
                       <ul className="list-disc ml-6 mt-2 space-y-1">
-                        <li>Every 3 months for regular review</li>
-                        <li>When there's a significant change in market conditions</li>
-                        <li>After major life events (marriage, children, job change)</li>
-                        <li>When your income or savings significantly change</li>
-                        <li>If your risk tolerance changes</li>
+                        <li>Visit the official CIBIL website (www.cibil.com)</li>
+                        <li>Use the CIBIL mobile app</li>
+                        <li>Request through your bank's website</li>
+                      </ul>
+                      <p className="mt-2">You're entitled to one free credit report per year. Additional reports can be purchased for a nominal fee.</p>
+                    </div>
+                  )
+                },
+                {
+                  question: "What factors affect my credit score?",
+                  answer: (
+                    <div>
+                      Several factors influence your credit score:
+                      <ul className="list-disc ml-6 mt-2 space-y-1">
+                        <li>Payment history (35%) - Timely payments of credit card bills and loans</li>
+                        <li>Credit utilization (30%) - How much of your available credit you're using</li>
+                        <li>Credit history length (15%) - How long you've had credit accounts</li>
+                        <li>Credit mix (10%) - Different types of credit (cards, loans, etc.)</li>
+                        <li>New credit (10%) - Recent credit inquiries and new accounts</li>
                       </ul>
                     </div>
                   )
                 },
                 {
-                  question: "What is an AI-Powered Credit Score Video?",
-                  answer: "The video summarizes the key elements of the credit report and presents the metrics in an understandable way without any jargons. The video also gives recommendations to improve the score by using various strategies."
+                  question: "How can I improve my credit score?",
+                  answer: (
+                    <div>
+                      Here are key steps to improve your credit score:
+                      <ul className="list-disc ml-6 mt-2 space-y-1">
+                        <li>Pay all bills on time, including credit card bills</li>
+                        <li>Keep credit card utilization below 30%</li>
+                        <li>Don't close old credit card accounts</li>
+                        <li>Limit new credit applications</li>
+                        <li>Regularly check your credit report for errors</li>
+                        <li>Maintain a mix of different types of credit</li>
+                      </ul>
+                    </div>
+                  )
+                },
+                {
+                  question: "What is the difference between a credit card and a debit card?",
+                  answer: "A credit card allows you to borrow money up to a certain limit to make purchases, which you must repay later with interest if not paid in full. A debit card directly deducts money from your bank account when you make a purchase. Credit cards help build credit history, offer rewards, and provide additional protection, while debit cards help you spend within your means and avoid debt."
+                },
+                {
+                  question: "How do I choose the right credit card?",
+                  answer: (
+                    <div>
+                      Consider these factors when choosing a credit card:
+                      <ul className="list-disc ml-6 mt-2 space-y-1">
+                        <li>Your spending habits and patterns</li>
+                        <li>Annual fee and joining fee</li>
+                        <li>Reward points or cashback structure</li>
+                        <li>Interest rates and charges</li>
+                        <li>Additional benefits (lounge access, travel insurance, etc.)</li>
+                        <li>Your credit score and eligibility</li>
+                      </ul>
+                    </div>
+                  )
+                },
+                {
+                  question: "What is an AI-Powered Credit Score Summary?",
+                  answer: "The summary gives you the key elements of your credit report and presents the metrics in an understandable way. The summary also suggests specific actions you can take to enhance your credit health."
                 }
               ].map((faq, index) => (
                 <div 
