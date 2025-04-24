@@ -8,10 +8,13 @@ export interface UserFeedback {
   cardName: string;
 }
 
+export type CardCategory = 'hotels' | 'airlines' | 'fintech';
+
 export interface CreditCard {
   id: string;
   name: string;
   bank: string;
+  category: CardCategory;
   image: string;
   apr: string;
   annualFee: string;
@@ -20,6 +23,7 @@ export interface CreditCard {
   rupay: boolean;
   features: string[];
   feedback: UserFeedback[];
+  categories: string[];
   additionalDetails?: {
     rewardsProgram?: string;
     welcomeBonus?: string;
@@ -44,10 +48,202 @@ export interface CreditCard {
 }
 
 export const creditCards: CreditCard[] = [
+  // Hotels Cards
+  {
+    id: 'hdfc-regalia-marriott',
+    name: 'HDFC Bank Regalia Marriott Bonvoy Credit Card',
+    bank: 'HDFC Bank',
+    category: 'hotels',
+    image: '/credit-cards/HDFC-Regalia-Marriott.png',
+    apr: '42% p.a.',
+    annualFee: '₹2,500 + GST',
+    joiningFee: '₹2,500 + GST',
+    rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Travel Insurance',
+      'Dining Benefits',
+      'Fuel Surcharge Waiver',
+      'Contactless Payments',
+      'SmartBuy Portal Access'
+    ],
+    categories: [
+      'best-credit-cards',
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge',
+      'hotel',
+      'hotels'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
+      welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
+      airportLounge: 'Domestic Lounge Access:\n• Up to 2 complimentary lounge access vouchers per quarter (8 per year)\n• Eligibility: Spend ₹1 lakh or more in a calendar quarter\n• Access vouchers to be generated via Regalia SmartBuy portal\n\nInternational Lounge Access:\n• 6 complimentary visits per year for primary and add-on cardholders through Priority Pass\n• Eligibility: Complete 4 retail transactions to apply for Priority Pass\n• Additional visits charged at $27 + GST per visit',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Air Accident Cover: ₹1 crore',
+        'Emergency Overseas Hospitalization: Up to ₹15 lakh',
+        'Credit Liability Cover: Up to ₹9 lakh'
+      ],
+      diningPrivileges: [
+        'Exclusive offers through Dineout Passport Membership',
+        'Up to 25% off at select restaurants'
+      ],
+      minimumSpend: '₹3,00,000 for annual fee waiver',
+      internationalTransactionFee: '2% on all international transactions',
+      additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
+      idealFor: [
+        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹3 lakh or more',
+        'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
+        'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹1 lakh',
+        'Individuals seeking zero annual fee cards without spending conditions',
+        'Those primarily interested in cashback or fuel-specific benefits'
+      ],
+      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
+    }
+  },
+  {
+    id: 'hdfc-regalia',
+    name: 'HDFC Regalia Credit Card',
+    bank: 'HDFC Bank',
+    category: 'hotels',
+    image: '/credit-cards/HDFC-Regalia.png',
+    apr: '42% p.a.',
+    annualFee: '₹2,500 + GST',
+    joiningFee: '₹2,500 + GST',
+    rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Travel Insurance',
+      'Dining Benefits',
+      'Fuel Surcharge Waiver',
+      'Contactless Payments',
+      'SmartBuy Portal Access'
+    ],
+    categories: [
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge',
+      'hotel',
+      'hotels'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
+      welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
+      airportLounge: 'Domestic Lounge Access:\n• Up to 2 complimentary lounge access vouchers per quarter (8 per year)\n• Eligibility: Spend ₹1 lakh or more in a calendar quarter\n• Access vouchers to be generated via Regalia SmartBuy portal\n\nInternational Lounge Access:\n• 6 complimentary visits per year for primary and add-on cardholders through Priority Pass\n• Eligibility: Complete 4 retail transactions to apply for Priority Pass\n• Additional visits charged at $27 + GST per visit',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Air Accident Cover: ₹1 crore',
+        'Emergency Overseas Hospitalization: Up to ₹15 lakh',
+        'Credit Liability Cover: Up to ₹9 lakh'
+      ],
+      diningPrivileges: [
+        'Exclusive offers through Dineout Passport Membership',
+        'Up to 25% off at select restaurants'
+      ],
+      minimumSpend: '₹3,00,000 for annual fee waiver',
+      internationalTransactionFee: '2% on all international transactions',
+      additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
+      idealFor: [
+        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹3 lakh or more',
+        'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
+        'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹1 lakh',
+        'Individuals seeking zero annual fee cards without spending conditions',
+        'Those primarily interested in cashback or fuel-specific benefits'
+      ],
+      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
+    }
+  },
+
+  // Airlines Cards
+  {
+    id: 'axis-privilege',
+    name: 'Axis Bank Privilege Credit Card',
+    bank: 'Axis Bank',
+    category: 'airlines',
+    image: '/credit-cards/ICICI-Sapphiro.png',
+    apr: '42% p.a.',
+    annualFee: '₹3,500 + GST',
+    joiningFee: '₹6,000 + GST',
+    rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Golf Privileges',
+      'Entertainment Offers',
+      'Dining Discounts',
+      'Fuel Surcharge Waiver',
+      'Chip and PIN Security'
+    ],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'fuel'
+    ],
+    feedback: [
+      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
+    ],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
+      welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
+      milestoneBenefits: [
+        '4,000 points on spending ₹4 lakh in an anniversary year',
+        '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• 4 complimentary domestic lounge accesses per quarter (subject to spending ₹75,000 in the previous quarter)\n• 2 complimentary international lounge accesses per year via Priority Pass or DreamFolks membership',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹4,000',
+      insuranceCover: [
+        'Chip and PIN Security for enhanced security at merchant outlets'
+      ],
+      movieBenefits: 'Buy 1, get 1 free on movie or event tickets (up to ₹500 off on the second ticket), twice a month via BookMyShow',
+      diningPrivileges: [
+        'Exclusive offers through the ICICI Bank Culinary Treats Programme'
+      ],
+      minimumSpend: '₹5,00,000 for annual fee waiver',
+      paymentDueDays: '20 days',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% + GST',
+      interestRate: '3.5% per month (42% p.a.)',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
+      idealFor: [
+        'Mid-to-High Spenders: Perfect for those spending ₹4L–₹8L annually, offering a sweet spot of benefits with an affordable annual fee',
+        'Occasional Travelers: Enjoy 4 free domestic lounge accesses every quarter and 2 complimentary international lounge entries each year',
+        'Lifestyle & Entertainment Enthusiasts: Get Buy 1 Get 1 on BookMyShow, golf privileges, and dining discounts through the Culinary Treats Program',
+        'Reward Collectors: Earn accelerated points on international and retail spends, with flexible redemption options'
+      ],
+      notIdealFor: [
+        'Users who spend less than ₹2–3 lakh annually',
+        'Frequent international flyers who require unlimited lounge access',
+        'Users seeking zero annual fee or basic cashback cards'
+      ],
+      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
+    }
+  },
   {
     id: 'emeralde-private-metal',
     name: 'Emeralde Private Metal Credit Card',
     bank: 'ICICI Bank',
+    category: 'airlines',
     image: '/credit-cards/ICICI-Emeralde-Metal.png',
     apr: '41.88% p.a.',
     annualFee: '₹12,499 + GST',
@@ -55,6 +251,15 @@ export const creditCards: CreditCard[] = [
     rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
     rupay: true,
     features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
+    categories: [
+      'premium',
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge',
+      'hotel'
+    ],
     feedback: [
       { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
       { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08", userId: "user456", userName: "Jane Smith", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" }
@@ -110,6 +315,7 @@ export const creditCards: CreditCard[] = [
     id: 'emeralde',
     name: 'Emeralde Credit Card',
     bank: 'ICICI Bank',
+    category: 'airlines',
     image: '/credit-cards/ICICI-Emeralde.png',
     apr: '45% p.a.',
     annualFee: '₹500',
@@ -117,6 +323,12 @@ export const creditCards: CreditCard[] = [
     rewards: 'Earn 2.5% Reward Points on international spends\n Earn 2% Reward Points on domestic spends',
     rupay: true,
     features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
+    categories: [
+      'premium',
+      'rewards',
+      'cashback',
+      'fuel'
+    ],
     feedback: [
       { comment: "Decent cashback but customer service needs improvement", rating: 6, date: "2024-03-14", userId: "user789", userName: "Bob Johnson", cardId: "emeralde", cardName: "Emeralde Credit Card" },
       { comment: "Good value for money", rating: 7.5, date: "2024-03-11", userId: "user123", userName: "John Doe", cardId: "emeralde", cardName: "Emeralde Credit Card" },
@@ -152,6 +364,7 @@ export const creditCards: CreditCard[] = [
     id: 'sapphiro',
     name: 'Sapphiro Credit Card',
     bank: 'ICICI Bank',
+    category: 'airlines',
     image: '/credit-cards/ICICI-Sapphiro.png',
     apr: '42% p.a.',
     annualFee: '₹3,500 + GST',
@@ -165,6 +378,13 @@ export const creditCards: CreditCard[] = [
       'Dining Discounts',
       'Fuel Surcharge Waiver',
       'Chip and PIN Security'
+    ],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'fuel'
     ],
     feedback: [
       { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
@@ -209,154 +429,77 @@ export const creditCards: CreditCard[] = [
       summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
     }
   },
+  // Fintech Cards
   {
-    id: 'axis-privilege',
-    name: 'Axis Bank Privilege Credit Card',
-    bank: 'Axis Bank',
-    image: '/credit-cards/Axis-Privilege.png',
+    id: 'uni-gold',
+    name: 'Uni Gold Credit Card',
+    bank: 'Uni',
+    category: 'fintech',
+    image: '/credit-cards/Uni-Gold.png',
     apr: '42% p.a.',
-    annualFee: '₹1,500 + GST',
-    joiningFee: '₹1,500 + GST (Waived for Priority Customers)',
-    rewards: '10 EDGE Points per ₹200 spent on all purchases\nPoints redeemable for vouchers, products, and air miles',
+    annualFee: '₹3,500 + GST',
+    joiningFee: '₹6,000 + GST',
+    rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
       'Airport Lounge Access',
+      'Golf Privileges',
+      'Entertainment Offers',
       'Dining Discounts',
       'Fuel Surcharge Waiver',
-      'Insurance Coverage',
-      'Welcome & Renewal Benefits',
-      'Milestone Benefits'
+      'Chip and PIN Security'
     ],
-    feedback: [
-      { comment: "Great balance of benefits for moderate spenders", rating: 8, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" },
-      { comment: "Good dining discounts with Dining Delights", rating: 7.5, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" },
-      { comment: "Decent rewards redemption options", rating: 7, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "axis-privilege", cardName: "Axis Bank Privilege Credit Card" }
-    ],
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10 EDGE Points per ₹200 spent on all purchases\n\nRedemption:\n• Points can be redeemed for a variety of products and vouchers\n• Option to convert points to air miles\n\nEDGE Points Conversion Rates:\n• 1 EDGE Point = ₹0.20 for vouchers and products\n• 1 EDGE Point = ₹0.25 for air miles conversion\n• 1 EDGE Point = ₹0.30 for premium hotel bookings\n• 1 EDGE Point = ₹0.35 for premium flight bookings',
-      welcomeBonus: 'Welcome Benefits:\n• 12,500 EDGE Reward Points on first transaction within 30 days (redeemable for vouchers worth ₹2,500)\n\nRenewal Benefits:\n• 3,000 EDGE Reward Points upon card renewal',
-      milestoneBenefits: [
-        'Earn 10,000 EDGE Reward Points (worth ₹2,000) on annual spends of ₹2.5 lakh'
-      ],
-      airportLounge: '2 complimentary domestic lounge accesses per quarter (8 per year)',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹4,000, capped at ₹400 per statement cycle',
-      insuranceCover: [
-        'Air accident cover',
-        'Purchase protection'
-      ],
-      diningPrivileges: [
-        'Up to 20% off at over 4,000 partner restaurants through Axis Bank Dining Delights'
-      ],
-      minimumSpend: '₹2,50,000 for annual fee waiver',
-      internationalTransactionFee: '3.5% + GST (~4.1%)',
-      idealFor: [
-        'Moderate Spenders: Perfect for individuals with annual spends around ₹2.5 lakh',
-        'Balanced Benefits Seekers: Ideal for those seeking a mix of travel, dining, and reward benefits',
-        'Points Enthusiasts: Great for users who prefer redeeming points for vouchers or air miles'
-      ],
-      notIdealFor: [
-        'Users with annual spends below ₹2 lakh',
-        'Individuals seeking premium international travel benefits',
-        'Those looking for zero annual fee cards without spending conditions'
-      ],
-      summary: 'A well-rounded card offering a good mix of travel, dining, and reward benefits for moderate spenders with annual expenses around ₹2.5 lakh.'
-    }
-  },
-  {
-    id: 'hdfc-regalia',
-    name: 'HDFC Bank Regalia Credit Card',
-    bank: 'HDFC Bank',
-    image: '/credit-cards/HDFC-Regalia.png',
-    apr: '42% p.a.',
-    annualFee: '₹2,500 + GST',
-    joiningFee: '₹2,500 + GST',
-    rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
-    rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Travel Insurance',
-      'Dining Benefits',
-      'Fuel Surcharge Waiver',
-      'Contactless Payments',
-      'SmartBuy Portal Access'
-    ],
-    feedback: [
-      { comment: "Great travel benefits and lounge access", rating: 8.5, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" },
-      { comment: "Good rewards redemption value on SmartBuy", rating: 8, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" },
-      { comment: "Excellent insurance coverage", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "hdfc-regalia", cardName: "HDFC Bank Regalia Credit Card" }
-    ],
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
-      welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
-      airportLounge: 'Domestic Lounge Access:\n• Up to 2 complimentary lounge access vouchers per quarter (8 per year)\n• Eligibility: Spend ₹1 lakh or more in a calendar quarter\n• Access vouchers to be generated via Regalia SmartBuy portal\n\nInternational Lounge Access:\n• 6 complimentary visits per year for primary and add-on cardholders through Priority Pass\n• Eligibility: Complete 4 retail transactions to apply for Priority Pass\n• Additional visits charged at $27 + GST per visit',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
-      insuranceCover: [
-        'Air Accident Cover: ₹1 crore',
-        'Emergency Overseas Hospitalization: Up to ₹15 lakh',
-        'Credit Liability Cover: Up to ₹9 lakh'
-      ],
-      diningPrivileges: [
-        'Exclusive offers through Dineout Passport Membership',
-        'Up to 25% off at select restaurants'
-      ],
-      minimumSpend: '₹3,00,000 for annual fee waiver',
-      internationalTransactionFee: '2% on all international transactions',
-      additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
-      idealFor: [
-        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹3 lakh or more',
-        'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
-        'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
-      ],
-      notIdealFor: [
-        'Users with annual spends below ₹1 lakh',
-        'Individuals seeking zero annual fee cards without spending conditions',
-        'Those primarily interested in cashback or fuel-specific benefits'
-      ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
-    }
-  },
-  {
-    id: 'hdfc-moneyback-plus',
-    name: 'HDFC Bank MoneyBack+ Credit Card',
-    bank: 'HDFC Bank',
-    image: '/credit-cards/HDFC-MoneyBack+.png',
-    apr: '42% p.a.',
-    annualFee: '₹500 + GST',
-    joiningFee: '₹500 + GST',
-    rewards: '2 Reward Points for every ₹150 spent on UPI transactions (excluding fuel, wallet/prepaid card loads, or voucher purchases)',
-    rupay: true,
-    features: [
-      'UPI Transactions',
-      'Zero Lost Card Liability',
-      'Basic Credit Card Features'
+    categories: [
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'fuel'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 2 Reward Points per ₹150 spent on UPI transactions\n• Excludes fuel, wallet/prepaid card loads, and voucher purchases\n• Capped at 500 reward points per calendar month',
-      welcomeBonus: '500 Cash Points (applicable only  on payment of membership fee)',
+      rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
+      welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
       milestoneBenefits: [
-        'Get renewal membership fee waived off by spending ₹50,000 and above in an annual year'
+        '4,000 points on spending ₹4 lakh in an anniversary year',
+        '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
       ],
-      minimumSpend: '₹50,000 for annual fee waiver',
-      additionalServices: 'Zero Lost Card Liability: Report card loss immediately to avoid liability on fraudulent transactions',
+      airportLounge: 'Airport Lounge Access:\n• 4 complimentary domestic lounge accesses per quarter (subject to spending ₹75,000 in the previous quarter)\n• 2 complimentary international lounge accesses per year via Priority Pass or DreamFolks membership',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹4,000',
+      insuranceCover: [
+        'Chip and PIN Security for enhanced security at merchant outlets'
+      ],
+      movieBenefits: 'Buy 1, get 1 free on movie or event tickets (up to ₹500 off on the second ticket), twice a month via BookMyShow',
+      diningPrivileges: [
+        'Exclusive offers through the ICICI Bank Culinary Treats Programme'
+      ],
+      minimumSpend: '₹5,00,000 for annual fee waiver',
+      paymentDueDays: '20 days',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% + GST',
+      interestRate: '3.5% per month (42% p.a.)',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
       idealFor: [
-        'Budget-conscious individuals seeking a low annual fee card',
-        'Users preferring straightforward reward structures',
-        'Individuals looking for basic credit card features with essential benefits'
+        'Mid-to-High Spenders: Perfect for those spending ₹4L–₹8L annually, offering a sweet spot of benefits with an affordable annual fee',
+        'Occasional Travelers: Enjoy 4 free domestic lounge accesses every quarter and 2 complimentary international lounge entries each year',
+        'Lifestyle & Entertainment Enthusiasts: Get Buy 1 Get 1 on BookMyShow, golf privileges, and dining discounts through the Culinary Treats Program',
+        'Reward Collectors: Earn accelerated points on international and retail spends, with flexible redemption options'
       ],
       notIdealFor: [
-        'Users seeking premium travel or lifestyle benefits',
-        'High spenders looking for accelerated rewards',
-        'Individuals requiring extensive insurance coverage'
+        'Users who spend less than ₹2–3 lakh annually',
+        'Frequent international flyers who require unlimited lounge access',
+        'Users seeking zero annual fee or basic cashback cards'
       ],
-      summary: 'A budget-friendly credit card offering basic features and straightforward rewards on UPI transactions, ideal for cost-conscious users.'
+      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
     }
   },
   {
-    id: 'au-zenith-plus',
-    name: 'AU Zenith+ Credit Card',
-    bank: 'AU Small Finance Bank',
-    image: '/credit-cards/AU-Zenith.png',
+    id: 'uni',
+    name: 'Uni Pay 1/3rd Card',
+    bank: 'Uni',
+    category: 'fintech',
+    image: '/credit-cards/Uni-Pay.png',
     apr: '42% p.a.',
     annualFee: '₹4,999 + GST',
     joiningFee: '₹4,999 + GST',
@@ -369,6 +512,187 @@ export const creditCards: CreditCard[] = [
       'Lifestyle Privileges',
       'Forex Benefits',
       'Lifetime Free Add-on Cards'
+    ],
+    categories: [
+      'best-credit-cards',
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air Accident Cover: ₹2 crore',
+        'Credit Shield: ₹15 lakh',
+        'Purchase Protection: ₹50,000',
+        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+      ],
+      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+      diningPrivileges: [
+        'Exclusive dining privileges and offers'
+      ],
+      minimumSpend: '₹8,00,000 for annual fee waiver',
+      internationalTransactionFee: '0.99%',
+      additionalServices: 'Lifetime free add-on cards for family members',
+      idealFor: [
+        'High-income individuals with substantial monthly expenditures',
+        'Frequent travelers seeking lounge access and travel-related perks',
+        'Users who prioritize dining and lifestyle benefits'
+      ],
+      notIdealFor: [
+        'Individuals with moderate or low spending habits',
+        'Those seeking a no-frills, low-fee credit card'
+      ],
+      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+    }
+  },
+  {
+    id: 'onecard',
+    name: 'OneCard',
+    bank: 'OneCard',
+    category: 'fintech',
+    image: '/credit-cards/OneCard.png',
+    apr: '42% p.a.',
+    annualFee: '₹4,999 + GST',
+    joiningFee: '₹4,999 + GST',
+    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Railway Lounge Access',
+      'Travel Insurance',
+      'Lifestyle Privileges',
+      'Forex Benefits',
+      'Lifetime Free Add-on Cards'
+    ],
+    categories: [
+      'best-credit-cards',
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air Accident Cover: ₹2 crore',
+        'Credit Shield: ₹15 lakh',
+        'Purchase Protection: ₹50,000',
+        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+      ],
+      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+      diningPrivileges: [
+        'Exclusive dining privileges and offers'
+      ],
+      minimumSpend: '₹8,00,000 for annual fee waiver',
+      internationalTransactionFee: '0.99%',
+      additionalServices: 'Lifetime free add-on cards for family members',
+      idealFor: [
+        'High-income individuals with substantial monthly expenditures',
+        'Frequent travelers seeking lounge access and travel-related perks',
+        'Users who prioritize dining and lifestyle benefits'
+      ],
+      notIdealFor: [
+        'Individuals with moderate or low spending habits',
+        'Those seeking a no-frills, low-fee credit card'
+      ],
+      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+    }
+  },
+  {
+    id: 'kiwi',
+    name: 'Kiwi Credit Card',
+    bank: 'Kiwi',
+    category: 'fintech',
+    image: '/credit-cards/Kiwi.png',
+    apr: '42% p.a.',
+    annualFee: '₹4,999 + GST',
+    joiningFee: '₹4,999 + GST',
+    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
+    rupay: true,
+    features: [
+      'Airport Lounge Access',
+      'Railway Lounge Access',
+      'Travel Insurance',
+      'Lifestyle Privileges',
+      'Forex Benefits',
+      'Lifetime Free Add-on Cards'
+    ],
+    categories: [
+      'best-credit-cards',
+      'rewards',
+      'travel',
+      'domestic-lounge',
+      'upi'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+      fuelSurcharge: 'Not specified',
+      insuranceCover: [
+        'Air Accident Cover: ₹2 crore',
+        'Credit Shield: ₹15 lakh',
+        'Purchase Protection: ₹50,000',
+        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+      ],
+      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+      diningPrivileges: [
+        'Exclusive dining privileges and offers'
+      ],
+      minimumSpend: '₹8,00,000 for annual fee waiver',
+      internationalTransactionFee: '0.99%',
+      additionalServices: 'Lifetime free add-on cards for family members',
+      idealFor: [
+        'High-income individuals with substantial monthly expenditures',
+        'Frequent travelers seeking lounge access and travel-related perks',
+        'Users who prioritize dining and lifestyle benefits'
+      ],
+      notIdealFor: [
+        'Individuals with moderate or low spending habits',
+        'Those seeking a no-frills, low-fee credit card'
+      ],
+      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+    }
+  },
+  {
+    id: 'slice',
+    name: 'Slice Credit Card',
+    bank: 'Slice',
+    category: 'fintech',
+    image: '/credit-cards/Slice.png',
+    apr: '42% p.a.',
+    annualFee: '₹4,999 + GST',
+    joiningFee: '₹4,999 + GST',
+    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Railway Lounge Access',
+      'Travel Insurance',
+      'Lifestyle Privileges',
+      'Forex Benefits',
+      'Lifetime Free Add-on Cards'
+    ],
+    categories: [
+      'best-credit-cards',
+      'rewards',
+      'travel',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
     ],
     feedback: [],
     additionalDetails: {

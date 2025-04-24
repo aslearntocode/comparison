@@ -50,6 +50,17 @@ const RewardPointsCard: React.FC<RewardPointsCardProps> = ({ bank, cardId }) => 
         { category: 'Premium Flights', value: '₹0.35' }
       ],
       proTip: 'Get 20X points at IndianOil outlets (4% value back) and maximize redemption with premium travel (₹0.35/point)'
+    },
+    'YES Bank': {
+      title: 'Reward Point Conversion Rates',
+      icon: '💰',
+      rates: [
+        { category: 'Flight & Hotel Bookings', value: '₹0.25' },
+        { category: 'Swiggy Vouchers', value: '₹0.25' },
+        { category: 'Amazon & Flipkart Vouchers', value: '₹0.10' },
+        { category: 'Air Miles (4 Points = 1 Mile)', value: '₹0.25*' }
+      ],
+      proTip: 'Redeem points through YES Rewardz portal for flights, hotels, or Swiggy vouchers to get maximum value (₹0.25/point)'
     }
   };
 

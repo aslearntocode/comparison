@@ -1,7 +1,7 @@
 'use client'
 
 import Header from "@/components/Header"
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,10 +13,14 @@ type SortDirection = 'asc' | 'desc';
 
 export default function CreditProductComparison() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [searchQuery, setSearchQuery] = useState('')
   const [sortField, setSortField] = useState<SortField | null>(null)
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
   const [cardReviews, setCardReviews] = useState<{ [key: string]: Review[] }>({})
+
+  // Get the category from URL params
+  const category = searchParams.get('category')
 
   useEffect(() => {
     // Fetch all reviews when component mounts
@@ -163,14 +167,106 @@ export default function CreditProductComparison() {
   // Filter and sort credit cards
   const filteredCards = useMemo(() => {
     const query = searchQuery.toLowerCase()
-    const filtered = creditCards.filter(card => 
-      card.name.toLowerCase().includes(query) ||
-      card.features.some(feature => feature.toLowerCase().includes(query)) ||
-      card.rewards.toLowerCase().includes(query) ||
-      card.feedback.some(f => f.comment.toLowerCase().includes(query))
-    )
+    let filtered = creditCards
+
+    // Filter by category if specified
+    if (category) {
+      switch (category) {
+        case 'fintech':
+          filtered = filtered.filter(card => card.categories.includes('fintech'));
+          break;
+        case 'airlines':
+          filtered = filtered.filter(card => card.categories.includes('airlines'));
+          break;
+        case 'hotels':
+          filtered = filtered.filter(card => card.categories.includes('hotels'));
+          break;
+        case 'premium':
+          filtered = filtered.filter(card => card.categories.includes('premium'));
+          break;
+        case 'rewards':
+          filtered = filtered.filter(card => card.categories.includes('rewards'));
+          break;
+        case 'cashback':
+          filtered = filtered.filter(card => card.categories.includes('cashback'));
+          break;
+        case 'fuel':
+          filtered = filtered.filter(card => card.categories.includes('fuel'));
+          break;
+        case 'lifetime-free':
+          filtered = filtered.filter(card => 
+            card.annualFee.toLowerCase().includes('free') || 
+            card.features.some(f => f.toLowerCase().includes('lifetime free'))
+          );
+          break;
+        case 'forex':
+          filtered = filtered.filter(card => card.categories.includes('forex'));
+          break;
+        case 'upi':
+          filtered = filtered.filter(card => card.rupay === true || card.categories.includes('upi'));
+          break;
+        case 'international-travel':
+          filtered = filtered.filter(card => card.categories.includes('international-travel'));
+          break;
+        case 'travel':
+          filtered = filtered.filter(card => card.categories.includes('travel'));
+          break;
+        case 'domestic-lounge':
+          filtered = filtered.filter(card => card.categories.includes('domestic-lounge'));
+          break;
+        case 'international-lounge':
+          filtered = filtered.filter(card => card.categories.includes('international-lounge'));
+          break;
+      }
+    }
+
+    // Filter by search query
+    if (query) {
+      filtered = filtered.filter(card => 
+        card.name.toLowerCase().includes(query) ||
+        card.features.some(feature => feature.toLowerCase().includes(query)) ||
+        card.rewards.toLowerCase().includes(query) ||
+        card.feedback.some(f => f.comment.toLowerCase().includes(query))
+      )
+    }
+
     return sortCards(filtered);
-  }, [searchQuery, sortField, sortDirection])
+  }, [searchQuery, sortField, sortDirection, category])
+
+  // Get page title based on category
+  const getPageTitle = () => {
+    if (!category) return 'Credit Cards'
+    switch (category) {
+      case 'branded': return 'Branded Credit Cards'
+      case 'cobranded': return 'Co-Branded Credit Cards'
+      case 'fintech': return 'Fintech Credit Cards'
+      case 'premium': return 'Premium Credit Cards'
+      case 'rewards': return 'Rewards Credit Cards'
+      case 'cashback': return 'Cashback Credit Cards'
+      case 'fuel': return 'Fuel Credit Cards'
+      case 'lifetime-free': return 'Lifetime Free Credit Cards'
+      case 'forex': return 'Forex Credit Cards'
+      // case 'upi': return 'RuPay Credit Cards'
+      case 'upi': return 'UPI Credit Cards'
+      case 'international-travel': return 'International Travel Credit Cards'
+      case 'travel': return 'Travel Credit Cards'
+      case 'domestic-lounge': return 'Domestic Lounge Access Credit Cards'
+      case 'international-lounge': return 'International Lounge Access Credit Cards'
+      case 'airlines': return 'Airlines Credit Cards'
+      case 'hotels': return 'Hotel Credit Cards'
+      default: return 'Credit Cards'
+    }
+  }
+
+  // Update the category title function
+  const getCategoryTitle = (category: string) => {
+    switch (category) {
+      case 'fintech': return 'Fintech Credit Cards'
+      case 'airlines': return 'Airlines Credit Cards'
+      case 'hotels': return 'Hotel Credit Cards'
+      // ... existing code ...
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -182,7 +278,7 @@ export default function CreditProductComparison() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center pt-10">
             <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
-              Credit Card
+              {getPageTitle()}
             </h1>
             
             <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
@@ -316,54 +412,37 @@ export default function CreditProductComparison() {
                         </div>
 
                         <div className="space-y-4">
-                          <div className="flex gap-2">
-                            <span className="text-gray-600">APR:</span>
-                            <span className="font-medium">{card.apr}</span>
-                          </div>
-                          <div className="flex gap-2">
-                            <span className="text-gray-600">Rupay:</span>
-                            {card.rupay ? (
-                              <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Yes</span>
-                            ) : (
-                              <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">No</span>
-                            )}
+                          <div>
+                            <div className="text-sm font-medium text-gray-700 mb-1">APR</div>
+                            <div className="text-gray-900">{card.apr}</div>
                           </div>
                           <div>
-                            <span className="text-gray-600 block mb-2">Fees:</span>
-                            <ul className="list-disc list-inside space-y-1">
-                              <li className="text-gray-900">Annual: {card.annualFee}</li>
-                              <li className="text-gray-900">Joining: {card.joiningFee}</li>
-                            </ul>
+                            <div className="text-sm font-medium text-gray-700 mb-1">Fees</div>
+                            <div className="text-gray-900 text-sm">
+                              <ul className="list-disc list-inside space-y-1">
+                                <li>Annual: {card.annualFee}</li>
+                                <li>Joining: {card.joiningFee}</li>
+                              </ul>
+                            </div>
                           </div>
                           <div>
-                            <span className="text-gray-600 block mb-2">Rewards:</span>
-                            <ul className="list-disc list-inside space-y-2 text-gray-900">
-                              {card.rewards !== 'None' && card.rewards.split('\n').map((reward, index) => (
-                                <li key={index} className="text-sm">{reward}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div className="mt-4">
-                          <div className="flex flex-wrap gap-2">
-                            {card.features.map((feature, index) => (
-                              <span
-                                key={index}
-                                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs"
-                              >
-                                {feature}
-                              </span>
-                            ))}
+                            <div className="text-sm font-medium text-gray-700 mb-1">Rewards</div>
+                            <div className="text-gray-900 text-sm">
+                              <ul className="list-disc list-inside">
+                                {card.rewards !== 'None' && card.rewards.split('\n').map((reward, index) => (
+                                  <li key={index}>{reward}</li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     {/* Desktop View */}
-                    <div className="hidden md:grid md:grid-cols-7 gap-4 items-center px-4 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 1.8fr 0.8fr' }}>
-                      <div className="col-span-1 flex items-center gap-4">
-                        <div className="w-40 h-24 relative">
+                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 1.8fr 0.8fr' }}>
+                      <div className="flex items-center gap-4">
+                        <div className="w-32 h-20 relative flex-shrink-0">
                           <Image
                             src={card.image}
                             alt={card.name}
@@ -372,16 +451,20 @@ export default function CreditProductComparison() {
                           />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 text-sm">{card.name}</h3>
-                          <p className="text-xs text-gray-500">{card.bank}</p>
+                          <h3 className="text-lg font-bold text-gray-900 mb-1">{card.name}</h3>
+                          <p className="text-gray-600">{card.bank}</p>
                         </div>
                       </div>
-                      <div className="text-gray-900 text-sm">{card.apr}</div>
-                      <div className="text-gray-900 text-sm">
+                      <div className="text-gray-900 flex items-center">{card.apr}</div>
+                      <div className="flex items-center">
                         {card.rupay ? (
-                          <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Yes</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Yes
+                          </span>
                         ) : (
-                          <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-xs">No</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                            No
+                          </span>
                         )}
                       </div>
                       <div className="text-gray-900 text-sm">

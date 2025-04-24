@@ -224,22 +224,21 @@ export default function Header() {
                 <div className="flex items-center">
                   <button 
                     onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
-                    className="text-black hover:text-gray-700 py-2 text-lg mr-1"
+                    className="text-black hover:text-gray-700 py-2 text-lg"
                   >
-                    Credit Products
-                  </button>
-                  <button 
-                    onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
-                    className="p-1"
-                  >
-                    <svg 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      className={`transition-transform duration-200 ${isCreditDropdownOpen ? 'rotate-180' : ''}`}
+                    Credit Card Categories
+                    <svg
+                      className={`ml-2 h-5 w-5 transform inline-block ${isCreditDropdownOpen ? 'rotate-180' : ''}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
                     >
-                      <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -255,28 +254,102 @@ export default function Header() {
                   }}
                 >
                   <Link 
-                    href="/credit" 
+                    href="/credit?category=premium" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Branded Credit Cards</span>
+                    <span className="ml-3">Premium</span>
                   </Link>
                   <Link 
-                    href="/cobrand_credit" 
+                    href="/credit?category=rewards" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Co-Branded Credit Cards</span>
+                    <span className="ml-3">Rewards</span>
                   </Link>
                   <Link 
-                    href="/fintech-credit" 
+                    href="/credit?category=cashback" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Fintech Credit Cards</span>
+                    <span className="ml-3">Cash Back</span>
                   </Link>
                   <Link 
-                    href="/loans/personal" 
+                    href="/credit?category=fuel" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Personal Loans</span>
+                    <span className="ml-3">Fuel</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=lifetime-free" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Lifetime Free</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=forex" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Forex</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=upi" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">UPI</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=international-travel" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">International Travel</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=travel" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Travel</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=domestic-lounge" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Domestic Lounge</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=international-lounge" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">International Lounge</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=fintech" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Fintech</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=airlines"
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Airlines</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=hotels" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Hotel</span>
                   </Link>
                 </div>
               </div>
@@ -351,9 +424,6 @@ export default function Header() {
 
               <Link href="/credit-score" className="text-black hover:text-gray-700 py-2 text-lg">
                 Credit Score
-              </Link>
-              <Link href="/learning-center" className="text-black hover:text-gray-700 py-2 text-lg">
-                Learning Center
               </Link>
             </div>
           </div>
@@ -488,99 +558,117 @@ export default function Header() {
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                 </svg>
-                <span className="text-xs mt-1">Credit Products</span>
+                <span className="text-xs mt-1">Credit Card Categories</span>
               </button>
               {isCreditDropdownOpen && (
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
-                    href="/credit" 
+                    href="/credit?category=premium" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    Credit Cards
+                    Premium
                   </Link>
-                  <Link
-                    href="/cobrand_credit"
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                  >
-                    Co-Branded Credit Cards
-                  </Link>
-                  <Link
-                    href="/fintech-credit"
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                  >
-                    Fintech Credit Cards
-                  </Link>
-                  <Link
-                    href="/loans/auto" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                  >
-                    <span className="text-base">Personal Loans</span>
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Commenting out Investments section in mobile view
-            <div className="relative">
-              <button 
-                onClick={() => setIsInvestmentDropdownOpen(!isInvestmentDropdownOpen)}
-                className="text-black hover:text-gray-700 flex flex-col items-center"
-              >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-xs mt-1">Invest</span>
-              </button>
-              {isInvestmentDropdownOpen && (
-                <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
-                    href="/investment" 
+                    href="/credit?category=rewards" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    Investment Allocation
+                    Rewards
                   </Link>
-                  {Boolean(user) && (
-                    <Link 
-                      href="/investment/portfolio-tracker" 
-                      className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                    >
-                      Portfolio Tracker
-                    </Link>
-                  )}
-                  {Boolean(user) && Boolean(hasRecommendationAccess) && (
-                    <button
-                      onClick={handleMutualFundsDashboard}
-                      className="w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-50"
-                    >
-                      MF Dashboard
-                    </button>
-                  )}
-                  {Boolean(user) && Boolean(hasStockAccess) && (
-                    <button
-                      onClick={handleStocksDashboard}
-                      className="w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-50"
-                    >
-                      Stocks Dashboard
-                    </button>
-                  )}
+                  <Link 
+                    href="/credit?category=cashback" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Cash Back
+                  </Link>
+                  <Link 
+                    href="/credit?category=fuel" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Fuel
+                  </Link>
+                  <Link 
+                    href="/credit?category=lifetime-free" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Lifetime Free
+                  </Link>
+                  <Link 
+                    href="/credit?category=forex" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Forex
+                  </Link>
+                  <Link 
+                    href="/credit?category=upi" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    UPI
+                  </Link>
+                  <Link 
+                    href="/credit?category=international-travel" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    International Travel
+                  </Link>
+                  <Link 
+                    href="/credit?category=travel" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Travel
+                  </Link>
+                  <Link 
+                    href="/credit?category=domestic-lounge" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Domestic Lounge
+                  </Link>
+                  <Link 
+                    href="/credit?category=international-lounge" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    International Lounge
+                  </Link>
+                  <Link 
+                    href="/credit?category=fintech" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Fintech
+                  </Link>
+                  <Link 
+                    href="/credit?category=airlines"
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Airlines
+                  </Link>
+                  <Link 
+                    href="/credit?category=hotels" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Hotels
+                  </Link>
                 </div>
               )}
             </div>
-            */}
-
 
             <Link href="/credit-score" className="text-black hover:text-gray-700 flex flex-col items-center">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
               <span className="text-xs mt-1">Credit Score</span>
-            </Link>
-
-            <Link href="/learning-center" className="text-black hover:text-gray-700 flex flex-col items-center">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              <span className="text-xs mt-1">Learn</span>
             </Link>
           </div>
         </div>

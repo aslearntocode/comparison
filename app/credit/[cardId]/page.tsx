@@ -4,9 +4,7 @@ import { useState, use, useEffect } from 'react'
 import Header from "@/components/Header"
 import Link from 'next/link'
 import Image from 'next/image'
-import { creditCards } from '../../data/creditCards'
-import { cobrandedCards } from '../../data/cobrandedCards'
-import { fintechCards } from '../../data/fintechCards'
+import { creditCards, type CreditCard, type UserFeedback } from '../../data/creditCards'
 import { auth } from '@/lib/firebase'
 import { onAuthStateChanged, User } from 'firebase/auth'
 import { Button } from '../../../components/ui/button'
@@ -25,7 +23,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   >('welcome-annual');
   
   const { cardId } = use(params)
-  const card = creditCards.find(c => c.id === cardId) || cobrandedCards.find(c => c.id === cardId) || fintechCards.find(c => c.id === cardId)
+  const card = creditCards.find(c => c.id === cardId)
   const [user, setUser] = useState<User | null>(null)
   const [newReview, setNewReview] = useState({
     rating: 0,
@@ -454,11 +452,10 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
       <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4">
-            <Link href="/credit" className="text-white flex items-center gap-2">
+            <Link href="/" className="text-white flex items-center gap-2">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              Back to Credit Cards
             </Link>
           </div>
         </div>

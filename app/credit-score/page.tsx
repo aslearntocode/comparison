@@ -794,7 +794,7 @@ export default function CreditScorePage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">CIBIL</p>
+                    <p className="font-medium text-gray-900">CIBIL (We support only CIBIL for now)</p>
                     <p className="text-xs text-gray-500">Get your free credit score from CIBIL</p>
                   </div>
                 </a>
@@ -811,13 +811,13 @@ export default function CreditScorePage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Experian</p>
+                    <p className="font-medium text-gray-900">Experian (Coming soon)</p>
                     <p className="text-xs text-gray-500">Get your credit report from Experian</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://www.crifhighmark.com/" 
+                  href="https://www.crifhighmark.com/"  
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
@@ -828,7 +828,7 @@ export default function CreditScorePage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">CRIF High Mark</p>
+                    <p className="font-medium text-gray-900">CRIF High Mark (Coming soon)</p>
                     <p className="text-xs text-gray-500">Get your credit report from CRIF High Mark</p>
                   </div>
                 </a>
