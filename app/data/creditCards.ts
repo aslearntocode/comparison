@@ -526,6 +526,7 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'international-travel',
       'domestic-lounge',
+      'international-lounge',
       'fuel',
       // 'lifestyle'
     ],
@@ -585,19 +586,19 @@ export const creditCards: CreditCard[] = [
     rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
-      'Airport Lounge Access',
-      'Golf Privileges',
+      // 'Airport Lounge Access',
+      // 'Golf Privileges',
       'Entertainment Offers',
       'Dining Discounts',
       'Fuel Surcharge Waiver',
       'Chip and PIN Security'
     ],
     categories: [
-      'best-credit-cards',
+      // 'best-credit-cards',
       'rewards',
-      'domestic-lounge',
-      'international-lounge',
-      'fuel',
+      // 'domestic-lounge',
+      // 'international-lounge',
+      // 'fuel',
       'fintech',
       'lifetime-free'
     ],
@@ -652,20 +653,20 @@ export const creditCards: CreditCard[] = [
     rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
     rupay: false,
     features: [
-      'Airport Lounge Access',
-      'Railway Lounge Access',
-      'Travel Insurance',
+      // 'Airport Lounge Access',
+      // 'Railway Lounge Access',
+      // 'Travel Insurance',
       'Lifestyle Privileges',
-      'Forex Benefits',
+      // 'Forex Benefits',
       'Lifetime Free Add-on Cards'
     ],
     categories: [
       'rewards',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge',
-      'hotel',
-      'hotels',
+      // 'international-travel',
+      // 'domestic-lounge',
+      // 'international-lounge',
+      // 'hotel',
+      // 'hotels',
       'emi',
       'fintech',
       'lifetime-free'
@@ -723,10 +724,10 @@ export const creditCards: CreditCard[] = [
     categories: [
       'best-credit-cards',
       'rewards',
-      'travel',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge',
+      // 'travel',
+      // 'international-travel',
+      // 'domestic-lounge',
+      // 'international-lounge',
       'fintech'
     ],
     feedback: [],
@@ -950,8 +951,8 @@ export const creditCards: CreditCard[] = [
     ],
     categories: [
       'premium',
-      'international-travel',
-      'international-lounge',
+      // 'international-travel',
+      // 'international-lounge',
       'metal'
     ],
     feedback: [],
@@ -1427,8 +1428,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'travel',
       'domestic-lounge',
-      'international-lounge',
-      'international-travel'
+      // 'international-lounge',
+      // 'international-travel'
     ],
     feedback: [],
     additionalDetails: {
