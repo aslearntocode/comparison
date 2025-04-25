@@ -25,6 +25,7 @@ export default function Header() {
   const [hasStockAccess, setHasStockAccess] = useState(false)
   const [isInvestmentDropdownOpen, setIsInvestmentDropdownOpen] = useState(false)
   const [isCreditDropdownOpen, setIsCreditDropdownOpen] = useState(false)
+  const [isComplaintsDropdownOpen, setIsComplaintsDropdownOpen] = useState(false)
   const [hasCreditReport, setHasCreditReport] = useState(false)
   const [hasDisputes, setHasDisputes] = useState(false)
   const router = useRouter()
@@ -107,6 +108,27 @@ export default function Header() {
 
     return () => unsubscribe()
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      
+      // Check if the click was outside the dropdown button and menu
+      if (!target.closest('button')?.contains(target) && !target.closest('.complaints-menu')?.contains(target)) {
+        setIsComplaintsDropdownOpen(false);
+      }
+    };
+
+    // Add event listener when the dropdown is open
+    if (isComplaintsDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isComplaintsDropdownOpen]);
 
   const handleMutualFundsDashboard = async (e: React.MouseEvent) => {
     e.preventDefault()
@@ -216,9 +238,6 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-8 ml-8">
               <Link href="/" className="text-black hover:text-gray-700 py-2 text-lg">
                 Home
-              </Link>
-              <Link href="/about" className="text-black hover:text-gray-700 py-2 text-lg">
-                About Us
               </Link>
               <div className="relative" style={{ zIndex: 50 }}>
                 <div className="flex items-center">
@@ -418,6 +437,54 @@ export default function Header() {
               <Link href="/credit-score" className="text-black hover:text-gray-700 py-2 text-lg">
                 Credit Score
               </Link>
+              <div className="relative" style={{ zIndex: 50 }}>
+                <div className="flex items-center">
+                  <button 
+                    onClick={() => setIsComplaintsDropdownOpen(!isComplaintsDropdownOpen)}
+                    className="text-black hover:text-gray-700 py-2 text-lg flex items-center"
+                  >
+                    Resolve Complaints
+                    <svg
+                      className={`ml-2 h-5 w-5 transform inline-block ${isComplaintsDropdownOpen ? 'rotate-180' : ''}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div 
+                  className={`
+                    fixed w-64 bg-white rounded-lg shadow-lg py-2
+                    ${isComplaintsDropdownOpen ? 'block' : 'hidden'}
+                  `}
+                  style={{
+                    zIndex: 1000,
+                    top: '4rem',
+                    left: '46rem'
+                  }}
+                >
+                  <Link 
+                    href="/resolve-complaints" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsComplaintsDropdownOpen(false)}
+                  >
+                    Register New Complaint
+                  </Link>
+                  <Link 
+                    href="/track-complaints" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsComplaintsDropdownOpen(false)}
+                  >
+                    Track Complaint Status
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -536,13 +603,6 @@ export default function Header() {
               <span className="text-xs mt-1">Home</span>
             </Link>
 
-            <Link href="/about" className="text-black hover:text-gray-700 flex flex-col items-center">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-xs mt-1">About</span>
-            </Link>
-
             <div className="relative">
               <button 
                 onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
@@ -551,8 +611,9 @@ export default function Header() {
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                 </svg>
-                <span className="text-xs mt-1">Credit Card Categories</span>
+                <span className="text-xs mt-1">Credit Cards</span>
               </button>
+
               {isCreditDropdownOpen && (
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
@@ -633,7 +694,7 @@ export default function Header() {
                     Fintech
                   </Link>
                   <Link 
-                    href="/credit?category=airlines"
+                    href="/credit?category=airlines" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
@@ -644,7 +705,7 @@ export default function Header() {
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    Hotels
+                    Hotel
                   </Link>
                 </div>
               )}
@@ -656,6 +717,37 @@ export default function Header() {
               </svg>
               <span className="text-xs mt-1">Credit Score</span>
             </Link>
+
+            <div className="relative">
+              <button 
+                onClick={() => setIsComplaintsDropdownOpen(!isComplaintsDropdownOpen)}
+                className="text-black hover:text-gray-700 flex flex-col items-center"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span className="text-xs mt-1">Complaints</span>
+              </button>
+
+              {isComplaintsDropdownOpen && (
+                <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+                  <Link 
+                    href="/resolve-complaints" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsComplaintsDropdownOpen(false)}
+                  >
+                    Register New Complaint
+                  </Link>
+                  <Link 
+                    href="/track-complaints" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsComplaintsDropdownOpen(false)}
+                  >
+                    Track Complaint Status
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
