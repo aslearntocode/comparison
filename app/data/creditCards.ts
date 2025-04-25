@@ -8,7 +8,7 @@ export interface UserFeedback {
   cardName: string;
 }
 
-export type CardCategory = 'hotels' | 'airlines' | 'fintech';
+export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle';
 
 export interface CreditCard {
   id: string;
@@ -56,8 +56,8 @@ export const creditCards: CreditCard[] = [
     category: 'hotels',
     image: '/credit-cards/HDFC-Regalia-Marriott.png',
     apr: '43.2% p.a.',
-    annualFee: '₹2,500 + GST',
-    joiningFee: '₹2,500 + GST',
+    annualFee: '₹3,000 + GST',
+    joiningFee: '₹3,000 + GST',
     rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
     rupay: false,
     features: [
@@ -169,7 +169,146 @@ export const creditCards: CreditCard[] = [
       summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
     }
   },
-
+  {
+    id: 'hdfc-pixel-play',
+    name: 'PIXEL Play Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/HDFC-Pixel-Play.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rewards: '5% Cashback on choice of any two packs\n3% Cashback on choice of any one E-commerce merchant\n1% Unlimited Cashback across all other spends',
+    rupay: true,
+    features: [
+      'Category-based Cashback',
+      'E-commerce Benefits',
+      'UPI Rewards',
+      'SmartBuy Benefits',
+      'Zero Forex Markup',
+      'Contactless Payments'
+    ],
+    categories: [
+      'cashback',
+      'lifestyle',
+      'shopping',
+      'upi'
+      // 'fintech'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Cashback Structure:\n• 5% Cashback on choice of any two packs:\n  - Dining & Entertainment: BookMyShow & Zomato\n  - Travel: MakeMyTrip & Uber\n  - Grocery: Blinkit & Reliance Smart Bazaar\n  - Electronics: Croma & Reliance Digital\n  - Fashion: Nykaa & Myntra\n• 5% Cashback on SmartBuy\n• 3% Cashback on choice of any one E-commerce merchant\n• Amazon or Flipkart or PayZapp\n• 1% Unlimited Cashback across all other spends\n• 1% Cashback on UPI Spends (Applicable only on PIXEL RuPay Credit Card holders)',
+      welcomeBonus: 'Joining Fee waived on ₹20,000 within 90 days of issuance',
+      milestoneBenefits: ['Annual fee waiver on spending ₹1 lakh or more in the preceding 12 months'],
+      summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions.'
+    }
+  },
+  {
+    id: 'hdfc-millenia',
+    name: 'Millennia Plus Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/HDFC+Millenia+.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹1,000 + GST',
+    joiningFee: '₹1,000 + GST',
+    rewards: '5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato\n1% cashback on other spends',
+    rupay: false,
+    features: [
+      'E-commerce Cashback',
+      'Entertainment Benefits',
+      'Dining Benefits',
+      'Lifestyle Rewards',
+      'Fuel Surcharge Waiver',
+      'Quarterly Gift Vouchers'
+    ],
+    categories: [
+      'cashback',
+      'lifestyle',
+      'shopping',
+      'entertainment',
+      'dining',
+      'lifestyle'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Cashback Structure:\n• 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato\n• 1% cashback on other spends\n• ₹1,000 worth gift vouchers on spends of ₹1,00,000 and above in each calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC',
+      welcomeBonus: 'Pay your Membership fee and get Reward Points equivalent to Fee Amount',
+      milestoneBenefits: ['Spend ₹1,00,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
+      fuelSurcharge: '1% waiver on transactions between ₹400-₹5,000',
+      summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits.'
+    }
+  },
+  {
+    id: 'hdfc-money-black-plus',
+    name: 'MoneyBack+ Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/HDFC-MoneyBack+.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rewards: '10X CashPoints (3.3% Valueback) on Amazon, Flipkart, Swiggy, Reliance Smart SuperStore & BigBasket\n2 CashPoints per ₹150 spent on other spends',
+    rupay: true,
+    features: [
+      'Enhanced Cashback on Shopping',
+      'Dining Benefits',
+      'Quarterly Gift Vouchers',
+      'UPI Rewards',
+      'Fuel Surcharge Waiver',
+      'Welcome Points'
+    ],
+    categories: [
+      'cashback',
+      'shopping',
+      'dining',
+      'upi',
+      'grocery',
+      'lifestyle'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'CashPoints Structure:\n• 10X CashPoints (3.3% Valueback) on Amazon, Flipkart, Swiggy, Reliance Smart SuperStore & BigBasket\n• 2 CashPoints per ₹150 spent on other spends\n• Get ₹500 gift voucher on spends on ₹50,000 per calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC\n\nNote:\nFor Rupay Credit Cardholders, all UPI spends (Excluding fuel, Wallet / Prepaid Card loads or Voucher Purchases) will earn 2 RPs for every Rs.150 spent and is capped at 500 reward points in a calendar month.',
+      welcomeBonus: '500 Cash Points (applicable only on payment of membership fee)',
+      milestoneBenefits: ['Spend ₹50,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
+      fuelSurcharge: '1% waiver on transactions between ₹400-₹5,000',
+      summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery.'
+    }
+  },
+  {
+    id: 'hdfc-swiggy',
+    name: 'Swiggy HDFC Bank Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/Credit-card-2.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rewards: '10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n5% Cashback on online spends across online MCCs\n1% Cashback on other categories',
+    rupay: false,
+    features: [
+      'Enhanced Swiggy Cashback',
+      'Online Shopping Benefits',
+      'Swiggy One Membership',
+      'Card Activation Benefits',
+      'Annual Fee Waiver',
+      'Welcome Benefits'
+    ],
+    categories: [
+      'cashback',
+      'dining',
+      'food-delivery',
+      'lifestyle'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
+      welcomeBonus: 'Get complimentary Swiggy One Membership for 3 months as welcome benefit',
+      milestoneBenefits: ['Spend ₹2,00,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
+      additionalServices: 'Card Activation Process:\n• Making a transaction using the Credit Card\n• To use the card via OTP or IVR, setting PIN for the card, and enabling card controls such as online transactions, enabling international transactions etc.\n\nImportant Notes:\n• Cardholder is eligible for welcome benefit on card activation\n• The customers need to claim \'Swiggy One\' on Swiggy app post card activation to unlock the benefit\n• This option will be available on the Swiggy app within 2-3 days of card activation',
+      summary: 'A co-branded credit card offering premium benefits for Swiggy users with enhanced cashback on food delivery, Instamart, and online shopping.'
+    }
+  },
   // Airlines Cards
   {
     id: 'axis-privilege',
@@ -246,7 +385,7 @@ export const creditCards: CreditCard[] = [
     bank: 'ICICI Bank',
     category: 'airlines',
     image: '/credit-cards/ICICI-Emeralde-Metal.png',
-    apr: '44% p.a.',
+    apr: '45% p.a.',
     annualFee: '₹12,499 + GST',
     joiningFee: '₹12,499 + GST',
     rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
@@ -320,16 +459,17 @@ export const creditCards: CreditCard[] = [
     category: 'airlines',
     image: '/credit-cards/ICICI-Emeralde.png',
     apr: '44% p.a.',
-    annualFee: '₹500',
-    joiningFee: '₹1,000',
+    annualFee: '₹1200',
+    joiningFee: '₹12,000',
     rewards: 'Earn 2.5% Reward Points on international spends\n Earn 2% Reward Points on domestic spends',
     rupay: true,
     features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
     categories: [
-      // 'premium',
+      'premium',
       'rewards',
       'cashback',
-      'fuel'
+      'fuel',
+      // 'lifestyle'
     ],
     feedback: [
       { comment: "Decent cashback but customer service needs improvement", rating: 6, date: "2024-03-14", userId: "user789", userName: "Bob Johnson", cardId: "emeralde", cardName: "Emeralde Credit Card" },
@@ -368,9 +508,9 @@ export const creditCards: CreditCard[] = [
     bank: 'ICICI Bank',
     category: 'airlines',
     image: '/credit-cards/ICICI-Sapphiro.png',
-    apr: '44% p.a.',
+    apr: '45% p.a.',
     annualFee: '₹3,500 + GST',
-    joiningFee: '₹6,000 + GST',
+    joiningFee: '₹6,500 + GST',
     rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
@@ -386,7 +526,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'international-travel',
       'domestic-lounge',
-      'fuel'
+      'fuel',
+      // 'lifestyle'
     ],
     feedback: [
       { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
@@ -526,7 +667,6 @@ export const creditCards: CreditCard[] = [
       'hotel',
       'hotels',
       'emi',
-      'upi',
       'fintech',
       'lifetime-free'
     ],
@@ -893,7 +1033,7 @@ export const creditCards: CreditCard[] = [
     annualFee: '₹2,500 + GST',
     joiningFee: '₹2,500 + GST',
     rewards: 'Enhanced rewards on lifestyle spends\nLounge access\nComprehensive insurance',
-    rupay: false,
+    rupay: true,
     features: [
       'Airport Lounge Access',
       'Lifestyle Benefits',
@@ -1370,6 +1510,129 @@ export const creditCards: CreditCard[] = [
         'Those who rarely fly with partner airlines'
       ],
       summary: 'A premium credit card offering Avios points on spends, comprehensive travel benefits, and exclusive airport services, ideal for frequent international travelers.'
+    }
+  },
+  {
+    id: 'tata-neu-infinity',
+    name: 'Tata Neu Infinity Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/Tata-Neu-Infinity.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹1,499 + GST',
+    joiningFee: '₹1,499 + GST',
+    rewards: '5% NeuCoins on Tata brands; 1.5% on UPI spends',
+    rupay: true,
+    features: [
+      'UPI Enabled',
+      'NeuCoins Rewards',
+      'Tata Brand Benefits',
+      'Digital-First Card',
+      'Contactless Payments'
+    ],
+    categories: [
+      'rewards',
+      'shopping',
+      'upi',
+      'fintech'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 5% NeuCoins on spending at Tata brands\n• 1.5% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
+      welcomeBonus: 'Not specified',
+      minimumSpend: 'Not specified',
+      idealFor: [
+        'Frequent Tata brand shoppers',
+        'Digital-first users',
+        'UPI payment users'
+      ],
+      notIdealFor: [
+        'Users seeking travel benefits',
+        'Those who rarely shop at Tata brands'
+      ],
+      summary: 'A co-branded credit card offering enhanced rewards on Tata brand purchases and UPI transactions.'
+    }
+  },
+  {
+    id: 'tata-neu-plus',
+    name: 'Tata Neu Plus Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/Tata-Neu.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
+    rewards: '2% NeuCoins on Tata brands; 1% on UPI spends',
+    rupay: true,
+    features: [
+      'UPI Enabled',
+      'NeuCoins Rewards',
+      'Tata Brand Benefits',
+      'Digital-First Card',
+      'Contactless Payments'
+    ],
+    categories: [
+      'rewards',
+      'shopping',
+      'upi',
+      'fintech'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 2% NeuCoins on spending at Tata brands\n• 1% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
+      welcomeBonus: 'Not specified',
+      minimumSpend: 'Not specified',
+      idealFor: [
+        'Regular Tata brand shoppers',
+        'Digital-first users',
+        'Budget-conscious consumers'
+      ],
+      notIdealFor: [
+        'Premium card seekers',
+        'Users seeking travel benefits'
+      ],
+      summary: 'An entry-level co-branded credit card offering rewards on Tata brand purchases and UPI transactions.'
+    }
+  },
+  {
+    id: 'hdfc-rupay',
+    name: 'HDFC UPI RuPay Credit Card',
+    bank: 'HDFC Bank',
+    category: 'fintech',
+    image: '/credit-cards/HDFC-UPI-RuPay.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹99 + GST',
+    joiningFee: '₹99 + GST',
+    rewards: 'Up to 3X CashPoints on spends; 1% on UPI transactions',
+    rupay: true,
+    features: [
+      'UPI Enabled',
+      'CashPoints Rewards',
+      'Low Annual Fee',
+      'Digital-First Card',
+      'Contactless Payments'
+    ],
+    categories: [
+      'rewards',
+      'budget',
+      'upi',
+      'fintech'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards',
+      welcomeBonus: 'Not specified',
+      minimumSpend: 'Not specified',
+      idealFor: [
+        'First-time credit card users',
+        'Budget-conscious consumers',
+        'UPI payment users'
+      ],
+      notIdealFor: [
+        'Premium card seekers',
+        'High spenders seeking extensive rewards'
+      ],
+      summary: 'An affordable RuPay credit card with UPI functionality and basic rewards program.'
     }
   }
 ]; 

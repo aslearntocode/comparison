@@ -769,7 +769,7 @@ export default function Home() {
               <h1 className="text-[32px] md:text-[64px] leading-tight font-bold mb-8">
                 <span className="text-black">Find The Right</span>
                 <br />
-                <span className="text-[#4F46E5]">Credit Product</span>
+                <span className="text-[#4F46E5]">Credit Card</span>
               </h1>
               <p className="text-2xl text-gray-600 mb-12">
                 Compare different credit products from multiple banks and find the perfect match for your needs. Get personalized recommendations based on your profile.

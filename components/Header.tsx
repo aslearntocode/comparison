@@ -279,19 +279,26 @@ export default function Header() {
                   >
                     <span className="ml-3">Premium</span>
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=rewards" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Rewards</span>
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Cash Back</span>
+                  </Link>
+                  <Link 
+                    href="/credit?category=lifestyle" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Lifestyle</span>
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 
@@ -623,19 +630,26 @@ export default function Header() {
                   >
                     Premium
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=rewards" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Rewards
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Cash Back
+                  </Link>
+                  <Link 
+                    href="/credit?category=lifestyle" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Lifestyle
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 

@@ -260,7 +260,7 @@ function CreditProductComparisonContent() {
           {/* Credit Cards Grid */}
           <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
             {/* Table Header - Desktop */}
-            <div className="hidden md:grid md:grid-cols-7 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 1.8fr 0.8fr' }}>
+            <div className="hidden md:grid md:grid-cols-7 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr' }}>
               <div className="col-span-1 font-medium text-gray-700 text-[13px]">Card Details</div>
               <button
                 onClick={() => handleSort('apr')}
@@ -276,13 +276,6 @@ function CreditProductComparisonContent() {
               >
                 Fees
                 <SortIcon field="annualFee" />
-              </button>
-              <button
-                onClick={() => handleSort('rewards')}
-                className="font-medium text-gray-700 text-[13px] flex items-center gap-1 hover:text-blue-600"
-              >
-                Rewards
-                <SortIcon field="rewards" />
               </button>
               <button
                 onClick={() => handleSort('sentiment')}
@@ -311,7 +304,6 @@ function CreditProductComparisonContent() {
                 <option value="apr">APR</option>
                 <option value="annualFee">Annual Fee</option>
                 <option value="joiningFee">Joining Fee</option>
-                <option value="rewards">Rewards</option>
                 <option value="sentiment">User Sentiment</option>
               </select>
             </div>
@@ -378,22 +370,12 @@ function CreditProductComparisonContent() {
                               </ul>
                             </div>
                           </div>
-                          <div>
-                            <div className="text-sm font-medium text-gray-700 mb-1">Rewards</div>
-                            <div className="text-gray-900 text-sm">
-                              <ul className="list-disc list-inside">
-                                {card.rewards !== 'None' && card.rewards.split('\n').map((reward, index) => (
-                                  <li key={index}>{reward}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
 
                     {/* Desktop View */}
-                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 1.8fr 0.8fr' }}>
+                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr' }}>
                       <div className="flex items-center gap-4">
                         <div className="w-32 h-20 relative flex-shrink-0">
                           <Image
@@ -424,13 +406,6 @@ function CreditProductComparisonContent() {
                         <ul className="list-disc list-inside space-y-1">
                           <li>Annual: {card.annualFee}</li>
                           <li>Joining: {card.joiningFee}</li>
-                        </ul>
-                      </div>
-                      <div className="text-gray-900 text-sm">
-                        <ul className="list-disc list-inside">
-                          {card.rewards !== 'None' && card.rewards.split('\n').map((reward, index) => (
-                            <li key={index}>{reward}</li>
-                          ))}
                         </ul>
                       </div>
                       <div className="flex flex-col">
