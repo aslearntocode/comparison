@@ -314,13 +314,13 @@ export default function Header() {
                   >
                     <span className="ml-3">Lifetime Free</span>
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=forex" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Forex</span>
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=upi" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
@@ -665,13 +665,13 @@ export default function Header() {
                   >
                     Lifetime Free
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=forex" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Forex
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=upi" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"

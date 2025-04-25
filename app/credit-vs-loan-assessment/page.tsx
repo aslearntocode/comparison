@@ -42,7 +42,8 @@ const questions: Question[] = [
     text: "How much do you need to borrow?",
     options: [
       { value: "small", label: "Less than ₹50,000" },
-      { value: "medium", label: "₹50,000 - ₹2,00,000" },
+      { value: "medium", label: "₹50,000 - ₹1,00,000" },
+      { value: "medium_large", label: "₹1,00,000 - ₹2,00,000" },
       { value: "large", label: "₹2,00,000 - ₹5,00,000" },
       { value: "very_large", label: "More than ₹5,00,000" }
     ]
@@ -116,13 +117,45 @@ export default function CreditVsLoanAssessment() {
     const amount = answers[3];
     const repayment = answers[4];
     const creditScore = answers[5];
+    const hasExistingCard = answers[6];
+    const hasDefaulted = answers[7];
 
     if (creditScore === "poor") {
       return {
         product: "Credit Score Improvement Required",
         reason: "Based on your credit score (below 600), lenders might not be able to approve your application at this time. It's recommended to work on improving your credit score first.",
-        isLowScore: true
+        isLowScore: true,
+        showSecuredCardOption: true
       };
+    }
+
+    // Check for personal loan recommendation based on amount and horizon
+    if ((amount === "medium_large" || amount === "large" || amount === "very_large") && 
+        (repayment === "medium" || repayment === "medium_long" || repayment === "long" || repayment === "very_long")) {
+      return {
+        product: "Personal Loan",
+        reason: "Given your need for a larger amount (more than ₹1,00,000) and longer repayment horizon (more than 6 months), a personal loan would be more suitable for your financial needs.",
+        isLowScore: false
+      };
+    }
+
+    // Check for credit card recommendations for smaller amounts and shorter horizons
+    if ((amount === "small" || amount === "medium") && 
+        (repayment === "very_short" || repayment === "short")) {
+      
+      if (hasExistingCard === "yes") {
+        return {
+          product: "Use Existing Credit Card",
+          reason: "Since you already have a credit card and your borrowing needs are small with a short repayment horizon, it's recommended to use your existing credit card instead of taking on additional debt.",
+          isLowScore: false
+        };
+      } else {
+        return {
+          product: "Apply for Credit Card",
+          reason: "Given your borrowing needs and repayment horizon, a credit card would be the most suitable option. You can apply for a new credit card to meet your financial needs.",
+          isLowScore: false
+        };
+      }
     }
 
     if (purpose === "regular" || (amount === "small" && repayment === "very_short")) {
@@ -169,6 +202,9 @@ export default function CreditVsLoanAssessment() {
                     <li>Pay your bills on time</li>
                     <li>Reduce your credit utilization</li>
                     <li>Maintain a good mix of credit</li>
+                    {recommendation.showSecuredCardOption && (
+                      <li>Consider applying for a secured credit card to build your credit history</li>
+                    )}
                   </>
                 ) : (
                   <>
@@ -189,7 +225,11 @@ export default function CreditVsLoanAssessment() {
                 }}
                 className="w-full"
               >
-                {recommendation.isLowScore ? "Click here to learn how to increase your score" : "Look at Some Products and Apply"}
+                {recommendation.isLowScore ? 
+                  (recommendation.showSecuredCardOption ? 
+                    "View Secured Credit Card Options" : 
+                    "Click here to learn how to increase your score") : 
+                  "Look at Some Products and Apply"}
               </Button>
             </div>
           </Card>
