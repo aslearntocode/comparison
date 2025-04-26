@@ -1620,32 +1620,6 @@ export const creditCards: CreditCard[] = [
     }
   },
   {
-    id: 'sbm-step-up',
-    name: 'Step UP Credit Card',
-    bank: 'SBM Bank',
-    category: 'secured',
-    image: '/credit-cards/SBM-Step-Up.png',
-    apr: '6.5% p.a. on FD',
-    annualFee: 'Nil',
-    joiningFee: 'Nil',
-    rewards: '1 reward point per ₹100 spent',
-    rupay: false,
-    features: [
-      '90% credit limit of FD',
-      '1 reward point per ₹100 spent',
-      '6.5% FD interest',
-      'Minimum FD amount: ₹2,000'
-    ],
-    categories: ['secured'],
-    feedback: [],
-    additionalDetails: {
-      creditLimit: '90% of Fixed Deposit amount',
-      minimumSpend: 'No minimum spend requirement',
-      interestRate: '6.5% p.a. on Fixed Deposit',
-      summary: 'A secured credit card backed by fixed deposit with 90% credit limit and reward points on spending.'
-    }
-  },
-  {
     id: 'sbi-unnati',
     name: 'SBI Card Unnati',
     bank: 'SBI Card',
@@ -1674,19 +1648,19 @@ export const creditCards: CreditCard[] = [
     name: 'Kotak 811 #DreamDifferent Credit Card',
     bank: 'Kotak Mahindra Bank',
     category: 'secured',
-    image: '/credit-cards/Kotak-811-Dream.png',
+    image: '/credit-cards/Kotak-Secured.png',
     apr: 'Based on FD rate',
     annualFee: 'Nil',
     joiningFee: 'Nil',
     rewards: '2 reward points per ₹100 online, 1 point per ₹100 offline',
-    rupay: false,
+    rupay: true,
     features: [
       '2 reward points per ₹100 online',
       '1 point per ₹100 offline',
       '90% credit limit of FD',
-      'Minimum FD amount: ₹5,000-₹5,555'
+      'Minimum FD amount: ₹5,000'
     ],
-    categories: ['secured', 'rewards'],
+    categories: ['secured'],
     feedback: [],
     additionalDetails: {
       rewardsProgram: '2 reward points per ₹100 spent online\n1 reward point per ₹100 spent offline',
@@ -1699,7 +1673,7 @@ export const creditCards: CreditCard[] = [
     name: 'ICICI Bank Instant Platinum Credit Card',
     bank: 'ICICI Bank',
     category: 'secured',
-    image: '/credit-cards/ICICI-Instant-Platinum.png',
+    image: '/credit-cards/ICICI-Platinum-Secured.png',
     apr: 'Based on FD rate',
     annualFee: 'Nil',
     joiningFee: 'Nil',
@@ -1710,7 +1684,7 @@ export const creditCards: CreditCard[] = [
       'Contactless payments',
       'Minimum FD amount: ₹50,000'
     ],
-    categories: ['secured', 'lifestyle'],
+    categories: ['secured'],
     feedback: [],
     additionalDetails: {
       movieBenefits: '25% discount on BookMyShow bookings (twice a month)',
@@ -1723,7 +1697,7 @@ export const creditCards: CreditCard[] = [
     name: 'Bank of Baroda Prime Credit Card',
     bank: 'Bank of Baroda',
     category: 'secured',
-    image: '/credit-cards/BOB-Prime.png',
+    image: '/credit-cards/BOB-Secured.png',
     apr: 'Based on FD rate',
     annualFee: 'Nil',
     joiningFee: 'Nil',
@@ -1735,7 +1709,7 @@ export const creditCards: CreditCard[] = [
       'Fuel surcharge waiver',
       'Minimum FD amount: ₹15,000'
     ],
-    categories: ['secured', 'fuel'],
+    categories: ['secured'],
     feedback: [],
     additionalDetails: {
       creditLimit: 'Up to 80% of Fixed Deposit amount',
@@ -1744,11 +1718,11 @@ export const creditCards: CreditCard[] = [
     }
   },
   {
-    id: 'axis-magnet-fd',
-    name: 'Axis Bank Magnet FD Backed Credit Card',
+    id: 'axis-fd',
+    name: 'Axis Bank FD Backed Credit Card',
     bank: 'Axis Bank',
     category: 'secured',
-    image: '/credit-cards/Axis-Magnet-FD.png',
+    image: '/credit-cards/Axis-FD.png',
     apr: 'Based on FD rate',
     annualFee: '₹500',
     joiningFee: '₹500',
