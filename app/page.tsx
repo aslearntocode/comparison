@@ -763,6 +763,115 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          {/* Mobile Hero Section - Moved to top */}
+          <div className="lg:hidden mb-12">
+            <div className="relative w-full h-[300px] overflow-hidden">
+              {sliderData.map((slide, index) => (
+                <div
+                  key={slide.type}
+                  className={`absolute w-full transition-all duration-500 transform ${
+                    index === currentSlide ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+                  }`}
+                >
+                  {slide.type === 'credit-cards' ? (
+                    <div className="relative w-full h-[300px]">
+                      <div className="absolute top-0 right-0 transform -rotate-6 transition-transform hover:rotate-0">
+                        <Image
+                          src={(slide as CreditCardSlide).images[2]}
+                          alt="Credit Card 3"
+                          width={240}
+                          height={150}
+                          className="rounded-2xl shadow-2xl"
+                        />
+                      </div>
+                      <div className="absolute top-8 right-16 transform rotate-6 transition-transform hover:rotate-0">
+                        <Image
+                          src={(slide as CreditCardSlide).images[1]}
+                          alt="Credit Card 2"
+                          width={240}
+                          height={150}
+                          className="rounded-2xl shadow-2xl"
+                        />
+                      </div>
+                      <div className="absolute top-16 right-32 transform -rotate-3 transition-transform hover:rotate-0">
+                        <Image
+                          src={(slide as CreditCardSlide).images[0]}
+                          alt="Credit Card 1"
+                          width={240}
+                          height={150}
+                          className="rounded-2xl shadow-2xl"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="relative w-full h-[300px] flex items-center justify-center">
+                      <div className="bg-white rounded-2xl shadow-2xl p-4 w-[280px] transform rotate-3 hover:rotate-0 transition-transform">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="bg-[#4F46E5] w-10 h-10 rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-lg">SB</span>
+                          </div>
+                          <div className="text-right">
+                            <h3 className="text-lg font-bold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.bankName}</h3>
+                            <p className="text-xs text-gray-500">Personal Loan</p>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-3">
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-sm text-gray-600">Interest Rate</span>
+                            <span className="font-semibold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.interestRate}</span>
+                          </div>
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-sm text-gray-600">Loan Amount</span>
+                            <span className="font-semibold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.loanAmount}</span>
+                          </div>
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-sm text-gray-600">Tenure</span>
+                            <span className="font-semibold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.tenure}</span>
+                          </div>
+                          <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                            <span className="text-sm text-gray-600">EMI</span>
+                            <span className="font-semibold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.emi}</span>
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <span className="text-sm text-gray-600">Processing Fee</span>
+                            <span className="font-semibold text-gray-900">{(slide as PersonalLoanSlide).sampleLoan.processingFee}</span>
+                          </div>
+                        </div>
+
+                        <div className="mt-4">
+                          <div className="bg-[#4F46E5]/10 rounded-lg p-2">
+                            <p className="text-xs text-[#4F46E5] font-medium">
+                              ✨ Pre-approved offer available
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            {/* Success Badge for Mobile */}
+            <div className="absolute top-4 right-4 bg-green-500 text-white p-2 rounded-full shadow-lg z-10">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            {/* Slider Indicators for Mobile */}
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {sliderData.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentSlide ? 'bg-blue-600 w-4' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div>
@@ -771,8 +880,8 @@ export default function Home() {
                 <br />
                 <span className="text-[#4F46E5]">Credit Card</span>
               </h1>
-              <p className="text-2xl text-gray-600 mb-12">
-                Compare different credit products from multiple banks and find the perfect match for your needs. Get personalized recommendations based on your profile.
+              <p className="text-lg text-gray-600 mb-12">
+                Compare different credit products from multiple banks and find the perfect match for your needs.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
@@ -1004,7 +1113,14 @@ export default function Home() {
                     alt="Credit Score Analysis"
                     width={600}
                     height={400}
-                    className="object-cover"
+                    className="object-cover hidden lg:block"
+                  />
+                  <Image
+                    src="/Report-Summary.png"
+                    alt="Credit Score Analysis"
+                    width={400}
+                    height={300}
+                    className="object-cover lg:hidden"
                   />
                 </div>
                 <div className="mt-6 space-y-4">
@@ -1060,7 +1176,12 @@ export default function Home() {
             <div className="max-w-lg">
               <form 
                 className="space-y-4 bg-white rounded-xl shadow-lg p-6 cursor-pointer hover:shadow-xl transition-all duration-300"
-                onClick={handleFormClick}
+                onClick={(e) => {
+                  if (!user) {
+                    e.preventDefault();
+                    router.push('/resolve-complaints');
+                  }
+                }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -1274,3 +1395,4 @@ export default function Home() {
     </div>
   )
 }
+

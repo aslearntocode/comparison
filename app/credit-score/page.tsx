@@ -50,6 +50,139 @@ const CreditScoreMeter = ({ score }: { score: number }) => {
   );
 };
 
+const ScoreNotification = ({ score }: { score: number }) => {
+  const router = useRouter();
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  type ColorType = 'yellow' | 'blue' | 'green';
+  type NotificationContent = {
+    title: string;
+    message: string;
+    buttonText: string;
+    buttonAction: () => void;
+    color: ColorType;
+  };
+
+  const getNotificationContent = (): NotificationContent => {
+    if (score < 700) {
+      return {
+        title: "Improve Your Credit Score",
+        message: "Your credit score needs improvement. Learn ways to enhance your score and get better financial opportunities.",
+        buttonText: "View Improvement Tips",
+        buttonAction: () => router.push('/credit-score/report'),
+        color: "yellow"
+      };
+    } else if (score >= 700 && score < 750) {
+      return {
+        title: "Explore UPI Credit Cards",
+        message: "Your credit score is good! Check out our selection of UPI-enabled credit cards with great rewards.",
+        buttonText: "View UPI Cards",
+        buttonAction: () => router.push('/credit?category=upi'),
+        color: "blue"
+      };
+    } else {
+      return {
+        title: "Premium Card Offers Available!",
+        message: "Excellent credit score! You're eligible for our premium credit cards with exclusive benefits.",
+        buttonText: "Explore Premium Cards",
+        buttonAction: () => router.push('/credit?category=premium'),
+        color: "green"
+      };
+    }
+  };
+
+  const content = getNotificationContent();
+  const colorClasses: Record<ColorType, {
+    bg: string;
+    border: string;
+    text: string;
+    button: string;
+    icon: string;
+  }> = {
+    yellow: {
+      bg: "bg-yellow-50/90 backdrop-blur-sm",
+      border: "border-yellow-200/50",
+      text: "text-yellow-800",
+      button: "bg-yellow-100/90 hover:bg-yellow-200/90 text-yellow-800",
+      icon: "text-yellow-400"
+    },
+    blue: {
+      bg: "bg-blue-50/90 backdrop-blur-sm",
+      border: "border-blue-200/50",
+      text: "text-blue-800",
+      button: "bg-blue-100/90 hover:bg-blue-200/90 text-blue-800",
+      icon: "text-blue-400"
+    },
+    green: {
+      bg: "bg-green-50/90 backdrop-blur-sm",
+      border: "border-green-200/50",
+      text: "text-green-800",
+      button: "bg-green-100/90 hover:bg-green-200/90 text-green-800",
+      icon: "text-green-400"
+    }
+  };
+
+  return (
+    <div 
+      className={`fixed right-0 top-1/2 transform -translate-y-1/2 transition-all duration-300 ease-in-out z-50 ${
+        isExpanded ? 'translate-x-0' : 'translate-x-[calc(100%-40px)]'
+      }`}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className={`relative ${colorClasses[content.color].bg} ${colorClasses[content.color].border} rounded-l-xl shadow-lg p-4 w-[300px] border backdrop-blur-sm transition-all duration-300`}>
+        {/* Toggle Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsExpanded(!isExpanded);
+          }}
+          className={`absolute -left-10 top-1/2 transform -translate-y-1/2 w-10 h-10 ${colorClasses[content.color].bg} ${colorClasses[content.color].border} rounded-l-xl flex items-center justify-center shadow-lg z-50 backdrop-blur-sm hover:scale-105 transition-transform duration-200`}
+        >
+          <svg 
+            className={`w-5 h-5 ${colorClasses[content.color].icon} transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Content */}
+        <div className="flex items-start space-x-3">
+          <div className="flex-shrink-0">
+            <div className={`p-2 rounded-lg ${colorClasses[content.color].button} bg-opacity-50`}>
+              <svg className={`h-5 w-5 ${colorClasses[content.color].icon}`} viewBox="0 0 20 20" fill="currentColor">
+                {score < 700 ? (
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                ) : score >= 700 && score < 750 ? (
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                ) : (
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                )}
+              </svg>
+            </div>
+          </div>
+          <div className="flex-1">
+            <h3 className={`text-sm font-medium ${colorClasses[content.color].text} mb-1`}>{content.title}</h3>
+            <div className="text-sm text-gray-600">
+              <p>{content.message}</p>
+            </div>
+            <div className="mt-4">
+              <button
+                onClick={content.buttonAction}
+                className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${colorClasses[content.color].button} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${content.color}-500 hover:scale-105 transition-all duration-200`}
+              >
+                {content.buttonText}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function CreditScorePage() {
   const router = useRouter()
   const [structuredData, setStructuredData] = useState<{
@@ -552,7 +685,10 @@ export default function CreditScorePage() {
               <div className="w-full md:w-1/2">
                 <div 
                   className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 shadow-lg border border-blue-100 h-full cursor-pointer hover:shadow-xl transition-shadow"
-                  onClick={() => router.push('/credit-score/report')}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    router.push('/credit-score/report');
+                  }}
                 >
                   <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center gap-2">
                     <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -592,6 +728,7 @@ export default function CreditScorePage() {
                               'Upload your report to see your score'}
                           </p>
                         </div>
+                        {reportData?.credit_score && <ScoreNotification score={reportData.credit_score} />}
                       </div>
                     </div>
 
