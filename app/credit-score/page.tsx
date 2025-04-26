@@ -64,15 +64,15 @@ const ScoreNotification = ({ score }: { score: number }) => {
   };
 
   const getNotificationContent = (): NotificationContent => {
-    if (score < 700) {
+    if (score < 650) {
       return {
         title: "Improve Your Credit Score",
-        message: "Your credit score needs improvement. Learn ways to enhance your score and get better financial opportunities.",
-        buttonText: "View Improvement Tips",
-        buttonAction: () => router.push('/credit-score/report'),
+        message: "Your credit score needs improvement. Consider applying for a secured credit card to build your credit history.",
+        buttonText: "View Secured Cards",
+        buttonAction: () => router.push('/credit?category=secured'),
         color: "yellow"
       };
-    } else if (score >= 700 && score < 750) {
+    } else if (score >= 650 && score < 750) {
       return {
         title: "Explore UPI Credit Cards",
         message: "Your credit score is good! Check out our selection of UPI-enabled credit cards with great rewards.",

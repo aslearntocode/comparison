@@ -370,6 +370,13 @@ export default function Header() {
                   >
                     <span className="ml-3">Hotel</span>
                   </Link>
+                  <Link 
+                    href="/credit?category=secured" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Secured Credit Card</span>
+                  </Link>
                 </div>
               </div>
               {/* Commenting out Investments section
@@ -720,6 +727,13 @@ export default function Header() {
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Hotel
+                  </Link>
+                  <Link 
+                    href="/credit?category=secured" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Secured Credit Card
                   </Link>
                 </div>
               )}

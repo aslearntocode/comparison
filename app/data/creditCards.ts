@@ -8,7 +8,7 @@ export interface UserFeedback {
   cardName: string;
 }
 
-export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle';
+export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured';
 
 export interface CreditCard {
   id: string;
@@ -1122,43 +1122,26 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-first-wow',
     name: 'IDFC FIRST WOW! Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'secured',
     image: '/credit-cards/IDFC-First-Wow.png',
-    apr: '46.2% p.a.',
-    annualFee: '₹1,000 + GST',
-    joiningFee: '₹1,000 + GST',
-    rewards: 'No documentation required\nFixed deposit-based\nBasic rewards program',
-    rupay: true,
+    apr: 'Based on FD rate',
+    annualFee: 'Nil',
+    joiningFee: 'Nil',
+    rewards: '5% cashback on first EMI purchase',
+    rupay: false,
     features: [
-      'No Documentation',
-      'Fixed Deposit Based',
-      'Contactless Payments',
-      'Online Shopping Benefits',
-      'Fuel Surcharge Waiver',
-      'EMI Options'
+      '5% cashback on first EMI purchase',
+      '1% fuel surcharge waiver',
+      'Up to 48 days interest-free period',
+      'Minimum FD amount: ₹10,000'
     ],
-    categories: [
-      'first-time',
-      'secured',
-      'fuel'
-    ],
+    categories: ['secured', 'emi'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Basic rewards program on all spends',
-      welcomeBonus: 'No welcome benefits',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: 'Not applicable',
-      idealFor: [
-        'Limited documentation individuals',
-        'First-time credit card users',
-        'Secured card seekers'
-      ],
-      notIdealFor: [
-        'Premium card seekers',
-        'High-spending individuals',
-        'Those seeking extensive benefits'
-      ],
-      summary: 'A secured credit card requiring no documentation, based on fixed deposit, ideal for individuals with limited documentation.'
+      rewardsProgram: '5% cashback on first EMI purchase',
+      fuelSurcharge: '1% fuel surcharge waiver',
+      paymentDueDays: 'Up to 48 days interest-free period',
+      summary: 'A secured credit card with EMI benefits and fuel surcharge waiver.'
     }
   },
   {
@@ -1634,6 +1617,153 @@ export const creditCards: CreditCard[] = [
         'High spenders seeking extensive rewards'
       ],
       summary: 'An affordable RuPay credit card with UPI functionality and basic rewards program.'
+    }
+  },
+  {
+    id: 'sbm-step-up',
+    name: 'Step UP Credit Card',
+    bank: 'SBM Bank',
+    category: 'secured',
+    image: '/credit-cards/SBM-Step-Up.png',
+    apr: '6.5% p.a. on FD',
+    annualFee: 'Nil',
+    joiningFee: 'Nil',
+    rewards: '1 reward point per ₹100 spent',
+    rupay: false,
+    features: [
+      '90% credit limit of FD',
+      '1 reward point per ₹100 spent',
+      '6.5% FD interest',
+      'Minimum FD amount: ₹2,000'
+    ],
+    categories: ['secured'],
+    feedback: [],
+    additionalDetails: {
+      creditLimit: '90% of Fixed Deposit amount',
+      minimumSpend: 'No minimum spend requirement',
+      interestRate: '6.5% p.a. on Fixed Deposit',
+      summary: 'A secured credit card backed by fixed deposit with 90% credit limit and reward points on spending.'
+    }
+  },
+  {
+    id: 'sbi-unnati',
+    name: 'SBI Card Unnati',
+    bank: 'SBI Card',
+    category: 'secured',
+    image: '/credit-cards/SBI-Unnati.png',
+    apr: 'Based on FD rate',
+    annualFee: 'Nil (₹499 from 5th year)',
+    joiningFee: 'Nil',
+    rewards: '1 reward point per ₹100 spent',
+    rupay: false,
+    features: [
+      '1 reward point per ₹100 spent',
+      '₹500 cashback on ₹50,000 annual spend',
+      'Minimum FD amount: ₹25,000'
+    ],
+    categories: ['secured'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: '1 reward point per ₹100 spent\n₹500 cashback on reaching ₹50,000 annual spend',
+      minimumSpend: 'No minimum spend requirement',
+      summary: 'A secured credit card with no annual fee for first 4 years and rewards on spending.'
+    }
+  },
+  {
+    id: 'kotak-811-dream-different',
+    name: 'Kotak 811 #DreamDifferent Credit Card',
+    bank: 'Kotak Mahindra Bank',
+    category: 'secured',
+    image: '/credit-cards/Kotak-811-Dream.png',
+    apr: 'Based on FD rate',
+    annualFee: 'Nil',
+    joiningFee: 'Nil',
+    rewards: '2 reward points per ₹100 online, 1 point per ₹100 offline',
+    rupay: false,
+    features: [
+      '2 reward points per ₹100 online',
+      '1 point per ₹100 offline',
+      '90% credit limit of FD',
+      'Minimum FD amount: ₹5,000-₹5,555'
+    ],
+    categories: ['secured', 'rewards'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: '2 reward points per ₹100 spent online\n1 reward point per ₹100 spent offline',
+      creditLimit: '90% of Fixed Deposit amount',
+      summary: 'A secured credit card with higher rewards on online spending.'
+    }
+  },
+  {
+    id: 'icici-instant-platinum',
+    name: 'ICICI Bank Instant Platinum Credit Card',
+    bank: 'ICICI Bank',
+    category: 'secured',
+    image: '/credit-cards/ICICI-Instant-Platinum.png',
+    apr: 'Based on FD rate',
+    annualFee: 'Nil',
+    joiningFee: 'Nil',
+    rewards: '25% discount on BookMyShow (twice a month)',
+    rupay: false,
+    features: [
+      '25% discount on BookMyShow (twice a month)',
+      'Contactless payments',
+      'Minimum FD amount: ₹50,000'
+    ],
+    categories: ['secured', 'lifestyle'],
+    feedback: [],
+    additionalDetails: {
+      movieBenefits: '25% discount on BookMyShow bookings (twice a month)',
+      additionalServices: 'Contactless payment enabled',
+      summary: 'A secured credit card with entertainment benefits and contactless payment feature.'
+    }
+  },
+  {
+    id: 'bob-prime',
+    name: 'Bank of Baroda Prime Credit Card',
+    bank: 'Bank of Baroda',
+    category: 'secured',
+    image: '/credit-cards/BOB-Prime.png',
+    apr: 'Based on FD rate',
+    annualFee: 'Nil',
+    joiningFee: 'Nil',
+    rewards: 'Reward points on spending',
+    rupay: false,
+    features: [
+      'Up to 80% credit limit of FD',
+      'Reward points on spending',
+      'Fuel surcharge waiver',
+      'Minimum FD amount: ₹15,000'
+    ],
+    categories: ['secured', 'fuel'],
+    feedback: [],
+    additionalDetails: {
+      creditLimit: 'Up to 80% of Fixed Deposit amount',
+      fuelSurcharge: 'Fuel surcharge waiver available',
+      summary: 'A secured credit card with fuel benefits and reward points on spending.'
+    }
+  },
+  {
+    id: 'axis-magnet-fd',
+    name: 'Axis Bank Magnet FD Backed Credit Card',
+    bank: 'Axis Bank',
+    category: 'secured',
+    image: '/credit-cards/Axis-Magnet-FD.png',
+    apr: 'Based on FD rate',
+    annualFee: '₹500',
+    joiningFee: '₹500',
+    rewards: 'Rewards on spending',
+    rupay: false,
+    features: [
+      'Designed for credit building',
+      'Rewards on spending',
+      'Minimum FD amount: ₹20,000'
+    ],
+    categories: ['secured'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earn rewards on all spending',
+      summary: 'A secured credit card designed for credit building with rewards program.'
     }
   }
 ]; 

@@ -207,6 +207,7 @@ function CreditProductComparisonContent() {
       case 'international-lounge': return 'International Lounge Access Credit Cards'
       case 'airlines': return 'Airlines Credit Cards'
       case 'hotels': return 'Hotel Credit Cards'
+      case 'secured': return 'Secured Credit Cards'
       default: return 'Credit Cards'
     }
   }
