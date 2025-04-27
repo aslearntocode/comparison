@@ -303,10 +303,24 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
-      welcomeBonus: 'Get complimentary Swiggy One Membership for 3 months as welcome benefit',
+      welcomeBonus: 'Welcome Benefits:\n• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
       milestoneBenefits: ['Spend ₹2,00,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
       additionalServices: 'Card Activation Process:\n• Making a transaction using the Credit Card\n• To use the card via OTP or IVR, setting PIN for the card, and enabling card controls such as online transactions, enabling international transactions etc.\n\nImportant Notes:\n• Cardholder is eligible for welcome benefit on card activation\n• The customers need to claim \'Swiggy One\' on Swiggy app post card activation to unlock the benefit\n• This option will be available on the Swiggy app within 2-3 days of card activation',
-      summary: 'A co-branded credit card offering premium benefits for Swiggy users with enhanced cashback on food delivery, Instamart, and online shopping.'
+      summary: 'A co-branded credit card offering premium benefits for Swiggy users with enhanced cashback on food delivery, Instamart, and online shopping.',
+      idealFor: [
+        'Frequent Swiggy users (food delivery, Instamart, Dineout)',
+        'Regular online shoppers',
+        // 'Food delivery enthusiasts',
+        'Users who prefer cashback over reward points',
+        'Those who want a simple, straightforward rewards structure'
+      ],
+      notIdealFor: [
+        'Users who rarely order food online',
+        'Those seeking travel benefits or lounge access',
+        'International travelers',
+        'Users who prefer premium lifestyle benefits',
+        'Those who primarily use offline shopping'
+      ],
     }
   },
   // Airlines Cards
@@ -389,7 +403,7 @@ export const creditCards: CreditCard[] = [
     annualFee: '₹12,499 + GST',
     joiningFee: '₹12,499 + GST',
     rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
-    rupay: true,
+    rupay: false,
     features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
     categories: [
       'premium',
@@ -399,7 +413,8 @@ export const creditCards: CreditCard[] = [
       'domestic-lounge',
       'international-lounge',
       'hotel',
-      'hotels'
+      'hotels',
+      'upi'
     ],
     feedback: [
       { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
@@ -462,7 +477,7 @@ export const creditCards: CreditCard[] = [
     annualFee: '₹1200',
     joiningFee: '₹12,000',
     rewards: 'Earn 2.5% Reward Points on international spends\n Earn 2% Reward Points on domestic spends',
-    rupay: true,
+    rupay: false,
     features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
     categories: [
       'premium',
@@ -639,67 +654,6 @@ export const creditCards: CreditCard[] = [
         'Users seeking zero annual fee or basic cashback cards'
       ],
       summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
-    }
-  },
-  {
-    id: 'uni',
-    name: 'Uni Pay 1/3rd Card',
-    bank: 'Uni',
-    category: 'fintech',
-    image: '/credit-cards/Uni-Pay.png',
-    apr: '0% p.a. for 3 monthly installments',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
-    rupay: false,
-    features: [
-      // 'Airport Lounge Access',
-      // 'Railway Lounge Access',
-      // 'Travel Insurance',
-      'Lifestyle Privileges',
-      // 'Forex Benefits',
-      'Lifetime Free Add-on Cards'
-    ],
-    categories: [
-      'rewards',
-      // 'international-travel',
-      // 'domestic-lounge',
-      // 'international-lounge',
-      // 'hotel',
-      // 'hotels',
-      'emi',
-      'fintech',
-      'lifetime-free'
-    ],
-    feedback: [],
-    additionalDetails: {
-      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
-      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
-      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
-      fuelSurcharge: 'Not specified',
-      insuranceCover: [
-        'Air Accident Cover: ₹2 crore',
-        'Credit Shield: ₹15 lakh',
-        'Purchase Protection: ₹50,000',
-        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
-      ],
-      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
-      diningPrivileges: [
-        'Exclusive dining privileges and offers'
-      ],
-      minimumSpend: '₹8,00,000 for annual fee waiver',
-      internationalTransactionFee: '0.99%',
-      additionalServices: 'Lifetime free add-on cards for family members',
-      idealFor: [
-        'High-income individuals with substantial monthly expenditures',
-        'Frequent travelers seeking lounge access and travel-related perks',
-        'Users who prioritize dining and lifestyle benefits'
-      ],
-      notIdealFor: [
-        'Individuals with moderate or low spending habits',
-        'Those seeking a no-frills, low-fee credit card'
-      ],
-      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
     }
   },
   {
@@ -1078,7 +1032,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-first-swyp',
     name: 'IDFC FIRST SWYP Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'emi',
+    category: 'lifestyle',
     image: '/credit-cards/IDFC-First-SWYP.png',
     apr: '46.2% p.a.',
     annualFee: '₹1,000 + GST',
@@ -1097,13 +1051,12 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'customizable',
       'fuel',
-      'emi',
-      'upi'
+      'lifestyle'
     ],
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Customizable reward categories\n• Flexible redemption options\n\nRedemption:\n• Points can be redeemed for preferred categories',
-      welcomeBonus: 'Benefits worth ₹30,000 per year',
+      welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
       fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       minimumSpend: '₹2,00,000 for annual fee waiver',
       idealFor: [
@@ -1830,6 +1783,48 @@ export const creditCards: CreditCard[] = [
         'Those seeking high cashback or rewards'
       ],
       summary: 'A lifetime-free credit card offering entertainment and dining benefits with complimentary Sony LIV subscription and Swiggy discounts, ideal for entertainment enthusiasts and foodies.'
+    }
+  },
+  {
+    id: 'hdfc-emi',
+    name: 'HDFC Bank EMI Card',
+    bank: 'HDFC Bank',
+    category: 'emi',
+    image: '/credit-cards/HDFC-EMI.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rewards: 'Up to 3X CashPoints on spends; 1% on UPI transactions',
+    rupay: true,
+    features: [
+      'UPI Enabled',
+      'CashPoints Rewards',
+      'Low Annual Fee',
+      'Digital-First Card',
+      'Contactless Payments'
+    ],
+    categories: [
+      'rewards',
+      'budget',
+      'upi',
+      // 'fintech'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards',
+      welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
+      minimumSpend: 'Not specified',
+      idealFor: [
+        'First-time credit card users',
+        'Budget-conscious consumers',
+        'UPI payment users'
+      ],
+      notIdealFor: [
+        'Premium card seekers',
+        'High spenders seeking extensive rewards'
+      ],
+      summary: 'An affordable EMI credit card with UPI functionality and basic rewards program.'
     }
   }
 ]; 

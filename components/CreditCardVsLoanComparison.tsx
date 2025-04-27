@@ -22,9 +22,9 @@ const CreditCardVsLoanComparison = () => {
 
           <div className="w-full md:w-4/12 order-1 md:order-2">
             <div className="text-left mb-8 md:mb-12">
-              <h2 className="text-[2.5rem] font-bold text-gray-900 mb-4 leading-tight">Credit Card or Personal Loan?</h2>
+              <h2 className="text-[2.2rem] font-bold text-gray-900 mb-4 leading-tight">Should You Be Taking a Loan or a Credit Card?</h2>
               <p className="text-gray-600 text-lg">
-                Not sure which financial product is right for you? Take our quick assessment to get personalized recommendations.
+                Take our quick assessment to get personalized recommendations on whether you should be taking a loan or a credit card.
               </p>
             </div>
 
@@ -39,7 +39,7 @@ const CreditCardVsLoanComparison = () => {
                     <h3 className="text-xl font-semibold text-gray-900">Find Your Best Option</h3>
                   </div>
                   <p className="text-gray-600 text-base mb-6">
-                    Answer a few simple questions about your financial needs and get a personalized recommendation for either a credit card or personal loan.
+                    Answer a few simple questions about your financial needs and get a personalized recommendation.
                   </p>
                   <div className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700">
                     Start Assessment
