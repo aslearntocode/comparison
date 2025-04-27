@@ -42,6 +42,7 @@ export default function CreditVsLoanAssessment() {
     existing_cards: '',
     credit_card_outstanding: '',
     ever_defaulted: 'no',
+    credit_score: '',
   });
   const [assessment, setAssessment] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -65,6 +66,7 @@ export default function CreditVsLoanAssessment() {
           income: form.income,
           current_emi: form.current_emi,
           credit_card_outstanding: form.credit_card_outstanding,
+          credit_Score: form.credit_score,
         }),
       });
       const contentType = response.headers.get('content-type');
@@ -188,6 +190,26 @@ export default function CreditVsLoanAssessment() {
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                   ))}
                 </select>
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700 mb-2">What is your credit score (CIBIL)?</label>
+                <input
+                  type="number"
+                  name="credit_score"
+                  value={form.credit_score}
+                  onChange={handleChange}
+                  min={0}
+                  max={900}
+                  required
+                  className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                  placeholder="e.g. 750"
+                />
+                <div className="mt-2 p-3 rounded-lg bg-blue-50 border border-blue-200 text-blue-800 flex items-start text-sm">
+                  <span className="mr-2 mt-0.5">ℹ️</span>
+                  <span>
+                    If you don't know your credit score, you can download it from any credit bureau and upload it on our platform as a PDF to understand it thoroughly.
+                  </span>
+                </div>
               </div>
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">Monthly Income (₹):</label>
