@@ -43,6 +43,7 @@ export default function CreditVsLoanAssessment() {
     credit_card_outstanding: '',
     ever_defaulted: 'no',
     credit_score: '',
+    mortgage: 'no',
   });
   const [assessment, setAssessment] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -225,7 +226,7 @@ export default function CreditVsLoanAssessment() {
                 />
               </div>
               <div>
-                <label className="block text-lg font-medium text-gray-700 mb-2">Current Loan EMI (₹):</label>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Current Loan EMI including Mortgage (₹):</label>
                 <input
                   type="number"
                   name="current_emi"
@@ -236,6 +237,18 @@ export default function CreditVsLoanAssessment() {
                   className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
                   placeholder="e.g. 25000"
                 />
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700 mb-2">Do you have an existing mortgage?</label>
+                <select
+                  name="mortgage"
+                  value={form.mortgage}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                >
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
               </div>
               <div>
                 <label className="block text-lg font-medium text-gray-700 mb-2">Number of existing credit cards:</label>

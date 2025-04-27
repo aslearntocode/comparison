@@ -798,7 +798,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'cashback',
       // 'fuel',
-      'lifetime-free'
+      'lifetime-free',
+      'fintech'
     ],
     feedback: [],
     additionalDetails: {

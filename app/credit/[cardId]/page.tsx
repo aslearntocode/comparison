@@ -12,6 +12,7 @@ import { Textarea } from '../../../components/ui/textarea'
 import { Input } from '../../../components/ui/input'
 import { supabase, type Review } from '@/lib/supabase'
 import RewardPointsCard from '@/components/RewardPointsCard'
+import CardDiscrepancyNotification from '../../components/CardDiscrepancyNotification'
 
 export default function CreditCardDetail({ params }: { params: Promise<{ cardId: string }> }) {
   const [activeTab, setActiveTab] = useState<
@@ -32,6 +33,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [reviews, setReviews] = useState<Review[]>([])
   const [error, setError] = useState<string | null>(null)
+  const [showNotification, setShowNotification] = useState(true)
   
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -449,6 +451,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
+      <CardDiscrepancyNotification cardName={card.name} />
       <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4">
