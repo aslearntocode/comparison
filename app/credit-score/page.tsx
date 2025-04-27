@@ -680,21 +680,47 @@ export default function CreditScorePage() {
 
             {/* Image Section */}
             <div className="w-full md:w-1/2">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 h-full">
+              <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100 h-full">
                 <div className="relative h-full">
-                  <Image
-                    src="/credit-score-illustration.svg"
-                    alt="Credit Score Illustration"
-                    width={500}
-                    height={500}
-                    className="w-full h-auto object-contain"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Get Your Credit Score Analysis</h3>
-                      <p className="text-gray-600">Upload your credit report to get detailed insights and personalized recommendations</p>
+                  <div className="bg-white rounded-xl shadow-lg p-4 transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg overflow-hidden">
+                      <Image
+                        src="/Report-Summary.png"
+                        alt="Credit Score Analysis"
+                        width={400}
+                        height={300}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="mt-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                          <span className="font-medium text-sm text-gray-900">Score Analysis</span>
+                        </div>
+                        <span className="text-xs text-gray-500">2-3 minutes</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                          </div>
+                          <span className="font-medium text-sm text-gray-900">Recommendations</span>
+                        </div>
+                        <span className="text-xs text-gray-500">1-2 minutes</span>
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-3 -right-3 w-16 h-16 bg-[#4F46E5]/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-[#4F46E5]/10 rounded-full blur-xl"></div>
                 </div>
               </div>
             </div>
