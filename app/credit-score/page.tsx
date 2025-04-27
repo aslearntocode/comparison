@@ -267,24 +267,9 @@ export default function CreditScorePage() {
         }
 
         if (data) {
-          console.log('Credit report data from Supabase:', data);
-          
-          // Extract report_created_date from report_analysis if it exists
-          const reportAnalysis = data.report_analysis || {};
-          const reportCreatedDate = reportAnalysis.report_created_date || data.report_created_date;
-          
-          setReportData({
-            report_created_date: reportCreatedDate,
-            credit_score: data.credit_score,
-            total_accounts: data.total_accounts,
-            active_accounts: data.active_accounts || [],
-            credit_limit: data.credit_limit,
-            closed_accounts: data.closed_accounts,
-            current_balance: data.current_balance,
-            overdue_accounts: data.overdue_accounts || [],
-            written_off_accounts: data.written_off_accounts || [],
-            enquiries: data.enquiries || []
-          });
+          console.log('Credit report found, redirecting to report page');
+          router.push('/credit-score/report');
+          return;
         }
       } catch (error) {
         console.error('Error in fetchLatestCreditReport:', error);
@@ -298,7 +283,7 @@ export default function CreditScorePage() {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [router]);
 
   const handlePageClick = () => {
     const user = auth.currentUser
