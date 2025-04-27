@@ -369,7 +369,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Hotel</span>
+                    <span className="ml-3">Hotels</span>
                   </Link>
                   <Link 
                     href="/credit?category=secured" 
@@ -775,7 +775,7 @@ export default function Header() {
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    Hotel
+                    Hotels
                   </Link>
                   <Link 
                     href="/credit?category=secured" 

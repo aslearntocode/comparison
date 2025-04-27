@@ -1824,5 +1824,191 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A lifetime-free credit card offering entertainment and dining benefits with complimentary Sony LIV subscription and Swiggy discounts, ideal for entertainment enthusiasts and foodies.'
     }
+  },
+  {
+    id: 'hsbc-taj',
+    name: 'HSBC Taj Credit Card',
+    bank: 'HSBC Bank',
+    category: 'premium',
+    image: '/credit-cards/HSBC-Taj.png',
+    apr: '42% p.a.',
+    annualFee: '₹1,10,000 + GST',
+    joiningFee: '₹1,10,000 + GST',
+    rewards: '5 reward points per ₹100 spent at IHCL properties\n1.5 points per ₹100 on other eligible purchases',
+    rupay: false,
+    features: [
+      'Taj InnerCircle Platinum NeuPass Membership',
+      'Complimentary Stays',
+      'Dining & Spa Vouchers',
+      'Pool Access',
+      'Airport Lounge Access',
+      'Chauffeur Services'
+    ],
+    categories: [
+      'premium',
+      'hotels',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 5 reward points per ₹100 spent at IHCL properties\n• 1.5 points per ₹100 on other eligible purchases\n\nRedemption:\n• Points can be redeemed for stays, dining, spa treatments, and more at participating IHCL hotels',
+      welcomeBonus: 'Welcome Benefits:\n• Taj InnerCircle Platinum NeuPass Membership\n• Complimentary one-night stay at Taj Palaces\n• Two additional nights at participating IHCL hotels\n• Four set meal vouchers at select restaurants\n• Four 60-minute spa therapy vouchers\n• Twelve pool access vouchers for two\n• Twelve access vouchers each for The Chambers and Taj Club lounges',
+      airportLounge: 'Unlimited complimentary access to domestic and international lounges',
+      insuranceCover: [
+        'Comprehensive travel insurance coverage'
+      ],
+      diningPrivileges: [
+        '25% off on breakfast-inclusive stays',
+        '25% off on dining at IHCL properties',
+        '25% off on spa therapies',
+        '25% off on Qmin food deliveries'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: 'Not specified',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira',
+      idealFor: [
+        'Affluent individuals seeking luxury hospitality experiences',
+        'Frequent travelers who prefer IHCL properties',
+        'High-income individuals with annual income above ₹40 lakhs (salaried) or ₹60 lakhs (self-employed)',
+        'Residents of major Indian cities including Mumbai, Delhi-NCR, Bengaluru, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad, Jaipur, Kochi, and Coimbatore'
+      ],
+      notIdealFor: [
+        'Budget-conscious individuals',
+        'Those who rarely stay at luxury hotels',
+        'Individuals with annual income below ₹40 lakhs',
+        'Residents of cities not covered by HSBC'
+      ],
+      summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.'
+    }
+  },
+  {
+    id: 'axis-primus',
+    name: 'Axis Bank Primus Credit Card',
+    bank: 'Axis Bank',
+    category: 'premium',
+    image: '/credit-cards/Axis-Primus.png',
+    apr: '42% p.a.',
+    annualFee: '₹3,00,000 + GST',
+    joiningFee: '₹5,00,000 + GST',
+    rewards: 'Welcome benefit: Choice between an ₹40,000 ITC voucher or 25,000 Axis Edge Miles\nRenewal benefit: Choice between an ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
+    rupay: false,
+    features: [
+      'Unlimited Lounge Access',
+      'Zero Forex Markup',
+      'Airport Meet-and-Greet',
+      'Companion Airfare Benefits',
+      'Hotel Upgrades',
+      'Exclusive Dining Access'
+    ],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge',
+      'hotels'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Welcome and Renewal Benefits:\n• Welcome: Choice between ₹40,000 ITC voucher or 25,000 Axis Edge Miles\n• Renewal: Choice between ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
+      welcomeBonus: 'Welcome benefit: Choice between an ₹40,000 ITC voucher or 25,000 Axis Edge Miles',
+      airportLounge: 'Unlimited domestic and international airport lounge access for primary and add-on cardholders',
+      insuranceCover: [
+        'Comprehensive travel insurance coverage'
+      ],
+      diningPrivileges: [
+        'Exclusive access to top restaurants worldwide'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: 'Zero foreign exchange markup on international transactions',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Additional Benefits:\n• Complimentary airport meet-and-greet services within India\n• Companion airfare benefits\n• Up to 15% savings on international First and Business class fares\n• Complimentary upgrades at selected hotels worldwide\n• Bespoke travel itineraries',
+      idealFor: [
+        'Ultra-high-net-worth individuals (UHNIs)',
+        'Frequent international travelers',
+        'Those seeking exclusive luxury experiences',
+        'Invitation-only cardholders'
+      ],
+      notIdealFor: [
+        'Budget-conscious individuals',
+        'Those who rarely travel internationally',
+        'Individuals not meeting the ultra-high-net-worth criteria',
+        'Those seeking basic credit card features'
+      ],
+      summary: 'The most expensive credit card in the Indian market, offering unparalleled luxury travel benefits, zero forex markup, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
+    }
+  },
+  {
+    id: 'amex-centurion',
+    name: 'American Express Centurion Card',
+    bank: 'American Express',
+    category: 'premium',
+    image: '/credit-cards/Amex-Centurion.png',
+    apr: '42% p.a.',
+    annualFee: '₹2,75,000 + GST',
+    joiningFee: '₹9,75,000 to ₹11,50,000 + GST',
+    rewards: 'Elite status with hotel and airline programs\nComplimentary elite memberships\nExclusive experiences and events',
+    rupay: false,
+    features: [
+      'Elite Memberships',
+      'Dedicated Concierge',
+      'Unlimited Lounge Access',
+      'Airport Meet-and-Greet',
+      'Supplementary Cards',
+      'Exclusive Experiences'
+    ],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge',
+      'hotels',
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Elite Status Benefits:\n• Hilton Honors Diamond\n• Accor Live Limitless Platinum\n• Shangri-La Golden Circle Jade\n• British Airways Executive Club Gold\n• Etihad Guest Gold',
+      welcomeBonus: 'Not specified',
+      airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide through the American Express Global Lounge Collection, including Centurion Lounges, Priority Pass, and Delta Sky Clubs',
+      insuranceCover: [
+        'Comprehensive travel insurance coverage'
+      ],
+      diningPrivileges: [
+        'Exclusive access to private dining experiences'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% on international transactions',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Additional Benefits:\n• Dedicated Centurion Relationship Managers\n• 24/7 concierge services for personalized assistance\n• Complimentary meet-and-greet services at select airports\n• Up to 7 supplementary Platinum cards issued at no additional cost\n• Invitations to VIP events and fashion shows',
+      idealFor: [
+        'Ultra-high-net-worth individuals (UHNIs)',
+        'Existing Amex Platinum cardholders with significant spending patterns',
+        'Those seeking exclusive luxury experiences',
+        'Frequent international travelers'
+      ],
+      notIdealFor: [
+        'Budget-conscious individuals',
+        'Those who rarely travel internationally',
+        'Individuals not meeting the ultra-high-net-worth criteria',
+        'Those seeking basic credit card features'
+      ],
+      summary: 'The second most expensive credit card in India, offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
+    }
   }
 ]; 
