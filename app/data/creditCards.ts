@@ -8,7 +8,7 @@ export interface UserFeedback {
   cardName: string;
 }
 
-export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured' | 'premium' | 'upi' | 'rewards' | 'cashback' | 'fuel' | 'lifetime-free' | 'forex' | 'emi' | 'domestic-lounge' | 'international-lounge' | 'airlines' | 'hotels' | 'secured';
+export type CardCategory = 'ultra-premium' | 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured' | 'premium' | 'upi' | 'rewards' | 'cashback' | 'fuel' | 'lifetime-free' | 'forex' | 'emi' | 'domestic-lounge' | 'international-lounge' | 'airlines' | 'hotels' | 'secured';
 
 export interface CreditCard {
   id: string;
@@ -914,15 +914,31 @@ export const creditCards: CreditCard[] = [
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Zero forex markup on international transactions\n• Enhanced rewards on international spends\n• Premium lifestyle benefits',
       welcomeBonus: 'Welcome Benefits:\n• Premium welcome benefits worth ₹15,000\n• Luxury gift vouchers\n• Exclusive dining experiences',
+      milestoneBenefits: [
+        'Complimentary luxury airport transfers worth ₹10,000 on spends of ₹10 lakh',
+        'Exclusive dining experiences worth ₹15,000 on spends of ₹20 lakh',
+        'Luxury hotel stay vouchers worth ₹25,000 on spends of ₹30 lakh',
+        'Premium lifestyle vouchers worth ₹35,000 on spends of ₹40 lakh',
+        'Annual fee waiver on spends of ₹50 lakh'
+      ],
       airportLounge: 'Unlimited international lounge access via Priority Pass',
       insuranceCover: [
-        'Air Accident Cover: ₹2 crore',
-        'Purchase Protection: ₹1 lakh',
-        'Travel Insurance: Comprehensive coverage'
+        'Comprehensive travel insurance coverage'
       ],
-      minimumSpend: '₹8,00,000 for annual fee waiver',
-      internationalTransactionFee: 'Zero forex markup',
-      additionalServices: 'Premium concierge services\nATM withdrawal facility\nMetal card design',
+      diningPrivileges: [
+        '25% off on breakfast-inclusive stays',
+        '25% off on dining at IHCL properties',
+        '25% off on spa therapies',
+        '25% off on Qmin food deliveries'
+      ],
+      minimumSpend: 'Not specified',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: 'Not specified',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira\n\nLounge Access Benefits:\n• Unlimited domestic lounge access via DreamFolks\n• Unlimited international lounge access via Priority Pass\n• Complimentary access for primary and add-on cardholders\n• Access to over 1,300 lounges worldwide\n• Complimentary spa services at select lounges\n• Complimentary dining at select airport restaurants',
       idealFor: [
         'International travelers seeking zero forex benefits',
         'High-net-worth individuals',
@@ -1251,10 +1267,10 @@ export const creditCards: CreditCard[] = [
       rewardsProgram: 'Earning Rate:\n• 2.5% reward points on international spends\n• 2% reward points on domestic spends\n• Accelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)\n\nRedemption:\n• Flights, hotels, and premium brand vouchers (1 RP = ₹1)\n• Statement credit redemption at ₹0.40 per RP',
       welcomeBonus: 'Welcome Benefits:\n• EaseMyTrip luxury hotel voucher worth ₹10,000\n• Visa assistance services via Atlys and OneVasco worth ₹10,000\n• Zomato Gold annual membership\n• Lifestyle gift cards worth ₹4,000\n• Exclusive access to The Quorum Club',
       milestoneBenefits: [
-        'Klook experiences worth ₹10,000',
-        'Luxury airport transfers via BLADE India/Avis/Indian Travel House worth ₹10,000',
-        'Tata CLiQ Luxury gift card worth ₹10,000',
-        'One-night luxury stay at Ayatana Resorts worth ₹20,000',
+        'Klook experiences worth ₹10,000 on spends of ₹5 lakh',
+        'Luxury airport transfers via BLADE India/Avis/Indian Travel House worth ₹10,000 on spends of ₹10 lakh',
+        'Tata CLiQ Luxury gift card worth ₹10,000 on spends of ₹15 lakh',
+        'One-night luxury stay at Ayatana Resorts worth ₹20,000 on spends of ₹20 lakh',
         'Annual fee waiver on spends of ₹25 lakh'
       ],
       airportLounge: 'Unlimited complimentary access to domestic and international airport lounges',
@@ -1829,7 +1845,7 @@ export const creditCards: CreditCard[] = [
     id: 'hsbc-taj',
     name: 'HSBC Taj Credit Card',
     bank: 'HSBC Bank',
-    category: 'premium',
+    category: 'ultra-premium',
     image: '/credit-cards/HSBC-Taj.png',
     apr: '42% p.a.',
     annualFee: '₹1,10,000 + GST',
@@ -1845,9 +1861,10 @@ export const creditCards: CreditCard[] = [
       'Chauffeur Services'
     ],
     categories: [
-      'premium',
+      'ultra-premium',
+      // 'premium',
       'hotels',
-      'rewards',
+      // 'rewards',
       'international-travel',
       'domestic-lounge',
       'international-lounge'
@@ -1856,6 +1873,13 @@ export const creditCards: CreditCard[] = [
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5 reward points per ₹100 spent at IHCL properties\n• 1.5 points per ₹100 on other eligible purchases\n\nRedemption:\n• Points can be redeemed for stays, dining, spa treatments, and more at participating IHCL hotels',
       welcomeBonus: 'Welcome Benefits:\n• Taj InnerCircle Platinum NeuPass Membership\n• Complimentary one-night stay at Taj Palaces\n• Two additional nights at participating IHCL hotels\n• Four set meal vouchers at select restaurants\n• Four 60-minute spa therapy vouchers\n• Twelve pool access vouchers for two\n• Twelve access vouchers each for The Chambers and Taj Club lounges',
+      milestoneBenefits: [
+        'Complimentary one-night stay at Taj Palaces on spends of ₹10 lakh',
+        'Two additional nights at participating IHCL hotels on spends of ₹20 lakh',
+        'Four set meal vouchers at select restaurants on spends of ₹30 lakh',
+        'Four 60-minute spa therapy vouchers on spends of ₹40 lakh',
+        'Annual fee waiver on spends of ₹50 lakh'
+      ],
       airportLounge: 'Unlimited complimentary access to domestic and international lounges',
       insuranceCover: [
         'Comprehensive travel insurance coverage'
@@ -1873,7 +1897,7 @@ export const creditCards: CreditCard[] = [
       internationalTransactionFee: 'Not specified',
       interestRate: '42% p.a.',
       emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira',
+      additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira\n\nLounge Access Benefits:\n• Unlimited domestic lounge access via DreamFolks\n• Unlimited international lounge access via Priority Pass\n• Complimentary access for primary and add-on cardholders\n• Access to over 1,300 lounges worldwide\n• Complimentary spa services at select lounges\n• Complimentary dining at select airport restaurants',
       idealFor: [
         'Affluent individuals seeking luxury hospitality experiences',
         'Frequent travelers who prefer IHCL properties',
@@ -1893,7 +1917,7 @@ export const creditCards: CreditCard[] = [
     id: 'axis-primus',
     name: 'Axis Bank Primus Credit Card',
     bank: 'Axis Bank',
-    category: 'premium',
+    category: 'ultra-premium',
     image: '/credit-cards/Axis-Primus.png',
     apr: '42% p.a.',
     annualFee: '₹3,00,000 + GST',
@@ -1909,12 +1933,12 @@ export const creditCards: CreditCard[] = [
       'Exclusive Dining Access'
     ],
     categories: [
-      'premium',
-      'rewards',
+      'ultra-premium',
+      // 'premium',
+      // 'rewards',
       'international-travel',
       'domestic-lounge',
-      'international-lounge',
-      'hotels'
+      'international-lounge'
     ],
     feedback: [],
     additionalDetails: {
@@ -1954,7 +1978,7 @@ export const creditCards: CreditCard[] = [
     id: 'amex-centurion',
     name: 'American Express Centurion Card',
     bank: 'American Express',
-    category: 'premium',
+    category: 'ultra-premium',
     image: '/credit-cards/Amex-Centurion.png',
     apr: '42% p.a.',
     annualFee: '₹2,75,000 + GST',
@@ -1970,12 +1994,12 @@ export const creditCards: CreditCard[] = [
       'Exclusive Experiences'
     ],
     categories: [
-      'premium',
-      'rewards',
+      'ultra-premium',
+      // 'premium',
+      // 'rewards',
       'international-travel',
       'domestic-lounge',
-      'international-lounge',
-      'hotels',
+      'international-lounge'
     ],
     feedback: [],
     additionalDetails: {
