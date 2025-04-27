@@ -10,8 +10,8 @@ const CreditCardVsLoanComparison = () => {
           <div className="w-full md:w-8/12 flex justify-start items-center order-2 md:order-1">
             <div className="relative w-full h-[300px] md:h-[600px] flex items-center justify-center">
               <Image
-                src="/compare_home.png"
-                alt="Credit Card vs Personal Loan Comparison"
+                src="/Credit_Assessment.png"
+                alt="Financial Assessment"
                 fill
                 className="object-contain"
                 priority

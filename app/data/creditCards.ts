@@ -348,7 +348,7 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'international-travel',
       'domestic-lounge',
-      'fuel'
+      // 'fuel'
     ],
     feedback: [
       { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
@@ -414,7 +414,7 @@ export const creditCards: CreditCard[] = [
       'international-lounge',
       'hotel',
       'hotels',
-      'upi'
+      // 'upi'
     ],
     feedback: [
       { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
@@ -483,7 +483,7 @@ export const creditCards: CreditCard[] = [
       'premium',
       'rewards',
       'cashback',
-      'fuel',
+      // 'fuel',
       // 'lifestyle'
     ],
     feedback: [
@@ -542,7 +542,7 @@ export const creditCards: CreditCard[] = [
       'international-travel',
       'domestic-lounge',
       'international-lounge',
-      'fuel',
+      // 'fuel',
       // 'lifestyle'
     ],
     feedback: [
@@ -797,7 +797,7 @@ export const creditCards: CreditCard[] = [
       'best-credit-cards',
       'rewards',
       'cashback',
-      'fuel',
+      // 'fuel',
       'lifetime-free'
     ],
     feedback: [],
@@ -958,7 +958,7 @@ export const creditCards: CreditCard[] = [
     categories: [
       'rewards',
       'first-time',
-      'fuel'
+      // 'fuel'
     ],
     feedback: [],
     additionalDetails: {
@@ -1050,7 +1050,6 @@ export const creditCards: CreditCard[] = [
     categories: [
       'rewards',
       'customizable',
-      'fuel',
       'lifestyle'
     ],
     feedback: [],
@@ -1178,6 +1177,47 @@ export const creditCards: CreditCard[] = [
         'Those seeking extensive benefits'
       ],
       summary: 'A budget-friendly fuel credit card offering basic savings on fuel purchases and surcharge waiver, ideal for budget-conscious drivers.'
+    }
+  },
+  {
+    id: 'axis-iocl',
+    name: 'Axis Bank IOCL Credit Card',
+    bank: 'Axis Bank',
+    category: 'fuel',
+    image: '/credit-cards/Axis-IndianOil.png',
+    apr: '42% p.a.',
+    annualFee: '₹500 + GST (1st Year: Nil)',
+    joiningFee: '₹500 + GST',
+    rewards: 'Enhanced fuel savings at IOCL outlets\nSurcharge waiver\nBasic rewards on other spends',
+    rupay: true,
+    features: [
+      'Enhanced Fuel Savings',
+      'Surcharge Waiver',
+      'Contactless Payments',
+      'Online Shopping Benefits',
+      'EMI Options'
+    ],
+    categories: [
+      'fuel',
+      'budget'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Enhanced rewards on fuel spends at IOCL outlets\nBasic rewards on other spends',
+      welcomeBonus: 'No welcome benefits',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
+      minimumSpend: 'Not applicable',
+      idealFor: [
+        'Frequent drivers',
+        'Regular IOCL fuel purchasers',
+        'Budget-conscious users'
+      ],
+      notIdealFor: [
+        'Non-drivers',
+        'Premium card seekers',
+        'Those seeking extensive benefits'
+      ],
+      summary: 'A fuel-focused credit card offering enhanced savings on IOCL fuel purchases and surcharge waiver, ideal for frequent drivers.'
     }
   },
   {
@@ -1783,48 +1823,6 @@ export const creditCards: CreditCard[] = [
         'Those seeking high cashback or rewards'
       ],
       summary: 'A lifetime-free credit card offering entertainment and dining benefits with complimentary Sony LIV subscription and Swiggy discounts, ideal for entertainment enthusiasts and foodies.'
-    }
-  },
-  {
-    id: 'hdfc-emi',
-    name: 'HDFC Bank EMI Card',
-    bank: 'HDFC Bank',
-    category: 'emi',
-    image: '/credit-cards/HDFC-EMI.png',
-    apr: '43.2% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rewards: 'Up to 3X CashPoints on spends; 1% on UPI transactions',
-    rupay: true,
-    features: [
-      'UPI Enabled',
-      'CashPoints Rewards',
-      'Low Annual Fee',
-      'Digital-First Card',
-      'Contactless Payments'
-    ],
-    categories: [
-      'rewards',
-      'budget',
-      'upi',
-      // 'fintech'
-    ],
-    feedback: [],
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards',
-      welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: 'Not specified',
-      idealFor: [
-        'First-time credit card users',
-        'Budget-conscious consumers',
-        'UPI payment users'
-      ],
-      notIdealFor: [
-        'Premium card seekers',
-        'High spenders seeking extensive rewards'
-      ],
-      summary: 'An affordable EMI credit card with UPI functionality and basic rewards program.'
     }
   }
 ]; 
