@@ -26,6 +26,7 @@ export default function Header() {
   const [isInvestmentDropdownOpen, setIsInvestmentDropdownOpen] = useState(false)
   const [isCreditDropdownOpen, setIsCreditDropdownOpen] = useState(false)
   const [isComplaintsDropdownOpen, setIsComplaintsDropdownOpen] = useState(false)
+  const [isCreditScoreDropdownOpen, setIsCreditScoreDropdownOpen] = useState(false)
   const [hasCreditReport, setHasCreditReport] = useState(false)
   const [hasDisputes, setHasDisputes] = useState(false)
   const router = useRouter()
@@ -448,9 +449,57 @@ export default function Header() {
               </div>
               */}
 
-              <Link href="/credit-score" className="text-black hover:text-gray-700 py-2 text-lg">
-                Credit Score
-              </Link>
+              <div className="relative" style={{ zIndex: 50 }}>
+                <div className="flex items-center">
+                  <button 
+                    onClick={() => setIsCreditScoreDropdownOpen(!isCreditScoreDropdownOpen)}
+                    className="text-black hover:text-gray-700 py-2 text-lg flex items-center"
+                  >
+                    Credit Score
+                    <svg
+                      className={`ml-2 h-5 w-5 transform inline-block ${isCreditScoreDropdownOpen ? 'rotate-180' : ''}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div 
+                  className={`
+                    fixed w-48 bg-white rounded-lg shadow-lg py-2
+                    ${isCreditScoreDropdownOpen ? 'block' : 'hidden'}
+                  `}
+                  style={{
+                    zIndex: 1000,
+                    top: '4rem',
+                    left: '36rem'
+                  }}
+                >
+                  <Link 
+                    href="/credit-score" 
+                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditScoreDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Check Credit Score</span>
+                  </Link>
+                  {hasCreditReport && (
+                    <Link 
+                      href="/credit-score/report" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <span className="ml-3">View Credit Report</span>
+                    </Link>
+                  )}
+                </div>
+              </div>
+
               <div className="relative" style={{ zIndex: 50 }}>
                 <div className="flex items-center">
                   <button 
@@ -739,12 +788,38 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/credit-score" className="text-black hover:text-gray-700 flex flex-col items-center">
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-              <span className="text-xs mt-1">Credit Score</span>
-            </Link>
+            <div className="relative">
+              <button 
+                onClick={() => setIsCreditScoreDropdownOpen(!isCreditScoreDropdownOpen)}
+                className="text-black hover:text-gray-700 flex flex-col items-center"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span className="text-xs mt-1">Credit Score</span>
+              </button>
+
+              {isCreditScoreDropdownOpen && (
+                <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+                  <Link 
+                    href="/credit-score" 
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditScoreDropdownOpen(false)}
+                  >
+                    Check Credit Score
+                  </Link>
+                  {hasCreditReport && (
+                    <Link 
+                      href="/credit-score/report" 
+                      className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      View Report
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
 
             <div className="relative">
               <button 
