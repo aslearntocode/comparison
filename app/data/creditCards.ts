@@ -8,7 +8,7 @@ export interface UserFeedback {
   cardName: string;
 }
 
-export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured';
+export type CardCategory = 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured' | 'premium' | 'upi' | 'rewards' | 'cashback' | 'fuel' | 'lifetime-free' | 'forex' | 'emi' | 'domestic-lounge' | 'international-lounge' | 'airlines' | 'hotels' | 'secured';
 
 export interface CreditCard {
   id: string;
@@ -173,7 +173,7 @@ export const creditCards: CreditCard[] = [
     id: 'hdfc-pixel-play',
     name: 'PIXEL Play Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'upi',
     image: '/credit-cards/HDFC-Pixel-Play.png',
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
@@ -207,7 +207,7 @@ export const creditCards: CreditCard[] = [
     id: 'hdfc-millenia',
     name: 'Millennia Plus Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'lifestyle',
     image: '/credit-cards/HDFC+Millenia+.png',
     apr: '43.2% p.a.',
     annualFee: '₹1,000 + GST',
@@ -279,7 +279,7 @@ export const creditCards: CreditCard[] = [
     id: 'hdfc-swiggy',
     name: 'Swiggy HDFC Bank Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'lifestyle',
     image: '/Credit-card-2.png',
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
@@ -343,7 +343,7 @@ export const creditCards: CreditCard[] = [
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
-      welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
+      welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth ₹9,000\n• Complimentary Bose IE2 Headphones\n• Premium lifestyle vouchers',
       milestoneBenefits: [
         '4,000 points on spending ₹4 lakh in an anniversary year',
         '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
@@ -383,7 +383,7 @@ export const creditCards: CreditCard[] = [
     id: 'emeralde-private-metal',
     name: 'Emeralde Private Metal Credit Card',
     bank: 'ICICI Bank',
-    category: 'airlines',
+    category: 'premium',
     image: '/credit-cards/ICICI-Emeralde-Metal.png',
     apr: '45% p.a.',
     annualFee: '₹12,499 + GST',
@@ -407,7 +407,7 @@ export const creditCards: CreditCard[] = [
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments\n\nRedemption:\n• 1 Reward Point = up to ₹1 for flights, hotels, and select brand vouchers\n• ₹0.60 for rewards catalogue\n• ₹0.40 for statement credit\n\nCaps:\n• 1,000 points per category per statement cycle for grocery, education, and utilities\n• 5,000 points per statement cycle for insurance payments',
-      welcomeBonus: '12,500 ICICI Reward Points: Credited upon payment of joining or annual fee\n Taj Epicure Membership:\n• 25% off on F&B\n• 20% off on Qmin App orders, spa, and salon services\n• One-time 20% off on room/suite bookings at select Taj properties\n EazyDiner Prime Membership:\n• 25%-50% discounts at 3,000+ restaurants in India and Dubai\n• Complimentary cake/dessert on special occasions\n• 2,000 EazyPoints as a welcome bonus',
+      welcomeBonus: 'Welcome Benefits:\n• 12,500 ICICI Reward Points\n• Taj Epicure Membership\n• EazyDiner Prime Membership\n• Luxury gift vouchers worth ₹15,000',
       milestoneBenefits: [
         '₹3,000 EaseMyTrip Voucher on spending ₹4 lakh annually',
         'Additional ₹3,000 Voucher on reaching ₹8 lakh annual spend',
@@ -506,7 +506,7 @@ export const creditCards: CreditCard[] = [
     id: 'sapphiro',
     name: 'Sapphiro Credit Card',
     bank: 'ICICI Bank',
-    category: 'airlines',
+    category: 'premium',
     image: '/credit-cards/ICICI-Sapphiro.png',
     apr: '45% p.a.',
     annualFee: '₹3,500 + GST',
@@ -537,7 +537,7 @@ export const creditCards: CreditCard[] = [
     ],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
-      welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
+      welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth over ₹9,000\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n• Complimentary Bose IE2 Headphones',
       milestoneBenefits: [
         '4,000 points on spending ₹4 lakh in an anniversary year',
         '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
@@ -581,8 +581,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/Uni-Gold.png',
     apr: '42% p.a.',
-    annualFee: '₹3,500 + GST',
-    joiningFee: '₹6,000 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
@@ -648,8 +648,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/Uni-Pay.png',
     apr: '0% p.a. for 3 monthly installments',
-    annualFee: '₹4,999 + GST',
-    joiningFee: '₹4,999 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
     rupay: false,
     features: [
@@ -709,8 +709,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/OneCard.png',
     apr: '42% p.a.',
-    annualFee: '₹4,999 + GST',
-    joiningFee: '₹4,999 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
     rupay: false,
     features: [
@@ -768,8 +768,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/Kiwi.png',
     apr: '52.86% p.a.',
-    annualFee: 'None',
-    joiningFee: 'None',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
     rupay: true,
     features: [
@@ -827,8 +827,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/Slice.png',
     apr: '42% p.a.',
-    annualFee: 'None',
-    joiningFee: 'None',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Up to 2% cashback on every transaction\nWeekly deals and discounts\nFuel surcharge waiver\nRental convenience fee waiver',
     rupay: false,
     features: [
@@ -880,7 +880,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-first-wealth',
     name: 'IDFC FIRST Wealth Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'lifestyle',
     image: '/credit-cards/IDFC-First-Wealth.png',
     apr: '46.2% p.a.',
     annualFee: '₹2,500 + GST',
@@ -899,7 +899,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'travel',
       'domestic-lounge',
-      'dining'
+      'dining',
+      'lifestyle'
     ],
     feedback: [],
     additionalDetails: {
@@ -934,7 +935,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-mayura-metal',
     name: 'IDFC Mayura Metal Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'premium',
     image: '/credit-cards/IDFC-First-Maurya.png',
     apr: '46.2% p.a.',
     annualFee: '₹12,000 + GST',
@@ -958,7 +959,7 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Zero forex markup on international transactions\n• Enhanced rewards on international spends\n• Premium lifestyle benefits',
-      welcomeBonus: 'Premium welcome benefits worth ₹15,000',
+      welcomeBonus: 'Welcome Benefits:\n• Premium welcome benefits worth ₹15,000\n• Luxury gift vouchers\n• Exclusive dining experiences',
       airportLounge: 'Unlimited international lounge access via Priority Pass',
       insuranceCover: [
         'Air Accident Cover: ₹2 crore',
@@ -1028,7 +1029,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-first-select',
     name: 'IDFC FIRST Select Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'rewards',
     image: '/credit-cards/IDFC-First-Select.png',
     apr: '46.2% p.a.',
     annualFee: '₹2,500 + GST',
@@ -1077,7 +1078,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-first-swyp',
     name: 'IDFC FIRST SWYP Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'emi',
     image: '/credit-cards/IDFC-First-SWYP.png',
     apr: '46.2% p.a.',
     annualFee: '₹1,000 + GST',
@@ -1135,7 +1136,7 @@ export const creditCards: CreditCard[] = [
       'Up to 48 days interest-free period',
       'Minimum FD amount: ₹10,000'
     ],
-    categories: ['secured', 'emi'],
+    categories: ['secured'],
     feedback: [],
     additionalDetails: {
       rewardsProgram: '5% cashback on first EMI purchase',
@@ -1148,7 +1149,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-hpcl-power-plus',
     name: 'IDFC HPCL Power+ Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'fuel',
     image: '/credit-cards/IDFC-First-HPCL.png',
     apr: '46.2% p.a.',
     annualFee: '₹499 + GST',
@@ -1189,7 +1190,7 @@ export const creditCards: CreditCard[] = [
     id: 'idfc-hpcl-power',
     name: 'IDFC HPCL Power Credit Card',
     bank: 'IDFC FIRST Bank',
-    category: 'fintech',
+    category: 'fuel',
     image: '/credit-cards/IDFC-First-HPCL.png',
     apr: '46.2% p.a.',
     annualFee: '₹199 + GST',
@@ -1230,7 +1231,7 @@ export const creditCards: CreditCard[] = [
     id: 'icici-times-black',
     name: 'ICICI Bank Times Black Credit Card',
     bank: 'ICICI Bank',
-    category: 'airlines',
+    category: 'premium',
     image: '/credit-cards/ICICI-Black.png',
     apr: '44% p.a.',
     annualFee: '₹20,000 + GST',
@@ -1255,7 +1256,7 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2.5% reward points on international spends\n• 2% reward points on domestic spends\n• Accelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)\n\nRedemption:\n• Flights, hotels, and premium brand vouchers (1 RP = ₹1)\n• Statement credit redemption at ₹0.40 per RP',
-      welcomeBonus: 'Welcome Benefits:\n• EaseMyTrip luxury hotel voucher worth ₹10,000\n• Visa assistance services via Atlys and OneVasco worth ₹10,000\n• Zomato Gold annual membership\n• Lifestyle gift cards (e.g., Toni&Guy, Interflora) worth ₹4,000\n• Exclusive access to The Quorum Club',
+      welcomeBonus: 'Welcome Benefits:\n• EaseMyTrip luxury hotel voucher worth ₹10,000\n• Visa assistance services via Atlys and OneVasco worth ₹10,000\n• Zomato Gold annual membership\n• Lifestyle gift cards worth ₹4,000\n• Exclusive access to The Quorum Club',
       milestoneBenefits: [
         'Klook experiences worth ₹10,000',
         'Luxury airport transfers via BLADE India/Avis/Indian Travel House worth ₹10,000',
@@ -1500,7 +1501,7 @@ export const creditCards: CreditCard[] = [
     id: 'tata-neu-infinity',
     name: 'Tata Neu Infinity Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'upi',
     image: '/credit-cards/Tata-Neu-Infinity.png',
     apr: '43.2% p.a.',
     annualFee: '₹1,499 + GST',
@@ -1518,7 +1519,8 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'shopping',
       'upi',
-      'fintech'
+      // 'lifestyle'
+      // 'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -1541,7 +1543,7 @@ export const creditCards: CreditCard[] = [
     id: 'tata-neu-plus',
     name: 'Tata Neu Plus Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'upi',
     image: '/credit-cards/Tata-Neu.png',
     apr: '43.2% p.a.',
     annualFee: '₹499 + GST',
@@ -1559,7 +1561,7 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'shopping',
       'upi',
-      'fintech'
+      // 'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -1582,7 +1584,7 @@ export const creditCards: CreditCard[] = [
     id: 'hdfc-rupay',
     name: 'HDFC UPI RuPay Credit Card',
     bank: 'HDFC Bank',
-    category: 'fintech',
+    category: 'upi',
     image: '/credit-cards/HDFC-UPI-RuPay.png',
     apr: '43.2% p.a.',
     annualFee: '₹99 + GST',
@@ -1600,7 +1602,7 @@ export const creditCards: CreditCard[] = [
       'rewards',
       'budget',
       'upi',
-      'fintech'
+      // 'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -1626,8 +1628,8 @@ export const creditCards: CreditCard[] = [
     category: 'secured',
     image: '/credit-cards/SBI-Unnati.png',
     apr: 'Based on FD rate',
-    annualFee: 'Nil (₹499 from 5th year)',
-    joiningFee: 'Nil',
+    annualFee: '₹0 (₹499 from 5th year)',
+    joiningFee: '₹0',
     rewards: '1 reward point per ₹100 spent',
     rupay: false,
     features: [
@@ -1650,8 +1652,8 @@ export const creditCards: CreditCard[] = [
     category: 'secured',
     image: '/credit-cards/Kotak-Secured.png',
     apr: 'Based on FD rate',
-    annualFee: 'Nil',
-    joiningFee: 'Nil',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: '2 reward points per ₹100 online, 1 point per ₹100 offline',
     rupay: true,
     features: [
@@ -1675,8 +1677,8 @@ export const creditCards: CreditCard[] = [
     category: 'secured',
     image: '/credit-cards/ICICI-Platinum-Secured.png',
     apr: 'Based on FD rate',
-    annualFee: 'Nil',
-    joiningFee: 'Nil',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: '25% discount on BookMyShow (twice a month)',
     rupay: false,
     features: [
@@ -1699,8 +1701,8 @@ export const creditCards: CreditCard[] = [
     category: 'secured',
     image: '/credit-cards/BOB-Secured.png',
     apr: 'Based on FD rate',
-    annualFee: 'Nil',
-    joiningFee: 'Nil',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Reward points on spending',
     rupay: false,
     features: [
@@ -1738,6 +1740,96 @@ export const creditCards: CreditCard[] = [
     additionalDetails: {
       rewardsProgram: 'Earn rewards on all spending',
       summary: 'A secured credit card designed for credit building with rewards program.'
+    }
+  },
+  {
+    id: 'amazon-pay-icici',
+    name: 'Amazon Pay ICICI Bank Credit Card',
+    bank: 'ICICI Bank',
+    category: 'lifetime-free',
+    image: '/credit-cards/ICICI-Amazon.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rewards: 'Up to 5% cashback on Amazon.in purchases\n1% cashback on other spends',
+    rupay: false,
+    features: [
+      'Amazon Pay Cashback',
+      'No Annual Fee',
+      'No Joining Fee',
+      'Contactless Payments',
+      'EMI Options',
+      'Fuel Surcharge Waiver'
+    ],
+    categories: [
+      'lifetime-free',
+      'cashback',
+      'shopping',
+      'lifetime-free'
+      // 'best-credit-cards'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• Up to 5% cashback on Amazon.in purchases\n• 1% cashback on other spends\n\nRedemption:\n• Cashback credited as Amazon Pay balance\n• No cap on earnings',
+      welcomeBonus: 'No welcome benefits',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
+      minimumSpend: 'Not applicable',
+      idealFor: [
+        'Frequent Amazon shoppers',
+        'Online shopping enthusiasts',
+        'Budget-conscious consumers'
+      ],
+      notIdealFor: [
+        'Users who rarely shop on Amazon',
+        'Those seeking travel benefits',
+        'Premium card seekers'
+      ],
+      summary: 'A lifetime-free credit card offering enhanced cashback on Amazon purchases and basic rewards on other spends, ideal for frequent Amazon shoppers.'
+    }
+  },
+  {
+    id: 'axis-my-zone',
+    name: 'Axis Bank My Zone Credit Card',
+    bank: 'Axis Bank',
+    category: 'lifetime-free',
+    image: '/credit-cards/Axis-MyZone.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rewards: 'Complimentary Sony LIV Premium subscription\n₹120 off on Swiggy orders twice a month\nComplimentary airport lounge access (4 times per year)',
+    rupay: true,
+    features: [
+      'Sony LIV Premium Subscription',
+      'Swiggy Discounts',
+      'Airport Lounge Access',
+      'UPI Enabled',
+      'Contactless Payments',
+      'EMI Options'
+    ],
+    categories: [
+      'lifetime-free',
+      'upi',
+      'entertainment',
+      'dining'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Entertainment Benefits:\n• Complimentary Sony LIV Premium subscription\n• ₹120 off on Swiggy orders twice a month\n\nTravel Benefits:\n• Complimentary airport lounge access (4 times per year)',
+      welcomeBonus: 'No welcome benefits',
+      airportLounge: '4 complimentary domestic lounge accesses per year',
+      minimumSpend: 'Not applicable',
+      idealFor: [
+        'Entertainment enthusiasts',
+        'Food delivery users',
+        'Occasional travelers',
+        'UPI payment users'
+      ],
+      notIdealFor: [
+        'Frequent international travelers',
+        'Premium card seekers',
+        'Those seeking high cashback or rewards'
+      ],
+      summary: 'A lifetime-free credit card offering entertainment and dining benefits with complimentary Sony LIV subscription and Swiggy discounts, ideal for entertainment enthusiasts and foodies.'
     }
   }
 ]; 
