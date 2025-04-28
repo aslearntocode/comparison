@@ -58,15 +58,17 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹3,000 + GST',
     joiningFee: '₹3,000 + GST',
-    rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
+    rewards: '8 Marriott Bonvoy Points per ₹150 spent at Marriott hotels\n4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases',
     rupay: false,
     features: [
-      'Airport Lounge Access',
-      'Travel Insurance',
-      'Dining Benefits',
-      'Fuel Surcharge Waiver',
-      'Contactless Payments',
-      'SmartBuy Portal Access'
+      'Complimentary Marriott Bonvoy Silver Elite Status',
+      '1 Free Night Award on first spend or fee levy',
+      '10 Elite Night Credits',
+      'Airport Lounge Access (12 India + 12 International per year)',
+      'Golf Access',
+      'Concierge Services',
+      'Zero Lost Card Liability',
+      'Foreign Currency Markup: 3.5%'
     ],
     categories: [
       'best-credit-cards',
@@ -80,42 +82,28 @@ export const creditCards: CreditCard[] = [
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
-      welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
+      rewardsProgram: 'Reward Points Structure:\n• 8 Marriott Bonvoy Points per ₹150 spent at Marriott Bonvoy hotels\n• 4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n• 2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases\n\nPoints are earned on non-EMI retail spends and exclude wallet loads, gift/prepaid card loads, voucher purchases, government-related transactions, rental transactions, and EMI transactions.',
+      welcomeBonus: 'Welcome Benefits:\n• Complimentary Marriott Bonvoy Silver Elite Status (priority check-in, late check-out, 10% bonus points on eligible hotel purchases)\n• 1 Free Night Award on first eligible spend transaction or fee levy (wallet reloads and EMI excluded)\n• 10 Elite Night Credits to fast-track to Gold Elite status',
       milestoneBenefits: [
-        '10,000 bonus reward points on spending ₹5 lakhs in an anniversary year',
-        'Additional 5,000 bonus reward points on spending ₹8 lakhs in an anniversary year'
+        '1 Free Night Award on eligible spend of ₹6 lakhs in an anniversary year',
+        '1 Free Night Award on eligible spend of ₹9 lakhs in an anniversary year',
+        '1 Free Night Award on eligible spend of ₹15 lakhs in an anniversary year',
+        'Each Free Night Award valid for 12 months, redeemable for a one-night stay at participating Marriott Bonvoy hotels (up to 15,000 points redemption level)'
       ],
-      airportLounge: 'Airport Lounge Access:\n• 12 complimentary airport lounge accesses per calendar year (domestic and international combined)\n• Access vouchers to be generated via Regalia SmartBuy portal',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
-      insuranceCover: [
-        'Air Accident Cover: ₹1 crore',
-        'Emergency Overseas Hospitalization: Up to ₹15 lakh',
-        'Credit Liability Cover: Up to ₹9 lakh'
-      ],
-      diningPrivileges: [
-        'Exclusive offers through Dineout Passport Membership',
-        'Up to 25% off at select restaurants'
-      ],
-      minimumSpend: '₹3,00,000 for annual fee waiver',
-      paymentDueDays: '20 days',
-      creditLimit: 'Customized as per profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '2% on all international transactions',
-      interestRate: '3.5% per month (42% p.a.)',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
+      airportLounge: 'Airport Lounge Access:\n• 12 complimentary accesses within India (domestic and international terminals)\n• 12 complimentary accesses outside India annually',
+      additionalServices: 'Golf Access: 2 complimentary golf lessons per quarter at select driving ranges in India\nConcierge Services: Exclusive concierge services available 9 a.m. to 9 p.m.\nForeign Currency Markup: 3.5% on all foreign currency spends\nRevolving Credit: Available at nominal interest rates\nZero Lost Card Liability: On immediate reporting to 24-hour call center',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹5 lakh or more',
-        'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
-        'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
+        'Marriott Bonvoy loyalists',
+        'Frequent travelers',
+        'Golf enthusiasts',
+        'Users seeking premium hotel and travel benefits'
       ],
       notIdealFor: [
-        'Users with annual spends below ₹3 lakh',
-        'Individuals seeking zero annual fee cards without spending conditions',
-        'Those primarily interested in cashback or fuel-specific benefits'
+        'Users not interested in hotel loyalty programs',
+        'Those seeking low foreign currency markup',
+        'Budget-conscious users'
       ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and enhanced milestone rewards, ideal for frequent travelers and moderate-to-high spenders.'
+      summary: 'A premium co-branded credit card offering exclusive Marriott Bonvoy benefits, free night awards, elite status, and extensive travel and lifestyle privileges.'
     }
   },
   {

@@ -348,32 +348,33 @@ function CreditProductComparisonContent() {
                             />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-xl font-bold text-gray-900 mb-1">{card.name}</h3>
-                            <p className="text-gray-600 mb-4">{card.bank}</p>
-                            <div className="flex flex-col">
-                              {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                                <>
-                                  <div className="flex items-center gap-1">
-                                    <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
-                                      {getAverageRating(card.id)}
-                                    </span>
-                                    <div className="flex flex-col items-start justify-center">
-                                      <span className="text-gray-500 text-base">/ 10</span>
+                            <Link href={`/credit/${card.id}`} className="block">
+                              <h3 className="text-xl font-bold text-gray-900 mb-1">{card.name}</h3>
+                              <p className="text-gray-600 mb-4">{card.bank}</p>
+                              <div className="flex flex-col">
+                                {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
+                                  <>
+                                    <div className="flex items-center gap-1">
+                                      <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
+                                        {getAverageRating(card.id)}
+                                      </span>
+                                      <div className="flex flex-col items-start justify-center">
+                                        <span className="text-gray-500 text-base">/ 10</span>
+                                      </div>
                                     </div>
+                                    <div className="text-xs text-blue-600 whitespace-nowrap">
+                                      {getReviewCount(card.id)} reviews
+                                    </div>
+                                  </>
+                                ) : (
+                                  <div className="text-sm text-gray-500">
+                                    No Reviews Yet
                                   </div>
-                                  <div className="text-xs text-blue-600 whitespace-nowrap">
-                                    {getReviewCount(card.id)} reviews
-                                  </div>
-                                </>
-                              ) : (
-                                <div className="text-sm text-gray-500">
-                                  No Reviews Yet
-                                </div>
-                              )}
-                            </div>
+                                )}
+                              </div>
+                            </Link>
                           </div>
                         </div>
-
                         <div className="space-y-4">
                           <div>
                             <div className="text-sm font-medium text-gray-700 mb-1">APR</div>
@@ -389,12 +390,19 @@ function CreditProductComparisonContent() {
                             </div>
                           </div>
                         </div>
+                        <div className="flex items-center justify-end mt-2">
+                          <input
+                            type="checkbox"
+                            checked={selectedCards.includes(card.id)}
+                            onChange={() => handleCardSelection(card.id)}
+                            className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                          />
+                        </div>
                       </div>
                     </div>
-
                     {/* Desktop View */}
                     <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr' }}>
-                      <div className="flex items-center gap-4">
+                      <Link href={`/credit/${card.id}`} className="flex items-center gap-4 col-span-1 group cursor-pointer">
                         <div className="w-32 h-20 relative flex-shrink-0">
                           <Image
                             src={card.image}
@@ -404,10 +412,10 @@ function CreditProductComparisonContent() {
                           />
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-gray-900 mb-1">{card.name}</h3>
+                          <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:underline">{card.name}</h3>
                           <p className="text-gray-600">{card.bank}</p>
                         </div>
-                      </div>
+                      </Link>
                       <div className="text-gray-900 flex items-center">{card.apr}</div>
                       <div className="flex items-center">
                         {card.rupay ? (
@@ -456,7 +464,6 @@ function CreditProductComparisonContent() {
                         />
                       </div>
                     </div>
-
                     {/* Features Section - Desktop Only */}
                     <div className="hidden md:block px-4 py-3">
                       <div className="flex flex-wrap gap-2">
