@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { auth } from '@/lib/firebase'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
@@ -25,15 +25,31 @@ export default function LoginModal({ isOpen, onClose, redirectPath = '/' }: Logi
 
     try {
       const provider = new GoogleAuthProvider()
-      await signInWithPopup(auth, provider)
-      onClose()
-      router.push(redirectPath)
+      // Set prompt to select_account to force account picker
+      provider.setCustomParameters({
+        prompt: 'select_account'
+      })
+      
+      const result = await signInWithPopup(auth, provider)
+      if (result.user) {
+        onClose()
+        router.push(redirectPath)
+      }
     } catch (error: any) {
+      console.error('Login error:', error)
       setError(error.message)
     } finally {
       setLoading(false)
     }
   }
+
+  // If user is already authenticated, close the modal and redirect
+  useEffect(() => {
+    if (auth.currentUser) {
+      onClose()
+      router.push(redirectPath)
+    }
+  }, [onClose, redirectPath, router])
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>

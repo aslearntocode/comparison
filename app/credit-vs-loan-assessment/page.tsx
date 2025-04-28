@@ -276,7 +276,15 @@ function CreditVsLoanAssessmentContent() {
           {/* Form Section */}
           <Card className="p-6 shadow-2xl rounded-3xl border-0 bg-white/90">
             <h2 className="text-xl font-bold text-gray-800 mb-4">Credit Assessment Form</h2>
-            <form onSubmit={handleSubmit} className="space-y-4" onClick={(e) => e.stopPropagation()}>
+            <form onSubmit={handleSubmit} className="space-y-4" onClick={(e) => {
+              e.stopPropagation();
+              const user = auth.currentUser;
+              if (!user) {
+                const currentPath = encodeURIComponent('/credit-vs-loan-assessment');
+                router.push(`/login?redirect=${currentPath}`);
+                return;
+              }
+            }}>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Reason for applying (max 100 words)?</label>
                 <textarea
