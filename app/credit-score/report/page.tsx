@@ -732,6 +732,19 @@ export default function CreditReportPage() {
           </div>
         </div>
       </div>
+
+      {/* Add Upload New Report Button */}
+      <div className="fixed bottom-8 right-8">
+        <button
+          onClick={() => router.push('/credit-score?force_upload=true')}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 transition-all duration-200 hover:scale-105"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+          </svg>
+          <span>Upload Latest Credit Report</span>
+        </button>
+      </div>
     </div>
   )
 } 

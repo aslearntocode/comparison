@@ -267,22 +267,35 @@ export default function CreditScorePage() {
         }
 
         if (data) {
-          console.log('Credit report found, redirecting to report page');
-          router.push('/credit-score/report');
-          return;
+          // Check if force_upload is in the URL
+          const searchParams = new URLSearchParams(window.location.search);
+          const forceUpload = searchParams.get('force_upload');
+          
+          // Only redirect if force_upload is not true
+          if (!forceUpload) {
+            router.push('/credit-score/report');
+            return;
+          }
+
+          setReportData({
+            report_created_date: data.report_created_date,
+            credit_score: data.credit_score,
+            total_accounts: data.total_accounts,
+            active_accounts: data.active_accounts || [],
+            credit_limit: data.credit_limit,
+            closed_accounts: data.closed_accounts,
+            current_balance: data.current_balance,
+            overdue_accounts: data.overdue_accounts || [],
+            written_off_accounts: data.written_off_accounts || [],
+            enquiries: data.enquiries || []
+          });
         }
       } catch (error) {
         console.error('Error in fetchLatestCreditReport:', error);
       }
     };
 
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        fetchLatestCreditReport();
-      }
-    });
-
-    return () => unsubscribe();
+    fetchLatestCreditReport();
   }, [router]);
 
   const handlePageClick = () => {

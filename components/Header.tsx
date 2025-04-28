@@ -29,6 +29,8 @@ export default function Header() {
   const [isCreditScoreDropdownOpen, setIsCreditScoreDropdownOpen] = useState(false)
   const [hasCreditReport, setHasCreditReport] = useState(false)
   const [hasDisputes, setHasDisputes] = useState(false)
+  const [hasCreditAssessment, setHasCreditAssessment] = useState(false)
+  const [latestAssessment, setLatestAssessment] = useState<any>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -93,6 +95,24 @@ export default function Header() {
           // Only show disputes link if user has submitted disputes before
           setHasDisputes(Boolean(disputeData?.length))
 
+          // Check for credit assessment
+          const { data: assessmentData, error: assessmentError } = await supabase
+            .from('credit_assessments')
+            .select('*')
+            .eq('user_id', user.uid)
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .single();
+
+          if (assessmentError) {
+            if (assessmentError.code !== 'PGRST116') {
+              console.error('Error checking credit assessment:', assessmentError);
+            }
+          } else {
+            setHasCreditAssessment(true);
+            setLatestAssessment(assessmentData);
+          }
+
         } catch (error) {
           // Handle unexpected errors
           console.error('Unexpected error checking recommendations:', error)
@@ -104,6 +124,8 @@ export default function Header() {
         setHasStockAccess(false)
         setHasCreditReport(false)
         setHasDisputes(false)
+        setHasCreditAssessment(false)
+        setLatestAssessment(null)
       }
     })
 
@@ -488,13 +510,15 @@ export default function Header() {
                     left: '36rem'
                   }}
                 >
-                  <Link 
-                    href="/credit-score" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditScoreDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Check Credit Score</span>
-                  </Link>
+                  {!hasCreditReport && (
+                    <Link 
+                      href="/credit-score" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <span className="ml-3">Check Credit Score</span>
+                    </Link>
+                  )}
                   {hasCreditReport && (
                     <Link 
                       href="/credit-score/report" 
@@ -502,6 +526,30 @@ export default function Header() {
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">View Credit Report</span>
+                    </Link>
+                  )}
+                  {hasCreditAssessment ? (
+                    <Link 
+                      href="/credit-vs-loan-assessment?view=true" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <div className="ml-3">
+                        <span className="block">View Assessment</span>
+                        {latestAssessment && (
+                          <span className="text-xs text-gray-500">
+                            Last updated: {new Date(latestAssessment.created_at).toLocaleDateString()}
+                          </span>
+                        )}
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link 
+                      href="/credit-vs-loan-assessment" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <span className="ml-3">Credit Assessment</span>
                     </Link>
                   )}
                 </div>
@@ -815,20 +863,46 @@ export default function Header() {
 
               {isCreditScoreDropdownOpen && (
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
-                  <Link 
-                    href="/credit-score" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditScoreDropdownOpen(false)}
-                  >
-                    Check Credit Score
-                  </Link>
+                  {!hasCreditReport && (
+                    <Link 
+                      href="/credit-score" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <span className="ml-3">Check Credit Score</span>
+                    </Link>
+                  )}
                   {hasCreditReport && (
                     <Link 
                       href="/credit-score/report" 
-                      className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
-                      View Report
+                      <span className="ml-3">View Credit Report</span>
+                    </Link>
+                  )}
+                  {hasCreditAssessment ? (
+                    <Link 
+                      href="/credit-vs-loan-assessment?view=true" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <div className="ml-3">
+                        <span className="block">View Assessment</span>
+                        {latestAssessment && (
+                          <span className="text-xs text-gray-500">
+                            Last updated: {new Date(latestAssessment.created_at).toLocaleDateString()}
+                          </span>
+                        )}
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link 
+                      href="/credit-vs-loan-assessment" 
+                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      onClick={() => setIsCreditScoreDropdownOpen(false)}
+                    >
+                      <span className="ml-3">Credit Assessment</span>
                     </Link>
                   )}
                 </div>
