@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Header from '@/components/Header';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -36,7 +36,7 @@ function parseAssessmentSections(assessment: string) {
   return sections;
 }
 
-export default function CreditVsLoanAssessment() {
+function CreditVsLoanAssessmentContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [form, setForm] = useState({
@@ -453,5 +453,13 @@ export default function CreditVsLoanAssessment() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function CreditVsLoanAssessment() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CreditVsLoanAssessmentContent />
+    </Suspense>
   );
 } 

@@ -345,48 +345,37 @@ export default function CreditReportPage() {
                     {reportData?.enquiries && reportData.enquiries.length > 0 ? (
                       (() => {
                         try {
-                          // Convert date from DD/MM/YYYY or YYYY-MM-DD to YYYY-MM-DD
                           const convertDateFormat = (dateStr: string) => {
                             if (!dateStr) return null;
                             try {
-                              // Replace both - and / with a standard separator
-                              const normalizedDate = dateStr.replace(/[-\/]/g, '-');
-                              const parts = normalizedDate.split('-');
-                              
-                              // Check if the date is already in YYYY-MM-DD format
-                              if (parts[0].length === 4) {
-                                // Validate the date
-                                const date = new Date(normalizedDate);
-                                if (isNaN(date.getTime())) {
-                                  console.error('Invalid date:', dateStr);
-                                  return null;
-                                }
-                                return normalizedDate;
-                              }
-                              
                               // Handle DD-MM-YYYY format
-                              if (parts.length === 3) {
-                                const [day, month, year] = parts.map(num => num.padStart(2, '0'));
+                              if (dateStr.includes('-')) {
+                                const [day, month, year] = dateStr.split('-').map(num => num.padStart(2, '0'));
                                 const date = new Date(`${year}-${month}-${day}`);
-                                if (isNaN(date.getTime())) {
-                                  console.error('Invalid date:', dateStr);
-                                  return null;
-                                }
-                                return `${year}-${month}-${day}`;
+                                if (isNaN(date.getTime())) return null;
+                                return date.toLocaleDateString('en-US', {
+                                  year: 'numeric',
+                                  month: 'long',
+                                  day: 'numeric'
+                                });
                               }
                               
-                              console.error('Unsupported date format:', dateStr);
-                              return null;
+                              // Handle other date formats
+                              const date = new Date(dateStr);
+                              if (isNaN(date.getTime())) return null;
+                              return date.toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              });
                             } catch (error) {
-                              console.error('Error converting date:', dateStr, error);
+                              console.error('Error converting date:', error);
                               return null;
                             }
                           };
 
-                          // Get report date from the analysis data
-                          const reportDateStr = convertDateFormat(reportData.report_created_date);
+                          const reportDateStr = reportData?.report_created_date ? convertDateFormat(reportData.report_created_date) : null;
                           if (!reportDateStr) {
-                            console.error('Invalid report date format:', reportData.report_created_date);
                             return <p className="text-sm font-medium text-gray-800 mt-1">--</p>;
                           }
                           
