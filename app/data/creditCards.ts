@@ -82,7 +82,11 @@ export const creditCards: CreditCard[] = [
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
       welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
-      airportLounge: 'Domestic Lounge Access:\n• Up to 2 complimentary lounge access vouchers per quarter (8 per year)\n• Eligibility: Spend ₹1 lakh or more in a calendar quarter\n• Access vouchers to be generated via Regalia SmartBuy portal\n\nInternational Lounge Access:\n• 6 complimentary visits per year for primary and add-on cardholders through Priority Pass\n• Eligibility: Complete 4 retail transactions to apply for Priority Pass\n• Additional visits charged at $27 + GST per visit',
+      milestoneBenefits: [
+        '10,000 bonus reward points on spending ₹5 lakhs in an anniversary year',
+        'Additional 5,000 bonus reward points on spending ₹8 lakhs in an anniversary year'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• 12 complimentary airport lounge accesses per calendar year (domestic and international combined)\n• Access vouchers to be generated via Regalia SmartBuy portal',
       fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
       insuranceCover: [
         'Air Accident Cover: ₹1 crore',
@@ -94,19 +98,24 @@ export const creditCards: CreditCard[] = [
         'Up to 25% off at select restaurants'
       ],
       minimumSpend: '₹3,00,000 for annual fee waiver',
+      paymentDueDays: '20 days',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
       internationalTransactionFee: '2% on all international transactions',
+      interestRate: '3.5% per month (42% p.a.)',
+      emiOptions: 'Available on eligible purchases',
       additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹3 lakh or more',
+        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹5 lakh or more',
         'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
         'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
       ],
       notIdealFor: [
-        'Users with annual spends below ₹1 lakh',
+        'Users with annual spends below ₹3 lakh',
         'Individuals seeking zero annual fee cards without spending conditions',
         'Those primarily interested in cashback or fuel-specific benefits'
       ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
+      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and enhanced milestone rewards, ideal for frequent travelers and moderate-to-high spenders.'
     }
   },
   {
@@ -142,7 +151,11 @@ export const creditCards: CreditCard[] = [
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
       welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
-      airportLounge: 'Domestic Lounge Access:\n• Up to 2 complimentary lounge access vouchers per quarter (8 per year)\n• Eligibility: Spend ₹1 lakh or more in a calendar quarter\n• Access vouchers to be generated via Regalia SmartBuy portal\n\nInternational Lounge Access:\n• 6 complimentary visits per year for primary and add-on cardholders through Priority Pass\n• Eligibility: Complete 4 retail transactions to apply for Priority Pass\n• Additional visits charged at $27 + GST per visit',
+      milestoneBenefits: [
+        '10,000 bonus reward points on spending ₹5 lakhs in an anniversary year',
+        'Additional 5,000 bonus reward points on spending ₹8 lakhs in an anniversary year'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• 12 complimentary airport lounge accesses per calendar year (domestic and international combined)\n• Access vouchers to be generated via Regalia SmartBuy portal',
       fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
       insuranceCover: [
         'Air Accident Cover: ₹1 crore',
@@ -154,19 +167,24 @@ export const creditCards: CreditCard[] = [
         'Up to 25% off at select restaurants'
       ],
       minimumSpend: '₹3,00,000 for annual fee waiver',
+      paymentDueDays: '20 days',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
       internationalTransactionFee: '2% on all international transactions',
+      interestRate: '3.5% per month (42% p.a.)',
+      emiOptions: 'Available on eligible purchases',
       additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹3 lakh or more',
+        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹5 lakh or more',
         'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
         'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
       ],
       notIdealFor: [
-        'Users with annual spends below ₹1 lakh',
+        'Users with annual spends below ₹3 lakh',
         'Individuals seeking zero annual fee cards without spending conditions',
         'Those primarily interested in cashback or fuel-specific benefits'
       ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and reward points, ideal for frequent travelers and moderate-to-high spenders.'
+      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and enhanced milestone rewards, ideal for frequent travelers and moderate-to-high spenders.'
     }
   },
   {
@@ -502,56 +520,6 @@ export const creditCards: CreditCard[] = [
     }
   },
   {
-    id: 'emeralde',
-    name: 'Emeralde Credit Card',
-    bank: 'ICICI Bank',
-    category: 'airlines',
-    image: '/credit-cards/ICICI-Emeralde.png',
-    apr: '44% p.a.',
-    annualFee: '₹1200',
-    joiningFee: '₹12,000',
-    rewards: 'Earn 2.5% Reward Points on international spends\n Earn 2% Reward Points on domestic spends',
-    rupay: false,
-    features: ['Universal Cashback', 'Fuel Surcharge Waiver', 'EMI Options'],
-    categories: [
-      'premium',
-      'rewards',
-      'cashback',
-      // 'fuel',
-      // 'lifestyle'
-    ],
-    feedback: [
-      { comment: "Decent cashback but customer service needs improvement", rating: 6, date: "2024-03-14", userId: "user789", userName: "Bob Johnson", cardId: "emeralde", cardName: "Emeralde Credit Card" },
-      { comment: "Good value for money", rating: 7.5, date: "2024-03-11", userId: "user123", userName: "John Doe", cardId: "emeralde", cardName: "Emeralde Credit Card" },
-      { comment: "Processing time for cashback is too long", rating: 5, date: "2024-03-07", userId: "user456", userName: "Jane Smith", cardId: "emeralde", cardName: "Emeralde Credit Card" }
-    ],
-    additionalDetails: {
-      rewardsProgram: 'Flat 2% cashback on all spends, credited monthly',
-      welcomeBonus: '₹1,000 cashback on spending ₹25,000 in first 30 days',
-      milestoneBenefits: [
-        'Annual fee waiver on spending ₹3,00,000 in a year'
-      ],
-      airportLounge: '2 complimentary domestic lounge visits per quarter',
-      fuelSurcharge: 'Complete fuel surcharge waiver at all fuel stations',
-      insuranceCover: [
-        'Purchase protection up to ₹1 lakh',
-        'Card fraud protection'
-      ],
-      movieBenefits: '25% off on movie tickets up to ₹100 per ticket',
-      diningPrivileges: [
-        '10% cashback at restaurants up to ₹200 per transaction',
-        '5% extra cashback at food delivery'
-      ],
-      minimumSpend: '₹10,000 per month',
-      paymentDueDays: '15 days',
-      creditLimit: 'Up to ₹3,00,000',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% + GST',
-      interestRate: '3.75% per month',
-      emiOptions: 'Available on purchases above ₹5,000'
-    }
-  },
-  {
     id: 'sapphiro',
     name: 'Sapphiro Credit Card',
     bank: 'ICICI Bank',
@@ -875,8 +843,8 @@ export const creditCards: CreditCard[] = [
     category: 'lifestyle',
     image: '/credit-cards/IDFC-First-Wealth.png',
     apr: '46.2% p.a.',
-    annualFee: '₹2,500 + GST',
-    joiningFee: '₹2,500 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: '10X rewards on weekend dining\n5X rewards on online shopping\n2X rewards on all other spends',
     rupay: false,
     features: [
@@ -892,35 +860,45 @@ export const creditCards: CreditCard[] = [
       'travel',
       'domestic-lounge',
       'dining',
-      'lifestyle'
+      'lifestyle',
+      'lifetime-free'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10X rewards on weekend dining\n• 5X rewards on online shopping\n• 2X rewards on all other spends\n\nRedemption:\n• Points can be redeemed for flights, hotels, and vouchers',
-      welcomeBonus: '5,000 reward points upon payment of joining fee',
-      airportLounge: '4 complimentary domestic lounge visits per quarter',
+      rewardsProgram: 'Earning Rate:\n• 10X rewards on weekend dining\n• 5X rewards on online shopping\n• 2X rewards on all other spends\n\nRedemption:\n• Points can be redeemed for flights, hotels, and vouchers\n• Reward points never expire',
+      welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 or more within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000)\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
+      milestoneBenefits: [
+        'Complimentary golf round for every ₹20,000 spent in a statement cycle (up to 2 rounds per cycle)',
+        'Trip cancellation cover of up to ₹10,000',
+        '10X reward points on eligible spends (points never expire)'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• Complimentary access to domestic and international airport lounges\n• Access to airport spas',
+      fuelSurcharge: 'Not specified',
       insuranceCover: [
         'Air Accident Cover: ₹1 crore',
         'Purchase Protection: ₹50,000',
-        'Travel Insurance: Comprehensive coverage'
+        'Travel Insurance: Comprehensive coverage including trip cancellation up to ₹10,000'
       ],
-      movieBenefits: 'Buy 1, get 1 free on movie tickets twice a month',
+      movieBenefits: 'Buy 1 Get 1 Free on movie tickets through Paytm app (up to ₹500, twice per month)',
       diningPrivileges: [
-        '10X rewards on weekend dining',
-        'Exclusive dining offers and discounts'
+        'Up to 20% discount at over 1,500 restaurants',
+        '10X rewards on weekend dining'
       ],
-      minimumSpend: '₹3,00,000 for annual fee waiver',
+      minimumSpend: '₹5,000 within first 30 days for welcome voucher',
       idealFor: [
         'Frequent travelers seeking lounge access and travel benefits',
         'Regular diners looking for enhanced dining rewards',
-        'Online shoppers wanting accelerated rewards'
+        'Online shoppers wanting accelerated rewards',
+        'Golf enthusiasts',
+        'Health and wellness conscious individuals'
       ],
       notIdealFor: [
         'Users with minimal travel requirements',
         'Those seeking basic cashback features',
-        'Individuals with low monthly spending'
+        'Individuals with low monthly spending',
+        'Budget-conscious users'
       ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, enhanced dining rewards, and travel insurance, ideal for frequent travelers.'
+      summary: 'A premium lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, golf privileges, and extensive dining and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.'
     }
   },
   {
@@ -930,8 +908,8 @@ export const creditCards: CreditCard[] = [
     category: 'premium',
     image: '/credit-cards/IDFC-First-Maurya.png',
     apr: '46.2% p.a.',
-    annualFee: '₹12,000 + GST',
-    joiningFee: '₹12,000 + GST',
+    annualFee: '₹5,999 + GST',
+    joiningFee: '₹5,999 + GST',
     rewards: 'Zero forex markup\nEnhanced rewards on international spends\nPremium lifestyle benefits',
     rupay: false,
     features: [
@@ -997,8 +975,8 @@ export const creditCards: CreditCard[] = [
     category: 'fintech',
     image: '/credit-cards/IDFC-First-Classic.png',
     apr: '46.2% p.a.',
-    annualFee: '₹1,000 + GST',
-    joiningFee: '₹1,000 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: '10X rewards on all spends\nNo annual fee on first year',
     rupay: true,
     features: [
@@ -1012,7 +990,7 @@ export const creditCards: CreditCard[] = [
     categories: [
       'rewards',
       'first-time',
-      // 'fuel'
+      'lifetime-free'
     ],
     feedback: [],
     additionalDetails: {
@@ -1040,8 +1018,8 @@ export const creditCards: CreditCard[] = [
     category: 'rewards',
     image: '/credit-cards/IDFC-First-Select.png',
     apr: '46.2% p.a.',
-    annualFee: '₹2,500 + GST',
-    joiningFee: '₹2,500 + GST',
+    annualFee: '₹0',
+    joiningFee: '₹0',
     rewards: 'Enhanced rewards on lifestyle spends\nLounge access\nComprehensive insurance',
     rupay: true,
     features: [
@@ -1050,36 +1028,55 @@ export const creditCards: CreditCard[] = [
       'Travel Insurance',
       'Dining Privileges',
       'Shopping Benefits',
-      'Contactless Payments'
+      'Contactless Payments',
+      'UPI Linkage',
+      'Railway Lounge Access',
+      'Roadside Assistance'
     ],
     categories: [
-      // 'premium',
       'lifestyle',
       'domestic-lounge',
-      'upi'
+      'upi',
+      'lifetime-free',
+      'rewards'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Enhanced rewards on lifestyle spends\n• Accelerated rewards on dining and shopping\n\nRedemption:\n• Points can be redeemed for premium lifestyle products and vouchers',
-      welcomeBonus: 'Premium welcome benefits worth ₹10,000',
-      airportLounge: '4 complimentary domestic lounge visits per quarter',
-      insuranceCover: [
-        'Air Accident Cover: ₹1.5 crore',
-        'Purchase Protection: ₹75,000',
-        'Travel Insurance: Comprehensive coverage'
+      rewardsProgram: 'Earning Rate:\n• 10X reward points on birthday month\n• 20 bonus Reward Points for every ₹100 spent on hotel bookings\n• 3X rewards on UPI transactions\n• Unlimited reward points with no expiry',
+      welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000) within first 30 days\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
+      milestoneBenefits: [
+        '10X reward points on all purchases during birthday month',
+        'Unlimited reward points with no expiry',
+        '1% fuel surcharge waiver (up to ₹300 per month)',
+        'Roadside assistance worth ₹1,399 annually',
+        'Up to 15% discount at over 3,000 health and wellness outlets'
       ],
-      minimumSpend: '₹5,00,000 for annual fee waiver',
+      airportLounge: 'Airport Lounge Access:\n• 4 complimentary access per quarter to select domestic terminal airport lounges\n• 4 complimentary visits per quarter to select railway lounges',
+      fuelSurcharge: '1% waiver on fuel transactions (up to ₹300 per month)',
+      insuranceCover: [
+        'Trip cancellation cover of up to ₹10,000',
+        'Comprehensive travel insurance coverage'
+      ],
+      movieBenefits: 'Buy 1 Get 1 Free on movie tickets through Paytm app (up to ₹500, twice per month)',
+      diningPrivileges: [
+        'Enhanced rewards on dining spends',
+        'Exclusive dining offers and discounts'
+      ],
+      minimumSpend: '₹5,000 within first 30 days for welcome voucher',
       idealFor: [
-        'Premium lifestyle seekers',
-        'Regular travelers',
-        'High-spending individuals'
+        'Frequent travelers seeking lounge access',
+        'Regular diners looking for enhanced rewards',
+        'UPI payment users',
+        'Health and wellness conscious individuals',
+        'Those seeking lifetime-free credit cards'
       ],
       notIdealFor: [
-        'Budget-conscious users',
-        'Basic card seekers',
-        'Minimal spenders'
+        'Users with minimal travel requirements',
+        'Those seeking basic cashback features',
+        'Individuals with low monthly spending',
+        'Budget-conscious users'
       ],
-      summary: 'A premium lifestyle credit card offering enhanced rewards, lounge access, and comprehensive insurance coverage, ideal for premium lifestyle seekers.'
+      summary: 'A lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.'
     }
   },
   {
@@ -1132,23 +1129,59 @@ export const creditCards: CreditCard[] = [
     category: 'secured',
     image: '/credit-cards/IDFC-First-Wow.png',
     apr: 'Based on FD rate',
-    annualFee: 'Nil',
-    joiningFee: 'Nil',
-    rewards: '5% cashback on first EMI purchase',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rewards: '5% cashback on first EMI purchase\n10X reward points on birthday month\n3X rewards on UPI transactions',
     rupay: false,
     features: [
       '5% cashback on first EMI purchase',
       '1% fuel surcharge waiver',
       'Up to 48 days interest-free period',
-      'Minimum FD amount: ₹10,000'
+      'Minimum FD amount: ₹10,000',
+      'UPI Linkage',
+      'Railway Lounge Access',
+      'Roadside Assistance',
+      'Airport Lounge Access',
+      'Health & Wellness Discounts'
     ],
-    categories: ['secured'],
+    categories: ['secured', 'lifetime-free', 'rewards'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: '5% cashback on first EMI purchase',
-      fuelSurcharge: '1% fuel surcharge waiver',
-      paymentDueDays: 'Up to 48 days interest-free period',
-      summary: 'A secured credit card with EMI benefits and fuel surcharge waiver.'
+      rewardsProgram: 'Earning Rate:\n• 10X reward points on birthday month\n• 20 bonus Reward Points for every ₹100 spent on hotel bookings\n• 3X rewards on UPI transactions\n• Unlimited reward points with no expiry',
+      welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000) within first 30 days\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
+      milestoneBenefits: [
+        '10X reward points on all purchases during birthday month',
+        'Unlimited reward points with no expiry',
+        '1% fuel surcharge waiver (up to ₹300 per month)',
+        'Roadside assistance worth ₹1,399 annually',
+        'Up to 15% discount at over 3,000 health and wellness outlets'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• 4 complimentary access per quarter to select domestic terminal airport lounges\n• 4 complimentary visits per quarter to select railway lounges',
+      fuelSurcharge: '1% waiver on fuel transactions (up to ₹300 per month)',
+      insuranceCover: [
+        'Trip cancellation cover of up to ₹10,000',
+        'Comprehensive travel insurance coverage'
+      ],
+      movieBenefits: 'Buy 1 Get 1 Free on movie tickets through Paytm app (up to ₹500, twice per month)',
+      diningPrivileges: [
+        'Enhanced rewards on dining spends',
+        'Exclusive dining offers and discounts'
+      ],
+      minimumSpend: '₹5,000 within first 30 days for welcome voucher',
+      idealFor: [
+        'First-time credit card users',
+        'Those seeking to build credit history',
+        'UPI payment users',
+        'Health and wellness conscious individuals',
+        'Those seeking lifetime-free credit cards'
+      ],
+      notIdealFor: [
+        'Users with established credit history',
+        'Those seeking premium travel benefits',
+        'Individuals with low monthly spending',
+        'Budget-conscious users'
+      ],
+      summary: 'A lifetime-free secured credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for first-time credit card users and those seeking to build credit history.'
     }
   },
   {

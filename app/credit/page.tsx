@@ -18,9 +18,12 @@ function CreditProductComparisonContent() {
   const [sortField, setSortField] = useState<SortField | null>(null)
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
   const [cardReviews, setCardReviews] = useState<{ [key: string]: Review[] }>({})
+  const [selectedCards, setSelectedCards] = useState<string[]>([])
+  const [showCompareButton, setShowCompareButton] = useState(false)
 
   // Get the category from URL params
   const category = searchParams.get('category')
+  const currentCategory = searchParams.get('category')
 
   useEffect(() => {
     // Fetch all reviews when component mounts
@@ -207,6 +210,7 @@ function CreditProductComparisonContent() {
       case 'international-lounge': return 'International Lounge Access Credit Cards'
       case 'airlines': return 'Airlines Credit Cards'
       case 'hotels': return 'Hotel Credit Cards'
+      case 'lifestyle': return 'Lifestyle Credit Cards'
       case 'secured': return 'Secured Credit Cards'
       default: return 'Credit Cards'
     }
@@ -221,6 +225,22 @@ function CreditProductComparisonContent() {
       // ... existing code ...
     }
   }
+
+  const handleCardSelection = (cardId: string) => {
+    if (selectedCards.includes(cardId)) {
+      setSelectedCards(selectedCards.filter(id => id !== cardId));
+    } else if (selectedCards.length < 3) {
+      setSelectedCards([...selectedCards, cardId]);
+    }
+    setShowCompareButton(selectedCards.length > 0);
+  };
+
+  const handleCompare = () => {
+    // Navigate to comparison page with selected cards and category
+    const queryString = selectedCards.join(',');
+    const categoryParam = currentCategory ? `&category=${encodeURIComponent(currentCategory)}` : '';
+    window.location.href = `/credit/compare?cards=${queryString}${categoryParam}`;
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -261,7 +281,7 @@ function CreditProductComparisonContent() {
           {/* Credit Cards Grid */}
           <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
             {/* Table Header - Desktop */}
-            <div className="hidden md:grid md:grid-cols-7 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr' }}>
+            <div className="hidden md:grid md:grid-cols-7 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr' }}>
               <div className="col-span-1 font-medium text-gray-700 text-[13px]">Card Details</div>
               <button
                 onClick={() => handleSort('apr')}
@@ -285,6 +305,7 @@ function CreditProductComparisonContent() {
                 User Sentiment
                 <SortIcon field="sentiment" />
               </button>
+              <div className="font-medium text-gray-700 text-[13px]">Compare</div>
             </div>
 
             {/* Mobile Sort Dropdown */}
@@ -312,11 +333,7 @@ function CreditProductComparisonContent() {
             {/* Cards List */}
             <div className="space-y-8">
               {filteredCards.map((card) => (
-                <Link
-                  key={card.id}
-                  href={`/credit/${card.id}`}
-                  className="block hover:bg-gray-50 rounded-lg transition-colors"
-                >
+                <div key={card.id} className="block hover:bg-gray-50 rounded-lg transition-colors">
                   <div className="flex flex-col">
                     {/* Mobile View */}
                     <div className="md:hidden px-4 py-4">
@@ -376,7 +393,7 @@ function CreditProductComparisonContent() {
                     </div>
 
                     {/* Desktop View */}
-                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr' }}>
+                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr' }}>
                       <div className="flex items-center gap-4">
                         <div className="w-32 h-20 relative flex-shrink-0">
                           <Image
@@ -430,6 +447,14 @@ function CreditProductComparisonContent() {
                           </div>
                         )}
                       </div>
+                      <div className="flex items-center justify-center">
+                        <input
+                          type="checkbox"
+                          checked={selectedCards.includes(card.id)}
+                          onChange={() => handleCardSelection(card.id)}
+                          className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                        />
+                      </div>
                     </div>
 
                     {/* Features Section - Desktop Only */}
@@ -447,7 +472,7 @@ function CreditProductComparisonContent() {
                     </div>
                     <div className="border-t border-gray-100" />
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
 
@@ -460,6 +485,18 @@ function CreditProductComparisonContent() {
           </div>
         </div>
       </div>
+
+      {/* Comparison Button */}
+      {showCompareButton && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <button
+            onClick={handleCompare}
+            className="bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors"
+          >
+            Compare {selectedCards.length} Cards
+          </button>
+        </div>
+      )}
     </div>
   )
 }
