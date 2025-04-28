@@ -198,9 +198,21 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 5% Cashback on choice of any two packs:\n  - Dining & Entertainment: BookMyShow & Zomato\n  - Travel: MakeMyTrip & Uber\n  - Grocery: Blinkit & Reliance Smart Bazaar\n  - Electronics: Croma & Reliance Digital\n  - Fashion: Nykaa & Myntra\n• 5% Cashback on SmartBuy\n• 3% Cashback on choice of any one E-commerce merchant\n• Amazon or Flipkart or PayZapp\n• 1% Unlimited Cashback across all other spends\n• 1% Cashback on UPI Spends (Applicable only on PIXEL RuPay Credit Card holders)',
-      welcomeBonus: 'Joining Fee waived on ₹20,000 within 90 days of issuance',
+      welcomeBonus: 'Joining Fee waived on spending ₹20,000 within 90 days of issuance',
       milestoneBenefits: ['Annual fee waiver on spending ₹1 lakh or more in the preceding 12 months'],
-      summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions.'
+      idealFor: [
+        'Digital Enthusiasts: Perfect for those who prefer seamless app-based experience with HDFC PayZapp integration',
+        'Cashback Seekers: Ideal for users looking for high cashback on specific categories and e-commerce',
+        'UPI Users: Great for those who want to use UPI transactions with their credit card',
+        'Budget-Conscious Individuals: Suitable for users mindful of fees with reasonable spending thresholds'
+      ],
+      notIdealFor: [
+        'International Travelers: Due to 3.5% foreign transaction fee',
+        'Users Seeking Versatile Rewards: Cashback is limited to PayZapp ecosystem',
+        'Those Expecting Robust Customer Support: Some users report issues with customer service',
+        'Individuals with Low or Irregular Spending: May not meet spending thresholds for fee waivers'
+      ],
+      summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions, ideal for digital-savvy users who prefer app-based banking.'
     }
   },
   {
@@ -224,7 +236,6 @@ export const creditCards: CreditCard[] = [
     ],
     categories: [
       'cashback',
-      'lifestyle',
       'shopping',
       'entertainment',
       'dining',
@@ -233,10 +244,21 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato\n• 1% cashback on other spends\n• ₹1,000 worth gift vouchers on spends of ₹1,00,000 and above in each calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC',
-      welcomeBonus: 'Pay your Membership fee and get Reward Points equivalent to Fee Amount',
-      milestoneBenefits: ['Spend ₹1,00,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
-      fuelSurcharge: '1% waiver on transactions between ₹400-₹5,000',
-      summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits.'
+      welcomeBonus: '1,000 CashPoints upon payment of the joining fee',
+      milestoneBenefits: ['₹1,000 worth of gift vouchers on spends of ₹1,00,000 and above in each calendar quarter'],
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle',
+      idealFor: [
+        'Frequent Online Shoppers: Perfect for those who regularly shop on Amazon, Flipkart, Myntra, Swiggy, Zomato, and Uber',
+        'Dining Enthusiasts: Great for users who can benefit from up to 20% discount at partner restaurants via Swiggy Dineout',
+        'Fuel Users: Suitable for those who want fuel surcharge waiver benefits',
+        'Milestone Seekers: Ideal for users who can meet the spending thresholds for welcome and milestone benefits'
+      ],
+      notIdealFor: [
+        'Low Spenders: Annual fee of ₹1,000 + GST, waived only on annual spends of ₹1 lakh or more',
+        'Travel Enthusiasts: No complimentary airport lounge access',
+        'Universal Spenders: No cashback on fuel, EMI, wallet loads, rent payments, and government-related transactions'
+      ],
+      summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.'
     }
   },
   {
@@ -272,7 +294,19 @@ export const creditCards: CreditCard[] = [
       welcomeBonus: '500 Cash Points (applicable only on payment of membership fee)',
       milestoneBenefits: ['Spend ₹50,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
       fuelSurcharge: '1% waiver on transactions between ₹400-₹5,000',
-      summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery.'
+      idealFor: [
+        'Online Shoppers: Perfect for those who frequently shop on Amazon, Flipkart, BigBasket, Reliance Smart SuperStore, or order food via Swiggy',
+        'Budget-Conscious Users: Ideal for those seeking low annual fees with reasonable waiver options',
+        'Credit History Builders: Suitable for beginners with relaxed eligibility criteria',
+        'Dining Enthusiasts: Great for users who can benefit from dining discounts at partner restaurants'
+      ],
+      notIdealFor: [
+        'Travel Enthusiasts: No complimentary lounge access or travel insurance',
+        'High Spenders: Those seeking premium perks might prefer HDFC Millennia or Regalia cards',
+        'Reward Point Maximizers: Low redemption value (1 CashPoint = ₹0.25) and minimum redemption threshold',
+        'Universal Spenders: No rewards on fuel, wallet loads, voucher purchases, rent payments, or government transactions'
+      ],
+      summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.'
     }
   },
   {
@@ -804,7 +838,8 @@ export const creditCards: CreditCard[] = [
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 2% cashback on every transaction\n• Cashback credited as "Monies" in Slice account\n\nRedemption:\n• Instant redemption of cashback\n• Weekly deals and discounts through Slice Spark',
-      welcomeBonus: 'No welcome benefits',
+      welcomeBonus: 'No specific welcome benefits. Instead, provides consistent benefits that apply to all users:\n• Up to 2% Instant Cashback on every transaction\n• No joining or annual fees\n• Lifetime free card with no hidden charges',
+      milestoneBenefits: ['No specific milestone benefits. Instead, provides consistent benefits that apply to all users'],
       fuelSurcharge: 'Waiver of up to ₹200 per billing cycle on fuel transactions below ₹5,000',
       insuranceCover: [
         'No specific insurance coverage mentioned'
@@ -815,20 +850,22 @@ export const creditCards: CreditCard[] = [
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: 'Not specified',
       interestRate: '42% p.a.',
-      emiOptions: 'Available with flexible repayment options',
-      additionalServices: 'Additional Features:\n• Card Replacement Fee: ₹500\n• ATM Cash Withdrawal Fee: ₹50 per transaction\n• Late Payment Charges: Varies based on outstanding amount\n• Rental Convenience Fee Waiver: Up to ₹300 per month on rental transactions below ₹10,000 via PhonePe & NoBroker',
+      emiOptions: 'Available with flexible repayment options:\n• Split monthly bills into three equal installments without any extra fee or interest',
+      additionalServices: 'Additional Features:\n• Card Replacement Fee: ₹500\n• ATM Cash Withdrawal Fee: ₹50 per transaction\n• Late Payment Charges: Varies based on outstanding amount\n• Rental Convenience Fee Waiver: Up to ₹300 per month on rental transactions below ₹10,000 via PhonePe & NoBroker\n• Wide Acceptance: Accepted at 99.95% of merchants across India that accept Visa cards\n• Slice Spark Deals: Access to exclusive weekly deals and discounts across various brands',
       idealFor: [
         'Young professionals and students',
-        'Individuals seeking zero annual fee cards',
-        'Users looking for instant cashback benefits',
-        'Those who frequently use rental services'
+        'First-time credit users',
+        'Digital-first users',
+        'Budget-conscious individuals',
+        'Those seeking flexible EMI options'
       ],
       notIdealFor: [
         'Users seeking premium travel benefits',
         'Those requiring extensive insurance coverage',
-        'Individuals needing high credit limits'
+        'Individuals needing high credit limits',
+        'Users who prefer traditional banking services'
       ],
-      summary: 'A fintech-powered credit card offering instant cashback, zero annual fee, and convenient features like EMI facility and rental fee waiver, ideal for young professionals and students.'
+      summary: 'A digital-first credit card alternative designed for young professionals, students, and first-time credit users, offering up to 2% instant cashback, flexible EMIs, and no annual or joining fees.'
     }
   },
   {
@@ -1780,21 +1817,21 @@ export const creditCards: CreditCard[] = [
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Up to 5% cashback on Amazon.in purchases\n• 1% cashback on other spends\n\nRedemption:\n• Cashback credited as Amazon Pay balance\n• No cap on earnings',
-      welcomeBonus: 'No welcome benefits',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: 'Not applicable',
+      rewardsProgram: 'Cashback Structure:\n• 5% cashback on Amazon.in purchases for Prime members\n• 3% cashback on Amazon.in purchases for non-Prime members\n• 2% cashback on transactions with over 100 Amazon Pay partner merchants\n• 1% cashback on all other payments\n\nNote: Cashback is credited as Amazon Pay balance and can be used for purchases on Amazon.in and partner merchants',
+      welcomeBonus: 'For Amazon Prime Members (Total Value: Up to ₹2,500):\n• ₹300 cashback on first Amazon transaction\n• 50% cashback on prepaid mobile recharge (up to ₹100)\n• 25% cashback on postpaid bill payment (up to ₹350)\n• 20% cashback on electricity bill payment (up to ₹250)\n• 25% cashback on DTH bill payment (up to ₹250)\n• 25% cashback on gas cylinder payment (up to ₹150, twice)\n• 25% cashback on broadband bill payment (up to ₹400)\n• 25% cashback on Amazon shopping (up to ₹200)\n• Complimentary 3-month EazyDiner Prime membership worth ₹1,095\n\nFor Non-Prime Members (Total Value: Up to ₹2,000):\n• Complimentary 3-month Amazon Prime membership\n• ₹200 cashback on first Amazon transaction\n• 50% cashback on prepaid mobile recharge (up to ₹100)\n• 25% cashback on postpaid bill payment (up to ₹350)\n• 20% cashback on electricity bill payment (up to ₹250)\n• 25% cashback on DTH bill payment (up to ₹200)\n• 25% cashback on gas cylinder payment (up to ₹150, twice)\n• 25% cashback on broadband bill payment (up to ₹400)\n• 25% cashback on Amazon shopping (up to ₹200)\n• Complimentary 3-month EazyDiner Prime membership worth ₹1,095',
+      milestoneBenefits: ['No specific milestone benefits. Instead, provides consistent cashback rewards based on spending categories'],
       idealFor: [
-        'Frequent Amazon shoppers',
-        'Online shopping enthusiasts',
-        'Budget-conscious consumers'
+        'Amazon Prime Members: Get higher cashback rates and more welcome benefits',
+        'Frequent Amazon Shoppers: Maximize rewards on Amazon.in purchases',
+        'Bill Payment Users: Earn cashback on various utility bill payments',
+        'Budget-Conscious Users: Zero annual and joining fees'
       ],
       notIdealFor: [
-        'Users who rarely shop on Amazon',
-        'Those seeking travel benefits',
-        'Premium card seekers'
+        'Non-Amazon Shoppers: Lower rewards on non-Amazon purchases',
+        'Travel Enthusiasts: No travel-specific benefits',
+        'High Spenders Seeking Premium Perks: Limited to cashback rewards'
       ],
-      summary: 'A lifetime-free credit card offering enhanced cashback on Amazon purchases and basic rewards on other spends, ideal for frequent Amazon shoppers.'
+      summary: 'A lifetime-free credit card offering enhanced cashback on Amazon purchases and bill payments, with comprehensive welcome benefits for both Prime and non-Prime members.'
     }
   },
   {
@@ -1824,22 +1861,28 @@ export const creditCards: CreditCard[] = [
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Entertainment Benefits:\n• Complimentary Sony LIV Premium subscription\n• ₹120 off on Swiggy orders twice a month\n\nTravel Benefits:\n• Complimentary airport lounge access (4 times per year)',
-      welcomeBonus: 'No welcome benefits',
-      airportLounge: '4 complimentary domestic lounge accesses per year',
-      minimumSpend: 'Not applicable',
+      rewardsProgram: 'EDGE Rewards:\n• Earn 4 EDGE reward points for every ₹200 spent\n• Points can be redeemed via the EDGE Rewards portal\n\nShopping Benefits:\n• AJIO Offer: ₹1,000 instant discount on minimum purchases of ₹2,999 (valid once per user)',
+      welcomeBonus: 'Complimentary SonyLIV Premium Subscription:\n• On completing the first transaction within the first 30 days of card issuance\n• Annual subscription worth ₹999',
+      milestoneBenefits: ['SonyLIV Subscription Renewal: On spending ₹1.5 lakh in a card anniversary year, you get the complimentary SonyLIV Premium subscription renewed'],
+      airportLounge: '1 complimentary domestic airport lounge access per quarter, subject to spending ₹50,000 in the previous 3 months',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹4,000, with a maximum waiver of ₹400 per statement cycle',
+      movieBenefits: 'Buy One Get One Free on Paytm Movies, with maximum discount of ₹200 per month',
+      diningPrivileges: [
+        '₹120 off twice a month on Swiggy orders (minimum order ₹500)',
+        'Up to 15% off at partner restaurants through Axis Bank\'s Dining Delights program'
+      ],
       idealFor: [
-        'Entertainment enthusiasts',
-        'Food delivery users',
-        'Occasional travelers',
-        'UPI payment users'
+        'Movie and OTT Platform Lovers: Get SonyLIV Premium subscription and movie ticket benefits',
+        'Regular Users of Swiggy and AJIO: Enjoy regular discounts on food delivery and fashion shopping',
+        'Domestic Travelers: Access to airport lounges with reasonable spending criteria',
+        'Budget-Conscious Users: Lifetime free card with good lifestyle benefits'
       ],
       notIdealFor: [
-        'Frequent international travelers',
-        'Premium card seekers',
-        'Those seeking high cashback or rewards'
+        'Frequent International Travelers: High forex markup of 3.5%',
+        'Premium Travel Reward Seekers: Limited travel benefits',
+        'Heavy Fuel Spenders: Rewards on fuel spend are not substantial'
       ],
-      summary: 'A lifetime-free credit card offering entertainment and dining benefits with complimentary Sony LIV subscription and Swiggy discounts, ideal for entertainment enthusiasts and foodies.'
+      summary: 'A lifetime-free credit card offering entertainment and lifestyle benefits including SonyLIV Premium subscription, movie ticket discounts, and dining offers, ideal for entertainment enthusiasts and regular online shoppers.'
     }
   },
   {

@@ -358,13 +358,13 @@ export default function Header() {
                   >
                     <span className="ml-3">UPI</span>
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=emi" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">EMI</span>
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
                     className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
@@ -797,13 +797,13 @@ export default function Header() {
                   >
                     UPI
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=emi" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     EMI
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
                     className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
