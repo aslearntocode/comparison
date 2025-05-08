@@ -50,7 +50,7 @@ export default function ComparePageContent() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             {/* Unified Comparison Table */}
             <div className="overflow-x-auto">
-              <table className="w-full table-fixed">
+              <table className="min-w-[700px] w-full table-fixed">
                 <colgroup>
                   <col className="w-40 whitespace-nowrap" />
                   {selectedCards.map((_, idx) => (
@@ -63,12 +63,12 @@ export default function ComparePageContent() {
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="pt-8 pb-2 px-6 text-center align-bottom">
-                        <div className="w-48 h-32 mx-auto mb-2 relative flex items-center justify-center">
+                        <div className="w-24 h-16 mx-auto mb-2 relative flex items-center justify-center">
                           <Image
                             src={card.image}
                             alt={card.name}
-                            width={192}
-                            height={128}
+                            width={96}
+                            height={64}
                             className="object-contain rounded-lg"
                           />
                         </div>

@@ -227,12 +227,22 @@ function CreditProductComparisonContent() {
   }
 
   const handleCardSelection = (cardId: string) => {
-    if (selectedCards.includes(cardId)) {
-      setSelectedCards(selectedCards.filter(id => id !== cardId));
-    } else if (selectedCards.length < 3) {
-      setSelectedCards([...selectedCards, cardId]);
-    }
-    setShowCompareButton(selectedCards.length > 0);
+    setSelectedCards(prev => {
+      // If card is already selected, remove it
+      if (prev.includes(cardId)) {
+        const newSelected = prev.filter(id => id !== cardId);
+        setShowCompareButton(newSelected.length >= 2);
+        return newSelected;
+      }
+      // If trying to add more than 3 cards, don't add
+      if (prev.length >= 3) {
+        return prev;
+      }
+      // Add the new card
+      const newSelected = [...prev, cardId];
+      setShowCompareButton(newSelected.length >= 2);
+      return newSelected;
+    });
   };
 
   const handleCompare = () => {
@@ -495,10 +505,10 @@ function CreditProductComparisonContent() {
 
       {/* Comparison Button */}
       {showCompareButton && (
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="fixed md:bottom-4 right-4 z-50">
           <button
             onClick={handleCompare}
-            className="bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors"
+            className="w-full md:w-auto bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors"
           >
             Compare {selectedCards.length} Cards
           </button>
