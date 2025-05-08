@@ -2592,5 +2592,60 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
       notIdealFor: [],
       summary: 'A UPI-enabled card for users seeking simple, capped cashback on all transactions.'
     }
+  },
+  {
+    id: "bob-tiara",
+    name: "Bob Tiara",
+    bank: "Bank of Baroda",
+    category: "lifestyle",
+    image: "/credit-cards/BOB_Tiara.png",
+    apr: "3.49% per month",
+    annualFee: "₹2,499 + GST",
+    joiningFee: "₹2,499 + GST",
+    rewards: "5X points on dining, travel & international spends, 3X points on other retail spends",
+    rupay: true,
+    features: [
+      "UPI Payment Support",
+      "Smart EMI",
+      "Zero Liability Protection",
+      "Add-on Cards Available"
+    ],
+    feedback: [],
+    categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
+      welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
+      milestoneBenefits: [
+        "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
+      ],
+      airportLounge: "Unlimited complimentary domestic airport lounge visits on spending ₹40,000 in previous quarter",
+      fuelSurcharge: "1% waiver on transactions between ₹400-₹5,000 (max ₹250 per statement)",
+      insuranceCover: [
+        "Zero liability on lost card reporting"
+      ],
+      diningPrivileges: [
+        "5X Reward Points on dining spends"
+      ],
+      minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
+      paymentDueDays: "Standard",
+      creditLimit: "Based on credit assessment",
+      domesticTransactionFee: "Standard",
+      internationalTransactionFee: "2% forex mark-up",
+      interestRate: "3.49% per month",
+      emiOptions: "Smart EMI available for purchases above ₹2,500 (6 months to 4 years)",
+      additionalServices: "UPI transactions reward points capped at ₹500 per statement cycle",
+      idealFor: [
+        "Frequent travelers",
+        "Dining enthusiasts",
+        "Online shoppers",
+        "Entertainment lovers"
+      ],
+      notIdealFor: [
+        "Low spenders",
+        "Those who don't use UPI"
+      ],
+      summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
+      redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
+    }
   }
 ]; 
