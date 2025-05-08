@@ -308,6 +308,7 @@ export default function CreditScorePage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('handleSubmit called');
     e.preventDefault()
     
     const form = e.target as HTMLFormElement
@@ -361,7 +362,16 @@ export default function CreditScorePage() {
             statusText: analysisResponse.statusText,
             errorText
           });
-          throw new Error(`Server error: ${analysisResponse.status} ${analysisResponse.statusText}`);
+          
+          let errorMessage = 'Failed to analyze PDF. ';
+          try {
+            const errorData = JSON.parse(errorText);
+            errorMessage += errorData.details || errorData.error || 'Please try again later.';
+          } catch (e) {
+            errorMessage += 'Please check your internet connection and try again.';
+          }
+          
+          throw new Error(errorMessage);
         }
 
         const responseData = await analysisResponse.json()
@@ -375,67 +385,67 @@ export default function CreditScorePage() {
         setReportData(responseData.data)
 
         // Save to Supabase with better error handling
-        const saveReportToSupabase = async (reportData: any) => {
-          try {
-            // Convert date format from DD-MM-YYYY or DD/MM/YYYY to YYYY-MM-DD
-            const convertDateFormat = (dateStr: string) => {
-              if (!dateStr) return null;
-              try {
-                // Replace both - and / with a standard separator
-                const normalizedDate = dateStr.replace(/[-\/]/g, '-');
-                const [day, month, year] = normalizedDate.split('-').map(num => num.padStart(2, '0'));
-                // Validate date components
-                const date = new Date(`${year}-${month}-${day}`);
-                if (isNaN(date.getTime())) {
-                  console.error('Invalid date:', dateStr);
-                  return null;
-                }
-                return `${year}-${month}-${day}`;
-              } catch (error) {
-                console.error('Error converting date:', dateStr, error);
-                return null;
-              }
-            };
+        // const saveReportToSupabase = async (reportData: any) => {
+        //   try {
+        //     // Convert date format from DD-MM-YYYY or DD/MM/YYYY to YYYY-MM-DD
+        //     const convertDateFormat = (dateStr: string) => {
+        //       if (!dateStr) return null;
+        //       try {
+        //         // Replace both - and / with a standard separator
+        //         const normalizedDate = dateStr.replace(/[-\/]/g, '-');
+        //         const [day, month, year] = normalizedDate.split('-').map(num => num.padStart(2, '0'));
+        //         // Validate date components
+        //         const date = new Date(`${year}-${month}-${day}`);
+        //         if (isNaN(date.getTime())) {
+        //           console.error('Invalid date:', dateStr);
+        //           return null;
+        //         }
+        //         return `${year}-${month}-${day}`;
+        //       } catch (error) {
+        //         console.error('Error converting date:', dateStr, error);
+        //         return null;
+        //       }
+        //     };
+        //
+        //     const { data, error } = await supabase
+        //       .from('credit_reports_pdf')
+        //       .insert({
+        //         user_id: auth.currentUser?.uid,
+        //         report_analysis: reportData,
+        //         mobile: formData.mobile,
+        //         name: formData.name,
+        //         dob: formData.dob,
+        //         created_at: new Date().toISOString(),
+        //         report_created_date: convertDateFormat(reportData.report_created_date),
+        //         credit_score: reportData.credit_score,
+        //         total_accounts: reportData.total_accounts,
+        //         active_accounts: reportData.active_accounts,
+        //         credit_limit: reportData.credit_limit,
+        //         closed_accounts: reportData.closed_accounts,
+        //         current_balance: reportData.current_balance,
+        //         overdue_accounts: reportData.overdue_accounts,
+        //         written_off_accounts: reportData.written_off_accounts,
+        //         enquiries: reportData.enquiries
+        //       })
+        //
+        //     if (error) {
+        //       console.error('Supabase error details:', error);
+        //       throw error;
+        //     }
+        //     return data;
+        //   } catch (error: any) {
+        //     console.error('Error saving report:', {
+        //       message: error.message,
+        //       details: error.details,
+        //       hint: error.hint,
+        //       code: error.code
+        //     });
+        //     throw error;
+        //   }
+        // };
 
-            const { data, error } = await supabase
-              .from('credit_reports_pdf')
-              .insert({
-                user_id: auth.currentUser?.uid,
-                report_analysis: reportData,
-                mobile: formData.mobile,
-                name: formData.name,
-                dob: formData.dob,
-                created_at: new Date().toISOString(),
-                report_created_date: convertDateFormat(reportData.report_created_date),
-                credit_score: reportData.credit_score,
-                total_accounts: reportData.total_accounts,
-                active_accounts: reportData.active_accounts,
-                credit_limit: reportData.credit_limit,
-                closed_accounts: reportData.closed_accounts,
-                current_balance: reportData.current_balance,
-                overdue_accounts: reportData.overdue_accounts,
-                written_off_accounts: reportData.written_off_accounts,
-                enquiries: reportData.enquiries
-              })
-
-            if (error) {
-              console.error('Supabase error details:', error);
-              throw error;
-            }
-            return data;
-          } catch (error: any) {
-            console.error('Error saving report:', {
-              message: error.message,
-              details: error.details,
-              hint: error.hint,
-              code: error.code
-            });
-            throw error;
-          }
-        };
-
-        const savedData = await saveReportToSupabase(responseData.data);
-        console.log('Successfully saved report:', savedData);
+        // const savedData = await saveReportToSupabase(responseData.data);
+        // console.log('Successfully saved report:', savedData);
 
       } catch (fetchError: any) {
         console.error('Fetch Error:', {

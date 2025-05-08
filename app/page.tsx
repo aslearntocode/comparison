@@ -1142,8 +1142,8 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mb-16 -ml-16"></div>
 
-                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 relative">
-                  Advantages of Registering a Complaint with Us
+                <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 relative text-center">
+                  Many Advantages of Registering a Complaint with Us
                 </h3>
 
                 <div className="space-y-8 relative">

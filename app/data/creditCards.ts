@@ -86,8 +86,8 @@ export const creditCards: CreditCard[] = [
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Marriott Bonvoy Silver Elite Status (priority check-in, late check-out, 10% bonus points on eligible hotel purchases)\n• 1 Free Night Award on first eligible spend transaction or fee levy (wallet reloads and EMI excluded)\n• 10 Elite Night Credits to fast-track to Gold Elite status',
       milestoneBenefits: [
         '1 Free Night Award on eligible spend of ₹6 lakhs in an anniversary year',
-        '1 Free Night Award on eligible spend of ₹9 lakhs in an anniversary year',
-        '1 Free Night Award on eligible spend of ₹15 lakhs in an anniversary year',
+        '1 Additional Free Night Award on eligible spend of ₹9 lakhs in an anniversary year',
+        '1 Additional Free Night Award on eligible spend of ₹15 lakhs in an anniversary year',
         'Each Free Night Award valid for 12 months, redeemable for a one-night stay at participating Marriott Bonvoy hotels (up to 15,000 points redemption level)'
       ],
       airportLounge: 'Airport Lounge Access:\n• 12 complimentary accesses within India (domestic and international terminals)\n• 12 complimentary accesses outside India annually',
