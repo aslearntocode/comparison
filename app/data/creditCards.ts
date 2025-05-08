@@ -2099,5 +2099,242 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'The second most expensive credit card in India, offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
     }
+  },
+  {
+    id: 'amex-platinum',
+    name: 'American Express Platinum Card',
+    bank: 'American Express',
+    category: 'ultra-premium',
+    image: '/credit-cards/Amex_Platinum.png',
+    apr: '42% p.a.',
+    annualFee: '₹66,000 + GST',
+    joiningFee: '₹66,000 + GST',
+    rewards: '1 Membership Rewards Point for every ₹50 spent (excluding fuel, insurance, utilities, and cash transactions)',
+    rupay: false,
+    features: [
+      'Unlimited Lounge Access',
+      'Elite Hotel Memberships',
+      'Global Event Access',
+      'Premium Subscriptions',
+      'Dedicated Concierge',
+      'Airport Meet-and-Greet'
+    ],
+    categories: [
+      'premium',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, and cash transactions\n\nRedemption Options:\n• Transfer points to airline and hotel loyalty programs\n• Redeem for Taj Hotels vouchers, Flipkart vouchers, or statement credits\n• Access to 18K and 24K Gold Collection\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
+      welcomeBonus: 'Welcome Benefits:\n• Vouchers worth up to ₹60,000 from Taj Hotels, Postcard Hotels, or Reliance Brands upon spending ₹50,000 within first 2 months',
+      milestoneBenefits: [
+        'Annual renewal benefits worth ₹35,000',
+        'Additional vouchers worth ₹35,000 on annual spends of ₹20 lakh'
+      ],
+      airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide, including:\n• Centurion Lounges\n• Priority Pass\n• Delta Sky Club lounges',
+      insuranceCover: [
+        'Comprehensive travel insurance coverage'
+      ],
+      diningPrivileges: [
+        'Exclusive dining access and privileges'
+      ],
+      minimumSpend: '₹50,000 within first 2 months for welcome benefits',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Charge card (no pre-set spending limit)',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% on international transactions',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      additionalServices: 'Additional Benefits:\n• Elite hotel memberships: Marriott Bonvoy Gold Elite, Hilton Honors Gold, Taj Epicure Plus, Accor Plus Traveller\n• Complimentary subscriptions via Times Prime: The Wall Street Journal, Mint, Vogue, SonyLiv Premium, Disney+ Hotstar\n• Exclusive invites to global events like Fashion Week, Wimbledon, and the Grammys',
+      idealFor: [
+        'Luxury travelers seeking premium experiences',
+        'High-net-worth individuals',
+        'Those who can leverage premium hotel and dining privileges',
+        'Frequent international travelers'
+      ],
+      notIdealFor: [
+        'Users with moderate or low annual spending',
+        'Those seeking cashback or low-fee cards',
+        'Budget-conscious individuals'
+      ],
+      summary: 'A premium charge card offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, ideal for high-net-worth individuals and frequent luxury travelers.'
+    }
+  },
+  {
+    id: 'amex-gold',
+    name: 'American Express Gold Card',
+    bank: 'American Express',
+    category: 'premium',
+    image: '/credit-cards/Amex_Gold.png',
+    apr: '42% p.a.',
+    annualFee: '₹4,500 + GST (₹1,000 + GST for first year)',
+    joiningFee: '₹0',
+    rewards: '1 Membership Rewards Point for every ₹50 spent\n5X points on Reward Multiplier platform\nMonthly bonus points on transactions',
+    rupay: false,
+    features: [
+      'Flexible Spending Power',
+      'Reward Multiplier',
+      'Dining Discounts',
+      'Hotel Collection Benefits',
+      'Monthly Bonus Points',
+      'Contactless Payments'
+    ],
+    categories: [
+      // 'premium',
+      'lifestyle',
+      'shopping',
+      'dining'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent (including fuel and utility payments)\n• 5X Membership Rewards Points on purchases through Reward Multiplier platform\n• Monthly Bonus: 1,000 bonus points for 6 transactions of ₹1,000 or more each calendar month\n\nRedemption Options:\n• 18 Karat Gold Collection (18,000 MR Points):\n  - Taj voucher worth ₹9,000\n  - Shoppers Stop voucher worth ₹7,000\n  - Tata CLiQ voucher worth ₹7,000\n  - Myntra voucher worth ₹7,000\n  - Amazon voucher worth ₹6,000\n  - Flipkart voucher worth ₹6,000\n  - Reliance Digital voucher worth ₹6,000\n\n• 24 Karat Gold Collection (24,000 MR Points):\n  - Taj voucher worth ₹14,000\n  - Shoppers Stop voucher worth ₹10,000\n  - Tata CLiQ voucher worth ₹9,000\n  - Tanishq voucher worth ₹9,000\n  - Amazon voucher worth ₹8,000\n  - Flipkart voucher worth ₹8,000\n  - Reliance Digital voucher worth ₹8,000',
+      welcomeBonus: 'Welcome Benefits:\n• 4,000 bonus Membership Rewards Points upon spending ₹10,000 within first 90 days and payment of annual fee',
+      milestoneBenefits: [
+        '1,000 bonus Membership Rewards Points on making 6 transactions of ₹1,000 or more each calendar month',
+        'Up to 12,000 bonus points annually through monthly transaction bonuses'
+      ],
+      diningPrivileges: [
+        'Up to 20% off at select partner restaurants'
+      ],
+      additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels',
+      minimumSpend: '₹10,000 within first 90 days for welcome benefits',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Charge card (no pre-set spending limit)',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% on international transactions',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      idealFor: [
+        'Individuals who prefer a charge card with flexible spending limits',
+        'Frequent shoppers and diners',
+        'Those who value diverse redemption options',
+        'Users who can maximize the rewards program'
+      ],
+      notIdealFor: [
+        'Users seeking cashback or low-fee credit cards',
+        'Individuals who may not fully utilize the rewards and benefits',
+        'Budget-conscious users'
+      ],
+      summary: 'A premium charge card offering flexible spending power, enhanced rewards through the Reward Multiplier platform, and comprehensive dining and travel benefits, ideal for frequent shoppers and diners who value diverse redemption options.'
+    }
+  },
+  {
+    id: 'amex-smartearn',
+    name: 'American Express SmartEarn Credit Card',
+    bank: 'American Express',
+    category: 'lifestyle',
+    image: '/credit-cards/Amex_SmartEarn.png',
+    apr: '42% p.a.',
+    annualFee: '₹495 + GST',
+    joiningFee: '₹495 + GST',
+    rewards: '10X Membership Rewards Points on select merchants\n5X points on Paytm Wallet, Swiggy, BookMyShow\n1 point per ₹50 on other spends',
+    rupay: false,
+    features: [
+      'Enhanced Online Rewards',
+      'Fuel Surcharge Waiver',
+      'Contactless Payments',
+      'EMI Options',
+      'Digital-First Card',
+      'Welcome Benefits'
+    ],
+    categories: [
+      'lifestyle',
+      'shopping',
+      'first-time'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 10X Membership Rewards Points on Flipkart, Amazon, Uber, Zomato, AJIO, PVR, Blinkit (capped at 500 points per month per merchant)\n• 5X Membership Rewards Points on Paytm Wallet, Swiggy, BookMyShow (capped at 250 points per month)\n• 1 Membership Rewards Point per ₹50 spent on other categories\n\nRedemption Options:\n• E-vouchers from popular brands\n• Airline and hotel loyalty programs\n• Statement credits\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
+      welcomeBonus: 'Welcome Benefits:\n• ₹500 cashback as statement credit upon spending ₹10,000 within first 90 days',
+      milestoneBenefits: [
+        '₹500 vouchers on achieving annual spends of ₹1.2 lakh',
+        '₹500 vouchers on achieving annual spends of ₹1.8 lakh',
+        '₹500 vouchers on achieving annual spends of ₹2.4 lakh',
+        'Annual fee waiver upon spending ₹40,000 in a year'
+      ],
+      fuelSurcharge: '0% convenience fee on fuel purchases at HPCL for transactions below ₹25,000',
+      minimumSpend: '₹10,000 within first 90 days for welcome benefits',
+      idealFor: [
+        'First-time credit card users',
+        'Online shoppers seeking rewards on popular platforms',
+        'Digital-first users'
+      ],
+      notIdealFor: [
+        'Users seeking premium travel benefits',
+        'Those looking for luxury privileges',
+        'International travelers'
+      ],
+      summary: 'An entry-level credit card offering enhanced rewards on online shopping and popular platforms, ideal for first-time credit card users and digital-first consumers.'
+    }
+  },
+  {
+    id: 'amex-platinum-reserve',
+    name: 'American Express Platinum Reserve Credit Card',
+    bank: 'American Express',
+    category: 'premium',
+    image: '/credit-cards/Amex_Reserve.png',
+    apr: '42% p.a.',
+    annualFee: '₹10,000 + GST',
+    joiningFee: '₹10,000 + GST',
+    rewards: '1 Membership Rewards Point for every ₹50 spent\nMonthly and annual milestone rewards\nPremium lifestyle benefits',
+    rupay: false,
+    features: [
+      'Airport Lounge Access',
+      'Priority Pass Membership',
+      'Hotel Collection Benefits',
+      'Dining Privileges',
+      'Golf Access',
+      'Platinum Concierge'
+    ],
+    categories: [
+      'premium',
+      'lifestyle',
+      'travel',
+      'domestic-lounge',
+      'international-lounge',
+      'dining'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, cash transactions, and EMI conversions\n\nRedemption Options:\n• E-Vouchers: Amazon, Flipkart, Taj Hotels\n• INSTA Purchases at partner stores\n• Cash + Points for bill offset\n• Transfer to loyalty programs: Club Vistara, Emirates Skywards, Singapore KrisFlyer, Marriott Bonvoy, Hilton Honors\n\nPoint Value: Up to ₹0.50 per point when redeemed for select vouchers or transferred to loyalty programs',
+      welcomeBonus: 'Welcome Benefits:\n• 11,000 Membership Rewards Points upon spending ₹30,000 within first 90 days and payment of annual fee',
+      milestoneBenefits: [
+        'Monthly: ₹500 voucher from Flipkart, BookMyShow, or select brands on spending ₹25,000 in a calendar month',
+        'Annual: Taj Hotels voucher worth ₹10,000 on spending ₹5 lakh in a membership year',
+        'Annual fee waiver on spending ₹10 lakh in the preceding membership year'
+      ],
+      airportLounge: 'Airport Lounge Access:\n• 12 complimentary domestic lounge visits per year (max 3 per quarter)\n• Complimentary Priority Pass membership for access to over 1,200 international lounges (usage charges apply)',
+      insuranceCover: [
+        'Personal air accident insurance up to ₹1 crore',
+        'Purchase protection against theft or damage within 60 days of purchase'
+      ],
+      diningPrivileges: [
+        'Complimentary Taj Epicure membership',
+        'Complimentary EazyDiner Prime membership',
+        'Dining discounts and exclusive privileges'
+      ],
+      additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels\n• Up to 2 complimentary golf rounds per month at 32 premium courses (on spending ₹50,000 in a calendar month)\n• 24×7 Platinum Concierge for travel, dining, and lifestyle assistance',
+      minimumSpend: '₹30,000 within first 90 days for welcome benefits',
+      paymentDueDays: 'Not specified',
+      creditLimit: 'Customized as per profile',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '3.5% on international transactions',
+      interestRate: '42% p.a.',
+      emiOptions: 'Available on eligible purchases',
+      idealFor: [
+        'Individuals with annual spending between ₹5–10 lakh',
+        'Those seeking premium lifestyle benefits',
+        'Users who can leverage monthly and annual milestone rewards',
+        'Frequent travelers and diners'
+      ],
+      notIdealFor: [
+        'Individuals with annual spending below ₹3 lakh',
+        'Those seeking cashback or low-fee credit cards',
+        'Users who may not utilize premium benefits'
+      ],
+      summary: 'A premium credit card offering comprehensive lifestyle benefits including lounge access, hotel privileges, dining memberships, and golf access, ideal for affluent individuals seeking premium lifestyle and travel benefits.'
+    }
   }
 ]; 
