@@ -2336,5 +2336,52 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A premium credit card offering comprehensive lifestyle benefits including lounge access, hotel privileges, dining memberships, and golf access, ideal for affluent individuals seeking premium lifestyle and travel benefits.'
     }
+  },
+  {
+    id: 'jupiter-edge-csb',
+    name: 'Jupiter Edge CSB Bank RuPay Credit Card',
+    bank: 'CSB Bank',
+    category: 'upi',
+    image: '/credit-cards/Jupiter.png',
+    apr: 'Not specified',
+    annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
+    joiningFee: '₹0',
+    rewards: '2% cashback on selected category (Shopping, Travel, or Dining); 0.4% cashback on all other spends including UPI',
+    rupay: true,
+    features: [
+      '3-in-1 Category Selection: Choose Shopping, Travel, or Dining for accelerated rewards (switch every 3 billing cycles)',
+      'UPI Integration: Make UPI payments using your credit card',
+      '1 complimentary domestic airport lounge access per quarter',
+      '1% fuel surcharge waiver on transactions between ₹400 and ₹3,000 (capped at ₹100/month)',
+      'Personal accident and total permanent disability cover up to ₹10 lakh',
+      'Card management via Jupiter app (set limits, freeze/unfreeze, reset PIN, etc.)'
+    ],
+    categories: [
+      'upi',
+      'lifetime-free',
+      'rewards'
+    ],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
+      welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
+      milestoneBenefits: [],
+      airportLounge: '1 complimentary domestic airport lounge access per quarter',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹3,000, capped at ₹100 per month',
+      insuranceCover: [
+        'Personal accident and total permanent disability cover up to ₹10 lakh'
+      ],
+      additionalServices: 'Card management via Jupiter app: set limits, freeze/unfreeze, reset PIN, and more.',
+      idealFor: [
+        'Individuals who prefer UPI payments but want to earn credit card rewards',
+        'Users seeking a no-fee credit card with flexible cashback options',
+        'Those who spend regularly in categories like Shopping, Travel, or Dining'
+      ],
+      notIdealFor: [
+        'Users looking for premium travel benefits or higher reward rates',
+        'Individuals who prefer cashback on all categories without the need to select a preferred category'
+      ],
+      summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
+    }
   }
 ]; 
