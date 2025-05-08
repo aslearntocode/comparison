@@ -44,6 +44,7 @@ export interface CreditCard {
     idealFor?: string[];
     notIdealFor?: string[];
     summary?: string;
+    redemptionOptions?: string;
   };
 }
 
@@ -1173,85 +1174,88 @@ export const creditCards: CreditCard[] = [
     }
   },
   {
-    id: 'idfc-hpcl-power-plus',
-    name: 'IDFC HPCL Power+ Credit Card',
-    bank: 'IDFC FIRST Bank',
-    category: 'fuel',
-    image: '/credit-cards/IDFC-First-HPCL.png',
-    apr: '46.2% p.a.',
-    annualFee: '₹499 + GST',
-    joiningFee: '₹499 + GST',
-    rewards: 'Enhanced fuel savings\nSurcharge waiver\nBasic rewards on other spends',
-    rupay: true,
-    features: [
-      'Fuel Savings',
-      'Surcharge Waiver',
-      'Contactless Payments',
-      'Online Shopping Benefits',
-      'EMI Options'
-    ],
-    categories: [
-      'fuel',
-      'budget'
-    ],
-    feedback: [],
-    additionalDetails: {
-      rewardsProgram: 'Enhanced rewards on fuel spends\nBasic rewards on other spends',
-      welcomeBonus: 'No welcome benefits',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: 'Not applicable',
-      idealFor: [
-        'Frequent drivers',
-        'Regular fuel purchasers',
-        'Budget-conscious users'
-      ],
-      notIdealFor: [
-        'Non-drivers',
-        'Premium card seekers',
-        'Those seeking extensive benefits'
-      ],
-      summary: 'A fuel-focused credit card offering enhanced savings on fuel purchases and surcharge waiver, ideal for frequent drivers.'
-    }
-  },
-  {
     id: 'idfc-hpcl-power',
-    name: 'IDFC HPCL Power Credit Card',
+    name: 'IDFC FIRST HPCL Power Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'fuel',
     image: '/credit-cards/IDFC-First-HPCL.png',
     apr: '46.2% p.a.',
     annualFee: '₹199 + GST',
     joiningFee: '₹199 + GST',
-    rewards: 'Basic fuel savings\nSurcharge waiver\nMinimal rewards on other spends',
+    rewards: 'Up to 5% savings on fuel spends through rewards',
     rupay: true,
     features: [
-      'Basic Fuel Savings',
-      'Surcharge Waiver',
-      'Contactless Payments',
-      'Online Shopping Benefits',
-      'EMI Options'
+      '21X Reward Points/₹150 on HPCL fuel',
+      '15X Reward Points/₹150 on grocery, utility, FASTag',
+      '2X Reward Points/₹150 on other spends',
+      '6 Happy Coins/₹100 on HP Pay App (fuel)',
+      '1% fuel surcharge waiver at HPCL',
+      'Roadside assistance (4/year)'
     ],
-    categories: [
-      'fuel',
-      'budget'
-    ],
+    categories: ['fuel', 'budget'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Basic rewards on fuel spends\nMinimal rewards on other spends',
-      welcomeBonus: 'No welcome benefits',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: 'Not applicable',
+      rewardsProgram: `Fuel: 21X Reward Points/₹150 at HPCL\nGrocery/Utility/FASTag: 15X/₹150\nOther: 2X/₹150\nHP Pay App: 6 Happy Coins/₹100 (max 600/month)\n1 Reward Point = ₹0.25`,
+      welcomeBonus: '₹250 cashback on first HPCL fuel transaction of ₹250+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
+      milestoneBenefits: [],
+      fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
+      insuranceCover: [
+        'Personal accident cover: ₹2 lakh',
+        'Lost card liability: ₹25,000'
+      ],
+      additionalServices: 'Roadside assistance worth ₹1,399, up to 4 times/year',
       idealFor: [
-        'Budget-conscious drivers',
-        'Occasional fuel purchasers',
-        'Basic card seekers'
+        'Moderate fuel and utility expenses',
+        'Low annual fee card with decent fuel rewards'
       ],
       notIdealFor: [
-        'Non-drivers',
-        'Premium card seekers',
-        'Those seeking extensive benefits'
+        'Users desiring premium benefits like lounge access',
+        'High spenders seeking higher reward rates'
       ],
-      summary: 'A budget-friendly fuel credit card offering basic savings on fuel purchases and surcharge waiver, ideal for budget-conscious drivers.'
+      summary: 'Budget-friendly fuel card with strong HPCL rewards and low annual fee.'
+    }
+  },
+  {
+    id: 'idfc-hpcl-power-plus',
+    name: 'IDFC FIRST HPCL Power+ Credit Card',
+    bank: 'IDFC FIRST Bank',
+    category: 'fuel',
+    image: '/credit-cards/IDFC-First-HPCL.png',
+    apr: '46.2% p.a.',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
+    rewards: 'Up to 6.5% savings on fuel spends through rewards',
+    rupay: true,
+    features: [
+      '30X Reward Points/₹150 on HPCL fuel, grocery, utility, FASTag',
+      '3X Reward Points/₹150 on other spends',
+      '6 Happy Coins/₹100 on HP Pay App (fuel)',
+      '1% fuel surcharge waiver at HPCL',
+      'Lounge access (1/quarter on ₹20k+ spend)',
+      'Movie: 25% off up to ₹100/month',
+      'Roadside assistance (4/year)'
+    ],
+    categories: ['fuel', 'budget'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Fuel/Grocery/Utility/FASTag: 30X Reward Points/₹150\nOther: 3X/₹150\nHP Pay App: 6 Happy Coins/₹100 (max 600/month)\n1 Reward Point = ₹0.25`,
+      welcomeBonus: '₹500 cashback on first HPCL fuel transaction of ₹500+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
+      milestoneBenefits: [],
+      fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
+      insuranceCover: [
+        'Personal accident cover: ₹2 lakh',
+        'Lost card liability: ₹25,000'
+      ],
+      additionalServices: 'Lounge access (1/quarter on ₹20k+ spend), Movie: 25% off up to ₹100/month, Roadside assistance worth ₹1,399, up to 4 times/year',
+      idealFor: [
+        'High fuel and utility expenses',
+        'Users seeking lounge access and higher reward rates'
+      ],
+      notIdealFor: [
+        'Users with low annual spending',
+        'Individuals not utilizing the additional perks'
+      ],
+      summary: 'Fuel card for frequent commuters and high spenders, with enhanced rewards and extra perks.'
     }
   },
   {
@@ -2382,6 +2386,200 @@ export const creditCards: CreditCard[] = [
         'Individuals who prefer cashback on all categories without the need to select a preferred category'
       ],
       summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
+    }
+  },
+  {
+    id: 'au-zenith-plus',
+    name: 'AU Zenith+ Credit Card (Metal)',
+    bank: 'AU Small Finance Bank',
+    category: 'premium',
+    image: '/credit-cards/AU_Zenith+.png',
+    apr: 'Not specified',
+    annualFee: '₹4,999 + taxes',
+    joiningFee: '₹4,999 + taxes',
+    rewards: '2 Reward Points per ₹100 on dining, travel, and international spends; 1 Reward Point per ₹100 on other retail spends; no points on fuel, EMI, and select categories.',
+    rupay: false,
+    features: [
+      'Metal card',
+      '16 domestic & 16 international lounge visits/year',
+      '8 golf rounds/year',
+      'BOGO movie tickets (up to 16/year)',
+      'Concierge service',
+      'Low forex markup (0.99%)'
+    ],
+    categories: ['premium', 'travel', 'lifestyle'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 2 Reward Points per ₹100 on dining, travel, and international spends
+• 1 Reward Point per ₹100 on other retail spends
+• No Reward Points on fuel, EMI transactions, and certain other categories.
+
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Choice of ₹5,000 luxury brand vouchers (Taj Hotels, Michael Kors, Tata Cliq, etc.) OR 5,000 Reward Points upon activation via AU 0101 App, Net Banking, customer care, or chatbot AURO.',
+      milestoneBenefits: [
+        'Monthly: 1,000 bonus Reward Points for ₹75,000+ spend in a statement month (excludes rent, education, government, insurance, utility, fuel).',
+        'Annual: Complimentary Taj Epicure Membership on ₹12 lakh spend in a card anniversary year.'
+      ],
+      airportLounge: '16 complimentary domestic and 16 international airport lounge visits annually',
+      fuelSurcharge: '1% waiver (max ₹1,000 per statement cycle)',
+      insuranceCover: [
+        'Air accident cover up to ₹2 crore',
+        'Card liability and credit shield up to ₹15 lakh',
+        'Purchase protection up to ₹50,000'
+      ],
+      idealFor: [
+        'Individuals with a monthly net income of ₹2.5 lakh or more',
+        'Frequent travelers and luxury lifestyle seekers'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹8 lakh',
+        'Those seeking low or no annual fee cards'
+      ],
+      summary: 'A luxury metal credit card for high-income individuals, offering premium travel, lifestyle, and reward benefits. Low forex markup: 0.99% + GST (~1.168%).'
+    }
+  },
+  {
+    id: 'au-vetta',
+    name: 'AU Vetta Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'premium',
+    image: '/credit-cards/AU_Vetta.png',
+    apr: 'Not specified',
+    annualFee: '₹2,999 + taxes',
+    joiningFee: '₹2,999 + taxes',
+    rewards: '2 Reward Points per ₹100 on travel, dining, and international spends; 1 Reward Point per ₹100 on other retail spends; no points on fuel, EMI, and select categories.',
+    rupay: false,
+    features: [
+      'Airport lounge access',
+      'Railway lounge access',
+      'Fuel surcharge waiver',
+      'Comprehensive insurance'
+    ],
+    categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 2 Reward Points per ₹100 on travel, dining, and international spends
+• 1 Reward Point per ₹100 on other retail spends
+• No Reward Points on fuel, EMI transactions, and select categories
+
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Details not specified',
+      milestoneBenefits: [],
+      airportLounge: 'Complimentary domestic and international airport lounge visits',
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹100 per statement cycle)',
+      insuranceCover: [
+        'Comprehensive protection including air accident and card liability covers'
+      ],
+      idealFor: [
+        'Individuals with moderate to high spending patterns',
+        'Travel enthusiasts seeking lounge access'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹1.5 lakh',
+        'Those seeking detailed reward structures'
+      ],
+      summary: 'A premium card for mid-to-high spenders, offering travel perks, insurance benefits, and 2 complimentary railway lounge visits per quarter.'
+    }
+  },
+  {
+    id: 'au-altura-plus',
+    name: 'AU Altura+ Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/AU_Altura+.png',
+    apr: 'Not specified',
+    annualFee: '₹499 + taxes',
+    joiningFee: '₹499 + taxes',
+    rewards: '1.5% cashback on POS retail spends (max ₹100 per statement cycle); 2X points on online transactions; 1 point per ₹100 on utility, telecom, and insurance spends',
+    rupay: false,
+    features: [
+      '1.5% cashback on POS spends',
+      '2X points on online spends',
+      'Railway lounge access',
+      'Fuel surcharge waiver',
+      'Lost card liability cover'
+    ],
+    categories: ['lifestyle', 'cashback', 'rewards'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
+• 2X Reward Points on online transactions
+• 1 Reward Point per ₹100 on utility, telecom, and insurance spends
+• 500 bonus Reward Points on monthly retail spends of ₹20,000 or more
+
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Details not specified',
+      milestoneBenefits: ['500 bonus reward points on monthly retail spends of ₹20,000 or more'],
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹150 per statement cycle)',
+      insuranceCover: [
+        'Lost card liability cover'
+      ],
+      idealFor: [
+        'Individuals with regular online and POS retail spends',
+        'Those seeking a balance between cashback and rewards'
+      ],
+      notIdealFor: [
+        'Users with monthly spends below ₹20,000',
+        'Those seeking higher cashback limits'
+      ],
+      summary: 'A lifestyle card for everyday spenders, offering a mix of cashback and reward points, and 2 complimentary railway lounge visits per quarter.'
+    }
+  },
+  {
+    id: 'au-spont',
+    name: 'AU Spont Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'upi',
+    image: '/credit-cards/AU_Spont.png',
+    apr: 'Not specified',
+    annualFee: '₹299 + taxes',
+    joiningFee: '₹299 + taxes',
+    rewards: '1% cashback on all UPI and other transactions (e-commerce, POS, contactless), capped at ₹500 per statement cycle',
+    rupay: true,
+    features: [
+      '1% cashback on UPI spends',
+      '1% cashback on POS & online spends',
+      'Cashback cap: ₹500/month',
+      'Earn coins on UPI',
+      'UPI-enabled RuPay card'
+    ],
+    categories: ['upi', 'cashback'],
+    feedback: [],
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 1% cashback on all UPI transactions via any UPI channel
+• 1% cashback on all other transactions like e-commerce, POS, and contactless payments
+• Cashback capped at ₹500 per statement cycle
+• Earn coins on UPI transactions`,
+      redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.`,
+      welcomeBonus: 'Details not specified',
+      milestoneBenefits: [],
+      idealFor: [
+        'UPI users and individuals seeking cashback on everyday transactions'
+      ],
+      notIdealFor: [],
+      summary: 'A UPI-enabled card for users seeking simple, capped cashback on all transactions.'
     }
   }
 ]; 

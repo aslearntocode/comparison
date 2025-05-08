@@ -63,13 +63,13 @@ export default function ComparePageContent() {
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="pt-8 pb-2 px-6 align-bottom">
-                        <div className="w-24 h-16 mb-2 relative flex items-center justify-start">
+                        <div className="h-36 mb-2 flex items-center justify-start bg-white rounded-lg overflow-hidden">
                           <Image
                             src={card.image}
                             alt={card.name}
-                            width={96}
-                            height={64}
-                            className="object-contain rounded-lg"
+                            height={144}
+                            width={90}
+                            className="object-contain h-36 w-auto"
                           />
                         </div>
                       </td>
