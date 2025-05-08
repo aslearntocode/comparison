@@ -62,8 +62,8 @@ export default function ComparePageContent() {
                   <tr>
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
-                      <td key={card.id} className="pt-8 pb-2 px-6 text-center align-bottom">
-                        <div className="w-24 h-16 mx-auto mb-2 relative flex items-center justify-center">
+                      <td key={card.id} className="pt-8 pb-2 px-6 align-bottom">
+                        <div className="w-24 h-16 mb-2 relative flex items-center justify-start">
                           <Image
                             src={card.image}
                             alt={card.name}
@@ -79,14 +79,14 @@ export default function ComparePageContent() {
                   <tr>
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
-                      <td key={card.id} className="text-lg font-bold text-gray-900 text-center pb-0">{card.name}</td>
+                      <td key={card.id} className="text-lg font-bold text-gray-900 pb-0 pl-2">{card.name}</td>
                     ))}
                   </tr>
                   {/* Card Banks */}
                   <tr>
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
-                      <td key={card.id} className="text-gray-600 text-center pt-0 pb-4">{card.bank}</td>
+                      <td key={card.id} className="text-gray-600 pt-0 pb-4 pl-2">{card.bank}</td>
                     ))}
                   </tr>
                   {/* APR */}
