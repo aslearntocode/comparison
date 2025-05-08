@@ -213,6 +213,30 @@ function CreditVsLoanAssessmentContent() {
     }
   };
 
+  // Section styles by logical name
+  const sectionStyles: Record<string, { bg: string; border: string; icon: string }> = {
+    'Recommendation:': {
+      bg: 'bg-purple-50',
+      border: 'border-purple-200',
+      icon: '📋',
+    },
+    'Key Points:': {
+      bg: 'bg-yellow-50',
+      border: 'border-yellow-200',
+      icon: '💡',
+    },
+    'Conditions/Suggestions:': {
+      bg: 'bg-green-50',
+      border: 'border-green-200',
+      icon: '📝',
+    },
+    'Summary of Values:': {
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      icon: '📊',
+    },
+  };
+
   // Helper function to parse assessment text
   const parseAssessmentText = (assessmentText: string | any) => {
     if (!assessmentText) return ['No recommendation available.', 'No condition available.', 'No summary available.'];
@@ -227,42 +251,31 @@ function CreditVsLoanAssessmentContent() {
     }
 
     // Ensure we have a string
-    const text = String(assessmentText);
+    let text = String(assessmentText);
+    
+    // Replace DTI with full form
+    text = text.replace(/DTI/g, 'Debt to Income Ratio (DTI)');
+    
+    // Remove numbers from section headings
+    text = text.replace(/^\d+\.\s*/gm, '');
     
     // Split by double newlines or fallback to single newlines
     const paras = text.split(/\n\s*\n/).filter(Boolean);
     // If only one para, try splitting by single newline
     const paragraphs = paras.length >= 3 ? paras : text.split(/\n/).filter(Boolean);
     
+    // Format conditions and summary as bullet points
+    const formatAsBulletPoints = (text: string) => {
+      // Split by sentences or newlines
+      const points = text.split(/[.!?]\s+|\n/).filter(Boolean);
+      return points.map(point => `• ${point.trim()}`).join('\n');
+    };
+    
     return [
       paragraphs[0] || 'No recommendation available.',
-      paragraphs[1] || 'No condition available.',
-      paragraphs[2] || 'No summary available.'
+      formatAsBulletPoints(paragraphs[1] || 'No condition available.'),
+      formatAsBulletPoints(paragraphs[2] || 'No summary available.')
     ];
-  };
-
-  // Section styles by logical name
-  const sectionStyles: Record<string, { bg: string; border: string; icon: string }> = {
-    '1. Recommendation:': {
-      bg: 'bg-purple-50',
-      border: 'border-purple-200',
-      icon: '📋',
-    },
-    '2. Key Points:': {
-      bg: 'bg-yellow-50',
-      border: 'border-yellow-200',
-      icon: '💡',
-    },
-    '3. Conditions/Suggestions:': {
-      bg: 'bg-green-50',
-      border: 'border-green-200',
-      icon: '📝',
-    },
-    '4. Summary of Values:': {
-      bg: 'bg-blue-50',
-      border: 'border-blue-200',
-      icon: '📊',
-    },
   };
 
   return (
@@ -311,7 +324,7 @@ function CreditVsLoanAssessmentContent() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">What is your credit score (CIBIL)?</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">What is your Credit Score (CIBIL)?</label>
                 <input
                   type="number"
                   name="credit_score"
@@ -421,33 +434,47 @@ function CreditVsLoanAssessmentContent() {
               return (
                 <div className="space-y-6">
                   {/* Recommendation */}
-                  <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2">
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl mr-2">📋</span>
+                  <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
+                    <div className="flex items-center mb-4">
+                      <span className="text-2xl mr-3">📋</span>
                       <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
                     </div>
-                    <div className="prose max-w-none text-gray-700 flex-1">
-                      {rec}
+                    <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
+                      <p className="text-base font-medium">{rec}</p>
                     </div>
                   </div>
                   {/* Condition */}
-                  <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col">
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl mr-2">📝</span>
-                      <h3 className="text-xl font-semibold text-gray-800">Condition</h3>
+                  <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
+                    <div className="flex items-center mb-4">
+                      <span className="text-2xl mr-3">📝</span>
+                      <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
                     </div>
                     <div className="prose max-w-none text-gray-700 flex-1">
-                      {cond}
+                      <ul className="space-y-3 list-none pl-0">
+                        {cond.split('\n').map((point, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-green-600 mr-2 mt-1">•</span>
+                            <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                   {/* Summary */}
-                  <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2">
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl mr-2">📊</span>
+                  <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
+                    <div className="flex items-center mb-4">
+                      <span className="text-2xl mr-3">📊</span>
                       <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
                     </div>
                     <div className="prose max-w-none text-gray-700 flex-1">
-                      {summ}
+                      <ul className="space-y-3 list-none pl-0">
+                        {summ.split('\n').map((point, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-blue-600 mr-2 mt-1">•</span>
+                            <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
