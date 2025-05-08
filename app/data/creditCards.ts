@@ -1195,7 +1195,13 @@ export const creditCards: CreditCard[] = [
     categories: ['fuel', 'budget'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: `Fuel: 21X Reward Points/₹150 at HPCL\nGrocery/Utility/FASTag: 15X/₹150\nOther: 2X/₹150\nHP Pay App: 6 Happy Coins/₹100 (max 600/month)\n1 Reward Point = ₹0.25`,
+      rewardsProgram: `Earning Rate:
+• 21X Reward Points per ₹150 on HPCL fuel spends
+• 15X Reward Points per ₹150 on grocery, utility, and FASTag spends
+• 2X Reward Points per ₹150 on other retail spends
+• 6 Happy Coins per ₹100 on HP Pay App (fuel), capped at 600 coins/month
+
+Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select categories.`,
       welcomeBonus: '₹250 cashback on first HPCL fuel transaction of ₹250+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
       milestoneBenefits: [],
       fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
@@ -1238,7 +1244,12 @@ export const creditCards: CreditCard[] = [
     categories: ['fuel', 'budget'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: `Fuel/Grocery/Utility/FASTag: 30X Reward Points/₹150\nOther: 3X/₹150\nHP Pay App: 6 Happy Coins/₹100 (max 600/month)\n1 Reward Point = ₹0.25`,
+      rewardsProgram: `Earning Rate:
+• 30X Reward Points per ₹150 on HPCL fuel, grocery, utility, and FASTag spends
+• 3X Reward Points per ₹150 on other retail spends
+• 6 Happy Coins per ₹100 on HP Pay App (fuel), capped at 600 coins/month
+
+Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select categories.`,
       welcomeBonus: '₹500 cashback on first HPCL fuel transaction of ₹500+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
       milestoneBenefits: [],
       fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
