@@ -2185,8 +2185,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     category: 'premium',
     image: '/credit-cards/Amex_Gold.png',
     apr: '42% p.a.',
-    annualFee: '₹4,500 + GST (₹1,000 + GST for first year)',
-    joiningFee: '₹0',
+    annualFee: '₹4,500 + GST',
+    joiningFee: '₹1000',
     rewards: '1 Membership Rewards Point for every ₹50 spent\n5X points on Reward Multiplier platform\nMonthly bonus points on transactions',
     rupay: false,
     features: [
@@ -2215,7 +2215,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Up to 20% off at select partner restaurants'
       ],
       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels',
-      minimumSpend: '₹10,000 within first 90 days for welcome benefits',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Charge card (no pre-set spending limit)',
       domesticTransactionFee: 'Nil',
@@ -2271,7 +2271,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Annual fee waiver upon spending ₹40,000 in a year'
       ],
       fuelSurcharge: '0% convenience fee on fuel purchases at HPCL for transactions below ₹25,000',
-      minimumSpend: '₹10,000 within first 90 days for welcome benefits',
+      minimumSpend: 'NA',
       idealFor: [
         'First-time credit card users',
         'Online shoppers seeking rewards on popular platforms',
@@ -2332,7 +2332,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Dining discounts and exclusive privileges'
       ],
       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels\n• Up to 2 complimentary golf rounds per month at 32 premium courses (on spending ₹50,000 in a calendar month)\n• 24×7 Platinum Concierge for travel, dining, and lifestyle assistance',
-      minimumSpend: '₹30,000 within first 90 days for welcome benefits',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
