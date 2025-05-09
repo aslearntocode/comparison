@@ -8,7 +8,7 @@ import { Card } from '@/types/card'
 interface CalculationResults {
   reward_points: number;
   welcome_benefits: number;
-  travel_benefits: number;
+  other_benefits: number;
   lounge_benefits: {
     domestic_visits: number;
     international_visits: number;
@@ -93,17 +93,18 @@ export default function CalculatorPage() {
 
       setCalculationResults({
         ...data.data,
+        annual_fee: data.data.is_fee_waived ? 0 : data.data.annual_fee,
         net_value_year1:
           data.data.reward_points +
           data.data.welcome_benefits +
-          data.data.travel_benefits +
+          data.data.other_benefits +
           data.data.lounge_benefits.total_value -
           Math.abs(data.data.joining_fee),
         net_value_year2:
           data.data.reward_points +
-          data.data.travel_benefits +
+          data.data.other_benefits +
           data.data.lounge_benefits.total_value -
-          Math.abs(data.data.annual_fee),
+          Math.abs(data.data.is_fee_waived ? 0 : data.data.annual_fee),
       })
       setShowResults(true)
     } catch (err) {
@@ -249,14 +250,14 @@ export default function CalculatorPage() {
                         <p className="font-medium md:text-base">₹{calculationResults.reward_points.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                       </div>
 
-                      {/* Travel Benefits */}
+                      {/* Other Benefits (was Travel Benefits) */}
                       <div className="bg-white md:p-2 p-3 rounded-lg">
-                        <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Travel Benefits</p>
-                        <p className="font-medium md:text-base">₹{calculationResults.travel_benefits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                        <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Other Benefits</p>
+                        <p className="font-medium md:text-base">₹{calculationResults.other_benefits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                       </div>
                       <div className="bg-white md:p-2 p-3 rounded-lg">
-                        <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Travel Benefits</p>
-                        <p className="font-medium md:text-base">₹{calculationResults.travel_benefits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                        <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Other Benefits</p>
+                        <p className="font-medium md:text-base">₹{calculationResults.other_benefits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                       </div>
 
                       {/* Lounge Benefits */}

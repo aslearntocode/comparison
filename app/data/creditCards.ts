@@ -412,7 +412,7 @@ export const creditCards: CreditCard[] = [
       diningPrivileges: [
         'Exclusive offers through the ICICI Bank Culinary Treats Programme'
       ],
-      minimumSpend: '₹5,00,000 for annual fee waiver',
+      minimumSpend: '₹2,50,000 for annual fee waiver',
       paymentDueDays: '20 days',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
@@ -1971,7 +1971,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         '25% off on spa therapies',
         '25% off on Qmin food deliveries'
       ],
-      minimumSpend: 'Not specified',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
