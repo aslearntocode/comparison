@@ -692,7 +692,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       
       {/* Privacy Notice Banner */}
@@ -739,9 +739,9 @@ export default function Home() {
       
       {/* Hero Section */}
       <div className="relative bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Mobile Hero Section - Moved to top */}
-          <div className="lg:hidden mb-12">
+          <div className="lg:hidden mb-8">
             <div className="relative w-full h-[300px]">
               <div className="absolute top-0 right-0 transform -rotate-6 transition-transform hover:rotate-0">
                 <Image
@@ -779,15 +779,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Content */}
             <div>
-              <h1 className="text-[32px] md:text-[64px] leading-tight font-bold mb-8">
+              <h1 className="text-[32px] md:text-[48px] leading-tight font-bold mb-6">
                 <span className="text-black">Find The Right</span>
                 <br />
                 <span className="text-[#4F46E5]">Credit Card</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-12">
+              <p className="text-lg text-gray-600 mb-8">
                 Compare different credit products from multiple banks and find the perfect match for your needs.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -829,6 +829,28 @@ export default function Home() {
                       </svg>
                     </div>
                     <span className="text-base text-white font-medium">UPI</span>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Card Value Calculator - Separated and visually distinct */}
+              <div className="mt-6">
+                <Link href="/credit/calculator" className="block">
+                  <div className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 rounded-xl p-6 flex items-center justify-between cursor-pointer shadow-lg hover:shadow-xl">
+                    <div className="flex items-center gap-4">
+                      <div className="bg-white/20 p-3 rounded-lg">
+                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">Card Value Calculator</h3>
+                        <p className="text-white/80 text-sm">Calculate the true value of your credit card rewards and benefits</p>
+                      </div>
+                    </div>
+                    <svg className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </div>
                 </Link>
               </div>

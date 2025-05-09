@@ -1075,8 +1075,8 @@ export const creditCards: CreditCard[] = [
     category: 'lifestyle',
     image: '/credit-cards/IDFC-First-SWYP.png',
     apr: '46.2% p.a.',
-    annualFee: '₹1,000 + GST',
-    joiningFee: '₹1,000 + GST',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
     rewards: 'Customizable rewards\nBenefits worth ₹30,000/year',
     rupay: true,
     features: [
@@ -1097,7 +1097,7 @@ export const creditCards: CreditCard[] = [
       rewardsProgram: 'Earning Rate:\n• Customizable reward categories\n• Flexible redemption options\n\nRedemption:\n• Points can be redeemed for preferred categories',
       welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
       fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: '₹2,00,000 for annual fee waiver',
+      minimumSpend: '₹1,00,000 for annual fee waiver',
       idealFor: [
         'Tailored benefit seekers',
         'Flexible reward collectors',
