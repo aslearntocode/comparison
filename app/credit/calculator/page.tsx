@@ -91,7 +91,20 @@ export default function CalculatorPage() {
         throw new Error('Invalid response format from server')
       }
 
-      setCalculationResults(data.data)
+      setCalculationResults({
+        ...data.data,
+        net_value_year1:
+          data.data.reward_points +
+          data.data.welcome_benefits +
+          data.data.travel_benefits +
+          data.data.lounge_benefits.total_value -
+          Math.abs(data.data.joining_fee),
+        net_value_year2:
+          data.data.reward_points +
+          data.data.travel_benefits +
+          data.data.lounge_benefits.total_value -
+          Math.abs(data.data.annual_fee),
+      })
       setShowResults(true)
     } catch (err) {
       console.error('Calculation error:', err)

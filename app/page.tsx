@@ -844,7 +844,7 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">Card Value Calculator</h3>
+                        <h3 className="text-lg font-semibold text-white">Credit Card Value Calculator</h3>
                         <p className="text-white/80 text-sm">Calculate the true value of your credit card rewards and benefits</p>
                       </div>
                     </div>

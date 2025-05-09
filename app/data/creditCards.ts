@@ -2032,7 +2032,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
       diningPrivileges: [
         'Exclusive access to top restaurants worldwide'
       ],
-      minimumSpend: 'Not specified',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
