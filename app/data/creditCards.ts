@@ -669,6 +669,7 @@ export const creditCards: CreditCard[] = [
     categories: [
       'best-credit-cards',
       'rewards',
+      'lifetime-free',
       // 'travel',
       // 'international-travel',
       // 'domestic-lounge',
@@ -691,7 +692,7 @@ export const creditCards: CreditCard[] = [
       diningPrivileges: [
         'Exclusive dining privileges and offers'
       ],
-      minimumSpend: '₹8,00,000 for annual fee waiver',
+      minimumSpend: 'NA',
       internationalTransactionFee: '0.99%',
       additionalServices: 'Lifetime free add-on cards for family members',
       idealFor: [
@@ -2092,7 +2093,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
       diningPrivileges: [
         'Exclusive access to private dining experiences'
       ],
-      minimumSpend: 'Not specified',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
@@ -2155,7 +2156,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
       diningPrivileges: [
         'Exclusive dining access and privileges'
       ],
-      minimumSpend: '₹50,000 within first 2 months for welcome benefits',
+      minimumSpend: 'NA',
       paymentDueDays: 'Not specified',
       creditLimit: 'Charge card (no pre-set spending limit)',
       domesticTransactionFee: 'Nil',
