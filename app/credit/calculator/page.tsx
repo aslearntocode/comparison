@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { creditCards } from '@/app/data/creditCards'
 import Header from '@/components/Header'
 import { Card } from '@/types/card'
@@ -33,6 +33,14 @@ export default function CalculatorPage() {
   const [calculationResults, setCalculationResults] = useState<CalculationResults | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [cardSearch, setCardSearch] = useState('')
+  const [showDropdown, setShowDropdown] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const filteredCards = creditCards.filter(card =>
+    card.name.toLowerCase().includes(cardSearch.toLowerCase()) ||
+    card.bank.toLowerCase().includes(cardSearch.toLowerCase())
+  )
 
   const handleCardSelect = (cardId: string) => {
     const card = creditCards.find(c => c.id === cardId)
@@ -40,6 +48,8 @@ export default function CalculatorPage() {
     setShowResults(false)
     setCalculationResults(null)
     setError(null)
+    setCardSearch(card ? `${card.name} - ${card.bank}` : '')
+    setShowDropdown(false)
   }
 
   const calculateCardValue = async () => {
@@ -113,22 +123,40 @@ export default function CalculatorPage() {
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-6 space-y-6">
             {/* Card Selection */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Select Credit Card
+            <div className="relative">
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Type The Name Of The Credit Card
               </label>
-              <select
+              <input
+                ref={inputRef}
+                type="text"
                 className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                onChange={(e) => handleCardSelect(e.target.value)}
-                value={selectedCard?.id || ''}
-              >
-                <option value="">Select a card</option>
-                {creditCards.map((card) => (
-                  <option key={card.id} value={card.id}>
-                    {card.name} - {card.bank}
-                  </option>
-                ))}
-              </select>
+                placeholder="Type card name or bank..."
+                value={cardSearch}
+                onChange={e => {
+                  setCardSearch(e.target.value)
+                  setShowDropdown(true)
+                  setSelectedCard(null)
+                  setShowResults(false)
+                  setCalculationResults(null)
+                  setError(null)
+                }}
+                onFocus={() => setShowDropdown(true)}
+                autoComplete="off"
+              />
+              {showDropdown && cardSearch && filteredCards.length > 0 && (
+                <ul className="absolute z-20 w-full bg-white border border-gray-200 rounded-lg mt-1 max-h-56 overflow-y-auto shadow-lg">
+                  {filteredCards.map(card => (
+                    <li
+                      key={card.id}
+                      className="px-4 py-2 cursor-pointer hover:bg-blue-50"
+                      onClick={() => handleCardSelect(card.id)}
+                    >
+                      {card.name} - {card.bank}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {selectedCard && (
@@ -249,21 +277,8 @@ export default function CalculatorPage() {
                         <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Welcome Benefits</p>
                         <p className="font-medium md:text-base">₹{calculationResults.welcome_benefits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
                       </div>
-
-                      {/* Fee Waiver Status (only if any fee > 0, aligned with Welcome Benefits) */}
-                      {(calculationResults.annual_fee > 0 || calculationResults.joining_fee > 0) ? (
-                        <div className="bg-white md:p-2 p-3 rounded-lg flex flex-col justify-between">
-                          <p className="text-sm text-gray-500 mb-1 md:mb-0.5 md:text-xs">Fee Waiver Status</p>
-                          <p className={`font-medium ${calculationResults.is_fee_waived ? 'text-green-600' : 'text-yellow-600'} text-xs md:text-xs`}
-                            style={{ fontSize: '0.8rem' }}>
-                            {calculationResults.is_fee_waived
-                              ? '✓ Annual fee will be waived'
-                              : `⚠ Annual fee will apply (₹${calculationResults.fee_waiver_criteria.toLocaleString(undefined, { maximumFractionDigits: 0 })} spend required)`}
-                          </p>
-                        </div>
-                      ) : (
-                        <div></div>
-                      )}
+                      {/* Empty cell for alignment */}
+                      <div></div>
 
                       {/* Net Value (last row) */}
                       <div className="bg-white md:p-2 p-3 rounded-lg">

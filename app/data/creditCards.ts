@@ -1052,7 +1052,7 @@ export const creditCards: CreditCard[] = [
         'Enhanced rewards on dining spends',
         'Exclusive dining offers and discounts'
       ],
-      minimumSpend: '₹5,000 within first 30 days for welcome voucher',
+      minimumSpend: 'NA',
       idealFor: [
         'Frequent travelers seeking lounge access',
         'Regular diners looking for enhanced rewards',
