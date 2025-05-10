@@ -751,7 +751,7 @@ export const creditCards: CreditCard[] = [
       diningPrivileges: [
         'Exclusive dining privileges and offers'
       ],
-      minimumSpend: '₹8,00,000 for annual fee waiver',
+      minimumSpend: 'NA',
       internationalTransactionFee: '0.99%',
       additionalServices: 'Lifetime free add-on cards for family members',
       idealFor: [
