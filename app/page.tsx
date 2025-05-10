@@ -792,7 +792,7 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-4 h-[80px] flex items-center gap-3 cursor-pointer">
+                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
                     <div className="bg-white/20 p-1.5 rounded-lg">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -802,7 +802,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=international-lounge" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-4 h-[80px] flex items-center gap-3 cursor-pointer">
+                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
                     <div className="bg-white/20 p-1.5 rounded-lg">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -812,7 +812,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=premium" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-4 h-[80px] flex items-center gap-3 cursor-pointer">
+                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
                     <div className="bg-white/20 p-1.5 rounded-lg">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -822,7 +822,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=upi" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-4 h-[80px] flex items-center gap-3 cursor-pointer">
+                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
                     <div className="bg-white/20 p-1.5 rounded-lg">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -836,19 +836,18 @@ export default function Home() {
               {/* Card Value Calculator - Separated and visually distinct */}
               <div className="mt-6">
                 <Link href="/credit/calculator" className="block">
-                  <div className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 rounded-xl p-6 flex items-center justify-between cursor-pointer shadow-lg hover:shadow-xl">
+                  <div className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 rounded-xl p-4 flex items-center justify-between cursor-pointer shadow-lg hover:shadow-xl">
                     <div className="flex items-center gap-4">
-                      <div className="bg-white/20 p-3 rounded-lg">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="bg-white/20 p-2 rounded-lg">
+                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-white">Credit Card Value Calculator</h3>
-                        {/* <p className="text-white/80 text-sm">Calculate the true value of your credit card rewards and benefits</p> */}
                       </div>
                     </div>
-                    <svg className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </div>
