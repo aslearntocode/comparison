@@ -845,7 +845,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-white">Credit Card Value Calculator</h3>
-                        <p className="text-white/80 text-sm">Calculate the true value of your credit card rewards and benefits</p>
+                        {/* <p className="text-white/80 text-sm">Calculate the true value of your credit card rewards and benefits</p> */}
                       </div>
                     </div>
                     <svg className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
