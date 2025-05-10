@@ -441,8 +441,8 @@ export const creditCards: CreditCard[] = [
     category: 'premium',
     image: '/credit-cards/ICICI-Emeralde-Metal.png',
     apr: '45% p.a.',
-    annualFee: '₹12,499 + GST',
-    joiningFee: '₹12,499 + GST',
+    annualFee: '₹12,500 + GST',
+    joiningFee: '₹12,500 + GST',
     rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
     rupay: false,
     features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
@@ -489,7 +489,7 @@ export const creditCards: CreditCard[] = [
         '20% discount at airport restaurants',
         'Complimentary drinks at partner lounges'
       ],
-      minimumSpend: '₹40,000 per month',
+      minimumSpend: '₹10,00,000',
       paymentDueDays: '25 days',
       creditLimit: 'Up to ₹10,00,000',
       domesticTransactionFee: 'Nil',
@@ -987,7 +987,7 @@ export const creditCards: CreditCard[] = [
       rewardsProgram: 'Earning Rate:\n• 10X rewards on all spends\n• No cap on reward points\n\nRedemption:\n• Points can be redeemed for vouchers and statement credit',
       welcomeBonus: 'No annual fee for the first year',
       fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
-      minimumSpend: '₹1,00,000 for annual fee waiver',
+      minimumSpend: 'NA',
       idealFor: [
         'First-time credit card users',
         'Entry-level card seekers',

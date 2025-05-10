@@ -91,9 +91,11 @@ export default function CalculatorPage() {
         throw new Error('Invalid response format from server')
       }
 
+      // Use correct annual fee based on is_fee_waived
+      const annualFeeForCalc = data.data.is_fee_waived ? 0 : Math.abs(data.data.annual_fee);
       setCalculationResults({
         ...data.data,
-        annual_fee: data.data.is_fee_waived ? 0 : data.data.annual_fee,
+        annual_fee: annualFeeForCalc, // for display
         net_value_year1:
           data.data.reward_points +
           data.data.welcome_benefits +
@@ -104,7 +106,7 @@ export default function CalculatorPage() {
           data.data.reward_points +
           data.data.other_benefits +
           data.data.lounge_benefits.total_value -
-          Math.abs(data.data.is_fee_waived ? 0 : data.data.annual_fee),
+          annualFeeForCalc,
       })
       setShowResults(true)
     } catch (err) {
