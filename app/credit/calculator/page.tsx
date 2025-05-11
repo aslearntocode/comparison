@@ -28,7 +28,7 @@ interface CalculationResults {
 
 export default function CalculatorPage() {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null)
-  const [annualSpendLakhs, setAnnualSpendLakhs] = useState<number>(0)
+  const [annualSpendLakhs, setAnnualSpendLakhs] = useState<string>('')
   const [showResults, setShowResults] = useState(false)
   const [calculationResults, setCalculationResults] = useState<CalculationResults | null>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -54,6 +54,10 @@ export default function CalculatorPage() {
 
   const calculateCardValue = async () => {
     if (!selectedCard) return
+    if (!annualSpendLakhs || isNaN(Number(annualSpendLakhs))) {
+      setError('Please enter a valid annual spend amount')
+      return
+    }
 
     setIsLoading(true)
     setError(null)
@@ -61,7 +65,7 @@ export default function CalculatorPage() {
     try {
       console.log('Sending calculation request:', {
         card_name: selectedCard.name,
-        annual_spend: annualSpendLakhs * 100000 // Convert lakhs to actual amount
+        annual_spend: Number(annualSpendLakhs) * 100000 // Convert lakhs to actual amount
       })
 
       const response = await fetch('/api/analyze/calculator', {
@@ -71,7 +75,7 @@ export default function CalculatorPage() {
         },
         body: JSON.stringify({
           card_name: selectedCard.name,
-          annual_spend: annualSpendLakhs * 100000 // Convert lakhs to actual amount
+          annual_spend: Number(annualSpendLakhs) * 100000 // Convert lakhs to actual amount
         }),
       })
 
@@ -206,16 +210,20 @@ export default function CalculatorPage() {
                       Annual Spend (in Lakhs)
                     </label>
                     <input
-                      type="number"
+                      type="text"
                       className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       value={annualSpendLakhs}
-                      onChange={(e) => setAnnualSpendLakhs(Number(e.target.value))}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        // Only allow numbers and decimal point
+                        if (value === '' || /^\d*\.?\d*$/.test(value)) {
+                          setAnnualSpendLakhs(value);
+                        }
+                      }}
                       placeholder="Enter your annual spend in lakhs"
-                      min="0"
-                      step="0.1"
                     />
                     <p className="text-sm text-gray-500 mt-1">
-                      Total Annual Spend: ₹{(annualSpendLakhs * 100000).toLocaleString()}
+                      {annualSpendLakhs ? `Total Annual Spend: ₹${(Number(annualSpendLakhs) * 100000).toLocaleString()}` : ''}
                     </p>
                   </div>
 
