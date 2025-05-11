@@ -5,8 +5,8 @@ import Footer from "@/components/Footer"
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Financial Health',
-  description: 'Your financial health companion',
+  title: 'Best Credit Cards in India | Compare & Find the Right Card',
+  description: 'Find and compare the best credit cards in India. Get detailed comparisons of rewards, benefits, and features to choose the perfect credit card for your needs. Additionally, learn about your credit profile and improve your credit score.',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,

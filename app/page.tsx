@@ -566,12 +566,12 @@ export default function Home() {
             {/* Left Content */}
             <div>
               <h1 className="text-[32px] md:text-[48px] leading-tight font-bold mb-6">
-                <span className="text-black">Find The Right</span>
+                <span className="text-black">Find The Best</span>
                 <br />
-                <span className="text-[#4F46E5]">Credit Card</span>
+                <span className="text-[#4F46E5]">Credit Cards in India</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Compare different credit products from multiple banks and find the perfect match for your needs.
+                Compare and find the best credit cards in India from multiple banks. Get detailed comparisons of rewards, benefits, and features to choose the perfect card for your lifestyle.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
