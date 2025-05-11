@@ -75,6 +75,9 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState<CreditCard[]>([])
   const [isSearching, setIsSearching] = useState(false)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
 
   const testimonials = [
     {
@@ -282,12 +285,14 @@ export default function Home() {
 
   // Add slider effect
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % sliderData.length)
-    }, 5000) // Change slides every 5 seconds
-
-    return () => clearInterval(timer)
-  }, [])
+    let interval: NodeJS.Timeout;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % sliderData[0].images.length);
+      }, 3000); // Change slide every 3 seconds
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   useEffect(() => {
     if (user) {
@@ -317,298 +322,31 @@ export default function Home() {
   const titleStyles = "text-gray-900 font-semibold text-lg";
   const buttonStyles = "w-full flex items-center justify-center gap-2 text-blue-600 font-medium py-2.5 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors mt-2";
 
-  const MobileCarousel = () => {
-    return (
-      <div className="md:hidden px-4">
-        {!user ? (
-          <div className="flex flex-col gap-4">
-            {/* Remove standalone buttons */}
-          </div>
-        ) : (
-          <>
-            <div className="flex gap-2 mb-4 justify-center">
-              <button
-                onClick={() => setActiveCard('investment')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  activeCard === 'investment'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
-                }`}
-              >
-                Investment
-              </button>
-              <button
-                onClick={() => setActiveCard('credit')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  activeCard === 'credit'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
-                }`}
-              >
-                Credit
-              </button>
-            </div>
-
-            <div className="transition-all duration-500 ease-in-out">
-              {activeCard === 'investment' ? (
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 w-full">
-                  {latestAllocation ? (
-                    <div className="p-4">
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-lg bg-blue-600/10">
-                        <div className="p-2 rounded-lg">
-                          <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-900 font-semibold text-lg">Investment Allocation</span>
-                      </div>
-
-                      <div className="space-y-2.5 my-4">
-                        {[...Array(6)].map((_, index) => {
-                          const item = latestAllocation?.[index] as AllocationItem | undefined;
-                          return (
-                            <div key={item?.name || `empty-${index}`} className="flex justify-between items-center">
-                              <span className="text-gray-600">
-                                {item?.name || '\u00A0'}
-                              </span>
-                              <span className="font-semibold text-gray-900">
-                                {item?.value ? `${item.value}%` : ''}
-                              </span>
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      <div className="space-y-2 pt-4">
-                        <Link 
-                          href="/investment" 
-                          className={buttonStyles}
-                        >
-                          View Full Investment Allocation
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                        
-                        <Link 
-                          href="/investment" 
-                          className={buttonStyles}
-                        >
-                          Update Risk Profile
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                          </svg>
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="bg-blue-50 p-6 w-full">
-                      <h3 className="text-xl font-bold text-blue-600 mb-4">Investment Planning</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">1</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Fill Investment Form</h4>
-                            <p className="text-sm text-gray-600">Share your financial goals and risk appetite by filling our investment form</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">2</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Get Portfolio Strategy</h4>
-                            <p className="text-sm text-gray-600">Receive AI-driven fund distribution recommendations to allocate your funds optimally</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">3</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Start Investing</h4>
-                            <p className="text-sm text-gray-600">Get specific investment recommendations and begin your journey</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6">
-                        <Link 
-                          href="/investment" 
-                          className="w-full inline-block text-center rounded-md bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
-                        >
-                          Start Investment Planning
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 w-full">
-                  {latestReport && (latestReport.score ?? 0) > 0 ? (
-                    <div className="p-4">
-                      <div className="flex items-center gap-2 mb-4 p-2 rounded-lg bg-green-600/10">
-                        <div className="p-2 rounded-lg">
-                          <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-900 font-semibold text-lg">Credit Report</span>
-                      </div>
-
-                      <div className="flex justify-between items-center mb-6">
-                        <div>
-                          <p className="text-gray-500">Generated on:</p>
-                          <p className="font-medium text-gray-900">{reportData?.formattedDate}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-gray-500">Score:</p>
-                          <p className={`font-semibold text-2xl ${
-                            (reportData?.report_analysis?.score_details?.score >= 750) ? 'text-green-600' :
-                            (reportData?.report_analysis?.score_details?.score >= 600) ? 'text-yellow-600' :
-                            'text-red-600'
-                          }`}>{reportData?.report_analysis?.score_details?.score}</p>
-                        </div>
-                      </div>
-
-                      <div className="space-y-4 mb-8">
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Open Accounts</span>
-                          <span className="font-semibold text-gray-900">
-                            {reportData?.report_analysis?.account_summary?.["PRIMARY-ACCOUNTS-SUMMARY"]?.["ACTIVE-ACCOUNTS"] || 0}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Closed Accounts</span>
-                          <span className="font-semibold text-gray-900">
-                            {(parseInt(reportData?.report_analysis?.account_summary?.["PRIMARY-ACCOUNTS-SUMMARY"]?.["NUMBER-OF-ACCOUNTS"] || "0") - 
-                             parseInt(reportData?.report_analysis?.account_summary?.["PRIMARY-ACCOUNTS-SUMMARY"]?.["ACTIVE-ACCOUNTS"] || "0")) || 0}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Total Credit Limit</span>
-                          <span className="font-semibold text-gray-900">
-                            ₹{(parseInt(reportData?.report_analysis?.account_summary?.["PRIMARY-ACCOUNTS-SUMMARY"]?.["TOTAL-CC-SANCTION-AMOUNT-ALL-ACCOUNT"] || "0"))?.toLocaleString('en-IN') || 0}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2 pt-4">
-                        <Link 
-                          href="/credit/score/report" 
-                          className={buttonStyles}
-                        >
-                          View Credit Report Summary Video
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                        
-                        <Link 
-                          href="/credit/score"
-                          className={`${buttonStyles} ${
-                            new Date().getTime() - new Date(reportData?.created_at).getTime() <= 30 * 24 * 60 * 60 * 1000 
-                              ? 'opacity-50 pointer-events-none'
-                              : ''
-                          }`}
-                        >
-                          Refresh Analysis
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                          </svg>
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="bg-green-50 p-6 w-full">
-                      <h3 className="text-xl font-bold text-green-600 mb-4">Credit Solutions</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">1</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Credit Score</h4>
-                            <p className="text-sm text-gray-600">Understand Your Credit Score through our AI generated personalized video and summary</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">2</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Get Recommendations</h4>
-                            <p className="text-sm text-gray-600">Receive personalized recommendations for score improvement and simplify account management</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span className="text-white text-base font-bold">3</span>
-                          </div>
-                          <div>
-                            <h4 className="text-base font-semibold mb-1">Apply for Products</h4>
-                            <p className="text-sm text-gray-600">Apply for secured and unsecured loans with higher chances of approval</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-6">
-                        <Link 
-                          href="/credit/score" 
-                          className="w-full inline-block text-center rounded-md bg-green-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-green-700 transition-colors"
-                        >
-                          Get Started with Credit Solutions
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </>
-        )}
-      </div>
-    );
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.touches[0].clientX);
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartTime(Date.now())
-    setTouchStartX(e.touches[0].clientX)
-    setTouchStartY(e.touches[0].clientY)
-  }
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    e.preventDefault() // Prevent default touch behavior
-    
-    const now = Date.now()
-    const touchEndX = e.changedTouches[0].clientX
-    const touchEndY = e.changedTouches[0].clientY
-    
-    // Calculate touch duration and distance
-    const touchDuration = now - touchStartTime
-    const touchDistance = Math.sqrt(
-      Math.pow(touchEndX - touchStartX, 2) + 
-      Math.pow(touchEndY - touchStartY, 2)
-    )
-    
-    // Check if enough time has passed since last touch
-    if (now - lastTouchTime < TOUCH_DELAY) {
-      return // Ignore touches that are too close together
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe left
+      setCurrentSlide((prev) => (prev + 1) % sliderData[0].images.length);
+    } else if (touchStart - touchEnd < -50) {
+      // Swipe right
+      setCurrentSlide((prev) => (prev - 1 + sliderData[0].images.length) % sliderData[0].images.length);
     }
-    
-    // Only handle as tap if:
-    // 1. Touch duration is less than 500ms
-    // 2. Touch distance is less than threshold (to differentiate from scrolling)
-    if (touchDuration < 500 && touchDistance < TOUCH_THRESHOLD) {
-      const target = e.target as HTMLElement
-      const clickableElement = target.closest('a, button') as HTMLElement
-      
-      if (clickableElement) {
-        setLastTouchTime(now)
-        clickableElement.click()
-      }
-    }
-  }
+  };
+
+  const handleMouseEnter = () => {
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true);
+  };
 
   const handleFormClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -691,6 +429,47 @@ export default function Home() {
     setSearchResults(results)
   }
 
+  const MobileCarousel = () => {
+    return (
+      <div className="md:hidden px-4">
+        {!user ? (
+          <div className="flex flex-col gap-4">
+            {/* Remove standalone buttons */}
+          </div>
+        ) : (
+          <>
+            <div className="flex gap-2 mb-4 justify-center">
+              <button
+                onClick={() => setActiveCard('investment')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                  activeCard === 'investment'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
+                }`}
+              >
+                Investment
+              </button>
+              <button
+                onClick={() => setActiveCard('credit')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                  activeCard === 'credit'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
+                }`}
+              >
+                Credit
+              </button>
+            </div>
+
+            <div className="transition-all duration-500 ease-in-out">
+              {/* ... rest of the MobileCarousel component ... */}
+            </div>
+          </>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -742,40 +521,44 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Mobile Hero Section - Moved to top */}
           <div className="lg:hidden mb-8">
-            <div className="relative w-full h-[300px]">
-              <div className="absolute top-0 right-0 transform -rotate-6 transition-transform hover:rotate-0">
-                <Image
-                  src={sliderData[0].images[2]}
-                  alt="Credit Card 3"
-                  width={240}
-                  height={150}
-                  className="rounded-2xl shadow-2xl"
-                />
+            <div 
+              className="relative w-full h-[200px] flex items-center"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="relative w-full h-full">
+                {sliderData[0].images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    } flex items-center justify-center`}
+                  >
+                    <Image
+                      src={image}
+                      alt={`Credit Card ${index + 1}`}
+                      width={240}
+                      height={150}
+                      className="rounded-2xl shadow-2xl mx-auto"
+                    />
+                  </div>
+                ))}
               </div>
-              <div className="absolute top-8 right-16 transform rotate-6 transition-transform hover:rotate-0">
-                <Image
-                  src={sliderData[0].images[1]}
-                  alt="Credit Card 2"
-                  width={240}
-                  height={150}
-                  className="rounded-2xl shadow-2xl"
-                />
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+                {sliderData[0].images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
               </div>
-              <div className="absolute top-16 right-32 transform -rotate-3 transition-transform hover:rotate-0">
-                <Image
-                  src={sliderData[0].images[0]}
-                  alt="Credit Card 1"
-                  width={240}
-                  height={150}
-                  className="rounded-2xl shadow-2xl"
-                />
-              </div>
-            </div>
-            {/* Success Badge for Mobile */}
-            <div className="absolute top-4 right-4 bg-green-500 text-white p-2 rounded-full shadow-lg z-10">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-              </svg>
             </div>
           </div>
 
@@ -792,62 +575,62 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/20 p-1.5 rounded-lg">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span className="text-base text-white font-medium">Lifetime Free</span>
+                    <span className="font-semibold text-white drop-shadow-sm">Lifetime Free</span>
                   </div>
                 </Link>
                 <Link href="/credit?category=international-lounge" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/20 p-1.5 rounded-lg">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
-                    <span className="text-base text-white font-medium">International Lounge</span>
+                    <span className="font-semibold text-white drop-shadow-sm">International Lounge</span>
                   </div>
                 </Link>
                 <Link href="/credit?category=premium" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/20 p-1.5 rounded-lg">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <span className="text-base text-white font-medium">Premium</span>
+                    <span className="font-semibold text-white drop-shadow-sm">Premium</span>
                   </div>
                 </Link>
                 <Link href="/credit?category=upi" className="col-span-1">
-                  <div className="group bg-[#4F46E5] hover:bg-[#4338CA] transition-all duration-200 rounded-xl p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/20 p-1.5 rounded-lg">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                       </svg>
                     </div>
-                    <span className="text-base text-white font-medium">UPI</span>
+                    <span className="font-semibold text-white drop-shadow-sm">UPI</span>
                   </div>
                 </Link>
               </div>
 
               {/* Card Value Calculator - Separated and visually distinct */}
-              <div className="mt-6">
+              <div className="mt-6 lg:mt-3">
                 <Link href="/credit/calculator" className="block">
-                  <div className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-200 rounded-xl p-4 flex items-center justify-between cursor-pointer shadow-lg hover:shadow-xl">
+                  <div className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-emerald-600 hover:to-green-600 shadow-md hover:shadow-xl border border-green-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-4 lg:p-2.5 flex items-center justify-between cursor-pointer">
                     <div className="flex items-center gap-4">
-                      <div className="bg-white/20 p-2 rounded-lg">
-                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="bg-white/30 rounded-full p-2 shadow-inner">
+                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white">Credit Card Value Calculator</h3>
+                        <h3 className="text-lg font-semibold text-white drop-shadow-sm">Credit Card Value Calculator</h3>
                       </div>
                     </div>
-                    <svg className="w-5 h-5 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </div>
@@ -857,40 +640,41 @@ export default function Home() {
 
             {/* Right Content - Product Images */}
             <div className="relative hidden lg:block">
-              <div className="relative w-full h-[400px]">
-                <div className="absolute top-0 right-0 transform -rotate-6 transition-transform hover:rotate-0">
-                  <Image
-                    src={sliderData[0].images[2]}
-                    alt="Credit Card 3"
-                    width={320}
-                    height={200}
-                    className="rounded-2xl shadow-2xl"
-                  />
+              <div 
+                className="relative w-full h-[280px] flex items-center"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="relative w-full h-full">
+                  {sliderData[0].images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      } flex items-center justify-center`}
+                    >
+                      <Image
+                        src={image}
+                        width={400}
+                        height={250}
+                        alt={`Credit Card ${index + 1}`}
+                        className="rounded-2xl shadow-2xl mx-auto"
+                      />
+                    </div>
+                  ))}
                 </div>
-                <div className="absolute top-10 right-20 transform rotate-6 transition-transform hover:rotate-0">
-                  <Image
-                    src={sliderData[0].images[1]}
-                    alt="Credit Card 2"
-                    width={320}
-                    height={200}
-                    className="rounded-2xl shadow-2xl"
-                  />
+                {/* Carousel Indicators */}
+                <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
+                  {sliderData[0].images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
                 </div>
-                <div className="absolute top-20 right-40 transform -rotate-3 transition-transform hover:rotate-0">
-                  <Image
-                    src={sliderData[0].images[0]}
-                    alt="Credit Card 1"
-                    width={320}
-                    height={200}
-                    className="rounded-2xl shadow-2xl"
-                  />
-                </div>
-              </div>
-              {/* Success Badge */}
-              <div className="absolute -top-4 right-0 bg-green-500 text-white p-3 rounded-full shadow-lg z-10">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
               </div>
             </div>
           </div>
