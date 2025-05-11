@@ -589,14 +589,14 @@ export default function Header() {
                 >
                   <Link 
                     href="/resolve-complaints" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Register New Complaint
                   </Link>
                   <Link 
                     href="/track-complaints" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Track Complaint Status
@@ -878,7 +878,7 @@ export default function Header() {
                       className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
-                      <span className="ml-3">View Credit Report (Coming Soon)</span>
+                      <span className="ml-3">View Credit Report</span>
                     </Link>
                   )}
                   {hasCreditAssessment ? (
@@ -924,14 +924,14 @@ export default function Header() {
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
                     href="/resolve-complaints" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Register New Complaint
                   </Link>
                   <Link 
                     href="/track-complaints" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Track Complaint Status
