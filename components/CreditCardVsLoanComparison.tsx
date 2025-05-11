@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const CreditCardVsLoanComparison = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50/50 to-indigo-50/50 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+    <section className="bg-gray-50 py-4 md:py-0 p-0 m-0">
+      <div className="max-w-7xl mx-auto px-4 p-0 m-0">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-full md:w-8/12 flex justify-start items-center order-2 md:order-1">
             <div className="relative w-full h-[300px] md:h-[600px] flex items-center justify-center">
               <Image
@@ -21,7 +21,7 @@ const CreditCardVsLoanComparison = () => {
           </div>
 
           <div className="w-full md:w-4/12 order-1 md:order-2">
-            <div className="text-left mb-8 md:mb-12">
+            <div className="text-left mb-4 md:mb-6">
               <h2 className="text-[2.2rem] font-bold text-gray-900 mb-4 leading-tight">Should You Be Taking a Loan or a Credit Card?</h2>
               <p className="text-gray-600 text-lg">
                 Take our quick assessment to get personalized recommendations on whether you should be taking a loan or a credit card.

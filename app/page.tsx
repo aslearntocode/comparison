@@ -537,14 +537,14 @@ export default function Home() {
                       index === currentSlide ? 'opacity-100' : 'opacity-0'
                     } flex items-center justify-center`}
                   >
-                    <Image
+                <Image
                       src={image}
                       alt={`Credit Card ${index + 1}`}
-                      width={240}
-                      height={150}
+                  width={240}
+                  height={150}
                       className="rounded-2xl shadow-2xl mx-auto"
-                    />
-                  </div>
+                />
+              </div>
                 ))}
               </div>
               {/* Carousel Indicators */}
@@ -653,14 +653,14 @@ export default function Home() {
                         index === currentSlide ? 'opacity-100' : 'opacity-0'
                       } flex items-center justify-center`}
                     >
-                      <Image
+                  <Image
                         src={image}
                         width={400}
                         height={250}
                         alt={`Credit Card ${index + 1}`}
                         className="rounded-2xl shadow-2xl mx-auto"
-                      />
-                    </div>
+                  />
+                </div>
                   ))}
                 </div>
                 {/* Carousel Indicators */}
@@ -680,6 +680,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Credit Card vs Personal Loan Comparison Section */}
+      <CreditCardVsLoanComparison />
 
       {/* Credit Score Analysis Section */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-16">
@@ -798,9 +801,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Credit Card vs Personal Loan Comparison Section */}
-      <CreditCardVsLoanComparison />
 
       {/* Learning Center Preview Section */}
       <LearningCenterPreview />
