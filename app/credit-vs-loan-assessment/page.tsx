@@ -256,13 +256,23 @@ function CreditVsLoanAssessmentContent() {
     // Replace DTI with full form
     text = text.replace(/DTI/g, 'Debt to Income Ratio (DTI)');
     
-    // Remove numbers from section headings
+    // Remove numbers from section headings and asterisks
     text = text.replace(/^\d+\.\s*/gm, '');
+    text = text.replace(/\*+/g, '');
     
     // Split by double newlines or fallback to single newlines
     const paras = text.split(/\n\s*\n/).filter(Boolean);
     // If only one para, try splitting by single newline
     const paragraphs = paras.length >= 3 ? paras : text.split(/\n/).filter(Boolean);
+
+    // Helper to remove sub-headings (bolded or ending with colon) from a section
+    const removeSubHeading = (section: string) => {
+      const lines = section.split(/\n/).filter(Boolean);
+      if (lines.length > 1 && (/^\s*\*\*.*\*\*\s*:?.*$/i.test(lines[0]) || /:$/i.test(lines[0]))) {
+        return lines.slice(1).join(' ').trim();
+      }
+      return section.trim();
+    };
     
     // Format conditions and summary as bullet points
     const formatAsBulletPoints = (text: string) => {
@@ -272,9 +282,9 @@ function CreditVsLoanAssessmentContent() {
     };
     
     return [
-      paragraphs[0] || 'No recommendation available.',
-      formatAsBulletPoints(paragraphs[1] || 'No condition available.'),
-      formatAsBulletPoints(paragraphs[2] || 'No summary available.')
+      removeSubHeading(paragraphs[0] || 'No recommendation available.'),
+      formatAsBulletPoints(removeSubHeading(paragraphs[1] || 'No condition available.')),
+      formatAsBulletPoints(removeSubHeading(paragraphs[2] || 'No summary available.'))
     ];
   };
 
