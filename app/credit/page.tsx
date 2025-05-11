@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
 export async function generateMetadata(
-  { searchParams }: { searchParams?: { [key: string]: string | string[] | undefined } }
+  { params, searchParams }: { params: { [key: string]: string | string[] | undefined }, searchParams?: { [key: string]: string | string[] | undefined } }
 ): Promise<Metadata> {
   const category = searchParams?.category as string | undefined;
   let title = 'Credit Cards | Financial Health';
