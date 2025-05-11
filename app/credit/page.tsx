@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
 export async function generateMetadata(
-  { params, searchParams }: { params: { [key: string]: string | string[] | undefined }, searchParams?: { [key: string]: string | string[] | undefined } }
+  props: { params: any, searchParams?: { [key: string]: string | string[] | undefined } }
 ): Promise<Metadata> {
-  const category = searchParams?.category as string | undefined;
+  const category = props.searchParams?.category as string | undefined;
   let title = 'Credit Cards | Financial Health';
   let description = 'Find and compare the best credit cards in India. Get detailed comparisons of rewards, benefits, and features to choose the perfect credit card for your needs.';
 
