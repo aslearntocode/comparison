@@ -893,7 +893,7 @@ export const creditCards: CreditCard[] = [
   },
   {
     id: 'idfc-mayura-metal',
-    name: 'IDFC Mayura Metal Credit Card',
+    name: 'IDFC FIRST Mayura Metal Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'premium',
     image: '/credit-cards/IDFC-First-Maurya.png',
