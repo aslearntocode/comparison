@@ -19,7 +19,6 @@ export interface CreditCard {
   apr: string;
   annualFee: string;
   joiningFee: string;
-  rewards: string;
   rupay: boolean;
   features: string[];
   feedback: UserFeedback[];
@@ -34,7 +33,6 @@ export interface CreditCard {
     movieBenefits?: string;
     diningPrivileges?: string[];
     minimumSpend?: string;
-    paymentDueDays?: string;
     creditLimit?: string;
     domesticTransactionFee?: string;
     internationalTransactionFee?: string;
@@ -59,7 +57,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹3,000 + GST',
     joiningFee: '₹3,000 + GST',
-    rewards: '8 Marriott Bonvoy Points per ₹150 spent at Marriott hotels\n4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases',
     rupay: false,
     features: [
       'Complimentary Marriott Bonvoy Silver Elite Status',
@@ -109,33 +106,22 @@ export const creditCards: CreditCard[] = [
   },
   {
     id: 'hdfc-regalia',
-    name: 'HDFC Regalia Credit Card',
+    name: 'HDFC Bank Regalia Credit Card',
     bank: 'HDFC Bank',
-    category: 'hotels',
+    category: 'premium',
     image: '/credit-cards/HDFC-Regalia.png',
-    apr: '43.2% p.a.',
+    apr: '42% p.a.',
     annualFee: '₹2,500 + GST',
     joiningFee: '₹2,500 + GST',
-    rewards: '4 Reward Points per ₹150 spent on retail purchases\nPoints worth ₹0.50 each on SmartBuy redemption',
     rupay: false,
     features: [
       'Airport Lounge Access',
       'Travel Insurance',
-      'Dining Benefits',
-      'Fuel Surcharge Waiver',
-      'Contactless Payments',
-      'SmartBuy Portal Access'
+      'Reward Points',
+      'Smart EMI',
+      'Zero Liability Protection'
     ],
-    categories: [
-      'best-credit-cards',
-      'rewards',
-      'travel',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge',
-      'hotel',
-      'hotels'
-    ],
+    categories: ['premium', 'travel', 'rewards'],
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
@@ -156,24 +142,11 @@ export const creditCards: CreditCard[] = [
         'Up to 25% off at select restaurants'
       ],
       minimumSpend: '₹3,00,000 for annual fee waiver',
-      paymentDueDays: '20 days',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '2% on all international transactions',
       interestRate: '3.5% per month (42% p.a.)',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Features:\n• Contactless Payments: Enabled for fast and secure transactions\n• SmartBuy Portal: Exclusive access for flight and hotel bookings\n• Priority Pass Membership: Available upon meeting eligibility criteria',
-      idealFor: [
-        'Mid-to-High Spenders: Perfect for individuals with annual spends of ₹5 lakh or more',
-        'Frequent Travelers: Ideal for those seeking domestic and international lounge access',
-        'Lifestyle Enthusiasts: Great for users looking for a balanced mix of rewards, dining, and protection benefits'
-      ],
-      notIdealFor: [
-        'Users with annual spends below ₹3 lakh',
-        'Individuals seeking zero annual fee cards without spending conditions',
-        'Those primarily interested in cashback or fuel-specific benefits'
-      ],
-      summary: 'A premium travel and lifestyle credit card offering comprehensive benefits including lounge access, travel insurance, and enhanced milestone rewards, ideal for frequent travelers and moderate-to-high spenders.'
+      emiOptions: 'Available on eligible purchases'
     }
   },
   {
@@ -185,7 +158,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
-    rewards: '5% Cashback on choice of any two packs\n3% Cashback on choice of any one E-commerce merchant\n1% Unlimited Cashback across all other spends',
     rupay: true,
     features: [
       'Category-based Cashback',
@@ -200,7 +172,6 @@ export const creditCards: CreditCard[] = [
       'lifestyle',
       'shopping',
       'upi'
-      // 'fintech'
     ],
     feedback: [],
     additionalDetails: {
@@ -231,7 +202,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹1,000 + GST',
     joiningFee: '₹1,000 + GST',
-    rewards: '5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato\n1% cashback on other spends',
     rupay: false,
     features: [
       'E-commerce Cashback',
@@ -277,7 +247,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
-    rewards: '10X CashPoints (3.3% Valueback) on Amazon, Flipkart, Swiggy, Reliance Smart SuperStore & BigBasket\n2 CashPoints per ₹150 spent on other spends',
     rupay: true,
     features: [
       'Enhanced Cashback on Shopping',
@@ -325,7 +294,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
-    rewards: '10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n5% Cashback on online spends across online MCCs\n1% Cashback on other categories',
     rupay: false,
     features: [
       'Enhanced Swiggy Cashback',
@@ -372,9 +340,8 @@ export const creditCards: CreditCard[] = [
     category: 'airlines',
     image: '/credit-cards/Axis-Privilege.png',
     apr: '52.86% p.a.',
-    annualFee: '₹3,500 + GST',
-    joiningFee: '₹6,000 + GST',
-    rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
+    annualFee: '₹1,500 + GST',
+    joiningFee: '₹1,500 + GST',
     rupay: false,
     features: [
       'Airport Lounge Access',
@@ -412,8 +379,7 @@ export const creditCards: CreditCard[] = [
       diningPrivileges: [
         'Exclusive offers through the ICICI Bank Culinary Treats Programme'
       ],
-      minimumSpend: '₹2,50,000 for annual fee waiver',
-      paymentDueDays: '20 days',
+      minimumSpend: '₹5,00,000 for annual fee waiver',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% + GST',
@@ -443,7 +409,6 @@ export const creditCards: CreditCard[] = [
     apr: '45% p.a.',
     annualFee: '₹12,500 + GST',
     joiningFee: '₹12,500 + GST',
-    rewards: 'Earn 6 ICICI Reward Points per ₹200 on retail spends\nApplicable to grocery, education, utilities, and insurance payments',
     rupay: false,
     features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
     categories: [
@@ -490,7 +455,6 @@ export const creditCards: CreditCard[] = [
         'Complimentary drinks at partner lounges'
       ],
       minimumSpend: '₹10,00,000',
-      paymentDueDays: '25 days',
       creditLimit: 'Up to ₹10,00,000',
       domesticTransactionFee: 'Nil',
       idealFor: [
@@ -517,7 +481,6 @@ export const creditCards: CreditCard[] = [
     apr: '45% p.a.',
     annualFee: '₹3,500 + GST',
     joiningFee: '₹6,500 + GST',
-    rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
       'Airport Lounge Access',
@@ -558,7 +521,6 @@ export const creditCards: CreditCard[] = [
         'Exclusive offers through the ICICI Bank Culinary Treats Programme'
       ],
       minimumSpend: '₹6,00,000 for annual fee waiver',
-      paymentDueDays: '20 days',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% + GST',
@@ -589,7 +551,6 @@ export const creditCards: CreditCard[] = [
     apr: '42% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Earn 4 points per ₹100 on international spends\nEarn 2 points per ₹100 on domestic retail spends\nEarn 1 point per ₹100 on utilities and insurance payments',
     rupay: false,
     features: [
       // 'Airport Lounge Access',
@@ -626,7 +587,6 @@ export const creditCards: CreditCard[] = [
         'Exclusive offers through the ICICI Bank Culinary Treats Programme'
       ],
       minimumSpend: '₹5,00,000 for annual fee waiver',
-      paymentDueDays: '20 days',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% + GST',
@@ -656,7 +616,6 @@ export const creditCards: CreditCard[] = [
     apr: '42% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
     rupay: false,
     features: [
       'Airport Lounge Access',
@@ -716,7 +675,6 @@ export const creditCards: CreditCard[] = [
     apr: '43.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\nEach Kiwi worth ₹0.25',
     rupay: true,
     features: [
       'Instant Virtual Card Issuance',
@@ -741,7 +699,6 @@ export const creditCards: CreditCard[] = [
         'Spend ₹1,50,000 annually: 5% cashback + 3 domestic lounge accesses'
       ],
       airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
-      paymentDueDays: 'Up to 50 days interest-free period',
       internationalTransactionFee: '3.5% of the transaction amount',
       interestRate: '3.6% per month (43.2% annually)',
       additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
@@ -771,7 +728,6 @@ export const creditCards: CreditCard[] = [
     apr: '42% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Up to 2% cashback on every transaction\nWeekly deals and discounts\nFuel surcharge waiver\nRental convenience fee waiver',
     rupay: false,
     features: [
       'Instant Cashback',
@@ -799,7 +755,6 @@ export const creditCards: CreditCard[] = [
         'No specific insurance coverage mentioned'
       ],
       minimumSpend: 'Not applicable',
-      paymentDueDays: 'Varies based on billing cycle',
       creditLimit: '₹2,000 to ₹10,00,000 based on user profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: 'Not specified',
@@ -831,7 +786,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: '10X rewards on weekend dining\n5X rewards on online shopping\n2X rewards on all other spends',
     rupay: false,
     features: [
       'Airport Lounge Access',
@@ -896,7 +850,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹5,999 + GST',
     joiningFee: '₹5,999 + GST',
-    rewards: 'Zero forex markup\nEnhanced rewards on international spends\nPremium lifestyle benefits',
     rupay: false,
     features: [
       'Zero Forex Markup',
@@ -908,20 +861,50 @@ export const creditCards: CreditCard[] = [
     ],
     categories: [
       'premium',
-      // 'international-travel',
-      // 'international-lounge',
+      'international-travel',
+      'international-lounge',
       'metal'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Zero forex markup on international transactions\n• Enhanced rewards on international spends\n• Premium lifestyle benefits',
+      rewardsProgram: `Reward Points Earning Structure:
+• Base Rate: 1 Reward Point per ₹150 spent on:
+  - Insurance premiums
+  - Utility bill payments
+
+• 3X Rewards: 3 Reward Points per ₹150 spent on:
+  - Rental payments
+  - Education expenses
+  - Wallet loads
+  - Government transactions
+
+• 5X Rewards: 5 Reward Points per ₹150 spent on all other categories for monthly spends up to ₹20,000
+
+• 10X Rewards: 10 Reward Points per ₹150 spent on:
+  - Monthly spends exceeding ₹20,000
+  - Birthday spends
+
+Note: No reward points on fuel purchases, EMI conversions, cash withdrawals, and fee payments
+
+Reward Points Value and Redemption:
+• Value: Each Reward Point = ₹0.25
+• Redemption Options:
+  - Online transactions
+  - Gift vouchers (Amazon, Flipkart, Myntra, BigBasket)
+  - Merchandise purchases
+  - Flight, hotel, and movie bookings
+• Redemption Fee: ₹99 + GST per request
+• Expiry: Points do not expire
+
+Effective Cashback Rates:
+• 1X Rewards: ~0.17% cashback
+• 3X Rewards: ~0.50% cashback
+• 5X Rewards: ~0.83% cashback
+• 10X Rewards: ~1.67% cashback`,
       welcomeBonus: 'Welcome Benefits:\n• Premium welcome benefits worth ₹15,000\n• Luxury gift vouchers\n• Exclusive dining experiences',
       milestoneBenefits: [
-        'Complimentary luxury airport transfers worth ₹10,000 on spends of ₹10 lakh',
-        'Exclusive dining experiences worth ₹15,000 on spends of ₹20 lakh',
-        'Luxury hotel stay vouchers worth ₹25,000 on spends of ₹30 lakh',
-        'Premium lifestyle vouchers worth ₹35,000 on spends of ₹40 lakh',
-        'Annual fee waiver on spends of ₹50 lakh'
+        'Spend ₹8 Lakhs in a card anniversary year to earn 7,500 reward points (worth ₹1,875)',
+        'Spend ₹15 Lakhs in a card anniversary year to earn 15,000 reward points (worth ₹3,750)'
       ],
       airportLounge: 'Unlimited international lounge access via Priority Pass',
       insuranceCover: [
@@ -934,7 +917,6 @@ export const creditCards: CreditCard[] = [
         '25% off on Qmin food deliveries'
       ],
       minimumSpend: 'Not specified',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: 'Not specified',
@@ -963,7 +945,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: '10X rewards on all spends\nNo annual fee on first year',
     rupay: true,
     features: [
       '10X Rewards',
@@ -1006,7 +987,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Enhanced rewards on lifestyle spends\nLounge access\nComprehensive insurance',
     rupay: true,
     features: [
       'Airport Lounge Access',
@@ -1074,7 +1054,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹499 + GST',
     joiningFee: '₹499 + GST',
-    rewards: 'Customizable rewards\nBenefits worth ₹30,000/year',
     rupay: true,
     features: [
       'Customizable Benefits',
@@ -1117,7 +1096,6 @@ export const creditCards: CreditCard[] = [
     apr: 'Based on FD rate',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: '5% cashback on first EMI purchase\n10X reward points on birthday month\n3X rewards on UPI transactions',
     rupay: false,
     features: [
       '5% cashback on first EMI purchase',
@@ -1179,7 +1157,6 @@ export const creditCards: CreditCard[] = [
     apr: '46.2% p.a.',
     annualFee: '₹199 + GST',
     joiningFee: '₹199 + GST',
-    rewards: 'Up to 5% savings on fuel spends through rewards',
     rupay: true,
     features: [
       '21X Reward Points/₹150 on HPCL fuel',
@@ -1227,7 +1204,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '46.2% p.a.',
     annualFee: '₹499 + GST',
     joiningFee: '₹499 + GST',
-    rewards: 'Up to 6.5% savings on fuel spends through rewards',
     rupay: true,
     features: [
       '30X Reward Points/₹150 on HPCL fuel, grocery, utility, FASTag',
@@ -1275,13 +1251,12 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹500 + GST (1st Year: Nil)',
     joiningFee: '₹500 + GST',
-    rewards: 'Enhanced fuel savings at IOCL outlets\nSurcharge waiver\nBasic rewards on other spends',
     rupay: true,
     features: [
-      'Enhanced Fuel Savings',
-      'Surcharge Waiver',
+      'Enhanced fuel savings at IOCL outlets',
+      'Surcharge waiver',
+      'Basic rewards on other spends',
       'Contactless Payments',
-      'Online Shopping Benefits',
       'EMI Options'
     ],
     categories: [
@@ -1316,7 +1291,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '44% p.a.',
     annualFee: '₹20,000 + GST',
     joiningFee: '₹20,000 + GST',
-    rewards: '2.5% reward points on international spends\n2% reward points on domestic spends\nAccelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)',
     rupay: false,
     features: [
       'Unlimited Lounge Access',
@@ -1376,7 +1350,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
-    rewards: '2.5% 6E Rewards on IndiGo bookings\n2% on dining, groceries, and entertainment\n1% on other spends',
     rupay: false,
     features: [
       'Complimentary IndiGo Flight Ticket',
@@ -1402,7 +1375,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Zero lost card liability on reporting'
       ],
       minimumSpend: 'Not specified',
-      paymentDueDays: 'Up to 50 days interest-free credit period',
       additionalServices: 'Additional Benefits:\n• Up to 10% 6E Rewards on IndiGo feature partners\n• Interest-free credit period up to 50 days\n• Zero lost card liability on reporting',
       idealFor: [
         'Frequent IndiGo flyers',
@@ -1426,7 +1398,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '45% p.a.',
     annualFee: '₹2,999 + GST',
     joiningFee: '₹2,999 + GST',
-    rewards: '5 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n2 KrisFlyer miles per ₹200 on other spends',
     rupay: false,
     features: [
       'KrisFlyer Miles',
@@ -1453,7 +1424,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Air accident insurance cover up to ₹3.5 crore'
       ],
       minimumSpend: 'Not specified',
-      paymentDueDays: 'Not specified',
       additionalServices: 'Additional Benefits:\n• Complimentary domestic lounge access\n• Air accident insurance cover up to ₹3.5 crore',
       idealFor: [
         'Frequent Singapore Airlines flyers',
@@ -1477,7 +1447,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '45% p.a.',
     annualFee: '₹9,999 + GST',
     joiningFee: '₹9,999 + GST',
-    rewards: '10 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n8 KrisFlyer miles per ₹200 on overseas spends\n6 KrisFlyer miles per ₹200 on other spends',
     rupay: false,
     features: [
       'KrisFlyer Miles',
@@ -1508,7 +1477,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Air accident insurance cover up to ₹3.5 crore'
       ],
       minimumSpend: '₹5,00,000 for milestone benefits',
-      paymentDueDays: 'Not specified',
       additionalServices: 'Additional Benefits:\n• Complimentary domestic and international lounge access\n• Air accident insurance cover up to ₹3.5 crore\n• Milestone benefits: 10,000 KrisFlyer miles on annual spend of ₹5 lakh',
       idealFor: [
         'Frequent Singapore Airlines flyers',
@@ -1533,7 +1501,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹5,000 + GST',
     joiningFee: '₹10,000 + GST',
-    rewards: 'Up to 5X Avios on spends with British Airways and Qatar Airways\n1.5 Avios per ₹100 on other spends',
     rupay: false,
     features: [
       'Avios Points',
@@ -1561,7 +1528,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Personal air accident insurance cover up to ₹25 lakh'
       ],
       minimumSpend: 'Not specified',
-      paymentDueDays: 'Not specified',
       additionalServices: 'Additional Benefits:\n• 1.5% discounted forex markup fee\n• 25% discount on Airport Fast Track immigration services at over 450 destinations\n• 20% discount on airport transfer services in major cities worldwide',
       idealFor: [
         'Frequent British Airways and Qatar Airways flyers',
@@ -1586,7 +1552,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹1,499 + GST',
     joiningFee: '₹1,499 + GST',
-    rewards: '5% NeuCoins on Tata brands; 1.5% on UPI spends',
     rupay: true,
     features: [
       'UPI Enabled',
@@ -1628,7 +1593,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹499 + GST',
     joiningFee: '₹499 + GST',
-    rewards: '2% NeuCoins on Tata brands; 1% on UPI spends',
     rupay: true,
     features: [
       'UPI Enabled',
@@ -1669,7 +1633,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹99 + GST',
     joiningFee: '₹99 + GST',
-    rewards: 'Up to 3X CashPoints on spends; 1% on UPI transactions',
     rupay: true,
     features: [
       'UPI Enabled',
@@ -1710,7 +1673,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Based on FD rate',
     annualFee: '₹0 (₹499 from 5th year)',
     joiningFee: '₹0',
-    rewards: '1 reward point per ₹100 spent',
     rupay: false,
     features: [
       '1 reward point per ₹100 spent',
@@ -1734,7 +1696,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Based on FD rate',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: '2 reward points per ₹100 online, 1 point per ₹100 offline',
     rupay: true,
     features: [
       '2 reward points per ₹100 online',
@@ -1759,7 +1720,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Based on FD rate',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: '25% discount on BookMyShow (twice a month)',
     rupay: false,
     features: [
       '25% discount on BookMyShow (twice a month)',
@@ -1783,7 +1743,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Based on FD rate',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Reward points on spending',
     rupay: false,
     features: [
       'Up to 80% credit limit of FD',
@@ -1808,7 +1767,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Based on FD rate',
     annualFee: '₹500',
     joiningFee: '₹500',
-    rewards: 'Rewards on spending',
     rupay: false,
     features: [
       'Designed for credit building',
@@ -1831,7 +1789,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Up to 5% cashback on Amazon.in purchases\n1% cashback on other spends',
     rupay: false,
     features: [
       'Amazon Pay Cashback',
@@ -1876,7 +1833,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '43.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Complimentary Sony LIV Premium subscription\n₹120 off on Swiggy orders twice a month\nComplimentary airport lounge access (4 times per year)',
     rupay: true,
     features: [
       'Sony LIV Premium Subscription',
@@ -1927,7 +1883,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹1,10,000 + GST',
     joiningFee: '₹1,10,000 + GST',
-    rewards: '5 reward points per ₹100 spent at IHCL properties\n1.5 points per ₹100 on other eligible purchases',
     rupay: false,
     features: [
       'Taj InnerCircle Platinum NeuPass Membership',
@@ -1968,7 +1923,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         '25% off on Qmin food deliveries'
       ],
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: 'Not specified',
@@ -1999,7 +1953,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹3,00,000 + GST',
     joiningFee: '₹5,00,000 + GST',
-    rewards: 'Welcome benefit: Choice between an ₹40,000 ITC voucher or 25,000 Axis Edge Miles\nRenewal benefit: Choice between an ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
     rupay: false,
     features: [
       'Unlimited Lounge Access',
@@ -2029,7 +1982,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Exclusive access to top restaurants worldwide'
       ],
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: 'Zero foreign exchange markup on international transactions',
@@ -2060,7 +2012,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹2,75,000 + GST',
     joiningFee: '₹9,75,000 to ₹11,50,000 + GST',
-    rewards: 'Elite status with hotel and airline programs\nComplimentary elite memberships\nExclusive experiences and events',
     rupay: false,
     features: [
       'Elite Memberships',
@@ -2090,7 +2041,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Exclusive access to private dining experiences'
       ],
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% on international transactions',
@@ -2121,7 +2071,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹66,000 + GST',
     joiningFee: '₹66,000 + GST',
-    rewards: '1 Membership Rewards Point for every ₹50 spent (excluding fuel, insurance, utilities, and cash transactions)',
     rupay: false,
     features: [
       'Unlimited Lounge Access',
@@ -2153,7 +2102,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Exclusive dining access and privileges'
       ],
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Charge card (no pre-set spending limit)',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% on international transactions',
@@ -2183,7 +2131,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹4,500 + GST',
     joiningFee: '₹1000',
-    rewards: '1 Membership Rewards Point for every ₹50 spent\n5X points on Reward Multiplier platform\nMonthly bonus points on transactions',
     rupay: false,
     features: [
       'Flexible Spending Power',
@@ -2212,7 +2159,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
       ],
       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels',
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Charge card (no pre-set spending limit)',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% on international transactions',
@@ -2241,7 +2187,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹495 + GST',
     joiningFee: '₹495 + GST',
-    rewards: '10X Membership Rewards Points on select merchants\n5X points on Paytm Wallet, Swiggy, BookMyShow\n1 point per ₹50 on other spends',
     rupay: false,
     features: [
       'Enhanced Online Rewards',
@@ -2290,7 +2235,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: '42% p.a.',
     annualFee: '₹10,000 + GST',
     joiningFee: '₹10,000 + GST',
-    rewards: '1 Membership Rewards Point for every ₹50 spent\nMonthly and annual milestone rewards\nPremium lifestyle benefits',
     rupay: false,
     features: [
       'Airport Lounge Access',
@@ -2329,7 +2273,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
       ],
       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels\n• Up to 2 complimentary golf rounds per month at 32 premium courses (on spending ₹50,000 in a calendar month)\n• 24×7 Platinum Concierge for travel, dining, and lifestyle assistance',
       minimumSpend: 'NA',
-      paymentDueDays: 'Not specified',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '3.5% on international transactions',
@@ -2358,15 +2301,11 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Not specified',
     annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
     joiningFee: '₹0',
-    rewards: '2% cashback on selected category (Shopping, Travel, or Dining); 0.4% cashback on all other spends including UPI',
     rupay: true,
     features: [
       '3-in-1 Category Selection: Choose Shopping, Travel, or Dining for accelerated rewards (switch every 3 billing cycles)',
-      'UPI Integration: Make UPI payments using your credit card',
       '1 complimentary domestic airport lounge access per quarter',
-      '1% fuel surcharge waiver on transactions between ₹400 and ₹3,000 (capped at ₹100/month)',
-      'Personal accident and total permanent disability cover up to ₹10 lakh',
-      'Card management via Jupiter app (set limits, freeze/unfreeze, reset PIN, etc.)'
+      '1% fuel surcharge waiver on transactions between ₹400 and ₹3,000 (capped at ₹100/month)'
     ],
     categories: [
       'upi',
@@ -2405,7 +2344,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     apr: 'Not specified',
     annualFee: '₹4,999 + taxes',
     joiningFee: '₹4,999 + taxes',
-    rewards: '2 Reward Points per ₹100 on dining, travel, and international spends; 1 Reward Point per ₹100 on other retail spends; no points on fuel, EMI, and select categories.',
     rupay: false,
     features: [
       'Metal card',
@@ -2462,7 +2400,6 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     apr: 'Not specified',
     annualFee: '₹2,999 + taxes',
     joiningFee: '₹2,999 + taxes',
-    rewards: '2 Reward Points per ₹100 on travel, dining, and international spends; 1 Reward Point per ₹100 on other retail spends; no points on fuel, EMI, and select categories.',
     rupay: false,
     features: [
       'Airport lounge access',
@@ -2512,7 +2449,6 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     apr: 'Not specified',
     annualFee: '₹499 + taxes',
     joiningFee: '₹499 + taxes',
-    rewards: '1.5% cashback on POS retail spends (max ₹100 per statement cycle); 2X points on online transactions; 1 point per ₹100 on utility, telecom, and insurance spends',
     rupay: false,
     features: [
       '1.5% cashback on POS spends',
@@ -2563,7 +2499,6 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     apr: 'Not specified',
     annualFee: '₹299 + taxes',
     joiningFee: '₹299 + taxes',
-    rewards: '1% cashback on all UPI and other transactions (e-commerce, POS, contactless), capped at ₹500 per statement cycle',
     rupay: true,
     features: [
       '1% cashback on UPI spends',
@@ -2599,7 +2534,6 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     apr: "3.49% per month",
     annualFee: "₹2,499 + GST",
     joiningFee: "₹2,499 + GST",
-    rewards: "5X points on dining, travel & international spends, 3X points on other retail spends",
     rupay: true,
     features: [
       "UPI Payment Support",
@@ -2624,7 +2558,6 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
         "5X Reward Points on dining spends"
       ],
       minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
-      paymentDueDays: "Standard",
       creditLimit: "Based on credit assessment",
       domesticTransactionFee: "Standard",
       internationalTransactionFee: "2% forex mark-up",

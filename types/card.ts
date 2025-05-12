@@ -6,7 +6,6 @@ export interface Card {
   apr: string;
   annualFee: string;
   joiningFee: string;
-  rewards: string;
   rupay: boolean;
   features: string[];
   feedback: {
@@ -24,7 +23,6 @@ export interface Card {
     movieBenefits?: string;
     diningPrivileges?: string[];
     minimumSpend?: string;
-    paymentDueDays?: string;
     creditLimit?: string;
     domesticTransactionFee?: string;
     internationalTransactionFee?: string;
