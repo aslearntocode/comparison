@@ -711,59 +711,55 @@ export const creditCards: CreditCard[] = [
     id: 'kiwi',
     name: 'Kiwi Credit Card',
     bank: 'Kiwi',
-    category: 'fintech',
+    category: 'upi',
     image: '/credit-cards/Kiwi.png',
-    apr: '52.86% p.a.',
+    apr: '43.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rewards: 'Earn reward points on all spends\n5,000 reward points as welcome benefit',
+    rewards: 'Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\nEach Kiwi worth ₹0.25',
     rupay: true,
     features: [
-      'Airport Lounge Access',
-      'Railway Lounge Access',
-      'Travel Insurance',
-      'Lifestyle Privileges',
-      'Forex Benefits',
-      'Lifetime Free Add-on Cards'
+      'Instant Virtual Card Issuance',
+      'UPI Integration',
+      'Wide Acceptance',
+      'Interest-Free Period',
+      'Lounge Access',
+      'Comprehensive Card Management'
     ],
     categories: [
-      'best-credit-cards',
-      'rewards',
-      'travel',
-      'domestic-lounge',
       'upi',
       'lifetime-free',
       'fintech'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
-      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
-      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
-      fuelSurcharge: 'Not specified',
-      insuranceCover: [
-        'Air Accident Cover: ₹2 crore',
-        'Credit Shield: ₹15 lakh',
-        'Purchase Protection: ₹50,000',
-        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+      rewardsProgram: 'Standard Cashback:\n• Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\n• Each Kiwi is worth ₹0.25, redeemable instantly into linked bank account\n\nNeon Subscription Program:\n• ₹999 annually (waived for cards issued via Kiwi app between July 1, 2024, and March 31, 2025)\n• Enhanced cashback based on annual spend:\n  - ₹50,000: 3% cashback + 1 domestic lounge access\n  - ₹1,00,000: 4% cashback + 2 domestic lounge accesses\n  - ₹1,50,000: 5% cashback + 3 domestic lounge accesses',
+      welcomeBonus: 'No specific welcome bonus',
+      milestoneBenefits: [
+        'Spend ₹50,000 annually: 3% cashback + 1 domestic lounge access',
+        'Spend ₹1,00,000 annually: 4% cashback + 2 domestic lounge accesses',
+        'Spend ₹1,50,000 annually: 5% cashback + 3 domestic lounge accesses'
       ],
-      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
-      diningPrivileges: [
-        'Exclusive dining privileges and offers'
-      ],
-      minimumSpend: 'NA',
-      internationalTransactionFee: '0.99%',
-      additionalServices: 'Lifetime free add-on cards for family members',
+      airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
+      paymentDueDays: 'Up to 50 days interest-free period',
+      internationalTransactionFee: '3.5% of the transaction amount',
+      interestRate: '3.6% per month (43.2% annually)',
+      additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
       idealFor: [
-        'High-income individuals with substantial monthly expenditures',
-        'Frequent travelers seeking lounge access and travel-related perks',
-        'Users who prioritize dining and lifestyle benefits'
+        'First-time credit card users',
+        'People who prefer UPI payments',
+        'Salaried professionals & self-employed (income above ₹25,000/month)',
+        'Reward seekers',
+        'Those looking for credit flexibility'
       ],
       notIdealFor: [
-        'Individuals with moderate or low spending habits',
-        'Those seeking a no-frills, low-fee credit card'
+        'People with poor or no credit history (requires CIBIL 720+)',
+        'Heavy international spenders',
+        'Users who prefer physical cards',
+        'Low-income individuals',
+        'People looking for premium lifestyle benefits'
       ],
-      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.'
     }
   },
   {
