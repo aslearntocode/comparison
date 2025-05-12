@@ -110,13 +110,6 @@ export default function ComparePageContent() {
                       <td key={card.id} className="px-6 py-4">{card.joiningFee}</td>
                     ))}
                   </tr>
-                  {/* Rewards */}
-                  <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Rewards</td>
-                    {selectedCards.map((card) => (
-                      <td key={card.id} className="px-6 py-4">{card.rewards}</td>
-                    ))}
-                  </tr>
                   {/* Rupay */}
                   <tr className="border-b">
                     <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Rupay</td>
