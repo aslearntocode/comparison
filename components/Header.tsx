@@ -955,13 +955,13 @@ export default function Header() {
                   className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
                 >
                   <Image 
-                    src="/credit-cards/icici-black.png" 
+                    src="/credit-cards/ICICI-Black.png" 
                     alt="ICICI Time Black" 
                     width={40} 
                     height={25} 
                     className="object-contain"
                   />
-                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Time Black</span>
+                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
                 </Link>
                 <Link 
                   href="/credit/idfc-mayura-metal" 
@@ -995,7 +995,7 @@ export default function Header() {
                   className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
                 >
                   <Image 
-                    src="/credit-cards/icici-black.png" 
+                    src="/credit-cards/ICICI-Black.png" 
                     alt="ICICI Time Black" 
                     width={40} 
                     height={25} 
