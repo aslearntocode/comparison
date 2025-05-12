@@ -143,8 +143,8 @@ function CreditProductComparisonContent() {
           compareB = b.joiningFee === 'Free' ? 0 : parseFloat(b.joiningFee.replace(/[^0-9]/g, '')) || 0;
           break;
         case 'rewards':
-          compareA = a.rewards === 'None' ? '' : a.rewards;
-          compareB = b.rewards === 'None' ? '' : b.rewards;
+          compareA = a.additionalDetails?.rewardsProgram?.split('\n')[0] || '';
+          compareB = b.additionalDetails?.rewardsProgram?.split('\n')[0] || '';
           break;
         case 'sentiment':
           const ratingA = getAverageRating(a.id)
@@ -210,7 +210,7 @@ function CreditProductComparisonContent() {
       filtered = filtered.filter(card => 
         card.name.toLowerCase().includes(query) ||
         card.features.some(feature => feature.toLowerCase().includes(query)) ||
-        card.rewards.toLowerCase().includes(query) ||
+        card.additionalDetails?.rewardsProgram?.toLowerCase().includes(query) ||
         card.feedback.some(f => f.comment.toLowerCase().includes(query))
       )
     }
