@@ -1001,7 +1001,7 @@ export default function Header() {
                     height={25} 
                     className="object-contain"
                   />
-                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Time Black</span>
+                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
                 </Link>
                 <Link 
                   href="/credit/idfc-mayura-metal" 
