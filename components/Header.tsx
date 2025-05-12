@@ -259,14 +259,14 @@ export default function Header() {
             </Link>
             
             <div className="hidden md:flex items-center space-x-8 ml-8">
-              <Link href="/" className="text-black hover:text-gray-700 py-2 text-lg">
+              <Link href="/" className="text-black hover:text-gray-700 py-2 text-base">
                 Home
               </Link>
               <div className="relative" style={{ zIndex: 50 }}>
                 <div className="flex items-center">
                   <button 
                     onClick={() => setIsCreditDropdownOpen(!isCreditDropdownOpen)}
-                    className="text-black hover:text-gray-700 py-2 text-lg"
+                    className="text-black hover:text-gray-700 py-2 text-base"
                   >
                     Credit Card Categories
                     <svg
@@ -297,14 +297,14 @@ export default function Header() {
                 >
                   <Link 
                     href="/credit?category=ultra-premium" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Ultra Premium</span>
                   </Link>
                   <Link 
                     href="/credit?category=premium" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Premium</span>
@@ -318,28 +318,28 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Cash Back</span>
                   </Link>
                   <Link 
                     href="/credit?category=lifestyle" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Lifestyle</span>
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Fuel</span>
                   </Link>
                   <Link 
                     href="/credit?category=lifetime-free" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Lifetime Free</span>
@@ -353,7 +353,7 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=upi" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">UPI</span>
@@ -367,42 +367,42 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Domestic Lounge</span>
                   </Link>
                   <Link 
                     href="/credit?category=international-lounge" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">International Lounge</span>
                   </Link>
                   <Link 
                     href="/credit?category=fintech" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Fintech</span>
                   </Link>
                   <Link 
                     href="/credit?category=airlines"
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Airlines</span>
                   </Link>
                   <Link 
                     href="/credit?category=hotels" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Hotels</span>
                   </Link>
                   <Link 
                     href="/credit?category=secured" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Secured Credit Card</span>
@@ -482,7 +482,7 @@ export default function Header() {
                 <div className="flex items-center">
                   <button 
                     onClick={() => setIsCreditScoreDropdownOpen(!isCreditScoreDropdownOpen)}
-                    className="text-black hover:text-gray-700 py-2 text-lg flex items-center"
+                    className="text-black hover:text-gray-700 py-2 text-base flex items-center"
                   >
                     Credit Score
                     <svg
@@ -513,7 +513,7 @@ export default function Header() {
                   {!hasCreditReport && (
                     <Link 
                       href="/credit-score" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">Check Credit Score (Coming Soon)</span>
@@ -522,7 +522,7 @@ export default function Header() {
                   {hasCreditReport && (
                     <Link 
                       href="/credit-score/report" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">View Credit Report</span>
@@ -531,7 +531,7 @@ export default function Header() {
                   {hasCreditAssessment ? (
                     <Link 
                       href="/credit-vs-loan-assessment?view=true" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <div className="ml-3">
@@ -546,7 +546,7 @@ export default function Header() {
                   ) : (
                     <Link 
                       href="/credit-vs-loan-assessment" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">Credit Assessment</span>
@@ -559,7 +559,7 @@ export default function Header() {
                 <div className="flex items-center">
                   <button 
                     onClick={() => setIsComplaintsDropdownOpen(!isComplaintsDropdownOpen)}
-                    className="text-black hover:text-gray-700 py-2 text-lg flex items-center"
+                    className="text-black hover:text-gray-700 py-2 text-base flex items-center"
                   >
                     Resolve Complaints
                     <svg
@@ -589,14 +589,14 @@ export default function Header() {
                 >
                   <Link 
                     href="/resolve-complaints" 
-                    className="block px-4 py-2 text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Register New Complaint
                   </Link>
                   <Link 
                     href="/track-complaints" 
-                    className="block px-4 py-2 text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Track Complaint Status
@@ -704,7 +704,7 @@ export default function Header() {
               </div>
             ) : (
               <Link href="/login" className="text-black hover:text-gray-700 whitespace-nowrap">
-                <Button variant="ghost" className="text-base">
+                <Button variant="ghost" className="text-sm">
                   Log in
                 </Button>
               </Link>
@@ -736,14 +736,14 @@ export default function Header() {
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
                     href="/credit?category=ultra-premium" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Ultra Premium
                   </Link>
                   <Link 
                     href="/credit?category=premium" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Premium
@@ -757,28 +757,28 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Cash Back
                   </Link>
                   <Link 
                     href="/credit?category=lifestyle" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Lifestyle
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Fuel
                   </Link>
                   <Link 
                     href="/credit?category=lifetime-free" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Lifetime Free
@@ -792,7 +792,7 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=upi" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     UPI
@@ -806,42 +806,42 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Domestic Lounge
                   </Link>
                   <Link 
                     href="/credit?category=international-lounge" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     International Lounge
                   </Link>
                   <Link 
                     href="/credit?category=fintech" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Fintech
                   </Link>
                   <Link 
                     href="/credit?category=airlines" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Airlines
                   </Link>
                   <Link 
                     href="/credit?category=hotels" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Hotels
                   </Link>
                   <Link 
                     href="/credit?category=secured" 
-                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Secured Credit Card
@@ -866,7 +866,7 @@ export default function Header() {
                   {!hasCreditReport && (
                     <Link 
                       href="/credit-score" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">Check Credit Score (Coming Soon)</span>
@@ -875,7 +875,7 @@ export default function Header() {
                   {hasCreditReport && (
                     <Link 
                       href="/credit-score/report" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">View Credit Report</span>
@@ -884,7 +884,7 @@ export default function Header() {
                   {hasCreditAssessment ? (
                     <Link 
                       href="/credit-vs-loan-assessment?view=true" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <div className="ml-3">
@@ -899,7 +899,7 @@ export default function Header() {
                   ) : (
                     <Link 
                       href="/credit-vs-loan-assessment" 
-                      className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
+                      className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
                       <span className="ml-3">Credit Assessment</span>
@@ -924,14 +924,14 @@ export default function Header() {
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
                     href="/resolve-complaints" 
-                    className="block px-4 py-2 text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Register New Complaint
                   </Link>
                   <Link 
                     href="/track-complaints" 
-                    className="block px-4 py-2 text-black hover:bg-gray-50"
+                    className="block px-4 py-2 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsComplaintsDropdownOpen(false)}
                   >
                     Track Complaint Status
