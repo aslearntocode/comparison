@@ -67,6 +67,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://financialhealth.co.in/learning-center/personal-finance/comparison</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financialhealth.co.in/learning-center/credit-cards/interest-calculation</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://financialhealth.co.in/learning-center/credit-cards/number-of-cards</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://financialhealth.co.in/faq</loc>
     <lastmod>2024-03-21</lastmod>
     <changefreq>monthly</changefreq>
