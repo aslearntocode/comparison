@@ -474,7 +474,7 @@ export default function Home() {
       <Header />
       
       {/* Privacy Notice Banner */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white overflow-hidden">
+      <div className="bg-blue-600 text-white overflow-hidden">
         <div className="relative flex">
           <div className="py-4 animate-scroll flex whitespace-nowrap">
             <span className="mx-4 flex items-center">
