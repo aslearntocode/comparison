@@ -81,3 +81,31 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+@media (max-width: 600px) {
+  /* Target card list items and force column layout for mobile */
+  .credit-card-list-item, .card-list-item, .card, .border.rounded-lg.p-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 0 !important;
+  }
+  .credit-card-list-item img, .card-list-item img, .card img {
+    width: 100% !important;
+    max-width: 220px !important;
+    margin-bottom: 8px !important;
+    height: auto !important;
+  }
+  .credit-card-list-item .card-details, .card-list-item .card-details, .card .card-details {
+    width: 100% !important;
+    text-align: left !important;
+  }
+  /* Fix for flex row layouts inside card */
+  .credit-card-list-item .flex, .card-list-item .flex, .card .flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
