@@ -388,7 +388,7 @@ function CreditProductComparisonContent() {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between">
                               <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
-                                <h3 className="text-xl font-bold text-gray-900 mb-1 truncate">{card.name}</h3>
+                                <h3 className="text-base md:text-xl font-bold text-gray-900 mb-1 truncate whitespace-normal break-words">{card.name}</h3>
                                 <p className="text-gray-600 mb-4">{card.bank}</p>
                                 <div className="flex flex-col">
                                   {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
