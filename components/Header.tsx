@@ -296,6 +296,13 @@ export default function Header() {
                   }}
                 >
                   <Link 
+                    href="/credit" 
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">All</span>
+                  </Link>
+                  <Link 
                     href="/credit?category=ultra-premium" 
                     className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
@@ -734,6 +741,13 @@ export default function Header() {
 
               {isCreditDropdownOpen && (
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+                  <Link 
+                    href="/credit" 
+                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    <span className="ml-3">All</span>
+                  </Link>
                   <Link 
                     href="/credit?category=ultra-premium" 
                     className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
