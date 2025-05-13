@@ -213,7 +213,7 @@ Redemption:
     name: 'HDFC Bank Millennia Credit Card',
     bank: 'HDFC Bank',
     category: 'lifestyle',
-    image: '/credit-cards/HDFC-Millennia.png',
+    image: '/credit-cards/HDFC-Millenia.png',
     apr: '43.2% p.a.',
     annualFee: '₹1,000 + GST',
     joiningFee: '₹1,000 + GST',
