@@ -2503,10 +2503,8 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     features: [
       '1% cashback on all spends',
       'UPI rewards with coins',
-      'Airport lounge access',
       'Railway lounge access',
       'Fuel surcharge waiver',
-      'Low annual fee'
     ],
     categories: ['upi', 'cashback', 'domestic-lounge'],
     feedback: [],

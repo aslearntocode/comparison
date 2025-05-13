@@ -386,55 +386,47 @@ function CreditProductComparisonContent() {
                             />
                           </div>
                           <div className="flex-1">
-                            <Link href={`/credit/${card.id}`} className="block">
-                              <h3 className="text-xl font-bold text-gray-900 mb-1">{card.name}</h3>
-                              <p className="text-gray-600 mb-4">{card.bank}</p>
-                              <div className="flex flex-col">
-                                {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                                  <>
-                                    <div className="flex items-center gap-1">
-                                      <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
-                                        {getAverageRating(card.id)}
-                                      </span>
-                                      <div className="flex flex-col items-start justify-center">
-                                        <span className="text-gray-500 text-base">/ 10</span>
+                            <div className="flex items-start justify-between">
+                              <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
+                                <h3 className="text-xl font-bold text-gray-900 mb-1 truncate">{card.name}</h3>
+                                <p className="text-gray-600 mb-4">{card.bank}</p>
+                                <div className="flex flex-col">
+                                  {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
+                                    <>
+                                      <div className="flex items-center gap-1">
+                                        <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
+                                        <div className="flex flex-col items-start justify-center">
+                                          <span className="text-gray-500 text-base">/ 10</span>
+                                        </div>
                                       </div>
-                                    </div>
-                                    <div className="text-xs text-blue-600 whitespace-nowrap">
-                                      {getReviewCount(card.id)} reviews
-                                    </div>
-                                  </>
-                                ) : (
-                                  <div className="text-sm text-gray-500">
-                                    No Reviews Yet
-                                  </div>
-                                )}
-                              </div>
-                            </Link>
-                          </div>
-                        </div>
-                        <div className="space-y-4">
-                          <div>
-                            <div className="text-sm font-medium text-gray-700 mb-1">APR</div>
-                            <div className="text-gray-900">{card.apr}</div>
-                          </div>
-                          <div>
-                            <div className="text-sm font-medium text-gray-700 mb-1">Fees</div>
-                            <div className="text-gray-900 text-sm">
-                              <ul className="list-disc list-inside space-y-1">
-                                <li>Annual: {card.annualFee}</li>
-                                <li>Joining: {card.joiningFee}</li>
-                              </ul>
+                                      <div className="text-xs text-blue-600 whitespace-nowrap">{getReviewCount(card.id)} reviews</div>
+                                    </>
+                                  ) : (
+                                    <div className="text-sm text-gray-500">No Reviews Yet</div>
+                                  )}
+                                </div>
+                              </Link>
+                              <input
+                                type="checkbox"
+                                checked={selectedCards.includes(card.id)}
+                                onChange={() => handleCardSelection(card.id)}
+                                className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 ml-2 mt-1 flex-shrink-0"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center justify-end mt-2">
-                          <input
-                            type="checkbox"
-                            checked={selectedCards.includes(card.id)}
-                            onChange={() => handleCardSelection(card.id)}
-                            className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                          />
+                        <div className="flex flex-col gap-2">
+                          <div className="flex flex-row flex-wrap items-center gap-4">
+                            <div className="flex items-center gap-1 whitespace-nowrap text-sm font-medium text-gray-700">
+                              APR <span className="text-gray-900 ml-2 whitespace-nowrap">{card.apr}</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-sm font-medium text-gray-700">
+                              Fees
+                              <span className="text-gray-900 text-sm ml-2 whitespace-nowrap">
+                                Annual: {card.annualFee} | Joining: {card.joiningFee}
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -466,34 +458,28 @@ function CreditProductComparisonContent() {
                           </span>
                         )}
                       </div>
-                      <div className="text-gray-900 text-sm">
+                      <div className="text-gray-900 text-sm flex items-center text-left">
                         <ul className="list-disc list-inside space-y-1">
                           <li>Annual: {card.annualFee}</li>
                           <li>Joining: {card.joiningFee}</li>
                         </ul>
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col justify-center text-left">
                         {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
                           <>
                             <div className="flex items-center gap-1">
-                              <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>
-                                {getAverageRating(card.id)}
-                              </span>
+                              <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
                               <div className="flex flex-col items-start justify-center">
                                 <span className="text-gray-500 text-base">/ 10</span>
                               </div>
                             </div>
-                            <div className="text-xs text-blue-600 whitespace-nowrap">
-                              {getReviewCount(card.id)} reviews
-                            </div>
+                            <div className="text-xs text-blue-600 whitespace-nowrap">{getReviewCount(card.id)} reviews</div>
                           </>
                         ) : (
-                          <div className="text-sm text-gray-500">
-                            No Reviews Yet
-                          </div>
+                          <div className="text-sm text-gray-500">No Reviews Yet</div>
                         )}
                       </div>
-                      <div className="flex items-center justify-center">
+                      <div className="flex items-center justify-start">
                         <input
                           type="checkbox"
                           checked={selectedCards.includes(card.id)}
