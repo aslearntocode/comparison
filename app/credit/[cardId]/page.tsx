@@ -273,6 +273,14 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     })}
                   </div>
 
+                  {/* Fuel Surcharge Benefit Section */}
+                  {card.additionalDetails?.fuelSurcharge && (
+                    <div className="bg-white rounded-lg p-6 shadow-sm">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Fuel Surcharge Benefit</h4>
+                      <div className="text-gray-700">{card.additionalDetails.fuelSurcharge}</div>
+                    </div>
+                  )}
+
                   {/* Insurance & Protection Section */}
                   <div className="bg-white rounded-lg p-6 shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
@@ -467,9 +475,9 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
       <div className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {/* Card Header */}
-          <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-              <div className="w-40 h-24 relative mx-auto sm:mx-0">
+          <div className="bg-white rounded-xl shadow-lg p-4 md:p-3 mb-4 md:mb-3">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 md:gap-3">
+              <div className="w-32 h-20 md:w-28 md:h-16 relative mx-auto sm:mx-0">
                 <Image
                   src={card.image}
                   alt={card.name}
@@ -481,9 +489,9 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <h1 className="text-4xl font-bold text-gray-900 mb-2">{card.name}</h1>
-                    <p className="text-xl text-gray-600 mb-4">{card.bank}</p>
-                    <div className="bg-blue-50 rounded-lg p-4 inline-block">
-                      <p className="text-blue-900 font-medium">
+                    <p className="text-lg md:text-base text-gray-600 mb-2 md:mb-1">{card.bank}</p>
+                    <div className="bg-blue-50 rounded-lg p-3 md:p-2 inline-block">
+                      <p className="text-blue-900 font-medium text-base md:text-sm">
                         {card.additionalDetails?.summary}
                       </p>
                     </div>
@@ -496,21 +504,17 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                       {reviews.length > 0 ? (
                         <>
                           <div className="flex items-center justify-center sm:justify-end gap-1">
-                            <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(reviews))}`}>
-                              {getAverageRating(reviews)}
-                            </span>
+                            <span className={`text-2xl md:text-xl font-bold ${getSentimentColor(getAverageRating(reviews))}`}>{getAverageRating(reviews)}</span>
                             <div className="flex flex-col items-start justify-center">
-                              <span className="text-gray-500 text-base">/ 10</span>
+                              <span className="text-gray-500 text-base md:text-sm">/ 10</span>
                             </div>
                           </div>
-                          <div className="text-xs text-blue-600 group-hover:underline text-center sm:text-right whitespace-nowrap">
+                          <div className="text-xs md:text-xs text-blue-600 group-hover:underline text-center sm:text-right whitespace-nowrap">
                             {reviews.length} reviews
                           </div>
                         </>
                       ) : (
-                        <div className="text-sm text-gray-500 whitespace-nowrap">
-                          no reviews yet
-                        </div>
+                        <div className="text-sm text-gray-500 whitespace-nowrap">no reviews yet</div>
                       )}
                     </button>
                   </div>
@@ -520,16 +524,15 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
           </div>
 
           {/* Card Suitability Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
+          <div className="bg-white rounded-xl shadow-lg p-6 md:p-4 mb-4 md:mb-3">
             <div className="max-w-6xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <span className="text-2xl">✅</span>
                 Who Should Get This Card?
               </h3>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* Who Should Get Column - Takes 2/3 of space */}
-                <div className="md:col-span-2 space-y-6">
+              <div className="grid md:grid-cols-3 gap-6 md:gap-4">
+                <div className="md:col-span-2 space-y-4 md:space-y-3">
                   {card.additionalDetails?.idealFor?.map((profile, index) => {
                     const [title, description] = profile.split(': ');
                     const icons = {
@@ -547,29 +550,28 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                       'Reward Maximizers': '🎯'
                     };
                     return (
-                      <div key={index} className="flex gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                          <span className="text-xl">{icons[title as keyof typeof icons] || '✨'}</span>
+                      <div key={index} className="flex gap-3 md:gap-2">
+                        <div className="flex-shrink-0 w-10 h-10 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                          <span className="text-lg md:text-base">{icons[title as keyof typeof icons] || '✨'}</span>
                         </div>
                         <div>
-                          <span className="font-semibold text-gray-900 text-lg">{title}</span>
-                          <p className="text-gray-700 mt-1">{description}</p>
+                          <span className="font-semibold text-gray-900 text-base md:text-sm">{title}</span>
+                          <p className="text-gray-700 mt-1 md:mt-0.5 text-base md:text-sm">{description}</p>
                         </div>
                       </div>
                     );
                   })}
                 </div>
 
-                {/* Not Ideal For Column - Takes 1/3 of space */}
                 <div className="md:col-span-1">
-                  <div className="bg-red-50 rounded-xl p-6">
+                  <div className="bg-red-50 rounded-xl p-4 md:p-3">
                     <h4 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
                       <span>🚫</span>
                       Not Ideal For
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 md:space-y-1.5">
                       {card.additionalDetails?.notIdealFor?.map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 text-red-700">
+                        <li key={index} className="flex items-start gap-2 text-red-700 text-base md:text-sm">
                           <span className="mt-1.5">•</span>
                           <span>{item}</span>
                         </li>
@@ -587,7 +589,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               <div className="flex overflow-x-auto">
                 <button
                   onClick={() => setActiveTab('welcome-annual')}
-                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
                     activeTab === 'welcome-annual'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -597,7 +599,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </button>
                 <button
                   onClick={() => setActiveTab('milestone')}
-                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
                     activeTab === 'milestone'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -607,7 +609,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </button>
                 <button
                   onClick={() => setActiveTab('rewards')}
-                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
                     activeTab === 'rewards'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -617,7 +619,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </button>
                 <button
                   onClick={() => setActiveTab('fees')}
-                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
                     activeTab === 'fees'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -627,7 +629,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </button>
                 <button
                   onClick={() => setActiveTab('reviews')}
-                  className={`flex-1 py-4 px-6 text-sm font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
                     activeTab === 'reviews'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -638,7 +640,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               </div>
             </div>
 
-            <div className="p-8">
+            <div className="p-6 md:p-4">
               {renderTabContent()}
             </div>
           </div>

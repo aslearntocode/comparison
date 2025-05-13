@@ -18,7 +18,6 @@ export interface Card {
     welcomeBonus?: string;
     milestoneBenefits?: string[];
     airportLounge?: string;
-    fuelSurcharge?: string;
     insuranceCover?: string[];
     movieBenefits?: string;
     diningPrivileges?: string[];

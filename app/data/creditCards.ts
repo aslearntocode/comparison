@@ -101,7 +101,8 @@ export const creditCards: CreditCard[] = [
         'Those seeking low foreign currency markup',
         'Budget-conscious users'
       ],
-      summary: 'A premium co-branded credit card offering exclusive Marriott Bonvoy benefits, free night awards, elite status, and extensive travel and lifestyle privileges.'
+      summary: 'A premium co-branded credit card offering exclusive Marriott Bonvoy benefits, free night awards, elite status, and extensive travel and lifestyle privileges.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -110,28 +111,40 @@ export const creditCards: CreditCard[] = [
     bank: 'HDFC Bank',
     category: 'premium',
     image: '/credit-cards/HDFC-Regalia.png',
-    apr: '42% p.a.',
+    apr: '43.2% p.a.',
     annualFee: '₹2,500 + GST',
     joiningFee: '₹2,500 + GST',
     rupay: false,
     features: [
+      'Reward Points',
       'Airport Lounge Access',
       'Travel Insurance',
-      'Reward Points',
-      'Smart EMI',
-      'Zero Liability Protection'
+      'Dining Privileges',
+      'Golf Program',
+      'Concierge Service'
     ],
-    categories: ['premium', 'travel', 'rewards'],
+    categories: [
+      'premium',
+      'travel',
+      'lifestyle'
+    ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 4 Reward Points per ₹150 spent on all retail purchases\n• Applicable to insurance, utilities, education, and rent payments\n• No reward points on fuel transactions\n• Cap of 2,000 points per day for insurance payments\n\nRedemption:\n• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy\n• Each Reward Point worth ₹0.50 when redeemed on SmartBuy',
+      rewardsProgram: `Earning Rate:
+• 4 Reward Points per ₹150 spent on all retail purchases
+• Applicable to insurance, utilities, education, and rent payments
+• No reward points on fuel transactions
+• Cap of 2,000 points per day for insurance payments
+
+Redemption:
+• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy
+• Each Reward Point worth ₹0.50 when redeemed on SmartBuy`,
       welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
       milestoneBenefits: [
         '10,000 bonus reward points on spending ₹5 lakhs in an anniversary year',
         'Additional 5,000 bonus reward points on spending ₹8 lakhs in an anniversary year'
       ],
       airportLounge: 'Airport Lounge Access:\n• 12 complimentary airport lounge accesses per calendar year (domestic and international combined)\n• Access vouchers to be generated via Regalia SmartBuy portal',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
       insuranceCover: [
         'Air Accident Cover: ₹1 crore',
         'Emergency Overseas Hospitalization: Up to ₹15 lakh',
@@ -146,7 +159,8 @@ export const creditCards: CreditCard[] = [
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '2% on all international transactions',
       interestRate: '3.5% per month (42% p.a.)',
-      emiOptions: 'Available on eligible purchases'
+      emiOptions: 'Available on eligible purchases',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000'
     }
   },
   {
@@ -190,40 +204,42 @@ export const creditCards: CreditCard[] = [
         'Those Expecting Robust Customer Support: Some users report issues with customer service',
         'Individuals with Low or Irregular Spending: May not meet spending thresholds for fee waivers'
       ],
-      summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions, ideal for digital-savvy users who prefer app-based banking.'
+      summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions, ideal for digital-savvy users who prefer app-based banking.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
-    id: 'hdfc-millenia',
-    name: 'Millennia Plus Credit Card',
+    id: 'hdfc-millennia',
+    name: 'HDFC Bank Millennia Credit Card',
     bank: 'HDFC Bank',
     category: 'lifestyle',
-    image: '/credit-cards/HDFC+Millenia+.png',
+    image: '/credit-cards/HDFC-Millennia.png',
     apr: '43.2% p.a.',
     annualFee: '₹1,000 + GST',
     joiningFee: '₹1,000 + GST',
     rupay: false,
     features: [
-      'E-commerce Cashback',
-      'Entertainment Benefits',
-      'Dining Benefits',
-      'Lifestyle Rewards',
+      '5% Cashback',
+      'Welcome Benefits',
+      'Quarterly Milestone Benefits',
+      'Dining Privileges',
       'Fuel Surcharge Waiver',
-      'Quarterly Gift Vouchers'
+      'EMI Options'
     ],
     categories: [
-      'cashback',
-      'shopping',
-      'entertainment',
-      'dining',
-      'lifestyle'
+      'lifestyle',
+      'rewards',
+      'cashback'
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Cashback Structure:\n• 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato\n• 1% cashback on other spends\n• ₹1,000 worth gift vouchers on spends of ₹1,00,000 and above in each calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC',
+      rewardsProgram: `Cashback Structure:
+• 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato
+• 1% cashback on other spends
+• ₹1,000 worth gift vouchers on spends of ₹1,00,000 and above in each calendar quarter
+• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC`,
       welcomeBonus: '1,000 CashPoints upon payment of the joining fee',
       milestoneBenefits: ['₹1,000 worth of gift vouchers on spends of ₹1,00,000 and above in each calendar quarter'],
-      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle',
       idealFor: [
         'Frequent Online Shoppers: Perfect for those who regularly shop on Amazon, Flipkart, Myntra, Swiggy, Zomato, and Uber',
         'Dining Enthusiasts: Great for users who can benefit from up to 20% discount at partner restaurants via Swiggy Dineout',
@@ -235,7 +251,8 @@ export const creditCards: CreditCard[] = [
         'Travel Enthusiasts: No complimentary airport lounge access',
         'Universal Spenders: No cashback on fuel, EMI, wallet loads, rent payments, and government-related transactions'
       ],
-      summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.'
+      summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle'
     }
   },
   {
@@ -282,7 +299,7 @@ export const creditCards: CreditCard[] = [
         'Reward Point Maximizers: Low redemption value (1 CashPoint = ₹0.25) and minimum redemption threshold',
         'Universal Spenders: No rewards on fuel, wallet loads, voucher purchases, rent payments, or government transactions'
       ],
-      summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.'
+      summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.',
     }
   },
   {
@@ -330,6 +347,7 @@ export const creditCards: CreditCard[] = [
         'Users who prefer premium lifestyle benefits',
         'Those who primarily use offline shopping'
       ],
+      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle'
     }
   },
   // Airlines Cards
@@ -371,7 +389,7 @@ export const creditCards: CreditCard[] = [
         '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
       ],
       airportLounge: 'Airport Lounge Access:\n• 4 complimentary domestic lounge accesses per quarter (subject to spending ₹75,000 in the previous quarter)\n• 2 complimentary international lounge accesses per year via Priority Pass or DreamFolks membership',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹4,000',
+      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
       insuranceCover: [
         'Chip and PIN Security for enhanced security at merchant outlets'
       ],
@@ -397,7 +415,7 @@ export const creditCards: CreditCard[] = [
         'Frequent international flyers who require unlimited lounge access',
         'Users seeking zero annual fee or basic cashback cards'
       ],
-      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
+      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
     }
   },
   {
@@ -469,7 +487,7 @@ export const creditCards: CreditCard[] = [
         'Budget-conscious travelers',
         'Users who will not utilize premium lifestyle benefits'
       ],
-      summary: 'Ideal for high-income individuals who travel frequently, enjoy luxury experiences, and seek premium lifestyle and concierge benefits.'
+      summary: 'Ideal for high-income individuals who travel frequently, enjoy luxury experiences, and seek premium lifestyle and concierge benefits.',
     }
   },
   {
@@ -538,7 +556,7 @@ export const creditCards: CreditCard[] = [
         'Frequent international flyers who require unlimited lounge access',
         'Users seeking zero annual fee or basic cashback cards'
       ],
-      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
+      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
     }
   },
   // Fintech Cards
@@ -604,7 +622,7 @@ export const creditCards: CreditCard[] = [
         'Frequent international flyers who require unlimited lounge access',
         'Users seeking zero annual fee or basic cashback cards'
       ],
-      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.'
+      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
     }
   },
   {
@@ -663,7 +681,7 @@ export const creditCards: CreditCard[] = [
         'Individuals with moderate or low spending habits',
         'Those seeking a no-frills, low-fee credit card'
       ],
-      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.'
+      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
     }
   },
   {
@@ -716,7 +734,8 @@ export const creditCards: CreditCard[] = [
         'Low-income individuals',
         'People looking for premium lifestyle benefits'
       ],
-      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.'
+      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -774,7 +793,7 @@ export const creditCards: CreditCard[] = [
         'Individuals needing high credit limits',
         'Users who prefer traditional banking services'
       ],
-      summary: 'A digital-first credit card alternative designed for young professionals, students, and first-time credit users, offering up to 2% instant cashback, flexible EMIs, and no annual or joining fees.'
+      summary: 'A digital-first credit card alternative designed for young professionals, students, and first-time credit users, offering up to 2% instant cashback, flexible EMIs, and no annual or joining fees.',
     }
   },
   {
@@ -813,7 +832,7 @@ export const creditCards: CreditCard[] = [
         '10X reward points on eligible spends (points never expire)'
       ],
       airportLounge: 'Airport Lounge Access:\n• Complimentary access to domestic and international airport lounges\n• Access to airport spas',
-      fuelSurcharge: 'Not specified',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       insuranceCover: [
         'Air Accident Cover: ₹1 crore',
         'Purchase Protection: ₹50,000',
@@ -838,7 +857,7 @@ export const creditCards: CreditCard[] = [
         'Individuals with low monthly spending',
         'Budget-conscious users'
       ],
-      summary: 'A premium lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, golf privileges, and extensive dining and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.'
+      summary: 'A premium lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, golf privileges, and extensive dining and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.',
     }
   },
   {
@@ -933,7 +952,8 @@ Effective Cashback Rates:
         'Budget-conscious individuals',
         'Those seeking basic credit card features'
       ],
-      summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.'
+      summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.',
+      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle'
     }
   },
   {
@@ -961,9 +981,16 @@ Effective Cashback Rates:
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10X rewards on all spends\n• No cap on reward points\n\nRedemption:\n• Points can be redeemed for vouchers and statement credit',
+      rewardsProgram: `Earning Rate:
+• 10X rewards on all spends
+• No cap on reward points
+
+Redemption:
+• Points can be redeemed for vouchers and statement credit
+
+Fuel Benefits:
+• 1% waiver on fuel transactions up to ₹400`,
       welcomeBonus: 'No annual fee for the first year',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       minimumSpend: 'NA',
       idealFor: [
         'First-time credit card users',
@@ -975,7 +1002,8 @@ Effective Cashback Rates:
         'Frequent travelers',
         'High-spending individuals'
       ],
-      summary: 'An entry-level credit card offering 10X rewards and no annual fee in the first year, perfect for first-time credit card users.'
+      summary: 'An entry-level credit card offering 10X rewards and no annual fee in the first year, perfect for first-time credit card users.',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400'
     }
   },
   {
@@ -1018,7 +1046,7 @@ Effective Cashback Rates:
         'Up to 15% discount at over 3,000 health and wellness outlets'
       ],
       airportLounge: 'Airport Lounge Access:\n• 4 complimentary access per quarter to select domestic terminal airport lounges\n• 4 complimentary visits per quarter to select railway lounges',
-      fuelSurcharge: '1% waiver on fuel transactions (up to ₹300 per month)',
+      fuelSurcharge: '1% fuel surcharge waiver (up to ₹300 per month)',
       insuranceCover: [
         'Trip cancellation cover of up to ₹10,000',
         'Comprehensive travel insurance coverage'
@@ -1042,7 +1070,7 @@ Effective Cashback Rates:
         'Individuals with low monthly spending',
         'Budget-conscious users'
       ],
-      summary: 'A lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.'
+      summary: 'A lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.',
     }
   },
   {
@@ -1070,9 +1098,16 @@ Effective Cashback Rates:
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Customizable reward categories\n• Flexible redemption options\n\nRedemption:\n• Points can be redeemed for preferred categories',
+      rewardsProgram: `Earning Rate:
+• Customizable reward categories
+• Flexible redemption options
+
+Redemption:
+• Points can be redeemed for preferred categories
+
+Fuel Benefits:
+• 1% waiver on fuel transactions up to ₹400`,
       welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       minimumSpend: '₹1,00,000 for annual fee waiver',
       idealFor: [
         'Tailored benefit seekers',
@@ -1084,7 +1119,8 @@ Effective Cashback Rates:
         'Premium card users',
         'Minimal spenders'
       ],
-      summary: 'A flexible credit card offering customizable rewards and benefits worth ₹30,000 per year, perfect for those seeking tailored benefits.'
+      summary: 'A flexible credit card offering customizable rewards and benefits worth ₹30,000 per year, perfect for those seeking tailored benefits.',
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400'
     }
   },
   {
@@ -1111,7 +1147,14 @@ Effective Cashback Rates:
     categories: ['secured', 'lifetime-free', 'rewards'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10X reward points on birthday month\n• 20 bonus Reward Points for every ₹100 spent on hotel bookings\n• 3X rewards on UPI transactions\n• Unlimited reward points with no expiry',
+      rewardsProgram: `Earning Rate:
+• 10X reward points on birthday month
+• 20 bonus Reward Points for every ₹100 spent on hotel bookings
+• 3X rewards on UPI transactions
+• Unlimited reward points with no expiry
+
+Fuel Benefits:
+• 1% waiver on fuel transactions (up to ₹300 per month)`,
       welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000) within first 30 days\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
       milestoneBenefits: [
         '10X reward points on all purchases during birthday month',
@@ -1125,27 +1168,7 @@ Effective Cashback Rates:
       insuranceCover: [
         'Trip cancellation cover of up to ₹10,000',
         'Comprehensive travel insurance coverage'
-      ],
-      movieBenefits: 'Buy 1 Get 1 Free on movie tickets through Paytm app (up to ₹500, twice per month)',
-      diningPrivileges: [
-        'Enhanced rewards on dining spends',
-        'Exclusive dining offers and discounts'
-      ],
-      minimumSpend: '₹5,000 within first 30 days for welcome voucher',
-      idealFor: [
-        'First-time credit card users',
-        'Those seeking to build credit history',
-        'UPI payment users',
-        'Health and wellness conscious individuals',
-        'Those seeking lifetime-free credit cards'
-      ],
-      notIdealFor: [
-        'Users with established credit history',
-        'Those seeking premium travel benefits',
-        'Individuals with low monthly spending',
-        'Budget-conscious users'
-      ],
-      summary: 'A lifetime-free secured credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for first-time credit card users and those seeking to build credit history.'
+      ]
     }
   },
   {
@@ -1178,7 +1201,6 @@ Effective Cashback Rates:
 Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select categories.`,
       welcomeBonus: '₹250 cashback on first HPCL fuel transaction of ₹250+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
       milestoneBenefits: [],
-      fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
       insuranceCover: [
         'Personal accident cover: ₹2 lakh',
         'Lost card liability: ₹25,000'
@@ -1192,7 +1214,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Users desiring premium benefits like lounge access',
         'High spenders seeking higher reward rates'
       ],
-      summary: 'Budget-friendly fuel card with strong HPCL rewards and low annual fee.'
+      summary: 'Budget-friendly fuel card with strong HPCL rewards and low annual fee.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1225,7 +1248,6 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
 Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select categories.`,
       welcomeBonus: '₹500 cashback on first HPCL fuel transaction of ₹500+ within 30 days; 5% cashback (up to ₹1,000) on first EMI conversion within 30 days',
       milestoneBenefits: [],
-      fuelSurcharge: '1% waiver on ₹200–₹5,000 at HPCL',
       insuranceCover: [
         'Personal accident cover: ₹2 lakh',
         'Lost card liability: ₹25,000'
@@ -1239,7 +1261,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Users with low annual spending',
         'Individuals not utilizing the additional perks'
       ],
-      summary: 'Fuel card for frequent commuters and high spenders, with enhanced rewards and extra perks.'
+      summary: 'Fuel card for frequent commuters and high spenders, with enhanced rewards and extra perks.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1265,9 +1288,12 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Enhanced rewards on fuel spends at IOCL outlets\nBasic rewards on other spends',
+      rewardsProgram: `Enhanced rewards on fuel spends at IOCL outlets
+Basic rewards on other spends
+
+Fuel Benefits:
+• 1% waiver on fuel transactions up to ₹400`,
       welcomeBonus: 'No welcome benefits',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       minimumSpend: 'Not applicable',
       idealFor: [
         'Frequent drivers',
@@ -1279,7 +1305,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Premium card seekers',
         'Those seeking extensive benefits'
       ],
-      summary: 'A fuel-focused credit card offering enhanced savings on IOCL fuel purchases and surcharge waiver, ideal for frequent drivers.'
+      summary: 'A fuel-focused credit card offering enhanced savings on IOCL fuel purchases and surcharge waiver, ideal for frequent drivers.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1338,7 +1365,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Users seeking basic credit card features',
         'Individuals who cannot utilize premium lifestyle benefits'
       ],
-      summary: 'A super-premium lifestyle credit card offering comprehensive travel benefits, exclusive event access, and premium lifestyle privileges, ideal for ultra-HNIs and frequent travelers who can meet the high annual spend requirement.'
+      summary: 'A super-premium lifestyle credit card offering comprehensive travel benefits, exclusive event access, and premium lifestyle privileges, ideal for ultra-HNIs and frequent travelers who can meet the high annual spend requirement.',
     }
   },
   {
@@ -1367,10 +1394,18 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     ],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 2.5% 6E Rewards on IndiGo bookings\n• 2% on dining, groceries, and entertainment\n• 1% on other spends\n\nRedemption:\n• 6E Rewards can be redeemed for IndiGo flight bookings and other services via the IndiGo website or app',
+      rewardsProgram: `Earning Rate:
+• 2.5% 6E Rewards on IndiGo bookings
+• 2% on dining, groceries, and entertainment
+• 1% on other spends
+
+Redemption:
+• 6E Rewards can be redeemed for IndiGo flight bookings and other services via the IndiGo website or app
+
+Fuel Benefits:
+• Not specified`,
       welcomeBonus: 'Welcome Benefits:\n• Complimentary IndiGo flight ticket worth ₹1,500 (on meeting spend criteria)\n• 6E Prime Add-on voucher worth ₹899',
       airportLounge: 'Not specified',
-      fuelSurcharge: 'Not specified',
       insuranceCover: [
         'Zero lost card liability on reporting'
       ],
@@ -1386,7 +1421,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Those seeking premium travel benefits',
         'Users who rarely fly with IndiGo'
       ],
-      summary: 'A co-branded credit card offering enhanced rewards on IndiGo bookings and partner spends, ideal for frequent IndiGo flyers.'
+      summary: 'A co-branded credit card offering enhanced rewards on IndiGo bookings and partner spends, ideal for frequent IndiGo flyers.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1435,7 +1471,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Budget-conscious users',
         'Those who rarely fly with Singapore Airlines'
       ],
-      summary: 'A co-branded credit card offering KrisFlyer miles on spends, ideal for frequent Singapore Airlines flyers and international travelers.'
+      summary: 'A co-branded credit card offering KrisFlyer miles on spends, ideal for frequent Singapore Airlines flyers and international travelers.',
     }
   },
   {
@@ -1489,7 +1525,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Budget-conscious users',
         'Those who rarely fly with Singapore Airlines'
       ],
-      summary: 'A premium co-branded credit card offering enhanced KrisFlyer miles on spends, comprehensive travel benefits, and milestone rewards, ideal for frequent international travelers.'
+      summary: 'A premium co-branded credit card offering enhanced KrisFlyer miles on spends, comprehensive travel benefits, and milestone rewards, ideal for frequent international travelers.',
     }
   },
   {
@@ -1540,7 +1576,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Budget-conscious users',
         'Those who rarely fly with partner airlines'
       ],
-      summary: 'A premium credit card offering Avios points on spends, comprehensive travel benefits, and exclusive airport services, ideal for frequent international travelers.'
+      summary: 'A premium credit card offering Avios points on spends, comprehensive travel benefits, and exclusive airport services, ideal for frequent international travelers.',
     }
   },
   {
@@ -1581,7 +1617,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Users seeking travel benefits',
         'Those who rarely shop at Tata brands'
       ],
-      summary: 'A co-branded credit card offering enhanced rewards on Tata brand purchases and UPI transactions.'
+      summary: 'A co-branded credit card offering enhanced rewards on Tata brand purchases and UPI transactions.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1621,7 +1658,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Premium card seekers',
         'Users seeking travel benefits'
       ],
-      summary: 'An entry-level co-branded credit card offering rewards on Tata brand purchases and UPI transactions.'
+      summary: 'An entry-level co-branded credit card offering rewards on Tata brand purchases and UPI transactions.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1661,7 +1699,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Premium card seekers',
         'High spenders seeking extensive rewards'
       ],
-      summary: 'An affordable RuPay credit card with UPI functionality and basic rewards program.'
+      summary: 'An affordable RuPay credit card with UPI functionality and basic rewards program.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1684,7 +1723,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     additionalDetails: {
       rewardsProgram: '1 reward point per ₹100 spent\n₹500 cashback on reaching ₹50,000 annual spend',
       minimumSpend: 'No minimum spend requirement',
-      summary: 'A secured credit card with no annual fee for first 4 years and rewards on spending.'
+      summary: 'A secured credit card with no annual fee for first 4 years and rewards on spending.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1708,7 +1748,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     additionalDetails: {
       rewardsProgram: '2 reward points per ₹100 spent online\n1 reward point per ₹100 spent offline',
       creditLimit: '90% of Fixed Deposit amount',
-      summary: 'A secured credit card with higher rewards on online spending.'
+      summary: 'A secured credit card with higher rewards on online spending.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1731,7 +1772,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     additionalDetails: {
       movieBenefits: '25% discount on BookMyShow bookings (twice a month)',
       additionalServices: 'Contactless payment enabled',
-      summary: 'A secured credit card with entertainment benefits and contactless payment feature.'
+      summary: 'A secured credit card with entertainment benefits and contactless payment feature.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1754,8 +1796,12 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     feedback: [],
     additionalDetails: {
       creditLimit: 'Up to 80% of Fixed Deposit amount',
-      fuelSurcharge: 'Fuel surcharge waiver available',
-      summary: 'A secured credit card with fuel benefits and reward points on spending.'
+      rewardsProgram: `Reward points on spending
+
+Fuel Benefits:
+• Fuel surcharge waiver available`,
+      summary: 'A secured credit card with fuel benefits and reward points on spending.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1777,7 +1823,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     feedback: [],
     additionalDetails: {
       rewardsProgram: 'Earn rewards on all spending',
-      summary: 'A secured credit card designed for credit building with rewards program.'
+      summary: 'A secured credit card designed for credit building with rewards program.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1821,7 +1868,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Travel Enthusiasts: No travel-specific benefits',
         'High Spenders Seeking Premium Perks: Limited to cashback rewards'
       ],
-      summary: 'A lifetime-free credit card offering enhanced cashback on Amazon purchases and bill payments, with comprehensive welcome benefits for both Prime and non-Prime members.'
+      summary: 'A lifetime-free credit card offering enhanced cashback on Amazon purchases and bill payments, with comprehensive welcome benefits for both Prime and non-Prime members.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -1871,7 +1919,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Premium Travel Reward Seekers: Limited travel benefits',
         'Heavy Fuel Spenders: Rewards on fuel spend are not substantial'
       ],
-      summary: 'A lifetime-free credit card offering entertainment and lifestyle benefits including SonyLIV Premium subscription, movie ticket discounts, and dining offers, ideal for entertainment enthusiasts and regular online shoppers.'
+      summary: 'A lifetime-free credit card offering entertainment and lifestyle benefits including SonyLIV Premium subscription, movie ticket discounts, and dining offers, ideal for entertainment enthusiasts and regular online shoppers.',
     }
   },
   {
@@ -1941,7 +1989,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
         'Individuals with annual income below ₹40 lakhs',
         'Residents of cities not covered by HSBC'
       ],
-      summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.'
+      summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.',
+      fuelSurcharge: 'Not specified'
     }
   },
   {
@@ -2304,8 +2353,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     rupay: true,
     features: [
       '3-in-1 Category Selection: Choose Shopping, Travel, or Dining for accelerated rewards (switch every 3 billing cycles)',
-      '1 complimentary domestic airport lounge access per quarter',
-      '1% fuel surcharge waiver on transactions between ₹400 and ₹3,000 (capped at ₹100/month)'
+      '1 complimentary domestic airport lounge access per quarter'
     ],
     categories: [
       'upi',

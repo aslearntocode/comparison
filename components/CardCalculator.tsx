@@ -26,52 +26,63 @@ export const CardCalculator: React.FC<CardCalculatorProps> = ({ cards }) => {
 
   const calculateCardValue = (card: Card, inputs: UsageInputs) => {
     let totalValue = 0;
+    const joiningFee = parseFloat(card.joiningFee.replace(/[^0-9.]/g, '')) || 0;
+    const annualFee = parseFloat(card.annualFee.replace(/[^0-9.]/g, '')) || 0;
     
-    // Convert fees to numbers
-    const joiningFee = parseInt(card.joiningFee.replace(/[^0-9]/g, ''));
-    const annualFee = parseInt(card.annualFee.replace(/[^0-9]/g, ''));
-    
-    // Calculate rewards value based on card's reward program
-    let rewardRate = 0.02; // Default 2% reward rate
+    // Calculate annual rewards
+    let annualRewards = 0;
     if (card.additionalDetails?.rewardsProgram) {
-      // Try to extract reward rate from rewards program description
       const matches = card.additionalDetails.rewardsProgram.match(/(\d+(?:\.\d+)?)%/);
       if (matches) {
-        rewardRate = parseFloat(matches[1]) / 100;
+        const rewardRate = parseFloat(matches[1]) / 100;
+        annualRewards = inputs.monthlySpend * 12 * rewardRate;
       }
     }
-    const annualRewards = inputs.monthlySpend * 12 * rewardRate;
     
     // Calculate lounge access value
-    const domesticLoungeValue = inputs.domesticLoungeVisits * 2000; // Assuming ₹2000 per visit
-    const internationalLoungeValue = inputs.internationalLoungeVisits * 5000; // Assuming ₹5000 per visit
+    let domesticLoungeValue = 0;
+    let internationalLoungeValue = 0;
+    if (card.additionalDetails?.airportLounge) {
+      const domesticMatches = card.additionalDetails.airportLounge.match(/(\d+)\s+complimentary\s+domestic/);
+      const internationalMatches = card.additionalDetails.airportLounge.match(/(\d+)\s+complimentary\s+international/);
+      
+      if (domesticMatches) {
+        const visits = parseInt(domesticMatches[1]);
+        domesticLoungeValue = visits * 2000; // Assuming ₹2,000 value per visit
+      }
+      
+      if (internationalMatches) {
+        const visits = parseInt(internationalMatches[1]);
+        internationalLoungeValue = visits * 5000; // Assuming ₹5,000 value per visit
+      }
+    }
     
     // Calculate movie benefits
     let movieBenefit = 0;
     if (card.additionalDetails?.movieBenefits) {
-      const matches = card.additionalDetails.movieBenefits.match(/₹(\d+)/);
+      const matches = card.additionalDetails.movieBenefits.match(/(\d+(?:\.\d+)?)%/);
       if (matches) {
-        const benefitPerTicket = parseInt(matches[1]);
-        movieBenefit = inputs.movieTickets * benefitPerTicket;
+        const discount = parseFloat(matches[1]) / 100;
+        movieBenefit = inputs.movieTickets * 12 * 500 * discount; // Assuming ₹500 per ticket
       }
     }
     
     // Calculate dining benefits
     let diningBenefit = 0;
     if (card.additionalDetails?.diningPrivileges) {
-      const matches = card.additionalDetails.diningPrivileges[0]?.match(/(\d+(?:\.\d+)?)%/);
+      const matches = card.additionalDetails.diningPrivileges.join(' ').match(/(\d+(?:\.\d+)?)%/);
       if (matches) {
-        const diningCashback = parseFloat(matches[1]) / 100;
-        diningBenefit = inputs.diningSpend * 12 * diningCashback;
+        const discount = parseFloat(matches[1]) / 100;
+        diningBenefit = inputs.diningSpend * 12 * discount;
       }
     }
     
     // Calculate fuel surcharge waiver
     let fuelBenefit = 0;
-    if (card.additionalDetails?.fuelSurcharge) {
-      const matches = card.additionalDetails.fuelSurcharge.match(/(\d+(?:\.\d+)?)%/);
-      if (matches) {
-        const fuelWaiver = parseFloat(matches[1]) / 100;
+    if (card.additionalDetails?.rewardsProgram) {
+      const fuelMatches = card.additionalDetails.rewardsProgram.match(/Fuel Benefits:[\s\S]*?(\d+(?:\.\d+)?)%/);
+      if (fuelMatches) {
+        const fuelWaiver = parseFloat(fuelMatches[1]) / 100;
         fuelBenefit = inputs.fuelSpend * 12 * fuelWaiver;
       }
     }

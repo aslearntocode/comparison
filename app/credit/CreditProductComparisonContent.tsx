@@ -369,7 +369,7 @@ function CreditProductComparisonContent() {
             </div>
 
             {/* Cards List */}
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-2">
               {filteredCards.map((card) => (
                 <div key={card.id} className="block hover:bg-gray-50 rounded-lg transition-colors">
                   <div className="flex flex-col">
@@ -392,15 +392,11 @@ function CreditProductComparisonContent() {
                                 <p className="text-gray-600 mb-4">{card.bank}</p>
                                 <div className="flex flex-col">
                                   {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                                    <>
-                                      <div className="flex items-center gap-1">
-                                        <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
-                                        <div className="flex flex-col items-start justify-center">
-                                          <span className="text-gray-500 text-base">/ 10</span>
-                                        </div>
-                                      </div>
-                                      <div className="text-xs text-blue-600 whitespace-nowrap">{getReviewCount(card.id)} reviews</div>
-                                    </>
+                                    <div className="flex items-center gap-1 whitespace-nowrap text-base">
+                                      <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
+                                      <span className="text-gray-500">/ 10</span>
+                                      <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
+                                    </div>
                                   ) : (
                                     <div className="text-sm text-gray-500">No Reviews Yet</div>
                                   )}
@@ -431,7 +427,7 @@ function CreditProductComparisonContent() {
                       </div>
                     </div>
                     {/* Desktop View */}
-                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-4" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr' }}>
+                    <div className="hidden md:grid md:grid-cols-7 gap-2 px-3 py-2" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr' }}>
                       <Link href={`/credit/${card.id}`} className="flex items-center gap-4 col-span-1 group cursor-pointer">
                         <div className="w-32 h-20 relative flex-shrink-0">
                           <Image
@@ -466,15 +462,11 @@ function CreditProductComparisonContent() {
                       </div>
                       <div className="flex flex-col justify-center text-left">
                         {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                          <>
-                            <div className="flex items-center gap-1">
-                              <span className={`text-3xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
-                              <div className="flex flex-col items-start justify-center">
-                                <span className="text-gray-500 text-base">/ 10</span>
-                              </div>
-                            </div>
-                            <div className="text-xs text-blue-600 whitespace-nowrap">{getReviewCount(card.id)} reviews</div>
-                          </>
+                          <div className="flex items-center gap-1 whitespace-nowrap text-base">
+                            <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
+                            <span className="text-gray-500">/ 10</span>
+                            <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
+                          </div>
                         ) : (
                           <div className="text-sm text-gray-500">No Reviews Yet</div>
                         )}
