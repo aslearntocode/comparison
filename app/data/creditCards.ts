@@ -2497,32 +2497,48 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     category: 'upi',
     image: '/credit-cards/AU_Spont.png',
     apr: 'Not specified',
-    annualFee: '₹299 + taxes',
-    joiningFee: '₹299 + taxes',
+    annualFee: '₹299 + GST',
+    joiningFee: '₹299 + GST',
     rupay: true,
     features: [
-      '1% cashback on UPI spends',
-      '1% cashback on POS & online spends',
-      'Cashback cap: ₹500/month',
-      'Earn coins on UPI',
-      'UPI-enabled RuPay card'
+      '1% cashback on all spends',
+      'UPI rewards with coins',
+      'Airport lounge access',
+      'Railway lounge access',
+      'Fuel surcharge waiver',
+      'Low annual fee'
     ],
-    categories: ['upi', 'cashback'],
+    categories: ['upi', 'cashback', 'domestic-lounge'],
     feedback: [],
     additionalDetails: {
       rewardsProgram: `Earning Rate:
-• 1% cashback on all UPI transactions via any UPI channel
-• 1% cashback on all other transactions like e-commerce, POS, and contactless payments
+• 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
+• 5 coins for every UPI transaction via AU 0101 app
 • Cashback capped at ₹500 per statement cycle
-• Earn coins on UPI transactions`,
-      redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.`,
-      welcomeBonus: 'Details not specified',
+
+Exclusions: No cashback on fuel, rent, government, education, cash withdrawals, EMIs, and insurance spends`,
+      redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.
+Coins earned from UPI transactions can be redeemed against various rewards in the AU Rewardz catalogue.`,
+      welcomeBonus: 'Not specified',
       milestoneBenefits: [],
-      idealFor: [
-        'UPI users and individuals seeking cashback on everyday transactions'
+      airportLounge: '2 complimentary domestic airport lounge visits per quarter upon achieving ₹30,000 spends in the previous quarter',
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Standard credit card insurance coverage'
       ],
-      notIdealFor: [],
-      summary: 'A UPI-enabled card for users seeking simple, capped cashback on all transactions.'
+      additionalServices: 'Additional Benefits:\n• 2 complimentary railway lounge accesses per calendar quarter\n• Cash withdrawal fee: 2.5% of withdrawn amount or ₹500, whichever is higher',
+      idealFor: [
+        'Digital payment enthusiasts who frequently use UPI',
+        'Budget-conscious users seeking low fees',
+        'First-time credit card holders',
+        'Frequent domestic travelers'
+      ],
+      notIdealFor: [
+        'High spenders seeking premium rewards',
+        'International travelers',
+        'Users with high fuel, rent, or insurance payments'
+      ],
+      summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
     }
   },
   {
