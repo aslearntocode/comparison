@@ -7,7 +7,7 @@ const CreditCardVsLoanComparison = () => {
     <section className="bg-gray-50 py-4 md:py-0 p-0 m-0">
       <div className="max-w-7xl mx-auto px-4 p-0 m-0">
         <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className="w-full md:w-8/12 flex justify-start items-center order-2 md:order-1">
+          <div className="w-full md:w-8/12 flex justify-start items-center order-2 md:order-1 hidden md:flex">
             <div className="relative w-full h-[300px] md:h-[600px] flex items-center justify-center">
               <Image
                 src="/Credit_Assessment.png"
