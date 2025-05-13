@@ -23,6 +23,7 @@ export interface CreditCard {
   features: string[];
   feedback: UserFeedback[];
   categories: string[];
+  applyUrl?: string;
   additionalDetails?: {
     rewardsProgram?: string;
     welcomeBonus?: string;
@@ -51,7 +52,7 @@ export const creditCards: CreditCard[] = [
   // Hotels Cards
   {
     id: 'hdfc-regalia-marriott',
-    name: 'HDFC Bank Regalia Marriott Bonvoy Credit Card',
+    name: 'HDFC Regalia Marriott Bonvoy Credit Card',
     bank: 'HDFC Bank',
     category: 'hotels',
     image: '/credit-cards/HDFC-Regalia-Marriott.png',
@@ -108,7 +109,7 @@ export const creditCards: CreditCard[] = [
   },
   {
     id: 'hdfc-regalia',
-    name: 'HDFC Bank Regalia Credit Card',
+    name: 'HDFC Regalia Credit Card',
     bank: 'HDFC Bank',
     category: 'premium',
     image: '/credit-cards/HDFC-Regalia.png',
@@ -166,7 +167,7 @@ Redemption:
   },
   {
     id: 'hdfc-pixel-play',
-    name: 'PIXEL Play Credit Card',
+    name: 'HDFC Pixel Play Credit Card',
     bank: 'HDFC Bank',
     category: 'upi',
     image: '/credit-cards/HDFC-Pixel-Play.png',
@@ -211,7 +212,7 @@ Redemption:
   },
   {
     id: 'hdfc-millennia',
-    name: 'HDFC Bank Millennia Credit Card',
+    name: 'HDFC Millennia Credit Card',
     bank: 'HDFC Bank',
     category: 'lifestyle',
     image: '/credit-cards/HDFC-Millenia.png',
@@ -258,7 +259,7 @@ Redemption:
   },
   {
     id: 'hdfc-money-black-plus',
-    name: 'MoneyBack+ Credit Card',
+    name: 'HDFC MoneyBack+ Credit Card',
     bank: 'HDFC Bank',
     category: 'fintech',
     image: '/credit-cards/HDFC-MoneyBack+.png',
@@ -305,7 +306,7 @@ Redemption:
   },
   {
     id: 'hdfc-swiggy',
-    name: 'Swiggy HDFC Bank Credit Card',
+    name: 'Swiggy HDFC Credit Card',
     bank: 'HDFC Bank',
     category: 'lifestyle',
     image: '/Credit-card-2.png',
@@ -421,7 +422,7 @@ Redemption:
   },
   {
     id: 'emeralde-private-metal',
-    name: 'Emeralde Private Metal Credit Card',
+    name: 'ICICI Emeralde Private Metal Credit Card',
     bank: 'ICICI Bank',
     category: 'premium',
     image: '/credit-cards/ICICI-Emeralde-Metal.png',
@@ -493,7 +494,7 @@ Redemption:
   },
   {
     id: 'sapphiro',
-    name: 'Sapphiro Credit Card',
+    name: 'ICICI Sapphiro Credit Card',
     bank: 'ICICI Bank',
     category: 'premium',
     image: '/credit-cards/ICICI-Sapphiro.png',
@@ -1816,7 +1817,6 @@ Redemption:
       additionalServices: 'FD continues to earn interest while card is active.',
       idealFor: [
         'New to Credit / No Credit History',
-        'First-time credit card users looking to build a credit profile.',
         'Individuals with Low or Poor Credit Scores',
         'Those rebuilding their credit history with a secured option.',
         'Students or Homemakers (if they can create a fixed deposit in their name, ₹50,000 minimum).',
@@ -1828,8 +1828,7 @@ Redemption:
         'High Spenders / Premium Users (no high-end features like lounge access, concierge services, or accelerated rewards).',
         'Users Who Don\'t Want to Lock In Funds (requires a minimum ₹50,000 fixed deposit that remains locked as security).',
         'Frequent International Travelers (3.5% forex markup fee; no global travel benefits or lounge access).',
-        'Reward Maximizers (low reward rate and limited redemption options; not suitable for those who value high cashback or reward programs).',
-        'Business or Joint Account Holders (not issued against FDs in joint names, company names, HUFs, or NRIs).'
+        'Reward Maximizers (low reward rate and limited redemption options; not suitable for those who value high cashback or reward programs).'
       ]
     }
   },
