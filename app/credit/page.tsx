@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
 type Props = {
+  params: { [key: string]: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
