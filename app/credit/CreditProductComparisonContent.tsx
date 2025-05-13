@@ -505,6 +505,51 @@ function CreditProductComparisonContent() {
                 <p className="text-gray-500 text-lg">No credit cards found matching your search criteria.</p>
               </div>
             )}
+
+            {/* Premium Category Link for Ultra-Premium */}
+            {category === 'ultra-premium' && (
+              <div className="text-center py-4 md:py-8">
+                <Link 
+                  href="/credit?category=premium"
+                  className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md text-sm md:text-base"
+                >
+                  <span>Looking for Lower Fee Cards, Explore Premium Category</span>
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            )}
+
+            {/* Lifestyle Category Link for Premium */}
+            {category === 'premium' && (
+              <div className="text-center py-4 md:py-8">
+                <Link 
+                  href="/credit?category=lifestyle"
+                  className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md text-sm md:text-base"
+                >
+                  <span>Looking for a Lifestyle Card, Explore Lifestyle Category</span>
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            )}
+
+            {/* Lifetime Free Category Link for Lifestyle */}
+            {category === 'lifestyle' && (
+              <div className="text-center py-4 md:py-8">
+                <Link 
+                  href="/credit?category=lifetime-free"
+                  className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md text-sm md:text-base"
+                >
+                  <span>Looking for a No Fee Card, Explore Lifetime Free Category</span>
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
