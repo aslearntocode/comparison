@@ -83,20 +83,26 @@ body {
 }
 
 @media (max-width: 600px) {
+  body {
+    overflow-x: hidden !important;
+  }
   /* Target card list items and force column layout for mobile */
   .credit-card-list-item, .card-list-item, .card, .border.rounded-lg.p-4 {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
     box-sizing: border-box !important;
     padding: 12px 0 !important;
   }
   .credit-card-list-item img, .card-list-item img, .card img {
     width: 100% !important;
-    max-width: 220px !important;
+    max-width: 100% !important;
     margin-bottom: 8px !important;
     height: auto !important;
+    display: block !important;
   }
   .credit-card-list-item .card-details, .card-list-item .card-details, .card .card-details {
     width: 100% !important;
@@ -107,5 +113,11 @@ body {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 8px !important;
+  }
+  /* Prevent text and children from overflowing */
+  .credit-card-list-item *, .card-list-item *, .card * {
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
   }
 }

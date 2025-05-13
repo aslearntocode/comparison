@@ -374,10 +374,10 @@ function CreditProductComparisonContent() {
                 <div key={card.id} className="block hover:bg-gray-50 rounded-lg transition-colors">
                   <div className="flex flex-col">
                     {/* Mobile View */}
-                    <div className="md:hidden px-4 py-4">
-                      <div className="flex flex-col">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="w-32 h-20 relative flex-shrink-0">
+                    <div className="md:hidden px-2 py-4 w-full overflow-x-hidden">
+                      <div className="flex flex-col w-full">
+                        <div className="flex items-start gap-2 mb-4 w-full">
+                          <div className="relative w-full max-w-[96px]" style={{ aspectRatio: '7/4' }}>
                             <Image
                               src={card.image}
                               alt={card.name}
@@ -385,7 +385,7 @@ function CreditProductComparisonContent() {
                               className="object-contain rounded-lg"
                             />
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between">
                               <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
                                 <h3 className="text-xl font-bold text-gray-900 mb-1 truncate">{card.name}</h3>
