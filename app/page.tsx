@@ -574,29 +574,29 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
+                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <span className="font-semibold text-white drop-shadow-sm">Lifetime Free</span>
                   </div>
                 </Link>
-                <Link href="/credit?category=international-lounge" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                <Link href="/credit?category=lifestyle" className="col-span-1">
+                  <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
+                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                     </div>
-                    <span className="font-semibold text-white drop-shadow-sm">International Lounge</span>
+                    <span className="font-semibold text-white drop-shadow-sm">Lifestyle</span>
                   </div>
                 </Link>
                 <Link href="/credit?category=premium" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
+                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -604,9 +604,9 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=upi" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 lg:h-[44px] lg:p-2 p-3 h-[60px] flex items-center gap-3 cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-2 shadow-inner">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
+                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                       </svg>
                     </div>
@@ -618,7 +618,7 @@ export default function Home() {
               {/* Card Value Calculator - Separated and visually distinct */}
               <div className="mt-6 lg:mt-3">
                 <Link href="/credit/calculator" className="block">
-                  <div className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-emerald-600 hover:to-green-600 shadow-md hover:shadow-xl border border-green-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-4 lg:p-2.5 flex items-center justify-between cursor-pointer">
+                  <div className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-emerald-600 hover:to-green-600 shadow-md hover:shadow-xl border border-green-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-11 text-base gap-2 lg:p-4 lg:text-lg flex items-center justify-between cursor-pointer">
                     <div className="flex items-center gap-4">
                       <div className="bg-white/30 rounded-full p-2 shadow-inner">
                         <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -626,7 +626,7 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white drop-shadow-sm">Credit Card Value Calculator</h3>
+                        <h3 className="text-base font-semibold text-white drop-shadow-sm lg:text-lg">Credit Card Value Calculator</h3>
                       </div>
                     </div>
                     <svg className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -43,6 +43,7 @@ export interface CreditCard {
     notIdealFor?: string[];
     summary?: string;
     redemptionOptions?: string;
+    cashAdvanceFee?: string;
   };
 }
 
@@ -1741,15 +1742,40 @@ Fuel Benefits:
       '2 reward points per ₹100 online',
       '1 point per ₹100 offline',
       '90% credit limit of FD',
-      'Minimum FD amount: ₹5,000'
+      'Minimum FD amount: ₹5,000',
+      'Fuel surcharge waiver',
+      'Railway surcharge waiver',
+      '48 days interest-free period'
     ],
-    categories: ['secured'],
+    categories: ['secured', 'lifetime-free'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: '2 reward points per ₹100 spent online\n1 reward point per ₹100 spent offline',
-      creditLimit: '90% of Fixed Deposit amount',
-      summary: 'A secured credit card with higher rewards on online spending.',
-      fuelSurcharge: 'Not specified'
+      rewardsProgram: `Earning Rate:
+• 2 reward points per ₹100 spent online
+• 1 reward point per ₹100 spent on other categories
+
+Redemption:
+• Points can be redeemed for vouchers and other rewards`,
+      welcomeBonus: 'No specific welcome benefits',
+      milestoneBenefits: [
+        '₹250 voucher on spending ₹36,000 in an anniversary year',
+        '₹1,000 voucher on spending ₹72,000 in an anniversary year'
+      ],
+      fuelSurcharge: '1% waiver on transactions between ₹500 and ₹3,000',
+      additionalServices: 'Railway Benefits:\n• 1.8% surcharge waiver on IRCTC bookings\n• 2.5% surcharge waiver on railway counter bookings',
+      idealFor: [
+        'First-time credit card users',
+        'Individuals without regular income (students, homemakers, freelancers)',
+        'Those seeking low-cost credit options',
+        'People looking to build or improve credit history'
+      ],
+      notIdealFor: [
+        'High spenders seeking premium benefits',
+        'Individuals unable to open a fixed deposit',
+        'Those with established credit history'
+      ],
+      summary: 'A secured, lifetime-free credit card designed to help individuals build or improve their credit history, offering basic rewards and benefits with no annual or joining fees.',
+      creditLimit: 'Up to 90% of the Fixed Deposit amount'
     }
   },
   {
@@ -1758,22 +1784,53 @@ Fuel Benefits:
     bank: 'ICICI Bank',
     category: 'secured',
     image: '/credit-cards/ICICI-Platinum-Secured.png',
-    apr: 'Based on FD rate',
+    apr: '29.88% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
     features: [
-      '25% discount on BookMyShow (twice a month)',
-      'Contactless payments',
-      'Minimum FD amount: ₹50,000'
+      'Secured Credit Card (against ICICI Bank FD)',
+      'Instant Issuance at Branch',
+      'Lifetime Free',
+      'Credit Limit: Up to 85-90% of FD',
+      'FD continues to earn interest',
+      'Dining Discounts',
+      'Movie Offers',
+      'Fuel Surcharge Waiver'
     ],
-    categories: ['secured'],
+    categories: ['secured', 'lifetime-free'],
     feedback: [],
     additionalDetails: {
-      movieBenefits: '25% discount on BookMyShow bookings (twice a month)',
-      additionalServices: 'Contactless payment enabled',
-      summary: 'A secured credit card with entertainment benefits and contactless payment feature.',
-      fuelSurcharge: 'Not specified'
+      rewardsProgram: `Reward Points:
+• Earn 2 PAYBACK points for every ₹100 spent on retail purchases (excluding fuel).`,
+      diningPrivileges: [
+        'Up to 15% savings at over 800 partner restaurants across India through ICICI Bank Culinary Treats program'
+      ],
+      movieBenefits: '25% discount (up to ₹100) on purchase of minimum two movie tickets, twice a month via BookMyShow',
+      fuelSurcharge: '1% waiver on fuel surcharge for transactions up to ₹4,000 at HPCL petrol pumps (ICICI Bank POS terminals only)',
+      creditLimit: 'Up to 85-90% of Fixed Deposit amount',
+      summary: 'A secured, lifetime-free credit card issued instantly against an ICICI Bank FD, offering basic rewards, dining and movie discounts, and a fuel surcharge waiver. Ideal for those building or rebuilding credit.',
+      interestRate: '2.49% per month (29.88% per annum) on outstanding balances',
+      cashAdvanceFee: '2.5% of the transaction amount (min ₹500)',
+      internationalTransactionFee: '3.5% of the transaction amount',
+      additionalServices: 'FD continues to earn interest while card is active.',
+      idealFor: [
+        'New to Credit / No Credit History',
+        'First-time credit card users looking to build a credit profile.',
+        'Individuals with Low or Poor Credit Scores',
+        'Those rebuilding their credit history with a secured option.',
+        'Students or Homemakers (if they can create a fixed deposit in their name, ₹50,000 minimum).',
+        'People Without Income Documents (no income proof required).',
+        'Budget-Conscious Users (lifetime free card with no joining or annual fees).',
+        'People Who Want Basic Perks (some rewards, dining discounts, and movie offers without high eligibility).'
+      ],
+      notIdealFor: [
+        'High Spenders / Premium Users (no high-end features like lounge access, concierge services, or accelerated rewards).',
+        'Users Who Don\'t Want to Lock In Funds (requires a minimum ₹50,000 fixed deposit that remains locked as security).',
+        'Frequent International Travelers (3.5% forex markup fee; no global travel benefits or lounge access).',
+        'Reward Maximizers (low reward rate and limited redemption options; not suitable for those who value high cashback or reward programs).',
+        'Business or Joint Account Holders (not issued against FDs in joint names, company names, HUFs, or NRIs).'
+      ]
     }
   },
   {

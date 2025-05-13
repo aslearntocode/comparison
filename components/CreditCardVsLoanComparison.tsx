@@ -57,7 +57,7 @@ const CreditCardVsLoanComparison = () => {
               />
               <div className="relative z-10">
                 <h2 className="text-2xl md:text-[2.2rem] font-bold text-gray-900 mb-4 leading-tight">
-                  Should You Be Taking a Loan or a Credit Card?
+                  Should You Be Taking a Loan/Credit Card Or Not?
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg mb-6">
                   Take our quick assessment to get personalized recommendations on whether you should be taking a loan or a credit card.

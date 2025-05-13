@@ -253,6 +253,44 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     })}
                   </div>
 
+                  {/* Additional Features Section */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
+                    {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
+                      if (line.endsWith(':')) {
+                        return (
+                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
+                        );
+                      } else if (line.startsWith('•')) {
+                        return (
+                          <div key={index} className="flex gap-2 ml-4 mb-2">
+                            <span className="text-blue-600">•</span>
+                            <span className="text-gray-700">{line.substring(1).trim()}</span>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
+                    {/* Dining Privileges Section */}
+                    {card.additionalDetails?.diningPrivileges && card.additionalDetails.diningPrivileges.length > 0 && (
+                      <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Dining Benefits</h4>
+                        <ul className="list-disc ml-6 space-y-1">
+                          {card.additionalDetails.diningPrivileges.map((item, idx) => (
+                            <li key={idx} className="text-gray-700">{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {/* Movie Benefits Section */}
+                    {card.additionalDetails?.movieBenefits && (
+                      <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Movie Benefits</h4>
+                        <div className="text-gray-700">{card.additionalDetails.movieBenefits}</div>
+                      </div>
+                    )}
+                  </div>
+
                   {/* Travel & Lifestyle Benefits Section */}
                   <div className="bg-white rounded-lg p-6 shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
@@ -300,26 +338,6 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Additional Features Section */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
-                    {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
-                      if (line.endsWith(':')) {
-                        return (
-                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                        );
-                      } else if (line.startsWith('•')) {
-                        return (
-                          <div key={index} className="flex gap-2 ml-4 mb-2">
-                            <span className="text-blue-600">•</span>
-                            <span className="text-gray-700">{line.substring(1).trim()}</span>
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
                   </div>
                 </div>
 
