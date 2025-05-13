@@ -1,97 +1,74 @@
 import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
-export async function generateMetadata(
-  props: any
-): Promise<Metadata> {
-  const category = props?.searchParams?.category as string | undefined;
-  let title = 'Credit Cards | Financial Health';
-  let description = 'Find and compare the best credit cards in India. Get detailed comparisons of rewards, benefits, and features to choose the perfect credit card for your needs.';
+type Props = {
+  params: { category?: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
-  if (category) {
-    switch (category) {
-      case 'branded':
-        title = 'Branded Credit Cards | Financial Health';
-        description = 'Compare the best branded credit cards in India. Find cards from top banks and brands with exclusive offers and benefits.';
-        break;
-      case 'cobranded':
-        title = 'Co-Branded Credit Cards | Financial Health';
-        description = 'Explore co-branded credit cards in India. Get the best of both worlds with exclusive brand partnerships and rewards.';
-        break;
-      case 'fintech':
-        title = 'Fintech Credit Cards | Financial Health';
-        description = 'Discover innovative fintech credit cards in India. Enjoy modern features, digital-first experiences, and unique rewards.';
-        break;
-      case 'premium':
-        title = 'Premium Credit Cards | Financial Health';
-        description = 'Explore the best premium credit cards in India. Compare features, fees, and rewards to find the perfect premium card for your lifestyle.';
-        break;
-      case 'rewards':
-        title = 'Rewards Credit Cards | Financial Health';
-        description = 'Find the top rewards credit cards in India. Maximize your points, cashback, and benefits with the best cards for rewards.';
-        break;
-      case 'cashback':
-        title = 'Cashback Credit Cards | Financial Health';
-        description = 'Compare the best cashback credit cards in India. Earn money back on every purchase with top cashback offers.';
-        break;
-      case 'fuel':
-        title = 'Fuel Credit Cards | Financial Health';
-        description = 'Save on fuel expenses with the best fuel credit cards in India. Get exclusive fuel surcharge waivers and rewards.';
-        break;
-      case 'lifetime-free':
-        title = 'Lifetime Free Credit Cards | Financial Health';
-        description = 'Explore lifetime free credit cards in India. Enjoy benefits and rewards with zero annual fees.';
-        break;
-      case 'forex':
-        title = 'Forex Credit Cards | Financial Health';
-        description = 'Find the best forex credit cards in India. Enjoy low foreign transaction fees and great travel benefits.';
-        break;
-      case 'upi':
-        title = 'UPI Credit Cards | Financial Health';
-        description = 'Discover UPI-enabled credit cards in India. Make seamless payments and enjoy exclusive UPI offers.';
-        break;
-      case 'emi':
-        title = 'EMI Credit Cards | Financial Health';
-        description = 'Compare EMI credit cards in India. Convert your purchases into easy monthly installments with top EMI cards.';
-        break;
-      case 'domestic-lounge':
-        title = 'Domestic Lounge Access Credit Cards | Financial Health';
-        description = 'Get complimentary domestic airport lounge access with the best credit cards in India. Travel in comfort and style.';
-        break;
-      case 'international-lounge':
-        title = 'International Lounge Access Credit Cards | Financial Health';
-        description = 'Enjoy international airport lounge access with premium credit cards. Perfect for frequent global travelers.';
-        break;
-      case 'airlines':
-        title = 'Airlines Credit Cards | Financial Health';
-        description = 'Find the best airline credit cards in India. Earn air miles, free tickets, and exclusive travel benefits.';
-        break;
-      case 'hotels':
-        title = 'Hotels Credit Cards | Financial Health';
-        description = 'Discover hotel credit cards in India. Get complimentary stays, upgrades, and exclusive hotel rewards.';
-        break;
-      case 'lifestyle':
-        title = 'Lifestyle Credit Cards | Financial Health';
-        description = 'Explore lifestyle credit cards in India. Enjoy shopping, dining, and entertainment offers tailored to your lifestyle.';
-        break;
-      case 'secured':
-        title = 'Secured Credit Cards | Financial Health';
-        description = 'Build your credit score with the best secured credit cards in India. Ideal for beginners and those with low credit.';
-        break;
-      case 'ultra-premium':
-        title = 'Ultra Premium Credit Cards | Financial Health';
-        description = 'Discover the top ultra premium credit cards in India. Compare exclusive benefits, luxury rewards, and premium services for high net-worth individuals.';
-        break;
-      default:
-        title = `${category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')} Credit Cards | Financial Health`;
-        description = `Compare the best ${category.replace('-', ' ')} credit cards in India. Find the right card for your needs.`;
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+  const category = searchParams.category as string || 'all'
+
+  const categoryMetadata = {
+    'ultra-premium': {
+      title: 'Ultra Premium Credit Cards in India | Compare & Apply',
+      description: 'Compare the best ultra premium credit cards in India. Find detailed information about HSBC Taj, Axis Bank Primus, and American Express Centurion cards. Compare fees, benefits, and exclusive privileges.',
+    },
+    'premium': {
+      title: 'Premium Credit Cards in India | Compare & Apply',
+      description: 'Compare premium credit cards in India. Find cards with exclusive benefits, travel privileges, and premium lifestyle rewards. Get detailed comparisons of annual fees, joining fees, and exclusive benefits.',
+    },
+    'cash-back': {
+      title: 'Best Cashback Credit Cards in India | Compare & Apply',
+      description: 'Compare the best cashback credit cards in India. Find cards offering maximum cashback on your daily spending, groceries, dining, and online shopping. Get detailed comparisons of cashback rates and benefits.',
+    },
+    'lifestyle': {
+      title: 'Lifestyle Credit Cards in India | Compare & Apply',
+      description: 'Compare lifestyle credit cards in India. Find cards offering exclusive dining privileges, movie benefits, shopping rewards, and lifestyle experiences. Get detailed comparisons of benefits and features.',
+    },
+    'fuel': {
+      title: 'Best Fuel Credit Cards in India | Compare & Apply',
+      description: 'Compare the best fuel credit cards in India. Find cards offering maximum fuel surcharge waiver and rewards on fuel purchases. Get detailed comparisons of fuel benefits and features.',
+    },
+    'lifetime-free': {
+      title: 'Lifetime Free Credit Cards in India | Compare & Apply',
+      description: 'Compare lifetime free credit cards in India. Find cards with no annual fees and great benefits. Get detailed comparisons of features, rewards, and eligibility criteria.',
+    },
+    'upi': {
+      title: 'UPI Credit Cards in India | Compare & Apply',
+      description: 'Compare UPI-enabled credit cards in India. Find cards that work seamlessly with UPI payments. Get detailed comparisons of UPI benefits, rewards, and features.',
+    },
+    'domestic-lounge': {
+      title: 'Domestic Lounge Credit Cards in India | Compare & Apply',
+      description: 'Compare credit cards with domestic lounge access in India. Find cards offering free airport lounge access at domestic terminals. Get detailed comparisons of lounge benefits and features.',
+    },
+    'international-lounge': {
+      title: 'International Lounge Credit Cards in India | Compare & Apply',
+      description: 'Compare credit cards with international lounge access. Find cards offering free airport lounge access worldwide. Get detailed comparisons of international lounge benefits and features.',
+    },
+    'all': {
+      title: 'Best Credit Cards in India | Compare & Apply',
+      description: 'Compare and find the best credit cards in India. Get detailed comparisons of rewards, benefits, and features to choose the perfect credit card for your needs.',
     }
   }
 
+  const metadata = categoryMetadata[category as keyof typeof categoryMetadata] || categoryMetadata.all
+
   return {
-    title,
-    description,
-  };
+    title: metadata.title,
+    description: metadata.description,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      url: `https://financialhealth.co.in/credit?category=${category}`,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata.title,
+      description: metadata.description,
+    }
+  }
 }
 
 export default function Page() {
