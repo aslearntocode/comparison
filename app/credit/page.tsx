@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
 type Props = {
-  params: { category?: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const category = searchParams.category as string || 'all'
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  // Get the category from searchParams, ensuring it's a string
+  const categoryParam = searchParams?.category;
+  const category = Array.isArray(categoryParam) ? categoryParam[0] : categoryParam || 'all';
 
   const categoryMetadata = {
     'ultra-premium': {
