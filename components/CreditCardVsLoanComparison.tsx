@@ -60,13 +60,13 @@ const CreditCardVsLoanComparison = () => {
                   Should You Be Taking a Loan/Credit Card Or Not?
                 </h2>
                 <p className="text-gray-600 text-base md:text-lg mb-6">
-                  Take our quick assessment to get personalized recommendations on whether you should be taking a loan or a credit card.
+                  Take our quick AI-Powered assessment to get personalized recommendations on whether you should be taking a loan or a credit card.
                 </p>
                 <Link
                   href="/credit-vs-loan-assessment"
                   className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-colors text-base"
                 >
-                  Start Assessment
+                  Start AI-Powered Assessment
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                   </svg>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { auth } from "@/lib/firebase"
 import { User } from "firebase/auth"
 import { ProfileDropdown } from "./ProfileDropdown"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
 import { supabase } from "@/lib/supabase"
 import Image from 'next/image'
@@ -32,6 +32,7 @@ export default function Header() {
   const [hasCreditAssessment, setHasCreditAssessment] = useState(false)
   const [latestAssessment, setLatestAssessment] = useState<any>(null)
   const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -958,96 +959,98 @@ export default function Header() {
       </nav>
       
       {/* Sub-header Section */}
-      <div className="bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-2">
-          <div className="flex items-center justify-between">
-            <span className="text-base font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Featured Cards</span>
-            <div className="flex-1 ml-8 relative overflow-hidden">
-              <div className="flex space-x-16 animate-carousel">
-                <Link 
-                  href="/credit/icici-times-black" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/ICICI-Black.png" 
-                    alt="ICICI Time Black" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
-                </Link>
-                <Link 
-                  href="/credit/idfc-mayura-metal" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/IDFC-First-Maurya.png" 
-                    alt="IDFC FIRST Mayura" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
-                </Link>
-                <Link 
-                  href="/credit/kiwi" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/Kiwi.png" 
-                    alt="Kiwi Credit Card" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">Kiwi Credit Card</span>
-                </Link>
-                {/* Duplicate links for seamless carousel */}
-                <Link 
-                  href="/credit/icici-times-black" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/ICICI-Black.png" 
-                    alt="ICICI Time Black" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
-                </Link>
-                <Link 
-                  href="/credit/idfc-mayura-metal" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/IDFC-First-Maurya.png" 
-                    alt="IDFC FIRST Mayura" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
-                </Link>
-                <Link 
-                  href="/credit/kiwi" 
-                  className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
-                >
-                  <Image 
-                    src="/credit-cards/Kiwi.png" 
-                    alt="Kiwi Credit Card" 
-                    width={40} 
-                    height={25} 
-                    className="object-contain"
-                  />
-                  <span className="text-base text-blue-600 whitespace-nowrap">Kiwi Credit Card</span>
-                </Link>
+      {pathname === '/' && (
+        <div className="bg-gray-50 border-t border-gray-200 hidden md:block">
+          <div className="max-w-7xl mx-auto px-4 py-2">
+            <div className="flex items-center justify-between">
+              <span className="text-base font-semibold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Featured Cards</span>
+              <div className="flex-1 ml-8 relative overflow-hidden">
+                <div className="flex space-x-16 animate-carousel">
+                  <Link 
+                    href="/credit/icici-times-black" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/ICICI-Black.png" 
+                      alt="ICICI Time Black" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
+                  </Link>
+                  <Link 
+                    href="/credit/idfc-mayura-metal" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/IDFC-First-Maurya.png" 
+                      alt="IDFC FIRST Mayura" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
+                  </Link>
+                  <Link 
+                    href="/credit/kiwi" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/Kiwi.png" 
+                      alt="Kiwi Credit Card" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">Kiwi Credit Card</span>
+                  </Link>
+                  {/* Duplicate links for seamless carousel */}
+                  <Link 
+                    href="/credit/icici-times-black" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/ICICI-Black.png" 
+                      alt="ICICI Time Black" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">ICICI Times Black</span>
+                  </Link>
+                  <Link 
+                    href="/credit/idfc-mayura-metal" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/IDFC-First-Maurya.png" 
+                      alt="IDFC FIRST Mayura" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
+                  </Link>
+                  <Link 
+                    href="/credit/kiwi" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/Kiwi.png" 
+                      alt="Kiwi Credit Card" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">Kiwi Credit Card</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <style jsx>{`
         @keyframes carousel {
