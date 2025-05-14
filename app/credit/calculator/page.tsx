@@ -127,19 +127,19 @@ export default function CalculatorPage() {
       <Header />
       {/* Hero Section - matches category pages */}
       <div className="relative">
-        <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center pt-10">
-            <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+        <div className="absolute top-0 left-0 right-0 h-[100px] md:h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
+        <div className="relative max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-2 md:pb-0 z-10">
+          <div className="text-center pt-4 md:pt-10">
+            <h1 className="text-base md:text-4xl font-bold text-white mb-1 md:mb-3 font-serif tracking-wide">
               Card Value Calculator
             </h1>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+            <p className="text-xs md:text-lg text-white/90 max-w-3xl mx-auto mb-1 md:mb-8 font-sans">
               Calculate the true value of your credit card rewards and benefits for your spending profile
             </p>
           </div>
         </div>
       </div>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-6 space-y-6">
             {/* Card Selection */}
@@ -182,11 +182,11 @@ export default function CalculatorPage() {
             {selectedCard && (
               <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
                 {/* Card Details & Inputs */}
-                <div className="border rounded-lg p-4 bg-white md:w-1/2 w-full">
+                <div className="border rounded-lg p-4 bg-white md:w-1/2 w-full max-w-xs mx-auto md:max-w-none">
                   {/* Fees Section */}
-                  <div className="bg-gray-50 p-4 rounded-lg mb-6">
+                  <div className="bg-gray-50 p-2 md:p-4 rounded-lg mb-4 md:mb-6 ml-2 md:ml-0">
                     <h3 className="font-semibold mb-3">Fees & Charges</h3>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-2 md:gap-4">
                       <div>
                         <p className="text-sm text-gray-500">Annual Fee</p>
                         <p className="font-medium">{selectedCard.annualFee}</p>
@@ -205,7 +205,7 @@ export default function CalculatorPage() {
                   </div>
 
                   {/* Annual Spend Input */}
-                  <div>
+                  <div className="ml-2 md:ml-0">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Annual Spend (in Lakhs)
                     </label>
