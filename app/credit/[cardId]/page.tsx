@@ -237,21 +237,25 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   {/* Rewards Program Section */}
                   <div className="bg-white rounded-lg p-6 shadow-sm">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
-                    {card.additionalDetails?.rewardsProgram?.split('\n').map((line, index) => {
-                      if (line.endsWith(':')) {
-                        return (
-                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                        );
-                      } else if (line.startsWith('•')) {
-                        return (
-                          <div key={index} className="flex gap-2 ml-4 mb-2">
-                            <span className="text-blue-600">•</span>
-                            <span className="text-gray-700">{line.substring(1).trim()}</span>
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
+                    {card.additionalDetails?.rewardsProgram
+                      ? card.additionalDetails.rewardsProgram.includes('\n') || card.additionalDetails.rewardsProgram.includes('•')
+                        ? card.additionalDetails.rewardsProgram.split('\n').map((line, index) => {
+                            if (line.endsWith(':')) {
+                              return (
+                                <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
+                              );
+                            } else if (line.startsWith('•')) {
+                              return (
+                                <div key={index} className="flex gap-2 ml-4 mb-2">
+                                  <span className="text-blue-600">•</span>
+                                  <span className="text-gray-700">{line.substring(1).trim()}</span>
+                                </div>
+                              );
+                            }
+                            return null;
+                          })
+                        : <div className="text-gray-700">{card.additionalDetails.rewardsProgram}</div>
+                      : null}
                   </div>
 
                   {/* Additional Features Section */}
@@ -310,6 +314,9 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                       }
                       return null;
                     })}
+                    {card.additionalDetails?.travelLifestyleBenefits && (
+                      <div className="text-gray-700 mt-2">{card.additionalDetails.travelLifestyleBenefits}</div>
+                    )}
                   </div>
 
                   {/* Fuel Surcharge Benefit Section */}

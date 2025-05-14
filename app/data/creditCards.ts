@@ -46,6 +46,7 @@ export interface CreditCard {
     redemptionOptions?: string;
     cashAdvanceFee?: string;
     eligibilityCriteria?: string;
+    travelLifestyleBenefits?: string;
   };
 }
 
@@ -1140,41 +1141,35 @@ Fuel Benefits:
     joiningFee: '₹0',
     rupay: false,
     features: [
-      '5% cashback on first EMI purchase',
-      '1% fuel surcharge waiver',
-      'Up to 48 days interest-free period',
-      'Minimum FD amount: ₹10,000',
-      'UPI Linkage',
-      'Railway Lounge Access',
-      'Roadside Assistance',
-      'Airport Lounge Access',
-      'Health & Wellness Discounts'
+      'Lifetime Free: No joining or annual fees.',
+      'Credit Limit: Up to 100% of the FD amount.',
+      'Earn up to 7.25% p.a. interest on your fixed deposit.',
+      'EMI Conversion: Purchases above ₹2,500 can be converted to EMIs at 1% interest.',
     ],
     categories: ['secured', 'lifetime-free', 'rewards'],
     feedback: [],
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 10X reward points on birthday month
-• 20 bonus Reward Points for every ₹100 spent on hotel bookings
-• 3X rewards on UPI transactions
-• Unlimited reward points with no expiry
-
-Fuel Benefits:
-• 1% waiver on fuel transactions (up to ₹300 per month)`,
-      welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000) within first 30 days\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
-      milestoneBenefits: [
-        '10X reward points on all purchases during birthday month',
-        'Unlimited reward points with no expiry',
-        '1% fuel surcharge waiver (up to ₹300 per month)',
-        'Roadside assistance worth ₹1,399 annually',
-        'Up to 15% discount at over 3,000 health and wellness outlets'
+      summary: 'The IDFC FIRST WOW Credit Card is a secured, lifetime-free credit card designed to help individuals build or improve their credit history. Backed by a fixed deposit (FD), it offers a range of benefits tailored for first-time credit card users, students, homemakers, and those without a stable income or credit score.',
+      rewardsProgram: 'Earn 4X reward points on every ₹150 spent. Reward points never expire.',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹200 and ₹5,000, up to ₹200 per month.',
+      internationalTransactionFee: 'Zero forex markup on international transactions.',
+      travelLifestyleBenefits: 'Zero forex markup on international transactions.',
+      emiOptions: 'Option to convert purchases above ₹2,500 into EMIs at a 1% interest rate.',
+      diningPrivileges: ['Discounts at over 1,500 restaurants and 300+ retail stores across India.'],
+      creditLimit: 'Up to 100% of the FD amount.',
+      interestRate: 'FD interest up to 7.25% p.a.',
+      idealFor: [
+        'First-time credit card users looking to start their credit journey.',
+        'Individuals without regular income: students, homemakers, or freelancers.',
+        'Frequent international travelers (zero forex markup fees).',
+        'Budget-conscious users: no annual fees and straightforward rewards.'
       ],
-      airportLounge: 'Airport Lounge Access:\n• 4 complimentary access per quarter to select domestic terminal airport lounges\n• 4 complimentary visits per quarter to select railway lounges',
-      fuelSurcharge: '1% waiver on fuel transactions (up to ₹300 per month)',
-      insuranceCover: [
-        'Trip cancellation cover of up to ₹10,000',
-        'Comprehensive travel insurance coverage'
-      ]
+      notIdealFor: [
+        'High spenders seeking premium benefits.',
+        'Individuals unable to open a fixed deposit.',
+        'Users seeking high credit limits without collateral.'
+      ],
+      eligibilityCriteria: 'Age: 18 years or older.\nResidency: Indian residents with a current and permanent residential address.\nFixed Deposit: Minimum FD of ₹20,000 in cumulative or auto-renewal mode.\nExclusions: FDs opened by HUFs, partnership firms, societies, trusts, minors, or jointly held accounts are not eligible.'
     }
   },
   {
