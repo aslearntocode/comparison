@@ -2403,7 +2403,7 @@ Fuel Benefits:
   },
   {
     id: 'jupiter-edge-csb',
-    name: 'Jupiter Edge CSB Bank RuPay Credit Card',
+    name: 'Jupiter Edge CSB  RuPay Credit Card',
     bank: 'CSB Bank',
     category: 'upi',
     image: '/credit-cards/Jupiter.png',

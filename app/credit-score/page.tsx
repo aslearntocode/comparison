@@ -517,7 +517,7 @@ export default function CreditScorePage() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center pt-10">
               <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
-                Credit Score
+                Credit Score (Coming Soon)
               </h1>
               
               <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
