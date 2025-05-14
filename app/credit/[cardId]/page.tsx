@@ -16,12 +16,12 @@ import CardDiscrepancyNotification from '../../components/CardDiscrepancyNotific
 
 export default function CreditCardDetail({ params }: { params: Promise<{ cardId: string }> }) {
   const [activeTab, setActiveTab] = useState<
-    | 'welcome-annual'
-    | 'milestone'
-    | 'rewards'
     | 'fees'
+    | 'rewards'
+    | 'welcome'
+    | 'milestone'
     | 'reviews'
-  >('welcome-annual');
+  >('fees');
   const [mobileSuitabilityIndex, setMobileSuitabilityIndex] = useState(0);
   
   const { cardId } = use(params)
@@ -172,30 +172,147 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'welcome-annual':
+      case 'fees':
+        return (
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Joining and Annual Fees</h3>
+              <div className="space-y-4">
+                <div className="flex gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span className="text-gray-700">Joining Fee: {card.joiningFee}</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span className="text-gray-700">Annual Fee: {card.annualFee}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'rewards':
+        return (
+          <div className="space-y-6">
+            {/* Rewards Section */}
+            {card.additionalDetails?.rewardsProgram && (
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Rewards</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  {(() => {
+                    const rewards = card.additionalDetails.rewardsProgram;
+                    let items: string[] = [];
+                    if (rewards.includes('•')) {
+                      items = rewards.split('•');
+                    } else if (rewards.includes('\n')) {
+                      items = rewards.split('\n');
+                    } else if (rewards.includes('. ')) {
+                      items = rewards.split('. ').map(s => s.endsWith('.') ? s : s + '.');
+                    } else {
+                      items = [rewards];
+                    }
+                    return items.map((item, idx) => item.trim() && <li key={"rewards-"+idx}>{item.trim()}</li>);
+                  })()}
+                </ul>
+              </div>
+            )}
+            {/* Redemption Section */}
+            {card.additionalDetails?.redemptionOptions && (
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Redemption</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  {card.additionalDetails.redemptionOptions.split('•').map((item, idx) => (
+                    item.trim() && <li key={"redemption-"+idx}>{item.trim()}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {/* Lounge Benefits Section */}
+            {(card.additionalDetails?.airportLounge || card.additionalDetails?.additionalServices?.toLowerCase().includes('lounge')) && (
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Lounge Benefits</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  {/* Airport Lounge */}
+                  {card.additionalDetails?.airportLounge && card.additionalDetails.airportLounge.split('•').map((item, idx) => (
+                    item.trim() && <li key={"lounge-"+idx}>{item.trim()}</li>
+                  ))}
+                  {/* Railway Lounge in Additional Services */}
+                  {card.additionalDetails?.additionalServices && card.additionalDetails.additionalServices.split(/\n|•/).map((item, idx) => (
+                    item.toLowerCase().includes('railway lounge') && item.trim() ? <li key={"railway-lounge-"+idx}>{item.trim()}</li> : null
+                  ))}
+                </ul>
+              </div>
+            )}
+            {/* Fuel Surcharge Waiver Section */}
+            {card.additionalDetails?.fuelSurcharge && (
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Fuel Surcharge Waiver</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Fuel Surcharge: {card.additionalDetails.fuelSurcharge}</li>
+                </ul>
+              </div>
+            )}
+            {/* Other Ongoing Benefits Section */}
+            {(card.additionalDetails?.insuranceCover || card.additionalDetails?.diningPrivileges || card.additionalDetails?.movieBenefits || card.additionalDetails?.emiOptions || card.additionalDetails?.additionalServices) && (
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Other Ongoing Benefits</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  {/* Insurance Cover */}
+                  {card.additionalDetails?.insuranceCover && Array.isArray(card.additionalDetails.insuranceCover) && card.additionalDetails.insuranceCover.map((item, idx) => (
+                    <li key={"insurance-"+idx}>{item}</li>
+                  ))}
+                  {/* Dining Privileges */}
+                  {card.additionalDetails?.diningPrivileges && Array.isArray(card.additionalDetails.diningPrivileges) && card.additionalDetails.diningPrivileges.map((item, idx) => (
+                    <li key={"dining-"+idx}>{item}</li>
+                  ))}
+                  {/* Movie Benefits */}
+                  {card.additionalDetails?.movieBenefits && (() => {
+                    const movie = card.additionalDetails.movieBenefits;
+                    let items: string[] = [];
+                    if (movie.includes('•')) {
+                      items = movie.split('•');
+                    } else if (movie.includes('\n')) {
+                      items = movie.split('\n');
+                    } else if (movie.includes('. ')) {
+                      items = movie.split('. ').map(s => s.endsWith('.') ? s : s + '.');
+                    } else {
+                      items = [movie];
+                    }
+                    return items.map((item, idx) => item.trim() && <li key={"movie-"+idx}>{item.trim()}</li>);
+                  })()}
+                  {/* EMI Options */}
+                  {card.additionalDetails?.emiOptions && (
+                    <li>EMI Options: {card.additionalDetails.emiOptions}</li>
+                  )}
+                  {/* Additional Services (excluding lounge/railway lounge) */}
+                  {card.additionalDetails?.additionalServices && card.additionalDetails.additionalServices.split(/\n|•/).map((item, idx) => (
+                    item.trim() &&
+                    !item.toLowerCase().includes('lounge') &&
+                    <li key={"addl-"+idx}>{item.trim()}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      case 'welcome':
         return (
           <div className="space-y-6">
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Welcome Benefits</h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {card.additionalDetails?.welcomeBonus?.split('\n').map((benefit, index) => {
                   if (benefit.endsWith(':')) {
-                    // This is a section header (like "Taj Epicure Membership:" or "EazyDiner Prime Membership:")
                     return (
-                      <div key={index} className="mt-4">
-                        <h4 className="text-gray-900 font-medium mb-2">{benefit}</h4>
-                      </div>
+                      <h4 key={index} className="font-medium text-gray-900 mt-4 mb-2">{benefit}</h4>
                     );
                   } else if (benefit.startsWith('•')) {
-                    // This is a sub-point
                     return (
-                      <div key={index} className="flex gap-2 ml-8">
+                      <div key={index} className="flex gap-2 ml-4 mb-2">
                         <span className="text-blue-600">•</span>
                         <span className="text-gray-700">{benefit.substring(1).trim()}</span>
                       </div>
                     );
                   } else if (benefit.trim() !== '') {
-                    // This is a main point (like the reward points)
                     return (
                       <div key={index} className="flex gap-2">
                         <span className="text-blue-600">•</span>
@@ -214,177 +331,15 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
           <div className="space-y-6">
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Milestone Benefits</h3>
-              <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
-                {card.additionalDetails?.milestoneBenefits?.map((benefit, index) => (
-                  <li key={index} className="text-gray-700">{benefit}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        );
-      case 'rewards':
-        return (
-          <div className="space-y-6">
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <span className="text-2xl">💰</span>
-                Reward Points & Other Benefits
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left Column - Rewards Program Details */}
-                <div className="lg:col-span-2 space-y-8">
-                  {/* Rewards Program Section */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Reward Points</h4>
-                    {card.additionalDetails?.rewardsProgram
-                      ? card.additionalDetails.rewardsProgram.includes('\n') || card.additionalDetails.rewardsProgram.includes('•')
-                        ? card.additionalDetails.rewardsProgram.split('\n').map((line, index) => {
-                            if (line.endsWith(':')) {
-                              return (
-                                <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                              );
-                            } else if (line.startsWith('•')) {
-                              return (
-                                <div key={index} className="flex gap-2 ml-4 mb-2">
-                                  <span className="text-blue-600">•</span>
-                                  <span className="text-gray-700">{line.substring(1).trim()}</span>
-                                </div>
-                              );
-                            }
-                            return null;
-                          })
-                        : <div className="text-gray-700">{card.additionalDetails.rewardsProgram}</div>
-                      : null}
-                  </div>
-
-                  {/* Additional Features Section */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Additional Features</h4>
-                    {card.additionalDetails?.additionalServices?.split('\n').map((line, index) => {
-                      if (line.endsWith(':')) {
-                        return (
-                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                        );
-                      } else if (line.startsWith('•')) {
-                        return (
-                          <div key={index} className="flex gap-2 ml-4 mb-2">
-                            <span className="text-blue-600">•</span>
-                            <span className="text-gray-700">{line.substring(1).trim()}</span>
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
-                    {/* Dining Privileges Section */}
-                    {card.additionalDetails?.diningPrivileges && card.additionalDetails.diningPrivileges.length > 0 && (
-                      <div className="mt-6">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Dining Benefits</h4>
-                        <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
-                          {card.additionalDetails.diningPrivileges.map((item, idx) => (
-                            <li key={idx} className="text-gray-700">{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {/* Movie Benefits Section */}
-                    {card.additionalDetails?.movieBenefits && (
-                      <div className="mt-6">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Movie Benefits</h4>
-                        <div className="text-gray-700">{card.additionalDetails.movieBenefits}</div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Travel & Lifestyle Benefits Section */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Travel & Lifestyle Benefits</h4>
-                    {card.additionalDetails?.airportLounge?.split('\n').map((line, index) => {
-                      if (line.endsWith(':')) {
-                        return (
-                          <h5 key={index} className="font-medium text-gray-900 mt-4 mb-2">{line}</h5>
-                        );
-                      } else if (line.startsWith('•')) {
-                        return (
-                          <div key={index} className="flex gap-2 ml-4 mb-2">
-                            <span className="text-blue-600">•</span>
-                            <span className="text-gray-700">{line.substring(1).trim()}</span>
-                          </div>
-                        );
-                      }
-                      return null;
-                    })}
-                    {card.additionalDetails?.travelLifestyleBenefits && (
-                      <div className="text-gray-700 mt-2">{card.additionalDetails.travelLifestyleBenefits}</div>
-                    )}
-                  </div>
-
-                  {/* Fuel Surcharge Benefit Section */}
-                  {card.additionalDetails?.fuelSurcharge && (
-                    <div className="bg-white rounded-lg p-6 shadow-sm">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Fuel Surcharge Benefit</h4>
-                      <div className="text-gray-700">{card.additionalDetails.fuelSurcharge}</div>
-                    </div>
-                  )}
-
-                  {/* Insurance & Protection Section */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Insurance & Protection</h4>
-                    <div className="space-y-2">
-                      {card.additionalDetails?.insuranceCover?.map((item, index) => (
-                        <div key={index}>
-                          {item.startsWith('•') ? (
-                            <div className="flex gap-2 ml-4">
-                              <span className="text-blue-600">•</span>
-                              <span className="text-gray-700">{item.substring(1).trim()}</span>
-                            </div>
-                          ) : item.endsWith(':') ? (
-                            <h5 className="font-medium text-gray-900 mt-4 mb-2">{item}</h5>
-                          ) : (
-                            <div className="text-gray-700">{item}</div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Column - Reward Points Card */}
-                {(() => {
-                  console.log('Card details:', { bank: card.bank, id: card.id });
-                  return <RewardPointsCard bank={card.bank} cardId={card.id} />;
-                })()}
-              </div>
-            </div>
-          </div>
-        );
-      case 'fees':
-        return (
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Fees Structure</h2>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-gray-700">Joining Fee</p>
-                  <p className="text-gray-600">{card.joiningFee}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-700">Annual Fee</p>
-                  <p className="text-gray-600">{card.annualFee}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-700">Interest Rate</p>
-                  <p className="text-gray-600">{card.additionalDetails?.interestRate}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-700">Domestic Transaction Fee</p>
-                  <p className="text-gray-600">{card.additionalDetails?.domesticTransactionFee}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-700">International Transaction Fee</p>
-                  <p className="text-gray-600">{card.additionalDetails?.internationalTransactionFee}</p>
-                </div>
-              </div>
+              {card.additionalDetails?.milestoneBenefits?.length ? (
+                <ul className="space-y-2 list-disc list-outside pl-4">
+                  {card.additionalDetails.milestoneBenefits.map((benefit, index) => (
+                    <li key={index} className="text-gray-700">{benefit}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-500">No milestone benefits available</p>
+              )}
             </div>
           </div>
         );
@@ -698,38 +653,8 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
             <div className="border-b border-gray-200">
               <div className="flex overflow-x-auto">
                 <button
-                  onClick={() => setActiveTab('welcome-annual')}
-                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
-                    activeTab === 'welcome-annual'
-                      ? 'border-b-2 border-blue-500 text-blue-600'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Welcome Benefits
-                </button>
-                <button
-                  onClick={() => setActiveTab('milestone')}
-                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
-                    activeTab === 'milestone'
-                      ? 'border-b-2 border-blue-500 text-blue-600'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Milestone Benefits
-                </button>
-                <button
-                  onClick={() => setActiveTab('rewards')}
-                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
-                    activeTab === 'rewards'
-                      ? 'border-b-2 border-blue-500 text-blue-600'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Reward Points and Other Benefits
-                </button>
-                <button
                   onClick={() => setActiveTab('fees')}
-                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-base font-medium text-center whitespace-nowrap ${
                     activeTab === 'fees'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'
@@ -738,8 +663,38 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   Joining and Annual Fees
                 </button>
                 <button
+                  onClick={() => setActiveTab('rewards')}
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-base font-medium text-center whitespace-nowrap ${
+                    activeTab === 'rewards'
+                      ? 'border-b-2 border-blue-500 text-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Reward Points and Redemption
+                </button>
+                <button
+                  onClick={() => setActiveTab('welcome')}
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-base font-medium text-center whitespace-nowrap ${
+                    activeTab === 'welcome'
+                      ? 'border-b-2 border-blue-500 text-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Welcome Benefits
+                </button>
+                <button
+                  onClick={() => setActiveTab('milestone')}
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-base font-medium text-center whitespace-nowrap ${
+                    activeTab === 'milestone'
+                      ? 'border-b-2 border-blue-500 text-blue-600'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Milestone Benefits
+                </button>
+                <button
                   onClick={() => setActiveTab('reviews')}
-                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-xs font-medium text-center whitespace-nowrap ${
+                  className={`flex-1 py-3 md:py-2 px-4 md:px-3 text-sm md:text-base font-medium text-center whitespace-nowrap ${
                     activeTab === 'reviews'
                       ? 'border-b-2 border-blue-500 text-blue-600'
                       : 'text-gray-500 hover:text-gray-700'

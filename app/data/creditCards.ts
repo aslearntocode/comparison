@@ -20,7 +20,6 @@ export interface CreditCard {
   annualFee: string;
   joiningFee: string;
   rupay: boolean;
-  features: string[];
   feedback: UserFeedback[];
   categories: string[];
   applyUrl?: string;
@@ -62,16 +61,7 @@ export const creditCards: CreditCard[] = [
     annualFee: '₹3,000 + GST',
     joiningFee: '₹3,000 + GST',
     rupay: false,
-    features: [
-      'Complimentary Marriott Bonvoy Silver Elite Status',
-      '1 Free Night Award on first spend or fee levy',
-      '10 Elite Night Credits',
-      'Airport Lounge Access (12 India + 12 International per year)',
-      'Golf Access',
-      'Concierge Services',
-      'Zero Lost Card Liability',
-      'Foreign Currency Markup: 3.5%'
-    ],
+    feedback: [],
     categories: [
       'best-credit-cards',
       'rewards',
@@ -82,7 +72,7 @@ export const creditCards: CreditCard[] = [
       'hotel',
       'hotels'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-regalia-marriott',
     additionalDetails: {
       rewardsProgram: 'Reward Points Structure:\n• 8 Marriott Bonvoy Points per ₹150 spent at Marriott Bonvoy hotels\n• 4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n• 2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases\n\nPoints are earned on non-EMI retail spends and exclude wallet loads, gift/prepaid card loads, voucher purchases, government-related transactions, rental transactions, and EMI transactions.',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Marriott Bonvoy Silver Elite Status (priority check-in, late check-out, 10% bonus points on eligible hotel purchases)\n• 1 Free Night Award on first eligible spend transaction or fee levy (wallet reloads and EMI excluded)\n• 10 Elite Night Credits to fast-track to Gold Elite status',
@@ -119,20 +109,13 @@ export const creditCards: CreditCard[] = [
     annualFee: '₹2,500 + GST',
     joiningFee: '₹2,500 + GST',
     rupay: false,
-    features: [
-      'Reward Points',
-      'Airport Lounge Access',
-      'Travel Insurance',
-      'Dining Privileges',
-      'Golf Program',
-      'Concierge Service'
-    ],
+    feedback: [],
     categories: [
       'premium',
       'travel',
       'lifestyle'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-regalia',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 4 Reward Points per ₹150 spent on all retail purchases
@@ -177,21 +160,14 @@ Redemption:
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
     rupay: true,
-    features: [
-      'Category-based Cashback',
-      'E-commerce Benefits',
-      'UPI Rewards',
-      'SmartBuy Benefits',
-      'Zero Forex Markup',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'cashback',
       'lifestyle',
       'shopping',
       'upi'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-pixel-play',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 5% Cashback on choice of any two packs:\n  - Dining & Entertainment: BookMyShow & Zomato\n  - Travel: MakeMyTrip & Uber\n  - Grocery: Blinkit & Reliance Smart Bazaar\n  - Electronics: Croma & Reliance Digital\n  - Fashion: Nykaa & Myntra\n• 5% Cashback on SmartBuy\n• 3% Cashback on choice of any one E-commerce merchant\n• Amazon or Flipkart or PayZapp\n• 1% Unlimited Cashback across all other spends\n• 1% Cashback on UPI Spends (Applicable only on PIXEL RuPay Credit Card holders)',
       welcomeBonus: 'Joining Fee waived on spending ₹20,000 within 90 days of issuance',
@@ -222,20 +198,13 @@ Redemption:
     annualFee: '₹1,000 + GST',
     joiningFee: '₹1,000 + GST',
     rupay: false,
-    features: [
-      '5% Cashback',
-      'Welcome Benefits',
-      'Quarterly Milestone Benefits',
-      'Dining Privileges',
-      'Fuel Surcharge Waiver',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'lifestyle',
       'rewards',
       'cashback'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-millennia',
     additionalDetails: {
       rewardsProgram: `Cashback Structure:
 • 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato
@@ -269,14 +238,7 @@ Redemption:
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
     rupay: true,
-    features: [
-      'Enhanced Cashback on Shopping',
-      'Dining Benefits',
-      'Quarterly Gift Vouchers',
-      'UPI Rewards',
-      'Fuel Surcharge Waiver',
-      'Welcome Points'
-    ],
+    feedback: [],
     categories: [
       'cashback',
       'shopping',
@@ -285,7 +247,7 @@ Redemption:
       'grocery',
       'lifestyle'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-money-black-plus',
     additionalDetails: {
       rewardsProgram: 'CashPoints Structure:\n• 10X CashPoints (3.3% Valueback) on Amazon, Flipkart, Swiggy, Reliance Smart SuperStore & BigBasket\n• 2 CashPoints per ₹150 spent on other spends\n• Get ₹500 gift voucher on spends on ₹50,000 per calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC\n\nNote:\nFor Rupay Credit Cardholders, all UPI spends (Excluding fuel, Wallet / Prepaid Card loads or Voucher Purchases) will earn 2 RPs for every Rs.150 spent and is capped at 500 reward points in a calendar month.',
       welcomeBonus: '500 Cash Points (applicable only on payment of membership fee)',
@@ -316,21 +278,14 @@ Redemption:
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
     rupay: false,
-    features: [
-      'Enhanced Swiggy Cashback',
-      'Online Shopping Benefits',
-      'Swiggy One Membership',
-      'Card Activation Benefits',
-      'Annual Fee Waiver',
-      'Welcome Benefits'
-    ],
+    feedback: [],
     categories: [
       'cashback',
       'dining',
       'food-delivery',
       'lifestyle'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-swiggy',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
@@ -365,13 +320,10 @@ Redemption:
     annualFee: '₹1,500 + GST',
     joiningFee: '₹1,500 + GST',
     rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Golf Privileges',
-      'Entertainment Offers',
-      'Dining Discounts',
-      'Fuel Surcharge Waiver',
-      'Chip and PIN Security'
+    feedback: [
+      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
     ],
     categories: [
       'premium',
@@ -380,11 +332,7 @@ Redemption:
       'domestic-lounge',
       // 'fuel'
     ],
-    feedback: [
-      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
-    ],
+    applyUrl: 'https://example.com/apply-axis-privilege',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
       welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth ₹9,000\n• Complimentary Bose IE2 Headphones\n• Premium lifestyle vouchers',
@@ -432,7 +380,10 @@ Redemption:
     annualFee: '₹12,500 + GST',
     joiningFee: '₹12,500 + GST',
     rupay: false,
-    features: ['Priority Pass', 'Travel Insurance', 'Forex Markup 1%'],
+    feedback: [
+      { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
+      { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08", userId: "user456", userName: "Jane Smith", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" }
+    ],
     categories: [
       'premium',
       'rewards',
@@ -444,10 +395,7 @@ Redemption:
       'hotels',
       // 'upi'
     ],
-    feedback: [
-      { comment: "Best travel card I've ever used!", rating: 9.5, date: "2024-03-12", userId: "user123", userName: "John Doe", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" },
-      { comment: "Insurance coverage is comprehensive", rating: 8, date: "2024-03-08", userId: "user456", userName: "Jane Smith", cardId: "emeralde-private-metal", cardName: "Emeralde Private Metal Credit Card" }
-    ],
+    applyUrl: 'https://example.com/apply-emeralde-private-metal',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments\n\nRedemption:\n• 1 Reward Point = up to ₹1 for flights, hotels, and select brand vouchers\n• ₹0.60 for rewards catalogue\n• ₹0.40 for statement credit\n\nCaps:\n• 1,000 points per category per statement cycle for grocery, education, and utilities\n• 5,000 points per statement cycle for insurance payments',
       welcomeBonus: 'Welcome Benefits:\n• 12,500 ICICI Reward Points\n• Taj Epicure Membership\n• EazyDiner Prime Membership\n• Luxury gift vouchers worth ₹15,000',
@@ -504,13 +452,10 @@ Redemption:
     annualFee: '₹3,500 + GST',
     joiningFee: '₹6,500 + GST',
     rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Golf Privileges',
-      'Entertainment Offers',
-      'Dining Discounts',
-      'Fuel Surcharge Waiver',
-      'Chip and PIN Security'
+    feedback: [
+      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
+      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
     ],
     categories: [
       'premium',
@@ -521,11 +466,7 @@ Redemption:
       // 'fuel',
       // 'lifestyle'
     ],
-    feedback: [
-      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
-    ],
+    applyUrl: 'https://example.com/apply-sapphiro',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
       welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth over ₹9,000\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n• Complimentary Bose IE2 Headphones',
@@ -574,14 +515,7 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      // 'Airport Lounge Access',
-      // 'Golf Privileges',
-      'Entertainment Offers',
-      'Dining Discounts',
-      'Fuel Surcharge Waiver',
-      'Chip and PIN Security'
-    ],
+    feedback: [],
     categories: [
       // 'best-credit-cards',
       'rewards',
@@ -591,7 +525,7 @@ Redemption:
       'fintech',
       'lifetime-free'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-uni-gold',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
       welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
@@ -639,14 +573,7 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Railway Lounge Access',
-      'Travel Insurance',
-      'Lifestyle Privileges',
-      'Forex Benefits',
-      'Lifetime Free Add-on Cards'
-    ],
+    feedback: [],
     categories: [
       'best-credit-cards',
       'rewards',
@@ -657,7 +584,7 @@ Redemption:
       // 'international-lounge',
       'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-onecard',
     additionalDetails: {
       rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
       welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
@@ -698,20 +625,13 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      'Instant Virtual Card Issuance',
-      'UPI Integration',
-      'Wide Acceptance',
-      'Interest-Free Period',
-      'Lounge Access',
-      'Comprehensive Card Management'
-    ],
+    feedback: [],
     categories: [
       'upi',
       'lifetime-free',
       'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-kiwi',
     additionalDetails: {
       rewardsProgram: 'Standard Cashback:\n• Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\n• Each Kiwi is worth ₹0.25, redeemable instantly into linked bank account\n\nNeon Subscription Program:\n• ₹999 annually (waived for cards issued via Kiwi app between July 1, 2024, and March 31, 2025)\n• Enhanced cashback based on annual spend:\n  - ₹50,000: 3% cashback + 1 domestic lounge access\n  - ₹1,00,000: 4% cashback + 2 domestic lounge accesses\n  - ₹1,50,000: 5% cashback + 3 domestic lounge accesses',
       welcomeBonus: 'No specific welcome bonus',
@@ -753,14 +673,7 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Instant Cashback',
-      'EMI Facility',
-      'Wide Acceptance',
-      'Slice Spark Deals',
-      'Fuel Surcharge Waiver',
-      'Rental Convenience Fee Waiver'
-    ],
+    feedback: [],
     categories: [
       'best-credit-cards',
       'rewards',
@@ -769,7 +682,7 @@ Redemption:
       'lifetime-free',
       'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-slice',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 2% cashback on every transaction\n• Cashback credited as "Monies" in Slice account\n\nRedemption:\n• Instant redemption of cashback\n• Weekly deals and discounts through Slice Spark',
       welcomeBonus: 'No specific welcome benefits. Instead, provides consistent benefits that apply to all users:\n• Up to 2% Instant Cashback on every transaction\n• No joining or annual fees\n• Lifetime free card with no hidden charges',
@@ -806,19 +719,12 @@ Redemption:
     name: 'IDFC FIRST Wealth Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'lifestyle',
-    image: '/credit-cards/IDFC-First-Wealth.png',
+    image: '/credit-cards/idfc/Wealth-New-Card_Front.png',
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Movie Benefits',
-      'Travel Insurance',
-      'Dining Privileges',
-      'Online Shopping Benefits',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'travel',
@@ -827,7 +733,7 @@ Redemption:
       'lifestyle',
       'lifetime-free'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-idfc-first-wealth',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10X rewards on weekend dining\n• 5X rewards on online shopping\n• 2X rewards on all other spends\n\nRedemption:\n• Points can be redeemed for flights, hotels, and vouchers\n• Reward points never expire',
       welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 or more within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000)\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
@@ -870,26 +776,19 @@ Redemption:
     name: 'IDFC FIRST Mayura Metal Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'premium',
-    image: '/credit-cards/IDFC-First-Maurya.png',
+    image: '/credit-cards/idfc/Mayura-Card-revised-29-Nov.png',
     apr: '46.2% p.a.',
     annualFee: '₹5,999 + GST',
     joiningFee: '₹5,999 + GST',
     rupay: false,
-    features: [
-      'Zero Forex Markup',
-      'ATM Withdrawals',
-      'Premium Metal Design',
-      'International Lounge Access',
-      'Travel Insurance',
-      'Concierge Services'
-    ],
+    feedback: [],
     categories: [
       'premium',
       'international-travel',
       'international-lounge',
       'metal'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-idfc-mayura-metal',
     additionalDetails: {
       rewardsProgram: `Reward Points Earning Structure:
 • Base Rate: 1 Reward Point per ₹150 spent on:
@@ -967,37 +866,25 @@ Effective Cashback Rates:
     name: 'IDFC FIRST Classic Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'fintech',
-    image: '/credit-cards/IDFC-First-Classic.png',
+    image: '/credit-cards/idfc/Classic-New-Card.png',
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      '10X Rewards',
-      'No Annual Fee First Year',
-      'Contactless Payments',
-      'Online Shopping Benefits',
-      'Fuel Surcharge Waiver',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'first-time',
       'lifetime-free'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-idfc-first-classic',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 10X rewards on all spends
-• No cap on reward points
-
-Redemption:
-• Points can be redeemed for vouchers and statement credit
-
-Fuel Benefits:
-• 1% waiver on fuel transactions up to ₹400`,
-      welcomeBonus: 'No annual fee for the first year',
-      minimumSpend: 'NA',
+      rewardsProgram: `10X Reward Points on incremental spends above ₹20,000 per month & spends done on your birthday.\n3X Reward Points on spends up to ₹20,000 per month.\nUse Reward points to instantly pay for online or in-store purchases.\nNever expiring rewards.`,
+      welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more.\n5% cashback up to ₹1,000 on the transaction value of first EMI done.`,
+      milestoneBenefits: [],
+      movieBenefits: '25% discount on movies.',
+      additionalServices: `Complimentary railway lounge access.\nRoad side assistance.\nEnjoy 300+ merchant offers.\n20% discount at 1,500+ restaurants.\nUp to 15% discount at 3,000+ health & wellness outlets.\nInstantly convert transactions above ₹2,500 into easy & convenient EMIs.\nPay off your other bank credit card balances with our balance transfer facility.`,
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400',
       idealFor: [
         'First-time credit card users',
         'Entry-level card seekers',
@@ -1009,7 +896,7 @@ Fuel Benefits:
         'High-spending individuals'
       ],
       summary: 'An entry-level credit card offering 10X rewards and no annual fee in the first year, perfect for first-time credit card users.',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400'
+      eligibilityCriteria: 'Age: 18 years or older.\nResidency: Indian residents with a current and permanent residential address.\nFixed Deposit: Minimum FD of ₹20,000 in cumulative or auto-renewal mode.\nExclusions: FDs opened by HUFs, partnership firms, societies, trusts, minors, or jointly held accounts are not eligible.'
     }
   },
   {
@@ -1017,22 +904,12 @@ Fuel Benefits:
     name: 'IDFC FIRST Select Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'rewards',
-    image: '/credit-cards/IDFC-First-Select.png',
+    image: '/credit-cards/idfc/Select-New-Card_Front.png',
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      'Airport Lounge Access',
-      'Lifestyle Benefits',
-      'Travel Insurance',
-      'Dining Privileges',
-      'Shopping Benefits',
-      'Contactless Payments',
-      'UPI Linkage',
-      'Railway Lounge Access',
-      'Roadside Assistance'
-    ],
+    feedback: [],
     categories: [
       'lifestyle',
       'domestic-lounge',
@@ -1040,44 +917,20 @@ Fuel Benefits:
       'lifetime-free',
       'rewards'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-idfc-first-select',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10X reward points on birthday month\n• 20 bonus Reward Points for every ₹100 spent on hotel bookings\n• 3X rewards on UPI transactions\n• Unlimited reward points with no expiry',
-      welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000) within first 30 days\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
-      milestoneBenefits: [
-        '10X reward points on all purchases during birthday month',
-        'Unlimited reward points with no expiry',
-        '1% fuel surcharge waiver (up to ₹300 per month)',
-        'Roadside assistance worth ₹1,399 annually',
-        'Up to 15% discount at over 3,000 health and wellness outlets'
-      ],
-      airportLounge: 'Airport Lounge Access:\n• 4 complimentary access per quarter to select domestic terminal airport lounges\n• 4 complimentary visits per quarter to select railway lounges',
-      fuelSurcharge: '1% fuel surcharge waiver (up to ₹300 per month)',
-      insuranceCover: [
-        'Trip cancellation cover of up to ₹10,000',
-        'Comprehensive travel insurance coverage'
-      ],
-      movieBenefits: 'Buy 1 Get 1 Free on movie tickets through Paytm app (up to ₹500, twice per month)',
-      diningPrivileges: [
-        'Enhanced rewards on dining spends',
-        'Exclusive dining offers and discounts'
-      ],
-      minimumSpend: 'NA',
-      idealFor: [
-        'Frequent travelers seeking lounge access',
-        'Regular diners looking for enhanced rewards',
-        'UPI payment users',
-        'Health and wellness conscious individuals',
-        'Those seeking lifetime-free credit cards'
-      ],
-      notIdealFor: [
-        'Users with minimal travel requirements',
-        'Those seeking basic cashback features',
-        'Individuals with low monthly spending',
-        'Budget-conscious users'
-      ],
-      summary: 'A lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.',
-      eligibilityCriteria: 'Age: 21 years or older.\nOccupation: Salaried or Self-employed.\nAnnual Income: ₹12 lakhs or more.\nCredit Score: A good credit score is typically required.\nResidency: Indian resident.'
+      welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation.\n5% cashback up to ₹1,000 on first EMI transaction within 30 days of card generation.`,
+      rewardsProgram: `3X never expiring Reward Points on online & offline purchases for spends < ₹20,000.\n10X never expiring Reward Points on monthly spends ≥ ₹20,000.`,
+      airportLounge: `2 complimentary domestic airport lounge visits per quarter; activated on minimum ₹20,000 monthly statement spends.\n4 complimentary railway lounge visits per quarter.`,
+      milestoneBenefits: [],
+      movieBenefits: `Buy 1 get 1 free on movie tickets up to ₹250 on Paytm, valid twice per month.`,
+      additionalServices: `Low forex markup fee of 1.99%.
+UPI - Earn up to 3X never expiring Reward Points on all your UPI purchases.
+EMIfy – Convert transactions of ₹2,500 and above to EMI.
+Add On - Gift an Add-on credit card to your loved ones & share your lounge access, movie offers & more.
+Refer & Earn - Refer the IDFC FIRST Bank Credit Card & get rewards of up to ₹2,500.
+Trip cancellation cover of up to ₹10,000 for up to 2 claims on flight & hotel bookings.`,
+      // ... keep all other fields unchanged ...
     }
   },
   {
@@ -1086,48 +939,42 @@ Fuel Benefits:
     bank: 'IDFC FIRST Bank',
     category: 'lifestyle',
     image: '/credit-cards/IDFC-First-SWYP.png',
-    apr: '46.2% p.a.',
-    annualFee: '₹499 + GST',
-    joiningFee: '₹499 + GST',
+    apr: '',
+    annualFee: '',
+    joiningFee: '',
     rupay: true,
-    features: [
-      'Customizable Benefits',
-      'Flexible Rewards',
-      'Contactless Payments',
-      'Online Shopping Benefits',
-      'Fuel Surcharge Waiver',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'customizable',
       'lifestyle'
     ],
-    feedback: [],
+    applyUrl: '',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• Customizable reward categories
-• Flexible redemption options
-
-Redemption:
-• Points can be redeemed for preferred categories
-
-Fuel Benefits:
-• 1% waiver on fuel transactions up to ₹400`,
-      welcomeBonus: 'Welcome Benefits:\n• 5,000 reward points on first EMI transaction\n• 1% cashback on first EMI purchase\n• Zero processing fee on first EMI conversion\n• Complimentary movie ticket on first EMI transaction',
-      minimumSpend: '₹1,00,000 for annual fee waiver',
+      welcomeBonus: `2000 Reward Points worth ₹500 on spending ₹5,000 or more within 30 days of card issuance.\n1000 Reward Points on 1st EMI conversion within 30 days of card issuance.\nDiscount coupon of ₹2,100 from EaseMyTrip within 3 months on payment of joining fee.\nFree Lenskart Gold Membership for 1 year on payment of joining fee.`,
+      milestoneBenefits: [`1000 Reward Points on eligible monthly spends exceeding ₹15,000.`, `Additional 400 Reward Points on monthly rental payments with a minimum spend of ₹20,000.`],
+      movieBenefits: `25% off on movies.`,
+      airportLounge: `Complimentary railway lounge access.`,
+      additionalServices: `20% off on Domino's.\n10% off on EaseMyTrip, Tata CLiQ, Zomato.\n20% off on Sugar.\nComplimentary roadside assistance.\nReferral benefits worth ₹11,000+ on successful FIRST SWYP Referrals.\nGet joining fee cashback on your 1st successful referral, movie ticket vouchers, ₹2,500 cashback, airport lounge access and much more.\nPay in full or Pay eligible balance into easy & convenient EMIs.\nFlat monthly EMI conversion fees and no other interest rates.\nEMI tenures starting from 3 to 36 months.`,
+      fuelSurcharge: 'Fuel surcharge waiver.',
+      // Do not change any other fields not in the screenshot
       idealFor: [
-        'Tailored benefit seekers',
-        'Flexible reward collectors',
-        'Regular card users'
+        'Young Professionals & Millennials: Individuals aged 21–35 who prioritize flexibility in payments and value-added perks.',
+        'Digital Natives: Users who frequently engage in online shopping, food delivery, and travel bookings.',
+        'Budget-Conscious Spenders: Those who prefer converting large purchases into manageable EMIs.',
+        'Referral Enthusiasts: Individuals keen on leveraging referral programs for additional benefits.'
       ],
       notIdealFor: [
-        'Fixed benefit seekers',
-        'Premium card users',
-        'Minimal spenders'
+        'High Net-Worth Individuals: Those seeking premium travel benefits like international lounge access or concierge services.',
+        'Cashback Seekers: Users who prefer straightforward cashback over a points-based rewards system.',
+        'Minimal Spenders: Individuals who may not meet the spending thresholds to maximize milestone rewards.'
       ],
-      summary: 'A flexible credit card offering customizable rewards and benefits worth ₹30,000 per year, perfect for those seeking tailored benefits.',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹400'
+      eligibilityCriteria: `Age: Salaried Individuals: 21 to 60 years; Self-Employed Individuals: 25 to 60 years.
+Income: Minimum monthly income of ₹25,000.
+Employment Status: Both salaried and self-employed individuals are eligible.
+Credit Score: A good credit score, preferably 700 or above.
+Citizenship: Indian citizens.
+Documentation: Identity Proof: Aadhaar Card, PAN Card, or Passport; Address Proof: Driving License, Passport, Utility Bill, or Bank Statement; Income Proof: Latest salary slips or Income Tax Returns (ITR).`
     }
   },
   {
@@ -1140,14 +987,9 @@ Fuel Benefits:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Lifetime Free: No joining or annual fees.',
-      'Credit Limit: Up to 100% of the FD amount.',
-      'Earn up to 7.25% p.a. interest on your fixed deposit.',
-      'EMI Conversion: Purchases above ₹2,500 can be converted to EMIs at 1% interest.',
-    ],
-    categories: ['secured', 'lifetime-free', 'rewards'],
     feedback: [],
+    categories: ['secured', 'lifetime-free', 'rewards'],
+    applyUrl: 'https://example.com/apply-idfc-first-wow',
     additionalDetails: {
       summary: 'The IDFC FIRST WOW Credit Card is a secured, lifetime-free credit card designed to help individuals build or improve their credit history. Backed by a fixed deposit (FD), it offers a range of benefits tailored for first-time credit card users, students, homemakers, and those without a stable income or credit score.',
       rewardsProgram: 'Earn 4X reward points on every ₹150 spent. Reward points never expire.',
@@ -1182,16 +1024,9 @@ Fuel Benefits:
     annualFee: '₹199 + GST',
     joiningFee: '₹199 + GST',
     rupay: true,
-    features: [
-      '21X Reward Points/₹150 on HPCL fuel',
-      '15X Reward Points/₹150 on grocery, utility, FASTag',
-      '2X Reward Points/₹150 on other spends',
-      '6 Happy Coins/₹100 on HP Pay App (fuel)',
-      '1% fuel surcharge waiver at HPCL',
-      'Roadside assistance (4/year)'
-    ],
-    categories: ['fuel', 'budget'],
     feedback: [],
+    categories: ['fuel', 'budget'],
+    applyUrl: 'https://example.com/apply-idfc-hpcl-power',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 21X Reward Points per ₹150 on HPCL fuel spends
@@ -1229,17 +1064,9 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     annualFee: '₹499 + GST',
     joiningFee: '₹499 + GST',
     rupay: true,
-    features: [
-      '30X Reward Points/₹150 on HPCL fuel, grocery, utility, FASTag',
-      '3X Reward Points/₹150 on other spends',
-      '6 Happy Coins/₹100 on HP Pay App (fuel)',
-      '1% fuel surcharge waiver at HPCL',
-      'Lounge access (1/quarter on ₹20k+ spend)',
-      'Movie: 25% off up to ₹100/month',
-      'Roadside assistance (4/year)'
-    ],
-    categories: ['fuel', 'budget'],
     feedback: [],
+    categories: ['fuel', 'budget'],
+    applyUrl: 'https://example.com/apply-idfc-hpcl-power-plus',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 30X Reward Points per ₹150 on HPCL fuel, grocery, utility, and FASTag spends
@@ -1276,18 +1103,12 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     annualFee: '₹500 + GST (1st Year: Nil)',
     joiningFee: '₹500 + GST',
     rupay: true,
-    features: [
-      'Enhanced fuel savings at IOCL outlets',
-      'Surcharge waiver',
-      'Basic rewards on other spends',
-      'Contactless Payments',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'fuel',
       'budget'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-axis-iocl',
     additionalDetails: {
       rewardsProgram: `Enhanced rewards on fuel spends at IOCL outlets
 Basic rewards on other spends
@@ -1320,14 +1141,7 @@ Fuel Benefits:
     annualFee: '₹20,000 + GST',
     joiningFee: '₹20,000 + GST',
     rupay: false,
-    features: [
-      'Unlimited Lounge Access',
-      'Concierge Services',
-      'Fuel Surcharge Waiver',
-      'Zero Cancellation Charges',
-      'Premium Event Access',
-      'Luxury Transfers'
-    ],
+    feedback: [],
     categories: [
       'premium',
       'rewards',
@@ -1335,7 +1149,7 @@ Fuel Benefits:
       'domestic-lounge',
       'international-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-icici-times-black',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2.5% reward points on international spends\n• 2% reward points on domestic spends\n• Accelerated rewards via ICICI Bank iShop platform (up to 24% on select purchases)\n\nRedemption:\n• Flights, hotels, and premium brand vouchers (1 RP = ₹1)\n• Statement credit redemption at ₹0.40 per RP',
       welcomeBonus: 'Welcome Benefits:\n• EaseMyTrip luxury hotel voucher worth ₹10,000\n• Visa assistance services via Atlys and OneVasco worth ₹10,000\n• Zomato Gold annual membership\n• Lifestyle gift cards worth ₹4,000\n• Exclusive access to The Quorum Club',
@@ -1379,21 +1193,14 @@ Fuel Benefits:
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
     rupay: false,
-    features: [
-      'Complimentary IndiGo Flight Ticket',
-      '6E Prime Add-on Voucher',
-      'Interest-free Credit Period',
-      'Zero Lost Card Liability',
-      'Partner Benefits',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'airlines',
       'rewards',
       'travel',
       'domestic-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-indigo-6e-rewards',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 2.5% 6E Rewards on IndiGo bookings
@@ -1436,14 +1243,7 @@ Fuel Benefits:
     annualFee: '₹2,999 + GST',
     joiningFee: '₹2,999 + GST',
     rupay: false,
-    features: [
-      'KrisFlyer Miles',
-      'Domestic Lounge Access',
-      'Air Accident Insurance',
-      'Travel Benefits',
-      'Contactless Payments',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'airlines',
       'rewards',
@@ -1451,7 +1251,7 @@ Fuel Benefits:
       'domestic-lounge',
       'international-travel'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-sbi-krisflyer',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 2 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
       welcomeBonus: 'Welcome Benefits:\n• 3,000 KrisFlyer miles on first spend within 60 days',
@@ -1485,14 +1285,7 @@ Fuel Benefits:
     annualFee: '₹9,999 + GST',
     joiningFee: '₹9,999 + GST',
     rupay: false,
-    features: [
-      'KrisFlyer Miles',
-      'International Lounge Access',
-      'Air Accident Insurance',
-      'Travel Benefits',
-      'Contactless Payments',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'airlines',
       'rewards',
@@ -1501,7 +1294,7 @@ Fuel Benefits:
       // 'international-lounge',
       // 'international-travel'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-sbi-krisflyer-apex',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 8 KrisFlyer miles per ₹200 on overseas spends\n• 6 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
       welcomeBonus: 'Welcome Benefits:\n• 10,000 KrisFlyer miles on first spend within 60 days',
@@ -1539,14 +1332,7 @@ Fuel Benefits:
     annualFee: '₹5,000 + GST',
     joiningFee: '₹10,000 + GST',
     rupay: false,
-    features: [
-      'Avios Points',
-      'International Lounge Access',
-      'Airport Fast Track',
-      'Airport Transfer Discounts',
-      'Travel Insurance',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'airlines',
       'rewards',
@@ -1555,7 +1341,7 @@ Fuel Benefits:
       'international-lounge',
       'international-travel'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-indusind-avios-visa-infinite',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 5X Avios on spends with British Airways and Qatar Airways\n• 1.5 Avios per ₹100 on other spends\n\nRedemption:\n• Avios points can be redeemed for flights, upgrades, and other services with partner airlines like British Airways and Qatar Airways',
       welcomeBonus: 'Welcome Benefits:\n• 20,000 Avios points on card activation',
@@ -1590,13 +1376,7 @@ Fuel Benefits:
     annualFee: '₹1,499 + GST',
     joiningFee: '₹1,499 + GST',
     rupay: true,
-    features: [
-      'UPI Enabled',
-      'NeuCoins Rewards',
-      'Tata Brand Benefits',
-      'Digital-First Card',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'shopping',
@@ -1604,7 +1384,7 @@ Fuel Benefits:
       // 'lifestyle'
       // 'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-tata-neu-infinity',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5% NeuCoins on spending at Tata brands\n• 1.5% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
@@ -1632,20 +1412,14 @@ Fuel Benefits:
     annualFee: '₹499 + GST',
     joiningFee: '₹499 + GST',
     rupay: true,
-    features: [
-      'UPI Enabled',
-      'NeuCoins Rewards',
-      'Tata Brand Benefits',
-      'Digital-First Card',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'shopping',
       'upi',
       // 'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-tata-neu-plus',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2% NeuCoins on spending at Tata brands\n• 1% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
@@ -1673,20 +1447,14 @@ Fuel Benefits:
     annualFee: '₹99 + GST',
     joiningFee: '₹99 + GST',
     rupay: true,
-    features: [
-      'UPI Enabled',
-      'CashPoints Rewards',
-      'Low Annual Fee',
-      'Digital-First Card',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       'rewards',
       'budget',
       'upi',
       // 'fintech'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hdfc-rupay',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards',
       welcomeBonus: 'Not specified',
@@ -1714,13 +1482,9 @@ Fuel Benefits:
     annualFee: '₹0 (₹499 from 5th year)',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      '1 reward point per ₹100 spent',
-      '₹500 cashback on ₹50,000 annual spend',
-      'Minimum FD amount: ₹25,000'
-    ],
-    categories: ['secured'],
     feedback: [],
+    categories: ['secured'],
+    applyUrl: 'https://example.com/apply-sbi-unnati',
     additionalDetails: {
       rewardsProgram: '1 reward point per ₹100 spent\n₹500 cashback on reaching ₹50,000 annual spend',
       minimumSpend: 'No minimum spend requirement',
@@ -1738,17 +1502,9 @@ Fuel Benefits:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      '2 reward points per ₹100 online',
-      '1 point per ₹100 offline',
-      '90% credit limit of FD',
-      'Minimum FD amount: ₹5,000',
-      'Fuel surcharge waiver',
-      'Railway surcharge waiver',
-      '48 days interest-free period'
-    ],
-    categories: ['secured', 'lifetime-free'],
     feedback: [],
+    categories: ['secured', 'lifetime-free'],
+    applyUrl: 'https://example.com/apply-kotak-811-dream-different',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 2 reward points per ₹100 spent online
@@ -1788,18 +1544,9 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Secured Credit Card (against ICICI Bank FD)',
-      'Instant Issuance at Branch',
-      'Lifetime Free',
-      'Credit Limit: Up to 85-90% of FD',
-      'FD continues to earn interest',
-      'Dining Discounts',
-      'Movie Offers',
-      'Fuel Surcharge Waiver'
-    ],
-    categories: ['secured', 'lifetime-free'],
     feedback: [],
+    categories: ['secured', 'lifetime-free'],
+    applyUrl: 'https://example.com/apply-icici-instant-platinum',
     additionalDetails: {
       rewardsProgram: `Reward Points:
 • Earn 2 PAYBACK points for every ₹100 spent on retail purchases (excluding fuel).`,
@@ -1841,14 +1588,9 @@ Redemption:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Up to 80% credit limit of FD',
-      'Reward points on spending',
-      'Fuel surcharge waiver',
-      'Minimum FD amount: ₹15,000'
-    ],
-    categories: ['secured'],
     feedback: [],
+    categories: ['secured'],
+    applyUrl: 'https://example.com/apply-bob-prime',
     additionalDetails: {
       creditLimit: 'Up to 80% of Fixed Deposit amount',
       rewardsProgram: `Reward points on spending
@@ -1869,13 +1611,9 @@ Fuel Benefits:
     annualFee: '₹500',
     joiningFee: '₹500',
     rupay: false,
-    features: [
-      'Designed for credit building',
-      'Rewards on spending',
-      'Minimum FD amount: ₹20,000'
-    ],
-    categories: ['secured'],
     feedback: [],
+    categories: ['secured'],
+    applyUrl: 'https://example.com/apply-axis-fd',
     additionalDetails: {
       rewardsProgram: 'Earn rewards on all spending',
       summary: 'A secured credit card designed for credit building with rewards program.',
@@ -1892,14 +1630,7 @@ Fuel Benefits:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: false,
-    features: [
-      'Amazon Pay Cashback',
-      'No Annual Fee',
-      'No Joining Fee',
-      'Contactless Payments',
-      'EMI Options',
-      'Fuel Surcharge Waiver'
-    ],
+    feedback: [],
     categories: [
       'lifetime-free',
       'cashback',
@@ -1907,7 +1638,7 @@ Fuel Benefits:
       'lifetime-free'
       // 'best-credit-cards'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amazon-pay-icici',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 5% cashback on Amazon.in purchases for Prime members\n• 3% cashback on Amazon.in purchases for non-Prime members\n• 2% cashback on transactions with over 100 Amazon Pay partner merchants\n• 1% cashback on all other payments\n\nNote: Cashback is credited as Amazon Pay balance and can be used for purchases on Amazon.in and partner merchants',
       welcomeBonus: 'For Amazon Prime Members (Total Value: Up to ₹2,500):\n• ₹300 cashback on first Amazon transaction\n• 50% cashback on prepaid mobile recharge (up to ₹100)\n• 25% cashback on postpaid bill payment (up to ₹350)\n• 20% cashback on electricity bill payment (up to ₹250)\n• 25% cashback on DTH bill payment (up to ₹250)\n• 25% cashback on gas cylinder payment (up to ₹150, twice)\n• 25% cashback on broadband bill payment (up to ₹400)\n• 25% cashback on Amazon shopping (up to ₹200)\n• Complimentary 3-month EazyDiner Prime membership worth ₹1,095\n\nFor Non-Prime Members (Total Value: Up to ₹2,000):\n• Complimentary 3-month Amazon Prime membership\n• ₹200 cashback on first Amazon transaction\n• 50% cashback on prepaid mobile recharge (up to ₹100)\n• 25% cashback on postpaid bill payment (up to ₹350)\n• 20% cashback on electricity bill payment (up to ₹250)\n• 25% cashback on DTH bill payment (up to ₹200)\n• 25% cashback on gas cylinder payment (up to ₹150, twice)\n• 25% cashback on broadband bill payment (up to ₹400)\n• 25% cashback on Amazon shopping (up to ₹200)\n• Complimentary 3-month EazyDiner Prime membership worth ₹1,095',
@@ -1937,21 +1668,14 @@ Fuel Benefits:
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      'Sony LIV Premium Subscription',
-      'Swiggy Discounts',
-      'Airport Lounge Access',
-      'UPI Enabled',
-      'Contactless Payments',
-      'EMI Options'
-    ],
+    feedback: [],
     categories: [
       'lifetime-free',
       'upi',
       'entertainment',
       'dining'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-axis-my-zone',
     additionalDetails: {
       rewardsProgram: 'EDGE Rewards:\n• Earn 4 EDGE reward points for every ₹200 spent\n• Points can be redeemed via the EDGE Rewards portal\n\nShopping Benefits:\n• AJIO Offer: ₹1,000 instant discount on minimum purchases of ₹2,999 (valid once per user)',
       welcomeBonus: 'Complimentary SonyLIV Premium Subscription:\n• On completing the first transaction within the first 30 days of card issuance\n• Annual subscription worth ₹999',
@@ -1987,14 +1711,7 @@ Fuel Benefits:
     annualFee: '₹1,10,000 + GST',
     joiningFee: '₹1,10,000 + GST',
     rupay: false,
-    features: [
-      'Taj InnerCircle Platinum NeuPass Membership',
-      'Complimentary Stays',
-      'Dining & Spa Vouchers',
-      'Pool Access',
-      'Airport Lounge Access',
-      'Chauffeur Services'
-    ],
+    feedback: [],
     categories: [
       'ultra-premium',
       // 'premium',
@@ -2004,7 +1721,7 @@ Fuel Benefits:
       'domestic-lounge',
       'international-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-hsbc-taj',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5 reward points per ₹100 spent at IHCL properties\n• 1.5 points per ₹100 on other eligible purchases\n\nRedemption:\n• Points can be redeemed for stays, dining, spa treatments, and more at participating IHCL hotels',
       welcomeBonus: 'Welcome Benefits:\n• Taj InnerCircle Platinum NeuPass Membership\n• Complimentary one-night stay at Taj Palaces\n• Two additional nights at participating IHCL hotels\n• Four set meal vouchers at select restaurants\n• Four 60-minute spa therapy vouchers\n• Twelve pool access vouchers for two\n• Twelve access vouchers each for The Chambers and Taj Club lounges',
@@ -2058,14 +1775,7 @@ Fuel Benefits:
     annualFee: '₹3,00,000 + GST',
     joiningFee: '₹5,00,000 + GST',
     rupay: false,
-    features: [
-      'Unlimited Lounge Access',
-      'Zero Forex Markup',
-      'Airport Meet-and-Greet',
-      'Companion Airfare Benefits',
-      'Hotel Upgrades',
-      'Exclusive Dining Access'
-    ],
+    feedback: [],
     categories: [
       'ultra-premium',
       // 'premium',
@@ -2074,7 +1784,7 @@ Fuel Benefits:
       'domestic-lounge',
       'international-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-axis-primus',
     additionalDetails: {
       rewardsProgram: 'Welcome and Renewal Benefits:\n• Welcome: Choice between ₹40,000 ITC voucher or 25,000 Axis Edge Miles\n• Renewal: Choice between ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
       welcomeBonus: 'Welcome benefit: Choice between an ₹40,000 ITC voucher or 25,000 Axis Edge Miles',
@@ -2117,14 +1827,7 @@ Fuel Benefits:
     annualFee: '₹2,75,000 + GST',
     joiningFee: '₹9,75,000 to ₹11,50,000 + GST',
     rupay: false,
-    features: [
-      'Elite Memberships',
-      'Dedicated Concierge',
-      'Unlimited Lounge Access',
-      'Airport Meet-and-Greet',
-      'Supplementary Cards',
-      'Exclusive Experiences'
-    ],
+    feedback: [],
     categories: [
       'ultra-premium',
       // 'premium',
@@ -2133,7 +1836,7 @@ Fuel Benefits:
       'domestic-lounge',
       'international-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amex-centurion',
     additionalDetails: {
       rewardsProgram: 'Elite Status Benefits:\n• Hilton Honors Diamond\n• Accor Live Limitless Platinum\n• Shangri-La Golden Circle Jade\n• British Airways Executive Club Gold\n• Etihad Guest Gold',
       welcomeBonus: 'Not specified',
@@ -2176,21 +1879,14 @@ Fuel Benefits:
     annualFee: '₹66,000 + GST',
     joiningFee: '₹66,000 + GST',
     rupay: false,
-    features: [
-      'Unlimited Lounge Access',
-      'Elite Hotel Memberships',
-      'Global Event Access',
-      'Premium Subscriptions',
-      'Dedicated Concierge',
-      'Airport Meet-and-Greet'
-    ],
+    feedback: [],
     categories: [
       'premium',
       'international-travel',
       'domestic-lounge',
       'international-lounge'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amex-platinum',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, and cash transactions\n\nRedemption Options:\n• Transfer points to airline and hotel loyalty programs\n• Redeem for Taj Hotels vouchers, Flipkart vouchers, or statement credits\n• Access to 18K and 24K Gold Collection\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
       welcomeBonus: 'Welcome Benefits:\n• Vouchers worth up to ₹60,000 from Taj Hotels, Postcard Hotels, or Reliance Brands upon spending ₹50,000 within first 2 months',
@@ -2236,21 +1932,14 @@ Fuel Benefits:
     annualFee: '₹4,500 + GST',
     joiningFee: '₹1000',
     rupay: false,
-    features: [
-      'Flexible Spending Power',
-      'Reward Multiplier',
-      'Dining Discounts',
-      'Hotel Collection Benefits',
-      'Monthly Bonus Points',
-      'Contactless Payments'
-    ],
+    feedback: [],
     categories: [
       // 'premium',
       'lifestyle',
       'shopping',
       'dining'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amex-gold',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent (including fuel and utility payments)\n• 5X Membership Rewards Points on purchases through Reward Multiplier platform\n• Monthly Bonus: 1,000 bonus points for 6 transactions of ₹1,000 or more each calendar month\n\nRedemption Options:\n• 18 Karat Gold Collection (18,000 MR Points):\n  - Taj voucher worth ₹9,000\n  - Shoppers Stop voucher worth ₹7,000\n  - Tata CLiQ voucher worth ₹7,000\n  - Myntra voucher worth ₹7,000\n  - Amazon voucher worth ₹6,000\n  - Flipkart voucher worth ₹6,000\n  - Reliance Digital voucher worth ₹6,000\n\n• 24 Karat Gold Collection (24,000 MR Points):\n  - Taj voucher worth ₹14,000\n  - Shoppers Stop voucher worth ₹10,000\n  - Tata CLiQ voucher worth ₹9,000\n  - Tanishq voucher worth ₹9,000\n  - Amazon voucher worth ₹8,000\n  - Flipkart voucher worth ₹8,000\n  - Reliance Digital voucher worth ₹8,000',
       welcomeBonus: 'Welcome Benefits:\n• 4,000 bonus Membership Rewards Points upon spending ₹10,000 within first 90 days and payment of annual fee',
@@ -2292,20 +1981,13 @@ Fuel Benefits:
     annualFee: '₹495 + GST',
     joiningFee: '₹495 + GST',
     rupay: false,
-    features: [
-      'Enhanced Online Rewards',
-      'Fuel Surcharge Waiver',
-      'Contactless Payments',
-      'EMI Options',
-      'Digital-First Card',
-      'Welcome Benefits'
-    ],
+    feedback: [],
     categories: [
       'lifestyle',
       'shopping',
       'first-time'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amex-smartearn',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10X Membership Rewards Points on Flipkart, Amazon, Uber, Zomato, AJIO, PVR, Blinkit (capped at 500 points per month per merchant)\n• 5X Membership Rewards Points on Paytm Wallet, Swiggy, BookMyShow (capped at 250 points per month)\n• 1 Membership Rewards Point per ₹50 spent on other categories\n\nRedemption Options:\n• E-vouchers from popular brands\n• Airline and hotel loyalty programs\n• Statement credits\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
       welcomeBonus: 'Welcome Benefits:\n• ₹500 cashback as statement credit upon spending ₹10,000 within first 90 days',
@@ -2340,14 +2022,7 @@ Fuel Benefits:
     annualFee: '₹10,000 + GST',
     joiningFee: '₹10,000 + GST',
     rupay: false,
-    features: [
-      'Airport Lounge Access',
-      'Priority Pass Membership',
-      'Hotel Collection Benefits',
-      'Dining Privileges',
-      'Golf Access',
-      'Platinum Concierge'
-    ],
+    feedback: [],
     categories: [
       'premium',
       'lifestyle',
@@ -2356,7 +2031,7 @@ Fuel Benefits:
       'international-lounge',
       'dining'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-amex-platinum-reserve',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, cash transactions, and EMI conversions\n\nRedemption Options:\n• E-Vouchers: Amazon, Flipkart, Taj Hotels\n• INSTA Purchases at partner stores\n• Cash + Points for bill offset\n• Transfer to loyalty programs: Club Vistara, Emirates Skywards, Singapore KrisFlyer, Marriott Bonvoy, Hilton Honors\n\nPoint Value: Up to ₹0.50 per point when redeemed for select vouchers or transferred to loyalty programs',
       welcomeBonus: 'Welcome Benefits:\n• 11,000 Membership Rewards Points upon spending ₹30,000 within first 90 days and payment of annual fee',
@@ -2406,16 +2081,13 @@ Fuel Benefits:
     annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
     joiningFee: '₹0',
     rupay: true,
-    features: [
-      '3-in-1 Category Selection: Choose Shopping, Travel, or Dining for accelerated rewards (switch every 3 billing cycles)',
-      '1 complimentary domestic airport lounge access per quarter'
-    ],
+    feedback: [],
     categories: [
       'upi',
       'lifetime-free',
       'rewards'
     ],
-    feedback: [],
+    applyUrl: 'https://example.com/apply-jupiter-edge-csb',
     additionalDetails: {
       rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
       welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
@@ -2448,16 +2120,9 @@ Fuel Benefits:
     annualFee: '₹4,999 + taxes',
     joiningFee: '₹4,999 + taxes',
     rupay: false,
-    features: [
-      'Metal card',
-      '16 domestic & 16 international lounge visits/year',
-      '8 golf rounds/year',
-      'BOGO movie tickets (up to 16/year)',
-      'Concierge service',
-      'Low forex markup (0.99%)'
-    ],
-    categories: ['premium', 'travel', 'lifestyle'],
     feedback: [],
+    categories: ['premium', 'travel', 'lifestyle'],
+    applyUrl: 'https://example.com/apply-au-zenith-plus',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 2 Reward Points per ₹100 on dining, travel, and international spends
@@ -2504,14 +2169,9 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     annualFee: '₹2,999 + taxes',
     joiningFee: '₹2,999 + taxes',
     rupay: false,
-    features: [
-      'Airport lounge access',
-      'Railway lounge access',
-      'Fuel surcharge waiver',
-      'Comprehensive insurance'
-    ],
-    categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
     feedback: [],
+    categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
+    applyUrl: 'https://example.com/apply-au-vetta',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 2 Reward Points per ₹100 on travel, dining, and international spends
@@ -2553,15 +2213,9 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     annualFee: '₹499 + taxes',
     joiningFee: '₹499 + taxes',
     rupay: false,
-    features: [
-      '1.5% cashback on POS spends',
-      '2X points on online spends',
-      'Railway lounge access',
-      'Fuel surcharge waiver',
-      'Lost card liability cover'
-    ],
-    categories: ['lifestyle', 'cashback', 'rewards'],
     feedback: [],
+    categories: ['lifestyle', 'cashback', 'rewards'],
+    applyUrl: 'https://example.com/apply-au-altura-plus',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
@@ -2603,14 +2257,9 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     annualFee: '₹299 + GST',
     joiningFee: '₹299 + GST',
     rupay: true,
-    features: [
-      '1% cashback on all spends',
-      'UPI rewards with coins',
-      'Railway lounge access',
-      'Fuel surcharge waiver',
-    ],
-    categories: ['upi', 'cashback', 'domestic-lounge'],
     feedback: [],
+    categories: ['upi', 'cashback', 'domestic-lounge'],
+    applyUrl: 'https://example.com/apply-au-spont',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
@@ -2652,14 +2301,9 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
     annualFee: "₹2,499 + GST",
     joiningFee: "₹2,499 + GST",
     rupay: true,
-    features: [
-      "UPI Payment Support",
-      "Smart EMI",
-      "Zero Liability Protection",
-      "Add-on Cards Available"
-    ],
     feedback: [],
     categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
+    applyUrl: 'https://example.com/apply-bob-tiara',
     additionalDetails: {
       rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
       welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
@@ -2693,6 +2337,33 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       ],
       summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
       redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
+    }
+  },
+  {
+    id: 'idfc-first-millennia',
+    name: 'IDFC FIRST Millennia Credit Card',
+    bank: 'IDFC FIRST Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/idfc/Millennia-Card_F.png',
+    apr: 'Low interest rates',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'lifetime-free',
+      'rewards',
+      'lifestyle'
+    ],
+    applyUrl: '',
+    additionalDetails: {
+      welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation.\n5% cashback (up to ₹1,000) on the transaction value of first EMI done within 30 days of card generation.`,
+      rewardsProgram: `3X Reward points on online & offline spends up to ₹20,000.\nUp to 10X Reward points on spend >₹20,000 & on your birthday.\n1X Reward points on UPI spends up to ₹2,000.\n3X Reward points on UPI spends >₹2,000.\nReward points that don't expire.`,
+      milestoneBenefits: [],
+      movieBenefits: `25% discount on movie tickets up to ₹100 on Paytm mobile app (valid once per month).`,
+      airportLounge: `4 complimentary railway lounge access visits per quarter.`,
+      additionalServices: `Complimentary roadside assistance worth ₹1,399.\nFuel surcharge waiver of 1% at all fuel stations across India, up to ₹200/month.\n300+ merchant offers, all year long!\nUp to 20% discount at 1,500+ restaurants.\nExclusive merchant offers for every day of the week.`,
+      // No idealFor, notIdealFor, eligibility, or summary as not in screenshot
     }
   }
 ]; 

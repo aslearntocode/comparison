@@ -209,7 +209,7 @@ function CreditProductComparisonContent() {
     if (query) {
       filtered = filtered.filter(card => 
         card.name.toLowerCase().includes(query) ||
-        card.features.some(feature => feature.toLowerCase().includes(query)) ||
+        card.categories.some(category => category.toLowerCase().includes(query)) ||
         card.additionalDetails?.rewardsProgram?.toLowerCase().includes(query) ||
         card.feedback.some(f => f.comment.toLowerCase().includes(query))
       )
@@ -480,12 +480,12 @@ function CreditProductComparisonContent() {
                     {/* Features Section - Desktop Only */}
                     <div className="hidden md:block px-4 py-3">
                       <div className="flex flex-wrap gap-2">
-                        {card.features.map((feature, index) => (
+                        {card.categories.map((category, index) => (
                           <span
                             key={index}
                             className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs"
                           >
-                            {feature}
+                            {category}
                           </span>
                         ))}
                       </div>
