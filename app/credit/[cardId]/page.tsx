@@ -22,6 +22,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     | 'fees'
     | 'reviews'
   >('welcome-annual');
+  const [mobileSuitabilityIndex, setMobileSuitabilityIndex] = useState(0);
   
   const { cardId } = use(params)
   const card = creditCards.find(c => c.id === cardId)
@@ -213,7 +214,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
           <div className="space-y-6">
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Milestone Benefits</h3>
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
                 {card.additionalDetails?.milestoneBenefits?.map((benefit, index) => (
                   <li key={index} className="text-gray-700">{benefit}</li>
                 ))}
@@ -275,7 +276,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     {card.additionalDetails?.diningPrivileges && card.additionalDetails.diningPrivileges.length > 0 && (
                       <div className="mt-6">
                         <h4 className="text-lg font-semibold text-gray-900 mb-2">Dining Benefits</h4>
-                        <ul className="list-disc ml-6 space-y-1">
+                        <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
                           {card.additionalDetails.diningPrivileges.map((item, idx) => (
                             <li key={idx} className="text-gray-700">{item}</li>
                           ))}
@@ -548,53 +549,137 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 <span className="text-2xl">✅</span>
                 Who Should Get This Card?
               </h3>
-
-              <div className="grid md:grid-cols-3 gap-6 md:gap-4">
-                <div className="md:col-span-2 space-y-4 md:space-y-3">
-                  {card.additionalDetails?.idealFor?.map((profile, index) => {
-                    const [title, description] = profile.split(': ');
-                    const icons = {
-                      'High Net-Worth Professionals': '💼',
-                      'High Net-Worth Individuals': '💼',
-                      'Mid-to-High Spenders': '💼',
-                      'Frequent Jetsetters': '✈️',
-                      'Luxury Travel Enthusiasts': '✈️',
-                      'Occasional Travelers': '✈️',
-                      'Premium Lifestyle Lovers': '🎭',
-                      'Golf Lovers': '⛳',
-                      'Premium Dining Connoisseurs': '🍽️',
-                      'Lifestyle & Entertainment Enthusiasts': '🎭',
-                      'Reward Collectors': '🎯',
-                      'Reward Maximizers': '🎯'
-                    };
-                    return (
-                      <div key={index} className="flex gap-3 md:gap-2">
-                        <div className="flex-shrink-0 w-10 h-10 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center">
-                          <span className="text-lg md:text-base">{icons[title as keyof typeof icons] || '✨'}</span>
-                        </div>
-                        <div>
-                          <span className="font-semibold text-gray-900 text-base md:text-sm">{title}</span>
-                          <p className="text-gray-700 mt-1 md:mt-0.5 text-base md:text-sm">{description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
+              {/* Desktop: 3 columns */}
+              <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-4">
+                {/* Who Should Get This Card */}
+                <div className="md:col-span-1 flex flex-col h-full">
+                  <div className="bg-green-50 rounded-xl p-4 md:p-3 flex flex-col h-full">
+                    <h4 className="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+                      <span>✅</span>
+                      Who Should Get This Card?
+                    </h4>
+                    <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
+                      {card.additionalDetails?.idealFor?.map((point, idx) => (
+                        <li key={idx} className="text-gray-900 text-base md:text-sm">{point}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-
-                <div className="md:col-span-1">
-                  <div className="bg-red-50 rounded-xl p-4 md:p-3">
+                {/* Not Ideal For */}
+                <div className="md:col-span-1 flex flex-col h-full">
+                  <div className="bg-red-50 rounded-xl p-4 md:p-3 flex flex-col h-full">
                     <h4 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
                       <span>🚫</span>
                       Not Ideal For
                     </h4>
-                    <ul className="space-y-2 md:space-y-1.5">
-                      {card.additionalDetails?.notIdealFor?.map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 text-red-700 text-base md:text-sm">
-                          <span className="mt-1.5">•</span>
-                          <span>{item}</span>
-                        </li>
+                    <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
+                      {card.additionalDetails?.notIdealFor?.map((point, idx) => (
+                        <li key={idx} className="text-red-700 text-base md:text-sm">{point}</li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+                {/* Eligibility Criteria */}
+                <div className="md:col-span-1 flex flex-col h-full">
+                  <div className="bg-blue-50 rounded-xl p-4 md:p-3 flex flex-col h-full">
+                    <h4 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
+                      <span>📝</span>
+                      Eligibility Criteria
+                    </h4>
+                    <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
+                      {card.additionalDetails?.eligibilityCriteria
+                        ? card.additionalDetails.eligibilityCriteria.split('\n').map((point, idx) => (
+                            <li key={idx} className="text-gray-700 text-base md:text-sm">{point}</li>
+                          ))
+                        : (
+                          <li className="text-gray-700 text-base md:text-sm">
+                            Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
+                          </li>
+                        )
+                      }
+                    </ul>
+                    <div className="mt-6 flex justify-center">
+                      <Link
+                        href={`/credit/apply?cardId=${card.id}`}
+                        className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                      >
+                        Apply Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Mobile: Carousel for suitability, eligibility below */}
+              <div className="md:hidden">
+                {/* Carousel */}
+                <div className="flex flex-col items-center">
+                  {mobileSuitabilityIndex === 0 ? (
+                    <div className="w-full bg-green-50 rounded-xl p-4 mb-4">
+                      <h4 className="text-lg font-bold text-green-800 mb-4 flex items-center gap-2">
+                        <span>✅</span>
+                        Who Should Get This Card?
+                      </h4>
+                      <ul className="space-y-2 list-disc list-outside pl-4">
+                        {card.additionalDetails?.idealFor?.map((point, idx) => (
+                          <li key={idx} className="text-gray-900 text-base">{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <div className="w-full bg-red-50 rounded-xl p-4 mb-4">
+                      <h4 className="text-lg font-bold text-red-800 mb-4 flex items-center gap-2">
+                        <span>🚫</span>
+                        Not Ideal For
+                      </h4>
+                      <ul className="space-y-2 list-disc list-outside pl-4">
+                        {card.additionalDetails?.notIdealFor?.map((point, idx) => (
+                          <li key={idx} className="text-red-700 text-base">{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  <div className="flex justify-center gap-4 mb-4">
+                    <button
+                      className={`px-3 py-1 rounded-full border ${mobileSuitabilityIndex === 0 ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                      onClick={() => setMobileSuitabilityIndex(0)}
+                      aria-label="Show Who Should Get This Card"
+                    >
+                      1
+                    </button>
+                    <button
+                      className={`px-3 py-1 rounded-full border ${mobileSuitabilityIndex === 1 ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                      onClick={() => setMobileSuitabilityIndex(1)}
+                      aria-label="Show Not Ideal For"
+                    >
+                      2
+                    </button>
+                  </div>
+                </div>
+                {/* Eligibility Criteria always below */}
+                <div className="w-full bg-blue-50 rounded-xl p-4 flex flex-col">
+                  <h4 className="text-lg font-bold text-blue-800 mb-4 flex items-center gap-2">
+                    <span>📝</span>
+                    Eligibility Criteria
+                  </h4>
+                  <ul className="space-y-2 list-disc list-outside pl-4">
+                    {card.additionalDetails?.eligibilityCriteria
+                      ? card.additionalDetails.eligibilityCriteria.split('\n').map((point, idx) => (
+                          <li key={idx} className="text-gray-700 text-base">{point}</li>
+                        ))
+                      : (
+                        <li className="text-gray-700 text-base">
+                          Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
+                        </li>
+                      )
+                    }
+                  </ul>
+                  <div className="mt-6 flex justify-center">
+                    <Link
+                      href={`/credit/apply?cardId=${card.id}`}
+                      className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                    >
+                      Apply Now
+                    </Link>
                   </div>
                 </div>
               </div>

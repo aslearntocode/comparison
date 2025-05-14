@@ -45,6 +45,7 @@ export interface CreditCard {
     summary?: string;
     redemptionOptions?: string;
     cashAdvanceFee?: string;
+    eligibilityCriteria?: string;
   };
 }
 
@@ -737,7 +738,8 @@ Redemption:
         'People looking for premium lifestyle benefits'
       ],
       summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
     }
   },
   {

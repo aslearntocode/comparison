@@ -297,21 +297,21 @@ export default function Header() {
                 >
                   <Link 
                     href="/credit" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">All</span>
                   </Link>
                   <Link 
                     href="/credit?category=ultra-premium" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Ultra Premium</span>
                   </Link>
                   <Link 
                     href="/credit?category=premium" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Premium</span>
@@ -325,28 +325,28 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Cash Back</span>
                   </Link>
                   <Link 
                     href="/credit?category=lifestyle" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Lifestyle</span>
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Fuel</span>
                   </Link>
                   <Link 
                     href="/credit?category=lifetime-free" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Lifetime Free</span>
@@ -360,7 +360,7 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=upi" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">UPI</span>
@@ -374,45 +374,45 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Domestic Lounge</span>
                   </Link>
                   <Link 
                     href="/credit?category=international-lounge" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">International Lounge</span>
                   </Link>
                   <Link 
                     href="/credit?category=fintech" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Fintech</span>
                   </Link>
                   <Link 
                     href="/credit?category=airlines"
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Airlines</span>
                   </Link>
                   <Link 
                     href="/credit?category=hotels" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     <span className="ml-3">Hotels</span>
                   </Link>
                   <Link 
                     href="/credit?category=secured" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">Secured Credit Card</span>
+                    <span className="ml-3">Secured (backed by FD)</span>
                   </Link>
                 </div>
               </div>
@@ -743,21 +743,21 @@ export default function Header() {
                 <div className="absolute bottom-full mb-2 w-48 bg-white rounded-lg shadow-lg py-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                   <Link 
                     href="/credit" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    <span className="ml-3">All</span>
+                    All
                   </Link>
                   <Link 
                     href="/credit?category=ultra-premium" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Ultra Premium
                   </Link>
                   <Link 
                     href="/credit?category=premium" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Premium
@@ -771,28 +771,28 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=cashback" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Cash Back
                   </Link>
                   <Link 
                     href="/credit?category=lifestyle" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Lifestyle
                   </Link>
                   <Link 
                     href="/credit?category=fuel" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Fuel
                   </Link>
                   <Link 
                     href="/credit?category=lifetime-free" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Lifetime Free
@@ -806,7 +806,7 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=upi" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     UPI
@@ -820,45 +820,45 @@ export default function Header() {
                   </Link> */}
                   <Link 
                     href="/credit?category=domestic-lounge" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Domestic Lounge
                   </Link>
                   <Link 
                     href="/credit?category=international-lounge" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     International Lounge
                   </Link>
                   <Link 
                     href="/credit?category=fintech" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Fintech
                   </Link>
                   <Link 
                     href="/credit?category=airlines" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Airlines
                   </Link>
                   <Link 
                     href="/credit?category=hotels" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Hotels
                   </Link>
                   <Link 
                     href="/credit?category=secured" 
-                    className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    Secured Credit Card
+                    Secured (backed by FD)
                   </Link>
                 </div>
               )}

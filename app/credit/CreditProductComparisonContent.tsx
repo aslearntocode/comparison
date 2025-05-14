@@ -285,36 +285,36 @@ function CreditProductComparisonContent() {
       <Header />
       
       <div className="relative">
-        <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
+        <div className="absolute top-0 left-0 right-0 h-[130px] md:h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center pt-10">
-            <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+        <div className="relative max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pb-4 md:pb-0 z-10">
+          <div className="text-center pt-5 md:pt-10">
+            <h1 className="text-base md:text-4xl font-bold text-white mb-1 md:mb-3 font-serif tracking-wide">
               {getPageTitle()}
             </h1>
-            
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+            <p className="text-xs md:text-lg text-white/90 max-w-3xl mx-auto mb-1 md:mb-8 font-sans">
               Compare and find the best credit cards tailored to your needs
             </p>
-
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto relative z-10">
+            <div className="max-w-2xl mx-auto relative z-10 mt-1 md:mt-0">
               <div className="relative">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by rewards, annual fee, etc..."
-                  className="w-full px-6 py-3 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 md:px-6 py-1.5 md:py-3 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs md:text-base"
                 />
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="absolute right-3 md:right-4 top-1/2 transform -translate-y-1/2">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
               </div>
             </div>
           </div>
+          {/* Add a little padding below the search bar for mobile only */}
+          <div className="h-1 md:h-0" />
 
           {/* Credit Cards Grid */}
           <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
@@ -348,29 +348,10 @@ function CreditProductComparisonContent() {
             </div>
 
             {/* Mobile Sort Dropdown */}
-            <div className="md:hidden mb-4">
-              <select
-                value={sortField || ''}
-                onChange={(e) => {
-                  const value = e.target.value as SortField;
-                  if (value) {
-                    handleSort(value);
-                  } else {
-                    setSortField(null);
-                  }
-                }}
-                className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm"
-              >
-                <option value="">Sort by...</option>
-                <option value="apr">APR</option>
-                <option value="annualFee">Annual Fee</option>
-                <option value="joiningFee">Joining Fee</option>
-                <option value="sentiment">User Sentiment</option>
-              </select>
-            </div>
+            {/* Removed the sort by dropdown for mobile */}
 
             {/* Cards List */}
-            <div className="space-y-4 md:space-y-2">
+            <div className="space-y-4 md:space-y-2 mt-1 md:mt-0">
               {filteredCards.map((card) => (
                 <div key={card.id} className="block hover:bg-gray-50 rounded-lg transition-colors">
                   <div className="flex flex-col">
@@ -389,7 +370,7 @@ function CreditProductComparisonContent() {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between">
                               <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
-                                <h3 className="text-base font-bold text-gray-900 mb-1 truncate whitespace-normal break-words">{card.name}</h3>
+                                <h3 className="text-base font-bold text-gray-900 mb-1 whitespace-normal break-words">{card.name}</h3>
                                 <p className="text-gray-600 mb-2">{card.bank}</p>
                                 <div className="flex flex-col">
                                   {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
@@ -423,6 +404,15 @@ function CreditProductComparisonContent() {
                             </span>
                           </div>
                         </div>
+                        {/* Check Eligibility Button (mobile only) */}
+                        <div className="flex justify-end mt-2">
+                          <Link
+                            href={`/credit/${card.id}`}
+                            className="inline-block px-3 py-1 bg-blue-600 text-white rounded text-xs font-semibold hover:bg-blue-700 transition-colors"
+                          >
+                            Check Eligibility
+                          </Link>
+                        </div>
                       </div>
                     </div>
                     {/* Desktop View */}
@@ -437,7 +427,7 @@ function CreditProductComparisonContent() {
                           />
                         </div>
                         <div>
-                          <h3 className="text-base font-bold text-gray-900 mb-1 group-hover:underline leading-tight max-h-[2.5em] overflow-hidden" style={{ fontSize: '1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', whiteSpace: 'normal' }}>{card.name}</h3>
+                          <h3 className="text-base font-bold text-gray-900 mb-1 group-hover:underline leading-tight whitespace-normal break-words">{card.name}</h3>
                         </div>
                       </Link>
                       <div className="text-gray-900 flex items-center">{card.apr}</div>
@@ -479,11 +469,11 @@ function CreditProductComparisonContent() {
                       </div>
                       <div className="flex items-center justify-center">
                         <Link
-                          href={`/credit/apply?cardId=${card.id}`}
+                          href={`/credit/${card.id}`}
                           target="_self"
                           className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold hover:bg-blue-700 transition-colors"
                         >
-                          Apply Now
+                          Check Eligibility
                         </Link>
                       </div>
                     </div>
