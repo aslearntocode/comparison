@@ -1729,8 +1729,7 @@ Fuel Benefits:
         'Complimentary one-night stay at Taj Palaces on spends of ₹10 lakh',
         'Two additional nights at participating IHCL hotels on spends of ₹20 lakh',
         'Four set meal vouchers at select restaurants on spends of ₹30 lakh',
-        'Four 60-minute spa therapy vouchers on spends of ₹40 lakh',
-        'Annual fee waiver on spends of ₹50 lakh'
+        'Four 60-minute spa therapy vouchers on spends of ₹40 lakh'
       ],
       airportLounge: 'Unlimited complimentary access to domestic and international lounges',
       insuranceCover: [

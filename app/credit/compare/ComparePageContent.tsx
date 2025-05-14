@@ -133,8 +133,8 @@ export default function ComparePageContent() {
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">
                         <ul className="list-disc list-inside space-y-1">
-                          {card.features.map((feature, index) => (
-                            <li key={index} className="text-sm text-gray-600">{feature}</li>
+                          {card.categories.map((category, index) => (
+                            <li key={index} className="text-sm text-gray-600">{category}</li>
                           ))}
                         </ul>
                       </td>

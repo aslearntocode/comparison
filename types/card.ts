@@ -7,7 +7,6 @@ export interface Card {
   annualFee: string;
   joiningFee: string;
   rupay: boolean;
-  features: string[];
   feedback: {
     comment: string;
     rating: number;
