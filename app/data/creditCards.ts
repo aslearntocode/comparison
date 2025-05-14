@@ -957,7 +957,8 @@ Effective Cashback Rates:
         'Those seeking basic credit card features'
       ],
       summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.',
-      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle'
+      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
+      eligibilityCriteria: 'Age: 21 to 65 years.\nOccupation: Salaried or Self-employed.\nAnnual Income: ₹25 lakhs or more.\nCredit Score: An excellent credit score is required.\nResidency: Indian resident.'
     }
   },
   {
@@ -1075,6 +1076,7 @@ Fuel Benefits:
         'Budget-conscious users'
       ],
       summary: 'A lifetime-free credit card offering comprehensive benefits including enhanced rewards, lounge access, UPI linkage, and extensive health and wellness discounts, ideal for frequent travelers and lifestyle enthusiasts.',
+      eligibilityCriteria: 'Age: 21 years or older.\nOccupation: Salaried or Self-employed.\nAnnual Income: ₹12 lakhs or more.\nCredit Score: A good credit score is typically required.\nResidency: Indian resident.'
     }
   },
   {
