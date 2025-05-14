@@ -379,7 +379,7 @@ export default function Home() {
       const searchableText = `
         ${card.name.toLowerCase()} 
         ${card.bank.toLowerCase()} 
-        ${card.features.join(' ').toLowerCase()} 
+        ${card.categories.join(' ').toLowerCase()} 
         ${card.additionalDetails?.rewardsProgram?.toLowerCase() || ''} 
         ${card.additionalDetails?.welcomeBonus?.toLowerCase() || ''} 
         ${card.additionalDetails?.airportLounge?.toLowerCase() || ''}
@@ -405,7 +405,7 @@ export default function Home() {
         
         // High priority - rewards program and features
         if (card.additionalDetails?.rewardsProgram?.toLowerCase().includes(termLower)) score += 6
-        if (card.features.some(f => f.toLowerCase().includes(termLower))) score += 5
+        if (card.categories.some(f => f.toLowerCase().includes(termLower))) score += 5
         
         // Medium priority - additional details
         if (card.additionalDetails?.summary?.toLowerCase().includes(termLower)) score += 4
