@@ -457,7 +457,7 @@ Self-Employed: ITR > ₹18 Lakhs/annum`
     }
   },
   {
-    id: 'sapphiro',
+    id: 'icici-sapphiro',
     name: 'ICICI Sapphiro Credit Card',
     bank: 'ICICI Bank',
     category: 'premium',
@@ -465,7 +465,7 @@ Self-Employed: ITR > ₹18 Lakhs/annum`
     apr: '45% p.a.',
     annualFee: '₹3,500 + GST',
     joiningFee: '₹6,500 + GST',
-    rupay: false,
+    rupay: true,
     feedback: [
       { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
       { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
@@ -516,6 +516,8 @@ Self-Employed: ITR > ₹18 Lakhs/annum`
         'Users seeking zero annual fee or basic cashback cards'
       ],
       summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
+      eligibilityCriteria: `Salaried: 21 years & above, Income ₹20,000/month
+Self-Employed: 21 years & above, Income ₹20,000/month`
     }
   },
   // Fintech Cards
@@ -2303,7 +2305,7 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
   },
   {
     id: "bob-tiara",
-    name: "Bob Tiara",
+    name: "Bank of Baroda Tiara Credit Card",
     bank: "Bank of Baroda",
     category: "lifestyle",
     image: "/credit-cards/BOB_Tiara.png",
@@ -2414,6 +2416,38 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
         'Reward Maximizers: Individuals seeking higher reward redemption values might find the ₹0.25 per point valuation less appealing.'
       ],
       eligibilityCriteria: `Age: Minimum 18 years.\nIncome: While specific income criteria aren't publicly disclosed, the card targets individuals with higher income brackets, given its premium nature.\nCredit Score: A good credit history is essential, typically with a credit score of 750 or higher.\nResidency: Indian residents.`
+    }
+  },
+  {
+    id: 'icici-coral-rupay',
+    name: 'ICICI Bank Coral RuPay Credit Card',
+    bank: 'ICICI Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/ICICI-Coral.png',
+    apr: '42% p.a.',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'lifestyle',
+      'rewards',
+      'upi',
+      'fee-card'
+    ],
+    applyUrl: 'https://example.com/apply-icici-coral-rupay',
+    additionalDetails: {
+      rewardsProgram: `Earn 2 reward points on every ₹100 spent (except fuel), and 1 point on utilities and insurance.`,
+      welcomeBonus: '',
+      milestoneBenefits: [
+        'Annual fee of ₹500 + GST waived on annual spends of ₹1,50,000'
+      ],
+      airportLounge: '1 complimentary domestic airport lounge access per quarter upon spending ₹75,000 in the previous quarter.',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹4,000 at HPCL petrol pumps.',
+      movieBenefits: '25% discount (up to ₹100) on movie tickets twice a month on BookMyShow and Inox.',
+      redemptionOptions: '',
+      additionalServices: 'Can be linked to UPI for seamless payments.',
+      eligibilityCriteria: 'Minimum age: 21 years. Monthly income: ₹20,000 and above.'
     }
   }
 ]; 

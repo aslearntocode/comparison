@@ -129,9 +129,9 @@ export default function Home() {
     {
       type: 'credit-cards',
       images: [
-        '/Credit-card-1.png',
+        '/credit-cards/idfc/Mayura-Card-revised-29-Nov.png',
         '/Credit-card-2.png',
-        '/Credit-card-3.png'
+        '/credit-cards/idfc/Ashva-Card-revised-27-Nov.png'
       ]
     }
   ]
