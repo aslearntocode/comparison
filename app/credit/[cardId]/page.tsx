@@ -61,6 +61,13 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     fetchReviews()
   }, [cardId])
 
+  // Debug: Log eligibility criteria for the current card
+  useEffect(() => {
+    if (card) {
+      console.log('Eligibility Criteria for card', card.id, ':', card.additionalDetails?.eligibilityCriteria);
+    }
+  }, [card]);
+
   if (!card) {
     return (
       <div className="min-h-screen flex flex-col bg-gray-50">
@@ -554,10 +561,6 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
           {/* Card Suitability Section */}
           <div className="bg-white rounded-xl shadow-lg p-6 md:p-4 mb-4 md:mb-3">
             <div className="max-w-6xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <span className="text-2xl">✅</span>
-                Who Should Get This Card?
-              </h3>
               {/* Desktop: 3 columns */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-4">
                 {/* Who Should Get This Card */}
@@ -597,9 +600,33 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     </h4>
                     <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
                       {card.additionalDetails?.eligibilityCriteria
-                        ? card.additionalDetails.eligibilityCriteria.split('\n').map((point, idx) => (
-                            <li key={idx} className="text-gray-700 text-base md:text-sm">{point}</li>
-                          ))
+                        ? (() => {
+                            type Section = { title: string; subs: string[] };
+                            const lines = card.additionalDetails.eligibilityCriteria.split('\n');
+                            const items: Section[] = [];
+                            let currentSection: Section | null = null;
+                            lines.forEach((line) => {
+                              if (line.trim().endsWith('Individuals:') || line.trim().startsWith('Credit Score:')) {
+                                if (currentSection) items.push(currentSection);
+                                currentSection = { title: line, subs: [] };
+                              } else if (currentSection) {
+                                currentSection.subs.push(line);
+                              }
+                            });
+                            if (currentSection) items.push(currentSection);
+                            return items.map((section, i) => (
+                              <li key={i} className="text-gray-700 text-base md:text-sm">
+                                {section.title}
+                                {section.subs.length > 0 && (
+                                  <ul className="list-disc pl-6 mt-1">
+                                    {section.subs.map((sub: string, j: number) => (
+                                      <li key={j} className="text-gray-700 text-base md:text-sm">{sub}</li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </li>
+                            ));
+                          })()
                         : (
                           <li className="text-gray-700 text-base md:text-sm">
                             Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
@@ -670,13 +697,37 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     <span>📝</span>
                     Eligibility Criteria
                   </h4>
-                  <ul className="space-y-2 list-disc list-outside pl-4">
+                  <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
                     {card.additionalDetails?.eligibilityCriteria
-                      ? card.additionalDetails.eligibilityCriteria.split('\n').map((point, idx) => (
-                          <li key={idx} className="text-gray-700 text-base">{point}</li>
-                        ))
+                      ? (() => {
+                          type Section = { title: string; subs: string[] };
+                          const lines = card.additionalDetails.eligibilityCriteria.split('\n');
+                          const items: Section[] = [];
+                          let currentSection: Section | null = null;
+                          lines.forEach((line) => {
+                            if (line.trim().endsWith('Individuals:') || line.trim().startsWith('Credit Score:')) {
+                              if (currentSection) items.push(currentSection);
+                              currentSection = { title: line, subs: [] };
+                            } else if (currentSection) {
+                              currentSection.subs.push(line);
+                            }
+                          });
+                          if (currentSection) items.push(currentSection);
+                          return items.map((section, i) => (
+                            <li key={i} className="text-gray-700 text-base md:text-sm">
+                              {section.title}
+                              {section.subs.length > 0 && (
+                                <ul className="list-disc pl-6 mt-1">
+                                  {section.subs.map((sub: string, j: number) => (
+                                    <li key={j} className="text-gray-700 text-base md:text-sm">{sub}</li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ));
+                        })()
                       : (
-                        <li className="text-gray-700 text-base">
+                        <li className="text-gray-700 text-base md:text-sm">
                           Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
                         </li>
                       )

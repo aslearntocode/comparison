@@ -97,8 +97,12 @@ export const creditCards: CreditCard[] = [
       ],
       summary: 'A premium co-branded credit card offering exclusive Marriott Bonvoy benefits, free night awards, elite status, and extensive travel and lifestyle privileges.',
       fuelSurcharge: 'Not specified',
-      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
-Self-Employed: Age 21–65 years, ITR > ₹15 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹1,00,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹15 lakhs/annum`
     }
   },
   {
@@ -150,8 +154,27 @@ Redemption:
       interestRate: '3.5% per month (42% p.a.)',
       emiOptions: 'Available on eligible purchases',
       fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
-      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
-Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
+      idealFor: [
+        'Frequent Travelers',
+        'High Spenders',
+        'Lifestyle Shoppers',
+        'Premium Membership Seekers'
+      ],
+      notIdealFor: [
+        'Fuel Purchasers',
+        'Golf Enthusiasts',
+        'Budget-Conscious Users'
+      ],
+      summary: 'A premium credit card offering a blend of travel, lifestyle, and rewards benefits for high spenders and frequent travelers.',
+      redemptionOptions: 'Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: Over ₹1.5 lakhs for non-government employees; over ₹1 lakh for government employees
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: Income Tax Returns (ITR) exceeding ₹18 lakhs per annum`,
+      travelLifestyleBenefits: '12 complimentary domestic airport lounge visits annually and up to 6 international lounge visits through Priority Pass.'
     }
   },
   {
@@ -190,8 +213,12 @@ Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
       ],
       summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions, ideal for digital-savvy users who prefer app-based banking.',
       fuelSurcharge: 'Not specified',
-      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹25,000/month
-Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹25,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹6 lakhs/annum`
     }
   },
   {
@@ -232,8 +259,12 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
       ],
       summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.',
       fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle',
-      eligibilityCriteria: `Salaried: Age 21–40 years, Income ₹35,000/month
-Self-Employed: Age 21–40 years, ITR > ₹6 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 40 years
+Net Monthly Income: ₹35,000/month
+Self-Employed Individuals:
+Age: 21 to 40 years
+Income: ITR > ₹6 lakhs/annum`
     }
   },
   {
@@ -274,8 +305,12 @@ Self-Employed: Age 21–40 years, ITR > ₹6 Lakhs/annum`
         'Universal Spenders: No rewards on fuel, wallet loads, voucher purchases, rent payments, or government transactions'
       ],
       summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.',
-      eligibilityCriteria: `Salaried: Income ₹25,000/month
-Self-Employed: ITR > ₹6 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹25,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹6 lakhs/annum`
     }
   },
   {
@@ -452,8 +487,13 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
         'Users who will not utilize premium lifestyle benefits'
       ],
       summary: 'Ideal for high-income individuals who travel frequently, enjoy luxury experiences, and seek premium lifestyle and concierge benefits.',
-      eligibilityCriteria: `Salaried: Income ₹1.5 Lakhs/month
-Self-Employed: ITR > ₹18 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹1.5 lakhs/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹18 lakhs/annum
+Credit Score: 750+`
     }
   },
   {
@@ -866,8 +906,12 @@ Self-Employed: 21 years & above, Income ₹20,000/month`
       ],
       summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.',
       fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
-      eligibilityCriteria: `Salaried: Income ₹1.5 Lakhs/month
-Self-Employed: ITR > ₹18 Lakhs/annum
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹1.5 lakhs/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹18 lakhs/annum
 Credit Score: 750+`
     }
   },
@@ -958,7 +1002,13 @@ Credit Score: 750+`
       summary: 'A lifetime free credit card with comprehensive travel benefits and health & wellness discounts.',
       redemptionOptions: 'Redeem for flight tickets, hotel stays, gift vouchers, and more',
       cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
-      eligibilityCriteria: 'Minimum age: 18 years\nMinimum income: ₹12 lakhs per annum\nIndian residency required\nGood credit score (typically 750+)',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 18 years & above
+Net Monthly Income: ₹1 lakh/month
+Self-Employed Individuals:
+Age: 18 years & above
+Income: ₹12 lakhs per annum
+Credit Score: 750+ (recommended)`,
       travelLifestyleBenefits: '4 complimentary airport lounge visits per quarter'
     }
   },
@@ -1475,7 +1525,7 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     name: 'HDFC UPI RuPay Credit Card',
     bank: 'HDFC Bank',
     category: 'upi',
-    image: '/credit-cards/HDFC-UPI-RuPay.png',
+    image: '/credit-cards/HDFC-UPI-Rupay.png',
     apr: '43.2% p.a.',
     annualFee: '₹99 + GST',
     joiningFee: '₹99 + GST',
@@ -1489,8 +1539,11 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     ],
     applyUrl: 'https://example.com/apply-hdfc-rupay',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards',
+      rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards for ₹0.25 per point',
       welcomeBonus: 'Not specified',
+      milestoneBenefits: [
+        'Spend ₹25,000 or more in an annual year, before your Credit Card renewal date and get your renewal fee waived off from 2nd year onwards'
+      ],
       minimumSpend: 'Not specified',
       idealFor: [
         'First-time credit card users',
@@ -1794,7 +1847,13 @@ Fuel Benefits:
         'Residents of cities not covered by HSBC'
       ],
       summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Annual Income: ₹40 lakhs and above
+Self-Employed Individuals:
+Age: 21 to 65 years
+Net Annual Income: ₹60 lakhs and above`
     }
   },
   {
