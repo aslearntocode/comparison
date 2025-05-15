@@ -993,6 +993,19 @@ export default function Header() {
                     <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
                   </Link>
                   <Link 
+                    href="/credit/idfc-first-ashva" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/idfc/Ashva-Card-revised-27-Nov.png" 
+                      alt="IDFC FIRST Ashva" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Ashva</span>
+                  </Link>
+                  <Link 
                     href="/credit/kiwi" 
                     className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
                   >
@@ -1031,6 +1044,19 @@ export default function Header() {
                       className="object-contain"
                     />
                     <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Mayura</span>
+                  </Link>
+                  <Link 
+                    href="/credit/idfc-first-ashva" 
+                    className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200 px-4"
+                  >
+                    <Image 
+                      src="/credit-cards/idfc/Ashva-Card-revised-27-Nov.png" 
+                      alt="IDFC FIRST Ashva" 
+                      width={40} 
+                      height={25} 
+                      className="object-contain"
+                    />
+                    <span className="text-base text-blue-600 whitespace-nowrap">IDFC FIRST Ashva</span>
                   </Link>
                   <Link 
                     href="/credit/kiwi" 

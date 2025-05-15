@@ -199,18 +199,36 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 <h4 className="text-lg font-semibold mb-2">Rewards</h4>
                 <ul className="list-disc pl-6 space-y-2">
                   {(() => {
-                    const rewards = card.additionalDetails.rewardsProgram;
-                    let items: string[] = [];
-                    if (rewards.includes('•')) {
-                      items = rewards.split('•');
-                    } else if (rewards.includes('\n')) {
-                      items = rewards.split('\n');
-                    } else if (rewards.includes('. ')) {
-                      items = rewards.split('. ').map(s => s.endsWith('.') ? s : s + '.');
-                    } else {
-                      items = [rewards];
-                    }
-                    return items.map((item, idx) => item.trim() && <li key={"rewards-"+idx}>{item.trim()}</li>);
+                    const lines = card.additionalDetails.rewardsProgram.split(/\n|\r/).map((l: string) => l.trim()).filter(Boolean);
+                    const items: { text: string; subs: string[] }[] = [];
+                    let lastMainIdx = -1;
+                    lines.forEach((line: string, idx: number) => {
+                      if (line.startsWith('•')) {
+                        items.push({ text: line.substring(1).trim(), subs: [] });
+                        lastMainIdx = items.length - 1;
+                      } else if (line.startsWith('-') && lastMainIdx !== -1) {
+                        items[lastMainIdx].subs.push(line.substring(1).trim());
+                      } else if (lastMainIdx === -1) {
+                        // If the first line is not a bullet, treat as main
+                        items.push({ text: line, subs: [] });
+                        lastMainIdx = items.length - 1;
+                      } else {
+                        // If not a bullet or sub-bullet, append to last main
+                        items[lastMainIdx].text += ' ' + line;
+                      }
+                    });
+                    return items.map((item, idx) => (
+                      <li key={"rewards-"+idx}>
+                        {item.text}
+                        {item.subs.length > 0 && (
+                          <ul className="list-disc pl-6 mt-1">
+                            {item.subs.map((sub: string, subIdx: number) => (
+                              <li key={"rewards-sub-"+idx+"-"+subIdx}>{sub}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ));
                   })()}
                 </ul>
               </div>
@@ -220,9 +238,38 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               <div>
                 <h4 className="text-lg font-semibold mb-2">Redemption</h4>
                 <ul className="list-disc pl-6 space-y-2">
-                  {card.additionalDetails.redemptionOptions.split('•').map((item, idx) => (
-                    item.trim() && <li key={"redemption-"+idx}>{item.trim()}</li>
-                  ))}
+                  {(() => {
+                    const lines = card.additionalDetails.redemptionOptions.split(/\n|\r/).map((l: string) => l.trim()).filter(Boolean);
+                    const items: { text: string; subs: string[] }[] = [];
+                    let lastMainIdx = -1;
+                    lines.forEach((line: string, idx: number) => {
+                      if (line.startsWith('•')) {
+                        items.push({ text: line.substring(1).trim(), subs: [] });
+                        lastMainIdx = items.length - 1;
+                      } else if (line.startsWith('-') && lastMainIdx !== -1) {
+                        items[lastMainIdx].subs.push(line.substring(1).trim());
+                      } else if (lastMainIdx === -1) {
+                        // If the first line is not a bullet, treat as main
+                        items.push({ text: line, subs: [] });
+                        lastMainIdx = items.length - 1;
+                      } else {
+                        // If not a bullet or sub-bullet, append to last main
+                        items[lastMainIdx].text += ' ' + line;
+                      }
+                    });
+                    return items.map((item, idx) => (
+                      <li key={"redemption-"+idx}>
+                        {item.text}
+                        {item.subs.length > 0 && (
+                          <ul className="list-disc pl-6 mt-1">
+                            {item.subs.map((sub: string, subIdx: number) => (
+                              <li key={"redemption-sub-"+idx+"-"+subIdx}>{sub}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ));
+                  })()}
                 </ul>
               </div>
             )}
@@ -334,9 +381,9 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
               {card.additionalDetails?.milestoneBenefits?.length ? (
                 <ul className="space-y-2 list-disc list-outside pl-4">
                   {card.additionalDetails.milestoneBenefits.map((benefit, index) => (
-                    <li key={index} className="text-gray-700">{benefit}</li>
-                  ))}
-                </ul>
+                  <li key={index} className="text-gray-700">{benefit}</li>
+                ))}
+              </ul>
               ) : (
                 <p className="text-gray-500">No milestone benefits available</p>
               )}

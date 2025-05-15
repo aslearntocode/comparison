@@ -801,15 +801,13 @@ Redemption:
   - Wallet loads
   - Government transactions
 
-• 5X Rewards: 5 Reward Points per ₹150 spent on all other categories for monthly spends up to ₹20,000
+• 5X Rewards: 5 Reward Points per ₹150 spent on:
+  - All other categories for monthly spends up to ₹20,000
 
 • 10X Rewards: 10 Reward Points per ₹150 spent on:
   - Monthly spends exceeding ₹20,000
-  - Birthday spends
-
-Note: No reward points on fuel purchases, EMI conversions, cash withdrawals, and fee payments
-
-Reward Points Value and Redemption:
+  - Birthday spends`,
+      redemptionOptions: `
 • Value: Each Reward Point = ₹0.25
 • Redemption Options:
   - Online transactions
@@ -817,13 +815,7 @@ Reward Points Value and Redemption:
   - Merchandise purchases
   - Flight, hotel, and movie bookings
 • Redemption Fee: ₹99 + GST per request
-• Expiry: Points do not expire
-
-Effective Cashback Rates:
-• 1X Rewards: ~0.17% cashback
-• 3X Rewards: ~0.50% cashback
-• 5X Rewards: ~0.83% cashback
-• 10X Rewards: ~1.67% cashback`,
+• Expiry: Points do not expire`,
       welcomeBonus: 'Welcome Benefits:\n• Premium welcome benefits worth ₹15,000\n• Luxury gift vouchers\n• Exclusive dining experiences',
       milestoneBenefits: [
         'Spend ₹8 Lakhs in a card anniversary year to earn 7,500 reward points (worth ₹1,875)',
@@ -1368,7 +1360,7 @@ Fuel Benefits:
   },
   {
     id: 'tata-neu-infinity',
-    name: 'Tata Neu Infinity Credit Card',
+    name: 'HDFC Tata Neu Infinity Credit Card',
     bank: 'HDFC Bank',
     category: 'upi',
     image: '/credit-cards/Tata-Neu-Infinity.png',
@@ -1404,7 +1396,7 @@ Fuel Benefits:
   },
   {
     id: 'tata-neu-plus',
-    name: 'Tata Neu Plus Credit Card',
+    name: 'HDFC Tata Neu Plus Credit Card',
     bank: 'HDFC Bank',
     category: 'upi',
     image: '/credit-cards/Tata-Neu.png',
@@ -2363,6 +2355,46 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       airportLounge: `4 complimentary railway lounge access visits per quarter.`,
       additionalServices: `Complimentary roadside assistance worth ₹1,399.\nFuel surcharge waiver of 1% at all fuel stations across India, up to ₹200/month.\n300+ merchant offers, all year long!\nUp to 20% discount at 1,500+ restaurants.\nExclusive merchant offers for every day of the week.`,
       // No idealFor, notIdealFor, eligibility, or summary as not in screenshot
+    }
+  },
+  {
+    id: 'idfc-first-ashva',
+    name: 'IDFC FIRST Ashva Credit Card',
+    bank: 'IDFC FIRST Bank',
+    category: 'premium',
+    image: '/credit-cards/idfc/Ashva-Card-revised-27-Nov.png',
+    apr: '',
+    annualFee: '₹2,999 + GST',
+    joiningFee: '₹2,999 + GST',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'premium',
+      'lifestyle',
+      'travel',
+      'metal'
+    ],
+    applyUrl: '',
+    additionalDetails: {
+      summary: "A premium metal credit card blending India's heritage with modern luxury, offering lifestyle, travel, and entertainment benefits for affluent individuals.",
+      rewardsProgram: `Earn 5X reward points on monthly spends below ₹20,000.\nEarn 10X reward points on monthly spends above ₹20,000 and on your birthday.\nReward points can be redeemed for a variety of options (₹0.25 per point).`,
+      welcomeBonus: `2,500 reward points upon payment of the joining fee.\nUp to ₹2,000 cashback on four transactions of ₹500 or more within 60 days of card issuance.`,
+      airportLounge: `4 complimentary domestic airport lounge accesses per quarter.\n2 complimentary international airport lounge accesses per quarter.\n4 complimentary railway lounge accesses per quarter at select IRCTC lounges.`,
+      milestoneBenefits: [],
+      movieBenefits: `Buy One Get One (BOGO) offer on BookMyShow movie tickets, up to ₹400, twice a month.`,
+      additionalServices: `Up to 2 complimentary golf rounds or lessons per month (on spends of ₹20,000+).\nLow forex markup fee of 1% on international transactions.\nVisa Infinite Privileges: Discounts on airport meet-and-greet services at 450+ airports, limousine services for airport transfers, personalized travel assistance, and exclusive benefits at 900+ luxury hotels globally.`,
+      insuranceCover: [`Comprehensive travel insurance coverage up to $1,200.`, `Roadside Assistance (RSA) available up to four times a year.`, `Personal accident and lost card liability cover up to ₹50,000.`, `Trip cancellation insurance of up to ₹25,000 per instance, twice a year.`],
+      redemptionOptions: `• Value: Each Reward Point = ₹0.25\n• Redemption Options:\n  - Online transactions\n  - Gift vouchers (Amazon, Flipkart, Myntra, BigBasket)\n  - Merchandise purchases\n  - Flight, hotel, and movie bookings\n• Redemption Fee: ₹99 + GST per request\n• Expiry: Points do not expire\n\nEffective Cashback Rates:\n• 1X Rewards: ~0.17% cashback\n• 3X Rewards: ~0.50% cashback\n• 5X Rewards: ~0.83% cashback\n• 10X Rewards: ~1.67% cashback`,
+      idealFor: [
+        'Affluent Individuals: Those seeking a premium credit card experience with a blend of traditional aesthetics and modern benefits.',
+        'Frequent Travelers: Individuals who travel domestically and internationally, benefiting from lounge accesses and travel insurance.',
+        'Lifestyle Enthusiasts: Users who enjoy golf, movies, and exclusive lifestyle privileges.'
+      ],
+      notIdealFor: [
+        'Budget-Conscious Users: Those who may not fully utilize the premium benefits relative to the annual fee.',
+        'Reward Maximizers: Individuals seeking higher reward redemption values might find the ₹0.25 per point valuation less appealing.'
+      ],
+      eligibilityCriteria: `Age: Minimum 18 years.\nIncome: While specific income criteria aren't publicly disclosed, the card targets individuals with higher income brackets, given its premium nature.\nCredit Score: A good credit history is essential, typically with a credit score of 750 or higher.\nResidency: Indian residents.`
     }
   }
 ]; 
