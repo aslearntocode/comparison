@@ -78,6 +78,8 @@ export default function Home() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [touchMoved, setTouchMoved] = useState(false)
+  const [isSwiping, setIsSwiping] = useState(false)
 
   const testimonials = [
     {
@@ -130,11 +132,18 @@ export default function Home() {
       type: 'credit-cards',
       images: [
         '/credit-cards/idfc/Mayura-Card-revised-29-Nov.png',
-        '/Credit-card-2.png',
+        '/credit-cards/idfc/Select-New-Card_Front.png',
         '/credit-cards/idfc/Ashva-Card-revised-27-Nov.png'
       ]
     }
   ]
+
+  // Card links for featured cards in hero section
+  const cardLinks = [
+    '/credit/idfc-mayura-metal',
+    '/credit/idfc-first-select',
+    '/credit/idfc-first-ashva',
+  ];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -287,9 +296,10 @@ export default function Home() {
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (isAutoPlaying) {
+      const isMobileDevice = typeof window !== 'undefined' && window.innerWidth < 768;
       interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % sliderData[0].images.length);
-      }, 3000); // Change slide every 3 seconds
+      }, isMobileDevice ? 7000 : 5000); // 7s on mobile, 5s on desktop
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -324,19 +334,34 @@ export default function Home() {
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.touches[0].clientX);
+    setTouchMoved(false);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.touches[0].clientX);
+    setTouchMoved(true);
   };
 
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) {
-      // Swipe left
-      setCurrentSlide((prev) => (prev + 1) % sliderData[0].images.length);
-    } else if (touchStart - touchEnd < -50) {
-      // Swipe right
-      setCurrentSlide((prev) => (prev - 1 + sliderData[0].images.length) % sliderData[0].images.length);
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const threshold = 50;
+    const swipeDistance = touchStart - touchEnd;
+    
+    if (Math.abs(swipeDistance) > threshold) {
+      // It's a swipe
+      e.preventDefault();
+      if (swipeDistance > 0) {
+        // Swipe left
+        setCurrentSlide((prev) => (prev + 1) % sliderData[0].images.length);
+      } else {
+        // Swipe right
+        setCurrentSlide((prev) => (prev - 1 + sliderData[0].images.length) % sliderData[0].images.length);
+      }
+    }
+  };
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (touchMoved) {
+      e.preventDefault();
     }
   };
 
@@ -431,40 +456,42 @@ export default function Home() {
   const MobileCarousel = () => {
     return (
       <div className="md:hidden px-4">
-        {!user ? (
-          <div className="flex flex-col gap-4">
-            {/* Remove standalone buttons */}
+        <div className="mt-6 mb-2 flex justify-center">
+          <span className="text-sm font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
+            Our Featured Cards
+          </span>
+        </div>
+        <div className="relative w-full h-[200px] flex items-center">
+          <div className="relative w-full h-full">
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+              <Link 
+                href={cardLinks[currentSlide]}
+                className="block"
+                aria-label={`View details for card ${currentSlide + 1}`}
+              >
+                <Image
+                  src={sliderData[0].images[currentSlide]}
+                  width={240}
+                  height={150}
+                  alt={`Credit Card ${currentSlide + 1}`}
+                  className="rounded-2xl shadow-2xl mx-auto"
+                />
+              </Link>
+            </div>
           </div>
-        ) : (
-          <>
-            <div className="flex gap-2 mb-4 justify-center">
+          {/* Carousel Indicators */}
+          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+            {sliderData[0].images.map((_, index) => (
               <button
-                onClick={() => setActiveCard('investment')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  activeCard === 'investment'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
                 }`}
-              >
-                Investment
-              </button>
-              <button
-                onClick={() => setActiveCard('credit')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  activeCard === 'credit'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 active:bg-gray-200'
-                }`}
-              >
-                Credit
-              </button>
-            </div>
-
-            <div className="transition-all duration-500 ease-in-out">
-              {/* ... rest of the MobileCarousel component ... */}
-            </div>
-          </>
-        )}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     );
   };
@@ -520,31 +547,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Mobile Hero Section - Moved to top */}
           <div className="lg:hidden mb-8">
-            <div 
-              className="relative w-full h-[200px] flex items-center"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <div className="relative w-full h-[200px] flex items-center">
               <div className="relative w-full h-full">
-                {sliderData[0].images.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    } flex items-center justify-center`}
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                  <Link 
+                    href={cardLinks[currentSlide]}
+                    className="block"
+                    aria-label={`View details for card ${currentSlide + 1}`}
                   >
-                <Image
-                      src={image}
-                      alt={`Credit Card ${index + 1}`}
-                  width={240}
-                  height={150}
+                    <Image
+                      src={sliderData[0].images[currentSlide]}
+                      width={240}
+                      height={150}
+                      alt={`Credit Card ${currentSlide + 1}`}
                       className="rounded-2xl shadow-2xl mx-auto"
-                />
-              </div>
-                ))}
+                    />
+                  </Link>
+                </div>
               </div>
               {/* Carousel Indicators */}
               <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
@@ -645,22 +664,19 @@ export default function Home() {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="relative w-full h-full">
-                  {sliderData[0].images.map((image, index) => (
-                    <div
-                      key={index}
-                      className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                        index === currentSlide ? 'opacity-100' : 'opacity-0'
-                      } flex items-center justify-center`}
+                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                    <a href={cardLinks[currentSlide]} aria-label={`View details for card ${currentSlide + 1}`}
+                      tabIndex={0}
                     >
-                  <Image
-                        src={image}
+                      <Image
+                        src={sliderData[0].images[currentSlide]}
                         width={400}
                         height={250}
-                        alt={`Credit Card ${index + 1}`}
-                        className="rounded-2xl shadow-2xl mx-auto"
-                  />
-                </div>
-                  ))}
+                        alt={`Credit Card ${currentSlide + 1}`}
+                        className="rounded-2xl shadow-2xl mx-auto hover:scale-105 transition-transform duration-200"
+                      />
+                    </a>
+                  </div>
                 </div>
                 {/* Carousel Indicators */}
                 <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
@@ -674,6 +690,12 @@ export default function Home() {
                     />
                   ))}
                 </div>
+              </div>
+              {/* Our Featured Cards label - simple, stylish text only */}
+              <div className="mt-12 flex justify-center">
+                <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
+                  Our Featured Cards
+                </span>
               </div>
             </div>
           </div>

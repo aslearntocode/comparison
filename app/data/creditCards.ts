@@ -867,7 +867,8 @@ Self-Employed: 21 years & above, Income ₹20,000/month`
       summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.',
       fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
       eligibilityCriteria: `Salaried: Income ₹1.5 Lakhs/month
-Self-Employed: ITR > ₹18 Lakhs/annum`
+Self-Employed: ITR > ₹18 Lakhs/annum
+Credit Score: 750+`
     }
   },
   {
@@ -910,36 +911,55 @@ Self-Employed: ITR > ₹18 Lakhs/annum`
   },
   {
     id: 'idfc-first-select',
-    name: 'IDFC FIRST Select Credit Card',
+    name: 'IDFC FIRST Select',
     bank: 'IDFC FIRST Bank',
     category: 'rewards',
     image: '/credit-cards/idfc/Select-New-Card_Front.png',
-    apr: '46.2% p.a.',
+    apr: '3.49% per month',
     annualFee: '₹0',
     joiningFee: '₹0',
     rupay: true,
     feedback: [],
-    categories: [
-      'lifestyle',
-      'domestic-lounge',
-      'upi',
-      'lifetime-free',
-      'rewards'
-    ],
-    applyUrl: 'https://example.com/apply-idfc-first-select',
+    categories: ['rewards', 'lifestyle', 'lifetime-free', 'rupay'],
+    applyUrl: 'https://www.idfcfirstbank.com/credit-card/select-credit-card',
     additionalDetails: {
-      welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation.\n5% cashback up to ₹1,000 on first EMI transaction within 30 days of card generation.`,
-      rewardsProgram: `3X never expiring Reward Points on online & offline purchases for spends < ₹20,000.\n10X never expiring Reward Points on monthly spends ≥ ₹20,000.`,
-      airportLounge: `2 complimentary domestic airport lounge visits per quarter; activated on minimum ₹20,000 monthly statement spends.\n4 complimentary railway lounge visits per quarter.`,
-      milestoneBenefits: [],
-      movieBenefits: `Buy 1 get 1 free on movie tickets up to ₹250 on Paytm, valid twice per month.`,
-      additionalServices: `Low forex markup fee of 1.99%.
-UPI - Earn up to 3X never expiring Reward Points on all your UPI purchases.
-EMIfy – Convert transactions of ₹2,500 and above to EMI.
-Add On - Gift an Add-on credit card to your loved ones & share your lounge access, movie offers & more.
-Refer & Earn - Refer the IDFC FIRST Bank Credit Card & get rewards of up to ₹2,500.
-Trip cancellation cover of up to ₹10,000 for up to 2 claims on flight & hotel bookings.`,
-      // ... keep all other fields unchanged ...
+      rewardsProgram: 'Earn 2X rewards on all spends',
+      welcomeBonus: 'Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation. \n5% cashback up to ₹1,000 on first EMI transaction within 30 days of card generation',
+      milestoneBenefits: [
+        'Minimum spend of ₹20,000 per month required for airport lounge access fee waiver'
+      ],
+      airportLounge: '4 complimentary airport lounge visits per quarter',
+      fuelSurcharge: 'None',
+      insuranceCover: [
+        'Air accident insurance up to ₹1 crore',
+        'Lost card liability insurance up to ₹1 lakh'
+      ],
+      movieBenefits: 'None',
+      diningPrivileges: ['15% discount at 3,000+ health & wellness outlets'],
+      minimumSpend: 'None',
+      creditLimit: 'Up to ₹5 lakhs',
+      domesticTransactionFee: 'None',
+      internationalTransactionFee: '2.5% + GST',
+      interestRate: '3.49% per month',
+      emiOptions: 'Available',
+      additionalServices: 'None',
+      idealFor: [
+        'Frequent travelers (airport & railway lounge access)',
+        'Reward point maximizers (up to 10X rewards)',
+        'UPI-based spenders (RuPay-enabled for UPI)',
+        'Lifetime free credit card seekers',
+        'Health & wellness enthusiasts (15% discount at 3,000+ outlets)'
+      ],
+      notIdealFor: [
+        'Frequent international travelers (forex fee applies)',
+        'Users looking for fuel benefits',
+        'Premium lifestyle seekers (no concierge/luxury perks)'
+      ],
+      summary: 'A lifetime free credit card with comprehensive travel benefits and health & wellness discounts.',
+      redemptionOptions: 'Redeem for flight tickets, hotel stays, gift vouchers, and more',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: 'Minimum age: 18 years\nMinimum income: ₹12 lakhs per annum\nIndian residency required\nGood credit score (typically 750+)',
+      travelLifestyleBenefits: '4 complimentary airport lounge visits per quarter'
     }
   },
   {
