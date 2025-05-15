@@ -170,7 +170,7 @@ export default function LoanFDComparison() {
         <meta property="og:title" content="Loan vs FD Calculator | Compare Loan Interest with FD Returns" />
         <meta property="og:description" content="Should you break your FD to repay a loan? Compare loan interest payments with FD returns using our free calculator." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/learning-center/personal-finance/comparison" />
+        <meta property="og:url" content="https://financialhealth.co.in/learning-center/personal-finance/comparison" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -178,7 +178,7 @@ export default function LoanFDComparison() {
         <meta name="twitter:description" content="Compare loan interest with FD returns to make informed financial decisions." />
         
         {/* Canonical URL to prevent duplicate content issues */}
-        <link rel="canonical" href="https://yourwebsite.com/learning-center/personal-finance/comparison" />
+        <link rel="canonical" href="https://financialhealth.co.in/learning-center/personal-finance/comparison" />
 
         {/* JSON-LD structured data */}
         <script type="application/ld+json">

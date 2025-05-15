@@ -1479,8 +1479,12 @@ Fuel Benefits:
       ],
       summary: 'A co-branded credit card offering enhanced rewards on Tata brand purchases and UPI transactions.',
       fuelSurcharge: 'Not specified',
-      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
-Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹1,00,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹12 lakhs/annum`
     }
   },
   {
@@ -1516,8 +1520,12 @@ Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
       ],
       summary: 'An entry-level co-branded credit card offering rewards on Tata brand purchases and UPI transactions.',
       fuelSurcharge: 'Not specified',
-      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹25,000/month
-Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹25,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹6 lakhs/annum`
     }
   },
   {
