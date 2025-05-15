@@ -96,7 +96,9 @@ export const creditCards: CreditCard[] = [
         'Budget-conscious users'
       ],
       summary: 'A premium co-branded credit card offering exclusive Marriott Bonvoy benefits, free night awards, elite status, and extensive travel and lifestyle privileges.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
+Self-Employed: Age 21–65 years, ITR > ₹15 Lakhs/annum`
     }
   },
   {
@@ -147,7 +149,9 @@ Redemption:
       internationalTransactionFee: '2% on all international transactions',
       interestRate: '3.5% per month (42% p.a.)',
       emiOptions: 'Available on eligible purchases',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000'
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹5,000',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
+Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
     }
   },
   {
@@ -185,7 +189,9 @@ Redemption:
         'Individuals with Low or Irregular Spending: May not meet spending thresholds for fee waivers'
       ],
       summary: 'A modern digital-first credit card offering customizable category-based cashback rewards with strong emphasis on e-commerce and UPI transactions, ideal for digital-savvy users who prefer app-based banking.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹25,000/month
+Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     }
   },
   {
@@ -225,7 +231,9 @@ Redemption:
         'Universal Spenders: No cashback on fuel, EMI, wallet loads, rent payments, and government-related transactions'
       ],
       summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.',
-      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle'
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle',
+      eligibilityCriteria: `Salaried: Age 21–40 years, Income ₹35,000/month
+Self-Employed: Age 21–40 years, ITR > ₹6 Lakhs/annum`
     }
   },
   {
@@ -266,11 +274,13 @@ Redemption:
         'Universal Spenders: No rewards on fuel, wallet loads, voucher purchases, rent payments, or government transactions'
       ],
       summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.',
+      eligibilityCriteria: `Salaried: Income ₹25,000/month
+Self-Employed: ITR > ₹6 Lakhs/annum`
     }
   },
   {
     id: 'hdfc-swiggy',
-    name: 'Swiggy HDFC Credit Card',
+    name: 'HDFC Swiggy Credit Card',
     bank: 'HDFC Bank',
     category: 'lifestyle',
     image: '/Credit-card-2.png',
@@ -306,7 +316,9 @@ Redemption:
         'Users who prefer premium lifestyle benefits',
         'Those who primarily use offline shopping'
       ],
-      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle'
+      fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹15,000/month
+Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     }
   },
   // Airlines Cards
@@ -440,6 +452,8 @@ Redemption:
         'Users who will not utilize premium lifestyle benefits'
       ],
       summary: 'Ideal for high-income individuals who travel frequently, enjoy luxury experiences, and seek premium lifestyle and concierge benefits.',
+      eligibilityCriteria: `Salaried: Income ₹1.5 Lakhs/month
+Self-Employed: ITR > ₹18 Lakhs/annum`
     }
   },
   {
@@ -850,7 +864,8 @@ Redemption:
       ],
       summary: 'A premium metal credit card offering zero forex markup, unlimited international lounge access, and premium lifestyle benefits, ideal for international travelers.',
       fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
-      eligibilityCriteria: 'Age: 21 to 65 years.\nOccupation: Salaried or Self-employed.\nAnnual Income: ₹25 lakhs or more.\nCredit Score: An excellent credit score is required.\nResidency: Indian resident.'
+      eligibilityCriteria: `Salaried: Income ₹1.5 Lakhs/month
+Self-Employed: ITR > ₹18 Lakhs/annum`
     }
   },
   {
@@ -1391,7 +1406,9 @@ Fuel Benefits:
         'Those who rarely shop at Tata brands'
       ],
       summary: 'A co-branded credit card offering enhanced rewards on Tata brand purchases and UPI transactions.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹1,00,000/month
+Self-Employed: Age 21–65 years, ITR > ₹12 Lakhs/annum`
     }
   },
   {
@@ -1426,7 +1443,9 @@ Fuel Benefits:
         'Users seeking travel benefits'
       ],
       summary: 'An entry-level co-branded credit card offering rewards on Tata brand purchases and UPI transactions.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried: Age 21–60 years, Income ₹25,000/month
+Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     }
   },
   {
