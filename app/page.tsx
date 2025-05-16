@@ -718,106 +718,56 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-8">
                 Upload your credit report PDF and get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
               </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4F46E5]/10 p-3 rounded-lg flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Upload Your Report</h3>
-                    <p className="text-gray-600">Simply upload your credit report PDF from any credit bureau. We support reports from CIBIL, Experian, Equifax, and CRIF High Mark.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4F46E5]/10 p-3 rounded-lg flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">AI-Powered Analysis</h3>
-                    <p className="text-gray-600">Our AI analyzes your report and generates a personalized summary explaining your credit score, factors affecting it, and areas for improvement.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#4F46E5]/10 p-3 rounded-lg flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Actionable Insights</h3>
-                    <p className="text-gray-600">Get specific recommendations to improve your credit score and increase your chances of loan approval with better interest rates.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <Link 
-                  href="/credit-score"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors"
-                >
-                  Get Started with Credit Analysis
-                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3 text-base text-gray-800">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Know what impacts your score
+                </li>
+                <li className="flex items-center gap-3 text-base text-gray-800">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Get actionable recommendations
+                </li>
+                <li className="flex items-center gap-3 text-base text-gray-800">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Check anytime - No impact on your score
+                </li>
+              </ul>
+              <Link 
+                href="/credit-score"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-lg text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors shadow-lg"
+              >
+                Analyze Your Credit Report
+                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
             </div>
 
-            {/* Right Content - Image/Animation */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg overflow-hidden">
-                  <Image
-                    src="/Report-Summary.png"
-                    alt="Credit Score Analysis"
-                    width={600}
-                    height={400}
-                    className="object-cover hidden lg:block"
-                  />
-                  <Image
-                    src="/Report-Summary.png"
-                    alt="Credit Score Analysis"
-                    width={400}
-                    height={300}
-                    className="object-cover lg:hidden"
-                  />
+            {/* Right Content - Visuals */}
+            <div className="relative flex flex-col items-center justify-center min-h-[420px]">
+              {/* Credit Score Gauge */}
+              <div className="relative z-0 flex flex-col items-center justify-center mt-0 lg:mt-24">
+                <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+                  <img src="/Credit-Score-Analysis.png" alt="Credit Score Meter" className="w-120 h-80 object-contain rounded-2xl" />
                 </div>
-                <div className="mt-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="font-semibold text-gray-900">Score Analysis</span>
-                    </div>
-                    <span className="text-sm text-gray-500">2-3 minutes</span>
+                {/* Floating Cards */}
+                {/* <div className="absolute top-10 right-0 flex flex-col gap-4">
+                  <div className="bg-white rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 border border-blue-100 mt-8">
+                    <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2a4 4 0 014-4h2" /></svg>
+                    <span className="text-xs font-semibold text-gray-700">Monthly Score Analysis</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
-                      </div>
-                      <span className="font-semibold text-gray-900">Recommendations</span>
-                    </div>
-                    <span className="text-sm text-gray-500">1-2 minutes</span>
+                  <div className="bg-white rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 border border-blue-100">
+                    <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" /></svg>
+                    <span className="text-xs font-semibold text-gray-700">Actionable Recommendations</span>
                   </div>
-                </div>
+                </div> */}
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#4F46E5]/10 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#4F46E5]/10 rounded-full blur-2xl"></div>
             </div>
           </div>
         </div>

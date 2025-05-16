@@ -556,8 +556,13 @@ Credit Score: 750+`
         'Users seeking zero annual fee or basic cashback cards'
       ],
       summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
-      eligibilityCriteria: `Salaried: 21 years & above, Income ₹20,000/month
-Self-Employed: 21 years & above, Income ₹20,000/month`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 18 to 60 years
+Net Annual Income: ₹6 lakhs
+Self-Employed Individuals:
+Age: 18 to 65 years
+Net Annual Income: ITR > ₹6 lakhs
+Credit Score: 750+`,
     }
   },
   // Fintech Cards
@@ -2018,6 +2023,13 @@ Net Annual Income: ₹60 lakhs and above`
         'Those seeking cashback or low-fee cards',
         'Budget-conscious individuals'
       ],
+      eligibilityCriteria: `Salaried Individuals:
+Age: 18 to 60 years
+Net Annual Income: ₹25-30 lakhs
+Self-Employed Individuals:
+Age: 18 to 65 years
+Net Annual Income: ITR > ₹25-30 lakhs
+Credit Score: 750+`,
       summary: 'A premium charge card offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, ideal for high-net-worth individuals and frequent luxury travelers.'
     }
   },
