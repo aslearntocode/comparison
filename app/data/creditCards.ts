@@ -1140,7 +1140,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
   },
   {
     id: 'idfc-hpcl-power-plus',
-    name: 'IDFC FIRST HPCL Power+ Credit Card',
+    name: 'IDFC FIRST HPCL+ Power Credit Card',
     bank: 'IDFC FIRST Bank',
     category: 'fuel',
     image: '/credit-cards/IDFC-First-HPCL.png',
