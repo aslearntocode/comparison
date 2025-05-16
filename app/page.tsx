@@ -18,6 +18,7 @@ import RewardPointsComparison from '@/components/RewardPointsComparison'
 import { useRouter } from 'next/navigation'
 import { Dialog } from '@headlessui/react'
 import { creditCards, type CreditCard } from '@/app/data/creditCards'
+import FeeWaiverChecker from '@/components/FeeWaiverChecker'
 
 interface AllocationItem {
   name: string;
@@ -772,6 +773,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Fee Waiver Checker Section */}
+      <FeeWaiverChecker />
 
       {/* Learning Center Preview Section */}
       <LearningCenterPreview />
