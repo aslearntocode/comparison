@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Link from 'next/link'
+import Script from 'next/script'
+import SearchBar from './components/SearchBar'
 
-type Article = {
+export type Article = {
   id: string
   title: string
   description: string
@@ -13,7 +15,7 @@ type Article = {
   link: string
 }
 
-const articles: Article[] = [
+export const articles: Article[] = [
   {
     id: '1',
     title: "Understanding Mutual Funds: A Beginner's Guide",
@@ -171,37 +173,72 @@ function LearningCenter() {
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category)
-    setIsMobileMenuOpen(false) // Close mobile menu after selection
+    setIsMobileMenuOpen(false)
+  }
+
+  // Generate schema markup for articles
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": articles.map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.description,
+        "url": `https://yourdomain.com${article.link}`,
+        "articleSection": article.category,
+        "timeRequired": article.readTime
+      }
+    }))
   }
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       
+      {/* Schema Markup */}
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      
       <main className="flex-1">
         <div className="relative">
           <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Breadcrumb Navigation - REMOVED */}
+            {/* <nav className="pt-4" aria-label="Breadcrumb"> ... </nav> */}
+
             <div className="text-center pt-10">
-              <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 font-serif tracking-wide">
                 Learning Center
               </h1>
               
-              <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+              <p className="text-sm md:text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
                 Explore our comprehensive guides and articles to enhance your investment knowledge
               </p>
+
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-4">
+                <SearchBar articles={articles} />
+              </div>
             </div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col lg:flex-row gap-8">
+          <nav aria-label="Category navigation" className="flex flex-col lg:flex-row gap-4">
             {/* Mobile Category Menu Button */}
             <div className="lg:hidden mb-4">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="flex items-center justify-between w-full px-4 py-3 bg-white rounded-lg shadow-sm"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-category-menu"
               >
                 <span className="text-gray-700 font-medium">
                   {selectedCategory === 'all' ? 'All Categories' : selectedCategory}
@@ -211,6 +248,7 @@ function LearningCenter() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -223,7 +261,11 @@ function LearningCenter() {
 
               {/* Mobile Category Menu Dropdown */}
               {isMobileMenuOpen && (
-                <div className="absolute z-50 mt-2 w-[calc(100%-2rem)] bg-white rounded-lg shadow-lg py-2 border border-gray-100">
+                <div 
+                  id="mobile-category-menu"
+                  className="absolute z-50 mt-2 w-[calc(100%-2rem)] bg-white rounded-lg shadow-lg py-2 border border-gray-100"
+                  role="menu"
+                >
                   {categories.map(category => (
                     <button
                       key={category}
@@ -235,6 +277,7 @@ function LearningCenter() {
                           : 'text-gray-700 hover:bg-gray-50'
                         }
                       `}
+                      role="menuitem"
                     >
                       {category === 'all' ? 'All Categories' : category}
                     </button>
@@ -244,32 +287,34 @@ function LearningCenter() {
             </div>
 
             {/* Desktop Category Sidebar */}
-            <div className="hidden lg:block lg:w-64 flex-shrink-0">
+            <aside className="hidden lg:block lg:w-64 flex-shrink-0">
               <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
                 <h2 className="text-lg font-semibold text-gray-900 mb-4">Categories</h2>
-                <div className="flex flex-col gap-2">
-                  {categories.map(category => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`
-                        px-4 py-3 rounded-lg text-left transition-all duration-200
-                        ${selectedCategory === category
-                          ? 'bg-blue-600 text-white shadow-md transform translate-x-2'
-                          : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
-                        }
-                        ${selectedCategory === category ? 'font-medium' : 'font-normal'}
-                      `}
-                    >
-                      {category === 'all' ? 'All Categories' : category}
-                      {selectedCategory === category && (
-                        <span className="float-right">→</span>
-                      )}
-                    </button>
-                  ))}
-                </div>
+                <nav aria-label="Category navigation">
+                  <div className="flex flex-col gap-2">
+                    {categories.map(category => (
+                      <button
+                        key={category}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`
+                          px-4 py-3 rounded-lg text-left transition-all duration-200
+                          ${selectedCategory === category
+                            ? 'bg-blue-600 text-white shadow-md transform translate-x-2'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                          }
+                          ${selectedCategory === category ? 'font-medium' : 'font-normal'}
+                        `}
+                      >
+                        {category === 'all' ? 'All Categories' : category}
+                        {selectedCategory === category && (
+                          <span className="float-right">→</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </nav>
               </div>
-            </div>
+            </aside>
 
             {/* Articles Grid */}
             <div className="flex-1">
@@ -300,7 +345,7 @@ function LearningCenter() {
                 ))}
               </div>
             </div>
-          </div>
+          </nav>
         </div>
       </main>
     </div>
