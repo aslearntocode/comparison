@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Script from 'next/script';
-import { articles } from '../../page';
+import { articles } from '../../articles-data';
 import RelatedArticles from '../../components/RelatedArticles';
 
 // JSON-LD structured data for better SEO

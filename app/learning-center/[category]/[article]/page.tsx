@@ -24,7 +24,6 @@ export async function generateMetadata({ params }: { params: { category: string;
   }
 }
 
-// @ts-expect-error Next.js 15 type bug workaround
 export default function ArticlePage({ params }: { params: { category: string; article: string } }) {
   const article = articles.find(a => a.link === `/learning-center/${params.category}/${params.article}`)
   
