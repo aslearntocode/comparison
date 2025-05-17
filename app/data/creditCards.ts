@@ -147,7 +147,7 @@ Redemption:
         'Exclusive offers through Dineout Passport Membership',
         'Up to 25% off at select restaurants'
       ],
-      minimumSpend: '₹3,00,000 for annual fee waiver',
+      minimumSpend: '₹4,00,000 for annual fee waiver',
       creditLimit: 'Customized as per profile',
       domesticTransactionFee: 'Nil',
       internationalTransactionFee: '2% on all international transactions',
@@ -1269,7 +1269,7 @@ Fuel Benefits:
   },
   {
     id: 'hdfc-indigo-6e-rewards',
-    name: 'HDFC Bank IndiGo 6E Rewards Credit Card',
+    name: 'HDFC IndiGo 6E Rewards Credit Card',
     bank: 'HDFC Bank',
     category: 'airlines',
     image: '/credit-cards/HDFC-Indigo.png',
@@ -1344,7 +1344,7 @@ Fuel Benefits:
       insuranceCover: [
         'Air accident insurance cover up to ₹3.5 crore'
       ],
-      minimumSpend: 'Not specified',
+      minimumSpend: 'NA',
       additionalServices: 'Additional Benefits:\n• Complimentary domestic lounge access\n• Air accident insurance cover up to ₹3.5 crore',
       idealFor: [
         'Frequent Singapore Airlines flyers',
@@ -2548,5 +2548,116 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       additionalServices: 'Can be linked to UPI for seamless payments.',
       eligibilityCriteria: 'Minimum age: 21 years. Monthly income: ₹20,000 and above.'
     }
+  },
+  {
+    id: 'hsbc-premier-mastercard',
+    name: 'HSBC Premier Credit Card',
+    bank: 'HSBC',
+    category: 'premium',
+    image: '/credit-cards/HSBC-premier.png',
+    apr: '3.5% per month (42% p.a.)',
+    annualFee: '₹20,000',
+    joiningFee: '₹12,000',
+    rupay: false,
+    feedback: [],
+    categories: ['premium', 'travel', 'lifestyle'],
+    additionalDetails: {
+      rewardsProgram: '3 reward points per ₹100 spent, redeemable at ₹1 per point',
+      welcomeBonus: 'Complimentary Taj Epicure and EazyDiner Prime memberships',
+      airportLounge: 'Unlimited domestic and international airport lounge access, plus 8 free guest visits annually',
+      diningPrivileges: [
+        'Buy One Get One free offer on BookMyShow',
+        'Complimentary Taj Epicure membership',
+        'EazyDiner Prime membership'
+      ],
+      minimumSpend: 'Annual fee waived for qualified HSBC Premier customers',
+      domesticTransactionFee: 'Nil',
+      internationalTransactionFee: '0.99% foreign exchange markup fee',
+      idealFor: [
+        'Affluent individuals',
+        'Luxury travelers',
+        'High spenders',
+        'Lifestyle enthusiasts'
+      ],
+      summary: 'A premium credit card offering luxury travel and lifestyle benefits for affluent individuals.',
+      travelLifestyleBenefits: 'Comprehensive travel and lifestyle benefits with premium memberships'
+    }
+  },
+  {
+    id: 'hsbc-live-plus',
+    name: 'HSBC Live+ Credit Card',
+    bank: 'HSBC',
+    category: 'cashback',
+    image: '/credit-cards/HSBC-Live+.png',
+    apr: '3.5% per month (42% p.a.)',
+    annualFee: '₹999',
+    joiningFee: '₹999',
+    rupay: false,
+    feedback: [],
+    categories: ['cashback', 'lifestyle'],
+    additionalDetails: {
+      rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
+      welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
+      airportLounge: '4 complimentary domestic airport lounge visits per year',
+      milestoneBenefits: [
+        'Annual fee waiver on spending ₹3.5 lakh or more'
+      ],
+      diningPrivileges: [
+        '10% cashback on dining',
+        'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
+      ],
+      idealFor: [
+        'Daily spenders',
+        'Food and grocery shoppers',
+        'Online shoppers',
+        'Cashback seekers'
+      ],
+      summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
+      additionalServices: 'Exclusive monthly offers on popular platforms'
+    }
+  },
+  {
+    id: 'hsbc-visa-platinum',
+    name: 'HSBC Visa Platinum Credit Card',
+    bank: 'HSBC',
+    category: 'rewards',
+    image: '/credit-cards/HSBC-Visa-Platinum.png',
+    apr: '3.5% per month (42% p.a.)',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: ['rewards', 'lifetime-free'],
+    additionalDetails: {
+      rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
+      welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
+      diningPrivileges: [
+        'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
+      ],
+      fuelSurcharge: 'Fuel surcharge waiver up to ₹3,000 annually',
+      idealFor: [
+        'Entry-level users',
+        'Reward seekers',
+        'Budget-conscious users',
+        'Movie enthusiasts'
+      ],
+      summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
+      additionalServices: 'Regular offers on dining and entertainment'
+    }
   }
 ]; 
+
+// Sync fees whenever this file is modified
+if (typeof window === 'undefined') {
+  // Only run on server side
+  fetch('/api/sync-fees', { method: 'POST' })
+    .then(response => response.json())
+    .then(data => {
+      if (!data.success) {
+        console.error('Failed to sync fees:', data.error);
+      }
+    })
+    .catch(error => {
+      console.error('Error syncing fees:', error);
+    });
+}

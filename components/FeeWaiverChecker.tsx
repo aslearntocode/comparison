@@ -34,7 +34,7 @@ export default function FeeWaiverChecker() {
       } else if (feeInfo.annual_fee_waiver_criteria > 0) {
         feeWaiverInfo.push({ type: 'Fee Waiver', criteria: `Annual fee waived on spend of ₹${feeInfo.annual_fee_waiver_criteria.toLocaleString('en-IN')}` });
       } else {
-        feeWaiverInfo.push({ type: 'Fee Waiver', criteria: 'No annual fee waiver, fee must be paid' });
+        feeWaiverInfo.push({ type: 'Fee Waiver', criteria: 'Fee Cannot be Waived' });
       }
     } else {
       // Fallback to old logic if not found in JSON
@@ -164,6 +164,9 @@ export default function FeeWaiverChecker() {
                     >
                       <div className="font-medium text-gray-900">{card.name}</div>
                       <div className="text-sm text-gray-500">{card.bank}</div>
+                      <div className="text-sm text-gray-600 mt-1">
+                        <span className="font-medium">Fees:</span> Joining: {card.joiningFee}, Annual: {card.annualFee}
+                      </div>
                       {feeWaiverInfo.length > 0 ? (
                         <div className="mt-2 space-y-1">
                           {feeWaiverInfo.map((info, index) => (

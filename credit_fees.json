@@ -31,7 +31,7 @@
       "card_name":"HDFC Regalia Credit Card",
       "joining_fee":2500,
       "annual_fee":2500,
-      "annual_fee_waiver_criteria":300000,
+      "annual_fee_waiver_criteria":400000,
       "is_lifetime_free":0
     },
     {
@@ -81,6 +81,13 @@
       "joining_fee":500,
       "annual_fee":500,
       "annual_fee_waiver_criteria":200000,
+      "is_lifetime_free":0
+    },
+    {
+      "card_name":"HDFC IndiGo 6E Rewards Credit Card",
+      "joining_fee":500,
+      "annual_fee":500,
+      "annual_fee_waiver_criteria":0,
       "is_lifetime_free":0
     },
     {
@@ -414,6 +421,27 @@
     },
     {
       "card_name":"Bank of Baroda Prime Credit Card",
+      "joining_fee":0,
+      "annual_fee":0,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":1
+    },
+    {
+      "card_name":"HSBC Premier Credit Card",
+      "joining_fee":12000,
+      "annual_fee":20000,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
+    },
+    {
+      "card_name":"HSBC Live+ Credit Card",
+      "joining_fee":999,
+      "annual_fee":999,
+      "annual_fee_waiver_criteria":350000,
+      "is_lifetime_free":0
+    },
+    {
+      "card_name":"HSBC Visa Platinum Credit Card",
       "joining_fee":0,
       "annual_fee":0,
       "annual_fee_waiver_criteria":0,
