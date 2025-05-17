@@ -36,36 +36,88 @@ export default function ComparePageContent() {
   // Helper to get field value for a card
   function getFieldValue(card: CreditCard, key: string) {
     switch (key) {
-      case 'bestSuited':
-        return card.additionalDetails?.idealFor?.length
-          ? <ul className="list-disc list-inside text-xs">{card.additionalDetails.idealFor.map((v: string, i: number) => <li key={i}>{v}</li>)}</ul>
-          : <span className="text-xs text-gray-500">-</span>;
+      case 'bestSuited': {
+        const items = card.additionalDetails?.idealFor;
+        return items && items.length ? (
+          <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+            {items.map((v: string, i: number) => <li key={i}>{v}</li>)}
+          </ul>
+        ) : <span className="text-xs text-gray-500">-</span>;
+      }
       case 'feeDetails':
         return <div className="text-xs">Annual: {card.annualFee}<br/>Joining: {card.joiningFee}</div>;
-      case 'apr':
-        return card.apr ? <div className="text-xs">{card.apr}</div> : <span className="text-xs text-gray-500">-</span>;
-      case 'rupay':
-        return <div className="text-xs">{card.rupay ? 'Yes' : 'No'}</div>;
-      case 'welcomeBenefit':
-        return card.additionalDetails?.welcomeBonus
-          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.welcomeBonus}</div>
-          : <span className="text-xs text-gray-500">-</span>;
-      case 'rewardRate':
-        return card.additionalDetails?.rewardsProgram
-          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.rewardsProgram}</div>
-          : <span className="text-xs text-gray-500">-</span>;
-      case 'milestoneBenefits':
-        return card.additionalDetails?.milestoneBenefits?.length
-          ? <ul className="list-disc list-inside text-xs">{card.additionalDetails.milestoneBenefits.map((v: string, i: number) => <li key={i}>{v}</li>)}</ul>
-          : <span className="text-xs text-gray-500">-</span>;
-      case 'fuelSurcharge':
-        return card.additionalDetails?.fuelSurcharge
-          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.fuelSurcharge}</div>
-          : <span className="text-xs text-gray-500">-</span>;
-      case 'loungeAccess':
-        return card.additionalDetails?.airportLounge
-          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.airportLounge}</div>
-          : <span className="text-xs text-gray-500">-</span>;
+      case 'apr': {
+        const apr = card.apr;
+        return apr ? (
+          <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+            <li>{apr}</li>
+          </ul>
+        ) : <span className="text-xs text-gray-500">-</span>;
+      }
+      case 'rupay': {
+        const rupay = card.rupay ? 'Yes' : 'No';
+        return (
+          <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+            <li>{rupay}</li>
+          </ul>
+        );
+      }
+      case 'welcomeBenefit': {
+        const welcome = card.additionalDetails?.welcomeBonus;
+        if (welcome) {
+          const points = welcome.split(/\n|•|\r|\u2022|\-/).map(s => s.trim()).filter(Boolean);
+          return (
+            <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+              {points.map((point, idx) => <li key={idx}>{point}</li>)}
+            </ul>
+          );
+        }
+        return <span className="text-xs text-gray-500">-</span>;
+      }
+      case 'rewardRate': {
+        const reward = card.additionalDetails?.rewardsProgram;
+        if (reward) {
+          const points = reward.split(/\n|•|\r|\u2022|\-/).map(s => s.trim()).filter(Boolean);
+          return (
+            <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+              {points.map((point, idx) => <li key={idx}>{point}</li>)}
+            </ul>
+          );
+        }
+        return <span className="text-xs text-gray-500">-</span>;
+      }
+      case 'milestoneBenefits': {
+        const items = card.additionalDetails?.milestoneBenefits;
+        return items && items.length ? (
+          <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+            {items.map((v: string, i: number) => <li key={i}>{v}</li>)}
+          </ul>
+        ) : <span className="text-xs text-gray-500">-</span>;
+      }
+      case 'fuelSurcharge': {
+        const fuel = card.additionalDetails?.fuelSurcharge;
+        if (fuel) {
+          const points = fuel.split(/\n|•|\r|\u2022|\-/).map(s => s.trim()).filter(Boolean);
+          return (
+            <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+              {points.map((point, idx) => <li key={idx}>{point}</li>)}
+            </ul>
+          );
+        }
+        return <span className="text-xs text-gray-500">-</span>;
+      }
+      case 'loungeAccess': {
+        const lounge = card.additionalDetails?.airportLounge;
+        if (lounge) {
+          const points = lounge.split(/\n|•|\r|\u2022|\-/).map(s => s.trim()).filter(Boolean);
+          return (
+            <ul className="list-disc list-inside text-xs text-left flex flex-col justify-center h-full">
+              {points.map((point, idx) => <li key={idx}>{point}</li>)}
+            </ul>
+          );
+        }
+        return <span className="text-xs text-gray-500">-</span>;
+      }
       default:
         return <span className="text-xs text-gray-500">-</span>;
     }
