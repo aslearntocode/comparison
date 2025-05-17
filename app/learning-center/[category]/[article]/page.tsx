@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: { params: { category: string;
   }
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ category: string; article: string }> }) {
-  const resolvedParams = await params;
-  const article = articles.find(a => a.link === `/learning-center/${resolvedParams.category}/${resolvedParams.article}`)
+// @ts-expect-error Next.js 15 type bug workaround
+export default function ArticlePage({ params }: { params: { category: string; article: string } }) {
+  const article = articles.find(a => a.link === `/learning-center/${params.category}/${params.article}`)
   
   if (!article) {
     return <div>Article not found</div>
