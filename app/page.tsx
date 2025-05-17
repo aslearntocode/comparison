@@ -714,7 +714,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Understand Your Credit Score
-                <span className="text-[#4F46E5]"> Better</span>
+                <span className="text-[#4F46E5]"> Better (Coming Soon)</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">
                 Upload your credit report PDF and get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.

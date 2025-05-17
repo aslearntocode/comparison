@@ -524,7 +524,7 @@ export default function Header() {
                       className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
-                      <span className="ml-3">Check Credit Score (Coming Soon)</span>
+                      <span className="ml-3">Credit Score <br />(Coming Soon)</span>
                     </Link>
                   )}
                   {hasCreditReport && (
@@ -884,7 +884,7 @@ export default function Header() {
                       className="flex items-center px-4 py-3 text-sm text-black hover:bg-gray-50"
                       onClick={() => setIsCreditScoreDropdownOpen(false)}
                     >
-                      <span className="ml-3">Check Credit Score (Coming Soon)</span>
+                      <span className="ml-3">Credit Score <br />(Coming Soon)</span>
                     </Link>
                   )}
                   {hasCreditReport && (
