@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import Header from '@/components/Header';
 import './styles.css';
 import Script from 'next/script';
-import { articles } from '../../page';
+import { articles } from '../../articles-data';
 import RelatedArticles from '../../components/RelatedArticles';
 
 // Update interfaces

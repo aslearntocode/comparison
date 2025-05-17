@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Article } from '../page'
+import { Article } from '../articles-data'
 import Link from 'next/link'
 
 interface SearchBarProps {

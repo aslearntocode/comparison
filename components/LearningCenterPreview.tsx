@@ -1,42 +1,21 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
+import { articles as sharedArticles, Article as SharedArticle } from '../app/learning-center/articles-data';
 
-interface Article {
-  title: string;
-  description: string;
+interface Article extends SharedArticle {
   path: string;
-  category: string;
   icon: string;
   date: string;
 }
 
-const articles: Article[] = [
-  {
-    title: "Understanding Taxable Income",
-    description: "Learn how to calculate your taxable income and understand various income heads",
-    path: "/learning-center/personal-finance/taxable-income",
-    category: "Personal Finance",
-    icon: "💰",
-    date: "Mar 15, 2024"
-  },
-  {
-    title: "Credit Card Interest Calculation",
-    description: "Understand how credit card interest is calculated and ways to minimize charges",
-    path: "/learning-center/credit-cards/interest-calculation",
-    category: "Credit Cards",
-    icon: "💳",
-    date: "Mar 12, 2024"
-  },
-  {
-    title: "Mutual Funds Types",
-    description: "Learn about different types of mutual funds and their risk levels",
-    path: "/learning-center/mutual-funds/types",
-    category: "Mutual Funds",
-    icon: "📈",
-    date: "Mar 10, 2024"
-  }
-];
+// Map shared articles to the local format (add path, icon, date)
+const articles: Article[] = sharedArticles.slice(0, 3).map((a, i) => ({
+  ...a,
+  path: a.link,
+  icon: ['💰', '💳', '📈'][i % 3], // Example icons
+  date: ['Mar 15, 2024', 'Mar 12, 2024', 'Mar 10, 2024'][i % 3], // Example dates
+}));
 
 const LearningCenterPreview = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

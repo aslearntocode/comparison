@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Link from 'next/link'
 import Script from 'next/script'
-import { articles, Article } from '../page'
+import { articles, Article } from '../articles-data'
 import CategoryPageClient from './CategoryPageClient'
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {

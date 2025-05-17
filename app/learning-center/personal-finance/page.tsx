@@ -2,29 +2,9 @@
 
 import Header from '@/components/Header'
 import Link from 'next/link'
+import { articles } from '../articles-data'
 
 function PersonalFinancePage() {
-  const articles = [
-    {
-      title: 'Investment Options for Retail Investors in India',
-      description: 'Understand what financial instruments you can invest in India for long term wealth creation.',
-      readTime: '8 min read',
-      link: '/learning-center/personal-finance/investment-options'
-    },
-    {
-      title: 'Understanding Risk and Return',
-      description: 'Learn about the relationship between risk and return, and how to balance them in your investment portfolio.',
-      readTime: '6 min read',
-      link: '/learning-center/personal-finance/risk-return'
-    },
-    {
-      title: 'How to Invest in SIP?',
-      description: 'Learn how to start investing in SIPs and make your money work for you.',
-      readTime: '15 min read',
-      link: '/learning-center/personal-finance/sip'
-    }
-  ]
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { articles, Article } from '../../page'
+import { articles, Article } from '../../articles-data'
 import ArticlePageClient from './ArticlePageClient'
 
 export async function generateMetadata({ params }: { params: { category: string; article: string } }): Promise<Metadata> {

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Header from '@/components/Header'
 import Link from 'next/link'
 import Script from 'next/script'
-import { Article } from '../page'
+import { Article } from '../articles-data'
 
 interface CategoryPageClientProps {
   category: string

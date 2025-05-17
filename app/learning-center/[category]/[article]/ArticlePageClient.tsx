@@ -1,6 +1,6 @@
 'use client'
 
-import { Article } from '../../page'
+import { Article } from '../../articles-data'
 import Header from '@/components/Header'
 import Link from 'next/link'
 import Script from 'next/script'

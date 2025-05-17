@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useAuth } from '@/context/AuthContext'
 import Header from '@/components/Header'
 import Script from 'next/script'
-import { articles } from '../../page'
+import { articles } from '../../articles-data'
 import RelatedArticles from '../../components/RelatedArticles'
 
 export default function CreditCardRewards() {

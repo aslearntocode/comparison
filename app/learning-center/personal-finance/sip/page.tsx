@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import Header from '@/components/Header'
 import Script from 'next/script'
-import { articles } from '../../page'
+import { articles } from '../../articles-data'
 import RelatedArticles from '../../components/RelatedArticles'
 
 export default function SIP() {
