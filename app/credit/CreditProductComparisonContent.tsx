@@ -401,24 +401,26 @@ function CreditProductComparisonContent() {
                         {/* Check Eligibility Button (mobile only) */}
                         <div className="flex justify-end mt-2 gap-2">
                           {/* Mobile Compare Button/Checkbox */}
-                          {!selectedCards.includes(card.id) ? (
-                            <button
-                              className="px-3 py-1 rounded bg-blue-600 text-white text-xs font-semibold"
-                              onClick={() => handleCardSelection(card.id)}
-                            >
-                              Add to Compare
-                            </button>
-                          ) : (
-                            <div className="flex items-center">
-                              <input
-                                type="checkbox"
-                                checked
-                                readOnly
-                                className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 mr-1"
-                              />
-                              <span className="text-xs text-blue-700 font-semibold">Added</span>
-                            </div>
-                          )}
+                          {(selectedCards.length < 2 || selectedCards.includes(card.id)) ? (
+                            !selectedCards.includes(card.id) ? (
+                              <button
+                                className="px-3 py-1 rounded bg-blue-600 text-white text-xs font-semibold"
+                                onClick={() => handleCardSelection(card.id)}
+                              >
+                                Add to Compare
+                              </button>
+                            ) : (
+                              <div className="flex items-center">
+                                <input
+                                  type="checkbox"
+                                  checked
+                                  readOnly
+                                  className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 mr-1"
+                                />
+                                <span className="text-xs text-blue-700 font-semibold">Added</span>
+                              </div>
+                            )
+                          ) : null}
                           <Link
                             href={`/credit/${card.id}`}
                             className="inline-block px-3 py-1 bg-blue-600 text-white rounded text-xs font-semibold hover:bg-blue-700 transition-colors"

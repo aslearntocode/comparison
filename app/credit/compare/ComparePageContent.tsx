@@ -1,10 +1,11 @@
 "use client"
 
 import { useSearchParams } from 'next/navigation'
-import { creditCards } from '@/app/data/creditCards'
+import { creditCards, type CreditCard } from '@/app/data/creditCards'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
+import { useState } from 'react'
 
 export default function ComparePageContent() {
   const searchParams = useSearchParams()
@@ -12,6 +13,63 @@ export default function ComparePageContent() {
   const selectedCards = creditCards.filter(card => selectedCardIds.includes(card.id))
   const category = searchParams.get('category')
   const backLink = category ? `/credit?category=${encodeURIComponent(category)}` : '/credit'
+
+  // Accordion state for mobile
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+
+  // Define fields for accordion
+  const fields = [
+    { key: 'bestSuited', label: 'Best Suited for' },
+    { key: 'feeDetails', label: 'Fee Details' },
+    { key: 'apr', label: 'APR' },
+    { key: 'rupay', label: 'Rupay' },
+    { key: 'welcomeBenefit', label: 'Welcome Benefit' },
+    { key: 'rewardRate', label: 'Reward/Cashback Rate' },
+    { key: 'milestoneBenefits', label: 'Milestone Benefits' },
+    { key: 'fuelSurcharge', label: 'Fuel Surcharge' },
+    { key: 'loungeAccess', label: 'Lounge Access' },
+  ];
+
+  // For mobile, restrict to only 2 cards
+  const mobileSelectedCards = selectedCards.slice(0, 2);
+
+  // Helper to get field value for a card
+  function getFieldValue(card: CreditCard, key: string) {
+    switch (key) {
+      case 'bestSuited':
+        return card.additionalDetails?.idealFor?.length
+          ? <ul className="list-disc list-inside text-xs">{card.additionalDetails.idealFor.map((v: string, i: number) => <li key={i}>{v}</li>)}</ul>
+          : <span className="text-xs text-gray-500">-</span>;
+      case 'feeDetails':
+        return <div className="text-xs">Annual: {card.annualFee}<br/>Joining: {card.joiningFee}</div>;
+      case 'apr':
+        return card.apr ? <div className="text-xs">{card.apr}</div> : <span className="text-xs text-gray-500">-</span>;
+      case 'rupay':
+        return <div className="text-xs">{card.rupay ? 'Yes' : 'No'}</div>;
+      case 'welcomeBenefit':
+        return card.additionalDetails?.welcomeBonus
+          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.welcomeBonus}</div>
+          : <span className="text-xs text-gray-500">-</span>;
+      case 'rewardRate':
+        return card.additionalDetails?.rewardsProgram
+          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.rewardsProgram}</div>
+          : <span className="text-xs text-gray-500">-</span>;
+      case 'milestoneBenefits':
+        return card.additionalDetails?.milestoneBenefits?.length
+          ? <ul className="list-disc list-inside text-xs">{card.additionalDetails.milestoneBenefits.map((v: string, i: number) => <li key={i}>{v}</li>)}</ul>
+          : <span className="text-xs text-gray-500">-</span>;
+      case 'fuelSurcharge':
+        return card.additionalDetails?.fuelSurcharge
+          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.fuelSurcharge}</div>
+          : <span className="text-xs text-gray-500">-</span>;
+      case 'loungeAccess':
+        return card.additionalDetails?.airportLounge
+          ? <div className="text-xs whitespace-pre-line">{card.additionalDetails.airportLounge}</div>
+          : <span className="text-xs text-gray-500">-</span>;
+      default:
+        return <span className="text-xs text-gray-500">-</span>;
+    }
+  }
 
   if (selectedCards.length === 0) {
     return (
@@ -47,7 +105,47 @@ export default function ComparePageContent() {
               Back to Credit Cards
             </Link>
           </div>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+
+          {/* Mobile Accordion View */}
+          <div className="md:hidden">
+            {/* Card Images, Names, and Buttons in One Row */}
+            <div className="flex justify-center gap-2 mb-4">
+              {mobileSelectedCards.map(card => (
+                <div key={card.id} className="flex flex-col items-center w-1/3 px-1 min-w-0">
+                  <Image src={card.image} alt={card.name} width={60} height={40} className="object-contain mb-1" />
+                  <div className="font-normal text-xs text-center mb-1 break-words leading-tight min-h-[2.5rem] flex items-center justify-center">{card.name}</div>
+                  <Link href={`/credit/${card.id}`} className="w-full">
+                    <button className="w-full bg-blue-700 text-white rounded-lg py-2 text-xs font-bold">Check Eligibility</button>
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className="divide-y">
+              {fields.map((field, idx) => (
+                <div key={field.key}>
+                  <button
+                    className="w-full flex justify-between items-center px-4 py-4 bg-gray-50 font-normal text-base focus:outline-none"
+                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                  >
+                    {field.label}
+                    <span className="text-xl">{openIdx === idx ? '−' : '+'}</span>
+                  </button>
+                  {openIdx === idx && (
+                    <div className="bg-white px-2 pb-4 flex gap-2">
+                      {mobileSelectedCards.map(card => (
+                        <div key={card.id} className="flex-1 min-w-0 text-left">
+                          <div className="text-xs text-gray-700">{getFieldValue(card, field.key)}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop/Table View (unchanged) */}
+          <div className="hidden md:block bg-white rounded-xl shadow-lg overflow-hidden">
             {/* Unified Comparison Table */}
             <div className="overflow-x-auto">
               <table className="min-w-[700px] w-full table-fixed">
@@ -91,28 +189,28 @@ export default function ComparePageContent() {
                   </tr>
                   {/* APR */}
                   <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">APR</td>
+                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">APR</td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">{card.apr}</td>
                     ))}
                   </tr>
                   {/* Annual Fee */}
                   <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Annual Fee</td>
+                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Annual Fee</td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">{card.annualFee}</td>
                     ))}
                   </tr>
                   {/* Joining Fee */}
                   <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Joining Fee</td>
+                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Joining Fee</td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">{card.joiningFee}</td>
                     ))}
                   </tr>
                   {/* Rupay */}
                   <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Rupay</td>
+                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Rupay</td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">
                         {card.rupay ? (
@@ -129,7 +227,7 @@ export default function ComparePageContent() {
                   </tr>
                   {/* Features */}
                   <tr className="border-b">
-                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Features</td>
+                    <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Features</td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="px-6 py-4">
                         <ul className="list-disc list-inside space-y-1">
@@ -145,7 +243,7 @@ export default function ComparePageContent() {
                     <>
                       {/* Rewards Program */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Rewards Program</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Rewards Program</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <div className="whitespace-pre-line text-sm text-gray-600">
@@ -156,7 +254,7 @@ export default function ComparePageContent() {
                       </tr>
                       {/* Welcome Bonus */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Welcome Bonus</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Welcome Bonus</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <div className="whitespace-pre-line text-sm text-gray-600">
@@ -167,7 +265,7 @@ export default function ComparePageContent() {
                       </tr>
                       {/* Milestone Benefits */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Milestone Benefits</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Milestone Benefits</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <ul className="list-disc list-inside space-y-1">
@@ -180,7 +278,7 @@ export default function ComparePageContent() {
                       </tr>
                       {/* Airport Lounge */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Airport Lounge</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Airport Lounge</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <div className="whitespace-pre-line text-sm text-gray-600">
@@ -191,7 +289,7 @@ export default function ComparePageContent() {
                       </tr>
                       {/* Fuel Surcharge */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Fuel Surcharge</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Fuel Surcharge</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <div className="whitespace-pre-line text-sm text-gray-600">
@@ -202,7 +300,7 @@ export default function ComparePageContent() {
                       </tr>
                       {/* Insurance Cover */}
                       <tr className="border-b">
-                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900">Insurance Cover</td>
+                        <td className="px-6 py-4 bg-gray-50 font-medium text-gray-900 text-xs md:text-base">Insurance Cover</td>
                         {selectedCards.map((card) => (
                           <td key={card.id} className="px-6 py-4">
                             <ul className="list-disc list-inside space-y-1">
