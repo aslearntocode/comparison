@@ -462,20 +462,26 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   <div key={review.id} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-2">
-                        <div className={`text-lg font-bold ${getSentimentColor(review.rating)}`}>
-                          {review.rating} / 10
+                        <div className={`text-lg font-bold ${getSentimentColor(Number(review.rating))}`}>
+                          {typeof review.rating === 'number' ? review.rating : 'N/A'} / 10
                         </div>
-                        <span className="text-gray-600">by {review.user_name}</span>
+                        <span className="text-gray-600">by {review.user_name || 'Anonymous'}</span>
                       </div>
                       <div className="text-sm text-gray-500">
-                        {new Date(review.created_at!).toLocaleDateString('en-IN', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
+                        {review.created_at
+                          ? new Date(review.created_at).toLocaleDateString('en-IN', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })
+                          : ''}
                       </div>
                     </div>
-                    <p className="text-gray-700">{review.comment}</p>
+                    <p className="text-gray-700">
+                      {typeof review.comment === 'string'
+                        ? review.comment
+                        : JSON.stringify(review.comment)}
+                    </p>
                   </div>
                 ))}
 

@@ -2621,7 +2621,7 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
     name: 'HSBC Visa Platinum Credit Card',
     bank: 'HSBC',
     category: 'rewards',
-    image: '/credit-cards/HSBC-Visa-Platinum.png',
+    image: '/credit-cards/HSBC-VISA-Platinum.png',
     apr: '3.5% per month (42% p.a.)',
     annualFee: '₹0',
     joiningFee: '₹0',
