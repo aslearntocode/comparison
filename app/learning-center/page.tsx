@@ -165,6 +165,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/credit-cards/best-value-card'
+  },
+  {
+    id: '20',
+    title: 'Best Cashback Credit Card In India',
+    description: 'Find the best cashback credit card in India based on your spending patterns and financial goals.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/cash-back-cards'
   }
 ]
 

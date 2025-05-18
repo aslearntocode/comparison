@@ -177,6 +177,12 @@ export default function BestValueCard(): JSX.Element {
                 </p>
               </div>
 
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-8">
+                <p className="text-gray-700 leading-relaxed">
+                  If you're looking for cashback, check out our detailed guide on the <Link href="/learning-center/credit-cards/cash-back-cards" className="text-blue-600 hover:underline font-medium">Best Cashback Credit Cards in India</Link>.
+                </p>
+              </div>
+
               {/* FAQ Section */}
               <section aria-label="Frequently Asked Questions" className="mt-12">
                 <h2 className="text-2xl font-bold mb-6 text-indigo-800">Frequently Asked Questions</h2>
