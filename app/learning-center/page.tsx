@@ -141,22 +141,31 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '20 min read',
     link: '/learning-center/credit-cards/risk-profile'
-  },{
+  },
+  {
     id: '17',
     title: 'Comparing Fixed Deposits and Personal Loans',
     description: 'Decide Between Breaking a FD and using the Proceeds or taking a Personal Loan?',
     category: 'Personal Finance',
     readTime: '10 min read',
     link: '/learning-center/personal-finance/comparison'
-  },{
+  },
+  {
     id: '18',
     title: 'Taxable Income: How to Calculate Your Taxable Income',
     description: 'Learn how to calculate your taxable income and understand the different components of your income.',
     category: 'Personal Finance',
     readTime: '10 min read',
     link: '/learning-center/personal-finance/taxable-income'
+  },
+  {
+    id: '19',
+    title: 'Best Value Credit Card In India',
+    description: 'Learn how to choose and use credit cards strategically to maximize their value based on your spending patterns and financial goals.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/best-value-card'
   }
-
 ]
 
 function LearningCenter() {
