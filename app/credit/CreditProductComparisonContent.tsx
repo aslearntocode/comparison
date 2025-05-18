@@ -372,19 +372,18 @@ function CreditProductComparisonContent() {
                               <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
                                 <h3 className="text-base font-bold text-gray-900 mb-1 whitespace-normal break-words">{card.name}</h3>
                                 <p className="text-gray-600 mb-2">{card.bank}</p>
-                                <div className="flex flex-col">
-                                  {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                                    <Link href={`/credit/${card.id}?tab=reviews`} className="flex items-center gap-1 whitespace-nowrap text-base hover:underline">
-                                      <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
-                                      <span className="text-gray-500">/ 10</span>
-                                      <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
-                                    </Link>
-                                  ) : (
-                                    <div className="text-sm text-gray-500">No Reviews Yet</div>
-                                  )}
-                                </div>
                               </Link>
                             </div>
+                            {/* Reviews link as a sibling, not nested */}
+                            {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
+                              <Link href={`/credit/${card.id}?tab=reviews`} className="flex items-center gap-1 whitespace-nowrap text-base hover:underline mt-1 ml-1">
+                                <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
+                                <span className="text-gray-500">/ 10</span>
+                                <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
+                              </Link>
+                            ) : (
+                              <div className="text-sm text-gray-500 ml-1 mt-1">No Reviews Yet</div>
+                            )}
                           </div>
                         </div>
                         <div className="flex flex-row flex-wrap items-center gap-2 text-xs">

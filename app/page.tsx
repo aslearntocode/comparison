@@ -707,11 +707,61 @@ export default function Home() {
       <CreditCardVsLoanComparison />
 
       {/* Credit Score Analysis Section */}
-      <div className="bg-gradient-to-b from-white to-gray-50 py-16">
+      <div className="bg-gradient-to-b from-white to-gray-50 py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Only: Text + Button + Image stacked closely */}
+          <div className="block lg:hidden mb-4">
+            <div className="flex flex-col items-center gap-4">
+              <h2 className="text-2xl font-bold mb-2 text-center">
+                Understand Your Credit Score
+                <span className="text-[#4F46E5]"> Better (Coming Soon)</span>
+              </h2>
+              <p className="text-base text-gray-600 mb-2 text-center">
+                Upload your credit report PDF and get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
+              </p>
+              <ul className="space-y-2 mb-2">
+                <li className="flex items-center gap-2 text-sm text-gray-800">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Know what impacts your score
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-800">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Get actionable recommendations
+                </li>
+                <li className="flex items-center gap-2 text-sm text-gray-800">
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 border border-green-200">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  Check anytime - No impact on your score
+                </li>
+              </ul>
+              <Link 
+                href="/credit-score"
+                className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors shadow-lg mb-0"
+              >
+                Analyze Your Credit Report
+                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <div className="w-full flex justify-center">
+                <img 
+                  src="/Credit-Score-Analysis.png" 
+                  alt="Credit Score Meter" 
+                  className="w-full max-w-xs rounded-2xl shadow-lg object-contain"
+                  style={{ maxHeight: 220 }}
+                />
+              </div>
+            </div>
+          </div>
+          {/* Desktop layout (unchanged) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content - Text */}
-            <div>
+            <div className="hidden lg:block">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Understand Your Credit Score
                 <span className="text-[#4F46E5]"> Better (Coming Soon)</span>
@@ -749,25 +799,13 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-
             {/* Right Content - Visuals */}
-            <div className="relative flex flex-col items-center justify-center min-h-[420px]">
+            <div className="relative hidden lg:flex flex-col items-center justify-center min-h-[420px]">
               {/* Credit Score Gauge */}
               <div className="relative z-0 flex flex-col items-center justify-center mt-0 lg:mt-24">
                 <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
                   <img src="/Credit-Score-Analysis.png" alt="Credit Score Meter" className="w-120 h-80 object-contain rounded-2xl" />
                 </div>
-                {/* Floating Cards */}
-                {/* <div className="absolute top-10 right-0 flex flex-col gap-4">
-                  <div className="bg-white rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 border border-blue-100 mt-8">
-                    <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2a4 4 0 014-4h2" /></svg>
-                    <span className="text-xs font-semibold text-gray-700">Monthly Score Analysis</span>
-                  </div>
-                  <div className="bg-white rounded-lg shadow-lg px-4 py-2 flex items-center gap-2 border border-blue-100">
-                    <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" /></svg>
-                    <span className="text-xs font-semibold text-gray-700">Actionable Recommendations</span>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
