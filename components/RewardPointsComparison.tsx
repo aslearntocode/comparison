@@ -1,193 +1,139 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import Link from 'next/link';
+import rewardsConversion from '../rewards_conversion.json';
 
-interface RewardPoint {
+interface RewardConversion {
   bank: string;
-  card: string;
-  points: string;
-  conversion: string;
-  category: 'bank' | 'fintech';
-  detailedConversion?: {
-    title: string;
-    rates: { option: string; value: string }[];
-  };
+  reward_program: string;
+  conversion_value: string;
+  notes: string;
+  highest_value: string;
 }
 
-const rewardPoints: RewardPoint[] = [
-  {
-    bank: 'HDFC Bank',
-    card: 'Regalia',
-    points: '4X',
-    conversion: '₹1 = 0.5 points',
-    category: 'bank',
-    detailedConversion: {
-      title: 'HDFC Regalia Reward Points Conversion',
-      rates: [
-        { option: 'Flights & Hotels via SmartBuy', value: '₹0.50 per point' },
-        { option: 'Taj/ITC/Other Partner Vouchers', value: '₹0.50 per point' },
-        { option: 'Gift Vouchers (General)', value: '₹0.35 – ₹0.50 per point' },
-        { option: 'Airmiles (InterMiles, KrisFlyer)', value: '1 RP = 0.5 mile (approx.)' },
-        { option: 'Product Catalog (non-travel)', value: '₹0.25 – ₹0.35 per point' },
-        { option: 'Cashback / Statement Credit', value: 'Not directly offered on Regalia' }
-      ]
-    }
-  },
-  {
-    bank: 'ICICI Bank',
-    card: 'Sapphiro',
-    points: '3X',
-    conversion: '₹1 = 0.4 points',
-    category: 'bank'
-  },
-  {
-    bank: 'Axis Bank',
-    card: 'Magnus',
-    points: '5X',
-    conversion: '₹1 = 0.6 points',
-    category: 'bank',
-    detailedConversion: {
-      title: 'Axis Bank EDGE Points Conversion Rates',
-      rates: [
-        { option: 'Flights & Hotels (Travel Edge)', value: '₹0.20 to ₹0.25 per point' },
-        { option: 'Gift Vouchers & Merchandise', value: '₹0.20 per point (standard)' },
-        { option: 'Mobile/DTH Recharge', value: '₹0.15 to ₹0.20 per point' },
-        { option: 'Statement Credit', value: 'Not directly available' },
-        { option: 'Air Miles (Partner Programs)', value: 'Not commonly offered under EDGE Rewards' }
-      ]
-    }
-  },
-  {
-    bank: 'SBI Card',
-    card: 'Elite',
-    points: '3X',
-    conversion: '₹1 = 0.4 points',
-    category: 'bank'
-  },
-  {
-    bank: 'OneCard',
-    card: 'Metal',
-    points: '5X',
-    conversion: '₹1 = 0.7 points',
-    category: 'fintech'
-  },
-  {
-    bank: 'Slice',
-    card: 'Super',
-    points: '4X',
-    conversion: '₹1 = 0.6 points',
-    category: 'fintech'
-  },
-  {
-    bank: 'Uni',
-    card: 'NXT',
-    points: '3X',
-    conversion: '₹1 = 0.5 points',
-    category: 'fintech'
-  }
-];
+export default function RewardPointsComparison() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<RewardConversion[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [dropdownPos, setDropdownPos] = useState<{top: number, left: number, width: number}>({top: 0, left: 0, width: 0});
 
-const RewardPointsComparison = () => {
-  const [activeCategory, setActiveCategory] = React.useState<'bank' | 'fintech'>('bank');
-  const [selectedCard, setSelectedCard] = React.useState<RewardPoint | null>(null);
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    if (query.trim() === '') {
+      setSearchResults([]);
+      setIsSearching(false);
+      return;
+    }
 
-  const filteredPoints = rewardPoints.filter(point => point.category === activeCategory);
+    setIsSearching(true);
+    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 0);
+    
+    const results = (rewardsConversion as RewardConversion[]).filter(conversion => {
+      const searchableText = `
+        ${conversion.bank.toLowerCase()} 
+        ${conversion.reward_program.toLowerCase()}
+      `.replace(/\s+/g, ' ').trim();
+
+      return searchTerms.every(term => searchableText.includes(term));
+    }).sort((a, b) => {
+      const scoreConversion = (conversion: RewardConversion, term: string) => {
+        let score = 0;
+        const termLower = term.toLowerCase();
+        
+        if (conversion.bank.toLowerCase().includes(termLower)) score += 10;
+        if (conversion.reward_program.toLowerCase().includes(termLower)) score += 8;
+        
+        return score;
+      }
+
+      const scoreA = searchTerms.reduce((sum, term) => sum + scoreConversion(a, term), 0);
+      const scoreB = searchTerms.reduce((sum, term) => sum + scoreConversion(b, term), 0);
+      
+      return scoreB - scoreA;
+    });
+
+    setSearchResults(results);
+  };
+
+  // Calculate dropdown position after render
+  const updateDropdownPos = () => {
+    if (inputRef.current) {
+      const rect = inputRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+        width: rect.width
+      });
+    }
+  };
+
+  // Update dropdown position when searching
+  React.useEffect(() => {
+    if (isSearching && searchResults.length > 0) {
+      updateDropdownPos();
+    }
+  }, [isSearching, searchResults.length]);
 
   return (
-    <div className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-16 bg-[#f5f6fd] overflow-hidden">
+      {/* Grid background pattern */}
+      <div aria-hidden="true" className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Reward Points Redemption Rates
-          </h2>
-          <p className="text-gray-600">
-            Find the best reward points conversion rates across different credit cards
-          </p>
+          <h2 className="text-2xl md:text-[2.2rem] font-bold mb-2">Reward Points Conversion Rates</h2>
+          <p className="text-base text-gray-600">Find out how much your reward points are worth across different banks</p>
         </div>
 
-        <div className="flex justify-center gap-4 mb-8">
-          <button
-            onClick={() => setActiveCategory('bank')}
-            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-              activeCategory === 'bank'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
-          >
-            Banks
-          </button>
-          <button
-            onClick={() => setActiveCategory('fintech')}
-            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-              activeCategory === 'fintech'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
-          >
-            Fintechs
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPoints.map((point, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow cursor-pointer"
-              onClick={() => point.detailedConversion && setSelectedCard(point)}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">{point.bank}</h3>
-                  <p className="text-sm text-gray-500">{point.card}</p>
-                </div>
-                <div className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                  {point.points}
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-600">Points Conversion</span>
-                  <span className="font-medium text-gray-900">{point.conversion}</span>
-                </div>
-                {point.detailedConversion && (
-                  <div className="text-sm text-blue-600 mt-2">
-                    Click to view detailed conversion rates
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Modal for detailed conversion rates */}
-        {selectedCard && selectedCard.detailedConversion && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-xl p-6 max-w-lg w-full">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-900">
-                  {selectedCard.detailedConversion.title}
-                </h3>
-                <button
-                  onClick={() => setSelectedCard(null)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <div className="space-y-4">
-                {selectedCard.detailedConversion.rates.map((rate, index) => (
-                  <div key={index} className="flex justify-between items-center border-b border-gray-100 pb-2">
-                    <span className="text-gray-600">{rate.option}</span>
-                    <span className="font-medium text-gray-900">{rate.value}</span>
+        <div className="max-w-2xl mx-auto">
+          <div className="relative">
+            <input
+              ref={inputRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              placeholder="Search for your bank..."
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+            {/* Dropdown rendered in a portal */}
+            {isSearching && searchResults.length > 0 && typeof window !== 'undefined' && createPortal(
+              <div
+                className="absolute z-[9999] mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-[400px] overflow-y-auto"
+                style={{
+                  top: dropdownPos.top,
+                  left: dropdownPos.left,
+                  width: dropdownPos.width,
+                  position: 'absolute',
+                }}
+              >
+                {searchResults.map((conversion, index) => (
+                  <div
+                    key={index}
+                    className="px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
+                  >
+                    <div className="font-medium text-gray-900">{conversion.bank}</div>
+                    <div className="text-sm text-gray-500">{conversion.reward_program}</div>
+                    <div className="text-sm text-gray-600 mt-1">
+                      <span className="font-medium">Conversion Value:</span> {conversion.conversion_value}
+                    </div>
+                    {conversion.highest_value && (
+                      <div className="text-sm text-green-600 mt-1">
+                        <span className="font-medium">Best Value:</span> {conversion.highest_value}
+                      </div>
+                    )}
+                    {conversion.notes && (
+                      <div className="text-sm text-gray-500 mt-1">
+                        <span className="font-medium">Notes:</span> {conversion.notes}
+                      </div>
+                    )}
                   </div>
                 ))}
-              </div>
-            </div>
+              </div>,
+              document.body
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
-};
-
-export default RewardPointsComparison; 
+} 

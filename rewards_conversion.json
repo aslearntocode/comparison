@@ -1,0 +1,122 @@
+[
+    {
+      "bank": "HDFC Bank",
+      "reward_program": "MyRewards / Infinia",
+      "conversion_value": "₹0.50 – ₹1.00 per point",
+      "notes": "Value varies by card type and redemption method. Infinia offers higher value.",
+      "highest_value": "Flights or hotel bookings via SmartBuy (up to ₹1.00 per point with Infinia)"
+    },
+    {
+      "bank": "SBI Card",
+      "reward_program": "SBI Rewardz",
+      "conversion_value": "₹0.25 per point",
+      "notes": "Standard value across most SBI credit cards.",
+      "highest_value": "Gift vouchers on SBI Rewardz portal"
+    },
+    {
+      "bank": "ICICI Bank",
+      "reward_program": "PAYBACK / ICICI Rewards",
+      "conversion_value": "Up to ₹1.00 per point",
+      "notes": "Value depends on specific card and redemption options.",
+      "highest_value": "PAYBACK points converted to shopping vouchers or travel bookings"
+    },
+    {
+      "bank": "Axis Bank",
+      "reward_program": "EDGE Rewards",
+      "conversion_value": "₹0.20 per point",
+      "notes": "Standard value; may vary when transferring to partner programs.",
+      "highest_value": "Transfer to partner airlines (like Air Vistara, KrisFlyer) from premium cards"
+    },
+    {
+      "bank": "Axis Bank",
+      "reward_program": "EDGE Rewards to Air India",
+      "conversion_value": "Varies by card: e.g., 5:4 (Burgundy Private), 5:2 (Magnus)",
+      "notes": "Specific ratios apply for Flying Returns miles conversion.",
+      "highest_value": "Air India Flying Returns miles transfer from Burgundy Private"
+    },
+    {
+      "bank": "IndusInd Bank",
+      "reward_program": "IndusInd Reward Points",
+      "conversion_value": "₹1.00 per point",
+      "notes": "Points can be redeemed as cash credit.",
+      "highest_value": "Cash credit to statement at ₹1.00 per point"
+    },
+    {
+      "bank": "YES Bank",
+      "reward_program": "YES Reward Points",
+      "conversion_value": "₹0.25 per point",
+      "notes": "Standard value across YES Bank cards.",
+      "highest_value": "Flights and hotel vouchers on YES Rewardz portal"
+    },
+    {
+      "bank": "RBL Bank",
+      "reward_program": "RBL Rewards",
+      "conversion_value": "₹0.25 – ₹0.30 per point",
+      "notes": "Depends on card and redemption method.",
+      "highest_value": "Travel bookings or electronics in rewards catalog"
+    },
+    {
+      "bank": "Standard Chartered",
+      "reward_program": "Rewards Mastercard",
+      "conversion_value": "₹0.25 per point",
+      "notes": "Standard value across their cards.",
+      "highest_value": "Gift cards and flight bookings"
+    },
+    {
+      "bank": "Kotak Mahindra Bank",
+      "reward_program": "Kotak Rewards",
+      "conversion_value": "₹0.25 per point; 1:1 conversion to Air India Miles (Solitaire Card)",
+      "notes": "Solitaire offers 1:1 Air India mile conversion.",
+      "highest_value": "Air India Flying Returns mile conversion from Solitaire card"
+    },
+    {
+      "bank": "IDFC FIRST Bank",
+      "reward_program": "IDFC Reward Points",
+      "conversion_value": "₹0.25 per point",
+      "notes": "Standard value across IDFC cards.",
+      "highest_value": "Gift vouchers or utility bill payments"
+    },
+    {
+      "bank": "Indian Bank",
+      "reward_program": "Indian Bank Rewards",
+      "conversion_value": "₹1.00 per point (1 point per ₹200 spent)",
+      "notes": "Redeemable after 500 points as statement credit.",
+      "highest_value": "Cashback against statement"
+    },
+    {
+          "bank": "Uni Cards",
+          "reward_program": "Uni GoldX Rewards",
+          "conversion_value": "1% of transaction value in 24K digital gold",
+          "notes": "Earn 1% back in 24K digital gold on eligible transactions. Redemption is facilitated through the Uni Store, with gold prices applicable at the time of conversion.",
+          "highest_value": "Accumulating digital gold via Uni Store for long-term investment."
+    },
+    {
+          "bank": "Slice",
+          "reward_program": "Monies",
+          "conversion_value": "1 money per ₹1 spent; redemption value varies",
+          "notes": "Earn 1 money for every ₹1 spent. Redemption value for cashback varies based on the amount of Monies accumulated in your account.",
+          "highest_value": "Redeeming Monies for cashback through the Slice app when a substantial amount is accumulated."
+    },
+    {
+          "bank": "Kiwi",
+          "reward_program": "Kiwis",
+          "conversion_value": "2 Kiwis per ₹100 spent; 1 Kiwi = ₹0.25",
+          "notes": "Certain categories like telecom, utilities, government services are excluded from earning rewards.",
+          "highest_value": "Utilizing UPI payments for everyday purchases to maximize Kiwi rewards."
+    },
+  {
+    "bank": "HSBC India",
+    "reward_program": "HSBC Reward Points",
+    "conversion_value": "₹0.25 – ₹0.50 per point",
+    "notes": "Reward point value depends on the card variant and redemption option (travel, vouchers, merchandise). Premier and Platinum cards tend to offer better value.",
+    "highest_value": "Redeeming for air miles or flight tickets via partner portals for Premier cardholders."
+  },
+  {
+    "bank": "American Express India",
+    "reward_program": "Membership Rewards",
+    "conversion_value": "₹0.25 – ₹1.00 per point",
+    "notes": "Value varies widely based on redemption method and card type. Premium cards (like Platinum) offer better point-to-value ratios.",
+    "highest_value": "Redeeming points for travel (especially air miles via partner airlines) or 18K/24K gold collection vouchers."
+  }
+      ]    
+  
