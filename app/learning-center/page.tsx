@@ -173,6 +173,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/credit-cards/cash-back-cards'
+  },
+  {
+    id: '21',
+    title: 'Why a Good Credit Score Alone Doesn\'t Guarantee Credit Card Approval',
+    description: 'Learn why having a good credit score isn\'t enough for credit card approval and what other factors lenders consider when evaluating your application.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/chances-of-approval'
   }
 ]
 
