@@ -13,12 +13,12 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: "Understanding Taxable Income",
-    description: "Learn how to calculate your taxable income and understand various income heads",
-    path: "/learning-center/personal-finance/taxable-income",
-    category: "Personal Finance",
-    icon: "💰",
-    date: "Mar 15, 2024"
+    title: "Best Value Credit Card In India",
+    description: "Learn how to choose and use credit cards strategically to maximize their value based on your spending patterns and financial goals",
+    path: "/learning-center/credit-cards/best-value-card",
+    category: "Credit Cards",
+    icon: "💳",
+    date: "Mar 15, 2025"
   },
   {
     title: "Credit Card Interest Calculation",
@@ -26,15 +26,15 @@ const articles: Article[] = [
     path: "/learning-center/credit-cards/interest-calculation",
     category: "Credit Cards",
     icon: "💳",
-    date: "Mar 12, 2024"
+    date: "Mar 12, 2025"
   },
   {
-    title: "Mutual Funds Types",
-    description: "Learn about different types of mutual funds and their risk levels",
-    path: "/learning-center/mutual-funds/types",
-    category: "Mutual Funds",
-    icon: "📈",
-    date: "Mar 10, 2024"
+    title: "Best Cashback Credit Card In India",
+    description: "Find the best cashback credit card in India based on your spending patterns and financial goals.",
+    path: "/learning-center/credit-cards/cash-back-cards",
+    category: "Credit Cards",
+    icon: "💳",
+    date: "May 10, 2025"
   }
 ];
 
