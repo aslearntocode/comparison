@@ -1,152 +1,131 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useAuth } from '@/context/AuthContext'
 import Header from '@/components/Header'
-import Script from 'next/script'
-import { articles } from '../../articles-data'
-import RelatedArticles from '../../components/RelatedArticles'
 
 export default function EquityIntro() {
-  const article = articles.find(a => a.link === '/learning-center/equity/intro')
-  
-  if (!article) {
-    return <div>Article not found</div>
-  }
-
-  const articleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": article.title,
-    "description": article.description,
-    "author": {
-      "@type": "Organization",
-      "name": "Financial Health"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Financial Health",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://financialhealth.co.in/Logo_Final3.jpeg"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-02-21",
-    "image": "https://financialhealth.co.in/images/equity-intro.jpg",
-    "articleSection": article.category,
-    "url": `https://financialhealth.co.in${article.link}`,
-    "timeRequired": article.readTime,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://financialhealth.co.in${article.link}`
-    }
-  }
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Script
-        id="article-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
-      />
-
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header />
       
-      <main className="flex-1 py-8">
-        <article className="max-w-4xl mx-auto px-4">
-          {/* Article Header */}
-          <header className="mb-12">
-            <div className="text-blue-600 text-xl md:text-2xl font-extrabold mb-4">
-              {article.category}
-            </div>
-            <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-6 leading-tight whitespace-nowrap overflow-x-auto">
-              {article.title}
-            </h1>
-            <div className="text-gray-600 text-sm font-medium flex items-center">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              {article.readTime}
-            </div>
-          </header>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-4">Introduction to Stock Market Investing in India</h1>
+          <div className="flex items-center text-sm">
+            <span className="mr-4">5 min read</span>
+            <span className="bg-blue-500 px-3 py-1 rounded-full text-xs">Beginner</span>
+          </div>
+        </div>
+      </div>
 
-          {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed mb-8">
-              {article.description}
-            </p>
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+          The stock market is a platform where buyers and sellers trade stocks, or shares, of companies. In India, investing in the stock market has become an increasingly popular way to build wealth, driven by the country's growing economy, emerging industries, and the ease of access through digital platforms.
+        </p>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Understanding Equity</h2>
-            <p className="text-lg leading-relaxed mb-4">
-              Equity represents ownership in a company. When you buy shares of a company's stock, you become a partial owner of that company. This ownership comes with certain rights and potential benefits:
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Voting rights on company decisions
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Potential for capital appreciation
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Dividend payments (if declared)
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Right to company assets in case of liquidation
-              </li>
-            </ul>
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">1. Understanding the Basics of the Stock Market</h2>
+        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+          <p className="text-gray-700 leading-relaxed">
+            The Indian stock market consists of two major exchanges: the Bombay Stock Exchange (BSE) and the National Stock Exchange (NSE). These exchanges provide a regulated marketplace for investors to buy and sell stocks.
+          </p>
+        </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Types of Equity Investments</h2>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Common Stock:</span>
-                Basic ownership shares with voting rights
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Preferred Stock:</span>
-                Shares with priority in dividends and liquidation
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Equity Mutual Funds:</span>
-                Professionally managed portfolios of stocks
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">ETFs:</span>
-                Exchange-traded funds tracking stock indices
-              </li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Risk and Returns</h2>
-            <p className="text-lg leading-relaxed mb-4">
-              Equity investments offer the potential for higher returns compared to fixed-income investments, but they also come with higher risks:
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Market volatility and price fluctuations
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Company-specific risks
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Economic and industry risks
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Liquidity risks
-              </li>
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">2. Types of Stocks and Investment Strategies</h2>
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+            <h3 className="text-xl font-semibold mb-4 text-blue-800">Primary Types of Stocks:</h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2">
+              <li>Blue-chip stocks: Shares of large, well-established companies</li>
+              <li>Growth stocks: Companies expected to grow at above-average rates</li>
             </ul>
           </div>
+          <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+            <h3 className="text-xl font-semibold mb-4 text-indigo-800">Investment Strategies:</h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2">
+              <li>Long-term investing</li>
+              <li>Short-term trading</li>
+              <li>Dividend investing</li>
+            </ul>
+          </div>
+        </div>
 
-          {/* Related Articles */}
-          <RelatedArticles currentArticle={article} allArticles={articles} />
-        </article>
-      </main>
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">3. Getting Started</h2>
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg border border-blue-100 mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-blue-800">Key Steps:</h3>
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1">1</span>
+              <div>
+                <span className="font-semibold text-gray-800">Open a Demat and Trading Account</span>
+                <p className="text-gray-600 mt-1">Essential for holding and trading stocks electronically</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1">2</span>
+              <div>
+                <span className="font-semibold text-gray-800">Select a Broker</span>
+                <p className="text-gray-600 mt-1">Choose from traditional or discount brokers based on your needs</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1">3</span>
+              <div>
+                <span className="font-semibold text-gray-800">Understand the Costs</span>
+                <p className="text-gray-600 mt-1">Be aware of brokerage fees, taxes, and other charges</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">4. Risk and Reward</h2>
+        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+          <p className="text-gray-700 leading-relaxed">
+            Stock market investing involves both risk and reward. The value of stocks can rise or fall based on various factors, including company performance, industry trends, economic conditions, and market sentiment.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">5. Diversification</h2>
+        <div className="bg-green-50 p-6 rounded-lg border border-green-100 mb-8">
+          <p className="text-gray-700 leading-relaxed">
+            One way to manage risk in the stock market is through diversification. By spreading your investments across different sectors, asset classes, or even geographic regions, you reduce the impact of any single underperforming stock.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">6. Research and Analysis</h2>
+        <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-100 mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-yellow-800">Key Metrics to Consider:</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h4 className="font-semibold text-gray-800">P/E Ratio</h4>
+              <p className="text-gray-600 text-sm">Price-to-Earnings ratio</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h4 className="font-semibold text-gray-800">EPS</h4>
+              <p className="text-gray-600 text-sm">Earnings Per Share</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm">
+              <h4 className="font-semibold text-gray-800">ROE</h4>
+              <p className="text-gray-600 text-sm">Return on Equity</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">7. Regulations and Protection</h2>
+        <div className="bg-purple-50 p-6 rounded-lg border border-purple-100 mb-8">
+          <p className="text-gray-700 leading-relaxed">
+            The Securities and Exchange Board of India (SEBI) oversees the functioning of stock exchanges in India, ensuring fair and transparent markets.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-12 mb-6 text-indigo-800">8. Conclusion</h2>
+        <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg border border-indigo-100">
+          <p className="text-gray-700 leading-relaxed">
+            Stock market investing in India offers great potential for wealth creation but requires patience, knowledge, and a sound strategy. Always remember, the stock market rewards discipline and long-term thinking.
+          </p>
+        </div>
+      </div>
     </div>
   )
 } 

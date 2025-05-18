@@ -1,7 +1,12 @@
 import { Metadata } from 'next';
 import CreditProductComparison from './CreditProductComparisonContent';
 
-export async function generateMetadata({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }): Promise<Metadata> {
+interface PageProps {
+  params: Promise<{ [key: string]: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   // Await searchParams before accessing its properties
   const params = await searchParams;
   const categoryParam = params?.category;

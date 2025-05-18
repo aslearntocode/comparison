@@ -374,11 +374,11 @@ function CreditProductComparisonContent() {
                                 <p className="text-gray-600 mb-2">{card.bank}</p>
                                 <div className="flex flex-col">
                                   {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                                    <div className="flex items-center gap-1 whitespace-nowrap text-base">
+                                    <Link href={`/credit/${card.id}?tab=reviews`} className="flex items-center gap-1 whitespace-nowrap text-base hover:underline">
                                       <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
                                       <span className="text-gray-500">/ 10</span>
                                       <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
-                                    </div>
+                                    </Link>
                                   ) : (
                                     <div className="text-sm text-gray-500">No Reviews Yet</div>
                                   )}
@@ -465,11 +465,11 @@ function CreditProductComparisonContent() {
                       </div>
                       <div className="flex flex-col justify-center text-left">
                         {getReviewCount(card.id) > 0 && getAverageRating(card.id) ? (
-                          <div className="flex items-center gap-1 whitespace-nowrap text-base">
+                          <Link href={`/credit/${card.id}?tab=reviews`} className="flex items-center gap-1 whitespace-nowrap text-base hover:underline">
                             <span className={`text-2xl font-bold ${getSentimentColor(getAverageRating(card.id))}`}>{getAverageRating(card.id)}</span>
                             <span className="text-gray-500">/ 10</span>
                             <span className="text-xs text-blue-600">{getReviewCount(card.id)} reviews</span>
-                          </div>
+                          </Link>
                         ) : (
                           <div className="text-sm text-gray-500">No Reviews Yet</div>
                         )}

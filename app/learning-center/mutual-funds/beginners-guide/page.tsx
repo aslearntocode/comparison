@@ -3,21 +3,13 @@
 import { useEffect } from 'react'
 import Header from '@/components/Header'
 import Script from 'next/script'
-import { articles } from '../../articles-data'
-import RelatedArticles from '../../components/RelatedArticles'
 
 function MutualFundsGuide() {
-  const article = articles.find(a => a.link === '/learning-center/mutual-funds/beginners-guide')
-  
-  if (!article) {
-    return <div>Article not found</div>
-  }
-
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": article.title,
-    "description": article.description,
+    "headline": "Understanding Mutual Funds: A Beginner's Guide",
+    "description": "Learn the basics of mutual funds, how they work, and why they're a popular investment choice for both new and experienced investors.",
     "author": {
       "@type": "Organization",
       "name": "Financial Health"
@@ -30,15 +22,15 @@ function MutualFundsGuide() {
         "url": "https://financialhealth.co.in/Logo_Final3.jpeg"
       }
     },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-02-21",
-    "image": "https://financialhealth.co.in/images/mutual-funds-guide.jpg",
-    "articleSection": article.category,
-    "url": `https://financialhealth.co.in${article.link}`,
-    "timeRequired": article.readTime,
+    "datePublished": "2025-01-01", // Add actual publication date
+    "dateModified": "2025-02-21", // Add actual last modified date
+    "image": "https://financialhealth.co.in/images/mutual-funds-guide.jpg", // Add actual image URL
+    "articleSection": "Mutual Funds",
+    "url": "https://financialhealth.co.in/learning-center/mutual-funds/beginners-guide",
+    "timeRequired": "5 min read",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://financialhealth.co.in${article.link}`
+      "@id": "https://financialhealth.co.in/learning-center/mutual-funds/beginners-guide"
     }
   }
 
@@ -57,23 +49,23 @@ function MutualFundsGuide() {
           {/* Article Header */}
           <header className="mb-12">
             <div className="text-blue-600 text-xl md:text-2xl font-extrabold mb-4">
-              {article.category}
+              Mutual Funds
             </div>
             <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-6 leading-tight whitespace-nowrap overflow-x-auto">
-              {article.title}
+              Understanding Mutual Funds: <span className="text-blue-600 inline whitespace-nowrap">A Beginner's Guide</span>
             </h1>
             <div className="text-gray-600 text-sm font-medium flex items-center">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              {article.readTime}
+              5 min read
             </div>
           </header>
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed mb-8">
-              {article.description}
+              Mutual funds are investment vehicles that pool money from multiple investors to purchase a diversified portfolio of stocks, bonds, or other securities. They offer a convenient way for individuals to access professional investment management and diversification.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">How Do Mutual Funds Work?</h2>
@@ -147,9 +139,6 @@ function MutualFundsGuide() {
               </li>
             </ul>
           </div>
-
-          {/* Related Articles */}
-          <RelatedArticles currentArticle={article} allArticles={articles} />
         </article>
       </main>
     </div>

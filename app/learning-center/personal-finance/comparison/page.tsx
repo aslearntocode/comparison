@@ -11,9 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Script from 'next/script';
-import { articles } from '../../articles-data';
-import RelatedArticles from '../../components/RelatedArticles';
 
 // JSON-LD structured data for better SEO
 const structuredData = {
@@ -46,41 +43,6 @@ export default function LoanFDComparison() {
     fdInterest: 0,
     difference: 0
   });
-
-  const article = articles.find(a => a.link === '/learning-center/personal-finance/comparison');
-  
-  if (!article) {
-    return <div>Article not found</div>;
-  }
-
-  const articleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": article.title,
-    "description": article.description,
-    "author": {
-      "@type": "Organization",
-      "name": "Financial Health"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Financial Health",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://financialhealth.co.in/Logo_Final3.jpeg"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-02-21",
-    "image": "https://financialhealth.co.in/images/comparison.jpg",
-    "articleSection": article.category,
-    "url": `https://financialhealth.co.in${article.link}`,
-    "timeRequired": article.readTime,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://financialhealth.co.in${article.link}`
-    }
-  };
 
   useEffect(() => {
     if (loanAmount && loanRate && loanTenure && 
@@ -223,12 +185,6 @@ export default function LoanFDComparison() {
           {JSON.stringify(structuredData)}
         </script>
       </Head>
-
-      <Script
-        id="article-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
-      />
 
       <Header />
       <main className="container mx-auto p-4 sm:p-6">
@@ -394,9 +350,6 @@ export default function LoanFDComparison() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Related Articles */}
-        <RelatedArticles currentArticle={article} allArticles={articles} />
       </main>
     </>
   );

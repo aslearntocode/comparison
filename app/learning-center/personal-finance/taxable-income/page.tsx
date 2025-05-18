@@ -1,12 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import Header from '@/components/Header';
 import './styles.css';
-import Script from 'next/script';
-import { articles } from '../../articles-data';
-import RelatedArticles from '../../components/RelatedArticles';
 
 // Update interfaces
 interface SubCategories {
@@ -257,124 +254,66 @@ const TaxableIncomePage = () => {
     }
   ];
 
-  const article = articles.find(a => a.link === '/learning-center/personal-finance/taxable-income');
-  
-  if (!article) {
-    return <div>Article not found</div>;
-  }
-
-  const articleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": article.title,
-    "description": article.description,
-    "author": {
-      "@type": "Organization",
-      "name": "Financial Health"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Financial Health",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://financialhealth.co.in/Logo_Final3.jpeg"
-      }
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-02-21",
-    "image": "https://financialhealth.co.in/images/taxable-income.jpg",
-    "articleSection": article.category,
-    "url": `https://financialhealth.co.in${article.link}`,
-    "timeRequired": article.readTime,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://financialhealth.co.in${article.link}`
-    }
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Script
-        id="article-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
-      />
-
+    <>
       <Header />
-      
-      <main className="flex-1 py-8">
-        <article className="max-w-4xl mx-auto px-4">
-          {/* Article Header */}
-          <header className="mb-12">
-            <div className="text-blue-600 text-xl md:text-2xl font-extrabold mb-4">
-              {article.category}
-            </div>
-            <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-6 leading-tight whitespace-nowrap overflow-x-auto">
-              {article.title}
-            </h1>
-            <div className="text-gray-600 text-sm font-medium flex items-center">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              {article.readTime}
-            </div>
-          </header>
-
-          {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed mb-8">
-              {article.description}
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Types of Taxable Income</h2>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Salary Income:</span>
-                Regular income from employment
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Business Income:</span>
-                Profits from business operations
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Capital Gains:</span>
-                Profits from selling assets
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">Other Sources:</span>
-                Interest, rent, and other earnings
-              </li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Tax Planning Strategies</h2>
-            <p className="text-lg leading-relaxed mb-4">
-              Effective tax planning involves:
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Understanding tax brackets and rates
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Utilizing tax deductions and exemptions
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Investing in tax-saving instruments
-              </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-2">•</span>
-                Planning for long-term tax efficiency
-              </li>
-            </ul>
+      <main className="bg-gray-50 min-h-screen">
+        <div className="max-w-7xl mx-auto py-12 px-4">
+          <h1 className="text-3xl font-bold mb-16 text-center text-gray-800">
+            Taxable Income Calculation Workflow
+          </h1>
+          
+          <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-4 px-2 md:px-8">
+            {steps.map((step, index) => (
+              <div key={step.id} className="flex flex-col items-center w-full md:w-64 relative workflow-step">
+                {/* Connector Line - Hidden on mobile */}
+                {index < steps.length - 1 && (
+                  <div className="absolute top-16 left-[60%] w-[calc(100%-40px)] h-[2px] bg-[#98f6e4] hidden md:block" />
+                )}
+                
+                {/* Circle Icon */}
+                <div className="w-24 h-24 rounded-full bg-white border-4 border-[#98f6e4] flex items-center justify-center mb-6 z-10 shadow-md">
+                  <span className="text-3xl">{step.icon}</span>
+                </div>
+                
+                {/* Content Card */}
+                <div 
+                  className="bg-white rounded-lg p-6 text-center shadow-sm border border-[#e5e7eb] w-full max-w-sm md:max-w-none h-[180px] flex flex-col cursor-pointer hover:border-blue-300 transition-colors"
+                  onClick={() => toggleStep(step.id)}
+                >
+                  <h3 className="font-semibold text-lg mb-2 text-gray-800">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 flex-grow">
+                    {step.description}
+                  </p>
+                  <span className="text-blue-500 text-sm mt-2">
+                    ▼ Click to {expandedSteps.includes(step.id) ? 'collapse' : 'expand'}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Related Articles */}
-          <RelatedArticles currentArticle={article} allArticles={articles} />
-        </article>
+          {/* Expanded Content Section - Added responsive padding */}
+          {expandedSteps.map(stepId => (
+            <div key={stepId} className="mt-8 w-full px-4 md:px-0 md:max-w-6xl mx-auto transition-all duration-300 ease-in-out">
+              {steps.find(step => step.id === stepId)?.expandedContent}
+            </div>
+          ))}
+
+          {/* Final Card - Added responsive padding */}
+          <Card className="mt-20 p-6 md:p-8 bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 shadow-lg mx-4 md:mx-auto md:max-w-2xl">
+            <h2 className="text-xl font-bold mb-4 text-center text-gray-800">Net Taxable Income = </h2>
+            <p className="text-gray-700 text-center">
+              <strong className="block mt-2 text-base md:text-lg">
+                Gross Total Income + Combined Income of Spouse/Minor + Family Income - Losses - Eligible Deductions
+              </strong>
+            </p>
+          </Card>
+        </div>
       </main>
-    </div>
+    </>
   );
 };
 

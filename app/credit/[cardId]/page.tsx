@@ -13,15 +13,18 @@ import { Input } from '../../../components/ui/input'
 import { supabase, type Review } from '@/lib/supabase'
 import RewardPointsCard from '@/components/RewardPointsCard'
 import CardDiscrepancyNotification from '../../components/CardDiscrepancyNotification'
+import { useSearchParams } from 'next/navigation'
 
 export default function CreditCardDetail({ params }: { params: Promise<{ cardId: string }> }) {
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get('tab');
   const [activeTab, setActiveTab] = useState<
     | 'fees'
     | 'rewards'
     | 'welcome'
     | 'milestone'
     | 'reviews'
-  >('fees');
+  >(tabParam === 'reviews' ? 'reviews' : 'fees');
   const [mobileSuitabilityIndex, setMobileSuitabilityIndex] = useState(0);
   
   const { cardId } = use(params)
@@ -539,7 +542,11 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   </div>
                   <div className="mt-4 sm:mt-0 sm:text-right">
                     <button 
-                      onClick={() => setActiveTab('reviews')}
+                      type="button"
+                      onClick={() => {
+                        console.log('Reviews button clicked');
+                        setActiveTab('reviews');
+                      }}
                       className="group hover:opacity-90 transition-opacity"
                     >
                       {reviews.length > 0 ? (
