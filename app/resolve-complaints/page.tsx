@@ -239,7 +239,7 @@ export default function ResolveComplaints() {
                     type="submit"
                     className="w-full bg-blue-600 text-white py-2.5 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors"
                   >
-                    Submit Complaint
+                    Submit Issue
                   </button>
                 </div>
 
@@ -249,63 +249,79 @@ export default function ResolveComplaints() {
               </form>
             </div>
 
-            {/* Image Section replaced with Advantages Box */}
-            <div className="hidden lg:block">
-              <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 border border-blue-100/20 backdrop-blur-sm relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mb-16 -ml-16"></div>
-                <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 relative text-center">
-                  Many Advantages of Registering a Complaint with Us
-                </h3>
-                <div className="space-y-8 relative">
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Expert Guidance Throughout</p>
-                      <p className="text-gray-600">Our credit experts will guide you till its resolved or closed, providing personalized assistance at every step</p>
-                    </div>
+            {/* Contact Options Section */}
+            <div className="space-y-6">
+              {/* Call Us Option */}
+              <div 
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg border border-blue-100/20 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => window.location.href = 'tel:+919321314553'}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                   </div>
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Professional Resolution</p>
-                      <p className="text-gray-600">No Need to post it on your social media profile and muddy it. We handle your concerns privately and professionally</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Real-time Tracking</p>
-                      <p className="text-gray-600">Track the complaint in a timely manner with regular status updates and progress monitoring</p>
-                    </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">Call Us</h3>
+                    <p className="text-gray-600">Speak directly with our credit experts</p>
                   </div>
                 </div>
-                {/* Bottom badge */}
-                <div className="mt-8 inline-flex items-center px-4 py-2 bg-blue-600/10 rounded-full">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <div className="flex items-center text-blue-600 font-medium">
+                  +91 93213 14553
+                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                  <span className="text-blue-600 font-medium">Trusted by thousands of users</span>
                 </div>
+              </div>
+
+              {/* WhatsApp Option */}
+              <div 
+                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg border border-green-100/20 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => window.open('https://wa.me/919321314553', '_blank')}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">Chat With Us</h3>
+                    <p className="text-gray-600">Get instant support via WhatsApp</p>
+                  </div>
+                </div>
+                <div className="flex items-center text-green-600 font-medium">
+                  Start Chat
+                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Additional Info */}
+              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Why Choose Us?</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-600 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-600">Expert guidance throughout the resolution process</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-600 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-600">Professional handling of your concerns</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-600 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-600">Regular updates on your complaint status</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

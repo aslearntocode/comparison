@@ -128,7 +128,7 @@ export default function FeeWaiverChecker() {
       <div aria-hidden="true" className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-2">Credit Card Fee Waiver Criteria</h2>
+          <h2 className="text-2xl md:text-[2.2rem] font-bold mb-2">Credit Card Fee Waiver Criteria</h2>
           <p className="text-base text-gray-600">Find out if your credit card offers annual fee waiver based on spending criteria</p>
         </div>
 

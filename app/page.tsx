@@ -818,203 +818,111 @@ export default function Home() {
       {/* Learning Center Preview Section */}
       <LearningCenterPreview />
 
-      {/* Complaint Submission Form Section */}
+      {/* Connect with Credit Expert Section */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-2">Having Issues with Financial Products?</h2>
-            <p className="text-base text-gray-600">Our credit experts are here to help you understand the issue better and get it resolved</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Need Help with Your Financial Products?</h2>
+            <p className="text-lg text-gray-600">Connect with our credit experts for personalized assistance</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Form Section */}
-            <div className="max-w-lg">
-              <form 
-                className="space-y-4 bg-white rounded-xl shadow-lg p-6 cursor-pointer hover:shadow-xl transition-all duration-300"
-                onClick={(e) => {
-                  if (!user) {
-                    e.preventDefault();
-                    router.push('/resolve-complaints');
-                  }
-                }}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Enter your full name"
-                      required
-                      disabled={!!user}
-                    />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Why Choose Us Section */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100/20 flex flex-col justify-between min-h-[340px]" style={{ minHeight: '340px' }}>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M12 13c-2.5 0-7 1.25-7 3.75V19h14v-2.25C19 14.25 14.5 13 12 13z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Expert Guidance</h4>
+                      <p className="text-gray-600">Our credit experts will guide you throughout the resolution process, providing personalized assistance at every step.</p>
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Enter your email"
-                      required
-                      disabled={!!user}
-                    />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11V7a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-1.414-1.414a1 1 0 00-1.414 0L8.293 4.707A1 1 0 017.586 5H5a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2z" />
+                        <circle cx="12" cy="16" r="2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Professional Resolution</h4>
+                      <p className="text-gray-600">We handle your concerns privately and professionally, ensuring a dignified resolution process.</p>
+                    </div>
                   </div>
                 </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Enter your phone number"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="product" className="block text-sm font-medium text-gray-700 mb-1">Financial Product</label>
-                  <select
-                    id="product"
-                    name="product"
-                    value={formData.product}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    required
-                  >
-                    <option value="">Select a product</option>
-                    <option value="credit-card">Credit Card</option>
-                    <option value="personal-loan">Personal Loan</option>
-                    <option value="home-loan">Home Loan</option>
-                    <option value="car-loan">Car Loan</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="issuer" className="block text-sm font-medium text-gray-700 mb-1">Issuer Name</label>
-                  <select
-                    id="issuer"
-                    name="issuer"
-                    value={formData.issuer}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    required
-                  >
-                    <option value="">Select issuer</option>
-                    <option value="axis">Axis Bank</option>
-                    <option value="hdfc">HDFC Bank</option>
-                    <option value="icici">ICICI Bank</option>
-                    <option value="sbi">State Bank of India</option>
-                    <option value="kotak">Kotak Mahindra Bank</option>
-                    <option value="idfc">IDFC FIRST Bank</option>
-                    <option value="yes">Yes Bank</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="complaint" className="block text-sm font-medium text-gray-700 mb-1">Describe Your Issue</label>
-                  <textarea
-                    id="complaint"
-                    name="complaint"
-                    value={formData.complaint}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Please describe your issue in detail"
-                    required
-                  ></textarea>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-2.5 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-                  >
-                    Click Here to Register Complaint
-                  </button>
-                </div>
-
-                <p className="text-xs text-gray-500 text-center">
-                  Our credit experts will review your complaint and get back to you within 24-48 hours
-                </p>
-              </form>
+              </div>
             </div>
 
-            {/* Advantages Section */}
-            <div className="hidden lg:block">
-              <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 border border-blue-100/20 backdrop-blur-sm relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mb-16 -ml-16"></div>
-
-                <h3 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 relative text-center">
-                  Many Advantages of Registering a Complaint with Us
-                </h3>
-
-                <div className="space-y-8 relative">
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Expert Guidance Throughout</p>
-                      <p className="text-gray-600">Our credit experts will guide you till its resolved or closed, providing personalized assistance at every step</p>
-                    </div>
+            {/* Main Issue Box */}
+            <div 
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100/20 flex flex-col justify-between min-h-[340px]"
+              style={{ minHeight: '340px' }}
+            >
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M12 13c-2.5 0-7 1.25-7 3.75V19h14v-2.25C19 14.25 14.5 13 12 13z" />
+                    </svg>
                   </div>
-
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Professional Resolution</p>
-                      <p className="text-gray-600">No Need to post it on your social media profile and muddy it. We handle your concerns privately and professionally</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-6 group">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center transform rotate-3 group-hover:rotate-0 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="transform group-hover:-translate-y-1 transition-transform duration-300">
-                      <p className="text-gray-900 font-semibold text-lg mb-1">Real-time Tracking</p>
-                      <p className="text-gray-600">Track the complaint in a timely manner with regular status updates and progress monitoring</p>
-                    </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">Submit Your Issue</h3>
+                    <p className="text-gray-600">Get expert help with any financial product</p>
                   </div>
                 </div>
-
-                {/* Bottom decorative badge */}
-                <div className="mt-8 inline-flex items-center px-4 py-2 bg-blue-600/10 rounded-full">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-blue-600 font-medium">Trusted by thousands of users</span>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-6 mt-4">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-blue-100 text-blue-600">
+                      {/* Credit Card Icon */}
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="6" width="20" height="12" rx="3" strokeWidth="2"/><path d="M2 10h20" strokeWidth="2"/></svg>
+                    </span>
+                    <span className="text-gray-800 font-medium">Credit Cards</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-purple-100 text-purple-600">
+                      {/* Personal Loan Icon */}
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 8v8m0 0l-3-3m3 3l3-3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2"/></svg>
+                    </span>
+                    <span className="text-gray-800 font-medium">Personal Loans</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-green-100 text-green-600">
+                      {/* Home Loan Icon */}
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l9-7 9 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><rect x="6" y="12" width="12" height="8" rx="2" strokeWidth="2"/></svg>
+                    </span>
+                    <span className="text-gray-800 font-medium">Home Loans</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-pink-100 text-pink-600">
+                      {/* Car Loan Icon */}
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="11" width="18" height="5" rx="2" strokeWidth="2"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
+                    </span>
+                    <span className="text-gray-800 font-medium">Car Loans</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-yellow-100 text-yellow-600">
+                      {/* Other Financial Icon */}
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" strokeWidth="2"/><path d="M8 12h8M12 8v8" strokeWidth="2"/></svg>
+                    </span>
+                    <span className="text-gray-800 font-medium">Other Financial Products</span>
+                  </div>
                 </div>
+              </div>
+              <div className="flex items-center justify-between mt-auto gap-4">
+                <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                  Chat with Us
+                </a>
+                <button className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  Call Us: +91 93213 14553
+                </button>
               </div>
             </div>
           </div>
