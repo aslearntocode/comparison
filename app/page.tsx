@@ -831,7 +831,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100/20 flex flex-col justify-between min-h-[340px]" style={{ minHeight: '340px' }}>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
-                <div className="space-y-6">
+                <div className="space-y-3 lg:space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
                       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -839,7 +839,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Expert Guidance</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Expert Guidance</h4>
                       <p className="text-gray-600">Our credit experts will guide you throughout the resolution process, providing personalized assistance at every step.</p>
                     </div>
                   </div>
@@ -851,7 +851,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Professional Resolution</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Professional Resolution</h4>
                       <p className="text-gray-600">We handle your concerns privately and professionally, ensuring a dignified resolution process.</p>
                     </div>
                   </div>
@@ -861,7 +861,7 @@ export default function Home() {
 
             {/* Main Issue Box */}
             <div 
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-100/20 flex flex-col justify-between min-h-[340px]"
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 lg:p-8 shadow-lg border border-blue-100/20 flex flex-col justify-between min-h-[340px]"
               style={{ minHeight: '340px' }}
             >
               <div>
@@ -910,16 +910,18 @@ export default function Home() {
                       {/* Other Financial Icon */}
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" strokeWidth="2"/><path d="M8 12h8M12 8v8" strokeWidth="2"/></svg>
                     </span>
-                    <span className="text-gray-800 font-medium">Other Financial Products</span>
+                    <span className="text-gray-800 font-medium">
+                      Other Products
+                    </span>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-between mt-auto gap-4">
-                <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-4 mt-auto">
+                <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                   Chat with Us
                 </a>
-                <button className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
+                <button className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   Call Us: +91 93213 14553
                 </button>
