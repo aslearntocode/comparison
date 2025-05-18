@@ -812,14 +812,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Fee Waiver Checker Section */}
-      <FeeWaiverChecker />
+      {/* Fee Waiver Checker and Reward Points Comparison Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Fee Waiver Checker Section */}
+        <FeeWaiverChecker />
 
-      {/* Learning Center Preview Section */}
-      <LearningCenterPreview />
-
-      {/* Reward Points Comparison Section */}
-      <RewardPointsComparison />
+        {/* Reward Points Comparison Section */}
+        <RewardPointsComparison />
+      </div>
 
       {/* Connect with Credit Expert Section */}
       <div className="bg-white py-16">
@@ -933,6 +933,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Learning Center Preview Section */}
+      <LearningCenterPreview />
 
       {/* Testimonials Section */}
       <div className="bg-gray-50 py-16">
