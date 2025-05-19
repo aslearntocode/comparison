@@ -637,6 +637,7 @@ export default function Home() {
               </div>
 
               {/* Card Value Calculator - Separated and visually distinct */}
+              {/* Commented out temporarily
               <div className="mt-6 lg:mt-3">
                 <Link href="/credit/calculator" className="block">
                   <div className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-emerald-600 hover:to-green-600 shadow-md hover:shadow-xl border border-green-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-11 text-base gap-2 lg:p-4 lg:text-lg flex items-center justify-between cursor-pointer">
@@ -656,6 +657,7 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+              */}
             </div>
 
             {/* Right Content - Product Images */}
