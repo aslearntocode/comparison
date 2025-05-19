@@ -181,6 +181,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/credit-cards/chances-of-approval'
+  },
+  {
+    id: '22',
+    title: 'How to Redeem Axis Bank Credit Card Reward Points',
+    description: 'Learn how to redeem Axis Bank Credit Card Reward Points and make the most of your rewards.',
+    category: 'Credit Cards',
+    readTime: '5 min read',
+    link: '/learning-center/credit-cards/axis-rewards-redemption'
   }
 ]
 
