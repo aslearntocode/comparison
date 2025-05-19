@@ -19,6 +19,7 @@ import { useRouter } from 'next/navigation'
 import { Dialog } from '@headlessui/react'
 import { creditCards, type CreditCard } from '@/app/data/creditCards'
 import FeeAndRewardsCarousel from '@/components/FeeAndRewardsCarousel'
+import BankingPartners from '@/components/BankingPartners'
 
 interface AllocationItem {
   name: string;
@@ -932,7 +933,7 @@ export default function Home() {
       <LearningCenterPreview />
 
       {/* Testimonials Section */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
           <div className="relative overflow-hidden">
@@ -957,6 +958,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Banking Partners Section */}
+      <BankingPartners />
     </div>
   )
 }
