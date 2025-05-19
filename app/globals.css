@@ -139,3 +139,18 @@ body {
     overflow-x: hidden !important;
   }
 }
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll-x 30s linear infinite;
+}

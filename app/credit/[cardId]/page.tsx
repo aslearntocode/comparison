@@ -500,6 +500,16 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
     }
   };
 
+  // Utility to calculate health points
+  function getHealthPoints(card: any): number {
+    const isLifetimeFree = card.category === 'lifetime-free' || card.categories?.includes('lifetime-free') || card.annualFee.replace(/[^0-9]/g, '') === '0' || card.annualFee.toLowerCase().includes('lifetime free') || card.annualFee.trim() === '';
+    if (isLifetimeFree) return 100;
+    const feeMatch = card.annualFee.replace(/[^0-9]/g, '');
+    const annualFee = feeMatch ? parseInt(feeMatch, 10) : 0;
+    if (annualFee > 0 && annualFee < 1000) return 200;
+    return 250;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
@@ -647,13 +657,14 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                         )
                       }
                     </ul>
-                    <div className="mt-6 flex justify-center">
+                    <div className="mt-6 flex flex-col items-center gap-2">
                       <Link
                         href={`/credit/apply?cardId=${card.id}`}
                         className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
                       >
                         Apply Now
                       </Link>
+                      <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Amazon Voucher: ₹{getHealthPoints(card)}</span>
                     </div>
                   </div>
                 </div>
@@ -746,13 +757,14 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                       )
                     }
                   </ul>
-                  <div className="mt-6 flex justify-center">
+                  <div className="mt-6 flex flex-col items-center gap-2">
                     <Link
                       href={`/credit/apply?cardId=${card.id}`}
                       className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
                     >
                       Apply Now
                     </Link>
+                    <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Amazon Voucher: ₹{getHealthPoints(card)}</span>
                   </div>
                 </div>
               </div>

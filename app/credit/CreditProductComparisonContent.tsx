@@ -280,6 +280,16 @@ function CreditProductComparisonContent() {
     window.location.href = `/credit/compare?cards=${queryString}${categoryParam}`;
   };
 
+  // Utility to calculate health points
+  function getHealthPoints(card: CreditCard): number {
+    const isLifetimeFree = card.category === 'lifetime-free' || card.categories?.includes('lifetime-free') || card.annualFee.replace(/[^0-9]/g, '') === '0' || card.annualFee.toLowerCase().includes('lifetime free') || card.annualFee.trim() === '';
+    if (isLifetimeFree) return 100;
+    const feeMatch = card.annualFee.replace(/[^0-9]/g, '');
+    const annualFee = feeMatch ? parseInt(feeMatch, 10) : 0;
+    if (annualFee > 0 && annualFee < 1000) return 200;
+    return 250;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
@@ -370,8 +380,9 @@ function CreditProductComparisonContent() {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between">
                               <Link href={`/credit/${card.id}`} className="block flex-1 min-w-0">
-                                <h3 className="text-base font-bold text-gray-900 mb-1 whitespace-normal break-words">{card.name}</h3>
-                                <p className="text-gray-600 mb-2">{card.bank}</p>
+                                <div className="flex items-center justify-between gap-2">
+                                  <h3 className="text-base font-bold text-gray-900 mb-1 whitespace-normal break-words">{card.name}</h3>
+                                </div>
                               </Link>
                             </div>
                             {/* Reviews link as a sibling, not nested */}
@@ -427,6 +438,18 @@ function CreditProductComparisonContent() {
                             Check Eligibility
                           </Link>
                         </div>
+                        {/* MOBILE BADGE (below Check Eligibility button, only visible on mobile) */}
+                        <div className="mt-2 md:hidden flex justify-end">
+                          <span className="inline-block bg-green-100 text-green-800 text-[10px] font-semibold px-1.5 py-1 rounded whitespace-nowrap">
+                            Amazon Voucher: INR {getHealthPoints(card)}
+                          </span>
+                        </div>
+                        {/* DESKTOP BADGE (below Check Eligibility button, only visible on desktop) */}
+                        <div className="hidden md:flex md:flex-col md:items-center md:justify-center mt-2">
+                          <span className="inline-block bg-green-100 text-green-800 text-[10px] font-semibold px-1.5 py-1 rounded whitespace-nowrap">
+                            Amazon Voucher: INR {getHealthPoints(card)}
+                          </span>
+                        </div>
                       </div>
                     </div>
                     {/* Desktop View */}
@@ -481,7 +504,7 @@ function CreditProductComparisonContent() {
                           className="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
                       </div>
-                      <div className="flex items-center justify-center">
+                      <div className="flex items-center justify-center flex-col">
                         <Link
                           href={`/credit/${card.id}`}
                           target="_self"
@@ -489,6 +512,11 @@ function CreditProductComparisonContent() {
                         >
                           Check Eligibility
                         </Link>
+                        <div className="hidden md:flex flex-col items-center justify-center mt-2">
+                          <span className="inline-block bg-green-100 text-green-800 text-[10px] font-semibold px-1.5 py-1 rounded whitespace-nowrap">
+                            Amazon Voucher: INR {getHealthPoints(card)}
+                          </span>
+                        </div>
                       </div>
                     </div>
                     {/* Features Section - Desktop Only */}

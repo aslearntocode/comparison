@@ -245,7 +245,7 @@ export default function FeeAndRewardsCarousel() {
                 {searchResults.map((result, index) => (
                   activeSection === 'fee' ? (
                     <Link
-                      key={result.id}
+                      key={`fee-${result.id || index}`}
                       href={`/credit/${result.id}`}
                       className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
                     >
@@ -257,7 +257,7 @@ export default function FeeAndRewardsCarousel() {
                       {getFeeWaiverInfo(result).length > 0 ? (
                         <div className="mt-2 space-y-1">
                           {getFeeWaiverInfo(result).map((info, idx) => (
-                            <div key={idx} className="text-sm">
+                            <div key={`fee-info-${idx}`} className="text-sm">
                               <span className="text-green-600 font-medium">{info.type}:</span>{' '}
                               <span className="text-gray-700">{info.criteria}</span>
                             </div>
@@ -271,7 +271,7 @@ export default function FeeAndRewardsCarousel() {
                     </Link>
                   ) : (
                     <div
-                      key={index}
+                      key={`rewards-${result.bank}-${index}`}
                       className="px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0"
                     >
                       <div className="font-medium text-gray-900">{result.bank}</div>
