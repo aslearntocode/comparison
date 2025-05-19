@@ -52,26 +52,33 @@ export default function LoginModal({ isOpen, onClose, redirectPath = '/' }: Logi
   }, [onClose, redirectPath, router])
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <div className="fixed inset-0 bg-black/50 z-50" aria-hidden="true" />
-      <div className="fixed inset-0 flex items-center justify-center z-50">
-        <DialogContent className="w-full max-w-md bg-white rounded-xl shadow-2xl p-8 mx-4 relative">
-          <DialogHeader className="mb-8">
-            <DialogTitle className="text-2xl font-bold text-center text-gray-900">
-              Welcome Back
-            </DialogTitle>
-            <p className="text-gray-500 text-center mt-2">
-              Sign in to access your account
-            </p>
-          </DialogHeader>
+    isOpen && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        {/* Modal Content */}
+        <div className="relative z-10 w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none"
+            aria-label="Close"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="mb-8 w-full">
+            <div className="text-2xl font-bold text-center text-gray-900">Welcome Back</div>
+            <p className="text-gray-500 text-center mt-2">Sign in to access your account</p>
+          </div>
 
           {error && (
-            <div className="mb-6 bg-red-50 text-red-500 p-4 rounded-lg text-sm border border-red-100">
+            <div className="mb-6 bg-red-50 text-red-500 p-4 rounded-lg text-sm border border-red-100 w-full">
               {error}
             </div>
           )}
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <button
               onClick={handleGoogleLogin}
               disabled={loading}
@@ -102,8 +109,8 @@ export default function LoginModal({ isOpen, onClose, redirectPath = '/' }: Logi
               </a>
             </div>
           </div>
-        </DialogContent>
+        </div>
       </div>
-    </Dialog>
+    )
   )
 } 
