@@ -18,7 +18,7 @@ import RewardPointsComparison from '@/components/RewardPointsComparison'
 import { useRouter } from 'next/navigation'
 import { Dialog } from '@headlessui/react'
 import { creditCards, type CreditCard } from '@/app/data/creditCards'
-import FeeWaiverChecker from '@/components/FeeWaiverChecker'
+import FeeAndRewardsCarousel from '@/components/FeeAndRewardsCarousel'
 
 interface AllocationItem {
   name: string;
@@ -813,13 +813,7 @@ export default function Home() {
       </div>
 
       {/* Fee Waiver Checker and Reward Points Comparison Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Fee Waiver Checker Section */}
-        <FeeWaiverChecker />
-
-        {/* Reward Points Comparison Section */}
-        <RewardPointsComparison />
-      </div>
+      <FeeAndRewardsCarousel />
 
       {/* Connect with Credit Expert Section */}
       <div className="bg-white py-16">
