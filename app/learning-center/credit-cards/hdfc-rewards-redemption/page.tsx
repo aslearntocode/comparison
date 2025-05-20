@@ -47,7 +47,7 @@ export default function HDFCRewardsRedemption(): JSX.Element {
         "name": "How do I check my HDFC credit card reward points?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can check your HDFC reward points through NetBanking by going to Cards > Enquire > Credit Card Hotlisting/Reward Points Summary, through the HDFC MyCards app, or by checking the last page of your monthly credit card statement."
+          "text": "You can check your HDFC reward points through NetBanking by going to Cards &gt; Enquire &gt; Credit Card Hotlisting/Reward Points Summary, through the HDFC MyCards app, or by checking the last page of your monthly credit card statement."
         }
       }, {
         "@type": "Question",
@@ -188,7 +188,7 @@ export default function HDFCRewardsRedemption(): JSX.Element {
                   <div>
                     <h3 className="font-semibold text-base md:text-lg mb-2">2. Catalogue Redemption</h3>
                     <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                      <li>Visit HDFC NetBanking &rarr; Cards &rarr; Redeem Reward Points</li>
+                      <li>Visit HDFC NetBanking &gt; Cards &gt; Redeem Reward Points</li>
                       <li>Choose from a catalogue of products and vouchers</li>
                       <li>Shipping charges may apply in some cases</li>
                     </ul>
@@ -228,7 +228,7 @@ export default function HDFCRewardsRedemption(): JSX.Element {
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h3 className="font-semibold text-base md:text-lg mb-2">How do I check my HDFC credit card reward points?</h3>
-                    <p className="text-gray-700">You can check your HDFC reward points through NetBanking by going to Cards > Enquire > Credit Card Hotlisting/Reward Points Summary, through the HDFC MyCards app, or by checking the last page of your monthly credit card statement.</p>
+                    <p className="text-gray-700">You can check your HDFC reward points through NetBanking by going to Cards &gt; Enquire &gt; Credit Card Hotlisting/Reward Points Summary, through the HDFC MyCards app, or by checking the last page of your monthly credit card statement.</p>
                   </div>
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h3 className="font-semibold text-base md:text-lg mb-2">What is the best way to redeem HDFC credit card reward points?</h3>
