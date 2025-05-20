@@ -610,11 +610,11 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-8">
                 Compare and find the best credit cards in India from multiple banks. Get detailed comparisons of rewards, benefits, and features to choose the perfect card for your lifestyle.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-3">
                 <Link href="/credit?category=lifetime-free" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
-                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -622,9 +622,9 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=lifestyle" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
-                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                     </div>
@@ -632,9 +632,9 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=premium" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
-                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -642,13 +642,33 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link href="/credit?category=upi" className="col-span-1">
-                  <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-2xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2.5 h-11 text-[1.05rem] gap-2.5 lg:p-3 lg:h-[60px] lg:text-lg lg:gap-3 flex items-center cursor-pointer">
-                    <div className="bg-white/30 rounded-full p-1 shadow-inner lg:p-2">
-                      <svg className="w-5 h-5 text-white lg:w-6 lg:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                       </svg>
                     </div>
                     <span className="font-semibold text-white drop-shadow-sm">UPI</span>
+                  </div>
+                </Link>
+                <Link href="/credit?category=airlines" className="col-span-1">
+                  <div className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-red-600 hover:to-orange-600 shadow-md hover:shadow-xl border border-orange-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </div>
+                    <span className="font-semibold text-white drop-shadow-sm">Airlines</span>
+                  </div>
+                </Link>
+                <Link href="/credit?category=fintech" className="col-span-1">
+                  <div className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-600 hover:to-cyan-600 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-10 text-sm gap-2 flex items-center cursor-pointer">
+                    <div className="bg-white/30 rounded-full p-1 shadow-inner">
+                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <span className="font-semibold text-white drop-shadow-sm">Fintech</span>
                   </div>
                 </Link>
               </div>
