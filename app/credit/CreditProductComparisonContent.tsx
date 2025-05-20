@@ -446,8 +446,9 @@ function CreditProductComparisonContent() {
                         </div>
                         {/* DESKTOP BADGE (below Check Eligibility button, only visible on desktop) */}
                         <div className="hidden md:flex md:flex-col md:items-center md:justify-center mt-2">
-                          <span className="inline-block bg-green-100 text-green-800 text-[10px] font-semibold px-1.5 py-1 rounded whitespace-nowrap">
-                            Amazon Voucher: INR {getHealthPoints(card)}
+                          <span className="inline-block bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-center leading-tight" style={{ fontSize: '0.95rem', lineHeight: '1.2' }}>
+                            Amazon Voucher:<br />
+                            <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>INR {getHealthPoints(card)}</span>
                           </span>
                         </div>
                       </div>
@@ -513,8 +514,9 @@ function CreditProductComparisonContent() {
                           Check Eligibility
                         </Link>
                         <div className="hidden md:flex flex-col items-center justify-center mt-2">
-                          <span className="inline-block bg-green-100 text-green-800 text-[10px] font-semibold px-1.5 py-1 rounded whitespace-nowrap">
-                            Amazon Voucher: INR {getHealthPoints(card)}
+                          <span className="inline-block bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-center leading-tight" style={{ fontSize: '0.95rem', lineHeight: '1.2' }}>
+                            Amazon Voucher:<br />
+                            <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>INR {getHealthPoints(card)}</span>
                           </span>
                         </div>
                       </div>
