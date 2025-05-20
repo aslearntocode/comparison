@@ -32,7 +32,13 @@ export default function LoanPaymentCalculator() {
       "@type": "Organization",
       "name": "Financial Health",
       "url": "https://financialhealth.co.in"
-    }
+    },
+    "offers": {
+      "@type": "Offer",
+      "category": "Financial Service"
+    },
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web"
   };
 
   // FAQ structured data
@@ -53,6 +59,47 @@ export default function LoanPaymentCalculator() {
         "@type": "Answer",
         "text": "Your EMI amount is affected by three main factors: loan amount, interest rate, and loan tenure. A higher loan amount or interest rate increases EMI, while a longer tenure reduces it."
       }
+    }, {
+      "@type": "Question",
+      "name": "What is the minimum and maximum loan amount I can calculate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our calculator supports loan amounts starting from ₹1,000. There is no upper limit, but most lenders offer personal loans up to ₹40 lakhs based on your income and credit profile."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How can I reduce my personal loan EMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can reduce your EMI by: 1) Opting for a longer tenure, 2) Improving your credit score to get better interest rates, 3) Making a larger down payment, or 4) Comparing offers from multiple lenders."
+      }
+    }]
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://financialhealth.co.in"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Learning Center",
+      "item": "https://financialhealth.co.in/learning-center"
+    }, {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Personal Loans",
+      "item": "https://financialhealth.co.in/learning-center/personal-loans"
+    }, {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "EMI Calculator",
+      "item": "https://financialhealth.co.in/learning-center/personal-loans/payment"
     }]
   };
 
@@ -102,14 +149,16 @@ export default function LoanPaymentCalculator() {
   return (
     <>
       <Head>
-        <title>Personal Loan EMI Calculator | Calculate Monthly Payments | Financial Health</title>
-        <meta name="description" content="Calculate your personal loan EMI, view amortization schedule, and understand total interest costs. Free EMI calculator with detailed payment breakup." />
-        <meta name="keywords" content="personal loan calculator, EMI calculator, loan EMI, monthly payments, interest calculation, loan amortization, loan repayment schedule" />
-        <meta property="og:title" content="Personal Loan EMI Calculator | Financial Health" />
-        <meta property="og:description" content="Calculate your personal loan EMI and view complete amortization schedule. Free calculator with detailed payment breakup." />
+        <title>Personal Loan EMI Calculator 2024 | Calculate Monthly Payments & Interest | Financial Health</title>
+        <meta name="description" content="Free personal loan EMI calculator 2024. Calculate monthly EMI, total interest, and view complete amortization schedule. Compare different loan amounts and tenures to find the best EMI." />
+        <meta name="keywords" content="personal loan calculator, EMI calculator 2024, loan EMI, monthly payments, interest calculation, loan amortization, loan repayment schedule, personal loan interest rate, loan tenure calculator" />
+        <meta property="og:title" content="Personal Loan EMI Calculator 2024 | Calculate Monthly Payments | Financial Health" />
+        <meta property="og:description" content="Calculate your personal loan EMI and view complete amortization schedule. Free calculator with detailed payment breakup. Compare different loan scenarios instantly." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://financialhealth.co.in/learning-center/personal-loans/payment" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://financialhealth.co.in/learning-center/personal-loans/payment" />
       </Head>
 
@@ -123,6 +172,11 @@ export default function LoanPaymentCalculator() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
+      <Script
+        id="breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
         <Header />
@@ -130,12 +184,23 @@ export default function LoanPaymentCalculator() {
           {/* Hero Section */}
           <section aria-label="Article Header" className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 mb-8">
             <div className="max-w-6xl mx-auto px-4">
-              <h1 className="text-4xl font-bold mb-4">Personal Loan EMI Calculator</h1>
+              <h1 className="text-4xl font-bold mb-4">Personal Loan EMI Calculator 2024</h1>
+              <p className="text-lg mb-4">Calculate your monthly EMI, total interest cost, and view complete payment schedule for your personal loan.</p>
               <div className="flex items-center text-sm">
                 <span className="bg-blue-500 px-3 py-1 rounded-full text-xs">Personal Loans</span>
+                <span className="bg-blue-500 px-3 py-1 rounded-full text-xs ml-2">EMI Calculator</span>
+                <span className="bg-blue-500 px-3 py-1 rounded-full text-xs ml-2">2025</span>
               </div>
             </div>
           </section>
+          <div className="max-w-6xl mx-auto px-4 -mt-6 mb-8">
+            <a href="/learning-center" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back to Learning Center
+            </a>
+          </div>
           <div className="container mx-auto px-4 sm:px-6 py-4">
             <header className="text-center mb-4 sm:mb-6">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Personal Loan EMI Calculator</h1>
@@ -224,7 +289,8 @@ export default function LoanPaymentCalculator() {
 
             {/* Amortization Schedule */}
             <section aria-label="Amortization Schedule" className="mt-8">
-              <h2 className="text-xl font-bold mb-4 text-gray-800">Payment Schedule</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">Complete Payment Schedule</h2>
+              <p className="text-gray-600 mb-4">View your month-by-month payment breakdown including principal, interest, and remaining balance.</p>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse" aria-label="Monthly payment schedule">
                   <thead>
@@ -253,7 +319,7 @@ export default function LoanPaymentCalculator() {
 
             {/* FAQ Section */}
             <section aria-label="Frequently Asked Questions" className="mt-8">
-              <h2 className="text-xl font-bold mb-4 text-gray-800">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 <div className="bg-white p-4 rounded-lg shadow">
                   <h3 className="font-semibold mb-2">How is personal loan EMI calculated?</h3>
@@ -263,12 +329,35 @@ export default function LoanPaymentCalculator() {
                   <h3 className="font-semibold mb-2">What factors affect my EMI amount?</h3>
                   <p className="text-gray-700">Your EMI amount is affected by three main factors: loan amount, interest rate, and loan tenure. A higher loan amount or interest rate increases EMI, while a longer tenure reduces it.</p>
                 </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h3 className="font-semibold mb-2">What is the minimum and maximum loan amount I can calculate?</h3>
+                  <p className="text-gray-700">Our calculator supports loan amounts starting from ₹1,000. There is no upper limit, but most lenders offer personal loans up to ₹40 lakhs based on your income and credit profile.</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h3 className="font-semibold mb-2">How can I reduce my personal loan EMI?</h3>
+                  <p className="text-gray-700">You can reduce your EMI by: 1) Opting for a longer tenure, 2) Improving your credit score to get better interest rates, 3) Making a larger down payment, or 4) Comparing offers from multiple lenders.</p>
+                </div>
               </div>
             </section>
 
-            <footer className="mt-4 sm:mt-6 text-center text-gray-600 text-xs sm:text-sm">
-              {/* <p className="mb-1">This calculator provides approximate values for reference only.</p> */}
+            <section aria-label="Related Articles" className="mt-8">
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">Related Articles</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="/learning-center/personal-loans/interest-rates" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                  <h3 className="font-semibold text-blue-600 mb-2">Personal Loan Interest Rates 2024</h3>
+                  <p className="text-gray-600">Compare current interest rates from top banks and NBFCs for personal loans.</p>
+                </a>
+                <a href="/learning-center/personal-loans/eligibility" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                  <h3 className="font-semibold text-blue-600 mb-2">Personal Loan Eligibility Criteria</h3>
+                  <p className="text-gray-600">Learn about the requirements and documents needed for personal loan approval.</p>
+                </a>
+              </div>
+            </section>
+
+            <footer className="mt-8 text-center text-gray-600 text-sm">
+              <p className="mb-2">This calculator provides approximate values for reference only.</p>
               <p>Actual loan terms and EMI may vary based on lender's policies and your credit profile.</p>
+              <p className="mt-4">Last updated: {new Date().toLocaleDateString()}</p>
             </footer>
           </div>
         </main>

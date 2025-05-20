@@ -213,6 +213,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '5 min read',
     link: '/learning-center/credit-cards/idfc-first-rewards-redemption'
+  },
+  {
+    id: '26',
+    title: 'HDFC IndiGo 6E Rewards Credit Card Review',
+    description: 'Learn about the HDFC IndiGo 6E Rewards Credit Card, including its rewards program, benefits, and how to apply.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/hdfc-indigo-card'
   }
 ]
 

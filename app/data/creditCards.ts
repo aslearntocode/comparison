@@ -1273,7 +1273,7 @@ Fuel Benefits:
     bank: 'HDFC Bank',
     category: 'airlines',
     image: '/credit-cards/HDFC-Indigo.png',
-    apr: '43.2% p.a.',
+    apr: '3.49% per month',
     annualFee: '₹500 + GST',
     joiningFee: '₹500 + GST',
     rupay: false,
@@ -1304,9 +1304,8 @@ Fuel Benefits:
       minimumSpend: 'Not specified',
       additionalServices: 'Additional Benefits:\n• Up to 10% 6E Rewards on IndiGo feature partners\n• Interest-free credit period up to 50 days\n• Zero lost card liability on reporting',
       idealFor: [
-        'Frequent IndiGo flyers',
-        'Regular travelers on domestic routes',
-        'Those seeking airline-specific rewards'
+        'Frequent IndiGo Flyers',
+        'Regular travelers who prefer IndiGo airlines'
       ],
       notIdealFor: [
         'International travelers',
@@ -1314,7 +1313,13 @@ Fuel Benefits:
         'Users who rarely fly with IndiGo'
       ],
       summary: 'A co-branded credit card offering enhanced rewards on IndiGo bookings and partner spends, ideal for frequent IndiGo flyers.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹50,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹7.2 lakhs/annum`
     }
   },
   {
@@ -2649,6 +2654,46 @@ Credit Score: 750 or above (good to excellent)`
       ],
       summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
       additionalServices: 'Regular offers on dining and entertainment'
+    }
+  },
+  {
+    id: 'hdfc-indigo-xl',
+    name: 'HDFC IndiGo 6E Rewards XL Credit Card',
+    bank: 'HDFC Bank',
+    category: 'airlines',
+    image: '/credit-cards/HDFC-Indigo-XL.png',
+    apr: '3.49% per month',
+    annualFee: '₹1,500 + GST',
+    joiningFee: '₹1,500 + GST',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'airlines',
+      'rewards',
+      'travel'
+    ],
+    additionalDetails: {
+      rewardsProgram: `Reward Points Earning Structure:
+• 5% on IndiGo bookings
+• 3% on dining, groceries, and entertainment
+• 2% on other spends
+• Up to 10% on IndiGo's featured partners`,
+      welcomeBonus: 'Complimentary IndiGo flight ticket worth ₹1,500 and 6E Prime Add-on (includes priority check-in, seat selection, and complimentary meal)',
+      milestoneBenefits: [
+        'Complimentary flight tickets upon reaching specific transaction milestones',
+        'Discount on IndiGo ticket booking convenience fees'
+      ],
+      idealFor: [
+        'Frequent IndiGo Flyers',
+        'Regular travelers who prefer IndiGo airlines'
+      ],
+      summary: 'A co-branded credit card offering enhanced rewards on IndiGo bookings and travel-related expenses, with exclusive travel benefits and milestone rewards, perfect for frequent IndiGo travelers.',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Monthly Income: ₹1,00,000/month
+Self-Employed Individuals:
+Age: 21 to 65 years
+Income: ITR > ₹12 lakhs/annum`
     }
   }
 ]; 

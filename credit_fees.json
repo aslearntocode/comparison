@@ -91,6 +91,13 @@
       "is_lifetime_free":0
     },
     {
+      "card_name":"HDFC IndiGo 6E Rewards XL Credit Card",
+      "joining_fee":1500,
+      "annual_fee":1500,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
+    },
+    {
       "card_name":"ICICI Emeralde Credit Card",
       "joining_fee":12000,
       "annual_fee":12000,

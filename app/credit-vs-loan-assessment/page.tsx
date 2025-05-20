@@ -289,214 +289,233 @@ function CreditVsLoanAssessmentContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <Header />
-      <main 
-        className="max-w-7xl mx-auto px-4 py-12"
-        onClick={handlePageClick}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Form Section */}
-          <Card className="p-6 shadow-2xl rounded-3xl border-0 bg-white/90">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">Credit Assessment Form</h2>
-            <form onSubmit={handleSubmit} className="space-y-4" onClick={(e) => {
-              e.stopPropagation();
-              const user = auth.currentUser;
-              if (!user) {
-                const currentPath = encodeURIComponent('/credit-vs-loan-assessment');
-                router.push(`/login?redirect=${currentPath}`);
-                return;
-              }
-            }}>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Reason for applying (max 100 words)?</label>
-                <textarea
-                  name="reason"
-                  value={form.reason}
-                  onChange={handleChange}
-                  required
-                  rows={2}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. need a loan to travel"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Looking for what kind of loan?</label>
-                <select
-                  name="loan_type"
-                  value={form.loan_type}
-                  onChange={handleChange}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                >
-                  {loanTypes.map(opt => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">What is your Credit Score (CIBIL)?</label>
-                <input
-                  type="number"
-                  name="credit_score"
-                  value={form.credit_score}
-                  onChange={handleChange}
-                  min={0}
-                  max={900}
-                  required
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. 750"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Income (₹):</label>
-                <input
-                  type="number"
-                  name="income"
-                  value={form.income}
-                  onChange={handleChange}
-                  required
-                  min={0}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. 150000"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Current Loan EMI including Mortgage (₹):</label>
-                <input
-                  type="number"
-                  name="current_emi"
-                  value={form.current_emi}
-                  onChange={handleChange}
-                  required
-                  min={0}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. 25000"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Do you have an existing mortgage?</label>
-                <select
-                  name="mortgage"
-                  value={form.mortgage}
-                  onChange={handleChange}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Number of existing credit cards:</label>
-                <input
-                  type="number"
-                  name="existing_cards"
-                  value={form.existing_cards}
-                  onChange={handleChange}
-                  required
-                  min={0}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. 2"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Credit Card Outstanding (₹):</label>
-                <input
-                  type="number"
-                  name="credit_card_outstanding"
-                  value={form.credit_card_outstanding}
-                  onChange={handleChange}
-                  required
-                  min={0}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                  placeholder="e.g. 25000"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Ever Defaulted on a Loan?</label>
-                <select
-                  name="ever_defaulted"
-                  value={form.ever_defaulted}
-                  onChange={handleChange}
-                  className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
-                >
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              {error && (
-                <div className="p-2 rounded-lg bg-red-50 text-red-700 text-sm text-center">{error}</div>
-              )}
-              <Button
-                type="submit"
-                className="w-full py-2 text-base rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
-                disabled={loading}
-              >
-                {loading ? 'Assessing...' : 'Get Assessment'}
-              </Button>
-            </form>
-          </Card>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+          <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Form Section */}
+              <Card className="p-6 shadow-2xl rounded-3xl border-0 bg-white/90">
+                <h2 className="text-xl font-bold text-gray-800 mb-4">Credit Assessment Form</h2>
+                <form onSubmit={handleSubmit} className="space-y-4" onClick={(e) => {
+                  e.stopPropagation();
+                  const user = auth.currentUser;
+                  if (!user) {
+                    const currentPath = encodeURIComponent('/credit-vs-loan-assessment');
+                    router.push(`/login?redirect=${currentPath}`);
+                    return;
+                  }
+                }}>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Reason for applying (max 100 words)?</label>
+                    <textarea
+                      name="reason"
+                      value={form.reason}
+                      onChange={handleChange}
+                      required
+                      rows={2}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. need a loan to travel"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Looking for what kind of loan?</label>
+                    <select
+                      name="loan_type"
+                      value={form.loan_type}
+                      onChange={handleChange}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                    >
+                      {loanTypes.map(opt => (
+                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">What is your Credit Score (CIBIL)?</label>
+                    <input
+                      type="number"
+                      name="credit_score"
+                      value={form.credit_score}
+                      onChange={handleChange}
+                      min={0}
+                      max={900}
+                      required
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. 750"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Income (₹):</label>
+                    <input
+                      type="number"
+                      name="income"
+                      value={form.income}
+                      onChange={handleChange}
+                      required
+                      min={0}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. 150000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Current Loan EMI including Mortgage (₹):</label>
+                    <input
+                      type="number"
+                      name="current_emi"
+                      value={form.current_emi}
+                      onChange={handleChange}
+                      required
+                      min={0}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. 25000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Do you have an existing mortgage?</label>
+                    <select
+                      name="mortgage"
+                      value={form.mortgage}
+                      onChange={handleChange}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                    >
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Number of existing credit cards:</label>
+                    <input
+                      type="number"
+                      name="existing_cards"
+                      value={form.existing_cards}
+                      onChange={handleChange}
+                      required
+                      min={0}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. 2"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Credit Card Outstanding (₹):</label>
+                    <input
+                      type="number"
+                      name="credit_card_outstanding"
+                      value={form.credit_card_outstanding}
+                      onChange={handleChange}
+                      required
+                      min={0}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      placeholder="e.g. 25000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Ever Defaulted on a Loan?</label>
+                    <select
+                      name="ever_defaulted"
+                      value={form.ever_defaulted}
+                      onChange={handleChange}
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                    >
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                  {error && (
+                    <div className="p-2 rounded-lg bg-red-50 text-red-700 text-sm text-center">{error}</div>
+                  )}
+                  <Button
+                    type="submit"
+                    className="w-full py-2 text-base rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+                    disabled={loading}
+                  >
+                    {loading ? 'Assessing...' : 'Get Assessment'}
+                  </Button>
+                </form>
+              </Card>
 
-          {/* Results Section */}
-          <Card className="p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Assessment Results</h2>
-            {assessment ? (() => {
-              const [rec, cond, summ] = parseAssessmentText(assessment);
-              return (
-                <div className="space-y-6">
-                  {/* Recommendation */}
-                  <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
-                    <div className="flex items-center mb-4">
-                      <span className="text-2xl mr-3">📋</span>
-                      <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
+              {/* Results Section */}
+              <Card className="p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Assessment Results</h2>
+                {assessment ? (() => {
+                  const [rec, cond, summ] = parseAssessmentText(assessment);
+                  return (
+                    <div className="space-y-6">
+                      {/* Recommendation */}
+                      <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
+                        <div className="flex items-center mb-4">
+                          <span className="text-2xl mr-3">📋</span>
+                          <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
+                        </div>
+                        <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
+                          <p className="text-base font-medium">{rec}</p>
+                        </div>
+                      </div>
+                      {/* Condition */}
+                      <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
+                        <div className="flex items-center mb-4">
+                          <span className="text-2xl mr-3">📝</span>
+                          <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
+                        </div>
+                        <div className="prose max-w-none text-gray-700 flex-1">
+                          <ul className="space-y-3 list-none pl-0">
+                            {cond.split('\n').map((point, index) => (
+                              <li key={index} className="flex items-start">
+                                <span className="text-green-600 mr-2 mt-1">•</span>
+                                <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      {/* Summary */}
+                      <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
+                        <div className="flex items-center mb-4">
+                          <span className="text-2xl mr-3">📊</span>
+                          <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
+                        </div>
+                        <div className="prose max-w-none text-gray-700 flex-1">
+                          <ul className="space-y-3 list-none pl-0">
+                            {summ.split('\n').map((point, index) => (
+                              <li key={index} className="flex items-start">
+                                <span className="text-blue-600 mr-2 mt-1">•</span>
+                                <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
-                      <p className="text-base font-medium">{rec}</p>
-                    </div>
+                  );
+                })() : (
+                  <div className="text-center py-12 text-gray-500">
+                    <p>Complete the form to see your assessment results</p>
                   </div>
-                  {/* Condition */}
-                  <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
-                    <div className="flex items-center mb-4">
-                      <span className="text-2xl mr-3">📝</span>
-                      <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
-                    </div>
-                    <div className="prose max-w-none text-gray-700 flex-1">
-                      <ul className="space-y-3 list-none pl-0">
-                        {cond.split('\n').map((point, index) => (
-                          <li key={index} className="flex items-start">
-                            <span className="text-green-600 mr-2 mt-1">•</span>
-                            <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  {/* Summary */}
-                  <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
-                    <div className="flex items-center mb-4">
-                      <span className="text-2xl mr-3">📊</span>
-                      <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
-                    </div>
-                    <div className="prose max-w-none text-gray-700 flex-1">
-                      <ul className="space-y-3 list-none pl-0">
-                        {summ.split('\n').map((point, index) => (
-                          <li key={index} className="flex items-start">
-                            <span className="text-blue-600 mr-2 mt-1">•</span>
-                            <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              );
-            })() : (
-              <div className="text-center py-12 text-gray-500">
-                <p>Complete the form to see your assessment results</p>
+                )}
+              </Card>
+            </div>
+
+            {/* New Contact Section */}
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Need Help with Your Credit Situation?</h3>
+                <p className="text-gray-600">If you are trying to get back on track or have questions around improving your credit situation, our experts are here to help.</p>
               </div>
-            )}
-          </Card>
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-center lg:gap-4">
+                <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                  Chat with Us
+                </a>
+                <button className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  Call Us: +91 93213 14553
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
