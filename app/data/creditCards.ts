@@ -849,7 +849,7 @@ Credit Score: 750+`,
       'international-lounge',
       'metal'
     ],
-    applyUrl: 'https://example.com/apply-idfc-mayura-metal',
+    applyUrl: 'https://wee.bnking.in/c/OTljNWRiZ',
     additionalDetails: {
       rewardsProgram: `Reward Points Earning Structure:
 • Base Rate: 1 Reward Point per ₹150 spent on:

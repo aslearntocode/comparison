@@ -205,6 +205,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '5 min read',
     link: '/learning-center/credit-cards/hdfc-rewards-redemption'
+  },
+  {
+    id: '25',
+    title: 'How to Redeem IDFC First Bank Credit Card Reward Points',
+    description: 'Learn how to redeem IDFC First Bank Credit Card Reward Points and make the most of your rewards.',
+    category: 'Credit Cards',
+    readTime: '5 min read',
+    link: '/learning-center/credit-cards/idfc-first-rewards-redemption'
   }
 ]
 
