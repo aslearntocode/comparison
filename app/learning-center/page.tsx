@@ -189,6 +189,22 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '5 min read',
     link: '/learning-center/credit-cards/axis-rewards-redemption'
+  },
+  {
+    id: '23',
+    title: 'Why a Secured Credit Card Can Be a Game Changer for Parents of College-Bound Kids',
+    description: 'Learn how secured credit cards can help college students build credit history, earn rewards, and develop financial discipline while giving parents peace of mind.',
+    category: 'Credit Cards',
+    readTime: '8 min read',
+    link: '/learning-center/credit-cards/secured-credit-card'
+  },
+  {
+    id: '24',
+    title: 'How to Redeem HDFC Bank Credit Card Reward Points',
+    description: 'Learn how to redeem HDFC Bank Credit Card Reward Points and make the most of your rewards.',
+    category: 'Credit Cards',
+    readTime: '5 min read',
+    link: '/learning-center/credit-cards/hdfc-rewards-redemption'
   }
 ]
 
