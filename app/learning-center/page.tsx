@@ -212,11 +212,44 @@ function LearningCenter() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
-  const categories = ['all', ...new Set(articles.map(article => article.category))]
+  // Custom order for categories
+  const customCategoryOrder = [
+    'all',
+    'Credit Cards',
+    'Personal Loans',
+    'Auto Loans',
+    'Home Loans',
+    'Fixed Deposits',
+    'Personal Finance'
+  ];
+  // Get unique categories from articles
+  const uniqueCategories = Array.from(new Set(articles.map(article => article.category)));
+  // Merge custom order with any extra categories
+  const categories = [
+    ...customCategoryOrder,
+    ...uniqueCategories.filter(cat => !customCategoryOrder.includes(cat))
+  ];
   
-  const filteredArticles = selectedCategory === 'all' 
-    ? articles 
+  const categoryOrder = [
+    'Credit Cards',
+    'Personal Loans',
+    'Auto Loans',
+    'Home Loans',
+    'Fixed Deposits',
+    'Personal Finance'
+  ];
+
+  // Sorting function for articles
+  const sortByCategoryOrder = (a: Article, b: Article) => {
+    const aIndex = categoryOrder.indexOf(a.category);
+    const bIndex = categoryOrder.indexOf(b.category);
+    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+  };
+
+  const filteredArticles = (selectedCategory === 'all'
+    ? articles
     : articles.filter(article => article.category === selectedCategory)
+  ).sort(sortByCategoryOrder);
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category)
