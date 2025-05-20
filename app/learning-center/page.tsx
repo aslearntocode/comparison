@@ -14,30 +14,30 @@ type Article = {
 }
 
 const articles: Article[] = [
-  {
-    id: '1',
-    title: "Understanding Mutual Funds: A Beginner's Guide",
-    description: "Learn the basics of mutual funds, how they work, and why they're a popular investment choice for both new and experienced investors.",
-    category: 'Mutual Funds',
-    readTime: '5 min read',
-    link: '/learning-center/mutual-funds/beginners-guide'
-  },
-  {
-    id: '2',
-    title: 'Types of Mutual Funds: Which One is Right for You?',
-    description: 'Explore different types of mutual funds and how to choose the best one for your investment goals. Compare options to make informed decisions.',
-    category: 'Mutual Funds',
-    readTime: '7 min read',
-    link: '/learning-center/mutual-funds/types'
-  },
-  {
-    id: '3',
-    title: 'Introduction to Stock Market Investing',
-    description: 'Get started with stock market basics, understanding indices, and fundamental analysis. Learn how to build a strong investment foundation.',
-    category: 'Equity',
-    readTime: '6 min read',
-    link: '/learning-center/equity/intro'
-  },
+  // {
+  //   id: '1',
+  //   title: "Understanding Mutual Funds: A Beginner's Guide",
+  //   description: "Learn the basics of mutual funds, how they work, and why they're a popular investment choice for both new and experienced investors.",
+  //   category: 'Mutual Funds',
+  //   readTime: '5 min read',
+  //   link: '/learning-center/mutual-funds/beginners-guide'
+  // },
+  // {
+  //   id: '2',
+  //   title: 'Types of Mutual Funds: Which One is Right for You?',
+  //   description: 'Explore different types of mutual funds and how to choose the best one for your investment goals. Compare options to make informed decisions.',
+  //   category: 'Mutual Funds',
+  //   readTime: '7 min read',
+  //   link: '/learning-center/mutual-funds/types'
+  // },
+  // {
+  //   id: '3',
+  //   title: 'Introduction to Stock Market Investing',
+  //   description: 'Get started with stock market basics, understanding indices, and fundamental analysis. Learn how to build a strong investment foundation.',
+  //   category: 'Equity',
+  //   readTime: '6 min read',
+  //   link: '/learning-center/equity/intro'
+  // },
   {
     id: '4',
     title: 'Fixed Deposits vs. Debt Funds',
@@ -46,22 +46,22 @@ const articles: Article[] = [
     readTime: '4 min read',
     link: '/learning-center/fixed-deposits/comparison'
   },
-  {
-    id: '5',
-    title: 'REITs: A Guide to Real Estate Investment Trusts',
-    description: 'Understand how REITs work, their benefits, and how to invest in them. Learn about this accessible way to invest in real estate markets.',
-    category: 'Real Estate',
-    readTime: '10 min read',
-    link: '/learning-center/real-estate/reits'
-  },
-  {
-    id: '6',
-    title: 'A Comprehensive Guide to REIT Investments in India',
-    description: 'Discover how to invest in Indian REITs, understand their structure, benefits, and risks. Learn about professional real estate investment options.',
-    category: 'Real Estate',
-    readTime: '8 min read',
-    link: '/learning-center/real-estate/reit-guide'
-  },
+  // {
+  //   id: '5',
+  //   title: 'REITs: A Guide to Real Estate Investment Trusts',
+  //   description: 'Understand how REITs work, their benefits, and how to invest in them. Learn about this accessible way to invest in real estate markets.',
+  //   category: 'Real Estate',
+  //   readTime: '10 min read',
+  //   link: '/learning-center/real-estate/reits'
+  // },
+  // {
+  //   id: '6',
+  //   title: 'A Comprehensive Guide to REIT Investments in India',
+  //   description: 'Discover how to invest in Indian REITs, understand their structure, benefits, and risks. Learn about professional real estate investment options.',
+  //   category: 'Real Estate',
+  //   readTime: '8 min read',
+  //   link: '/learning-center/real-estate/reit-guide'
+  // },
   {
     id: '7',
     title: 'Investment Options for Retail Investors in India',

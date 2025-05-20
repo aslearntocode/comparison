@@ -1929,7 +1929,7 @@ Net Annual Income: ₹60 lakhs and above`
     image: '/credit-cards/Amex-Centurion.png',
     apr: '42% p.a.',
     annualFee: '₹2,75,000 + GST',
-    joiningFee: '₹9,75,000 to ₹11,50,000 + GST',
+    joiningFee: '₹9,75,000 + GST',
     rupay: false,
     feedback: [],
     categories: [
@@ -2514,7 +2514,13 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
         'Budget-Conscious Users: Those who may not fully utilize the premium benefits relative to the annual fee.',
         'Reward Maximizers: Individuals seeking higher reward redemption values might find the ₹0.25 per point valuation less appealing.'
       ],
-      eligibilityCriteria: `Age: Minimum 18 years.\nIncome: While specific income criteria aren't publicly disclosed, the card targets individuals with higher income brackets, given its premium nature.\nCredit Score: A good credit history is essential, typically with a credit score of 750 or higher.\nResidency: Indian residents.`
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 60 years
+Net Annual Income: ₹12 lakhs and above
+Self-Employed Individuals:
+Age: 21 to 60 years
+Net Annual Income: ₹12 lakhs and above (supported by ITR)
+Credit Score: 750 or above (good to excellent)`
     }
   },
   {
