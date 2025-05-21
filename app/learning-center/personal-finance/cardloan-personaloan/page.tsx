@@ -24,8 +24,8 @@ export default function CardLoanVsPersonalLoan() {
           "url": "https://financialhealth.co.in/Logo_Final3.jpeg"
         }
       },
-      "datePublished": "2025-02-24",
-      "dateModified": "2025-02-24",
+      "datePublished": "2025-05-20",
+      "dateModified": "2025-05-20",
       "image": "https://financialhealth.co.in/CardLoanVsPersonalLoan.png",
       "articleSection": "Personal Finance",
       "url": "https://financialhealth.co.in/learning-center/personal-finance/cardloan-personaloan",

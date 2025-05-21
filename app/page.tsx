@@ -82,6 +82,7 @@ export default function Home() {
   const [touchEnd, setTouchEnd] = useState(0)
   const [touchMoved, setTouchMoved] = useState(false)
   const [isSwiping, setIsSwiping] = useState(false)
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   const testimonials = [
     {
@@ -502,6 +503,63 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
+      {/* Floating Info Cards */}
+      <div className="fixed right-4 top-52 md:top-44 z-50 flex flex-col gap-4">
+        {/* Amazon Voucher Card */}
+        <div 
+          className={`bg-white rounded-lg shadow-lg transition-all duration-300 overflow-hidden absolute right-0 ${
+            expandedCard === 'voucher' ? 'w-80 md:w-96' : 'w-12 md:w-14'
+          }`}
+          style={{ top: '0' }}
+        >
+          <div 
+            className="flex items-center p-3 md:p-4 cursor-pointer"
+            onClick={() => setExpandedCard(expandedCard === 'voucher' ? null : 'voucher')}
+          >
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            {expandedCard === 'voucher' && (
+              <div className="ml-3 md:ml-4">
+                <h3 className="text-sm md:text-base font-semibold text-gray-900">Amazon Voucher Reward</h3>
+                <p className="text-xs md:text-sm text-gray-600 mt-1">
+                  Amazon vouchers will be sent to your registered email within one week of credit card approval.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Soft Pull Card */}
+        <div 
+          className={`bg-white rounded-lg shadow-lg transition-all duration-300 overflow-hidden absolute right-0 ${
+            expandedCard === 'softpull' ? 'w-80 md:w-96' : 'w-12 md:w-14'
+          }`}
+          style={{ top: '7rem' }}
+        >
+          <div 
+            className="flex items-center p-3 md:p-4 cursor-pointer"
+            onClick={() => setExpandedCard(expandedCard === 'softpull' ? null : 'softpull')}
+          >
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            {expandedCard === 'softpull' && (
+              <div className="ml-3 md:ml-4">
+                <h3 className="text-sm md:text-base font-semibold text-gray-900">Soft Pull Check</h3>
+                <p className="text-xs md:text-sm text-gray-600 mt-1">
+                  We perform a soft pull to assess your eligibility. This check doesn't impact your credit score.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* Privacy Notice Banner */}
       <div className="bg-blue-600 text-white overflow-hidden">
         <div className="relative flex">
