@@ -118,8 +118,7 @@ Income: ITR > ₹15 lakhs/annum`
     feedback: [],
     categories: [
       'premium',
-      'travel',
-      'lifestyle'
+      'travel'
     ],
     applyUrl: 'https://example.com/apply-hdfc-regalia',
     additionalDetails: {
@@ -1607,7 +1606,7 @@ Income: ITR > ₹6 lakhs/annum`
     joiningFee: '₹0',
     rupay: true,
     feedback: [],
-    categories: ['secured', 'lifetime-free'],
+    categories: ['secured'],
     applyUrl: 'https://example.com/apply-kotak-811-dream-different',
     additionalDetails: {
       rewardsProgram: `Earning Rate:

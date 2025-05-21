@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 import { Button } from '@/components/ui/button'
 import { signOut } from 'firebase/auth'
+import { FiCreditCard, FiGift, FiDollarSign, FiDroplet, FiGlobe, FiTrendingUp, FiHome, FiBriefcase, FiAirplay, FiLayers, FiCreditCard as FiCard } from 'react-icons/fi'
 
 // Initialize Supabase client
 const supabaseClient = createClient(
@@ -286,134 +287,79 @@ export default function Header() {
                 </div>
                 <div 
                   className={`
-                    fixed w-64 bg-white rounded-lg shadow-lg py-2
+                    fixed w-[40rem] bg-white rounded-lg shadow-lg py-6 px-6
                     ${isCreditDropdownOpen ? 'block' : 'hidden'}
                   `}
                   style={{
                     zIndex: 1000,
                     top: '4rem',
-                    left: '28rem'
+                    left: '20rem'
                   }}
                 >
-                  <Link 
-                    href="/credit" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">All</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=ultra-premium" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Ultra Premium</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=premium" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Premium</span>
-                  </Link>
-                  {/* <Link 
-                    href="/credit?category=rewards" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Rewards</span>
-                  </Link> */}
-                  <Link 
-                    href="/credit?category=cashback" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Cash Back</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=lifestyle" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Lifestyle</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=fuel" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Fuel</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=lifetime-free" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Lifetime Free</span>
-                  </Link>
-                  {/* <Link 
-                    href="/credit?category=forex" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Forex</span>
-                  </Link> */}
-                  <Link 
-                    href="/credit?category=upi" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">UPI</span>
-                  </Link>
-                  {/* <Link 
-                    href="/credit?category=emi" 
-                    className="flex items-center px-4 py-3 text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">EMI</span>
-                  </Link> */}
-                  <Link 
-                    href="/credit?category=domestic-lounge" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Domestic Lounge</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=international-lounge" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">International Lounge</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=fintech" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Fintech</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=airlines"
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Airlines</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=hotels" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Hotels</span>
-                  </Link>
-                  <Link 
-                    href="/credit?category=secured" 
-                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
-                    onClick={() => setIsCreditDropdownOpen(false)}
-                  >
-                    <span className="ml-3">Secured (backed by FD)</span>
-                  </Link>
+                  <div className="flex gap-x-12">
+                    {/* Left column */}
+                    <div className="flex flex-col gap-y-4 w-1/2">
+                      <Link href="/credit" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiCreditCard className="text-blue-600 w-5 h-5" />
+                        <span>All</span>
+                      </Link>
+                      <Link href="/credit?category=ultra-premium" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiGift className="text-blue-600 w-5 h-5" />
+                        <span>Ultra Premium</span>
+                      </Link>
+                      <Link href="/credit?category=premium" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiDollarSign className="text-blue-600 w-5 h-5" />
+                        <span>Premium</span>
+                      </Link>
+                      <Link href="/credit?category=cashback" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiDollarSign className="text-blue-600 w-5 h-5" />
+                        <span>Cash Back</span>
+                      </Link>
+                      <Link href="/credit?category=lifestyle" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiHome className="text-blue-600 w-5 h-5" />
+                        <span>Lifestyle</span>
+                      </Link>
+                      <Link href="/credit?category=fuel" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiDroplet className="text-blue-600 w-5 h-5" />
+                        <span>Fuel</span>
+                      </Link>
+                      <Link href="/credit?category=lifetime-free" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiTrendingUp className="text-blue-600 w-5 h-5" />
+                        <span>Lifetime Free</span>
+                      </Link>
+                    </div>
+                    {/* Right column */}
+                    <div className="flex flex-col gap-y-4 w-1/2">
+                      <Link href="/credit?category=upi" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiBriefcase className="text-blue-600 w-5 h-5" />
+                        <span>UPI</span>
+                      </Link>
+                      <Link href="/credit?category=domestic-lounge" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiAirplay className="text-blue-600 w-5 h-5" />
+                        <span>Domestic Lounge</span>
+                      </Link>
+                      <Link href="/credit?category=international-lounge" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiGlobe className="text-blue-600 w-5 h-5" />
+                        <span>International Lounge</span>
+                      </Link>
+                      <Link href="/credit?category=fintech" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiCard className="text-blue-600 w-5 h-5" />
+                        <span>Fintech</span>
+                      </Link>
+                      <Link href="/credit?category=airlines" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiGlobe className="text-blue-600 w-5 h-5" />
+                        <span>Airlines</span>
+                      </Link>
+                      <Link href="/credit?category=hotels" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiLayers className="text-blue-600 w-5 h-5" />
+                        <span>Hotels</span>
+                      </Link>
+                      <Link href="/credit?category=secured" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiCard className="text-blue-600 w-5 h-5" />
+                        <span>Secured (backed by FD)</span>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* Commenting out Investments section
