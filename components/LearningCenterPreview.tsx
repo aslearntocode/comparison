@@ -79,8 +79,8 @@ const LearningCenterPreview = () => {
                           <span className="text-xs uppercase tracking-wider" style={{letterSpacing:'0.05em'}}>{month}</span>
                         </div>
                         {/* Icon as background */}
-                        <div className="h-40 w-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
-                          <span className="text-7xl drop-shadow-lg">{article.icon}</span>
+                        <div className="h-56 w-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
+                          <span className="text-9xl drop-shadow-lg">{article.icon}</span>
                         </div>
                         <div className="p-5 flex flex-col h-full">
                           <div className="flex items-center gap-2 mb-2">
@@ -132,8 +132,8 @@ const LearningCenterPreview = () => {
                     <span className="text-xs uppercase tracking-wider" style={{letterSpacing:'0.05em'}}>{month}</span>
                   </div>
                   {/* Icon as background */}
-                  <div className="h-40 w-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
-                    <span className="text-7xl drop-shadow-lg">{article.icon}</span>
+                  <div className="h-56 w-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center">
+                    <span className="text-9xl drop-shadow-lg">{article.icon}</span>
                   </div>
                   <div className="p-5 flex flex-col h-full">
                     <div className="flex items-center gap-2 mb-2">

@@ -221,6 +221,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/credit-cards/hdfc-indigo-card'
+  },
+  {
+    id: '27',
+    title: 'Credit Card Loans vs Personal Loans: Which One Should You Choose?',
+    description: 'Learn about the differences between credit card loans and personal loans and which one is right for you.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/personal-finance/cardloan-personaloan'
   }
 ]
 
