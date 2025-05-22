@@ -537,7 +537,7 @@ export default function Home() {
           className={`bg-white rounded-lg shadow-lg transition-all duration-300 overflow-hidden absolute right-0 ${
             expandedCard === 'softpull' ? 'w-80 md:w-96' : 'w-12 md:w-14'
           }`}
-          style={{ top: '7rem' }}
+          style={{ top: '5rem' }}
         >
           <div 
             className="flex items-center p-3 md:p-4 cursor-pointer"
@@ -578,7 +578,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="text-base md:text-lg font-medium">
-                Apply through us and get INR 100-250 reward on successful application! &nbsp;&nbsp;&nbsp;
+                Apply through us and get INR 100-1000 reward on successful application! &nbsp;&nbsp;&nbsp;
               </span>
             </span>
             {/* Second set */}
@@ -595,7 +595,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="text-base md:text-lg font-medium">
-                Apply through us and get INR 100-250 reward on successful application! &nbsp;&nbsp;&nbsp;
+                Apply through us and get INR 100-1000 reward on successful application! &nbsp;&nbsp;&nbsp;
               </span>
             </span>
             {/* Third set */}
@@ -612,7 +612,7 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="text-base md:text-lg font-medium">
-                Apply through us and get INR 100-250 reward on successful application! &nbsp;&nbsp;&nbsp;
+                Apply through us and get INR 100-1000 reward on successful application! &nbsp;&nbsp;&nbsp;
               </span>
             </span>
           </div>
