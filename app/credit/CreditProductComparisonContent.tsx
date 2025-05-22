@@ -610,7 +610,7 @@ function CreditProductComparisonContent() {
   )
 }
 
-export default function CreditProductComparison() {
+export default function CreditProductComparisonContentWrapper() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <CreditProductComparisonContent />

@@ -301,7 +301,7 @@ export default function Header() {
                     <div className="flex flex-col gap-y-4 w-1/2">
                       <Link href="/credit" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
                         <FiCreditCard className="text-blue-600 w-5 h-5" />
-                        <span>All</span>
+                        <span>All (Search by Lenders)</span>
                       </Link>
                       <Link href="/credit?category=ultra-premium" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
                         <FiGift className="text-blue-600 w-5 h-5" />
@@ -662,7 +662,7 @@ export default function Header() {
                     className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
-                    All
+                    All (Search by Lenders)
                   </Link>
                   <Link 
                     href="/credit?category=ultra-premium" 

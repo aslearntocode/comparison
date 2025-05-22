@@ -6,8 +6,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import { useState } from 'react'
+import { Suspense } from 'react'
 
-export default function ComparePageContent() {
+function ComparePageContent() {
   const searchParams = useSearchParams()
   const selectedCardIds = searchParams.get('cards')?.split(',') || []
   const selectedCards = creditCards.filter(card => selectedCardIds.includes(card.id))
@@ -372,5 +373,13 @@ export default function ComparePageContent() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ComparePageContentWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ComparePageContent />
+    </Suspense>
   )
 } 

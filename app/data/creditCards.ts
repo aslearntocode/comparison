@@ -2696,18 +2696,3 @@ Income: ITR > ₹12 lakhs/annum`
     }
   }
 ]; 
-
-// Sync fees whenever this file is modified
-if (typeof window === 'undefined') {
-  // Only run on server side
-  fetch('/api/sync-fees', { method: 'POST' })
-    .then(response => response.json())
-    .then(data => {
-      if (!data.success) {
-        console.error('Failed to sync fees:', data.error);
-      }
-    })
-    .catch(error => {
-      console.error('Error syncing fees:', error);
-    });
-}

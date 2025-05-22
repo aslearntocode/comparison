@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import Header from "@/components/Header"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -77,7 +77,15 @@ const lenders: Lender[] = [
   }
 ]
 
-export default function PersonalLoans() {
+export default function PersonalLoansPageWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PersonalLoans />
+    </Suspense>
+  )
+}
+
+function PersonalLoans() {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false)
   const [eligibilityMessage, setEligibilityMessage] = useState<React.ReactNode>(null)
   const router = useRouter()
