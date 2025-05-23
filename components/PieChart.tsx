@@ -54,15 +54,15 @@ export const PieChart: React.FC<PieChartProps> = ({ data }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[470px] h-[470px]">
+      <div className="w-[400px] h-[400px]">
         <ResponsiveContainer width="100%" height="100%">
           <RechartsPieChart>
             <Pie
               data={data}
               cx="50%"
               cy="50%"
-              innerRadius={70}
-              outerRadius={156}
+              innerRadius={60}
+              outerRadius={130}
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
@@ -78,7 +78,7 @@ export const PieChart: React.FC<PieChartProps> = ({ data }) => {
               layout="horizontal"
               align="center"
               verticalAlign="bottom"
-              wrapperStyle={{ paddingTop: '40px' }}
+              wrapperStyle={{ paddingTop: '30px' }}
             />
           </RechartsPieChart>
         </ResponsiveContainer>

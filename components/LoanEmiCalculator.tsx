@@ -3,10 +3,10 @@ import { PieChart } from './PieChart';
 
 const minAmount = 0;
 const maxAmount = 5000000;
-const minRate = 10;
-const maxRate = 30;
+const minRate = 0.1;
+const maxRate = 100;
 const minTenure = 3;
-const maxTenure = 60;
+const maxTenure = 360;
 
 function calculateEmi(P: number, R: number, N: number) {
   const r = R / 12 / 100;
@@ -23,11 +23,13 @@ export default function LoanEmiCalculator() {
   const [amountInput, setAmountInput] = useState('400000');
   const [rate, setRate] = useState(18);
   const [tenure, setTenure] = useState(18);
+  const [tenureInput, setTenureInput] = useState('18');
+  const [tenureError, setTenureError] = useState('');
 
   // Guard against NaN or empty values
   const safeAmount = Number.isFinite(amount) && amount > 0 ? amount : 0;
   const safeRate = Number.isFinite(rate) && rate > 0 ? rate : 0;
-  const safeTenure = Number.isFinite(tenure) && tenure > 0 ? tenure : 1;
+  const safeTenure = Number.isFinite(tenure) && tenure >= minTenure ? tenure : 0;
   const emi = safeAmount && safeRate && safeTenure ? Math.round(calculateEmi(safeAmount, safeRate, safeTenure)) : 0;
   const totalPayment = emi * safeTenure;
   const totalInterest = totalPayment - safeAmount;
@@ -72,8 +74,7 @@ export default function LoanEmiCalculator() {
                           }
                           const raw = Number(rawStr);
                           if (isNaN(raw)) return;
-                          const snapped = Math.round(raw / 500000) * 500000;
-                          setAmount(Math.max(minAmount, Math.min(maxAmount, snapped)));
+                          setAmount(Math.max(minAmount, Math.min(maxAmount, raw)));
                         }
                       }
                     : { defaultValue: '400000' }
@@ -87,15 +88,19 @@ export default function LoanEmiCalculator() {
               <div className="flex items-center mb-1 md:mb-2">
                 <span className="bg-yellow-400 text-white px-2 md:px-3 py-1 rounded-l text-base md:text-lg font-bold">%</span>
                 <input
-                  type="number"
-                  min={minRate}
-                  max={maxRate}
+                  type="text"
+                  inputMode="decimal"
+                  placeholder="Enter interest rate"
                   {...(mounted
                     ? {
                         value: rate ?? '',
                         onChange: e => {
-                          const val = Number(e.target.value);
-                          setRate(Number.isFinite(val) ? Math.max(minRate, Math.min(maxRate, val)) : minRate);
+                          const val = parseFloat(e.target.value);
+                          if (isNaN(val)) {
+                            setRate(0);
+                            return;
+                          }
+                          setRate(Math.max(minRate, Math.min(maxRate, val)));
                         }
                       }
                     : { defaultValue: '18' }
@@ -109,22 +114,47 @@ export default function LoanEmiCalculator() {
               <div className="flex items-center mb-1 md:mb-2">
                 <span className="bg-yellow-400 text-white px-2 md:px-3 py-1 rounded-l text-base md:text-lg font-bold">Months</span>
                 <input
-                  type="number"
-                  min={minTenure}
-                  max={maxTenure}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="Enter tenure in months"
                   {...(mounted
                     ? {
-                        value: tenure ?? '',
+                        value: tenureInput,
                         onChange: e => {
-                          const val = Number(e.target.value);
-                          setTenure(Number.isFinite(val) ? Math.max(minTenure, Math.min(maxTenure, val)) : minTenure);
+                          const val = e.target.value;
+                          setTenureInput(val);
+                          
+                          if (val === '') {
+                            setTenure(0);
+                            setTenureError('');
+                            return;
+                          }
+
+                          const numVal = parseInt(val);
+                          if (isNaN(numVal)) {
+                            setTenure(0);
+                            setTenureError('');
+                            return;
+                          }
+
+                          if (numVal < minTenure) {
+                            setTenureError(`Minimum tenure is ${minTenure} months`);
+                            setTenure(0);
+                          } else {
+                            setTenureError('');
+                            setTenure(Math.min(maxTenure, numVal));
+                          }
                         }
                       }
                     : { defaultValue: '18' }
                   )}
-                  className="w-full p-1.5 md:p-2 border-t border-b border-r rounded-r text-base md:text-lg font-semibold focus:outline-none"
+                  className={`w-full p-1.5 md:p-2 border-t border-b border-r rounded-r text-base md:text-lg font-semibold focus:outline-none ${tenureError ? 'border-red-500' : ''}`}
                 />
               </div>
+              {tenureError && (
+                <p className="text-red-500 text-sm mt-1">{tenureError}</p>
+              )}
             </div>
           </div>
         </div>
