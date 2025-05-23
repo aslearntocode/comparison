@@ -456,7 +456,9 @@ function PersonalLoans() {
         <section className="py-16" ref={lendersRef} id="lenders-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-2">Lending Partners</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+                <span className="text-purple-700 font-extrabold">Lending</span> Partners
+              </h2>
               <p className="text-center text-base md:text-lg text-gray-700">We have partnered with lenders to get the best offers for our customers.</p>
             </div>
             {/* Desktop: Table style */}
