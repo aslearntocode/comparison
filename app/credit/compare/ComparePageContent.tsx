@@ -220,6 +220,9 @@ function ComparePageContent() {
                             alt={card.name}
                             height={72}
                             width={45}
+                            sizes="(max-width: 768px) 45px, 45px"
+                            quality={75}
+                            loading="lazy"
                             className="object-contain h-20 w-auto md:h-36"
                           />
                         </div>

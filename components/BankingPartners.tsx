@@ -86,6 +86,9 @@ export default function BankingPartners() {
                   src={partner.logo}
                   alt={partner.alt}
                   fill
+                  sizes="(max-width: 768px) 144px, 144px"
+                  quality={75}
+                  loading="lazy"
                   style={{ objectFit: 'contain' }}
                   className="transition-all duration-200"
                 />

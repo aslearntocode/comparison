@@ -22,6 +22,7 @@ export default function LoanEmiCalculator() {
   const [amount, setAmount] = useState(400000);
   const [amountInput, setAmountInput] = useState('400000');
   const [rate, setRate] = useState(18);
+  const [rateInput, setRateInput] = useState('18');
   const [tenure, setTenure] = useState(18);
   const [tenureInput, setTenureInput] = useState('18');
   const [tenureError, setTenureError] = useState('');
@@ -93,14 +94,22 @@ export default function LoanEmiCalculator() {
                   placeholder="Enter interest rate"
                   {...(mounted
                     ? {
-                        value: rate ?? '',
+                        value: rateInput,
                         onChange: e => {
-                          const val = parseFloat(e.target.value);
-                          if (isNaN(val)) {
+                          const val = e.target.value;
+                          setRateInput(val);
+                          
+                          if (val === '') {
                             setRate(0);
                             return;
                           }
-                          setRate(Math.max(minRate, Math.min(maxRate, val)));
+
+                          const numVal = parseFloat(val);
+                          if (!isNaN(numVal)) {
+                            if (numVal >= minRate && numVal <= maxRate) {
+                              setRate(numVal);
+                            }
+                          }
                         }
                       }
                     : { defaultValue: '18' }
