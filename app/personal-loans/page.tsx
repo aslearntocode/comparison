@@ -111,7 +111,8 @@ function PersonalLoans() {
     existingLoans: '',
     currentEmi: '',
     loanAmount: '',
-    loanTenure: ''
+    loanTenure: '',
+    pincode: ''
   })
 
   const resetForm = () => {
@@ -122,7 +123,8 @@ function PersonalLoans() {
       existingLoans: '',
       currentEmi: '',
       loanAmount: '',
-      loanTenure: ''
+      loanTenure: '',
+      pincode: ''
     })
   }
 
@@ -230,28 +232,30 @@ function PersonalLoans() {
         </section>
 
         {/* Sticky Navigation Slider/Tab Bar below hero section - now a direct child of <main> */}
-        <div ref={sliderRef} className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
-          <div className="flex w-full rounded-none bg-white">
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(eligibilityRef as React.RefObject<HTMLDivElement>)}
-            >
-              Eligibility Check
-            </button>
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(calculatorRef as React.RefObject<HTMLDivElement>)}
-            >
-              EMI Calculator
-            </button>
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(lendersRef as React.RefObject<HTMLDivElement>)}
-            >
-              Lending Partners
-            </button>
+        {!eligible && (
+          <div ref={sliderRef} className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
+            <div className="flex w-full rounded-none bg-white">
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(eligibilityRef as React.RefObject<HTMLDivElement>)}
+              >
+                Eligibility Check
+              </button>
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(calculatorRef as React.RefObject<HTMLDivElement>)}
+              >
+                EMI Calculator
+              </button>
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(lendersRef as React.RefObject<HTMLDivElement>)}
+              >
+                Lending Partners
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Eligibility Message */}
         {eligibilityMessage && (
@@ -275,159 +279,179 @@ function PersonalLoans() {
         )}
 
         {/* Eligibility Check Section (visible, not just dialog) */}
-        <section ref={eligibilityRef} id="eligibility-section" className="my-12">
-          <div className="md:grid md:grid-cols-2 md:gap-8 md:items-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-0 md:p-8">
-            {/* Mobile: Heading and offer above form */}
-            <div className="block md:hidden px-0 pt-4 pb-2">
-              <div className="text-xl font-bold text-blue-900 leading-tight mb-2 text-center max-w-full px-2">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-              <div className="flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-xl px-3 py-2 shadow-sm mx-auto mb-2 max-w-sm w-full">
-                <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6 text-yellow-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
-                <span className="font-semibold text-yellow-800 text-sm">On every successful application, customers will earn <span className="text-yellow-900">Amazon vouchers worth INR 500 to 1000</span>.</span>
-              </div>
-            </div>
-            {/* Left: Headline, subheadline, offer (desktop only) */}
-            <div className="hidden md:flex flex-col gap-6 pl-8 justify-start self-start mt-0">
-              <div>
-                <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
-                <div className="text-3xl font-bold text-blue-900 leading-tight mb-4">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-                <div className="text-base text-gray-700 mb-4 max-w-md">Get personal loans with fast disbursal directly into your bank account. Enjoy a hassle-free online process with minimal documentation!</div>
-              </div>
-              <div className="mt-2">
-                <div className="flex items-center gap-3 px-4 py-4 rounded-2xl max-w-xs shadow-2xl border-0"
-                  style={{
-                    background: 'linear-gradient(120deg, #fceabb 0%, #f8b500 100%)',
-                    transform: 'rotate(-4deg)',
-                    boxShadow: '0 8px 32px 0 rgba(255, 193, 7, 0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10)'
-                  }}>
-                  <svg xmlns='http://www.w3.org/2000/svg' className='h-8 w-8 text-yellow-700 drop-shadow' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
-                  <span className="font-bold text-yellow-900 text-lg drop-shadow-sm">On every successful application, customers will earn <span className="text-white bg-yellow-700 px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1000</span>.</span>
+        {!eligible && (
+          <section ref={eligibilityRef} id="eligibility-section" className="my-12">
+            <div className="md:grid md:grid-cols-2 md:gap-8 md:items-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-0 md:p-8">
+              {/* Mobile: Heading and offer above form */}
+              <div className="block md:hidden px-0 pt-4 pb-2">
+                <div className="text-xl font-bold text-blue-900 leading-tight mb-2 text-center max-w-full px-2">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
+                <div className="flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-xl px-3 py-2 shadow-sm mx-auto mb-2 max-w-sm w-full">
+                  <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6 text-yellow-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
+                  <span className="font-semibold text-yellow-800 text-sm">On every successful application, customers will earn <span className="text-yellow-900">Amazon vouchers worth INR 500 to 1000</span>.</span>
                 </div>
               </div>
+              {/* Left: Headline, subheadline, offer (desktop only) */}
+              <div className="hidden md:flex flex-col gap-6 pl-8 justify-start self-start mt-0">
+                <div>
+                  <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
+                  <div className="text-3xl font-bold text-blue-900 leading-tight mb-4">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
+                  <div className="text-base text-gray-700 mb-4 max-w-md">Get personal loans with fast disbursal directly into your bank account. Enjoy a hassle-free online process with minimal documentation!</div>
+                </div>
+                <div className="mt-2">
+                  <div className="flex items-center gap-3 px-4 py-4 rounded-2xl max-w-xs shadow-2xl border-0"
+                    style={{
+                      background: 'linear-gradient(120deg, #fceabb 0%, #f8b500 100%)',
+                      transform: 'rotate(-4deg)',
+                      boxShadow: '0 8px 32px 0 rgba(255, 193, 7, 0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10)'
+                    }}>
+                    <svg xmlns='http://www.w3.org/2000/svg' className='h-8 w-8 text-yellow-700 drop-shadow' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
+                    <span className="font-bold text-yellow-900 text-lg drop-shadow-sm">On every successful application, customers will earn <span className="text-white bg-yellow-700 px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1000</span>.</span>
+                  </div>
+                </div>
+              </div>
+              {/* Right: Form card (always visible, but styled as card on desktop) */}
+              <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 md:max-w-2xl w-full mx-auto">
+                <h2 className="text-2xl font-bold mb-6 text-center text-green-700">Get Started</h2>
+                <form onSubmit={handleSubmit}>
+                  <div className="grid gap-4 py-2 md:grid-cols-2">
+                    <div className="grid gap-2">
+                      <Label htmlFor="monthlyIncome">Monthly Income</Label>
+                      <Input
+                        id="monthlyIncome"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Enter your monthly income"
+                        value={formData.monthlyIncome}
+                        onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="employmentType">Employment Type</Label>
+                      <Select
+                        value={formData.employmentType}
+                        onValueChange={(value) => handleInputChange('employmentType', value)}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select employment type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="salaried">Salaried</SelectItem>
+                          <SelectItem value="self-employed">Self Employed</SelectItem>
+                          <SelectItem value="business">Business</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="pincode">Pincode</Label>
+                      <Input
+                        id="pincode"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        maxLength={6}
+                        placeholder="Enter your pincode"
+                        value={formData.pincode}
+                        onChange={(e) => handleInputChange('pincode', e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="creditScore">Credit Score</Label>
+                      <Input
+                        id="creditScore"
+                        type="number"
+                        placeholder="Enter your credit score"
+                        value={formData.creditScore}
+                        onChange={(e) => handleInputChange('creditScore', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="existingLoans">Existing Loans</Label>
+                      <Select
+                        value={formData.existingLoans}
+                        onValueChange={(value) => handleInputChange('existingLoans', value)}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select number of existing loans" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="0">None</SelectItem>
+                          <SelectItem value="1">1</SelectItem>
+                          <SelectItem value="2">2</SelectItem>
+                          <SelectItem value="3+">3 or more</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="currentEmi">Current Monthly Loan EMI (including mortgage EMI)</Label>
+                      <Input
+                        id="currentEmi"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Enter your current monthly EMI"
+                        value={formData.currentEmi || ''}
+                        onChange={(e) => handleInputChange('currentEmi', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="loanAmount">Desired Loan Amount</Label>
+                      <Input
+                        id="loanAmount"
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Enter desired loan amount"
+                        value={formData.loanAmount}
+                        onChange={(e) => handleInputChange('loanAmount', e.target.value)}
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor="loanTenure">Desired Loan Tenure (months)</Label>
+                      <Input
+                        id="loanTenure"
+                        type="number"
+                        placeholder="Enter desired tenure in months"
+                        value={formData.loanTenure}
+                        onChange={(e) => handleInputChange('loanTenure', e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2 mb-4">
+                    <input type="checkbox" id="terms" required className="accent-green-600 w-4 h-4" />
+                    <label htmlFor="terms" className="text-sm text-gray-700">I accept the <a href="#" className="text-green-700 underline">terms and conditions</a></label>
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">Check Eligibility</Button>
+                  </DialogFooter>
+                </form>
+                {/* Show eligibility message if present */}
+                {eligibilityMessage && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 mt-6">
+                    {eligibilityMessage}
+                  </div>
+                )}
+              </div>
             </div>
-            {/* Right: Form card (always visible, but styled as card on desktop) */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 md:max-w-2xl w-full mx-auto">
-              <h2 className="text-2xl font-bold mb-6 text-center text-green-700">Get Started</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="grid gap-4 py-2 md:grid-cols-2">
-                  <div className="grid gap-2">
-                    <Label htmlFor="monthlyIncome">Monthly Income</Label>
-                    <Input
-                      id="monthlyIncome"
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      placeholder="Enter your monthly income"
-                      value={formData.monthlyIncome}
-                      onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="employmentType">Employment Type</Label>
-                    <Select
-                      value={formData.employmentType}
-                      onValueChange={(value) => handleInputChange('employmentType', value)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select employment type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="salaried">Salaried</SelectItem>
-                        <SelectItem value="self-employed">Self Employed</SelectItem>
-                        <SelectItem value="business">Business</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="creditScore">Credit Score</Label>
-                    <Input
-                      id="creditScore"
-                      type="number"
-                      placeholder="Enter your credit score"
-                      value={formData.creditScore}
-                      onChange={(e) => handleInputChange('creditScore', e.target.value)}
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="existingLoans">Existing Loans</Label>
-                    <Select
-                      value={formData.existingLoans}
-                      onValueChange={(value) => handleInputChange('existingLoans', value)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select number of existing loans" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0">None</SelectItem>
-                        <SelectItem value="1">1</SelectItem>
-                        <SelectItem value="2">2</SelectItem>
-                        <SelectItem value="3+">3 or more</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="currentEmi">Current Monthly Loan EMI (including mortgage EMI)</Label>
-                    <Input
-                      id="currentEmi"
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      placeholder="Enter your current monthly EMI"
-                      value={formData.currentEmi || ''}
-                      onChange={(e) => handleInputChange('currentEmi', e.target.value)}
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="loanAmount">Desired Loan Amount</Label>
-                    <Input
-                      id="loanAmount"
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      placeholder="Enter desired loan amount"
-                      value={formData.loanAmount}
-                      onChange={(e) => handleInputChange('loanAmount', e.target.value)}
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="loanTenure">Desired Loan Tenure (months)</Label>
-                    <Input
-                      id="loanTenure"
-                      type="number"
-                      placeholder="Enter desired tenure in months"
-                      value={formData.loanTenure}
-                      onChange={(e) => handleInputChange('loanTenure', e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 mt-2 mb-4">
-                  <input type="checkbox" id="terms" required className="accent-green-600 w-4 h-4" />
-                  <label htmlFor="terms" className="text-sm text-gray-700">I accept the <a href="#" className="text-green-700 underline">terms and conditions</a></label>
-                </div>
-                <DialogFooter>
-                  <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">Check Eligibility</Button>
-                </DialogFooter>
-              </form>
-              {/* Show eligibility message if present */}
-              {eligibilityMessage && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 mt-6">
-                  {eligibilityMessage}
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
+
         {/* Personal Loan EMI Calculator Section */}
-        <div ref={calculatorRef} id="emi-calculator-section">
-          <div className="max-w-4xl mx-auto px-4 pt-4 pb-0">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
-              <span className="text-purple-700 font-extrabold">EMI</span> Calculator
-            </h2>
-            <p className="text-center text-base md:text-lg text-black mb-0">
-              You can calculate your monthly loan payment (EMI) in just 3 easy steps! Enter the loan amount, interest rate, and loan term. See how these factors impact your EMI.
-            </p>
+        {!eligible && (
+          <div ref={calculatorRef} id="emi-calculator-section">
+            <div className="max-w-4xl mx-auto px-4 pt-4 pb-0">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
+                <span className="text-purple-700 font-extrabold">EMI</span> Calculator
+              </h2>
+              <p className="text-center text-base md:text-lg text-black mb-0">
+                You can calculate your monthly loan payment (EMI) in just 3 easy steps! Enter the loan amount, interest rate, and loan term. See how these factors impact your EMI.
+              </p>
+            </div>
+            <LoanEmiCalculator />
           </div>
-          <LoanEmiCalculator />
-        </div>
+        )}
+
         {/* Lenders Section */}
         <section className="py-16" ref={lendersRef} id="lenders-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
