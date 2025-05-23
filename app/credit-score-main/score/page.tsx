@@ -270,7 +270,7 @@ export default function CreditScorePage() {
           <div className="mx-auto mb-10 flex justify-center">
             <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
           </div>
-          <p className="text-lg text-gray-600 mb-4 text-center">
+          <p className="text-lg text-gray-600 mb-2 text-center">
             Your credit score is a three-digit number that represents your creditworthiness. It helps lenders determine how likely you are to repay your debts on time.
           </p>
           <p className="text-lg text-gray-600 text-center">

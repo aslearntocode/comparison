@@ -12,6 +12,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import Link from "next/link"
 import { checkEligibility } from '@/app/utils/eligibility'
 import LoanEmiCalculator from '@/components/LoanEmiCalculator'
+import { auth } from '@/lib/firebase'
 
 interface Lender {
   id: number
@@ -137,6 +138,13 @@ function PersonalLoans() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    const user = auth.currentUser;
+    if (!user) {
+      const currentPath = encodeURIComponent('/personal-loans');
+      router.push(`/login?redirect=${currentPath}`);
+      return;
+    }
     
     // Convert string inputs to numbers
     const monthlyIncome = parseInt(formData.monthlyIncome.replace(/,/g, '')) || 0
@@ -295,7 +303,7 @@ function PersonalLoans() {
                 <div>
                   <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
                   <div className="text-3xl font-bold text-blue-900 leading-tight mb-4">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-                  <div className="text-base text-gray-700 mb-4 max-w-md">Get personal loans with fast disbursal directly into your bank account. Enjoy a hassle-free online process with minimal documentation!</div>
+                  <div className="text-base text-gray-700 mb-4 max-w-md">Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.</div>
                 </div>
                 <div className="mt-2">
                   <div className="flex items-center gap-3 px-4 py-4 rounded-2xl max-w-xs shadow-2xl border-0"
@@ -312,7 +320,13 @@ function PersonalLoans() {
               {/* Right: Form card (always visible, but styled as card on desktop) */}
               <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 md:max-w-2xl w-full mx-auto">
                 <h2 className="text-2xl font-bold mb-6 text-center text-green-700">Get Started</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} onClick={() => {
+                  const user = auth.currentUser;
+                  if (!user) {
+                    const currentPath = encodeURIComponent('/personal-loans');
+                    router.push(`/login?redirect=${currentPath}`);
+                  }
+                }}>
                   <div className="grid gap-4 py-2 md:grid-cols-2">
                     <div className="grid gap-2">
                       <Label htmlFor="monthlyIncome">Monthly Income</Label>

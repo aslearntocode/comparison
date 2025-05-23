@@ -470,14 +470,28 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
-                    <span className="ml-3">Personal Loans</span>
+                    <span className="ml-3">Personal Loan</span>
                   </Link>
                   <Link 
                     href="/home-loans-refinance"
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
-                    <span className="ml-3">Home Loans Refinance</span>
+                    <span className="ml-3">Home Loan Refinance</span>
+                  </Link>
+                  <Link 
+                    href="/auto-loan"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Auto Loan</span>
+                  </Link>
+                  <Link 
+                    href="/loan-against-mf"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Loan Against MF</span>
                   </Link>
                 </div>
               </div>
@@ -818,14 +832,28 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
-                    <span className="ml-3">Personal Loans</span>
+                    <span className="ml-3">Personal Loan</span>
                   </Link>
                   <Link 
                     href="/home-loans-refinance" 
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
-                    <span className="ml-3">Home Loans Refinance</span>
+                    <span className="ml-3">Home Loan Refinance</span>
+                  </Link>
+                  <Link 
+                    href="/auto-loan"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Auto Loan</span>
+                  </Link>
+                  <Link 
+                    href="/loan-against-mf"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Loan Against MF</span>
                   </Link>
                 </div>
               )}
