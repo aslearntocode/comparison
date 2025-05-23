@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Header from '@/components/Header';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -53,6 +53,18 @@ function CreditVsLoanAssessmentContent() {
   const [assessment, setAssessment] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Section refs for slider navigation
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const helpRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   // Fetch latest assessment on component mount
   useEffect(() => {
@@ -291,14 +303,56 @@ function CreditVsLoanAssessmentContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center pt-10">
+            <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+              Credit Assessment
+            </h1>
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+              Get a quick, AI-powered assessment of your credit profile and loan eligibility.
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Form Section */}
+        {/* Sticky Navigation Slider (desktop only) */}
+        <div className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm hidden md:flex">
+          <div className="flex w-full rounded-none bg-white">
+            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(formRef)}>Assessment Form</button>
+            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(resultsRef)}>Assessment Results</button>
+            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(helpRef)}>Need Help</button>
+          </div>
+        </div>
+
+        {/* About Section (mobile only) */}
+        <div ref={aboutRef} className="py-12 md:hidden" style={{ scrollMarginTop: '64px' }}>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">About Credit Assessment</h2>
+          <div className="mx-auto mb-10 flex justify-center">
+            <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
+          </div>
+          <p className="text-lg text-gray-600 mb-4 text-center">
+            Use this tool to get a quick, AI-powered assessment of your credit profile and loan eligibility. Fill out the form to receive personalized recommendations and understand your financial standing before applying for a loan or credit card.
+          </p>
+        </div>
+
+        {/* Assessment Form Section */}
+        <div ref={formRef} className="py-12" style={{ scrollMarginTop: '64px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Left: Heading, description, and optional image/highlight */}
+            <div className="mb-8 md:mb-0">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Credit Assessment</h2>
+              <div className="h-1 w-20 bg-yellow-400 rounded-full mb-8"></div>
+              <p className="text-lg text-gray-700 mb-6">
+                Get a quick, AI-powered assessment of your credit profile and loan eligibility. Fill out the form to receive personalized recommendations and understand your financial standing before applying for a loan or credit card.
+              </p>
+              {/* Optional: Add an image or highlight box here if desired */}
+            </div>
+            {/* Right: Form card */}
+            <div>
               <Card className="p-6 shadow-2xl rounded-3xl border-0 bg-white/90">
-                <h2 className="text-xl font-bold text-gray-800 mb-4">Credit Assessment Form</h2>
-                <form onSubmit={handleSubmit} className="space-y-4" onClick={(e) => {
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4" onClick={(e) => {
                   e.stopPropagation();
                   const user = auth.currentUser;
                   if (!user) {
@@ -307,7 +361,7 @@ function CreditVsLoanAssessmentContent() {
                     return;
                   }
                 }}>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Reason for applying (max 100 words)?</label>
                     <textarea
                       name="reason"
@@ -319,7 +373,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. need a loan to travel"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Looking for what kind of loan?</label>
                     <select
                       name="loan_type"
@@ -332,7 +386,7 @@ function CreditVsLoanAssessmentContent() {
                       ))}
                     </select>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">What is your Credit Score (CIBIL)?</label>
                     <input
                       type="number"
@@ -346,7 +400,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. 750"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Income (₹):</label>
                     <input
                       type="number"
@@ -359,7 +413,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. 150000"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Current Loan EMI including Mortgage (₹):</label>
                     <input
                       type="number"
@@ -372,7 +426,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. 25000"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Do you have an existing mortgage?</label>
                     <select
                       name="mortgage"
@@ -384,7 +438,7 @@ function CreditVsLoanAssessmentContent() {
                       <option value="yes">Yes</option>
                     </select>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Number of existing credit cards:</label>
                     <input
                       type="number"
@@ -397,7 +451,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. 2"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Credit Card Outstanding (₹):</label>
                     <input
                       type="number"
@@ -410,7 +464,7 @@ function CreditVsLoanAssessmentContent() {
                       placeholder="e.g. 25000"
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Ever Defaulted on a Loan?</label>
                     <select
                       name="ever_defaulted"
@@ -423,96 +477,105 @@ function CreditVsLoanAssessmentContent() {
                     </select>
                   </div>
                   {error && (
-                    <div className="p-2 rounded-lg bg-red-50 text-red-700 text-sm text-center">{error}</div>
+                    <div className="col-span-1 md:col-span-2 p-2 rounded-lg bg-red-50 text-red-700 text-sm text-center">{error}</div>
                   )}
-                  <Button
-                    type="submit"
-                    className="w-full py-2 text-base rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
-                    disabled={loading}
-                  >
-                    {loading ? 'Assessing...' : 'Get Assessment'}
-                  </Button>
+                  <div className="col-span-1 md:col-span-2">
+                    <Button
+                      type="submit"
+                      className="w-full py-2 text-base rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+                      disabled={loading}
+                    >
+                      {loading ? 'Assessing...' : 'Get Assessment'}
+                    </Button>
+                  </div>
                 </form>
               </Card>
+            </div>
+          </div>
+        </div>
 
-              {/* Results Section */}
-              <Card className="p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Assessment Results</h2>
-                {assessment ? (() => {
-                  const [rec, cond, summ] = parseAssessmentText(assessment);
-                  return (
-                    <div className="space-y-6">
-                      {/* Recommendation */}
-                      <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
-                        <div className="flex items-center mb-4">
-                          <span className="text-2xl mr-3">📋</span>
-                          <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
-                        </div>
-                        <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
-                          <p className="text-base font-medium">{rec}</p>
-                        </div>
+        {/* Assessment Results Section */}
+        <div ref={resultsRef} className="py-12" style={{ scrollMarginTop: '64px' }}>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">Assessment Results</h2>
+          <div className="mx-auto mb-10 flex justify-center">
+            <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <Card className="p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
+              {assessment ? (() => {
+                const [rec, cond, summ] = parseAssessmentText(assessment);
+                return (
+                  <div className="space-y-6">
+                    {/* Recommendation */}
+                    <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
+                      <div className="flex items-center mb-4">
+                        <span className="text-2xl mr-3">📋</span>
+                        <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
                       </div>
-                      {/* Condition */}
-                      <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
-                        <div className="flex items-center mb-4">
-                          <span className="text-2xl mr-3">📝</span>
-                          <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
-                        </div>
-                        <div className="prose max-w-none text-gray-700 flex-1">
-                          <ul className="space-y-3 list-none pl-0">
-                            {cond.split('\n').map((point, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-green-600 mr-2 mt-1">•</span>
-                                <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      {/* Summary */}
-                      <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
-                        <div className="flex items-center mb-4">
-                          <span className="text-2xl mr-3">📊</span>
-                          <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
-                        </div>
-                        <div className="prose max-w-none text-gray-700 flex-1">
-                          <ul className="space-y-3 list-none pl-0">
-                            {summ.split('\n').map((point, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-blue-600 mr-2 mt-1">•</span>
-                                <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
+                        <p className="text-base font-medium">{rec}</p>
                       </div>
                     </div>
-                  );
-                })() : (
-                  <div className="text-center py-12 text-gray-500">
-                    <p>Complete the form to see your assessment results</p>
+                    {/* Condition */}
+                    <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
+                      <div className="flex items-center mb-4">
+                        <span className="text-2xl mr-3">📝</span>
+                        <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
+                      </div>
+                      <div className="prose max-w-none text-gray-700 flex-1">
+                        <ul className="space-y-3 list-none pl-0">
+                          {cond.split('\n').map((point, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="text-green-600 mr-2 mt-1">•</span>
+                              <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    {/* Summary */}
+                    <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
+                      <div className="flex items-center mb-4">
+                        <span className="text-2xl mr-3">📊</span>
+                        <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
+                      </div>
+                      <div className="prose max-w-none text-gray-700 flex-1">
+                        <ul className="space-y-3 list-none pl-0">
+                          {summ.split('\n').map((point, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="text-blue-600 mr-2 mt-1">•</span>
+                              <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                )}
-              </Card>
-            </div>
+                );
+              })() : (
+                <div className="text-center py-12 text-gray-500">
+                  <p>Complete the form to see your assessment results</p>
+                </div>
+              )}
+            </Card>
+          </div>
+        </div>
 
-            {/* New Contact Section */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Need Help with Your Credit Situation?</h3>
-                <p className="text-gray-600">If you are trying to get back on track or have questions around improving your credit situation, our experts are here to help.</p>
-              </div>
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-center lg:gap-4">
-                <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                  Chat with Us
-                </a>
-                <button className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  Call Us: +91 93213 14553
-                </button>
-              </div>
-            </div>
+        {/* Need Help Section */}
+        <div ref={helpRef} className="py-12" style={{ scrollMarginTop: '64px' }}>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">Need Help?</h2>
+          <div className="mx-auto mb-10 flex justify-center">
+            <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
+          </div>
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-center lg:gap-4 max-w-2xl mx-auto">
+            <a href="https://wa.me/919321314553" target="_blank" rel="noopener noreferrer" className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition-colors text-base min-w-[180px] text-center">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+              Chat with Us
+            </a>
+            <button className="w-full flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow text-base min-w-[180px] text-center cursor-default">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              Call Us: +91 93213 14553
+            </button>
           </div>
         </div>
       </div>

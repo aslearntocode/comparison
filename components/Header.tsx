@@ -245,7 +245,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="bg-white w-full overflow-x-hidden border-b border-gray-200">
+    <header className="bg-white shadow-md relative" style={{ zIndex: 1000 }}>
       <nav className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-2">
         <div className="flex justify-between h-16 items-center w-full">
           <div className="flex items-center">
