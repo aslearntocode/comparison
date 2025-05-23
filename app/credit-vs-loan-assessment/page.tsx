@@ -306,11 +306,11 @@ function CreditVsLoanAssessmentContent() {
       <div className="relative">
         <div className="absolute top-0 left-0 right-0 h-[160px] bg-gradient-to-r from-blue-600 to-blue-700" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center pt-10">
-            <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+          <div className="pt-2 md:pt-10">
+            <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 font-serif tracking-wide text-center !mx-auto">
               Credit Assessment
             </h1>
-            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+            <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans text-center">
               Get a quick, AI-powered assessment of your credit profile and loan eligibility.
             </p>
           </div>
@@ -326,24 +326,13 @@ function CreditVsLoanAssessmentContent() {
           </div>
         </div>
 
-        {/* About Section (mobile only) */}
-        <div ref={aboutRef} className="py-12 md:hidden" style={{ scrollMarginTop: '64px' }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">About Credit Assessment</h2>
-          <div className="mx-auto mb-10 flex justify-center">
-            <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
-          </div>
-          <p className="text-lg text-gray-600 mb-4 text-center">
-            Use this tool to get a quick, AI-powered assessment of your credit profile and loan eligibility. Fill out the form to receive personalized recommendations and understand your financial standing before applying for a loan or credit card.
-          </p>
-        </div>
-
         {/* Assessment Form Section */}
         <div ref={formRef} className="py-12" style={{ scrollMarginTop: '64px' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Left: Heading, description, and optional image/highlight */}
             <div className="mb-8 md:mb-0">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Credit Assessment</h2>
-              <div className="h-1 w-20 bg-yellow-400 rounded-full mb-8"></div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Credit Assessment</h2>
+              <div className="h-1 w-20 bg-yellow-400 rounded-full mb-8 mx-auto md:mx-0"></div>
               <p className="text-lg text-gray-700 mb-6">
                 Get a quick, AI-powered assessment of your credit profile and loan eligibility. Fill out the form to receive personalized recommendations and understand your financial standing before applying for a loan or credit card.
               </p>

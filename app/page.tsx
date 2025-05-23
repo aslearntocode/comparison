@@ -488,19 +488,31 @@ export default function Home() {
         <div className="relative w-full h-[200px] flex items-center">
           <div className="relative w-full h-full">
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-              <Link 
-                href={sliderData[currentSlide].type === 'credit-cards' ? cardLinks[currentSlide % cardLinks.length] : '/loans'}
-                className="block"
-                aria-label={`View details for ${sliderData[currentSlide].type === 'credit-cards' ? 'card' : 'loan'} ${currentSlide + 1}`}
-              >
-                <Image
-                  src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                  width={240}
-                  height={150}
-                  alt={`${sliderData[currentSlide].type === 'credit-cards' ? 'Credit Card' : 'Loan'} ${currentSlide + 1}`}
-                  className="rounded-2xl shadow-2xl mx-auto"
-                />
-              </Link>
+              {sliderData[currentSlide].type === 'credit-cards' ? (
+                <Link 
+                  href={cardLinks[currentSlide % cardLinks.length]}
+                  className="block"
+                  aria-label={`View details for card ${currentSlide + 1}`}
+                >
+                  <Image
+                    src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                    width={240}
+                    height={150}
+                    alt={`Credit Card ${currentSlide + 1}`}
+                    className="rounded-2xl shadow-2xl mx-auto"
+                  />
+                </Link>
+              ) : (
+                <div className="block">
+                  <Image
+                    src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                    width={240}
+                    height={150}
+                    alt={`Loan ${currentSlide + 1}`}
+                    className="rounded-2xl shadow-2xl mx-auto w-[240px] h-[150px] object-contain"
+                  />
+                </div>
+              )}
             </div>
           </div>
           {/* Carousel Indicators */}
@@ -645,22 +657,39 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Mobile Hero Section */}
           <div className="lg:hidden mb-8">
-            <div className="relative w-full h-[200px] flex items-center">
+            <div 
+              className="relative w-full h-[200px] flex items-center"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div className="relative w-full h-full">
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                  <Link 
-                    href={sliderData[currentSlide].type === 'credit-cards' ? cardLinks[currentSlide % cardLinks.length] : '/loans'}
-                    className="block"
-                    aria-label={`View details for ${sliderData[currentSlide].type === 'credit-cards' ? 'card' : 'loan'} ${currentSlide + 1}`}
-                  >
-                    <Image
-                      src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                      width={240}
-                      height={150}
-                      alt={`${sliderData[currentSlide].type === 'credit-cards' ? 'Credit Card' : 'Loan'} ${currentSlide + 1}`}
-                      className="rounded-2xl shadow-2xl mx-auto"
-                    />
-                  </Link>
+                  {sliderData[currentSlide].type === 'credit-cards' ? (
+                    <Link 
+                      href={cardLinks[currentSlide % cardLinks.length]}
+                      className="block"
+                      aria-label={`View details for card ${currentSlide + 1}`}
+                    >
+                      <Image
+                        src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                        width={240}
+                        height={150}
+                        alt={`Credit Card ${currentSlide + 1}`}
+                        className="rounded-2xl shadow-2xl mx-auto"
+                      />
+                    </Link>
+                  ) : (
+                    <div className="block">
+                      <Image
+                        src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                        width={240}
+                        height={150}
+                        alt={`Loan ${currentSlide + 1}`}
+                        className="rounded-2xl shadow-2xl mx-auto w-[240px] h-[150px] object-contain"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
               {/* Carousel Indicators */}
@@ -775,7 +804,7 @@ export default function Home() {
                         <span className="font-semibold text-white drop-shadow-sm text-sm">Home Loan Refinance</span>
                       </div>
                     </Link>
-                    <div className="col-span-1">
+                    <Link href="/auto-loan" className="col-span-1">
                       <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
                         <div className="bg-white/30 rounded-full p-1 shadow-inner">
                           <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -784,8 +813,8 @@ export default function Home() {
                         </div>
                         <span className="font-semibold text-white drop-shadow-sm text-sm">Auto Loan</span>
                       </div>
-                    </div>
-                    <div className="col-span-1">
+                    </Link>
+                    <Link href="/loan-against-mf" className="col-span-1">
                       <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
                         <div className="bg-white/30 rounded-full p-1 shadow-inner">
                           <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -794,7 +823,7 @@ export default function Home() {
                         </div>
                         <span className="font-semibold text-white drop-shadow-sm text-sm">Loan Against MF</span>
                       </div>
-                    </div>
+                    </Link>
                   </>
                 )}
               </div>
@@ -809,19 +838,31 @@ export default function Home() {
               >
                 <div className="relative w-full h-full">
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                    <Link 
-                      href={sliderData[currentSlide].type === 'credit-cards' ? cardLinks[currentSlide % cardLinks.length] : '/loans'}
-                      className="block"
-                      aria-label={`View details for ${sliderData[currentSlide].type === 'credit-cards' ? 'card' : 'loan'} ${currentSlide + 1}`}
-                    >
-                      <Image
-                        src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                        width={400}
-                        height={250}
-                        alt={`${sliderData[currentSlide].type === 'credit-cards' ? 'Credit Card' : 'Loan'} ${currentSlide + 1}`}
-                        className="rounded-2xl shadow-2xl mx-auto hover:scale-105 transition-transform duration-200"
-                      />
-                    </Link>
+                    {sliderData[currentSlide].type === 'credit-cards' ? (
+                      <Link 
+                        href={cardLinks[currentSlide % cardLinks.length]}
+                        className="block"
+                        aria-label={`View details for card ${currentSlide + 1}`}
+                      >
+                        <Image
+                          src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                          width={400}
+                          height={250}
+                          alt={`Credit Card ${currentSlide + 1}`}
+                          className="rounded-2xl shadow-2xl mx-auto hover:scale-105 transition-transform duration-200"
+                        />
+                      </Link>
+                    ) : (
+                      <div className="block">
+                        <Image
+                          src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
+                          width={400}
+                          height={250}
+                          alt={`Loan ${currentSlide + 1}`}
+                          className="rounded-2xl shadow-2xl mx-auto w-[400px] h-[250px] object-contain hover:scale-105 transition-transform duration-200"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
                 {/* Carousel Indicators */}
