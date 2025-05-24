@@ -229,6 +229,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/personal-finance/cardloan-personaloan'
+  },
+  {
+    id: '28',
+    title: 'Home Loan Refinance: A Complete Guide',
+    description: 'Learn about home loan refinance, including when to refinance, how to do it, and the benefits and drawbacks.',
+    category: 'Home Loans',
+    readTime: '10 min read',
+    link: '/learning-center/home-loans/'
   }
 ]
 
