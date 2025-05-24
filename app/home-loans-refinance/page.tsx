@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header"
 import { Card } from "@/components/ui/card"
+import Link from "next/link"
 
 export default function HomeLoanRefinancePage() {
   return (
@@ -39,6 +40,15 @@ export default function HomeLoanRefinancePage() {
             </Card>
           </div>
         </section>
+
+        {/* Reference Link */}
+        <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                <p className="text-gray-700 leading-relaxed">
+                    To learn more about home loan refinance in general, including types, application process, and key factors to consider, check out our comprehensive guide on <Link href="/learning-center/home-loans" className="text-blue-600 hover:underline font-medium">Home Loan Refinance: A Complete Guide</Link>.
+                </p>
+            </div>
+        </div>
       </main>
     </div>
   )
