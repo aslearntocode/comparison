@@ -392,26 +392,28 @@ function CreditVsLoanAssessmentContent() {
                   <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Income (₹):</label>
                     <input
-                      type="number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       name="income"
                       value={form.income}
                       onChange={handleChange}
                       required
-                      min={0}
-                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       placeholder="e.g. 150000"
                     />
                   </div>
                   <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Current Loan EMI including Mortgage (₹):</label>
                     <input
-                      type="number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       name="current_emi"
                       value={form.current_emi}
                       onChange={handleChange}
                       required
-                      min={0}
-                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       placeholder="e.g. 25000"
                     />
                   </div>
@@ -443,13 +445,14 @@ function CreditVsLoanAssessmentContent() {
                   <div className="flex flex-col">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Credit Card Outstanding (₹):</label>
                     <input
-                      type="number"
+                      type="text"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
                       name="credit_card_outstanding"
                       value={form.credit_card_outstanding}
                       onChange={handleChange}
                       required
-                      min={0}
-                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white"
+                      className="w-full p-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors shadow-sm bg-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       placeholder="e.g. 25000"
                     />
                   </div>
@@ -489,55 +492,53 @@ function CreditVsLoanAssessmentContent() {
           <div className="mx-auto mb-10 flex justify-center">
             <div className="h-1 w-20 bg-yellow-400 rounded-full"></div>
           </div>
-          <div className="max-w-2xl mx-auto">
-            <Card className="p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
+          <div className="max-w-7xl mx-auto">
+            <Card className="p-4 md:p-8 shadow-2xl rounded-3xl border-0 bg-white/90">
               {assessment ? (() => {
                 const [rec, cond, summ] = parseAssessmentText(assessment);
                 return (
-                  <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Recommendation */}
-                    <div className="w-full rounded-2xl border border-purple-200 bg-purple-50 p-6 shadow-md flex flex-col mb-2 hover:shadow-lg transition-shadow duration-200">
-                      <div className="flex items-center mb-4">
-                        <span className="text-2xl mr-3">📋</span>
-                        <h3 className="text-xl font-semibold text-gray-800">Recommendation</h3>
-                      </div>
-                      <div className="prose max-w-none text-gray-700 flex-1 leading-relaxed">
-                        <p className="text-base font-medium">{rec}</p>
-                      </div>
+                    <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-purple-200 shadow-md p-6 min-h-[260px] justify-center">
+                      <h3 className="text-base font-bold mb-2">Recommendation</h3>
+                      <ul className="text-gray-700 text-sm flex-1 list-disc pl-5 space-y-2">
+                        {rec.match(/[^.!?]+[.!?]+/g)?.map((sentence, index) => (
+                          <li key={index}>{sentence.trim()}</li>
+                        )) || (
+                          <li>{rec.trim()}</li>
+                        )}
+                      </ul>
                     </div>
-                    {/* Condition */}
-                    <div className="w-full rounded-2xl border border-green-200 bg-green-50 p-6 shadow-md flex flex-col hover:shadow-lg transition-shadow duration-200">
-                      <div className="flex items-center mb-4">
-                        <span className="text-2xl mr-3">📝</span>
-                        <h3 className="text-xl font-semibold text-gray-800">Conditions</h3>
-                      </div>
-                      <div className="prose max-w-none text-gray-700 flex-1">
-                        <ul className="space-y-3 list-none pl-0">
-                          {cond.split('\n').map((point, index) => (
-                            <li key={index} className="flex items-start">
-                              <span className="text-green-600 mr-2 mt-1">•</span>
-                              <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    {/* Conditions */}
+                    <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-green-200 shadow-md p-6 min-h-[260px] justify-center">
+                      <h3 className="text-base font-bold mb-2">Conditions</h3>
+                      <ul className="text-gray-700 text-sm flex-1 list-disc pl-5 space-y-2">
+                        {cond.split('\n').map((point, index) => (
+                          <li key={index}>{point.replace('•', '').trim()}</li>
+                        ))}
+                      </ul>
                     </div>
                     {/* Summary */}
-                    <div className="w-full rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-md flex flex-col mt-2 hover:shadow-lg transition-shadow duration-200">
-                      <div className="flex items-center mb-4">
-                        <span className="text-2xl mr-3">📊</span>
-                        <h3 className="text-xl font-semibold text-gray-800">Summary</h3>
-                      </div>
-                      <div className="prose max-w-none text-gray-700 flex-1">
-                        <ul className="space-y-3 list-none pl-0">
-                          {summ.split('\n').map((point, index) => (
-                            <li key={index} className="flex items-start">
-                              <span className="text-blue-600 mr-2 mt-1">•</span>
-                              <span className="text-base leading-relaxed">{point.replace('•', '').trim()}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-blue-200 shadow-md p-6 min-h-[260px] justify-center">
+                      <h3 className="text-base font-bold mb-2">Summary</h3>
+                      <ul className="text-gray-700 text-sm flex-1 list-disc pl-5 space-y-2">
+                        {summ.split('\n').map((point, index) => (
+                          <li key={index}>{point.replace('•', '').trim()}</li>
+                        ))}
+                        <li>
+                          {form.loan_type === 'credit_card' ? (
+                            <a href="/credit" className="text-blue-700 underline font-semibold">View and apply for Credit Cards</a>
+                          ) : form.loan_type === 'personal_loan' ? (
+                            <a href="/personal-loans" className="text-blue-700 underline font-semibold">View and apply for Personal Loans</a>
+                          ) : form.loan_type === 'home_loan' ? (
+                            <a href="/home-loans" className="text-blue-700 underline font-semibold">View and apply for Home Loans</a>
+                          ) : form.loan_type === 'car_loan' ? (
+                            <a href="/car-loans" className="text-blue-700 underline font-semibold">View and apply for Car Loans</a>
+                          ) : (
+                            <a href="/loans" className="text-blue-700 underline font-semibold">View and apply for Loans</a>
+                          )}
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 );
