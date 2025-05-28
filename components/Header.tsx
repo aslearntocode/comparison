@@ -343,10 +343,10 @@ export default function Header() {
                         <FiGlobe className="text-blue-600 w-5 h-5" />
                         <span>International Lounge</span>
                       </Link>
-                      <Link href="/credit?category=fintech" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                      {/* <Link href="/credit?category=fintech" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
                         <FiCard className="text-blue-600 w-5 h-5" />
                         <span>Fintech</span>
-                      </Link>
+                      </Link> */}
                       <Link href="/credit?category=airlines" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
                         <FiGlobe className="text-blue-600 w-5 h-5" />
                         <span>Airlines</span>
@@ -782,13 +782,13 @@ export default function Header() {
                   >
                     International Lounge
                   </Link>
-                  <Link 
+                  {/* <Link 
                     href="/credit?category=fintech" 
                     className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     Fintech
-                  </Link>
+                  </Link> */}
                   <Link 
                     href="/credit?category=airlines" 
                     className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
