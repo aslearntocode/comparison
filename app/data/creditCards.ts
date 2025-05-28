@@ -1807,7 +1807,7 @@ Net Annual Income: ₹60 lakhs and above`
     joiningFee: '₹500,000',
     rupay: false,
     feedback: [],
-    categories: ['premium', 'lifestyle'],
+    categories: ['ultra-premium'],
     applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'Welcome and Renewal Benefits:\n• Welcome: Choice between ₹40,000 ITC voucher or 25,000 Axis Edge Miles\n• Renewal: Choice between ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
