@@ -1312,29 +1312,34 @@ Income: ITR > ₹7.2 lakhs/annum`
     }
   },
   {
-    id: 'sbi-krisflyer',
-    name: 'SBI Card KrisFlyer Credit Card',
+    id: 'sbi-sky-miles',
+    name: 'SBI Sky Miles Credit Card',
     bank: 'SBI Card',
     category: 'airlines',
-    image: '/credit-cards/SBI-KrisFlyer.png',
+    image: '/credit-cards/SBI-SkyMiles.png',
     apr: '45% p.a.',
-    annualFee: '₹2,999 + GST',
-    joiningFee: '₹2,999 + GST',
+    annualFee: '₹1,499 + GST',
+    joiningFee: '₹1,499 + GST',
     rupay: false,
     feedback: [],
     categories: [
       'airlines',
-      'rewards',
       'travel',
-      'domestic-lounge',
-      'international-travel'
+      'domestic-lounge'
     ],
-    applyUrl: 'https://example.com/apply-sbi-krisflyer',
+    applyUrl: 'https://wee.bnking.in/c/NzE4MWRhZ',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 5 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 2 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
-      welcomeBonus: 'Welcome Benefits:\n• 3,000 KrisFlyer miles on first spend within 60 days',
+      rewardsProgram: `Tarvel Credits can be converted as per below rates into Air Miles, Hotel Points and Product Catalogue:
+\n• 1 Travel Credit = ₹1 for Air Mile / Hotel Point\n• Travel Credit = ₹0.50 for Travel Bookings\n• Travel Credit = ₹0.25 for Shop & Smile Product Catalogue\n• Travel Credits Accrual exclusion on Fuel, EMI, Wallet Upload, Property Rental, Utilities and Insurance categories`,
+      welcomeBonus: '1,500 Travel Credits',
       airportLounge: 'Complimentary domestic lounge access',
-      fuelSurcharge: 'Not specified',
+      fuelSurcharge: '1% Fuel Surcharge waiver for each transaction between ₹500 and ₹4,000. Maximum Surcharge waiver of Rs.250 per statement cycle, per credit card account.',
+      milestoneBenefits: [
+        '5,000 Bonus Travel Credits on reaching annual spends of ₹5 Lakh',
+        'Get additional access to Domestic Airport Lounge with every spend of ₹1 Lakh',
+        'For every spend of ₹1 Lakh, Cardholder gets 1 complimentary Domestic Airport Lounge visit over & above the complimentary visits',
+        'Additional Domestic Airport Lounge visit is applicable to both the Primary Cardholder and a Guest. Additional lounge visits, based on spend milestones, are capped at 4 visits in a membership year'
+      ],
       insuranceCover: [
         'Air accident insurance cover up to ₹3.5 crore'
       ],
@@ -1351,53 +1356,6 @@ Income: ITR > ₹7.2 lakhs/annum`
         'Those who rarely fly with Singapore Airlines'
       ],
       summary: 'A co-branded credit card offering KrisFlyer miles on spends, ideal for frequent Singapore Airlines flyers and international travelers.',
-    }
-  },
-  {
-    id: 'sbi-krisflyer-apex',
-    name: 'SBI Card KrisFlyer Apex Credit Card',
-    bank: 'SBI Card',
-    category: 'airlines',
-    image: '/credit-cards/SBI-Apex.png',
-    apr: '45% p.a.',
-    annualFee: '₹9,999 + GST',
-    joiningFee: '₹9,999 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'airlines',
-      'rewards',
-      'travel',
-      'domestic-lounge',
-      // 'international-lounge',
-      // 'international-travel'
-    ],
-    applyUrl: 'https://example.com/apply-sbi-krisflyer-apex',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10 KrisFlyer miles per ₹200 spent on Singapore Airlines, Scoot, Pelago, Kris+, and KrisShop\n• 8 KrisFlyer miles per ₹200 on overseas spends\n• 6 KrisFlyer miles per ₹200 on other spends\n\nRedemption:\n• KrisFlyer miles can be redeemed for flights, upgrades, and other services within the Singapore Airlines Group',
-      welcomeBonus: 'Welcome Benefits:\n• 10,000 KrisFlyer miles on first spend within 60 days',
-      milestoneBenefits: [
-        '10,000 KrisFlyer miles on annual spend of ₹5 lakh'
-      ],
-      airportLounge: 'Complimentary domestic and international lounge access',
-      fuelSurcharge: 'Not specified',
-      insuranceCover: [
-        'Air accident insurance cover up to ₹3.5 crore'
-      ],
-      minimumSpend: '₹5,00,000 for milestone benefits',
-      additionalServices: 'Additional Benefits:\n• Complimentary domestic and international lounge access\n• Air accident insurance cover up to ₹3.5 crore\n• Milestone benefits: 10,000 KrisFlyer miles on annual spend of ₹5 lakh',
-      idealFor: [
-        'Frequent Singapore Airlines flyers',
-        'International travelers',
-        'High-spending individuals',
-        'Those seeking premium travel benefits'
-      ],
-      notIdealFor: [
-        'Domestic-only travelers',
-        'Budget-conscious users',
-        'Those who rarely fly with Singapore Airlines'
-      ],
-      summary: 'A premium co-branded credit card offering enhanced KrisFlyer miles on spends, comprehensive travel benefits, and milestone rewards, ideal for frequent international travelers.',
     }
   },
   {
@@ -1562,26 +1520,6 @@ Income: ITR > ₹6 lakhs/annum`
         'High spenders seeking extensive rewards'
       ],
       summary: 'An affordable RuPay credit card with UPI functionality and basic rewards program.',
-      fuelSurcharge: 'Not specified'
-    }
-  },
-  {
-    id: 'sbi-unnati',
-    name: 'SBI Card Unnati',
-    bank: 'SBI Card',
-    category: 'secured',
-    image: '/credit-cards/SBI-Unnati.png',
-    apr: 'Based on FD rate',
-    annualFee: '₹0 (₹499 from 5th year)',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: ['secured'],
-    applyUrl: 'https://example.com/apply-sbi-unnati',
-    additionalDetails: {
-      rewardsProgram: '1 reward point per ₹100 spent\n₹500 cashback on reaching ₹50,000 annual spend',
-      minimumSpend: 'No minimum spend requirement',
-      summary: 'A secured credit card with no annual fee for first 4 years and rewards on spending.',
       fuelSurcharge: 'Not specified'
     }
   },

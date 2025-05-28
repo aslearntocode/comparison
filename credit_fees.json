@@ -168,6 +168,13 @@
       "is_lifetime_free":0
     },
     {
+      "card_name":"SBI Sky Miles Credit Card",
+      "joining_fee":1499,
+      "annual_fee":1499,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
+    },
+    {
       "card_name":"OneCard",
       "joining_fee":0,
       "annual_fee":0,

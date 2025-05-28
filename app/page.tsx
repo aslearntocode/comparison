@@ -629,7 +629,7 @@ export default function Home() {
               <div className="ml-3 md:ml-4">
                 <h3 className="text-sm md:text-base font-semibold text-gray-900">Soft Pull Check</h3>
                 <p className="text-xs md:text-sm text-gray-600 mt-1">
-                  We perform a soft pull to assess your eligibility. This check doesn't impact your credit score.
+                  Our partner performs a soft pull to assess your eligibility. This check doesn't impact your credit score.
                 </p>
               </div>
             )}

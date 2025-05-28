@@ -227,19 +227,19 @@ function PersonalLoans() {
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-blue-700 text-white py-6">
+        {/* Blue Hero Section (match home loan refinance) */}
+        <section className="w-full bg-blue-700 text-white py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">Personal Loans (Coming Soon)</h1>
-              <p className="text-lg md:text-xl text-white/90 mb-2 text-center">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">Personal Loans (Coming Soon)</h1>
+              <p className="text-lg md:text-xl text-white/90 mb-2">
                 Check eligibility and we will show you the offers that you are likely to get approved for
               </p>
             </div>
           </div>
         </section>
 
-        {/* Sticky Navigation Slider/Tab Bar below hero section - now a direct child of <main> */}
+        {/* Sticky Navigation Slider/Tab Bar below hero section */}
         {!eligible && (
           <div ref={sliderRef} className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
             <div className="flex w-full rounded-none bg-white">
@@ -292,8 +292,7 @@ function PersonalLoans() {
             <div className="md:grid md:grid-cols-2 md:gap-8 md:items-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-0 md:p-8">
               {/* Mobile: Heading and offer above form */}
               <div className="block md:hidden px-0 pt-4 pb-2">
-                <h1 className="text-2xl font-bold text-blue-900 leading-tight mb-3 text-center">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</h1>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mx-auto mb-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
                   <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
                 </div>
               </div>
