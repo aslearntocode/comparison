@@ -228,11 +228,11 @@ function PersonalLoans() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-6">
+        <section className="bg-blue-700 text-white py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-3xl md:text-4xl font-bold mb-2 text-center">Personal Loans (Coming Soon)</h1>
-              <p className="text-lg md:text-xl text-white/90 mb-4 text-center">
+              <p className="text-lg md:text-xl text-white/90 mb-2 text-center">
                 Check eligibility and we will show you the offers that you are likely to get approved for
               </p>
             </div>
@@ -303,7 +303,7 @@ function PersonalLoans() {
                 <div>
                   <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
                   <div className="text-3xl font-bold text-blue-900 leading-tight mb-4">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-                  <div className="text-base text-gray-700 mb-4 max-w-md">Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.</div>
+                  <p className="text-gray-700 text-lg mb-6">Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.</p>
                 </div>
                 <div className="mt-2">
                   <div className="flex items-center gap-3 px-4 py-4 rounded-2xl max-w-xs shadow-2xl border-0"

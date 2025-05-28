@@ -660,6 +660,8 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                     <div className="mt-6 flex flex-col items-center gap-2">
                       <Link
                         href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
                       >
                         Apply Now
@@ -760,6 +762,8 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   <div className="mt-6 flex flex-col items-center gap-2">
                     <Link
                       href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
                     >
                       Apply Now

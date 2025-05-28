@@ -362,23 +362,16 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     bank: 'Axis Bank',
     category: 'airlines',
     image: '/credit-cards/Axis-Privilege.png',
-    apr: '52.86% p.a.',
-    annualFee: '₹1,500 + GST',
-    joiningFee: '₹1,500 + GST',
+    apr: '46.2% p.a.',
+    annualFee: '₹1,500',
+    joiningFee: '₹1,500',
     rupay: false,
-    feedback: [
-      { comment: "Great rewards program, totally worth it!", rating: 9, date: "2024-03-15", userId: "user123", userName: "John Doe", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Good card but high annual fee", rating: 7, date: "2024-03-10", userId: "user456", userName: "Jane Smith", cardId: "sapphiro", cardName: "Sapphiro Credit Card" },
-      { comment: "Excellent customer service and benefits", rating: 8, date: "2024-03-05", userId: "user789", userName: "Bob Johnson", cardId: "sapphiro", cardName: "Sapphiro Credit Card" }
-    ],
+    feedback: [],
     categories: [
       'premium',
-      'rewards',
-      'international-travel',
-      'domestic-lounge',
-      // 'fuel'
+      'lifestyle'
     ],
-    applyUrl: 'https://example.com/apply-axis-privilege',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
       welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth ₹9,000\n• Complimentary Bose IE2 Headphones\n• Premium lifestyle vouchers',
@@ -793,7 +786,7 @@ Credit Score: 750+`,
       'lifestyle',
       'lifetime-free'
     ],
-    applyUrl: 'https://example.com/apply-idfc-first-wealth',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10X rewards on weekend dining\n• 5X rewards on online shopping\n• 2X rewards on all other spends\n\nRedemption:\n• Points can be redeemed for flights, hotels, and vouchers\n• Reward points never expire',
       welcomeBonus: 'Welcome Benefits:\n• ₹500 voucher on spending ₹5,000 or more within first 30 days\n• 5% cashback on EMI conversion (up to ₹1,000)\n• Buy 1 Get 1 Free movie tickets on Paytm (up to ₹500, twice per month)',
@@ -935,7 +928,7 @@ Credit Score: 750+`
       'first-time',
       'lifetime-free'
     ],
-    applyUrl: 'https://example.com/apply-idfc-first-classic',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       rewardsProgram: `10X Reward Points on incremental spends above ₹20,000 per month & spends done on your birthday.\n3X Reward Points on spends up to ₹20,000 per month.\nUse Reward points to instantly pay for online or in-store purchases.\nNever expiring rewards.`,
       welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more.\n5% cashback up to ₹1,000 on the transaction value of first EMI done.`,
@@ -969,7 +962,7 @@ Credit Score: 750+`
     rupay: true,
     feedback: [],
     categories: ['rewards', 'lifestyle', 'lifetime-free', 'rupay'],
-    applyUrl: 'https://www.idfcfirstbank.com/credit-card/select-credit-card',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       rewardsProgram: 'Earn 2X rewards on all spends',
       welcomeBonus: 'Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation. \n5% cashback up to ₹1,000 on first EMI transaction within 30 days of card generation',
@@ -1032,7 +1025,7 @@ Credit Score: 750+ (recommended)`,
       'customizable',
       'lifestyle'
     ],
-    applyUrl: '',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       welcomeBonus: `2000 Reward Points worth ₹500 on spending ₹5,000 or more within 30 days of card issuance.\n1000 Reward Points on 1st EMI conversion within 30 days of card issuance.\nDiscount coupon of ₹2,100 from EaseMyTrip within 3 months on payment of joining fee.\nFree Lenskart Gold Membership for 1 year on payment of joining fee.`,
       milestoneBenefits: [`1000 Reward Points on eligible monthly spends exceeding ₹15,000.`, `Additional 400 Reward Points on monthly rental payments with a minimum spend of ₹20,000.`],
@@ -1072,7 +1065,7 @@ Documentation: Identity Proof: Aadhaar Card, PAN Card, or Passport; Address Proo
     rupay: false,
     feedback: [],
     categories: ['secured', 'lifetime-free', 'rewards'],
-    applyUrl: 'https://example.com/apply-idfc-first-wow',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       summary: 'The IDFC FIRST WOW Credit Card is a secured, lifetime-free credit card designed to help individuals build or improve their credit history. Backed by a fixed deposit (FD), it offers a range of benefits tailored for first-time credit card users, students, homemakers, and those without a stable income or credit score.',
       rewardsProgram: 'Earn 4X reward points on every ₹150 spent. Reward points never expire.',
@@ -1109,7 +1102,7 @@ Documentation: Identity Proof: Aadhaar Card, PAN Card, or Passport; Address Proo
     rupay: true,
     feedback: [],
     categories: ['fuel', 'budget'],
-    applyUrl: 'https://example.com/apply-idfc-hpcl-power',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 21X Reward Points per ₹150 on HPCL fuel spends
@@ -1149,7 +1142,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     rupay: true,
     feedback: [],
     categories: ['fuel', 'budget'],
-    applyUrl: 'https://example.com/apply-idfc-hpcl-power-plus',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 30X Reward Points per ₹150 on HPCL fuel, grocery, utility, and FASTag spends
@@ -1178,20 +1171,17 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
   },
   {
     id: 'axis-iocl',
-    name: 'Axis Bank IOCL Credit Card',
+    name: 'Axis IOCL Credit Card',
     bank: 'Axis Bank',
     category: 'fuel',
     image: '/credit-cards/Axis-IndianOil.png',
-    apr: '42% p.a.',
-    annualFee: '₹500 + GST (1st Year: Nil)',
-    joiningFee: '₹500 + GST',
-    rupay: true,
+    apr: '46.2% p.a.',
+    annualFee: '₹500',
+    joiningFee: '₹500',
+    rupay: false,
     feedback: [],
-    categories: [
-      'fuel',
-      'budget'
-    ],
-    applyUrl: 'https://example.com/apply-axis-iocl',
+    categories: ['fuel', 'budget'],
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: `Enhanced rewards on fuel spends at IOCL outlets
 Basic rewards on other spends
@@ -1716,7 +1706,7 @@ Fuel Benefits:
     rupay: false,
     feedback: [],
     categories: ['secured'],
-    applyUrl: 'https://example.com/apply-axis-fd',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'Earn rewards on all spending',
       summary: 'A secured credit card designed for credit building with rewards program.',
@@ -1765,20 +1755,15 @@ Fuel Benefits:
     id: 'axis-my-zone',
     name: 'Axis Bank My Zone Credit Card',
     bank: 'Axis Bank',
-    category: 'lifetime-free',
+    category: 'lifestyle',
     image: '/credit-cards/Axis-MyZone.png',
-    apr: '43.2% p.a.',
+    apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rupay: true,
+    rupay: false,
     feedback: [],
-    categories: [
-      'lifetime-free',
-      'upi',
-      'entertainment',
-      'dining'
-    ],
-    applyUrl: 'https://example.com/apply-axis-my-zone',
+    categories: ['lifestyle', 'lifetime-free'],
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'EDGE Rewards:\n• Earn 4 EDGE reward points for every ₹200 spent\n• Points can be redeemed via the EDGE Rewards portal\n\nShopping Benefits:\n• AJIO Offer: ₹1,000 instant discount on minimum purchases of ₹2,999 (valid once per user)',
       welcomeBonus: 'Complimentary SonyLIV Premium Subscription:\n• On completing the first transaction within the first 30 days of card issuance\n• Annual subscription worth ₹999',
@@ -1877,22 +1862,15 @@ Net Annual Income: ₹60 lakhs and above`
     id: 'axis-primus',
     name: 'Axis Bank Primus Credit Card',
     bank: 'Axis Bank',
-    category: 'ultra-premium',
+    category: 'premium',
     image: '/credit-cards/Axis-Primus.png',
-    apr: '42% p.a.',
-    annualFee: '₹3,00,000 + GST',
-    joiningFee: '₹5,00,000 + GST',
+    apr: '46.2% p.a.',
+    annualFee: '₹300,000',
+    joiningFee: '₹500,000',
     rupay: false,
     feedback: [],
-    categories: [
-      'ultra-premium',
-      // 'premium',
-      // 'rewards',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge'
-    ],
-    applyUrl: 'https://example.com/apply-axis-primus',
+    categories: ['premium', 'lifestyle'],
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'Welcome and Renewal Benefits:\n• Welcome: Choice between ₹40,000 ITC voucher or 25,000 Axis Edge Miles\n• Renewal: Choice between ₹20,000 ITC voucher or 15,000 Axis Edge Miles',
       welcomeBonus: 'Welcome benefit: Choice between an ₹40,000 ITC voucher or 25,000 Axis Edge Miles',
@@ -2470,7 +2448,7 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       'rewards',
       'lifestyle'
     ],
-    applyUrl: '',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation.\n5% cashback (up to ₹1,000) on the transaction value of first EMI done within 30 days of card generation.`,
       rewardsProgram: `3X Reward points on online & offline spends up to ₹20,000.\nUp to 10X Reward points on spend >₹20,000 & on your birthday.\n1X Reward points on UPI spends up to ₹2,000.\n3X Reward points on UPI spends >₹2,000.\nReward points that don't expire.`,
@@ -2498,7 +2476,7 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       'travel',
       'metal'
     ],
-    applyUrl: '',
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
       summary: "A premium metal credit card blending India's heritage with modern luxury, offering lifestyle, travel, and entertainment benefits for affluent individuals.",
       rewardsProgram: `Earn 5X reward points on monthly spends below ₹20,000.\nEarn 10X reward points on monthly spends above ₹20,000 and on your birthday.\nReward points can be redeemed for a variety of options (₹0.25 per point).`,
@@ -2693,6 +2671,167 @@ Net Monthly Income: ₹1,00,000/month
 Self-Employed Individuals:
 Age: 21 to 65 years
 Income: ITR > ₹12 lakhs/annum`
+    }
+  },
+  {
+    id: 'axis-airtel',
+    name: 'Axis Airtel Credit Card',
+    bank: 'Axis Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/Axis-Airtel.png',
+    apr: '46.2% p.a.',
+    annualFee: '₹500',
+    joiningFee: '₹500',
+    rupay: false,
+    feedback: [],
+    categories: ['lifestyle', 'cashback'],
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 10% cashback on dining, groceries, and entertainment\n• 5% cashback on other spends\n• 1% cashback on UPI transactions',
+      welcomeBonus: '₹500 cashback on spending ₹5,000 within 30 days',
+      airportLounge: '1 complimentary domestic airport lounge access per quarter',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Personal accident cover: ₹2 lakh',
+        'Lost card liability: ₹25,000'
+      ],
+      additionalServices: 'Roadside assistance worth ₹1,399, up to 4 times/year',
+      idealFor: [
+        'Moderate spenders',
+        'High-income individuals'
+      ],
+      notIdealFor: [
+        'Users with low annual spending',
+        'Individuals not utilizing the additional perks'
+      ],
+      summary: 'A co-branded credit card offering lifestyle and entertainment benefits with a focus on dining, groceries, and entertainment. Low forex markup: 0.99% + GST (~1.168%).'
+    }
+  },
+  {
+    id: 'axis-fibe',
+    name: 'Axis Fibe Credit Card',
+    bank: 'Axis Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/Axis-Fibe.png',
+    apr: '46.2% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: ['lifestyle', 'lifetime-free'],
+    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
+    additionalDetails: {
+      rewardsProgram: 'Earning Rate:\n• 10% cashback on dining, groceries, and entertainment\n• 5% cashback on other spends\n• 1% cashback on UPI transactions',
+      welcomeBonus: '₹500 cashback on spending ₹5,000 within 30 days',
+      airportLounge: '1 complimentary domestic airport lounge access per quarter',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Personal accident cover: ₹2 lakh',
+        'Lost card liability: ₹25,000'
+      ],
+      additionalServices: 'Roadside assistance worth ₹1,399, up to 4 times/year',
+      idealFor: [
+        'Moderate spenders',
+        'High-income individuals'
+      ],
+      notIdealFor: [
+        'Users with low annual spending',
+        'Individuals not utilizing the additional perks'
+      ],
+      summary: 'A co-branded credit card offering lifestyle and entertainment benefits with a focus on dining, groceries, and entertainment. Low forex markup: 0.99% + GST (~1.168%).'
+    }
+  },
+  {
+    id: 'bpcl-sbi-credit-card',
+    name: 'SBI BPCL Credit Card',
+    bank: 'State Bank of India',
+    category: 'fuel',
+    image: '/credit-cards/SBI-BPCL.png',
+    apr: '3.49% per month',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
+    rupay: false,
+    feedback: [],
+    categories: ['fuel', 'cashback'],
+    applyUrl: 'https://wee.bnking.in/c/NzE4MWRhZ',
+    additionalDetails: {
+      rewardsProgram: '• 5X rewards on BPCL fuel purchases, \n• 2X rewards on dining and groceries, \n• 1X rewards on all other spends',
+      welcomeBonus: '₹500 as Welcome Bonus',
+      milestoneBenefits: [], 
+      fuelSurcharge: '1% fuel surcharge waiver on BPCL fuel purchases',
+      insuranceCover: [
+        'Air accident insurance cover of ₹1 Crore',
+        'Lost card liability cover up to ₹1 Lakh'
+      ],
+      minimumSpend: 'No minimum spend requirement',
+      creditLimit: 'Based on income and credit profile',
+      domesticTransactionFee: '2.5% of transaction amount',
+      internationalTransactionFee: '3.5% of transaction amount',
+      interestRate: '3.49% per month',
+      emiOptions: 'Available on select purchases',
+      idealFor: [
+        'Regular fuel purchases at BPCL outlets',
+        'Dining and grocery shopping',
+        'General spending'
+      ],
+      notIdealFor: [
+        'International travel',
+        'Luxury shopping',
+        'High-value purchases'
+      ],
+      summary: 'A fuel-focused credit card offering high rewards on BPCL fuel purchases and dining expenses.',
+      redemptionOptions: 'Redeem points for fuel vouchers, gift vouchers, and statement credit',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: 'Salaried and self-employed individuals with good credit score'
+    }
+  },
+  {
+    id: 'irctc-rupay-sbi-credit-card',
+    name: 'SBI IRCTC Credit Card',
+    bank: 'State Bank of India',
+    category: 'rewards',
+    image: '/credit-cards/SBI-IRCTC.png',
+    apr: '3.49% per month',
+    annualFee: '₹500 + GST',
+    joiningFee: '₹500 + GST',
+    rupay: true,
+    feedback: [],
+    categories: ['travel', 'rewards', 'upi'],
+    applyUrl: 'https://wee.bnking.in/c/NzBiZWI1Z',
+    additionalDetails: {
+      rewardsProgram: '• 10% value back as Reward Points on AC1, AC2, AC3, Executive Chair Car, and Chair Car tickets\n• 1 Reward Point for every ₹125 spent on non-fuel retail purchases\n• Each Reward Point = ₹1 when redeemed for railway tickets',
+      welcomeBonus: '350 bonus Reward Points on first retail transaction of ₹500 or more within 45 days (excludes fuel and cash transactions)',
+      milestoneBenefits: [
+        '4 complimentary railway lounge accesses per year (1 per quarter)'
+      ],
+      airportLounge: '4 complimentary railway lounge accesses per year (1 per quarter)',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹500-₹3,000 (max ₹100 per statement)',
+      insuranceCover: [
+        'Air accident insurance cover of ₹1 Crore',
+        'Lost card liability cover up to ₹1 Lakh'
+      ],
+      minimumSpend: 'No minimum spend requirement',
+      creditLimit: 'Based on income and credit profile',
+      domesticTransactionFee: '2.5% of transaction amount',
+      internationalTransactionFee: '3.5% of transaction amount',
+      interestRate: '3.49% per month',
+      emiOptions: 'Available on select purchases',
+      idealFor: [
+        'Frequent Indian Railways travelers',
+        'AC class travelers',
+        'Regular train ticket bookings',
+        'Contactless payment users'
+      ],
+      notIdealFor: [
+        'International travel',
+        'Luxury shopping',
+        'High-value purchases'
+      ],
+      summary: 'A co-branded travel card offering up to 10% value back on train tickets, railway lounge access, and fuel surcharge waivers. Ideal for frequent train travelers.',
+      redemptionOptions: 'Redeem points directly on IRCTC website/app for railway tickets (1 point = ₹1)',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: 'Minimum age 18 years, stable income source (salaried or self-employed), valid identity and address proof required',
+      additionalServices: 'RuPay Contactless technology for quick and secure transactions'
     }
   }
 ]; 

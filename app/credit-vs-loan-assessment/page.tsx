@@ -543,8 +543,22 @@ function CreditVsLoanAssessmentContent() {
                   </div>
                 );
               })() : (
-                <div className="text-center py-12 text-gray-500">
-                  <p>Complete the form to see your assessment results</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Recommendation */}
+                  <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-purple-200 shadow-md p-6 min-h-[260px] justify-center">
+                    <h3 className="text-base font-bold mb-2">Recommendation</h3>
+                    <p className="text-gray-500 text-sm">Fill and Submit the form to see your recommendation</p>
+                  </div>
+                  {/* Conditions */}
+                  <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-green-200 shadow-md p-6 min-h-[260px] justify-center">
+                    <h3 className="text-base font-bold mb-2">Conditions</h3>
+                    <p className="text-gray-500 text-sm">Fill and Submit the form to see your conditions</p>
+                  </div>
+                  {/* Summary */}
+                  <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-blue-200 shadow-md p-6 min-h-[260px] justify-center">
+                    <h3 className="text-base font-bold mb-2">Summary</h3>
+                    <p className="text-gray-500 text-sm">Fill and Submit the form to see your summary</p>
+                  </div>
                 </div>
               )}
             </Card>
