@@ -161,6 +161,13 @@
       "is_lifetime_free":0
     },
     {
+      "card_name":"SBI Cashback Credit Card",
+      "joining_fee":999,
+      "annual_fee":999,
+      "annual_fee_waiver_criteria":200000,
+      "is_lifetime_free":0
+    },
+    {
       "card_name":"OneCard",
       "joining_fee":0,
       "annual_fee":0,

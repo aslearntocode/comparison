@@ -2899,5 +2899,58 @@ Age: 21 to 70 years
 Net Annual Income: ₹30,000 and above
 Credit Score: Good`
     }
+  },
+  {
+    id: 'sbi-cashback-credit-card',
+    name: 'SBI Cashback Credit Card',
+    bank: 'State Bank of India',
+    category: 'cashback',
+    image: '/credit-cards/SBI-Cashback.png',
+    apr: '3.49% per month',
+    annualFee: '₹999 + GST',
+    joiningFee: '₹999 + GST',
+    rupay: true,
+    feedback: [],
+    categories: ['cashback', 'rewards', 'upi'],
+    applyUrl: 'https://wee.bnking.in/c/NjUzODFmN',
+    additionalDetails: {
+      rewardsProgram: '• 5% cashback on online spends\n• 1% cashback on all other spends\n• No minimum spend requirement\n• No capping on cashback earnings',
+      welcomeBonus: 'NA',
+      milestoneBenefits: [
+        'Annual fee waiver on spends of ₹2 Lakhs or more'
+      ],
+      airportLounge: '4 complimentary airport lounge visits per year',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹500-₹3,000 (max ₹100 per statement)',
+      insuranceCover: [
+        'Air accident insurance cover of ₹1 Crore',
+        'Lost card liability cover up to ₹1 Lakh'
+      ],
+      minimumSpend: 'No minimum spend requirement',
+      creditLimit: 'Based on income and credit profile',
+      domesticTransactionFee: '2.5% of transaction amount',
+      internationalTransactionFee: '3.5% of transaction amount',
+      interestRate: '3.49% per month',
+      emiOptions: 'Available on select purchases',
+      idealFor: [
+        'Online shoppers',
+        'Regular spenders',
+        'Cashback seekers'
+      ],
+      notIdealFor: [
+        'International travelers',
+        'Luxury shoppers',
+        'Those seeking travel rewards'
+      ],
+      summary: 'A cashback-focused credit card offering high rewards on online spends with no capping on cashback earnings.',
+      redemptionOptions: 'Cashback is automatically credited to the card statement',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 65 years
+Net Annual Income: ₹25,000 and above
+Self-Employed Individuals:
+Age: 21 to 70 years
+Net Annual Income: ₹30,000 and above
+Credit Score: Good`
+    }
   }
 ]; 
