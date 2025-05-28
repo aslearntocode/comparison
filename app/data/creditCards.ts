@@ -2716,9 +2716,9 @@ Income: ITR > ₹12 lakhs/annum`
     apr: '46.2% p.a.',
     annualFee: '₹0',
     joiningFee: '₹0',
-    rupay: false,
+    rupay: true,
     feedback: [],
-    categories: ['lifestyle', 'lifetime-free'],
+    categories: ['lifestyle', 'lifetime-free','upi'],
     applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 10% cashback on dining, groceries, and entertainment\n• 5% cashback on other spends\n• 1% cashback on UPI transactions',
@@ -2782,7 +2782,13 @@ Income: ITR > ₹12 lakhs/annum`
       summary: 'A fuel-focused credit card offering high rewards on BPCL fuel purchases and dining expenses.',
       redemptionOptions: 'Redeem points for fuel vouchers, gift vouchers, and statement credit',
       cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
-      eligibilityCriteria: 'Salaried and self-employed individuals with good credit score'
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 65 years
+Net Annual Income: ₹25,000 and above
+Self-Employed Individuals:
+Age: 21 to 70 years
+Net Annual Income: ₹30,000 and above
+Credit Score: Good`
     }
   },
   {
@@ -2830,8 +2836,68 @@ Income: ITR > ₹12 lakhs/annum`
       summary: 'A co-branded travel card offering up to 10% value back on train tickets, railway lounge access, and fuel surcharge waivers. Ideal for frequent train travelers.',
       redemptionOptions: 'Redeem points directly on IRCTC website/app for railway tickets (1 point = ₹1)',
       cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
-      eligibilityCriteria: 'Minimum age 18 years, stable income source (salaried or self-employed), valid identity and address proof required',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 65 years
+Net Annual Income: ₹25,000 and above
+Self-Employed Individuals:
+Age: 21 to 70 years
+Net Annual Income: ₹30,000 and above
+Credit Score: Good`,
       additionalServices: 'RuPay Contactless technology for quick and secure transactions'
+    }
+  },
+  {
+    id: 'sbi-simply-save-credit-card',
+    name: 'SBI Simply Save Credit Card',
+    bank: 'State Bank of India',
+    category: 'rewards',
+    image: '/credit-cards/SBI-Simply-Save.png',
+    apr: '3.49% per month',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
+    rupay: true,
+    feedback: [],
+    categories: ['rewards', 'cashback', 'upi'],
+    applyUrl: 'https://wee.bnking.in/c/MjcwZjgxY',
+    additionalDetails: {
+      rewardsProgram: '• 1 Reward Point for every ₹100 spent\n• 5X rewards on grocery and departmental store spends\n• 2X rewards on dining and movie spends',
+      welcomeBonus: '2,000 bonus Reward Points on first spend',
+      milestoneBenefits: [
+        'Annual fee waiver on spends of ₹1 Lakh or more',
+        'Complimentary movie ticket on spends of ₹5,000 or more'
+      ],
+      airportLounge: '4 complimentary airport lounge visits per year',
+      fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹500-₹3,000 (max ₹100 per statement)',
+      insuranceCover: [
+        'Air accident insurance cover of ₹1 Crore',
+        'Lost card liability cover up to ₹1 Lakh'
+      ],
+      minimumSpend: 'No minimum spend requirement',
+      creditLimit: 'Based on income and credit profile',
+      domesticTransactionFee: '2.5% of transaction amount',
+      internationalTransactionFee: '3.5% of transaction amount',
+      interestRate: '3.49% per month',
+      emiOptions: 'Available on select purchases',
+      idealFor: [
+        'Regular grocery shopping',
+        'Dining and entertainment',
+        'General spending'
+      ],
+      notIdealFor: [
+        'International travel',
+        'Luxury shopping',
+        'High-value purchases'
+      ],
+      summary: 'A rewards-focused credit card offering high rewards on grocery, dining, and entertainment spends with annual fee waiver benefits.',
+      redemptionOptions: 'Redeem points for gift vouchers, statement credit, and merchandise',
+      cashAdvanceFee: '2.5% of amount withdrawn (min ₹500)',
+      eligibilityCriteria: `Salaried Individuals:
+Age: 21 to 65 years
+Net Annual Income: ₹25,000 and above
+Self-Employed Individuals:
+Age: 21 to 70 years
+Net Annual Income: ₹30,000 and above
+Credit Score: Good`
     }
   }
 ]; 

@@ -140,10 +140,24 @@
       "is_lifetime_free":0
     },
     {
-      "card_name":"SBI Elite",
-      "joining_fee":5000,
-      "annual_fee":4999,
-      "annual_fee_waiver_criteria":300000,
+      "card_name":"SBI IRCTC Credit Card",
+      "joining_fee":500,
+      "annual_fee":500,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
+    },
+    {
+      "card_name":"SBI BPCL Credit Card",
+      "joining_fee":499,
+      "annual_fee":499,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
+    },
+    {
+      "card_name":"SBI Simply Save Credit Card",
+      "joining_fee":499,
+      "annual_fee":499,
+      "annual_fee_waiver_criteria":100000,
       "is_lifetime_free":0
     },
     {
