@@ -329,16 +329,8 @@ function CreditProductComparisonContent() {
           {/* Credit Cards Grid */}
           <div className="bg-white rounded-xl shadow-lg p-6 mt-8">
             {/* Table Header - Desktop */}
-            <div className="hidden md:grid md:grid-cols-8 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr 1fr' }}>
+            <div className="hidden md:grid md:grid-cols-5 gap-2 mb-6 px-3 py-2 bg-gray-50 rounded-lg" style={{ gridTemplateColumns: '2fr 1fr 1fr 0.7fr 1.2fr' }}>
               <div className="col-span-1 font-medium text-gray-700 text-[13px]">Card Details</div>
-              <button
-                onClick={() => handleSort('apr')}
-                className="font-medium text-gray-700 text-[13px] flex items-center gap-1 hover:text-blue-600"
-              >
-                APR
-                <SortIcon field="apr" />
-              </button>
-              <div className="font-medium text-gray-700 text-[13px]">Rupay</div>
               <button
                 onClick={() => handleSort('annualFee')}
                 className="font-medium text-gray-700 text-[13px] flex items-center gap-1 hover:text-blue-600"
@@ -398,9 +390,6 @@ function CreditProductComparisonContent() {
                           </div>
                         </div>
                         <div className="flex flex-row flex-wrap items-center gap-2 text-xs">
-                          <div className="flex items-center gap-1 whitespace-nowrap font-medium text-gray-700">
-                            APR <span className="text-gray-900 ml-1 whitespace-nowrap">{card.apr}</span>
-                          </div>
                           <div className="flex items-center gap-1 font-medium text-gray-700">
                             Fees
                             <span className="text-gray-900 ml-1 whitespace-nowrap">
@@ -432,10 +421,12 @@ function CreditProductComparisonContent() {
                             )
                           ) : null}
                           <Link
-                            href={`/credit/${card.id}`}
-                            className="inline-block px-3 py-1 bg-blue-600 text-white rounded text-xs font-semibold hover:bg-blue-700 transition-colors"
+                            href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm shadow hover:bg-blue-700 transition-colors"
                           >
-                            Check Eligibility
+                            Apply Now
                           </Link>
                         </div>
                         {/* MOBILE BADGE (below Check Eligibility button, only visible on mobile) */}
@@ -454,32 +445,21 @@ function CreditProductComparisonContent() {
                       </div>
                     </div>
                     {/* Desktop View */}
-                    <div className="hidden md:grid md:grid-cols-8 gap-2 px-3 py-2" style={{ gridTemplateColumns: '2fr 0.8fr 0.6fr 1.2fr 0.8fr 0.6fr 1fr' }}>
+                    <div className="hidden md:grid md:grid-cols-5 gap-2 px-3 py-2" style={{ gridTemplateColumns: '2fr 1fr 1fr 0.7fr 1.2fr' }}>
                       <Link href={`/credit/${card.id}`} className="flex items-center gap-4 col-span-1 group cursor-pointer">
-                        <div className="w-32 h-20 relative flex-shrink-0">
+                        <div className="w-32 h-20 flex items-center justify-center overflow-hidden bg-white rounded-lg">
                           <Image
                             src={card.image}
                             alt={card.name}
-                            fill
-                            className="object-contain rounded-lg"
+                            width={120}
+                            height={80}
+                            className="object-contain w-auto h-full mx-auto rounded-lg"
                           />
                         </div>
                         <div>
                           <h3 className="text-base font-bold text-gray-900 mb-1 group-hover:underline leading-tight whitespace-normal break-words">{card.name}</h3>
                         </div>
                       </Link>
-                      <div className="text-gray-900 flex items-center">{card.apr}</div>
-                      <div className="flex items-center">
-                        {card.rupay ? (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Yes
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                            No
-                          </span>
-                        )}
-                      </div>
                       <div className="text-gray-900 text-sm flex items-center text-left">
                         <ul className="list-disc list-inside space-y-1">
                           <li>Annual: {card.annualFee}</li>
@@ -507,11 +487,12 @@ function CreditProductComparisonContent() {
                       </div>
                       <div className="flex items-center justify-center flex-col">
                         <Link
-                          href={`/credit/${card.id}`}
-                          target="_self"
-                          className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold hover:bg-blue-700 transition-colors"
+                          href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm shadow hover:bg-blue-700 transition-colors"
                         >
-                          Check Eligibility
+                          Apply Now
                         </Link>
                         <div className="hidden md:flex flex-col items-center justify-center mt-2">
                           <span className="inline-block bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-center leading-tight" style={{ fontSize: '0.95rem', lineHeight: '1.2' }}>

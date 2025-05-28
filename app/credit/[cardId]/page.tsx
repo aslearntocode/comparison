@@ -616,57 +616,19 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                 </div>
                 {/* Eligibility Criteria */}
                 <div className="md:col-span-1 flex flex-col h-full">
-                  <div className="bg-blue-50 rounded-xl p-4 md:p-3 flex flex-col h-full">
-                    <h4 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-                      <span>📝</span>
-                      Eligibility Criteria
-                    </h4>
-                    <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
-                      {card.additionalDetails?.eligibilityCriteria
-                        ? (() => {
-                            type Section = { title: string; subs: string[] };
-                            const lines = card.additionalDetails.eligibilityCriteria.split('\n');
-                            const items: Section[] = [];
-                            let currentSection: Section | null = null;
-                            lines.forEach((line) => {
-                              if (line.trim().endsWith('Individuals:') || line.trim().startsWith('Credit Score:')) {
-                                if (currentSection) items.push(currentSection);
-                                currentSection = { title: line, subs: [] };
-                              } else if (currentSection) {
-                                currentSection.subs.push(line);
-                              }
-                            });
-                            if (currentSection) items.push(currentSection);
-                            return items.map((section, i) => (
-                              <li key={i} className="text-gray-700 text-base md:text-sm">
-                                {section.title}
-                                {section.subs.length > 0 && (
-                                  <ul className="list-disc pl-6 mt-1">
-                                    {section.subs.map((sub: string, j: number) => (
-                                      <li key={j} className="text-gray-700 text-base md:text-sm">{sub}</li>
-                                    ))}
-                                  </ul>
-                                )}
-                              </li>
-                            ));
-                          })()
-                        : (
-                          <li className="text-gray-700 text-base md:text-sm">
-                            Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
-                          </li>
-                        )
-                      }
-                    </ul>
-                    <div className="mt-6 flex flex-col items-center gap-2">
+                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 md:p-6 flex flex-col h-full shadow-lg border border-blue-200">
+                    <div className="mt-2 flex flex-col items-center gap-4">
                       <Link
                         href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                        className="inline-block px-8 py-3 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-md hover:bg-blue-700 transition-colors"
                       >
                         Apply Now
                       </Link>
-                      <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Amazon Voucher: ₹{getHealthPoints(card)}</span>
+                      <span className="inline-block bg-green-100 text-green-800 text-base font-bold px-4 py-2 rounded-lg shadow-sm mt-2">
+                        Amazon Voucher: ₹{getHealthPoints(card)}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -718,57 +680,19 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   </div>
                 </div>
                 {/* Eligibility Criteria always below */}
-                <div className="w-full bg-blue-50 rounded-xl p-4 flex flex-col">
-                  <h4 className="text-lg font-bold text-blue-800 mb-4 flex items-center gap-2">
-                    <span>📝</span>
-                    Eligibility Criteria
-                  </h4>
-                  <ul className="space-y-2 flex-1 list-disc list-outside pl-4">
-                    {card.additionalDetails?.eligibilityCriteria
-                      ? (() => {
-                          type Section = { title: string; subs: string[] };
-                          const lines = card.additionalDetails.eligibilityCriteria.split('\n');
-                          const items: Section[] = [];
-                          let currentSection: Section | null = null;
-                          lines.forEach((line) => {
-                            if (line.trim().endsWith('Individuals:') || line.trim().startsWith('Credit Score:')) {
-                              if (currentSection) items.push(currentSection);
-                              currentSection = { title: line, subs: [] };
-                            } else if (currentSection) {
-                              currentSection.subs.push(line);
-                            }
-                          });
-                          if (currentSection) items.push(currentSection);
-                          return items.map((section, i) => (
-                            <li key={i} className="text-gray-700 text-base md:text-sm">
-                              {section.title}
-                              {section.subs.length > 0 && (
-                                <ul className="list-disc pl-6 mt-1">
-                                  {section.subs.map((sub: string, j: number) => (
-                                    <li key={j} className="text-gray-700 text-base md:text-sm">{sub}</li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ));
-                        })()
-                      : (
-                        <li className="text-gray-700 text-base md:text-sm">
-                          Eligibility criteria for this card are not specified. Please check with the issuing bank for details.
-                        </li>
-                      )
-                    }
-                  </ul>
-                  <div className="mt-6 flex flex-col items-center gap-2">
+                <div className="w-full bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 flex flex-col shadow-lg border border-blue-200">
+                  <div className="mt-2 flex flex-col items-center gap-4">
                     <Link
                       href={card.applyUrl || `/credit/apply?cardId=${card.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors"
+                      className="inline-block px-8 py-3 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-md hover:bg-blue-700 transition-colors"
                     >
                       Apply Now
                     </Link>
-                    <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">Amazon Voucher: ₹{getHealthPoints(card)}</span>
+                    <span className="inline-block bg-green-100 text-green-800 text-base font-bold px-4 py-2 rounded-lg shadow-sm mt-2">
+                      Amazon Voucher: ₹{getHealthPoints(card)}
+                    </span>
                   </div>
                 </div>
               </div>
