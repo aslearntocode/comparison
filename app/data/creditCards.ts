@@ -1905,7 +1905,7 @@ Net Annual Income: ₹60 lakhs and above`
     rupay: false,
     feedback: [],
     categories: [
-      'premium',
+      'ultra-premium',
       'international-travel',
       'domestic-lounge',
       'international-lounge'
