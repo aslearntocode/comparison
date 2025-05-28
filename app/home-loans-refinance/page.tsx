@@ -236,16 +236,18 @@ function HomeLoansRefinance() {
             {/* Left: Title, Subtitle, Description, Offer */}
             <div className="flex-1 max-w-xl">
               <div className="text-green-700 font-semibold text-lg mb-2">Home Loan Refinance</div>
-              <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-3 leading-tight">
+              <h1 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 leading-tight">
                 Get the best offers for your home loan refinance!
               </h1>
-              <p className="text-gray-700 text-lg mb-6">
-                Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.
-              </p>
-              {/* Optional Offer Card */}
-              {/* <div className="bg-yellow-300 rounded-lg p-4 shadow-md w-fit mb-4">
-                <span className="font-medium">On every successful application, customers will earn <span className="bg-yellow-500 text-white px-2 rounded">Amazon vouchers worth INR 500 to 1000</span>.</span>
-              </div> */}
+              <div className="hidden sm:block">
+                <p className="text-gray-700 text-lg mb-6">
+                  Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.
+                </p>
+              </div>
+              {/* Amazon Voucher Offer Card */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
+                <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 1,500 to 5,000</span>.</span>
+              </div>
             </div>
             {/* Right: Get Started Form */}
             <div ref={formCardRef} className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24">

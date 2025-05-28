@@ -2752,7 +2752,7 @@ Income: ITR > ₹12 lakhs/annum`
     joiningFee: '₹499 + GST',
     rupay: false,
     feedback: [],
-    categories: ['fuel', 'cashback'],
+    categories: ['fuel'],
     applyUrl: 'https://wee.bnking.in/c/NzE4MWRhZ',
     additionalDetails: {
       rewardsProgram: '• 5X rewards on BPCL fuel purchases, \n• 2X rewards on dining and groceries, \n• 1X rewards on all other spends',

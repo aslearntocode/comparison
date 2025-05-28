@@ -292,28 +292,23 @@ function PersonalLoans() {
             <div className="md:grid md:grid-cols-2 md:gap-8 md:items-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-0 md:p-8">
               {/* Mobile: Heading and offer above form */}
               <div className="block md:hidden px-0 pt-4 pb-2">
-                <div className="text-xl font-bold text-blue-900 leading-tight mb-2 text-center max-w-full px-2">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-                <div className="flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-xl px-3 py-2 shadow-sm mx-auto mb-2 max-w-sm w-full">
-                  <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6 text-yellow-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
-                  <span className="font-semibold text-yellow-800 text-sm">On every successful application, customers will earn <span className="text-yellow-900">Amazon vouchers worth INR 500 to 1000</span>.</span>
+                <h1 className="text-2xl font-bold text-blue-900 leading-tight mb-3 text-center">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</h1>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mx-auto mb-4">
+                  <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
                 </div>
               </div>
               {/* Left: Headline, subheadline, offer (desktop only) */}
               <div className="hidden md:flex flex-col gap-6 pl-8 justify-start self-start mt-0">
                 <div>
                   <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
-                  <div className="text-3xl font-bold text-blue-900 leading-tight mb-4">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</div>
-                  <p className="text-gray-700 text-lg mb-6">Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.</p>
-                </div>
-                <div className="mt-2">
-                  <div className="flex items-center gap-3 px-4 py-4 rounded-2xl max-w-xs shadow-2xl border-0"
-                    style={{
-                      background: 'linear-gradient(120deg, #fceabb 0%, #f8b500 100%)',
-                      transform: 'rotate(-4deg)',
-                      boxShadow: '0 8px 32px 0 rgba(255, 193, 7, 0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10)'
-                    }}>
-                    <svg xmlns='http://www.w3.org/2000/svg' className='h-8 w-8 text-yellow-700 drop-shadow' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z' /></svg>
-                    <span className="font-bold text-yellow-900 text-lg drop-shadow-sm">On every successful application, customers will earn <span className="text-white bg-yellow-700 px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1000</span>.</span>
+                  <h1 className="text-2xl md:text-4xl font-bold text-blue-900 leading-tight mb-3">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</h1>
+                  <div className="hidden md:block">
+                    <p className="text-gray-700 text-lg mb-6">
+                      Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.
+                    </p>
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
+                      <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
+                    </div>
                   </div>
                 </div>
               </div>
