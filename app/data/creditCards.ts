@@ -603,10 +603,10 @@ Credit Score: 750+`,
       emiOptions: 'Available on eligible purchases',
       additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for those spending ₹4L–₹8L annually, offering a sweet spot of benefits with an affordable annual fee',
-        'Occasional Travelers: Enjoy 4 free domestic lounge accesses every quarter and 2 complimentary international lounge entries each year',
-        'Lifestyle & Entertainment Enthusiasts: Get Buy 1 Get 1 on BookMyShow, golf privileges, and dining discounts through the Culinary Treats Program',
-        'Reward Collectors: Earn accelerated points on international and retail spends, with flexible redemption options'
+        'Mid-to-High Spenders',
+        'Occasional Travelers',
+        'Lifestyle & Entertainment Enthusiasts',
+        'Reward Collectors'
       ],
       notIdealFor: [
         'Users who spend less than ₹2–3 lakh annually',
@@ -616,58 +616,58 @@ Credit Score: 750+`,
       summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
     }
   },
-  {
-    id: 'onecard',
-    name: 'OneCard',
-    bank: 'OneCard',
-    category: 'fintech',
-    image: '/credit-cards/OneCard.png',
-    apr: '42% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'best-credit-cards',
-      'rewards',
-      'lifetime-free',
-      // 'travel',
-      // 'international-travel',
-      // 'domestic-lounge',
-      // 'international-lounge',
-      'fintech'
-    ],
-    applyUrl: 'https://example.com/apply-onecard',
-    additionalDetails: {
-      rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
-      welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
-      airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
-      fuelSurcharge: 'Not specified',
-      insuranceCover: [
-        'Air Accident Cover: ₹2 crore',
-        'Credit Shield: ₹15 lakh',
-        'Purchase Protection: ₹50,000',
-        'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
-      ],
-      movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
-      diningPrivileges: [
-        'Exclusive dining privileges and offers'
-      ],
-      minimumSpend: 'NA',
-      internationalTransactionFee: '0.99%',
-      additionalServices: 'Lifetime free add-on cards for family members',
-      idealFor: [
-        'High-income individuals with substantial monthly expenditures',
-        'Frequent travelers seeking lounge access and travel-related perks',
-        'Users who prioritize dining and lifestyle benefits'
-      ],
-      notIdealFor: [
-        'Individuals with moderate or low spending habits',
-        'Those seeking a no-frills, low-fee credit card'
-      ],
-      summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
-    }
-  },
+  // {
+  //   id: 'onecard',
+  //   name: 'OneCard',
+  //   bank: 'OneCard',
+  //   category: 'fintech',
+  //   image: '/credit-cards/OneCard.png',
+  //   apr: '42% p.a.',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: [
+  //     'best-credit-cards',
+  //     'rewards',
+  //     'lifetime-free',
+  //     // 'travel',
+  //     // 'international-travel',
+  //     // 'domestic-lounge',
+  //     // 'international-lounge',
+  //     'fintech'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-onecard',
+  //   additionalDetails: {
+  //     rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+  //     welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+  //     airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+  //     fuelSurcharge: 'Not specified',
+  //     insuranceCover: [
+  //       'Air Accident Cover: ₹2 crore',
+  //       'Credit Shield: ₹15 lakh',
+  //       'Purchase Protection: ₹50,000',
+  //       'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+  //     ],
+  //     movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+  //     diningPrivileges: [
+  //       'Exclusive dining privileges and offers'
+  //     ],
+  //     minimumSpend: 'NA',
+  //     internationalTransactionFee: '0.99%',
+  //     additionalServices: 'Lifetime free add-on cards for family members',
+  //     idealFor: [
+  //       'High-income individuals with substantial monthly expenditures',
+  //       'Frequent travelers seeking lounge access and travel-related perks',
+  //       'Users who prioritize dining and lifestyle benefits'
+  //     ],
+  //     notIdealFor: [
+  //       'Individuals with moderate or low spending habits',
+  //       'Those seeking a no-frills, low-fee credit card'
+  //     ],
+  //     summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
+  //   }
+  // },
   {
     id: 'kiwi',
     name: 'Kiwi Credit Card',
@@ -1523,48 +1523,48 @@ Income: ITR > ₹6 lakhs/annum`
       fuelSurcharge: 'Not specified'
     }
   },
-  {
-    id: 'kotak-811-dream-different',
-    name: 'Kotak 811 #DreamDifferent Credit Card',
-    bank: 'Kotak Mahindra Bank',
-    category: 'secured',
-    image: '/credit-cards/Kotak-Secured.png',
-    apr: 'Based on FD rate',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: true,
-    feedback: [],
-    categories: ['secured'],
-    applyUrl: 'https://example.com/apply-kotak-811-dream-different',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 2 reward points per ₹100 spent online
-• 1 reward point per ₹100 spent on other categories
+//   {
+//     id: 'kotak-811-dream-different',
+//     name: 'Kotak 811 #DreamDifferent Credit Card',
+//     bank: 'Kotak Mahindra Bank',
+//     category: 'secured',
+//     image: '/credit-cards/Kotak-Secured.png',
+//     apr: 'Based on FD rate',
+//     annualFee: '₹0',
+//     joiningFee: '₹0',
+//     rupay: true,
+//     feedback: [],
+//     categories: ['secured'],
+//     applyUrl: 'https://example.com/apply-kotak-811-dream-different',
+//     additionalDetails: {
+//       rewardsProgram: `Earning Rate:
+// • 2 reward points per ₹100 spent online
+// • 1 reward point per ₹100 spent on other categories
 
-Redemption:
-• Points can be redeemed for vouchers and other rewards`,
-      welcomeBonus: 'No specific welcome benefits',
-      milestoneBenefits: [
-        '₹250 voucher on spending ₹36,000 in an anniversary year',
-        '₹1,000 voucher on spending ₹72,000 in an anniversary year'
-      ],
-      fuelSurcharge: '1% waiver on transactions between ₹500 and ₹3,000',
-      additionalServices: 'Railway Benefits:\n• 1.8% surcharge waiver on IRCTC bookings\n• 2.5% surcharge waiver on railway counter bookings',
-      idealFor: [
-        'First-time credit card users',
-        'Individuals without regular income (students, homemakers, freelancers)',
-        'Those seeking low-cost credit options',
-        'People looking to build or improve credit history'
-      ],
-      notIdealFor: [
-        'High spenders seeking premium benefits',
-        'Individuals unable to open a fixed deposit',
-        'Those with established credit history'
-      ],
-      summary: 'A secured, lifetime-free credit card designed to help individuals build or improve their credit history, offering basic rewards and benefits with no annual or joining fees.',
-      creditLimit: 'Up to 90% of the Fixed Deposit amount'
-    }
-  },
+// Redemption:
+// • Points can be redeemed for vouchers and other rewards`,
+//       welcomeBonus: 'No specific welcome benefits',
+//       milestoneBenefits: [
+//         '₹250 voucher on spending ₹36,000 in an anniversary year',
+//         '₹1,000 voucher on spending ₹72,000 in an anniversary year'
+//       ],
+//       fuelSurcharge: '1% waiver on transactions between ₹500 and ₹3,000',
+//       additionalServices: 'Railway Benefits:\n• 1.8% surcharge waiver on IRCTC bookings\n• 2.5% surcharge waiver on railway counter bookings',
+//       idealFor: [
+//         'First-time credit card users',
+//         'Individuals without regular income (students, homemakers, freelancers)',
+//         'Those seeking low-cost credit options',
+//         'People looking to build or improve credit history'
+//       ],
+//       notIdealFor: [
+//         'High spenders seeking premium benefits',
+//         'Individuals unable to open a fixed deposit',
+//         'Those with established credit history'
+//       ],
+//       summary: 'A secured, lifetime-free credit card designed to help individuals build or improve their credit history, offering basic rewards and benefits with no annual or joining fees.',
+//       creditLimit: 'Up to 90% of the Fixed Deposit amount'
+//     }
+//   },
   {
     id: 'icici-instant-platinum',
     name: 'ICICI Bank Instant Platinum Credit Card',
@@ -1609,29 +1609,29 @@ Redemption:
       ]
     }
   },
-  {
-    id: 'bob-prime',
-    name: 'Bank of Baroda Prime Credit Card',
-    bank: 'Bank of Baroda',
-    category: 'secured',
-    image: '/credit-cards/BOB-Secured.png',
-    apr: 'Based on FD rate',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: ['secured'],
-    applyUrl: 'https://example.com/apply-bob-prime',
-    additionalDetails: {
-      creditLimit: 'Up to 80% of Fixed Deposit amount',
-      rewardsProgram: `Reward points on spending
+//   {
+//     id: 'bob-prime',
+//     name: 'Bank of Baroda Prime Credit Card',
+//     bank: 'Bank of Baroda',
+//     category: 'secured',
+//     image: '/credit-cards/BOB-Secured.png',
+//     apr: 'Based on FD rate',
+//     annualFee: '₹0',
+//     joiningFee: '₹0',
+//     rupay: false,
+//     feedback: [],
+//     categories: ['secured'],
+//     applyUrl: 'https://example.com/apply-bob-prime',
+//     additionalDetails: {
+//       creditLimit: 'Up to 80% of Fixed Deposit amount',
+//       rewardsProgram: `Reward points on spending
 
-Fuel Benefits:
-• Fuel surcharge waiver available`,
-      summary: 'A secured credit card with fuel benefits and reward points on spending.',
-      fuelSurcharge: 'Not specified'
-    }
-  },
+// Fuel Benefits:
+// • Fuel surcharge waiver available`,
+//       summary: 'A secured credit card with fuel benefits and reward points on spending.',
+//       fuelSurcharge: 'Not specified'
+//     }
+//   },
   {
     id: 'axis-fd',
     name: 'Axis Bank FD Backed Credit Card',
@@ -1653,7 +1653,7 @@ Fuel Benefits:
   },
   {
     id: 'amazon-pay-icici',
-    name: 'Amazon Pay ICICI Bank Credit Card',
+    name: 'ICICI Amazon Pay Credit Card',
     bank: 'ICICI Bank',
     category: 'lifetime-free',
     image: '/credit-cards/ICICI-Amazon.png',
@@ -1727,75 +1727,75 @@ Fuel Benefits:
       summary: 'A lifetime-free credit card offering entertainment and lifestyle benefits including SonyLIV Premium subscription, movie ticket discounts, and dining offers, ideal for entertainment enthusiasts and regular online shoppers.',
     }
   },
-  {
-    id: 'hsbc-taj',
-    name: 'HSBC Taj Credit Card',
-    bank: 'HSBC Bank',
-    category: 'ultra-premium',
-    image: '/credit-cards/HSBC-Taj.png',
-    apr: '42% p.a.',
-    annualFee: '₹1,10,000 + GST',
-    joiningFee: '₹1,10,000 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'ultra-premium',
-      // 'premium',
-      'hotels',
-      // 'rewards',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge'
-    ],
-    applyUrl: 'https://example.com/apply-hsbc-taj',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 5 reward points per ₹100 spent at IHCL properties\n• 1.5 points per ₹100 on other eligible purchases\n\nRedemption:\n• Points can be redeemed for stays, dining, spa treatments, and more at participating IHCL hotels',
-      welcomeBonus: 'Welcome Benefits:\n• Taj InnerCircle Platinum NeuPass Membership\n• Complimentary one-night stay at Taj Palaces\n• Two additional nights at participating IHCL hotels\n• Four set meal vouchers at select restaurants\n• Four 60-minute spa therapy vouchers\n• Twelve pool access vouchers for two\n• Twelve access vouchers each for The Chambers and Taj Club lounges',
-      milestoneBenefits: [
-        'Complimentary one-night stay at Taj Palaces on spends of ₹10 lakh',
-        'Two additional nights at participating IHCL hotels on spends of ₹20 lakh',
-        'Four set meal vouchers at select restaurants on spends of ₹30 lakh',
-        'Four 60-minute spa therapy vouchers on spends of ₹40 lakh'
-      ],
-      airportLounge: 'Unlimited complimentary access to domestic and international lounges',
-      insuranceCover: [
-        'Comprehensive travel insurance coverage'
-      ],
-      diningPrivileges: [
-        '25% off on breakfast-inclusive stays',
-        '25% off on dining at IHCL properties',
-        '25% off on spa therapies',
-        '25% off on Qmin food deliveries'
-      ],
-      minimumSpend: 'NA',
-      creditLimit: 'Customized as per profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: 'Not specified',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira\n\nLounge Access Benefits:\n• Unlimited domestic lounge access via DreamFolks\n• Unlimited international lounge access via Priority Pass\n• Complimentary access for primary and add-on cardholders\n• Access to over 1,300 lounges worldwide\n• Complimentary spa services at select lounges\n• Complimentary dining at select airport restaurants',
-      idealFor: [
-        'Affluent individuals seeking luxury hospitality experiences',
-        'Frequent travelers who prefer IHCL properties',
-        'High-income individuals with annual income above ₹40 lakhs (salaried) or ₹60 lakhs (self-employed)',
-        'Residents of major Indian cities including Mumbai, Delhi-NCR, Bengaluru, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad, Jaipur, Kochi, and Coimbatore'
-      ],
-      notIdealFor: [
-        'Budget-conscious individuals',
-        'Those who rarely stay at luxury hotels',
-        'Individuals with annual income below ₹40 lakhs',
-        'Residents of cities not covered by HSBC'
-      ],
-      summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.',
-      fuelSurcharge: 'Not specified',
-      eligibilityCriteria: `Salaried Individuals:
-Age: 21 to 60 years
-Net Annual Income: ₹40 lakhs and above
-Self-Employed Individuals:
-Age: 21 to 65 years
-Net Annual Income: ₹60 lakhs and above`
-    }
-  },
+//   {
+//     id: 'hsbc-taj',
+//     name: 'HSBC Taj Credit Card',
+//     bank: 'HSBC Bank',
+//     category: 'ultra-premium',
+//     image: '/credit-cards/HSBC-Taj.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹1,10,000 + GST',
+//     joiningFee: '₹1,10,000 + GST',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       'ultra-premium',
+//       // 'premium',
+//       'hotels',
+//       // 'rewards',
+//       'international-travel',
+//       'domestic-lounge',
+//       'international-lounge'
+//     ],
+//     applyUrl: 'https://example.com/apply-hsbc-taj',
+//     additionalDetails: {
+//       rewardsProgram: 'Earning Rate:\n• 5 reward points per ₹100 spent at IHCL properties\n• 1.5 points per ₹100 on other eligible purchases\n\nRedemption:\n• Points can be redeemed for stays, dining, spa treatments, and more at participating IHCL hotels',
+//       welcomeBonus: 'Welcome Benefits:\n• Taj InnerCircle Platinum NeuPass Membership\n• Complimentary one-night stay at Taj Palaces\n• Two additional nights at participating IHCL hotels\n• Four set meal vouchers at select restaurants\n• Four 60-minute spa therapy vouchers\n• Twelve pool access vouchers for two\n• Twelve access vouchers each for The Chambers and Taj Club lounges',
+//       milestoneBenefits: [
+//         'Complimentary one-night stay at Taj Palaces on spends of ₹10 lakh',
+//         'Two additional nights at participating IHCL hotels on spends of ₹20 lakh',
+//         'Four set meal vouchers at select restaurants on spends of ₹30 lakh',
+//         'Four 60-minute spa therapy vouchers on spends of ₹40 lakh'
+//       ],
+//       airportLounge: 'Unlimited complimentary access to domestic and international lounges',
+//       insuranceCover: [
+//         'Comprehensive travel insurance coverage'
+//       ],
+//       diningPrivileges: [
+//         '25% off on breakfast-inclusive stays',
+//         '25% off on dining at IHCL properties',
+//         '25% off on spa therapies',
+//         '25% off on Qmin food deliveries'
+//       ],
+//       minimumSpend: 'NA',
+//       creditLimit: 'Customized as per profile',
+//       domesticTransactionFee: 'Nil',
+//       internationalTransactionFee: 'Not specified',
+//       interestRate: '42% p.a.',
+//       emiOptions: 'Available on eligible purchases',
+//       additionalServices: 'Additional Benefits:\n• Four complimentary Blacklane chauffeured transfers annually\n• Up to 5% off on Emirates flights\n• 15% off on duty-free shopping at domestic airports\n• Lifestyle discounts on brands like Starbucks, PVR Cinemas, Swiggy, Zomato, and Tira\n\nLounge Access Benefits:\n• Unlimited domestic lounge access via DreamFolks\n• Unlimited international lounge access via Priority Pass\n• Complimentary access for primary and add-on cardholders\n• Access to over 1,300 lounges worldwide\n• Complimentary spa services at select lounges\n• Complimentary dining at select airport restaurants',
+//       idealFor: [
+//         'Affluent individuals seeking luxury hospitality experiences',
+//         'Frequent travelers who prefer IHCL properties',
+//         'High-income individuals with annual income above ₹40 lakhs (salaried) or ₹60 lakhs (self-employed)',
+//         'Residents of major Indian cities including Mumbai, Delhi-NCR, Bengaluru, Chennai, Hyderabad, Pune, Kolkata, Ahmedabad, Jaipur, Kochi, and Coimbatore'
+//       ],
+//       notIdealFor: [
+//         'Budget-conscious individuals',
+//         'Those who rarely stay at luxury hotels',
+//         'Individuals with annual income below ₹40 lakhs',
+//         'Residents of cities not covered by HSBC'
+//       ],
+//       summary: 'A premium co-branded credit card offering exclusive IHCL privileges, luxury travel benefits, and comprehensive lifestyle rewards, ideal for affluent individuals who frequently engage with IHCL properties.',
+//       fuelSurcharge: 'Not specified',
+//       eligibilityCriteria: `Salaried Individuals:
+// Age: 21 to 60 years
+// Net Annual Income: ₹40 lakhs and above
+// Self-Employed Individuals:
+// Age: 21 to 65 years
+// Net Annual Income: ₹60 lakhs and above`
+//     }
+//   },
   {
     id: 'axis-primus',
     name: 'Axis Bank Primus Credit Card',
@@ -1841,535 +1841,535 @@ Net Annual Income: ₹60 lakhs and above`
       summary: 'The most expensive credit card in the Indian market, offering unparalleled luxury travel benefits, zero forex markup, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
     }
   },
-  {
-    id: 'amex-centurion',
-    name: 'American Express Centurion Card',
-    bank: 'American Express',
-    category: 'ultra-premium',
-    image: '/credit-cards/Amex-Centurion.png',
-    apr: '42% p.a.',
-    annualFee: '₹2,75,000 + GST',
-    joiningFee: '₹9,75,000 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'ultra-premium',
-      // 'premium',
-      // 'rewards',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge'
-    ],
-    applyUrl: 'https://example.com/apply-amex-centurion',
-    additionalDetails: {
-      rewardsProgram: 'Elite Status Benefits:\n• Hilton Honors Diamond\n• Accor Live Limitless Platinum\n• Shangri-La Golden Circle Jade\n• British Airways Executive Club Gold\n• Etihad Guest Gold',
-      welcomeBonus: 'Not specified',
-      airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide through the American Express Global Lounge Collection, including Centurion Lounges, Priority Pass, and Delta Sky Clubs',
-      insuranceCover: [
-        'Comprehensive travel insurance coverage'
-      ],
-      diningPrivileges: [
-        'Exclusive access to private dining experiences'
-      ],
-      minimumSpend: 'NA',
-      creditLimit: 'Customized as per profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% on international transactions',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Benefits:\n• Dedicated Centurion Relationship Managers\n• 24/7 concierge services for personalized assistance\n• Complimentary meet-and-greet services at select airports\n• Up to 7 supplementary Platinum cards issued at no additional cost\n• Invitations to VIP events and fashion shows',
-      idealFor: [
-        'Ultra-high-net-worth individuals (UHNIs)',
-        'Existing Amex Platinum cardholders with significant spending patterns',
-        'Those seeking exclusive luxury experiences',
-        'Frequent international travelers'
-      ],
-      notIdealFor: [
-        'Budget-conscious individuals',
-        'Those who rarely travel internationally',
-        'Individuals not meeting the ultra-high-net-worth criteria',
-        'Those seeking basic credit card features'
-      ],
-      summary: 'The second most expensive credit card in India, offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
-    }
-  },
-  {
-    id: 'amex-platinum',
-    name: 'American Express Platinum Card',
-    bank: 'American Express',
-    category: 'ultra-premium',
-    image: '/credit-cards/Amex_Platinum.png',
-    apr: '42% p.a.',
-    annualFee: '₹66,000 + GST',
-    joiningFee: '₹66,000 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'ultra-premium',
-      'international-travel',
-      'domestic-lounge',
-      'international-lounge'
-    ],
-    applyUrl: 'https://example.com/apply-amex-platinum',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, and cash transactions\n\nRedemption Options:\n• Transfer points to airline and hotel loyalty programs\n• Redeem for Taj Hotels vouchers, Flipkart vouchers, or statement credits\n• Access to 18K and 24K Gold Collection\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
-      welcomeBonus: 'Welcome Benefits:\n• Vouchers worth up to ₹60,000 from Taj Hotels, Postcard Hotels, or Reliance Brands upon spending ₹50,000 within first 2 months',
-      milestoneBenefits: [
-        'Annual renewal benefits worth ₹35,000',
-        'Additional vouchers worth ₹35,000 on annual spends of ₹20 lakh'
-      ],
-      airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide, including:\n• Centurion Lounges\n• Priority Pass\n• Delta Sky Club lounges',
-      insuranceCover: [
-        'Comprehensive travel insurance coverage'
-      ],
-      diningPrivileges: [
-        'Exclusive dining access and privileges'
-      ],
-      minimumSpend: 'NA',
-      creditLimit: 'Charge card (no pre-set spending limit)',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% on international transactions',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Additional Benefits:\n• Elite hotel memberships: Marriott Bonvoy Gold Elite, Hilton Honors Gold, Taj Epicure Plus, Accor Plus Traveller\n• Complimentary subscriptions via Times Prime: The Wall Street Journal, Mint, Vogue, SonyLiv Premium, Disney+ Hotstar\n• Exclusive invites to global events like Fashion Week, Wimbledon, and the Grammys',
-      idealFor: [
-        'Luxury travelers seeking premium experiences',
-        'High-net-worth individuals',
-        'Those who can leverage premium hotel and dining privileges',
-        'Frequent international travelers'
-      ],
-      notIdealFor: [
-        'Users with moderate or low annual spending',
-        'Those seeking cashback or low-fee cards',
-        'Budget-conscious individuals'
-      ],
-      eligibilityCriteria: `Salaried Individuals:
-Age: 18 to 60 years
-Net Annual Income: ₹25-30 lakhs
-Self-Employed Individuals:
-Age: 18 to 65 years
-Net Annual Income: ITR > ₹25-30 lakhs
-Credit Score: 750+`,
-      summary: 'A premium charge card offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, ideal for high-net-worth individuals and frequent luxury travelers.'
-    }
-  },
-  {
-    id: 'amex-gold',
-    name: 'American Express Gold Card',
-    bank: 'American Express',
-    category: 'premium',
-    image: '/credit-cards/Amex_Gold.png',
-    apr: '42% p.a.',
-    annualFee: '₹4,500 + GST',
-    joiningFee: '₹1000',
-    rupay: false,
-    feedback: [],
-    categories: [
-      // 'premium',
-      'lifestyle',
-      'shopping',
-      'dining'
-    ],
-    applyUrl: 'https://example.com/apply-amex-gold',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent (including fuel and utility payments)\n• 5X Membership Rewards Points on purchases through Reward Multiplier platform\n• Monthly Bonus: 1,000 bonus points for 6 transactions of ₹1,000 or more each calendar month\n\nRedemption Options:\n• 18 Karat Gold Collection (18,000 MR Points):\n  - Taj voucher worth ₹9,000\n  - Shoppers Stop voucher worth ₹7,000\n  - Tata CLiQ voucher worth ₹7,000\n  - Myntra voucher worth ₹7,000\n  - Amazon voucher worth ₹6,000\n  - Flipkart voucher worth ₹6,000\n  - Reliance Digital voucher worth ₹6,000\n\n• 24 Karat Gold Collection (24,000 MR Points):\n  - Taj voucher worth ₹14,000\n  - Shoppers Stop voucher worth ₹10,000\n  - Tata CLiQ voucher worth ₹9,000\n  - Tanishq voucher worth ₹9,000\n  - Amazon voucher worth ₹8,000\n  - Flipkart voucher worth ₹8,000\n  - Reliance Digital voucher worth ₹8,000',
-      welcomeBonus: 'Welcome Benefits:\n• 4,000 bonus Membership Rewards Points upon spending ₹10,000 within first 90 days and payment of annual fee',
-      milestoneBenefits: [
-        '1,000 bonus Membership Rewards Points on making 6 transactions of ₹1,000 or more each calendar month',
-        'Up to 12,000 bonus points annually through monthly transaction bonuses'
-      ],
-      diningPrivileges: [
-        'Up to 20% off at select partner restaurants'
-      ],
-      additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels',
-      minimumSpend: 'NA',
-      creditLimit: 'Charge card (no pre-set spending limit)',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% on international transactions',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available on eligible purchases',
-      idealFor: [
-        'Individuals who prefer a charge card with flexible spending limits',
-        'Frequent shoppers and diners',
-        'Those who value diverse redemption options',
-        'Users who can maximize the rewards program'
-      ],
-      notIdealFor: [
-        'Users seeking cashback or low-fee credit cards',
-        'Individuals who may not fully utilize the rewards and benefits',
-        'Budget-conscious users'
-      ],
-      summary: 'A premium charge card offering flexible spending power, enhanced rewards through the Reward Multiplier platform, and comprehensive dining and travel benefits, ideal for frequent shoppers and diners who value diverse redemption options.'
-    }
-  },
-  {
-    id: 'amex-smartearn',
-    name: 'American Express SmartEarn Credit Card',
-    bank: 'American Express',
-    category: 'lifestyle',
-    image: '/credit-cards/Amex_SmartEarn.png',
-    apr: '42% p.a.',
-    annualFee: '₹495 + GST',
-    joiningFee: '₹495 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'lifestyle',
-      'shopping',
-      'first-time'
-    ],
-    applyUrl: 'https://example.com/apply-amex-smartearn',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 10X Membership Rewards Points on Flipkart, Amazon, Uber, Zomato, AJIO, PVR, Blinkit (capped at 500 points per month per merchant)\n• 5X Membership Rewards Points on Paytm Wallet, Swiggy, BookMyShow (capped at 250 points per month)\n• 1 Membership Rewards Point per ₹50 spent on other categories\n\nRedemption Options:\n• E-vouchers from popular brands\n• Airline and hotel loyalty programs\n• Statement credits\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
-      welcomeBonus: 'Welcome Benefits:\n• ₹500 cashback as statement credit upon spending ₹10,000 within first 90 days',
-      milestoneBenefits: [
-        '₹500 vouchers on achieving annual spends of ₹1.2 lakh',
-        '₹500 vouchers on achieving annual spends of ₹1.8 lakh',
-        '₹500 vouchers on achieving annual spends of ₹2.4 lakh',
-        'Annual fee waiver upon spending ₹40,000 in a year'
-      ],
-      fuelSurcharge: '0% convenience fee on fuel purchases at HPCL for transactions below ₹25,000',
-      minimumSpend: 'NA',
-      idealFor: [
-        'First-time credit card users',
-        'Online shoppers seeking rewards on popular platforms',
-        'Digital-first users'
-      ],
-      notIdealFor: [
-        'Users seeking premium travel benefits',
-        'Those looking for luxury privileges',
-        'International travelers'
-      ],
-      summary: 'An entry-level credit card offering enhanced rewards on online shopping and popular platforms, ideal for first-time credit card users and digital-first consumers.'
-    }
-  },
-  {
-    id: 'amex-platinum-reserve',
-    name: 'American Express Platinum Reserve Credit Card',
-    bank: 'American Express',
-    category: 'premium',
-    image: '/credit-cards/Amex_Reserve.png',
-    apr: '42% p.a.',
-    annualFee: '₹10,000 + GST',
-    joiningFee: '₹10,000 + GST',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'premium',
-      'lifestyle',
-      'travel',
-      'domestic-lounge',
-      'international-lounge',
-      'dining'
-    ],
-    applyUrl: 'https://example.com/apply-amex-platinum-reserve',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, cash transactions, and EMI conversions\n\nRedemption Options:\n• E-Vouchers: Amazon, Flipkart, Taj Hotels\n• INSTA Purchases at partner stores\n• Cash + Points for bill offset\n• Transfer to loyalty programs: Club Vistara, Emirates Skywards, Singapore KrisFlyer, Marriott Bonvoy, Hilton Honors\n\nPoint Value: Up to ₹0.50 per point when redeemed for select vouchers or transferred to loyalty programs',
-      welcomeBonus: 'Welcome Benefits:\n• 11,000 Membership Rewards Points upon spending ₹30,000 within first 90 days and payment of annual fee',
-      milestoneBenefits: [
-        'Monthly: ₹500 voucher from Flipkart, BookMyShow, or select brands on spending ₹25,000 in a calendar month',
-        'Annual: Taj Hotels voucher worth ₹10,000 on spending ₹5 lakh in a membership year',
-        'Annual fee waiver on spending ₹10 lakh in the preceding membership year'
-      ],
-      airportLounge: 'Airport Lounge Access:\n• 12 complimentary domestic lounge visits per year (max 3 per quarter)\n• Complimentary Priority Pass membership for access to over 1,200 international lounges (usage charges apply)',
-      insuranceCover: [
-        'Personal air accident insurance up to ₹1 crore',
-        'Purchase protection against theft or damage within 60 days of purchase'
-      ],
-      diningPrivileges: [
-        'Complimentary Taj Epicure membership',
-        'Complimentary EazyDiner Prime membership',
-        'Dining discounts and exclusive privileges'
-      ],
-      additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels\n• Up to 2 complimentary golf rounds per month at 32 premium courses (on spending ₹50,000 in a calendar month)\n• 24×7 Platinum Concierge for travel, dining, and lifestyle assistance',
-      minimumSpend: 'NA',
-      creditLimit: 'Customized as per profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% on international transactions',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available on eligible purchases',
-      idealFor: [
-        'Individuals with annual spending between ₹5–10 lakh',
-        'Those seeking premium lifestyle benefits',
-        'Users who can leverage monthly and annual milestone rewards',
-        'Frequent travelers and diners'
-      ],
-      notIdealFor: [
-        'Individuals with annual spending below ₹3 lakh',
-        'Those seeking cashback or low-fee credit cards',
-        'Users who may not utilize premium benefits'
-      ],
-      summary: 'A premium credit card offering comprehensive lifestyle benefits including lounge access, hotel privileges, dining memberships, and golf access, ideal for affluent individuals seeking premium lifestyle and travel benefits.'
-    }
-  },
-  {
-    id: 'jupiter-edge-csb',
-    name: 'Jupiter Edge CSB  RuPay Credit Card',
-    bank: 'CSB Bank',
-    category: 'upi',
-    image: '/credit-cards/Jupiter.png',
-    apr: 'Not specified',
-    annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
-    joiningFee: '₹0',
-    rupay: true,
-    feedback: [],
-    categories: [
-      'upi',
-      'lifetime-free',
-      'rewards'
-    ],
-    applyUrl: 'https://example.com/apply-jupiter-edge-csb',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
-      welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
-      milestoneBenefits: [],
-      airportLounge: '1 complimentary domestic airport lounge access per quarter',
-      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹3,000, capped at ₹100 per month',
-      insuranceCover: [
-        'Personal accident and total permanent disability cover up to ₹10 lakh'
-      ],
-      additionalServices: 'Card management via Jupiter app: set limits, freeze/unfreeze, reset PIN, and more.',
-      idealFor: [
-        'Individuals who prefer UPI payments but want to earn credit card rewards',
-        'Users seeking a no-fee credit card with flexible cashback options',
-        'Those who spend regularly in categories like Shopping, Travel, or Dining'
-      ],
-      notIdealFor: [
-        'Users looking for premium travel benefits or higher reward rates',
-        'Individuals who prefer cashback on all categories without the need to select a preferred category'
-      ],
-      summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
-    }
-  },
-  {
-    id: 'au-zenith-plus',
-    name: 'AU Zenith+ Credit Card (Metal)',
-    bank: 'AU Small Finance Bank',
-    category: 'premium',
-    image: '/credit-cards/AU_Zenith+.png',
-    apr: 'Not specified',
-    annualFee: '₹4,999 + taxes',
-    joiningFee: '₹4,999 + taxes',
-    rupay: false,
-    feedback: [],
-    categories: ['premium', 'travel', 'lifestyle'],
-    applyUrl: 'https://example.com/apply-au-zenith-plus',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 2 Reward Points per ₹100 on dining, travel, and international spends
-• 1 Reward Point per ₹100 on other retail spends
-• No Reward Points on fuel, EMI transactions, and certain other categories.
+//   {
+//     id: 'amex-centurion',
+//     name: 'American Express Centurion Card',
+//     bank: 'American Express',
+//     category: 'ultra-premium',
+//     image: '/credit-cards/Amex-Centurion.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹2,75,000 + GST',
+//     joiningFee: '₹9,75,000 + GST',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       'ultra-premium',
+//       // 'premium',
+//       // 'rewards',
+//       'international-travel',
+//       'domestic-lounge',
+//       'international-lounge'
+//     ],
+//     applyUrl: 'https://example.com/apply-amex-centurion',
+//     additionalDetails: {
+//       rewardsProgram: 'Elite Status Benefits:\n• Hilton Honors Diamond\n• Accor Live Limitless Platinum\n• Shangri-La Golden Circle Jade\n• British Airways Executive Club Gold\n• Etihad Guest Gold',
+//       welcomeBonus: 'Not specified',
+//       airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide through the American Express Global Lounge Collection, including Centurion Lounges, Priority Pass, and Delta Sky Clubs',
+//       insuranceCover: [
+//         'Comprehensive travel insurance coverage'
+//       ],
+//       diningPrivileges: [
+//         'Exclusive access to private dining experiences'
+//       ],
+//       minimumSpend: 'NA',
+//       creditLimit: 'Customized as per profile',
+//       domesticTransactionFee: 'Nil',
+//       internationalTransactionFee: '3.5% on international transactions',
+//       interestRate: '42% p.a.',
+//       emiOptions: 'Available on eligible purchases',
+//       additionalServices: 'Additional Benefits:\n• Dedicated Centurion Relationship Managers\n• 24/7 concierge services for personalized assistance\n• Complimentary meet-and-greet services at select airports\n• Up to 7 supplementary Platinum cards issued at no additional cost\n• Invitations to VIP events and fashion shows',
+//       idealFor: [
+//         'Ultra-high-net-worth individuals (UHNIs)',
+//         'Existing Amex Platinum cardholders with significant spending patterns',
+//         'Those seeking exclusive luxury experiences',
+//         'Frequent international travelers'
+//       ],
+//       notIdealFor: [
+//         'Budget-conscious individuals',
+//         'Those who rarely travel internationally',
+//         'Individuals not meeting the ultra-high-net-worth criteria',
+//         'Those seeking basic credit card features'
+//       ],
+//       summary: 'The second most expensive credit card in India, offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, exclusively for ultra-high-net-worth individuals.'
+//     }
+//   },
+//   {
+//     id: 'amex-platinum',
+//     name: 'American Express Platinum Card',
+//     bank: 'American Express',
+//     category: 'ultra-premium',
+//     image: '/credit-cards/Amex_Platinum.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹66,000 + GST',
+//     joiningFee: '₹66,000 + GST',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       'ultra-premium',
+//       'international-travel',
+//       'domestic-lounge',
+//       'international-lounge'
+//     ],
+//     applyUrl: 'https://example.com/apply-amex-platinum',
+//     additionalDetails: {
+//       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, and cash transactions\n\nRedemption Options:\n• Transfer points to airline and hotel loyalty programs\n• Redeem for Taj Hotels vouchers, Flipkart vouchers, or statement credits\n• Access to 18K and 24K Gold Collection\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
+//       welcomeBonus: 'Welcome Benefits:\n• Vouchers worth up to ₹60,000 from Taj Hotels, Postcard Hotels, or Reliance Brands upon spending ₹50,000 within first 2 months',
+//       milestoneBenefits: [
+//         'Annual renewal benefits worth ₹35,000',
+//         'Additional vouchers worth ₹35,000 on annual spends of ₹20 lakh'
+//       ],
+//       airportLounge: 'Unlimited access to over 1,300 airport lounges worldwide, including:\n• Centurion Lounges\n• Priority Pass\n• Delta Sky Club lounges',
+//       insuranceCover: [
+//         'Comprehensive travel insurance coverage'
+//       ],
+//       diningPrivileges: [
+//         'Exclusive dining access and privileges'
+//       ],
+//       minimumSpend: 'NA',
+//       creditLimit: 'Charge card (no pre-set spending limit)',
+//       domesticTransactionFee: 'Nil',
+//       internationalTransactionFee: '3.5% on international transactions',
+//       interestRate: '42% p.a.',
+//       emiOptions: 'Available on eligible purchases',
+//       additionalServices: 'Additional Benefits:\n• Elite hotel memberships: Marriott Bonvoy Gold Elite, Hilton Honors Gold, Taj Epicure Plus, Accor Plus Traveller\n• Complimentary subscriptions via Times Prime: The Wall Street Journal, Mint, Vogue, SonyLiv Premium, Disney+ Hotstar\n• Exclusive invites to global events like Fashion Week, Wimbledon, and the Grammys',
+//       idealFor: [
+//         'Luxury travelers seeking premium experiences',
+//         'High-net-worth individuals',
+//         'Those who can leverage premium hotel and dining privileges',
+//         'Frequent international travelers'
+//       ],
+//       notIdealFor: [
+//         'Users with moderate or low annual spending',
+//         'Those seeking cashback or low-fee cards',
+//         'Budget-conscious individuals'
+//       ],
+//       eligibilityCriteria: `Salaried Individuals:
+// Age: 18 to 60 years
+// Net Annual Income: ₹25-30 lakhs
+// Self-Employed Individuals:
+// Age: 18 to 65 years
+// Net Annual Income: ITR > ₹25-30 lakhs
+// Credit Score: 750+`,
+//       summary: 'A premium charge card offering unparalleled luxury travel benefits, elite status memberships, and exclusive lifestyle privileges, ideal for high-net-worth individuals and frequent luxury travelers.'
+//     }
+//   },
+//   {
+//     id: 'amex-gold',
+//     name: 'American Express Gold Card',
+//     bank: 'American Express',
+//     category: 'premium',
+//     image: '/credit-cards/Amex_Gold.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹4,500 + GST',
+//     joiningFee: '₹1000',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       // 'premium',
+//       'lifestyle',
+//       'shopping',
+//       'dining'
+//     ],
+//     applyUrl: 'https://example.com/apply-amex-gold',
+//     additionalDetails: {
+//       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent (including fuel and utility payments)\n• 5X Membership Rewards Points on purchases through Reward Multiplier platform\n• Monthly Bonus: 1,000 bonus points for 6 transactions of ₹1,000 or more each calendar month\n\nRedemption Options:\n• 18 Karat Gold Collection (18,000 MR Points):\n  - Taj voucher worth ₹9,000\n  - Shoppers Stop voucher worth ₹7,000\n  - Tata CLiQ voucher worth ₹7,000\n  - Myntra voucher worth ₹7,000\n  - Amazon voucher worth ₹6,000\n  - Flipkart voucher worth ₹6,000\n  - Reliance Digital voucher worth ₹6,000\n\n• 24 Karat Gold Collection (24,000 MR Points):\n  - Taj voucher worth ₹14,000\n  - Shoppers Stop voucher worth ₹10,000\n  - Tata CLiQ voucher worth ₹9,000\n  - Tanishq voucher worth ₹9,000\n  - Amazon voucher worth ₹8,000\n  - Flipkart voucher worth ₹8,000\n  - Reliance Digital voucher worth ₹8,000',
+//       welcomeBonus: 'Welcome Benefits:\n• 4,000 bonus Membership Rewards Points upon spending ₹10,000 within first 90 days and payment of annual fee',
+//       milestoneBenefits: [
+//         '1,000 bonus Membership Rewards Points on making 6 transactions of ₹1,000 or more each calendar month',
+//         'Up to 12,000 bonus points annually through monthly transaction bonuses'
+//       ],
+//       diningPrivileges: [
+//         'Up to 20% off at select partner restaurants'
+//       ],
+//       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels',
+//       minimumSpend: 'NA',
+//       creditLimit: 'Charge card (no pre-set spending limit)',
+//       domesticTransactionFee: 'Nil',
+//       internationalTransactionFee: '3.5% on international transactions',
+//       interestRate: '42% p.a.',
+//       emiOptions: 'Available on eligible purchases',
+//       idealFor: [
+//         'Individuals who prefer a charge card with flexible spending limits',
+//         'Frequent shoppers and diners',
+//         'Those who value diverse redemption options',
+//         'Users who can maximize the rewards program'
+//       ],
+//       notIdealFor: [
+//         'Users seeking cashback or low-fee credit cards',
+//         'Individuals who may not fully utilize the rewards and benefits',
+//         'Budget-conscious users'
+//       ],
+//       summary: 'A premium charge card offering flexible spending power, enhanced rewards through the Reward Multiplier platform, and comprehensive dining and travel benefits, ideal for frequent shoppers and diners who value diverse redemption options.'
+//     }
+//   },
+//   {
+//     id: 'amex-smartearn',
+//     name: 'American Express SmartEarn Credit Card',
+//     bank: 'American Express',
+//     category: 'lifestyle',
+//     image: '/credit-cards/Amex_SmartEarn.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹495 + GST',
+//     joiningFee: '₹495 + GST',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       'lifestyle',
+//       'shopping',
+//       'first-time'
+//     ],
+//     applyUrl: 'https://example.com/apply-amex-smartearn',
+//     additionalDetails: {
+//       rewardsProgram: 'Earning Rate:\n• 10X Membership Rewards Points on Flipkart, Amazon, Uber, Zomato, AJIO, PVR, Blinkit (capped at 500 points per month per merchant)\n• 5X Membership Rewards Points on Paytm Wallet, Swiggy, BookMyShow (capped at 250 points per month)\n• 1 Membership Rewards Point per ₹50 spent on other categories\n\nRedemption Options:\n• E-vouchers from popular brands\n• Airline and hotel loyalty programs\n• Statement credits\n\nPoint Value: Up to ₹0.50 per point when redeemed for Taj vouchers',
+//       welcomeBonus: 'Welcome Benefits:\n• ₹500 cashback as statement credit upon spending ₹10,000 within first 90 days',
+//       milestoneBenefits: [
+//         '₹500 vouchers on achieving annual spends of ₹1.2 lakh',
+//         '₹500 vouchers on achieving annual spends of ₹1.8 lakh',
+//         '₹500 vouchers on achieving annual spends of ₹2.4 lakh',
+//         'Annual fee waiver upon spending ₹40,000 in a year'
+//       ],
+//       fuelSurcharge: '0% convenience fee on fuel purchases at HPCL for transactions below ₹25,000',
+//       minimumSpend: 'NA',
+//       idealFor: [
+//         'First-time credit card users',
+//         'Online shoppers seeking rewards on popular platforms',
+//         'Digital-first users'
+//       ],
+//       notIdealFor: [
+//         'Users seeking premium travel benefits',
+//         'Those looking for luxury privileges',
+//         'International travelers'
+//       ],
+//       summary: 'An entry-level credit card offering enhanced rewards on online shopping and popular platforms, ideal for first-time credit card users and digital-first consumers.'
+//     }
+//   },
+//   {
+//     id: 'amex-platinum-reserve',
+//     name: 'American Express Platinum Reserve Credit Card',
+//     bank: 'American Express',
+//     category: 'premium',
+//     image: '/credit-cards/Amex_Reserve.png',
+//     apr: '42% p.a.',
+//     annualFee: '₹10,000 + GST',
+//     joiningFee: '₹10,000 + GST',
+//     rupay: false,
+//     feedback: [],
+//     categories: [
+//       'premium',
+//       'lifestyle',
+//       'travel',
+//       'domestic-lounge',
+//       'international-lounge',
+//       'dining'
+//     ],
+//     applyUrl: 'https://example.com/apply-amex-platinum-reserve',
+//     additionalDetails: {
+//       rewardsProgram: 'Earning Rate:\n• 1 Membership Rewards Point for every ₹50 spent\n• Excludes fuel, insurance, utilities, cash transactions, and EMI conversions\n\nRedemption Options:\n• E-Vouchers: Amazon, Flipkart, Taj Hotels\n• INSTA Purchases at partner stores\n• Cash + Points for bill offset\n• Transfer to loyalty programs: Club Vistara, Emirates Skywards, Singapore KrisFlyer, Marriott Bonvoy, Hilton Honors\n\nPoint Value: Up to ₹0.50 per point when redeemed for select vouchers or transferred to loyalty programs',
+//       welcomeBonus: 'Welcome Benefits:\n• 11,000 Membership Rewards Points upon spending ₹30,000 within first 90 days and payment of annual fee',
+//       milestoneBenefits: [
+//         'Monthly: ₹500 voucher from Flipkart, BookMyShow, or select brands on spending ₹25,000 in a calendar month',
+//         'Annual: Taj Hotels voucher worth ₹10,000 on spending ₹5 lakh in a membership year',
+//         'Annual fee waiver on spending ₹10 lakh in the preceding membership year'
+//       ],
+//       airportLounge: 'Airport Lounge Access:\n• 12 complimentary domestic lounge visits per year (max 3 per quarter)\n• Complimentary Priority Pass membership for access to over 1,200 international lounges (usage charges apply)',
+//       insuranceCover: [
+//         'Personal air accident insurance up to ₹1 crore',
+//         'Purchase protection against theft or damage within 60 days of purchase'
+//       ],
+//       diningPrivileges: [
+//         'Complimentary Taj Epicure membership',
+//         'Complimentary EazyDiner Prime membership',
+//         'Dining discounts and exclusive privileges'
+//       ],
+//       additionalServices: 'Additional Benefits:\n• Access to The Hotel Collection\n• Room upgrades (where available)\n• US$100 hotel credit on stays of two consecutive nights at over 400 hotels worldwide\n• Partner hotels include Hilton, Intercontinental, and Hyatt Hotels\n• Up to 2 complimentary golf rounds per month at 32 premium courses (on spending ₹50,000 in a calendar month)\n• 24×7 Platinum Concierge for travel, dining, and lifestyle assistance',
+//       minimumSpend: 'NA',
+//       creditLimit: 'Customized as per profile',
+//       domesticTransactionFee: 'Nil',
+//       internationalTransactionFee: '3.5% on international transactions',
+//       interestRate: '42% p.a.',
+//       emiOptions: 'Available on eligible purchases',
+//       idealFor: [
+//         'Individuals with annual spending between ₹5–10 lakh',
+//         'Those seeking premium lifestyle benefits',
+//         'Users who can leverage monthly and annual milestone rewards',
+//         'Frequent travelers and diners'
+//       ],
+//       notIdealFor: [
+//         'Individuals with annual spending below ₹3 lakh',
+//         'Those seeking cashback or low-fee credit cards',
+//         'Users who may not utilize premium benefits'
+//       ],
+//       summary: 'A premium credit card offering comprehensive lifestyle benefits including lounge access, hotel privileges, dining memberships, and golf access, ideal for affluent individuals seeking premium lifestyle and travel benefits.'
+//     }
+//   },
+  // {
+  //   id: 'jupiter-edge-csb',
+  //   name: 'Jupiter Edge CSB  RuPay Credit Card',
+  //   bank: 'CSB Bank',
+  //   category: 'upi',
+  //   image: '/credit-cards/Jupiter.png',
+  //   apr: 'Not specified',
+  //   annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
+  //   joiningFee: '₹0',
+  //   rupay: true,
+  //   feedback: [],
+  //   categories: [
+  //     'upi',
+  //     'lifetime-free',
+  //     'rewards'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-jupiter-edge-csb',
+  //   additionalDetails: {
+  //     rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
+  //     welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
+  //     milestoneBenefits: [],
+  //     airportLounge: '1 complimentary domestic airport lounge access per quarter',
+  //     fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹3,000, capped at ₹100 per month',
+  //     insuranceCover: [
+  //       'Personal accident and total permanent disability cover up to ₹10 lakh'
+  //     ],
+  //     additionalServices: 'Card management via Jupiter app: set limits, freeze/unfreeze, reset PIN, and more.',
+  //     idealFor: [
+  //       'Individuals who prefer UPI payments but want to earn credit card rewards',
+  //       'Users seeking a no-fee credit card with flexible cashback options',
+  //       'Those who spend regularly in categories like Shopping, Travel, or Dining'
+  //     ],
+  //     notIdealFor: [
+  //       'Users looking for premium travel benefits or higher reward rates',
+  //       'Individuals who prefer cashback on all categories without the need to select a preferred category'
+  //     ],
+  //     summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
+  //   }
+  // },
+//   {
+//     id: 'au-zenith-plus',
+//     name: 'AU Zenith+ Credit Card (Metal)',
+//     bank: 'AU Small Finance Bank',
+//     category: 'premium',
+//     image: '/credit-cards/AU_Zenith+.png',
+//     apr: 'Not specified',
+//     annualFee: '₹4,999 + taxes',
+//     joiningFee: '₹4,999 + taxes',
+//     rupay: false,
+//     feedback: [],
+//     categories: ['premium', 'travel', 'lifestyle'],
+//     applyUrl: 'https://example.com/apply-au-zenith-plus',
+//     additionalDetails: {
+//       rewardsProgram: `Earning Rate:
+// • 2 Reward Points per ₹100 on dining, travel, and international spends
+// • 1 Reward Point per ₹100 on other retail spends
+// • No Reward Points on fuel, EMI transactions, and certain other categories.
 
-Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-• Gift Vouchers (various brands)
-• Merchandise
-• Mobile/DTH Recharge
-• Travel Bookings (flights, hotels, buses)
-• Movie Tickets`,
-      welcomeBonus: 'Choice of ₹5,000 luxury brand vouchers (Taj Hotels, Michael Kors, Tata Cliq, etc.) OR 5,000 Reward Points upon activation via AU 0101 App, Net Banking, customer care, or chatbot AURO.',
-      milestoneBenefits: [
-        'Monthly: 1,000 bonus Reward Points for ₹75,000+ spend in a statement month (excludes rent, education, government, insurance, utility, fuel).',
-        'Annual: Complimentary Taj Epicure Membership on ₹12 lakh spend in a card anniversary year.'
-      ],
-      airportLounge: '16 complimentary domestic and 16 international airport lounge visits annually',
-      fuelSurcharge: '1% waiver (max ₹1,000 per statement cycle)',
-      insuranceCover: [
-        'Air accident cover up to ₹2 crore',
-        'Card liability and credit shield up to ₹15 lakh',
-        'Purchase protection up to ₹50,000'
-      ],
-      idealFor: [
-        'Individuals with a monthly net income of ₹2.5 lakh or more',
-        'Frequent travelers and luxury lifestyle seekers'
-      ],
-      notIdealFor: [
-        'Users with annual spends below ₹8 lakh',
-        'Those seeking low or no annual fee cards'
-      ],
-      summary: 'A luxury metal credit card for high-income individuals, offering premium travel, lifestyle, and reward benefits. Low forex markup: 0.99% + GST (~1.168%).'
-    }
-  },
-  {
-    id: 'au-vetta',
-    name: 'AU Vetta Credit Card',
-    bank: 'AU Small Finance Bank',
-    category: 'premium',
-    image: '/credit-cards/AU_Vetta.png',
-    apr: 'Not specified',
-    annualFee: '₹2,999 + taxes',
-    joiningFee: '₹2,999 + taxes',
-    rupay: false,
-    feedback: [],
-    categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
-    applyUrl: 'https://example.com/apply-au-vetta',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 2 Reward Points per ₹100 on travel, dining, and international spends
-• 1 Reward Point per ₹100 on other retail spends
-• No Reward Points on fuel, EMI transactions, and select categories
+// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+// • Gift Vouchers (various brands)
+// • Merchandise
+// • Mobile/DTH Recharge
+// • Travel Bookings (flights, hotels, buses)
+// • Movie Tickets`,
+//       welcomeBonus: 'Choice of ₹5,000 luxury brand vouchers (Taj Hotels, Michael Kors, Tata Cliq, etc.) OR 5,000 Reward Points upon activation via AU 0101 App, Net Banking, customer care, or chatbot AURO.',
+//       milestoneBenefits: [
+//         'Monthly: 1,000 bonus Reward Points for ₹75,000+ spend in a statement month (excludes rent, education, government, insurance, utility, fuel).',
+//         'Annual: Complimentary Taj Epicure Membership on ₹12 lakh spend in a card anniversary year.'
+//       ],
+//       airportLounge: '16 complimentary domestic and 16 international airport lounge visits annually',
+//       fuelSurcharge: '1% waiver (max ₹1,000 per statement cycle)',
+//       insuranceCover: [
+//         'Air accident cover up to ₹2 crore',
+//         'Card liability and credit shield up to ₹15 lakh',
+//         'Purchase protection up to ₹50,000'
+//       ],
+//       idealFor: [
+//         'Individuals with a monthly net income of ₹2.5 lakh or more',
+//         'Frequent travelers and luxury lifestyle seekers'
+//       ],
+//       notIdealFor: [
+//         'Users with annual spends below ₹8 lakh',
+//         'Those seeking low or no annual fee cards'
+//       ],
+//       summary: 'A luxury metal credit card for high-income individuals, offering premium travel, lifestyle, and reward benefits. Low forex markup: 0.99% + GST (~1.168%).'
+//     }
+//   },
+//   {
+//     id: 'au-vetta',
+//     name: 'AU Vetta Credit Card',
+//     bank: 'AU Small Finance Bank',
+//     category: 'premium',
+//     image: '/credit-cards/AU_Vetta.png',
+//     apr: 'Not specified',
+//     annualFee: '₹2,999 + taxes',
+//     joiningFee: '₹2,999 + taxes',
+//     rupay: false,
+//     feedback: [],
+//     categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
+//     applyUrl: 'https://example.com/apply-au-vetta',
+//     additionalDetails: {
+//       rewardsProgram: `Earning Rate:
+// • 2 Reward Points per ₹100 on travel, dining, and international spends
+// • 1 Reward Point per ₹100 on other retail spends
+// • No Reward Points on fuel, EMI transactions, and select categories
 
-Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-• Gift Vouchers (various brands)
-• Merchandise
-• Mobile/DTH Recharge
-• Travel Bookings (flights, hotels, buses)
-• Movie Tickets`,
-      welcomeBonus: 'Details not specified',
-      milestoneBenefits: [],
-      airportLounge: 'Complimentary domestic and international airport lounge visits',
-      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹100 per statement cycle)',
-      insuranceCover: [
-        'Comprehensive protection including air accident and card liability covers'
-      ],
-      idealFor: [
-        'Individuals with moderate to high spending patterns',
-        'Travel enthusiasts seeking lounge access'
-      ],
-      notIdealFor: [
-        'Users with annual spends below ₹1.5 lakh',
-        'Those seeking detailed reward structures'
-      ],
-      summary: 'A premium card for mid-to-high spenders, offering travel perks, insurance benefits, and 2 complimentary railway lounge visits per quarter.'
-    }
-  },
-  {
-    id: 'au-altura-plus',
-    name: 'AU Altura+ Credit Card',
-    bank: 'AU Small Finance Bank',
-    category: 'lifestyle',
-    image: '/credit-cards/AU_Altura+.png',
-    apr: 'Not specified',
-    annualFee: '₹499 + taxes',
-    joiningFee: '₹499 + taxes',
-    rupay: false,
-    feedback: [],
-    categories: ['lifestyle', 'cashback', 'rewards'],
-    applyUrl: 'https://example.com/apply-au-altura-plus',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
-• 2X Reward Points on online transactions
-• 1 Reward Point per ₹100 on utility, telecom, and insurance spends
-• 500 bonus Reward Points on monthly retail spends of ₹20,000 or more
+// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+// • Gift Vouchers (various brands)
+// • Merchandise
+// • Mobile/DTH Recharge
+// • Travel Bookings (flights, hotels, buses)
+// • Movie Tickets`,
+//       welcomeBonus: 'Details not specified',
+//       milestoneBenefits: [],
+//       airportLounge: 'Complimentary domestic and international airport lounge visits',
+//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹100 per statement cycle)',
+//       insuranceCover: [
+//         'Comprehensive protection including air accident and card liability covers'
+//       ],
+//       idealFor: [
+//         'Individuals with moderate to high spending patterns',
+//         'Travel enthusiasts seeking lounge access'
+//       ],
+//       notIdealFor: [
+//         'Users with annual spends below ₹1.5 lakh',
+//         'Those seeking detailed reward structures'
+//       ],
+//       summary: 'A premium card for mid-to-high spenders, offering travel perks, insurance benefits, and 2 complimentary railway lounge visits per quarter.'
+//     }
+//   },
+//   {
+//     id: 'au-altura-plus',
+//     name: 'AU Altura+ Credit Card',
+//     bank: 'AU Small Finance Bank',
+//     category: 'lifestyle',
+//     image: '/credit-cards/AU_Altura+.png',
+//     apr: 'Not specified',
+//     annualFee: '₹499 + taxes',
+//     joiningFee: '₹499 + taxes',
+//     rupay: false,
+//     feedback: [],
+//     categories: ['lifestyle', 'cashback', 'rewards'],
+//     applyUrl: 'https://example.com/apply-au-altura-plus',
+//     additionalDetails: {
+//       rewardsProgram: `Earning Rate:
+// • 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
+// • 2X Reward Points on online transactions
+// • 1 Reward Point per ₹100 on utility, telecom, and insurance spends
+// • 500 bonus Reward Points on monthly retail spends of ₹20,000 or more
 
-Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-• Gift Vouchers (various brands)
-• Merchandise
-• Mobile/DTH Recharge
-• Travel Bookings (flights, hotels, buses)
-• Movie Tickets`,
-      welcomeBonus: 'Details not specified',
-      milestoneBenefits: ['500 bonus reward points on monthly retail spends of ₹20,000 or more'],
-      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹150 per statement cycle)',
-      insuranceCover: [
-        'Lost card liability cover'
-      ],
-      idealFor: [
-        'Individuals with regular online and POS retail spends',
-        'Those seeking a balance between cashback and rewards'
-      ],
-      notIdealFor: [
-        'Users with monthly spends below ₹20,000',
-        'Those seeking higher cashback limits'
-      ],
-      summary: 'A lifestyle card for everyday spenders, offering a mix of cashback and reward points, and 2 complimentary railway lounge visits per quarter.'
-    }
-  },
-  {
-    id: 'au-spont',
-    name: 'AU Spont Credit Card',
-    bank: 'AU Small Finance Bank',
-    category: 'upi',
-    image: '/credit-cards/AU_Spont.png',
-    apr: 'Not specified',
-    annualFee: '₹299 + GST',
-    joiningFee: '₹299 + GST',
-    rupay: true,
-    feedback: [],
-    categories: ['upi', 'cashback', 'domestic-lounge'],
-    applyUrl: 'https://example.com/apply-au-spont',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:
-• 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
-• 5 coins for every UPI transaction via AU 0101 app
-• Cashback capped at ₹500 per statement cycle
+// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+// • Gift Vouchers (various brands)
+// • Merchandise
+// • Mobile/DTH Recharge
+// • Travel Bookings (flights, hotels, buses)
+// • Movie Tickets`,
+//       welcomeBonus: 'Details not specified',
+//       milestoneBenefits: ['500 bonus reward points on monthly retail spends of ₹20,000 or more'],
+//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹150 per statement cycle)',
+//       insuranceCover: [
+//         'Lost card liability cover'
+//       ],
+//       idealFor: [
+//         'Individuals with regular online and POS retail spends',
+//         'Those seeking a balance between cashback and rewards'
+//       ],
+//       notIdealFor: [
+//         'Users with monthly spends below ₹20,000',
+//         'Those seeking higher cashback limits'
+//       ],
+//       summary: 'A lifestyle card for everyday spenders, offering a mix of cashback and reward points, and 2 complimentary railway lounge visits per quarter.'
+//     }
+//   },
+//   {
+//     id: 'au-spont',
+//     name: 'AU Spont Credit Card',
+//     bank: 'AU Small Finance Bank',
+//     category: 'upi',
+//     image: '/credit-cards/AU_Spont.png',
+//     apr: 'Not specified',
+//     annualFee: '₹299 + GST',
+//     joiningFee: '₹299 + GST',
+//     rupay: true,
+//     feedback: [],
+//     categories: ['upi', 'cashback', 'domestic-lounge'],
+//     applyUrl: 'https://example.com/apply-au-spont',
+//     additionalDetails: {
+//       rewardsProgram: `Earning Rate:
+// • 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
+// • 5 coins for every UPI transaction via AU 0101 app
+// • Cashback capped at ₹500 per statement cycle
 
-Exclusions: No cashback on fuel, rent, government, education, cash withdrawals, EMIs, and insurance spends`,
-      redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.
-Coins earned from UPI transactions can be redeemed against various rewards in the AU Rewardz catalogue.`,
-      welcomeBonus: 'Not specified',
-      milestoneBenefits: [],
-      airportLounge: '2 complimentary domestic airport lounge visits per quarter upon achieving ₹30,000 spends in the previous quarter',
-      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000',
-      insuranceCover: [
-        'Standard credit card insurance coverage'
-      ],
-      additionalServices: 'Additional Benefits:\n• 2 complimentary railway lounge accesses per calendar quarter\n• Cash withdrawal fee: 2.5% of withdrawn amount or ₹500, whichever is higher',
-      idealFor: [
-        'Digital payment enthusiasts who frequently use UPI',
-        'Budget-conscious users seeking low fees',
-        'First-time credit card holders',
-        'Frequent domestic travelers'
-      ],
-      notIdealFor: [
-        'High spenders seeking premium rewards',
-        'International travelers',
-        'Users with high fuel, rent, or insurance payments'
-      ],
-      summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
-    }
-  },
-  {
-    id: "bob-tiara",
-    name: "Bank of Baroda Tiara Credit Card",
-    bank: "Bank of Baroda",
-    category: "lifestyle",
-    image: "/credit-cards/BOB_Tiara.png",
-    apr: "3.49% per month",
-    annualFee: "₹2,499 + GST",
-    joiningFee: "₹2,499 + GST",
-    rupay: true,
-    feedback: [],
-    categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
-    applyUrl: 'https://example.com/apply-bob-tiara',
-    additionalDetails: {
-      rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
-      welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
-      milestoneBenefits: [
-        "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
-      ],
-      airportLounge: "Unlimited complimentary domestic airport lounge visits on spending ₹40,000 in previous quarter",
-      fuelSurcharge: "1% waiver on transactions between ₹400-₹5,000 (max ₹250 per statement)",
-      insuranceCover: [
-        "Zero liability on lost card reporting"
-      ],
-      diningPrivileges: [
-        "5X Reward Points on dining spends"
-      ],
-      minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
-      creditLimit: "Based on credit assessment",
-      domesticTransactionFee: "Standard",
-      internationalTransactionFee: "2% forex mark-up",
-      interestRate: "3.49% per month",
-      emiOptions: "Smart EMI available for purchases above ₹2,500 (6 months to 4 years)",
-      additionalServices: "UPI transactions reward points capped at ₹500 per statement cycle",
-      idealFor: [
-        "Frequent travelers",
-        "Dining enthusiasts",
-        "Online shoppers",
-        "Entertainment lovers"
-      ],
-      notIdealFor: [
-        "Low spenders",
-        "Those who don't use UPI"
-      ],
-      summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
-      redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
-    }
-  },
+// Exclusions: No cashback on fuel, rent, government, education, cash withdrawals, EMIs, and insurance spends`,
+//       redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.
+// Coins earned from UPI transactions can be redeemed against various rewards in the AU Rewardz catalogue.`,
+//       welcomeBonus: 'Not specified',
+//       milestoneBenefits: [],
+//       airportLounge: '2 complimentary domestic airport lounge visits per quarter upon achieving ₹30,000 spends in the previous quarter',
+//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000',
+//       insuranceCover: [
+//         'Standard credit card insurance coverage'
+//       ],
+//       additionalServices: 'Additional Benefits:\n• 2 complimentary railway lounge accesses per calendar quarter\n• Cash withdrawal fee: 2.5% of withdrawn amount or ₹500, whichever is higher',
+//       idealFor: [
+//         'Digital payment enthusiasts who frequently use UPI',
+//         'Budget-conscious users seeking low fees',
+//         'First-time credit card holders',
+//         'Frequent domestic travelers'
+//       ],
+//       notIdealFor: [
+//         'High spenders seeking premium rewards',
+//         'International travelers',
+//         'Users with high fuel, rent, or insurance payments'
+//       ],
+//       summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
+//     }
+//   },
+  // {
+  //   id: "bob-tiara",
+  //   name: "Bank of Baroda Tiara Credit Card",
+  //   bank: "Bank of Baroda",
+  //   category: "lifestyle",
+  //   image: "/credit-cards/BOB_Tiara.png",
+  //   apr: "3.49% per month",
+  //   annualFee: "₹2,499 + GST",
+  //   joiningFee: "₹2,499 + GST",
+  //   rupay: true,
+  //   feedback: [],
+  //   categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
+  //   applyUrl: 'https://example.com/apply-bob-tiara',
+  //   additionalDetails: {
+  //     rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
+  //     welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
+  //     milestoneBenefits: [
+  //       "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
+  //     ],
+  //     airportLounge: "Unlimited complimentary domestic airport lounge visits on spending ₹40,000 in previous quarter",
+  //     fuelSurcharge: "1% waiver on transactions between ₹400-₹5,000 (max ₹250 per statement)",
+  //     insuranceCover: [
+  //       "Zero liability on lost card reporting"
+  //     ],
+  //     diningPrivileges: [
+  //       "5X Reward Points on dining spends"
+  //     ],
+  //     minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
+  //     creditLimit: "Based on credit assessment",
+  //     domesticTransactionFee: "Standard",
+  //     internationalTransactionFee: "2% forex mark-up",
+  //     interestRate: "3.49% per month",
+  //     emiOptions: "Smart EMI available for purchases above ₹2,500 (6 months to 4 years)",
+  //     additionalServices: "UPI transactions reward points capped at ₹500 per statement cycle",
+  //     idealFor: [
+  //       "Frequent travelers",
+  //       "Dining enthusiasts",
+  //       "Online shoppers",
+  //       "Entertainment lovers"
+  //     ],
+  //     notIdealFor: [
+  //       "Low spenders",
+  //       "Those who don't use UPI"
+  //     ],
+  //     summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
+  //     redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
+  //   }
+  // },
   {
     id: 'idfc-first-millennia',
     name: 'IDFC FIRST Millennia Credit Card',
@@ -2475,102 +2475,102 @@ Credit Score: 750 or above (good to excellent)`
       eligibilityCriteria: 'Minimum age: 21 years. Monthly income: ₹20,000 and above.'
     }
   },
-  {
-    id: 'hsbc-premier-mastercard',
-    name: 'HSBC Premier Credit Card',
-    bank: 'HSBC',
-    category: 'premium',
-    image: '/credit-cards/HSBC-premier.png',
-    apr: '3.5% per month (42% p.a.)',
-    annualFee: '₹20,000',
-    joiningFee: '₹12,000',
-    rupay: false,
-    feedback: [],
-    categories: ['premium', 'travel', 'lifestyle'],
-    additionalDetails: {
-      rewardsProgram: '3 reward points per ₹100 spent, redeemable at ₹1 per point',
-      welcomeBonus: 'Complimentary Taj Epicure and EazyDiner Prime memberships',
-      airportLounge: 'Unlimited domestic and international airport lounge access, plus 8 free guest visits annually',
-      diningPrivileges: [
-        'Buy One Get One free offer on BookMyShow',
-        'Complimentary Taj Epicure membership',
-        'EazyDiner Prime membership'
-      ],
-      minimumSpend: 'Annual fee waived for qualified HSBC Premier customers',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '0.99% foreign exchange markup fee',
-      idealFor: [
-        'Affluent individuals',
-        'Luxury travelers',
-        'High spenders',
-        'Lifestyle enthusiasts'
-      ],
-      summary: 'A premium credit card offering luxury travel and lifestyle benefits for affluent individuals.',
-      travelLifestyleBenefits: 'Comprehensive travel and lifestyle benefits with premium memberships'
-    }
-  },
-  {
-    id: 'hsbc-live-plus',
-    name: 'HSBC Live+ Credit Card',
-    bank: 'HSBC',
-    category: 'cashback',
-    image: '/credit-cards/HSBC-Live+.png',
-    apr: '3.5% per month (42% p.a.)',
-    annualFee: '₹999',
-    joiningFee: '₹999',
-    rupay: false,
-    feedback: [],
-    categories: ['cashback', 'lifestyle'],
-    additionalDetails: {
-      rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
-      welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
-      airportLounge: '4 complimentary domestic airport lounge visits per year',
-      milestoneBenefits: [
-        'Annual fee waiver on spending ₹3.5 lakh or more'
-      ],
-      diningPrivileges: [
-        '10% cashback on dining',
-        'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
-      ],
-      idealFor: [
-        'Daily spenders',
-        'Food and grocery shoppers',
-        'Online shoppers',
-        'Cashback seekers'
-      ],
-      summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
-      additionalServices: 'Exclusive monthly offers on popular platforms'
-    }
-  },
-  {
-    id: 'hsbc-visa-platinum',
-    name: 'HSBC Visa Platinum Credit Card',
-    bank: 'HSBC',
-    category: 'rewards',
-    image: '/credit-cards/HSBC-VISA-Platinum.png',
-    apr: '3.5% per month (42% p.a.)',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: ['rewards', 'lifetime-free'],
-    additionalDetails: {
-      rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
-      welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
-      diningPrivileges: [
-        'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
-      ],
-      fuelSurcharge: 'Fuel surcharge waiver up to ₹3,000 annually',
-      idealFor: [
-        'Entry-level users',
-        'Reward seekers',
-        'Budget-conscious users',
-        'Movie enthusiasts'
-      ],
-      summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
-      additionalServices: 'Regular offers on dining and entertainment'
-    }
-  },
+  // {
+  //   id: 'hsbc-premier-mastercard',
+  //   name: 'HSBC Premier Credit Card',
+  //   bank: 'HSBC',
+  //   category: 'premium',
+  //   image: '/credit-cards/HSBC-premier.png',
+  //   apr: '3.5% per month (42% p.a.)',
+  //   annualFee: '₹20,000',
+  //   joiningFee: '₹12,000',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: ['premium', 'travel', 'lifestyle'],
+  //   additionalDetails: {
+  //     rewardsProgram: '3 reward points per ₹100 spent, redeemable at ₹1 per point',
+  //     welcomeBonus: 'Complimentary Taj Epicure and EazyDiner Prime memberships',
+  //     airportLounge: 'Unlimited domestic and international airport lounge access, plus 8 free guest visits annually',
+  //     diningPrivileges: [
+  //       'Buy One Get One free offer on BookMyShow',
+  //       'Complimentary Taj Epicure membership',
+  //       'EazyDiner Prime membership'
+  //     ],
+  //     minimumSpend: 'Annual fee waived for qualified HSBC Premier customers',
+  //     domesticTransactionFee: 'Nil',
+  //     internationalTransactionFee: '0.99% foreign exchange markup fee',
+  //     idealFor: [
+  //       'Affluent individuals',
+  //       'Luxury travelers',
+  //       'High spenders',
+  //       'Lifestyle enthusiasts'
+  //     ],
+  //     summary: 'A premium credit card offering luxury travel and lifestyle benefits for affluent individuals.',
+  //     travelLifestyleBenefits: 'Comprehensive travel and lifestyle benefits with premium memberships'
+  //   }
+  // },
+  // {
+  //   id: 'hsbc-live-plus',
+  //   name: 'HSBC Live+ Credit Card',
+  //   bank: 'HSBC',
+  //   category: 'cashback',
+  //   image: '/credit-cards/HSBC-Live+.png',
+  //   apr: '3.5% per month (42% p.a.)',
+  //   annualFee: '₹999',
+  //   joiningFee: '₹999',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: ['cashback', 'lifestyle'],
+  //   additionalDetails: {
+  //     rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
+  //     welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
+  //     airportLounge: '4 complimentary domestic airport lounge visits per year',
+  //     milestoneBenefits: [
+  //       'Annual fee waiver on spending ₹3.5 lakh or more'
+  //     ],
+  //     diningPrivileges: [
+  //       '10% cashback on dining',
+  //       'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
+  //     ],
+  //     idealFor: [
+  //       'Daily spenders',
+  //       'Food and grocery shoppers',
+  //       'Online shoppers',
+  //       'Cashback seekers'
+  //     ],
+  //     summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
+  //     additionalServices: 'Exclusive monthly offers on popular platforms'
+  //   }
+  // },
+  // {
+  //   id: 'hsbc-visa-platinum',
+  //   name: 'HSBC Visa Platinum Credit Card',
+  //   bank: 'HSBC',
+  //   category: 'rewards',
+  //   image: '/credit-cards/HSBC-VISA-Platinum.png',
+  //   apr: '3.5% per month (42% p.a.)',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: ['rewards', 'lifetime-free'],
+  //   additionalDetails: {
+  //     rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
+  //     welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
+  //     diningPrivileges: [
+  //       'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
+  //     ],
+  //     fuelSurcharge: 'Fuel surcharge waiver up to ₹3,000 annually',
+  //     idealFor: [
+  //       'Entry-level users',
+  //       'Reward seekers',
+  //       'Budget-conscious users',
+  //       'Movie enthusiasts'
+  //     ],
+  //     summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
+  //     additionalServices: 'Regular offers on dining and entertainment'
+  //   }
+  // },
   {
     id: 'hdfc-indigo-xl',
     name: 'HDFC IndiGo 6E Rewards XL Credit Card',
