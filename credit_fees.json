@@ -427,10 +427,10 @@
       "is_lifetime_free":1
     },
     {
-      "card_name":"IndusInd Avios Visa Infinite Card",
+      "card_name":"IndusInd Avios Visa Infinite Credit Card",
       "joining_fee":10000,
       "annual_fee":5000,
-      "annual_fee_waiver_criteria":0,
+      "annual_fee_waiver_criteria":200000,
       "is_lifetime_free":0
     },
     {
@@ -446,6 +446,13 @@
       "annual_fee":0,
       "annual_fee_waiver_criteria":0,
       "is_lifetime_free":1
+    },
+    {
+      "card_name":"IndusInd Pinnacle World Credit Card",
+      "joining_fee":14999,
+      "annual_fee":0,
+      "annual_fee_waiver_criteria":0,
+      "is_lifetime_free":0
     },
     {
       "card_name":"Bank of Baroda Tiara Credit Card",

@@ -1360,7 +1360,7 @@ Income: ITR > ₹7.2 lakhs/annum`
   },
   {
     id: 'indusind-avios-visa-infinite',
-    name: 'IndusInd Bank Avios Visa Infinite Credit Card',
+    name: 'IndusInd Avios Visa Infinite Credit Card',
     bank: 'IndusInd Bank',
     category: 'airlines',
     image: '/credit-cards/IndusInd-Avios.png',
@@ -1371,18 +1371,20 @@ Income: ITR > ₹7.2 lakhs/annum`
     feedback: [],
     categories: [
       'airlines',
-      'rewards',
       'travel',
       'domestic-lounge',
       'international-lounge',
       'international-travel'
     ],
-    applyUrl: 'https://example.com/apply-indusind-avios-visa-infinite',
+    applyUrl: 'https://wee.bnking.in/c/MmMxMjczN',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 5X Avios on spends with British Airways and Qatar Airways\n• 1.5 Avios per ₹100 on other spends\n\nRedemption:\n• Avios points can be redeemed for flights, upgrades, and other services with partner airlines like British Airways and Qatar Airways',
       welcomeBonus: 'Welcome Benefits:\n• 20,000 Avios points on card activation',
       airportLounge: 'Complimentary domestic and international lounge access',
       fuelSurcharge: 'Not specified',
+      milestoneBenefits: [
+        'Spend ₹2,00,000 or more in an annual year, before your Credit Card renewal date and get your renewal fee waived off from 2nd year onwards'
+      ],
       insuranceCover: [
         'Personal air accident insurance cover up to ₹25 lakh'
       ],
@@ -1857,8 +1859,8 @@ Income: ITR > ₹6 lakhs/annum`
 //       // 'premium',
 //       // 'rewards',
 //       'international-travel',
-//       'domestic-lounge',
-//       'international-lounge'
+//       // 'domestic-lounge',
+//       // 'international-lounge'
 //     ],
 //     applyUrl: 'https://example.com/apply-amex-centurion',
 //     additionalDetails: {
@@ -2890,5 +2892,138 @@ Age: 21 to 70 years
 Net Annual Income: ₹30,000 and above
 Credit Score: Good`
     }
-  }
+  },
+  {
+    id: 'indusind-platinum-rupay',
+    name: 'IndusInd Platinum RuPay Credit Card',
+    bank: 'IndusInd Bank',
+    category: 'upi',
+    image: '/credit-cards/IndusInd-Rupay.png',
+    apr: 'N/A',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: true,
+    feedback: [],
+    categories: ['rupay', 'lifetime-free', 'rewards'],
+    applyUrl: 'https://wee.bnking.in/c/MmMxMjczN',
+    additionalDetails: {
+      rewardsProgram: '2 reward points for every ₹100 spent via UPI\n1 reward point for every ₹100 spent on non-UPI transactions\n₹0.70 for every ₹100 spent on select merchant categories',
+      welcomeBonus: 'Lifetime Free Card',
+      airportLounge: 'RuPay Select Variant: 2 complimentary domestic lounge visits per quarter\nRuPay Credit Card: 1 complimentary domestic lounge visit per month at RuPay exclusive lounges, including DEL T3 terminal',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹4,000 at any petrol pump across India, saving up to ₹480 annually',
+      insuranceCover: [
+        'Lost Baggage: ₹1,00,000',
+        'Delayed Baggage: ₹25,000',
+        'Loss of Passport: ₹50,000',
+        'Lost Ticket: ₹25,000',
+        'Missed Connection: ₹25,000',
+        'Personal Air Accident Insurance: Coverage up to ₹25 lakh',
+        'Total Protect Program: Covers unauthorized transactions up to the credit limit, including add-on cards',
+        'EMV Chip & PIN Technology: Enhanced security against counterfeit fraud and unauthorized use'
+      ],
+      redemptionOptions: 'Flexible Options: Redeem points for cash credit, airline miles (1 RP = 1 airline mile), or through the IndusMoments rewards catalogue',
+      idealFor: [
+        'UPI Users',
+        'Budget-Conscious Consumers',
+        'Frequent Domestic Travelers',
+        'Security-Conscious Users'
+      ],
+      notIdealFor: [
+        'International Travelers',
+        'High-Value Spenders',
+        'Users Seeking Premium Travel Benefits'
+      ],
+      summary: 'A lifetime-free credit card designed to offer a blend of affordability, convenience, and rewarding benefits, especially for users who frequently utilize UPI for transactions.'
+    }
+  },
+  // {
+  //   id: 'onecard',
+  //   name: 'OneCard',
+  //   bank: 'OneCard',
+  //   category: 'fintech',
+  //   image: '/credit-cards/OneCard.png',
+  //   apr: '42% p.a.',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: [
+  //     'best-credit-cards',
+  //     'rewards',
+  //     'lifetime-free',
+  //     // 'travel',
+  //     // 'international-travel',
+  //     // 'domestic-lounge',
+  //     // 'international-lounge',
+  //     'fintech'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-onecard',
+  //   additionalDetails: {
+  //     rewardsProgram: 'Earn reward points on all spends\nWelcome benefit of 5,000 reward points or luxury e-gift voucher worth ₹5,000',
+  //     welcomeBonus: '5,000 reward points or luxury e-gift voucher worth ₹5,000 upon card activation',
+  //     airportLounge: 'Complimentary access to domestic and international lounges (up to 16 visits per year)\nComplimentary access to select railway lounges',
+  //     fuelSurcharge: 'Not specified',
+  //     insuranceCover: [
+  //       'Air Accident Cover: ₹2 crore',
+  //       'Credit Shield: ₹15 lakh',
+  //       'Purchase Protection: ₹50,000',
+  //       'Travel Insurance: Comprehensive coverage for baggage loss, flight delays, and more'
+  //     ],
+  //     movieBenefits: 'Exclusive discounts and offers on movie ticket bookings through BookMyShow',
+  //     diningPrivileges: [
+  //       'Exclusive dining privileges and offers'
+  //     ],
+  //     minimumSpend: 'NA',
+  //     internationalTransactionFee: '0.99%',
+  //     additionalServices: 'Lifetime free add-on cards for family members',
+  //     idealFor: [
+  //       'High-income individuals with substantial monthly expenditures',
+  //       'Frequent travelers seeking lounge access and travel-related perks',
+  //       'Users who prioritize dining and lifestyle benefits'
+  //     ],
+  //     notIdealFor: [
+  //       'Individuals with moderate or low spending habits',
+  //       'Those seeking a no-frills, low-fee credit card'
+  //     ],
+  //     summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
+  //   }
+  // },
+  {
+    id: 'indusind-pinnacle-world',
+    name: 'IndusInd Pinnacle World Credit Card',
+    bank: 'IndusInd Bank',
+    category: 'premium',
+    image: '/credit-cards/IndusInd-Pinnacle.png',
+    apr: '46% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹14,999 + GST',
+    rupay: false,
+    feedback: [],
+    categories: ['premium', 'domestic-lounge', 'international-lounge'],
+    applyUrl: 'https://wee.bnking.in/c/MmMxMjczN',
+    additionalDetails: {
+      rewardsProgram: '• Online Shopping: 2.5 reward points for every ₹100 spent on e-commerce transactions\n• Travel Bookings: 1.5 reward points for every ₹100 spent on online travel and airline bookings\n• Other Spends: 1 reward point for every ₹100 spent on POS, MoTo, IVR transactions, and standing instructions',
+      welcomeBonus: '30,000 reward points upon activation\nLuxury Vouchers: Choose from Oberoi Hotels, Montblanc, Luxe Gift Card, or Postcard Hotel vouchers as a welcome gift',
+      airportLounge: 'International Lounge Access: 2 complimentary visits per quarter to international lounges outside India through Priority Pass\nDomestic Lounge Access: 1 complimentary domestic lounge visit per quarter via the Mastercard lounge program',
+      insuranceCover: [
+        'Air Accident Cover: Personal air accident insurance coverage up to ₹25 lakh',
+        'Total Protect Program: Covers unauthorized transactions up to the credit limit, including add-on cards'
+      ],
+      movieBenefits: 'Buy 1 get 1 free on movie tickets through BookMyShow, up to 3 times a month (maximum benefit of ₹200 per ticket)',
+      additionalServices: 'Golf Privileges:\n• 1 complimentary golf game and 1 lesson per month at select golf clubs\n\nAuto Assist Services:\n• Emergency fuel supply\n• Flat tyre service\n• Lost key assistance\n• Battery service\n• Emergency towing\n• Accident management\n• Medical assistance',
+      redemptionOptions: 'Redeem points for cash credit, airline miles, or a variety of products and services via IndusMoments',
+      idealFor: [
+        'Frequent Travelers',
+        'Online Shoppers',
+        'Luxury Seekers',
+        'High-Spending Professionals'
+      ],
+      notIdealFor: [
+        'Budget-Conscious Users',
+        'Infrequent Travelers',
+        'Low-Value Spenders'
+      ],
+      summary: 'A premium offering tailored for individuals seeking luxury, convenience, and substantial rewards. It combines high reward rates with exclusive lifestyle and travel privileges, making it ideal for high-spending professionals and frequent travelers.'
+    }
+  },
 ]; 
