@@ -288,16 +288,10 @@ function PersonalLoans() {
 
         {/* Eligibility Check Section (visible, not just dialog) */}
         {!eligible && (
-          <section ref={eligibilityRef} id="eligibility-section" className="my-12">
-            <div className="md:grid md:grid-cols-2 md:gap-8 md:items-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg p-0 md:p-8">
-              {/* Mobile: Heading and offer above form */}
-              <div className="block md:hidden px-0 pt-4 pb-2">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
-                  <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
-                </div>
-              </div>
+          <section ref={eligibilityRef} id="eligibility-section" className="w-full bg-gradient-to-r from-blue-50 to-green-50 py-10 md:py-16">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-between">
               {/* Left: Headline, subheadline, offer (desktop only) */}
-              <div className="hidden md:flex flex-col gap-6 pl-8 justify-start self-start mt-0">
+              <div className="hidden md:flex flex-1 max-w-xl flex-col gap-6 justify-start self-start mt-0">
                 <div>
                   <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
                   <h1 className="text-2xl md:text-4xl font-bold text-blue-900 leading-tight mb-3">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</h1>
@@ -311,8 +305,14 @@ function PersonalLoans() {
                   </div>
                 </div>
               </div>
+              {/* Mobile: Heading and offer above form */}
+              <div className="block md:hidden flex-1 max-w-xl px-0 pt-4 pb-2">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
+                  <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
+                </div>
+              </div>
               {/* Right: Form card (always visible, but styled as card on desktop) */}
-              <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 md:max-w-2xl w-full mx-auto">
+              <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-xl p-6 md:p-8 mx-auto">
                 <h2 className="text-2xl font-bold mb-6 text-center text-green-700">Get Started</h2>
                 <form onSubmit={handleSubmit} onClick={() => {
                   const user = auth.currentUser;
