@@ -2589,6 +2589,7 @@ Credit Score: 750 or above (good to excellent)`
       'rewards',
       'travel'
     ],
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: `Reward Points Earning Structure:
 • 5% on IndiGo bookings
