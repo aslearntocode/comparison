@@ -72,7 +72,7 @@ export const creditCards: CreditCard[] = [
       'hotel',
       'hotels'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-regalia-marriott',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Reward Points Structure:\n• 8 Marriott Bonvoy Points per ₹150 spent at Marriott Bonvoy hotels\n• 4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n• 2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases\n\nPoints are earned on non-EMI retail spends and exclude wallet loads, gift/prepaid card loads, voucher purchases, government-related transactions, rental transactions, and EMI transactions.',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Marriott Bonvoy Silver Elite Status (priority check-in, late check-out, 10% bonus points on eligible hotel purchases)\n• 1 Free Night Award on first eligible spend transaction or fee levy (wallet reloads and EMI excluded)\n• 10 Elite Night Credits to fast-track to Gold Elite status',
@@ -120,7 +120,7 @@ Income: ITR > ₹15 lakhs/annum`
       'premium',
       'travel'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-regalia',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 4 Reward Points per ₹150 spent on all retail purchases
@@ -193,7 +193,7 @@ Income: Income Tax Returns (ITR) exceeding ₹18 lakhs per annum`,
       'shopping',
       'upi'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-pixel-play',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 5% Cashback on choice of any two packs:\n  - Dining & Entertainment: BookMyShow & Zomato\n  - Travel: MakeMyTrip & Uber\n  - Grocery: Blinkit & Reliance Smart Bazaar\n  - Electronics: Croma & Reliance Digital\n  - Fashion: Nykaa & Myntra\n• 5% Cashback on SmartBuy\n• 3% Cashback on choice of any one E-commerce merchant\n• Amazon or Flipkart or PayZapp\n• 1% Unlimited Cashback across all other spends\n• 1% Cashback on UPI Spends (Applicable only on PIXEL RuPay Credit Card holders)',
       welcomeBonus: 'Joining Fee waived on spending ₹20,000 within 90 days of issuance',
@@ -236,7 +236,7 @@ Income: ITR > ₹6 lakhs/annum`
       'rewards',
       'cashback'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-millennia',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: `Cashback Structure:
 • 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato
@@ -285,7 +285,7 @@ Income: ITR > ₹6 lakhs/annum`
       'grocery',
       'lifestyle'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-money-black-plus',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'CashPoints Structure:\n• 10X CashPoints (3.3% Valueback) on Amazon, Flipkart, Swiggy, Reliance Smart SuperStore & BigBasket\n• 2 CashPoints per ₹150 spent on other spends\n• Get ₹500 gift voucher on spends on ₹50,000 per calendar quarter\n• Get 10% additional discount on Swiggy/Dineout using coupon code HDFCARDS_TnC\n\nNote:\nFor Rupay Credit Cardholders, all UPI spends (Excluding fuel, Wallet / Prepaid Card loads or Voucher Purchases) will earn 2 RPs for every Rs.150 spent and is capped at 500 reward points in a calendar month.',
       welcomeBonus: '500 Cash Points (applicable only on payment of membership fee)',
@@ -329,7 +329,7 @@ Income: ITR > ₹6 lakhs/annum`
       'food-delivery',
       'lifestyle'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-swiggy',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
@@ -1273,7 +1273,7 @@ Fuel Benefits:
       'travel',
       'domestic-lounge'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-indigo-6e-rewards',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 2.5% 6E Rewards on IndiGo bookings
@@ -1422,7 +1422,7 @@ Income: ITR > ₹7.2 lakhs/annum`
       // 'lifestyle'
       // 'fintech'
     ],
-    applyUrl: 'https://example.com/apply-tata-neu-infinity',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5% NeuCoins on spending at Tata brands\n• 1.5% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
@@ -1463,7 +1463,7 @@ Income: ITR > ₹12 lakhs/annum`
       'upi',
       // 'fintech'
     ],
-    applyUrl: 'https://example.com/apply-tata-neu-plus',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2% NeuCoins on spending at Tata brands\n• 1% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
@@ -1504,7 +1504,7 @@ Income: ITR > ₹6 lakhs/annum`
       'upi',
       // 'fintech'
     ],
-    applyUrl: 'https://example.com/apply-hdfc-rupay',
+    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards for ₹0.25 per point',
       welcomeBonus: 'Not specified',

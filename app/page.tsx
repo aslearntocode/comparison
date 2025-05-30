@@ -805,14 +805,14 @@ export default function Home() {
                       <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Airlines</span>
                     </div>
                   </Link>
-                  <Link href="/credit?category=fintech" className="col-span-1">
+                  <Link href="/credit?category=fuel" className="col-span-1">
                     <div className="group bg-gradient-to-r from-cyan-500/90 to-blue-500/90 hover:from-blue-600/90 hover:to-cyan-600/90 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
                       <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
                         <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Fintech</span>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Fuel</span>
                     </div>
                   </Link>
                 </div>

@@ -237,6 +237,14 @@ const articles: Article[] = [
     category: 'Home Loans',
     readTime: '10 min read',
     link: '/learning-center/home-loans/'
+  },
+  {
+    id: '29',
+    title: 'Loan Against Mutual Funds: A Complete Guide',
+    description: 'Learn about loan against mutual funds, including when to use it, how to do it, and the benefits and drawbacks.',
+    category: 'Personal Loans',
+    readTime: '10 min read',
+    link: '/learning-center/personal-loans/lamf'
   }
 ]
 
