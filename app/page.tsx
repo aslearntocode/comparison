@@ -1021,9 +1021,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Credit Card vs Personal Loan Comparison Section */}
-      <CreditCardVsLoanComparison />
-
       {/* Credit Score Analysis Section */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1126,6 +1123,51 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Access Services - Inserted Section */}
+      <div className="w-full bg-white py-8">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">What you need is right here</h2>
+          <div className="grid grid-cols-3 md:flex md:flex-wrap md:justify-center gap-4 md:gap-8 lg:gap-12">
+            <Link href="/credit-score-main/score" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/Credit-Score-Analysis.png" alt="Credit Score" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">Credit Score</span>
+            </Link>
+            <Link href="/credit-vs-loan-assessment" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/Credit_Assessment.png" alt="Credit Assessment" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">Credit Assessment</span>
+            </Link>
+            <Link href="/credit" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/Credit-card-1.png" alt="Credit Card" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">Credit Card</span>
+            </Link>
+            <Link href="/personal-loans" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/PL.png" alt="Personal Loan" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">Personal Loan</span>
+            </Link>
+            <Link href="/home-loans-refinance" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/HL.png" alt="Home Loan" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">Home Loan</span>
+            </Link>
+            <Link href="/loan-against-mf" className="flex flex-col items-center group w-20 md:w-28">
+              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-2">
+                <Image src="/LAMF.png" alt="LAMF" width={36} height={36} className="object-contain max-w-full max-h-full group-hover:scale-110 transition-transform md:w-12 md:h-12 md:max-w-full md:max-h-full" />
+              </div>
+              <span className="text-xs md:text-base font-medium text-gray-800 mt-1 text-center">LAMF</span>
+            </Link>
           </div>
         </div>
       </div>

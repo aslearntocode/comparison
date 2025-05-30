@@ -31,7 +31,7 @@ const lenders: Lender[] = [
     logo: "volt-logo.png",
     interestRate: "9.5% - 11.5% p.a.",
     processingFee: "Up to 0.5%",
-    loanAmount: "₹1 Lakh - ₹5 Crores",
+    loanAmount: "₹1 Lakh - ₹1 Crore",
     tenure: "1 - 3 years",
     features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   },
@@ -43,13 +43,7 @@ const lenders: Lender[] = [
     processingFee: "Up to 1%",
     loanAmount: "₹50,000 - ₹3 Crores",
     tenure: "1 - 3 years",
-    features: [
-      "Digital lien marking",
-      "Quick disbursal",
-      "Flexible repayment options",
-      "No prepayment charges",
-      "Trusted brand"
-    ]
+    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   }
 ]
 
