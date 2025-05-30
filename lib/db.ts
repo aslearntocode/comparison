@@ -1,5 +1,6 @@
 import { supabase } from './supabase'
 import { auth } from '@/lib/firebase'
+import { Pool, PoolClient } from 'pg'
 
 interface InvestmentData {
   user_id: string
@@ -15,6 +16,22 @@ interface InvestmentData {
     color: string
   }>
 }
+
+// Create a new pool using the connection string from environment variables
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+})
+
+// Test the connection
+pool.on('connect', () => {
+  console.log('Connected to the database')
+})
+
+pool.on('error', (err: Error) => {
+  console.error('Unexpected error on idle client', err)
+  process.exit(-1)
+})
 
 export async function saveInvestmentData(data: InvestmentData) {
   try {

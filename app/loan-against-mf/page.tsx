@@ -64,7 +64,11 @@ function LoanAgainstMF() {
 
   let filteredLenders = lenders
   let showApply = (id: number) => false
-  if (eligible === 'banks') {
+  if (eligible === 'volt') {
+    filteredLenders = lenders.filter(l => l.name === 'Volt Money')
+    showApply = (id: number) => filteredLenders.some(l => l.id === id)
+  } else if (eligible === 'mirae') {
+    filteredLenders = lenders.filter(l => l.name === 'Mirae Asset Financial Services')
     showApply = (id: number) => filteredLenders.some(l => l.id === id)
   } else if (eligible === 'no_offers') {
     filteredLenders = []
@@ -88,6 +92,16 @@ function LoanAgainstMF() {
     })
   }
 
+  const checkLogin = () => {
+    const user = auth.currentUser;
+    if (!user) {
+      const currentPath = encodeURIComponent('/loan-against-mf');
+      router.push(`/login?redirect=${currentPath}`);
+      return false;
+    }
+    return true;
+  }
+
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
@@ -95,7 +109,7 @@ function LoanAgainstMF() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.acceptTerms) return;
     
@@ -114,29 +128,76 @@ function LoanAgainstMF() {
     // Basic eligibility check
     const isEligible = mfPortfolioValue > 0 && loanAmount > 0 && monthlyIncome > 0 && loanAmount <= mfPortfolioValue * 0.5
 
-    // Update URL with eligibility parameter
-    const params = new URLSearchParams()
-    if (isEligible) {
-      params.set('eligible', 'banks')
-    } else {
-      params.set('eligible', 'no_offers')
-    }
-    router.push(`/loan-against-mf?${params.toString()}`)
-    
-    // Set eligibility message if no offers
-    if (!isEligible) {
+    try {
+      // Save the eligibility check data to the database
+      const response = await fetch('/api/lamf/eligibility', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firebase_user_id: user.uid,
+          email: user.email,
+          display_name: user.displayName,
+          phone_number: user.phoneNumber,
+          mutual_fund_portfolio_value: mfPortfolioValue,
+          loan_amount: loanAmount,
+          loan_tenure_months: 36, // Default to 3 years
+          monthly_income: monthlyIncome,
+          employment_type: formData.employmentType,
+          mutual_fund_holdings: [], // This would be populated with actual holdings in a real scenario
+          eligibility_status: isEligible,
+          interest_rate: isEligible ? (loanAmount <= 1000000 ? 9.5 : 10.5) : null
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        console.error('Server error response:', responseData);
+        throw new Error(responseData.details || responseData.error || 'Failed to save eligibility check data');
+      }
+
+      // Update URL with eligibility parameter
+      const params = new URLSearchParams()
+      if (isEligible) {
+        if (loanAmount <= 1000000) { // 10 Lakhs
+          params.set('eligible', 'volt')
+        } else {
+          params.set('eligible', 'mirae')
+        }
+      } else {
+        params.set('eligible', 'no_offers')
+      }
+      router.push(`/loan-against-mf?${params.toString()}`)
+      
+      // Set eligibility message if no offers
+      if (!isEligible) {
+        setEligibilityMessage(
+          <div>
+            We don't have an eligible offer for you right now. Please check back later or contact our support team for assistance.
+          </div>
+        )
+      } else {
+        setEligibilityMessage(null)
+      }
+      
+      // Close the dialog and reset form
+      setIsEligibilityOpen(false)
+      resetForm()
+
+      // Scroll to lending partners section
+      if (lendersRef.current) {
+        lendersRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } catch (error) {
+      console.error('Error saving eligibility check:', error);
       setEligibilityMessage(
-        <div>
-          We don't have an eligible offer for you right now. Please check back later or contact our support team for assistance.
+        <div className="text-red-600">
+          {error instanceof Error ? error.message : 'Failed to save eligibility check data. Please try again.'}
         </div>
-      )
-    } else {
-      setEligibilityMessage(null)
+      );
     }
-    
-    // Close the dialog and reset form
-    setIsEligibilityOpen(false)
-    resetForm()
   }
 
   // Prevent background scroll on mobile when dialog is open
@@ -217,189 +278,200 @@ function LoanAgainstMF() {
         )}
 
         {/* Side-by-side Info + Get Started Form Section */}
-        <section ref={eligibilityRef} className="w-full bg-gradient-to-r from-blue-50 to-green-50 py-10 md:py-16">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-between">
-            {/* Left: Title, Subtitle, Description, Offer */}
-            <div className="flex-1 max-w-xl">
-              <div className="text-green-700 font-semibold text-lg mb-2">Loan Against Mutual Funds</div>
-              <h1 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 leading-tight">
-                Get instant loans against your mutual fund portfolio!
-              </h1>
-              <div className="hidden sm:block">
-                <p className="text-gray-700 text-lg mb-6">
-                  Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.
-                </p>
+        {!eligible && (
+          <section ref={eligibilityRef} className="w-full bg-gradient-to-r from-blue-50 to-green-50 py-10 md:py-16">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-between">
+              {/* Left: Title, Subtitle, Description, Offer */}
+              <div className="flex-1 max-w-xl">
+                <div className="text-green-700 font-semibold text-lg mb-2">Loan Against Mutual Funds</div>
+                <h1 className="text-2xl md:text-4xl font-bold text-blue-900 mb-3 leading-tight">
+                  Get instant loans against your mutual fund portfolio!
+                </h1>
+                <div className="hidden sm:block">
+                  <p className="text-gray-700 text-lg mb-6">
+                    Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.
+                  </p>
+                </div>
+                {/* Amazon Voucher Offer Card */}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
+                  <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1,000</span>.</span>
+                </div>
               </div>
-              {/* Amazon Voucher Offer Card */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
-                <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1,000</span>.</span>
+              {/* Right: Eligibility Form */}
+              <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24">
+                <h2 className="text-2xl md:text-2xl font-extrabold text-blue-900 mb-6 text-center">Check Your Eligibility</h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="mfPortfolioValue">Mutual Fund Portfolio Value</Label>
+                      <Input
+                        id="mfPortfolioValue"
+                        type="text"
+                        placeholder="Enter portfolio value"
+                        value={formData.mfPortfolioValue}
+                        onChange={(e) => handleInputChange('mfPortfolioValue', e.target.value)}
+                        onFocus={checkLogin}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="loanAmount">Loan Amount Required</Label>
+                      <Input
+                        id="loanAmount"
+                        type="text"
+                        placeholder="Enter loan amount"
+                        value={formData.loanAmount}
+                        onChange={(e) => handleInputChange('loanAmount', e.target.value)}
+                        onFocus={checkLogin}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="employmentType">Employment Type</Label>
+                      <Select
+                        value={formData.employmentType}
+                        onValueChange={(value) => handleInputChange('employmentType', value)}
+                        onOpenChange={(open) => {
+                          if (open) checkLogin();
+                        }}
+                        required
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select employment type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="salaried">Salaried</SelectItem>
+                          <SelectItem value="self-employed">Self Employed</SelectItem>
+                          {/* <SelectItem value="business">Business</SelectItem> */}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="monthlyIncome">Monthly Income</Label>
+                      <Input
+                        id="monthlyIncome"
+                        type="text"
+                        placeholder="Enter monthly income"
+                        value={formData.monthlyIncome}
+                        onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
+                        onFocus={checkLogin}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="acceptTerms"
+                      checked={formData.acceptTerms}
+                      onChange={(e) => handleInputChange('acceptTerms', e.target.checked)}
+                      onFocus={checkLogin}
+                      required
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <Label htmlFor="acceptTerms" className="text-sm text-gray-600">
+                      I agree to the terms and conditions
+                    </Label>
+                  </div>
+                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Check Eligibility
+                  </Button>
+                </form>
               </div>
             </div>
-            {/* Right: Eligibility Form */}
-            <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24">
-              <h2 className="text-2xl md:text-2xl font-extrabold text-blue-900 mb-6 text-center">Check Your Eligibility</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="mfPortfolioValue">Mutual Fund Portfolio Value</Label>
-                    <Input
-                      id="mfPortfolioValue"
-                      type="text"
-                      placeholder="Enter portfolio value"
-                      value={formData.mfPortfolioValue}
-                      onChange={(e) => handleInputChange('mfPortfolioValue', e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="loanAmount">Loan Amount Required</Label>
-                    <Input
-                      id="loanAmount"
-                      type="text"
-                      placeholder="Enter loan amount"
-                      value={formData.loanAmount}
-                      onChange={(e) => handleInputChange('loanAmount', e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="employmentType">Employment Type</Label>
-                    <Select
-                      value={formData.employmentType}
-                      onValueChange={(value) => handleInputChange('employmentType', value)}
-                      required
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select employment type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="salaried">Salaried</SelectItem>
-                        <SelectItem value="self-employed">Self Employed</SelectItem>
-                        <SelectItem value="business">Business</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="monthlyIncome">Monthly Income</Label>
-                    <Input
-                      id="monthlyIncome"
-                      type="text"
-                      placeholder="Enter monthly income"
-                      value={formData.monthlyIncome}
-                      onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    id="acceptTerms"
-                    checked={formData.acceptTerms}
-                    onChange={(e) => handleInputChange('acceptTerms', e.target.checked)}
-                    required
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                  />
-                  <Label htmlFor="acceptTerms" className="text-sm text-gray-600">
-                    I agree to the terms and conditions
-                  </Label>
-                </div>
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  Check Eligibility
-                </Button>
-              </form>
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Features & Benefits Section (replaces EMI Calculator) */}
-        <section ref={calculatorRef} className="w-full bg-white py-10 md:py-14">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-8 text-center">Features & Benefits of Loan Against Mutual Funds</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Feature 1 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-stopwatch"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Get LAMF Limit Online Within Minutes</h3>
-                  <p className="text-gray-700 text-sm">No need to wait for days. Complete 6 simple steps to get an overdraft limit against mutual funds within minutes using the MAFS mobile app. Your application will be processed instantly to provide you with a limit within minutes.</p>
+        {/* Features & Benefits Section */}
+        {!eligible && (
+          <section ref={calculatorRef} className="w-full bg-white py-10 md:py-14">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-8 text-center">Features & Benefits of Loan Against Mutual Funds</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Feature 1 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-stopwatch"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Get LAMF Limit Online Within Minutes</h3>
+                    <p className="text-gray-700 text-sm">No need to wait for days. Complete 6 simple steps to get an overdraft limit against mutual funds within minutes using the MAFS mobile app. Your application will be processed instantly to provide you with a limit within minutes.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 2 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-ban"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Zero Foreclosure Charges</h3>
-                  <p className="text-gray-700 text-sm">No lock-in & no foreclosure charges if you decide to repay your outstanding's early. You can make payment towards your outstanding amount anytime with zero foreclosure charges.</p>
+                {/* Feature 2 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-ban"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Zero Foreclosure Charges</h3>
+                    <p className="text-gray-700 text-sm">No lock-in & no foreclosure charges if you decide to repay your outstanding's early. You can make payment towards your outstanding amount anytime with zero foreclosure charges.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 3 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-bolt"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Instant Disbursal</h3>
-                  <p className="text-gray-700 text-sm">MAFS provide access to funds whenever you need them. Get the required amount credited directly to your provided bank account on the same day.</p>
+                {/* Feature 3 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-bolt"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Instant Disbursal</h3>
+                    <p className="text-gray-700 text-sm">MAFS provide access to funds whenever you need them. Get the required amount credited directly to your provided bank account on the same day.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 4 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-list"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Large List of Approved Securities</h3>
-                  <p className="text-gray-700 text-sm">Select from a large list of approved mutual funds from different asset management companies (AMCs) in India. You can lien mark mutual funds registered with both CAMS & KFintech (earlier known as KARVY), Registrars & Transfer Agents (RTAs).</p>
+                {/* Feature 4 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-list"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Large List of Approved Securities</h3>
+                    <p className="text-gray-700 text-sm">Select from a large list of approved mutual funds from different asset management companies (AMCs) in India. You can lien mark mutual funds registered with both CAMS & KFintech (earlier known as KARVY), Registrars & Transfer Agents (RTAs).</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 5 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-mobile-alt"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">100% Digital Process</h3>
-                  <p className="text-gray-700 text-sm">No need of visiting branches or reaching out to relationship managers. With the MAFS mobile app you can complete your entire journey online from your mobile device without any need of submitting physical documents.</p>
+                {/* Feature 5 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-mobile-alt"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">100% Digital Process</h3>
+                    <p className="text-gray-700 text-sm">No need of visiting branches or reaching out to relationship managers. With the MAFS mobile app you can complete your entire journey online from your mobile device without any need of submitting physical documents.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 6 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-user-shield"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Retain Ownership</h3>
-                  <p className="text-gray-700 text-sm">Allow your mutual funds to achieve long-term goals. You continue to retain ownership of your mutual funds and reap all the benefits that are associated with it.</p>
+                {/* Feature 6 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-user-shield"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Retain Ownership</h3>
+                    <p className="text-gray-700 text-sm">Allow your mutual funds to achieve long-term goals. You continue to retain ownership of your mutual funds and reap all the benefits that are associated with it.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 7 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-percent"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Attractive Interest Rate</h3>
-                  <p className="text-gray-700 text-sm">Avail loan at an attractive Interest rate starting 10.5% p.a (on utilized amount) with flexi payment option. Unlike term loans, interest on LAMF is levied only on the amount you use and for the number of days you utilize.</p>
+                {/* Feature 7 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-percent"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Attractive Interest Rate</h3>
+                    <p className="text-gray-700 text-sm">Avail loan at an attractive Interest rate starting 10.5% p.a (on utilized amount) with flexi payment option. Unlike term loans, interest on LAMF is levied only on the amount you use and for the number of days you utilize.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 8 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-hourglass-half"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Loan Tenure</h3>
-                  <p className="text-gray-700 text-sm">The overdraft limit provided against your mutual funds has a tenure of 12 months and is renewed thereafter.</p>
+                {/* Feature 8 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-hourglass-half"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Loan Tenure</h3>
+                    <p className="text-gray-700 text-sm">The overdraft limit provided against your mutual funds has a tenure of 12 months and is renewed thereafter.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 9 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-arrow-up"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Higher Loan Value</h3>
-                  <p className="text-gray-700 text-sm">One place for all your financial requirements. With MAFS you can get a higher limit against your mutual funds portfolio value.</p>
+                {/* Feature 9 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-arrow-up"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Higher Loan Value</h3>
+                    <p className="text-gray-700 text-sm">One place for all your financial requirements. With MAFS you can get a higher limit against your mutual funds portfolio value.</p>
+                  </div>
                 </div>
-              </div>
-              {/* Feature 10 */}
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl text-orange-500"><i className="fas fa-rupee-sign"></i></span>
-                <div>
-                  <h3 className="font-bold text-lg text-blue-900 mb-1">Easy Repayment</h3>
-                  <p className="text-gray-700 text-sm">Manage your funds with more flexibility. You are required to service the interest only on the utilized amount and can repay the principal as per your convenience.</p>
+                {/* Feature 10 */}
+                <div className="flex gap-4 items-start">
+                  <span className="text-4xl text-orange-500"><i className="fas fa-rupee-sign"></i></span>
+                  <div>
+                    <h3 className="font-bold text-lg text-blue-900 mb-1">Easy Repayment</h3>
+                    <p className="text-gray-700 text-sm">Manage your funds with more flexibility. You are required to service the interest only on the utilized amount and can repay the principal as per your convenience.</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Lenders Section */}
         <section ref={lendersRef} className="py-16" id="lenders-section">
@@ -408,7 +480,19 @@ function LoanAgainstMF() {
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
                 <span className="text-purple-700 font-extrabold">Lending</span> Partners
               </h2>
-              <p className="text-center text-base md:text-lg text-gray-700">We have partnered with lenders to get the best offers for our customers.</p>
+              {eligible && eligible !== 'no_offers' && (
+                <p className="text-center text-base md:text-lg text-green-600 font-medium mb-4">
+                  You are eligible to apply with the below lending partner
+                </p>
+              )}
+              {eligible === 'no_offers' && (
+                <p className="text-center text-base md:text-lg text-red-600 font-medium mb-4">
+                  We don't have an eligible offer for you right now. Please check back later or contact our support team for assistance.
+                </p>
+              )}
+              {!eligible && (
+                <p className="text-center text-base md:text-lg text-gray-700">We have partnered with lenders to get the best offers for our customers.</p>
+              )}
             </div>
             {/* Desktop: Table style */}
             <div className="hidden md:block">
@@ -500,39 +584,41 @@ function LoanAgainstMF() {
           </div>
         </section>
 
-        {/* FAQ Section moved to bottom */}
-        <section ref={faqRef} className="w-full bg-white py-10 md:py-14">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Frequently Asked Questions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">What is a Loan Against Mutual Funds?</h3>
-                <p className="text-gray-600 text-sm">Loan Against Mutual Funds (LAMF) allows you to borrow money by pledging your mutual fund units as collateral. The process is fully digital - lien marking is done via CAMS or KFintech.</p>
-                <p className="text-gray-600 text-sm">It works like an overdraft: withdraw funds as needed, repay at your convenience, and pay interest only on the amount and duration used. A wide range of mutual funds from top AMCs are eligible.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">How much can I borrow?</h3>
-                <p className="text-gray-600 text-sm">You can typically borrow up to 50% of your mutual fund portfolio value. The exact amount depends on the type of mutual funds you hold and their current market value.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">What are the interest rates?</h3>
-                <p className="text-gray-600 text-sm">Interest rates typically range from 9.5% to 11.5% per annum, which is generally lower than personal loans. The exact rate depends on your portfolio value and loan amount.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">What is the loan tenure?</h3>
-                <p className="text-gray-600 text-sm">The loan tenure is usually between 1 to 3 years, giving you flexibility to repay the loan while keeping your mutual fund investments intact.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Can I continue earning returns on my mutual funds?</h3>
-                <p className="text-gray-600 text-sm">Yes, you continue to earn returns on your mutual fund investments even while they are pledged as collateral for the loan.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">What documents are required?</h3>
-                <p className="text-gray-600 text-sm">The process is mostly digital and requires minimal documentation. You'll need your PAN card, Aadhaar card, and mutual fund statements. The lien marking process is handled digitally through CAMS or KFintech.</p>
+        {/* FAQ Section */}
+        {!eligible && (
+          <section ref={faqRef} className="w-full bg-white py-10 md:py-14">
+            <div className="max-w-7xl mx-auto px-4">
+              <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Frequently Asked Questions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What is a Loan Against Mutual Funds?</h3>
+                  <p className="text-gray-600 text-sm">Loan Against Mutual Funds (LAMF) allows you to borrow money by pledging your mutual fund units as collateral. The process is fully digital - lien marking is done via CAMS or KFintech.</p>
+                  <p className="text-gray-600 text-sm">It works like an overdraft: withdraw funds as needed, repay at your convenience, and pay interest only on the amount and duration used. A wide range of mutual funds from top AMCs are eligible.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">How much can I borrow?</h3>
+                  <p className="text-gray-600 text-sm">You can typically borrow up to 50% of your mutual fund portfolio value. The exact amount depends on the type of mutual funds you hold and their current market value.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What are the interest rates?</h3>
+                  <p className="text-gray-600 text-sm">Interest rates typically range from 9.5% to 11.5% per annum, which is generally lower than personal loans. The exact rate depends on your portfolio value and loan amount.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What is the loan tenure?</h3>
+                  <p className="text-gray-600 text-sm">The loan tenure is usually between 1 to 3 years, giving you flexibility to repay the loan while keeping your mutual fund investments intact.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Can I continue earning returns on my mutual funds?</h3>
+                  <p className="text-gray-600 text-sm">Yes, you continue to earn returns on your mutual fund investments even while they are pledged as collateral for the loan.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What documents are required?</h3>
+                  <p className="text-gray-600 text-sm">The process is mostly digital and requires minimal documentation. You'll need your PAN card, Aadhaar card, and mutual fund statements. The lien marking process is handled digitally through CAMS or KFintech.</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
     </div>
   )
