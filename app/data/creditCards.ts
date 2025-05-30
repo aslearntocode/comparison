@@ -716,57 +716,57 @@ Credit Score: 750+`,
       eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
     }
   },
-  {
-    id: 'slice',
-    name: 'Slice Credit Card',
-    bank: 'Slice',
-    category: 'fintech',
-    image: '/credit-cards/Slice.png',
-    apr: '42% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: [
-      'best-credit-cards',
-      'rewards',
-      'cashback',
-      // 'fuel',
-      'lifetime-free',
-      'fintech'
-    ],
-    applyUrl: 'https://example.com/apply-slice',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• Up to 2% cashback on every transaction\n• Cashback credited as "Monies" in Slice account\n\nRedemption:\n• Instant redemption of cashback\n• Weekly deals and discounts through Slice Spark',
-      welcomeBonus: 'No specific welcome benefits. Instead, provides consistent benefits that apply to all users:\n• Up to 2% Instant Cashback on every transaction\n• No joining or annual fees\n• Lifetime free card with no hidden charges',
-      milestoneBenefits: ['No specific milestone benefits. Instead, provides consistent benefits that apply to all users'],
-      fuelSurcharge: 'Waiver of up to ₹200 per billing cycle on fuel transactions below ₹5,000',
-      insuranceCover: [
-        'No specific insurance coverage mentioned'
-      ],
-      minimumSpend: 'Not applicable',
-      creditLimit: '₹2,000 to ₹10,00,000 based on user profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: 'Not specified',
-      interestRate: '42% p.a.',
-      emiOptions: 'Available with flexible repayment options:\n• Split monthly bills into three equal installments without any extra fee or interest',
-      additionalServices: 'Additional Features:\n• Card Replacement Fee: ₹500\n• ATM Cash Withdrawal Fee: ₹50 per transaction\n• Late Payment Charges: Varies based on outstanding amount\n• Rental Convenience Fee Waiver: Up to ₹300 per month on rental transactions below ₹10,000 via PhonePe & NoBroker\n• Wide Acceptance: Accepted at 99.95% of merchants across India that accept Visa cards\n• Slice Spark Deals: Access to exclusive weekly deals and discounts across various brands',
-      idealFor: [
-        'Young professionals and students',
-        'First-time credit users',
-        'Digital-first users',
-        'Budget-conscious individuals',
-        'Those seeking flexible EMI options'
-      ],
-      notIdealFor: [
-        'Users seeking premium travel benefits',
-        'Those requiring extensive insurance coverage',
-        'Individuals needing high credit limits',
-        'Users who prefer traditional banking services'
-      ],
-      summary: 'A digital-first credit card alternative designed for young professionals, students, and first-time credit users, offering up to 2% instant cashback, flexible EMIs, and no annual or joining fees.',
-    }
-  },
+  // {
+  //   id: 'slice',
+  //   name: 'Slice Credit Card',
+  //   bank: 'Slice',
+  //   category: 'fintech',
+  //   image: '/credit-cards/Slice.png',
+  //   apr: '42% p.a.',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: [
+  //     'best-credit-cards',
+  //     'rewards',
+  //     'cashback',
+  //     // 'fuel',
+  //     'lifetime-free',
+  //     'fintech'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-slice',
+  //   additionalDetails: {
+  //     rewardsProgram: 'Earning Rate:\n• Up to 2% cashback on every transaction\n• Cashback credited as "Monies" in Slice account\n\nRedemption:\n• Instant redemption of cashback\n• Weekly deals and discounts through Slice Spark',
+  //     welcomeBonus: 'No specific welcome benefits. Instead, provides consistent benefits that apply to all users:\n• Up to 2% Instant Cashback on every transaction\n• No joining or annual fees\n• Lifetime free card with no hidden charges',
+  //     milestoneBenefits: ['No specific milestone benefits. Instead, provides consistent benefits that apply to all users'],
+  //     fuelSurcharge: 'Waiver of up to ₹200 per billing cycle on fuel transactions below ₹5,000',
+  //     insuranceCover: [
+  //       'No specific insurance coverage mentioned'
+  //     ],
+  //     minimumSpend: 'Not applicable',
+  //     creditLimit: '₹2,000 to ₹10,00,000 based on user profile',
+  //     domesticTransactionFee: 'Nil',
+  //     internationalTransactionFee: 'Not specified',
+  //     interestRate: '42% p.a.',
+  //     emiOptions: 'Available with flexible repayment options:\n• Split monthly bills into three equal installments without any extra fee or interest',
+  //     additionalServices: 'Additional Features:\n• Card Replacement Fee: ₹500\n• ATM Cash Withdrawal Fee: ₹50 per transaction\n• Late Payment Charges: Varies based on outstanding amount\n• Rental Convenience Fee Waiver: Up to ₹300 per month on rental transactions below ₹10,000 via PhonePe & NoBroker\n• Wide Acceptance: Accepted at 99.95% of merchants across India that accept Visa cards\n• Slice Spark Deals: Access to exclusive weekly deals and discounts across various brands',
+  //     idealFor: [
+  //       'Young professionals and students',
+  //       'First-time credit users',
+  //       'Digital-first users',
+  //       'Budget-conscious individuals',
+  //       'Those seeking flexible EMI options'
+  //     ],
+  //     notIdealFor: [
+  //       'Users seeking premium travel benefits',
+  //       'Those requiring extensive insurance coverage',
+  //       'Individuals needing high credit limits',
+  //       'Users who prefer traditional banking services'
+  //     ],
+  //     summary: 'A digital-first credit card alternative designed for young professionals, students, and first-time credit users, offering up to 2% instant cashback, flexible EMIs, and no annual or joining fees.',
+  //   }
+  // },
   {
     id: 'idfc-first-wealth',
     name: 'IDFC FIRST Wealth Credit Card',
