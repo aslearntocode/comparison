@@ -36,6 +36,18 @@ interface CreditCardSlide {
 
 type SlideData = CreditCardSlide;
 
+interface ReportData {
+  created_at: string;
+  report_analysis: {
+    first_block?: {
+      score_value?: number;
+    };
+    score_details?: {
+      score?: number;
+    };
+  };
+}
+
 export default function Home() {
   const router = useRouter()
   const [activeSection, setActiveSection] = useState('distribution') // 'distribution' or 'offer'
@@ -46,8 +58,8 @@ export default function Home() {
     name: '',
     message: ''
   })
-  const [user, setUser] = useState<any>(null)
-  const [latestReport, setLatestReport] = useState<null | {
+  const [user, setUser] = useState<User | null>(null)
+  const [latestReport, setLatestReport] = useState<{
     date: string;
     type: string;
     score?: number;
@@ -55,9 +67,9 @@ export default function Home() {
     closedAccounts?: number;
     totalCreditLimit?: string;
     report_analysis?: any;
-  }>(null)
-  const [latestAllocation, setLatestAllocation] = useState(null)
-  const [reportData, setReportData] = useState<any>(null)
+  } | null>(null)
+  const [latestAllocation, setLatestAllocation] = useState<AllocationItem[] | null>(null)
+  const [reportData, setReportData] = useState<ReportData | null>(null)
   const [activeCard, setActiveCard] = useState<'investment' | 'credit'>('investment')
   const [touchStartTime, setTouchStartTime] = useState(0)
   const [touchStartX, setTouchStartX] = useState(0)
@@ -769,7 +781,7 @@ export default function Home() {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
+                     className={`w-2 h-2 rounded-full transition-colors ${
                       index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
                     }`}
                   />
@@ -949,6 +961,52 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* IDFC First Bank Offer Banner */}
+      <div className="relative bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/50 via-transparent to-purple-600/50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-8 flex items-center justify-center relative">
+            {/* Left decorative element */}
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 w-16 h-16 bg-white/10 rounded-full flex items-center justify-center animate-pulse">
+              <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            
+            {/* Main content */}
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <div className="text-center md:text-left">
+                <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-2">
+                  Limited Time Offer
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold">
+                  Get INR 750 for every successful SBI, IDFC First and Axis Bank application!
+                </h3>
+              </div>
+              <Link 
+                href="https://wee.bnking.in/c/MTY1Mzg5N"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+              >
+                Apply Now
+                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Right decorative element */}
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 w-16 h-16 bg-white/10 rounded-full flex items-center justify-center animate-pulse">
+              <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
           </div>
         </div>
