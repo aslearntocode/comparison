@@ -41,7 +41,7 @@ const lenders: Lender[] = [
     logo: "MAFS-logo.png",
     interestRate: "10.5% - 12.5% p.a.",
     processingFee: "Up to 1%",
-    loanAmount: "₹50,000 - ₹3 Crores",
+    loanAmount: "₹10,000 - ₹3 Crores",
     tenure: "1 - 3 years",
     features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   }
@@ -75,9 +75,6 @@ function LoanAgainstMF() {
     loanAmount: '',
     employmentType: '',
     monthlyIncome: '',
-    city: '',
-    mfType: '',
-    hasCoApplicant: '',
     acceptTerms: false
   })
 
@@ -87,9 +84,6 @@ function LoanAgainstMF() {
       loanAmount: '',
       employmentType: '',
       monthlyIncome: '',
-      city: '',
-      mfType: '',
-      hasCoApplicant: '',
       acceptTerms: false
     })
   }
@@ -190,44 +184,40 @@ function LoanAgainstMF() {
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl font-bold mb-2">Loan Against Mutual Funds</h1>
               <p className="text-lg md:text-xl text-white/90 mb-2">
-              Don't Redeem it, Lien it Instead
+                Check eligibility and we will show you the offers that you are likely to get approved for
               </p>
             </div>
           </div>
         </section>
 
         {/* Sticky Navigation Slider/Tab Bar below hero section */}
-        <div ref={sliderRef} className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
-          <div className="flex w-full rounded-none bg-white">
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(aboutRef as React.RefObject<HTMLDivElement>)}
-            >
-              About
-            </button>
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(featuresRef as React.RefObject<HTMLDivElement>)}
-            >
-              Features & Benefits
-            </button>
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(lendersRef as React.RefObject<HTMLDivElement>)}
-            >
-              Lending Partners
-            </button>
-            <button
-              className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-              onClick={() => handleScroll(faqRef as React.RefObject<HTMLDivElement>)}
-            >
-              FAQ
-            </button>
+        {!eligible && (
+          <div ref={sliderRef} className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
+            <div className="flex w-full rounded-none bg-white">
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(eligibilityRef as React.RefObject<HTMLDivElement>)}
+              >
+                Eligibility Check
+              </button>
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(calculatorRef as React.RefObject<HTMLDivElement>)}
+              >
+                Features & Benefits
+              </button>
+              <button
+                className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
+                onClick={() => handleScroll(lendersRef as React.RefObject<HTMLDivElement>)}
+              >
+                Lending Partners
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Side-by-side Info + Get Started Form Section */}
-        <section ref={aboutRef} className="w-full bg-gradient-to-r from-blue-50 to-green-50 py-10 md:py-16">
+        <section ref={eligibilityRef} className="w-full bg-gradient-to-r from-blue-50 to-green-50 py-10 md:py-16">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-between">
             {/* Left: Title, Subtitle, Description, Offer */}
             <div className="flex-1 max-w-xl">
@@ -245,24 +235,85 @@ function LoanAgainstMF() {
                 <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 1,000</span>.</span>
               </div>
             </div>
-            {/* Right: About Section (replaces FAQ) */}
-            <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24 flex flex-col items-center justify-center border border-blue-100">
-              <h2 className="text-2xl md:text-2xl font-extrabold text-blue-900 mb-6 text-center">What is Loan Against Mutual Funds?</h2>
-              <div className="text-center text-base md:text-base text-gray-800 space-y-6 mb-8 md:mb-10">
-                <p>Loan Against Mutual Funds (LAMF) lets you borrow money by using your mutual fund units as collateral. With Mirae Asset Financial Services, you can digitally lien mark your mutual funds and access immediate financial support.</p>
-                <p>A loan against mutual funds is like an overdraft. You can take out money whenever you need it and pay it back when it suits you. You pay interest only on the amount you use and for the duration you use it.</p>
-                <p>You can choose from a wide variety of approved mutual funds from leading asset management companies (AMCs) across India. By lien marking your mutual funds as collateral with CAMS or KFintech (formerly KARVY), you can get a loan. This loan can help you manage your short or medium-term financial needs.</p>
-              </div>
-              <Button className="bg-green-600 text-white text-lg px-8 py-4 rounded-xl flex items-center gap-2 shadow-md hover:bg-green-700">
-                <span className="text-2xl"><i className="fas fa-globe"></i></span>
-                Apply Now
-              </Button>
+            {/* Right: Eligibility Form */}
+            <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24">
+              <h2 className="text-2xl md:text-2xl font-extrabold text-blue-900 mb-6 text-center">Check Your Eligibility</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="mfPortfolioValue">Mutual Fund Portfolio Value</Label>
+                    <Input
+                      id="mfPortfolioValue"
+                      type="text"
+                      placeholder="Enter portfolio value"
+                      value={formData.mfPortfolioValue}
+                      onChange={(e) => handleInputChange('mfPortfolioValue', e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="loanAmount">Loan Amount Required</Label>
+                    <Input
+                      id="loanAmount"
+                      type="text"
+                      placeholder="Enter loan amount"
+                      value={formData.loanAmount}
+                      onChange={(e) => handleInputChange('loanAmount', e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="employmentType">Employment Type</Label>
+                    <Select
+                      value={formData.employmentType}
+                      onValueChange={(value) => handleInputChange('employmentType', value)}
+                      required
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select employment type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="salaried">Salaried</SelectItem>
+                        <SelectItem value="self-employed">Self Employed</SelectItem>
+                        <SelectItem value="business">Business</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="monthlyIncome">Monthly Income</Label>
+                    <Input
+                      id="monthlyIncome"
+                      type="text"
+                      placeholder="Enter monthly income"
+                      value={formData.monthlyIncome}
+                      onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="acceptTerms"
+                    checked={formData.acceptTerms}
+                    onChange={(e) => handleInputChange('acceptTerms', e.target.checked)}
+                    required
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  />
+                  <Label htmlFor="acceptTerms" className="text-sm text-gray-600">
+                    I agree to the terms and conditions
+                  </Label>
+                </div>
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  Check Eligibility
+                </Button>
+              </form>
             </div>
           </div>
         </section>
 
         {/* Features & Benefits Section (replaces EMI Calculator) */}
-        <section ref={featuresRef} className="w-full bg-white py-10 md:py-14">
+        <section ref={calculatorRef} className="w-full bg-white py-10 md:py-14">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-8 text-center">Features & Benefits of Loan Against Mutual Funds</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -453,10 +504,11 @@ function LoanAgainstMF() {
         <section ref={faqRef} className="w-full bg-white py-10 md:py-14">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">What is a Loan Against Mutual Funds?</h3>
-                <p className="text-gray-600 text-sm">A loan against mutual funds allows you to borrow money by pledging your mutual fund units as collateral. This helps you get quick access to funds without selling your investments.</p>
+                <p className="text-gray-600 text-sm">Loan Against Mutual Funds (LAMF) allows you to borrow money by pledging your mutual fund units as collateral. The process is fully digital - lien marking is done via CAMS or KFintech.</p>
+                <p className="text-gray-600 text-sm">It works like an overdraft: withdraw funds as needed, repay at your convenience, and pay interest only on the amount and duration used. A wide range of mutual funds from top AMCs are eligible.</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">How much can I borrow?</h3>
@@ -473,6 +525,10 @@ function LoanAgainstMF() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">Can I continue earning returns on my mutual funds?</h3>
                 <p className="text-gray-600 text-sm">Yes, you continue to earn returns on your mutual fund investments even while they are pledged as collateral for the loan.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">What documents are required?</h3>
+                <p className="text-gray-600 text-sm">The process is mostly digital and requires minimal documentation. You'll need your PAN card, Aadhaar card, and mutual fund statements. The lien marking process is handled digitally through CAMS or KFintech.</p>
               </div>
             </div>
           </div>
