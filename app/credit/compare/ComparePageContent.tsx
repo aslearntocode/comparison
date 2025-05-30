@@ -156,7 +156,14 @@ function ComparePageContent() {
             <div className="flex justify-center gap-2 mb-4">
               {mobileSelectedCards.map(card => (
                 <div key={card.id} className="flex flex-col items-center w-1/3 px-1 min-w-0">
-                  <Image src={card.image} alt={card.name} width={200} height={120} className="object-contain mb-1" />
+                  <div className="w-full aspect-[7/4] relative mb-1">
+                    <Image
+                      src={card.image}
+                      alt={card.name}
+                      fill
+                      className="object-contain rounded-lg"
+                    />
+                  </div>
                   <div className="font-normal text-xs text-center mb-1 break-words leading-tight min-h-[2.5rem] flex items-center justify-center">{card.name}</div>
                 </div>
               ))}
@@ -202,12 +209,11 @@ function ComparePageContent() {
                     <td className="bg-white"></td>
                     {selectedCards.map((card) => (
                       <td key={card.id} className="pt-8 pb-2 px-6 align-bottom">
-                        <div className="h-36 mb-2 flex items-center justify-start bg-white rounded-lg overflow-hidden md:h-36">
+                        <div className="w-full aspect-[7/4] relative mb-2">
                           <Image
                             src={card.image}
                             alt={card.name}
-                            width={200}
-                            height={120}
+                            fill
                             className="object-contain rounded-lg"
                           />
                         </div>

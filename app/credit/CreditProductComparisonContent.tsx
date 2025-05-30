@@ -51,6 +51,7 @@ function CreditProductComparisonContent() {
   // Get the category from URL params
   const category = searchParams.get('category')
   const currentCategory = searchParams.get('category')
+  const bankParam = searchParams.get('bank')?.toLowerCase() || null;
 
   useEffect(() => {
     // Fetch all reviews when component mounts
@@ -199,9 +200,23 @@ function CreditProductComparisonContent() {
     const query = searchQuery.toLowerCase()
     let filtered = creditCards
 
+    // Filter by bank if specified
+    if (bankParam) {
+      filtered = filtered.filter(card => {
+        // Normalize for IDFC FIRST Bank
+        if (bankParam === 'idfc-first') {
+          return card.bank.toLowerCase().includes('idfc first')
+        }
+        if (bankParam === 'axis-bank') {
+          return card.bank.toLowerCase().includes('axis bank')
+        }
+        // General case
+        return card.bank.toLowerCase().replace(/\s+/g, '-') === bankParam
+      })
+    }
+
     // Filter by category if specified
     if (category) {
-      // Only show cards that have the specified category in their categories array
       filtered = filtered.filter(card => card.categories.includes(category))
     }
 
@@ -216,7 +231,7 @@ function CreditProductComparisonContent() {
     }
 
     return sortCards(filtered);
-  }, [searchQuery, sortField, sortDirection, category])
+  }, [searchQuery, sortField, sortDirection, category, bankParam])
 
   // Get page title based on category
   const getPageTitle = () => {

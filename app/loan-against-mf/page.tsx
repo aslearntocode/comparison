@@ -33,7 +33,7 @@ const lenders: Lender[] = [
     processingFee: "Up to 0.5%",
     loanAmount: "₹1 Lakh - ₹5 Crores",
     tenure: "1 - 3 years",
-    features: ["Quick disbursal", "Minimal documentation", "Flexible EMI options", "Instant approval"]
+    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   }
 ]
 

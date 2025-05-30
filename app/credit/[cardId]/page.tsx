@@ -531,7 +531,7 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
           {/* Card Header */}
           <div className="bg-white rounded-xl shadow-lg p-4 md:p-3 mb-4 md:mb-3">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 md:gap-3">
-              <div className="w-32 h-20 md:w-28 md:h-16 relative mx-auto sm:mx-0">
+              <div className="w-full sm:w-48 aspect-[7/4] relative mx-auto sm:mx-0">
                 <Image
                   src={card.image}
                   alt={card.name}

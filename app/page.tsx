@@ -982,24 +982,33 @@ export default function Home() {
             {/* Main content */}
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
               <div className="text-center md:text-left">
-                <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-2">
+                <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs md:text-sm font-medium mb-2">
                   Limited Time Offer
                 </span>
-                <h3 className="text-xl md:text-2xl font-bold">
-                  Get INR 750 for every successful SBI, IDFC First and Axis Bank application!
+                <h3 className="text-base md:text-xl lg:text-2xl font-bold">
+                  Get INR 750 for every successful IDFC First and Axis Bank application!
                 </h3>
               </div>
-              <Link 
-                href="https://wee.bnking.in/c/MTY1Mzg5N"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
-              >
-                Apply Now
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
+              <div className="flex gap-2 md:gap-3 mt-2">
+                <Link 
+                  href="/credit?bank=idfc-first"
+                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                >
+                  Explore IDFC First Cards
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+                <Link 
+                  href="/credit?bank=axis-bank"
+                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                >
+                  Explore Axis Bank Cards
+                  <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
 
             {/* Right decorative element */}
