@@ -136,7 +136,7 @@ function PersonalLoans() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     const user = auth.currentUser;
@@ -165,31 +165,70 @@ function PersonalLoans() {
       loanTenure
     })
 
-    // Update URL with eligibility parameter
-    const params = new URLSearchParams()
-    if (result.eligibleFor !== 'none') {
-      params.set('eligible', result.eligibleFor)
-    }
-    router.push(`/personal-loans?${params.toString()}`)
-    
-    // Set eligibility message if no offers
-    if (result.eligibleFor === 'no_offers') {
+    try {
+      // Save the eligibility check data to the database
+      const response = await fetch('/api/personal-loans/eligibility', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firebase_user_id: user.uid,
+          email: user.email,
+          display_name: user.displayName,
+          phone_number: user.phoneNumber,
+          monthly_income: monthlyIncome,
+          employment_type: formData.employmentType,
+          credit_score: creditScore,
+          existing_loans: existingLoans,
+          current_emi: currentEmi,
+          loan_amount: loanAmount,
+          loan_tenure_months: loanTenure,
+          eligibility_status: result.eligibleFor !== 'no_offers',
+          interest_rate: result.eligibleFor === 'banks' ? 10.5 : result.eligibleFor === 'incred' ? 11 : null
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        console.error('Server error response:', responseData);
+        throw new Error(responseData.details || responseData.error || 'Failed to save eligibility check data');
+      }
+
+      // Update URL with eligibility parameter
+      const params = new URLSearchParams()
+      if (result.eligibleFor !== 'none') {
+        params.set('eligible', result.eligibleFor)
+      }
+      router.push(`/personal-loans?${params.toString()}`)
+      
+      // Set eligibility message if no offers
+      if (result.eligibleFor === 'no_offers') {
+        setEligibilityMessage(
+          <div>
+            We don't have an eligible offer for you right now. Please look at our{' '}
+            <Link href="/credit-score-main/score/" className="text-blue-600 hover:underline font-medium">
+              credit score
+            </Link>
+            {' '}that can help you improve your credit score and overall, credit profile.
+          </div>
+        )
+      } else {
+        setEligibilityMessage(null)
+      }
+      
+      // Close the dialog and reset form
+      setIsEligibilityOpen(false)
+      resetForm()
+    } catch (error) {
+      console.error('Error saving eligibility check:', error);
       setEligibilityMessage(
-        <div>
-          We don't have an eligible offer for you right now. Please look at our{' '}
-          <Link href="/credit-score-main/score/" className="text-blue-600 hover:underline font-medium">
-            credit score
-          </Link>
-          {' '}that can help you improve your credit score and overall, credit profile.
+        <div className="text-red-600">
+          An error occurred while saving your eligibility check. Please try again.
         </div>
-      )
-    } else {
-      setEligibilityMessage(null)
+      );
     }
-    
-    // Close the dialog and reset form
-    setIsEligibilityOpen(false)
-    resetForm()
   }
 
   // Prevent background scroll on mobile when dialog is open
@@ -346,7 +385,7 @@ function PersonalLoans() {
                         <SelectContent>
                           <SelectItem value="salaried">Salaried</SelectItem>
                           <SelectItem value="self-employed">Self Employed</SelectItem>
-                          <SelectItem value="business">Business</SelectItem>
+                          {/* <SelectItem value="business">Business</SelectItem> */}
                         </SelectContent>
                       </Select>
                     </div>

@@ -13,8 +13,8 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: "Loan Against Mutual Funds: A Complete Guide",
-    description: "Learn about Loan Against Mutual Funds (LAMF) - a smart way to access liquidity without selling your investments. Understand the process, benefits, and comparison with personal loans.",
+    title: "Loan Against Mutual Funds",
+    description: "Learn about Loan Against Mutual Funds (LAMF) - a smart way to access liquidity without selling your investments.",
     path: "/learning-center/personal-loans/lamf",
     category: "Personal Loans",
     icon: "💰",
