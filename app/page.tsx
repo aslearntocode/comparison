@@ -736,61 +736,9 @@ export default function Home() {
       </div>
       
       {/* Hero Section */}
-      <div className="relative bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          {/* Mobile Hero Section */}
-          <div className="lg:hidden mb-8">
-            <div 
-              className="relative w-full h-[200px] flex items-center"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div className="relative w-full h-full">
-                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                  {sliderData[currentSlide].type === 'credit-cards' ? (
-                    <Link 
-                      href={cardLinks[currentSlide % cardLinks.length]}
-                      className="block"
-                      aria-label={`View details for card ${currentSlide + 1}`}
-                    >
-                      <Image
-                        src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                        width={240}
-                        height={150}
-                        alt={`Credit Card ${currentSlide + 1}`}
-                        className="rounded-2xl shadow-2xl mx-auto"
-                      />
-                    </Link>
-                  ) : (
-                    <div className="block">
-                      <Image
-                        src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                        width={240}
-                        height={150}
-                        alt={`Loan ${currentSlide + 1}`}
-                        className="rounded-2xl shadow-2xl mx-auto w-[240px] h-[150px] object-contain"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-              {/* Carousel Indicators */}
-              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
-                {sliderData.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                     className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div>
               <h1 className="text-[32px] md:text-[48px] leading-tight font-bold mb-6 text-center md:text-left">
@@ -798,168 +746,154 @@ export default function Home() {
                 <br />
                 <span className="text-[#4F46E5]">{sliderData[currentSlide].subtitle}</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 mb-4 md:mb-8">
                 {sliderData[currentSlide].description}
               </p>
-              <div className={sliderData[currentSlide].type === 'loans' ? "grid grid-cols-2 md:grid-cols-3 gap-2 mb-2" : "grid grid-cols-3 gap-3"}>
-                {sliderData[currentSlide].type === 'credit-cards' ? (
-                  <>
-                    <Link href="/credit?category=lifetime-free" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Lifetime Free</span>
-                      </div>
-                    </Link>
-                    <Link href="/credit?category=lifestyle" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Lifestyle</span>
-                      </div>
-                    </Link>
-                    <Link href="/credit?category=premium" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Premium</span>
-                      </div>
-                    </Link>
-                    <Link href="/credit?category=upi" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">UPI</span>
-                      </div>
-                    </Link>
-                    <Link href="/credit?category=airlines" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-red-600 hover:to-orange-600 shadow-md hover:shadow-xl border border-orange-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Airlines</span>
-                      </div>
-                    </Link>
-                    <Link href="/credit?category=fintech" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-600 hover:to-cyan-600 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 h-12 text-sm gap-2 flex items-center cursor-pointer">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Fintech</span>
-                      </div>
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <Link href="/personal-loans" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Personal Loan</span>
-                      </div>
-                    </Link>
-                    <Link href="/home-loans-refinance" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Home Loan Refinance</span>
-                      </div>
-                    </Link>
-                    <Link href="/auto-loan" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Auto Loan</span>
-                      </div>
-                    </Link>
-                    <Link href="/loan-against-mf" className="col-span-1">
-                      <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-1.5 h-12 text-xs gap-1 flex items-center cursor-pointer w-full md:w-[180px]">
-                        <div className="bg-white/30 rounded-full p-1 shadow-inner">
-                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                          </svg>
-                        </div>
-                        <span className="font-semibold text-white drop-shadow-sm text-sm">Loan Against MF</span>
-                      </div>
-                    </Link>
-                  </>
-                )}
-              </div>
             </div>
 
-            {/* Right Content - Product Images */}
-            <div className="relative hidden lg:block">
-              <div 
-                className="relative w-full h-[280px] flex items-center"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="relative w-full h-full">
-                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                    {sliderData[currentSlide].type === 'credit-cards' ? (
-                      <Link 
-                        href={cardLinks[currentSlide % cardLinks.length]}
-                        className="block"
-                        aria-label={`View details for card ${currentSlide + 1}`}
-                      >
-                        <Image
-                          src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                          width={400}
-                          height={250}
-                          alt={`Credit Card ${currentSlide + 1}`}
-                          className="rounded-2xl shadow-2xl mx-auto hover:scale-105 transition-transform duration-200"
-                        />
-                      </Link>
-                    ) : (
-                      <div className="block">
-                        <Image
-                          src={sliderData[currentSlide].images[currentSlide % sliderData[currentSlide].images.length]}
-                          width={400}
-                          height={250}
-                          alt={`Loan ${currentSlide + 1}`}
-                          className="rounded-2xl shadow-2xl mx-auto w-[400px] h-[250px] object-contain hover:scale-105 transition-transform duration-200"
-                        />
+            {/* Right Content - Buttons */}
+            <div className="flex flex-col gap-4">
+              {(sliderData[currentSlide].type as 'credit-cards' | 'loans') === 'credit-cards' ? (
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
+                  <Link href="/credit?category=lifetime-free" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-indigo-500/90 to-blue-500/90 hover:from-blue-600/90 hover:to-indigo-600/90 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                       </div>
-                    )}
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Lifetime Free</span>
+                    </div>
+                  </Link>
+                  <Link href="/credit?category=lifestyle" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-purple-500/90 to-indigo-500/90 hover:from-indigo-600/90 hover:to-purple-600/90 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Lifestyle</span>
+                    </div>
+                  </Link>
+                  <Link href="/credit?category=premium" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-pink-500/90 to-purple-500/90 hover:from-purple-600/90 hover:to-pink-600/90 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Premium</span>
+                    </div>
+                  </Link>
+                  <Link href="/credit?category=upi" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-teal-500/90 to-pink-500/90 hover:from-pink-600/90 hover:to-teal-600/90 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">UPI</span>
+                    </div>
+                  </Link>
+                  <Link href="/credit?category=airlines" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-orange-500/90 to-red-500/90 hover:from-red-600/90 hover:to-orange-600/90 shadow-md hover:shadow-xl border border-orange-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Airlines</span>
+                    </div>
+                  </Link>
+                  <Link href="/credit?category=fintech" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-cyan-500/90 to-blue-500/90 hover:from-blue-600/90 hover:to-cyan-600/90 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Fintech</span>
+                    </div>
+                  </Link>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
+                  <Link href="/personal-loans" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Personal Loan</span>
+                    </div>
+                  </Link>
+                  <Link href="/home-loans-refinance" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Home Loan Refinance</span>
+                    </div>
+                  </Link>
+                  <Link href="/auto-loan" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Auto Loan</span>
+                    </div>
+                  </Link>
+                  <Link href="/loan-against-mf" className="col-span-1">
+                    <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Loan Against MF</span>
+                    </div>
+                  </Link>
+                  <div className="col-span-1">
+                    <div className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-600 hover:to-yellow-600 shadow-md hover:shadow-xl border border-yellow-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Coming Soon</span>
+                    </div>
+                  </div>
+                  <div className="col-span-1">
+                    <div className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-600 hover:to-cyan-600 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
+                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Coming Soon</span>
+                    </div>
                   </div>
                 </div>
-                {/* Carousel Indicators */}
-                <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
-                  {sliderData.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
+              )}
+              {/* Carousel Navigation Dots */}
+              <div className="flex justify-center items-center gap-2 mt-4">
+                {sliderData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? 'bg-[#4F46E5] scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
