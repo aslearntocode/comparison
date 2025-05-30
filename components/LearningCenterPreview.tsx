@@ -13,6 +13,14 @@ interface Article {
 
 const articles: Article[] = [
   {
+    title: "Loan Against Mutual Funds: A Complete Guide",
+    description: "Learn about Loan Against Mutual Funds (LAMF) - a smart way to access liquidity without selling your investments. Understand the process, benefits, and comparison with personal loans.",
+    path: "/learning-center/personal-loans/lamf",
+    category: "Personal Loans",
+    icon: "💰",
+    date: "May 30, 2025"
+  },
+  {
     title: "Best Value Credit Card In India",
     description: "Learn how to choose and use credit cards strategically to maximize their value based on your spending patterns and financial goals",
     path: "/learning-center/credit-cards/best-value-card",
@@ -27,14 +35,6 @@ const articles: Article[] = [
     category: "Credit Cards",
     icon: "💳",
     date: "May 12, 2025"
-  },
-  {
-    title: "Best Cashback Credit Card In India",
-    description: "Find the best cashback credit card in India based on your spending patterns and financial goals.",
-    path: "/learning-center/credit-cards/cash-back-cards",
-    category: "Credit Cards",
-    icon: "💳",
-    date: "May 10, 2025"
   }
 ];
 

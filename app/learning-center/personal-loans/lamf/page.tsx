@@ -282,7 +282,7 @@ export default function LoanAgainstMutualFunds(): JSX.Element {
                   <li>ICICI Bank</li>
                   <li>Axis Bank</li>
                   <li>State Bank of India (SBI)</li>
-                  <li>Financial Health (financialhealth.co.in/lamf)</li>
+                  <li><Link href="https://financialhealth.co.in/loan-against-mf" className="text-blue-600 hover:underline">Financial Health</Link></li>
                 </ul>
                 <p className="text-gray-700 mt-4">These institutions offer a 100% online experience and fast disbursal.</p>
               </div>
