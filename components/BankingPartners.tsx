@@ -17,11 +17,11 @@ const bankingPartners = [
     logo: '/bank-logos/icici-logo.png',
     alt: 'ICICI Bank Logo'
   },
-  {
-    name: 'American Express',
-    logo: '/bank-logos/amex-logo.png',
-    alt: 'American Express Logo'
-  },
+  // {
+  //   name: 'American Express',
+  //   logo: '/bank-logos/amex-logo.png',
+  //   alt: 'American Express Logo'
+  // },
   {
     name: 'SBI',
     logo: '/bank-logos/sbi-logo.png',
@@ -42,25 +42,35 @@ const bankingPartners = [
     logo: '/bank-logos/au-sfb-logo.png',
     alt: 'AU Small Finance Bank Logo'
   },
-  {
-    name: 'BOB Card',
-    logo: '/bank-logos/bobcard-logo.png',
-    alt: 'BOB Card Logo'
-  },
-  {
-    name: 'Standard Chartered',
-    logo: '/bank-logos/sc-logo.png',
-    alt: 'Standard Chartered Logo'
-  },
-  {
-    name: 'HSBC',
-    logo: '/bank-logos/hsbc-logo.png',
-    alt: 'HSBC Logo'
-  },
+  // {
+  //   name: 'BOB Card',
+  //   logo: '/bank-logos/bobcard-logo.png',
+  //   alt: 'BOB Card Logo'
+  // },
+  // {
+  //   name: 'Standard Chartered',
+  //   logo: '/bank-logos/sc-logo.png',
+  //   alt: 'Standard Chartered Logo'
+  // },
+  // {
+  //   name: 'HSBC',
+  //   logo: '/bank-logos/hsbc-logo.png',
+  //   alt: 'HSBC Logo'
+  // },
   {
     name: 'YES Bank',
     logo: '/bank-logos/yes-logo.png',
     alt: 'YES Bank Logo'
+  },
+  {
+    name: 'Mirae Asset Financial Services',
+    logo: '/bank-logos/MAFS-logo.png',
+    alt: 'Mirae Asset Financial Services Logo'
+  },
+  {
+    name: 'Volt Money',
+    logo: '/bank-logos/volt-logo.png',
+    alt: 'Volt Money Logo'
   }
 ];
 
@@ -71,7 +81,7 @@ export default function BankingPartners() {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Partners</h2>
           <p className="text-lg text-gray-600">
-            We have partnered with Multiple Banks via Zet App. Our Banking Partners are listed below.
+          Direct Lending Partners and Partner Banks Available via Zet App
           </p>
         </div>
 
