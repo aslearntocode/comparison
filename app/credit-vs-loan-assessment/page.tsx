@@ -316,16 +316,15 @@ function CreditVsLoanAssessmentContent() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Sticky Navigation Slider (desktop only) */}
-        <div className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm hidden md:flex">
-          <div className="flex w-full rounded-none bg-white">
-            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(formRef)}>Assessment Form</button>
-            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(resultsRef)}>Assessment Results</button>
-            <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(helpRef)}>Need Help</button>
-          </div>
+      {/* Move the slider just below the blue box and stretch full width */}
+      <div className="sticky top-0.5 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+        <div className="flex w-full rounded-none bg-white">
+          <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(formRef)}>Assessment Form</button>
+          <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(resultsRef)}>Assessment Results</button>
+          <button className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors" onClick={() => handleScroll(helpRef)}>Need Help</button>
         </div>
-
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Assessment Form Section */}
         <div ref={formRef} className="py-12" style={{ scrollMarginTop: '64px' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

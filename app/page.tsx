@@ -966,7 +966,7 @@ export default function Home() {
                 <span className="text-[#4F46E5]"> Better (Coming Soon)</span>
               </h2>
               <p className="text-base text-gray-600 mb-2 text-center">
-                Upload your credit report PDF and get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
+                Get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
               </p>
               <ul className="space-y-2 mb-2">
                 <li className="flex items-center gap-2 text-sm text-gray-800">
@@ -1016,7 +1016,7 @@ export default function Home() {
                 <span className="text-[#4F46E5]"> Better (Coming Soon)</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Upload your credit report PDF and get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
+                Get an AI-powered analysis that helps you understand your credit score, identify areas for improvement, and receive personalized recommendations.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3 text-base text-gray-800">
