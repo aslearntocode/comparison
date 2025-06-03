@@ -501,11 +501,9 @@ function CreditVsLoanAssessmentContent() {
                     <div className="flex flex-col items-start text-left bg-white rounded-2xl border border-purple-200 shadow-md p-6 min-h-[260px] justify-center">
                       <h3 className="text-base font-bold mb-2">Recommendation</h3>
                       <ul className="text-gray-700 text-sm flex-1 list-disc pl-5 space-y-2">
-                        {rec.match(/[^.!?]+[.!?]+/g)?.map((sentence, index) => (
+                        {rec.split(/(?<=[.!?])\s+(?=[A-Z])/).map((sentence, index) => (
                           <li key={index}>{sentence.trim()}</li>
-                        )) || (
-                          <li>{rec.trim()}</li>
-                        )}
+                        ))}
                       </ul>
                     </div>
                     {/* Conditions */}
