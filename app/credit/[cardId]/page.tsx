@@ -536,14 +536,14 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
                   src={card.image}
                   alt={card.name}
                   fill
-                  className="object-contain rounded-lg"
+                  className="object-contain rounded-lg mobile:!h-32 mobile:!w-32"
                 />
               </div>
               <div className="flex-1 text-center sm:text-left">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">{card.name}</h1>
-                    <p className="text-lg md:text-base text-gray-600 mb-2 md:mb-1">{card.bank}</p>
+                    <h1 className="text-4xl font-bold text-gray-900 mb-2 mobile:text-2xl mobile:mb-1">{card.name}</h1>
+                    <p className="text-lg md:text-base text-gray-600 mb-2 md:mb-1 hidden sm:block">{card.bank}</p>
                     <div className="bg-blue-50 rounded-lg p-3 md:p-2 inline-block">
                       <p className="text-blue-900 font-medium text-base md:text-sm">
                         {card.additionalDetails?.summary}

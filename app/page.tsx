@@ -650,7 +650,7 @@ export default function Home() {
       </div>
 
       {/* Privacy Notice Banner */}
-      <div className="bg-blue-600 text-white overflow-hidden">
+      <div className="bg-indigo-600 text-white overflow-hidden">
         <div className="relative flex">
           <div className="py-4 animate-scroll flex whitespace-nowrap">
             {/* First set */}
@@ -756,126 +756,126 @@ export default function Home() {
               {(sliderData[currentSlide].type as 'credit-cards' | 'loans') === 'credit-cards' ? (
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                   <Link href="/credit?category=lifetime-free" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-indigo-500/90 to-blue-500/90 hover:from-blue-600/90 hover:to-indigo-600/90 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Lifetime Free</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Lifetime Free</span>
                     </div>
                   </Link>
                   <Link href="/credit?category=lifestyle" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-purple-500/90 to-indigo-500/90 hover:from-indigo-600/90 hover:to-purple-600/90 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Lifestyle</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Lifestyle</span>
                     </div>
                   </Link>
                   <Link href="/credit?category=premium" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-pink-500/90 to-purple-500/90 hover:from-purple-600/90 hover:to-pink-600/90 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Premium</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Premium</span>
                     </div>
                   </Link>
                   <Link href="/credit?category=upi" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-teal-500/90 to-pink-500/90 hover:from-pink-600/90 hover:to-teal-600/90 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">UPI</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">UPI</span>
                     </div>
                   </Link>
                   <Link href="/credit?category=airlines" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-orange-500/90 to-red-500/90 hover:from-red-600/90 hover:to-orange-600/90 shadow-md hover:shadow-xl border border-orange-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Airlines</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Airlines</span>
                     </div>
                   </Link>
                   <Link href="/credit?category=fuel" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-cyan-500/90 to-blue-500/90 hover:from-blue-600/90 hover:to-cyan-600/90 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/20 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Fuel</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Fuel</span>
                     </div>
                   </Link>
                 </div>
               ) : (
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                   <Link href="/personal-loans" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-blue-600 hover:to-indigo-600 shadow-md hover:shadow-xl border border-blue-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Personal Loan</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Personal Loan</span>
                     </div>
                   </Link>
                   <Link href="/home-loans-refinance" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-600 hover:to-purple-600 shadow-md hover:shadow-xl border border-purple-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Home Loan Refinance</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Home Loan Refinance</span>
                     </div>
                   </Link>
                   <Link href="/auto-loan" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 shadow-md hover:shadow-xl border border-pink-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Auto Loan</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Auto Loan</span>
                     </div>
                   </Link>
                   <Link href="/loan-against-mf" className="col-span-1">
-                    <div className="group bg-gradient-to-r from-teal-500 to-pink-500 hover:from-pink-600 hover:to-teal-600 shadow-md hover:shadow-xl border border-teal-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Loan Against MF</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Loan Against Mutual Funds</span>
                     </div>
                   </Link>
                   <div className="col-span-1">
-                    <div className="group bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-600 hover:to-yellow-600 shadow-md hover:shadow-xl border border-yellow-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Coming Soon</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Coming Soon</span>
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-600 hover:to-cyan-600 shadow-md hover:shadow-xl border border-cyan-200/40 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.03] backdrop-blur-sm bg-opacity-90 p-2 md:p-4 h-12 md:h-16 text-sm gap-2 flex items-center cursor-pointer">
-                      <div className="bg-white/30 rounded-full p-1.5 md:p-2 shadow-inner">
-                        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border border-gray-200 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
+                      <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
+                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="font-semibold text-white drop-shadow-sm text-xs md:text-base">Coming Soon</span>
+                      <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Coming Soon</span>
                     </div>
                   </div>
                 </div>
@@ -901,9 +901,9 @@ export default function Home() {
       </div>
 
       {/* IDFC First Bank Offer Banner */}
-      <div className="relative bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/50 via-transparent to-purple-600/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/50 via-transparent to-indigo-600/50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-8 flex items-center justify-center relative">
             {/* Left decorative element */}
@@ -926,7 +926,7 @@ export default function Home() {
               <div className="flex gap-2 md:gap-3 mt-2">
                 <Link 
                   href="/credit?bank=idfc-first"
-                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-indigo-600 hover:bg-indigo-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
                 >
                   Explore IDFC First Cards
                   <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -935,7 +935,7 @@ export default function Home() {
                 </Link>
                 <Link 
                   href="/credit?bank=axis-bank"
-                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-purple-600 hover:bg-purple-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                  className="inline-flex items-center px-3 py-2 md:px-6 md:py-3 bg-white text-indigo-600 hover:bg-indigo-50 rounded-lg text-xs md:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
                 >
                   Explore Axis Bank Cards
                   <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1062,14 +1062,14 @@ export default function Home() {
       </div>
 
       {/* Credit Assessment Container */}
-      <div className="relative bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/50 via-transparent to-blue-600/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/50 via-transparent to-indigo-600/50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-12 flex flex-col md:flex-row items-center justify-between gap-8 relative">
             {/* Left Content */}
             <div className="flex-1 text-center md:text-left">
-              <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-3 py-1 bg-indigo-400/20 rounded-full text-sm font-medium mb-4">
                 Smart Credit Assessment
               </span>
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
@@ -1081,7 +1081,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Link 
                   href="/credit-vs-loan-assessment"
-                  className="inline-flex items-center px-6 py-3 bg-white text-blue-600 hover:bg-blue-50 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 hover:bg-indigo-50 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   Start Assessment
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1093,9 +1093,9 @@ export default function Home() {
 
             {/* Right Content - Features */}
             <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
@@ -1104,9 +1104,9 @@ export default function Home() {
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Get matched with credit products that suit your financial profile and needs.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
@@ -1115,9 +1115,9 @@ export default function Home() {
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Receive immediate assessment and recommendations without any waiting time.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -1126,9 +1126,9 @@ export default function Home() {
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Free assessment with no hidden charges or subscription fees.</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>

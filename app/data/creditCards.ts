@@ -1183,11 +1183,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     categories: ['fuel', 'budget'],
     applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
-      rewardsProgram: `Enhanced rewards on fuel spends at IOCL outlets
-Basic rewards on other spends
-
-Fuel Benefits:
-• 1% waiver on fuel transactions up to ₹400`,
+      rewardsProgram: `• Enhanced rewards on fuel spends at IOCL outlets\n• Basic rewards on other spends`,
       welcomeBonus: 'No welcome benefits',
       minimumSpend: 'Not applicable',
       idealFor: [
@@ -1201,7 +1197,7 @@ Fuel Benefits:
         'Those seeking extensive benefits'
       ],
       summary: 'A fuel-focused credit card offering enhanced savings on IOCL fuel purchases and surcharge waiver, ideal for frequent drivers.',
-      fuelSurcharge: 'Not specified'
+      fuelSurcharge: '1% waiver on fuel transactions up to ₹400'
     }
   },
   {
