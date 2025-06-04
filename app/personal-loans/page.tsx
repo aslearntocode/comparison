@@ -106,6 +106,8 @@ function PersonalLoans() {
   }
 
   const [formData, setFormData] = useState({
+    name: '',
+    gender: '',
     monthlyIncome: '',
     employmentType: '',
     creditScore: '',
@@ -118,6 +120,8 @@ function PersonalLoans() {
 
   const resetForm = () => {
     setFormData({
+      name: '',
+      gender: '',
       monthlyIncome: '',
       employmentType: '',
       creditScore: '',
@@ -359,8 +363,38 @@ function PersonalLoans() {
                     const currentPath = encodeURIComponent('/personal-loans');
                     router.push(`/login?redirect=${currentPath}`);
                   }
-                }}>
-                  <div className="grid gap-4 py-2 md:grid-cols-2">
+                }} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Name */}
+                    <div className="col-span-1">
+                      <Label htmlFor="name">Name <span className="text-red-500">*</span></Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={e => handleInputChange('name', e.target.value)}
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    {/* Gender */}
+                    <div className="col-span-1">
+                      <Label htmlFor="gender">Gender <span className="text-red-500">*</span></Label>
+                      <Select
+                        value={formData.gender}
+                        onValueChange={(value) => handleInputChange('gender', value)}
+                        required
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select gender" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="M">Male</SelectItem>
+                          <SelectItem value="F">Female</SelectItem>
+                          <SelectItem value="O">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                     <div className="grid gap-2">
                       <Label htmlFor="monthlyIncome">Monthly Income</Label>
                       <Input

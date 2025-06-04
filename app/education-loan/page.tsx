@@ -81,6 +81,8 @@ function EducationLoan() {
   }
 
   const [formData, setFormData] = useState({
+    name: '',
+    gender: '',
     courseType: '',
     courseDuration: '',
     loanAmount: '',
@@ -93,9 +95,6 @@ function EducationLoan() {
     referralSource: '',
     acceptTerms: false,
     loanType: 'education-loan',
-    name: '',
-    email: '',
-    gender: '',
     whatsapp: 'no',
     offerLetter: 'no',
     courseStartYear: '',
@@ -109,6 +108,8 @@ function EducationLoan() {
 
   const resetForm = () => {
     setFormData({
+      name: '',
+      gender: '',
       courseType: '',
       courseDuration: '',
       loanAmount: '',
@@ -121,9 +122,6 @@ function EducationLoan() {
       referralSource: '',
       acceptTerms: false,
       loanType: 'education-loan',
-      name: '',
-      email: '',
-      gender: '',
       whatsapp: 'no',
       offerLetter: 'no',
       courseStartYear: '',
@@ -302,37 +300,24 @@ function EducationLoan() {
                       required
                     />
                   </div>
-                  {/* Email */}
-                  <div className="col-span-1">
-                    <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={e => handleInputChange('email', e.target.value)}
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
                   {/* Gender */}
                   <div className="col-span-1">
-                    <Label>Gender <span className="text-red-500">*</span></Label>
-                    <div className="flex items-center gap-4 mt-2">
-                      <label className="flex items-center gap-1 cursor-pointer">
-                        <input type="radio" name="gender" value="female" checked={formData.gender === 'female'} onChange={() => handleInputChange('gender', 'female')} required className="accent-purple-700" />
-                        Female
-                      </label>
-                      <label className="flex items-center gap-1 cursor-pointer">
-                        <input type="radio" name="gender" value="male" checked={formData.gender === 'male'} onChange={() => handleInputChange('gender', 'male')} required className="accent-purple-700" />
-                        Male
-                      </label>
-                      <label className="flex items-center gap-1 cursor-pointer">
-                        <input type="radio" name="gender" value="other" checked={formData.gender === 'other'} onChange={() => handleInputChange('gender', 'other')} required className="accent-purple-700" />
-                        Other
-                      </label>
-                    </div>
+                    <Label htmlFor="gender">Gender <span className="text-red-500">*</span></Label>
+                    <Select
+                      value={formData.gender}
+                      onValueChange={(value) => handleInputChange('gender', value)}
+                      required
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select gender" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="M">Male</SelectItem>
+                        <SelectItem value="F">Female</SelectItem>
+                        <SelectItem value="O">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
-
                   {/* Education Section Heading */}
                   <div className="col-span-2 mt-4">
                     <h3 className="text-xl font-semibold">Tell more about the education you want us to finance</h3>

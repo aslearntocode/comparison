@@ -81,6 +81,8 @@ function HomeLoansRefinance() {
   }
 
   const [formData, setFormData] = useState({
+    name: '',
+    gender: '',
     currentLoanAmount: '',
     remainingTenure: '',
     currentInterestRate: '',
@@ -94,6 +96,8 @@ function HomeLoansRefinance() {
 
   const resetForm = () => {
     setFormData({
+      name: '',
+      gender: '',
       currentLoanAmount: '',
       remainingTenure: '',
       currentInterestRate: '',
@@ -254,6 +258,36 @@ function HomeLoansRefinance() {
               <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Get Started</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Name */}
+                  <div className="col-span-1">
+                    <Label htmlFor="name">Name <span className="text-red-500">*</span></Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={e => handleInputChange('name', e.target.value)}
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  {/* Gender */}
+                  <div className="col-span-1">
+                    <Label htmlFor="gender">Gender <span className="text-red-500">*</span></Label>
+                    <Select
+                      value={formData.gender}
+                      onValueChange={(value) => handleInputChange('gender', value)}
+                      required
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select gender" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="M">Male</SelectItem>
+                        <SelectItem value="F">Female</SelectItem>
+                        <SelectItem value="O">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                   <div>
                     <Label htmlFor="currentLoanAmount">Current Home Loan Amount (₹)</Label>
                     <Input
