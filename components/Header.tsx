@@ -493,6 +493,13 @@ export default function Header() {
                   >
                     <span className="ml-3">Loan Against MF</span>
                   </Link>
+                  <Link 
+                    href="/education-loan"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Education Loan</span>
+                  </Link>
                 </div>
               </div>
 
@@ -854,6 +861,13 @@ export default function Header() {
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
                     <span className="ml-3">Loan Against MF</span>
+                  </Link>
+                  <Link 
+                    href="/education-loan"
+                    className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
+                    onClick={() => setIsLoansDropdownOpen(false)}
+                  >
+                    <span className="ml-3">Education Loan</span>
                   </Link>
                 </div>
               )}
