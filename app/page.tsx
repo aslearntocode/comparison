@@ -1093,47 +1093,47 @@ export default function Home() {
 
             {/* Right Content - Features */}
             <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 gap-4">
-              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20 text-center">
+                <div className="flex flex-col items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h4 className="text-sm sm:text-lg font-semibold text-white text-center">Smart Matching</h4>
+                  <h4 className="text-sm sm:text-lg font-semibold text-white">Smart Matching</h4>
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Get matched with credit products that suit your financial profile and needs.</p>
               </div>
-              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20 text-center">
+                <div className="flex flex-col items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h4 className="text-sm sm:text-lg font-semibold text-white text-center">Instant Results</h4>
+                  <h4 className="text-sm sm:text-lg font-semibold text-white">Instant Results</h4>
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Receive immediate assessment and recommendations without any waiting time.</p>
               </div>
-              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20 text-center">
+                <div className="flex flex-col items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h4 className="text-sm sm:text-lg font-semibold text-white text-center">No Cost</h4>
+                  <h4 className="text-sm sm:text-lg font-semibold text-white">No Cost</h4>
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Free assessment with no hidden charges or subscription fees.</p>
               </div>
-              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20">
-                <div className="flex items-center gap-3 mb-2">
+              <div className="bg-indigo-400/10 backdrop-blur-sm rounded-xl p-4 flex flex-col items-center border border-indigo-300/20 text-center">
+                <div className="flex flex-col items-center gap-3 mb-2">
                   <div className="w-10 h-10 bg-indigo-400/20 rounded-lg flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h4 className="text-sm sm:text-lg font-semibold text-white text-center">Privacy First</h4>
+                  <h4 className="text-sm sm:text-lg font-semibold text-white">Privacy First</h4>
                 </div>
                 <p className="text-white/80 text-sm hidden sm:block">Your data is secure and we never share it without your consent.</p>
               </div>
@@ -1155,31 +1155,33 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Why Choose Us Section */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100/20 flex flex-col justify-between min-h-[340px]" style={{ minHeight: '340px' }}>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
-                <div className="space-y-3 lg:space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M12 13c-2.5 0-7 1.25-7 3.75V19h14v-2.25C19 14.25 14.5 13 12 13z" />
-                      </svg>
+            <div className="hidden lg:block">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-lg border border-purple-100/20 flex flex-col justify-between min-h-[340px]" style={{ minHeight: '340px' }}>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
+                  <div className="space-y-3 lg:space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z M12 13c-2.5 0-7 1.25-7 3.75V19h14v-2.25C19 14.25 14.5 13 12 13z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Expert Guidance</h4>
+                        <p className="text-gray-600">Our credit experts will guide you throughout the resolution process, providing personalized assistance at every step.</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Expert Guidance</h4>
-                      <p className="text-gray-600">Our credit experts will guide you throughout the resolution process, providing personalized assistance at every step.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11V7a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-1.414-1.414a1 1 0 00-1.414 0L8.293 4.707A1 1 0 017.586 5H5a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2z" />
-                        <circle cx="12" cy="16" r="2" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Professional Resolution</h4>
-                      <p className="text-gray-600">We handle your concerns privately and professionally, ensuring a dignified resolution process.</p>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11V7a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-1.414-1.414a1 1 0 00-1.414 0L8.293 4.707A1 1 0 017.586 5H5a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2z" />
+                          <circle cx="12" cy="16" r="2" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-0 lg:mb-1">Professional Resolution</h4>
+                        <p className="text-gray-600">We handle your concerns privately and professionally, ensuring a dignified resolution process.</p>
+                      </div>
                     </div>
                   </div>
                 </div>

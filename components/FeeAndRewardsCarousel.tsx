@@ -188,8 +188,8 @@ export default function FeeAndRewardsCarousel() {
               onClick={() => handleSectionClick('fee')}
               className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
                 activeSection === 'fee'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-indigo-600 text-white'
+                  : 'text-indigo-600 hover:text-indigo-800'
               }`}
             >
               Fee Waiver Criteria
@@ -198,11 +198,11 @@ export default function FeeAndRewardsCarousel() {
               onClick={() => handleSectionClick('rewards')}
               className={`px-6 py-2 rounded-lg text-sm font-medium transition-colors ${
                 activeSection === 'rewards'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-indigo-600 text-white'
+                  : 'text-indigo-600 hover:text-indigo-800'
               }`}
             >
-              Reward Points
+              Reward Points Conversion
             </button>
           </div>
         </div>

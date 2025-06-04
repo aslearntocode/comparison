@@ -137,6 +137,13 @@ function EducationLoan() {
   }
 
   const handleInputChange = (field: string, value: string | boolean) => {
+    const user = auth.currentUser;
+    if (!user) {
+      const currentPath = encodeURIComponent('/education-loan');
+      router.push(`/login?redirect=${currentPath}`);
+      return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [field]: value
