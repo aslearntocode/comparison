@@ -694,7 +694,7 @@ export default function Header() {
               </div>
             ) : (
               <Link href="/login" className="text-black hover:text-gray-700 whitespace-nowrap">
-                <Button variant="ghost" className="text-sm">
+                <Button variant="ghost" className="text-base py-2">
                   Log in
                 </Button>
               </Link>

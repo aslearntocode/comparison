@@ -40,7 +40,7 @@ const lenders: Lender[] = [
     name: "Mirae Asset Financial Services",
     logo: "MAFS-logo.png",
     interestRate: "10.5% - 12.5% p.a.",
-    processingFee: "Up to 1%",
+    processingFee: "₹999 + GST",
     loanAmount: "₹10,000 - ₹3 Crores",
     tenure: "1 - 3 years",
     features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
