@@ -32,8 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:title" content="Find the best credit card for you; Learn more about your credit profile" />
-        <meta property="og:description" content="Explore the best credit cards and learn more about your credit profile at financialhealth.co.in" />
+        <meta property="og:title" content="Find the best credit card and loan for you; Learn more about your credit profile" />
+        <meta property="og:description" content="Explore the best credit cards, loans and learn more about your credit profile at financialhealth.co.in" />
         <meta property="og:image" content="https://financialhealth.co.in/new-preview-image.png" />
         <meta property="og:url" content="https://financialhealth.co.in/" />
       </head>

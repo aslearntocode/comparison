@@ -1563,50 +1563,50 @@ Income: ITR > ₹6 lakhs/annum`
 //       creditLimit: 'Up to 90% of the Fixed Deposit amount'
 //     }
 //   },
-  {
-    id: 'icici-instant-platinum',
-    name: 'ICICI Bank Instant Platinum Credit Card',
-    bank: 'ICICI Bank',
-    category: 'secured',
-    image: '/credit-cards/ICICI-Platinum-Secured.png',
-    apr: '29.88% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: ['secured', 'lifetime-free'],
-    applyUrl: 'https://example.com/apply-icici-instant-platinum',
-    additionalDetails: {
-      rewardsProgram: `Reward Points:
-• Earn 2 PAYBACK points for every ₹100 spent on retail purchases (excluding fuel).`,
-      diningPrivileges: [
-        'Up to 15% savings at over 800 partner restaurants across India through ICICI Bank Culinary Treats program'
-      ],
-      movieBenefits: '25% discount (up to ₹100) on purchase of minimum two movie tickets, twice a month via BookMyShow',
-      fuelSurcharge: '1% waiver on fuel surcharge for transactions up to ₹4,000 at HPCL petrol pumps (ICICI Bank POS terminals only)',
-      creditLimit: 'Up to 85-90% of Fixed Deposit amount',
-      summary: 'A secured, lifetime-free credit card issued instantly against an ICICI Bank FD, offering basic rewards, dining and movie discounts, and a fuel surcharge waiver. Ideal for those building or rebuilding credit.',
-      interestRate: '2.49% per month (29.88% per annum) on outstanding balances',
-      cashAdvanceFee: '2.5% of the transaction amount (min ₹500)',
-      internationalTransactionFee: '3.5% of the transaction amount',
-      additionalServices: 'FD continues to earn interest while card is active.',
-      idealFor: [
-        'New to Credit / No Credit History',
-        'Individuals with Low or Poor Credit Scores',
-        'Those rebuilding their credit history with a secured option.',
-        'Students or Homemakers (if they can create a fixed deposit in their name, ₹50,000 minimum).',
-        'People Without Income Documents (no income proof required).',
-        'Budget-Conscious Users (lifetime free card with no joining or annual fees).',
-        'People Who Want Basic Perks (some rewards, dining discounts, and movie offers without high eligibility).'
-      ],
-      notIdealFor: [
-        'High Spenders / Premium Users (no high-end features like lounge access, concierge services, or accelerated rewards).',
-        'Users Who Don\'t Want to Lock In Funds (requires a minimum ₹50,000 fixed deposit that remains locked as security).',
-        'Frequent International Travelers (3.5% forex markup fee; no global travel benefits or lounge access).',
-        'Reward Maximizers (low reward rate and limited redemption options; not suitable for those who value high cashback or reward programs).'
-      ]
-    }
-  },
+//   {
+//     id: 'icici-instant-platinum',
+//     name: 'ICICI Bank Instant Platinum Credit Card',
+//     bank: 'ICICI Bank',
+//     category: 'secured',
+//     image: '/credit-cards/ICICI-Platinum-Secured.png',
+//     apr: '29.88% p.a.',
+//     annualFee: '₹0',
+//     joiningFee: '₹0',
+//     rupay: false,
+//     feedback: [],
+//     categories: ['secured', 'lifetime-free'],
+//     applyUrl: 'https://example.com/apply-icici-instant-platinum',
+//     additionalDetails: {
+//       rewardsProgram: `Reward Points:
+// • Earn 2 PAYBACK points for every ₹100 spent on retail purchases (excluding fuel).`,
+//       diningPrivileges: [
+//         'Up to 15% savings at over 800 partner restaurants across India through ICICI Bank Culinary Treats program'
+//       ],
+//       movieBenefits: '25% discount (up to ₹100) on purchase of minimum two movie tickets, twice a month via BookMyShow',
+//       fuelSurcharge: '1% waiver on fuel surcharge for transactions up to ₹4,000 at HPCL petrol pumps (ICICI Bank POS terminals only)',
+//       creditLimit: 'Up to 85-90% of Fixed Deposit amount',
+//       summary: 'A secured, lifetime-free credit card issued instantly against an ICICI Bank FD, offering basic rewards, dining and movie discounts, and a fuel surcharge waiver. Ideal for those building or rebuilding credit.',
+//       interestRate: '2.49% per month (29.88% per annum) on outstanding balances',
+//       cashAdvanceFee: '2.5% of the transaction amount (min ₹500)',
+//       internationalTransactionFee: '3.5% of the transaction amount',
+//       additionalServices: 'FD continues to earn interest while card is active.',
+//       idealFor: [
+//         'New to Credit / No Credit History',
+//         'Individuals with Low or Poor Credit Scores',
+//         'Those rebuilding their credit history with a secured option.',
+//         'Students or Homemakers (if they can create a fixed deposit in their name, ₹50,000 minimum).',
+//         'People Without Income Documents (no income proof required).',
+//         'Budget-Conscious Users (lifetime free card with no joining or annual fees).',
+//         'People Who Want Basic Perks (some rewards, dining discounts, and movie offers without high eligibility).'
+//       ],
+//       notIdealFor: [
+//         'High Spenders / Premium Users (no high-end features like lounge access, concierge services, or accelerated rewards).',
+//         'Users Who Don\'t Want to Lock In Funds (requires a minimum ₹50,000 fixed deposit that remains locked as security).',
+//         'Frequent International Travelers (3.5% forex markup fee; no global travel benefits or lounge access).',
+//         'Reward Maximizers (low reward rate and limited redemption options; not suitable for those who value high cashback or reward programs).'
+//       ]
+//     }
+//   },
 //   {
 //     id: 'bob-prime',
 //     name: 'Bank of Baroda Prime Credit Card',
@@ -1632,7 +1632,7 @@ Income: ITR > ₹6 lakhs/annum`
 //   },
   {
     id: 'axis-fd',
-    name: 'Axis Bank FD Backed Credit Card',
+    name: 'Axis FD Backed Credit Card',
     bank: 'Axis Bank',
     category: 'secured',
     image: '/credit-cards/Axis-FD.png',
