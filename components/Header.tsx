@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 import { Button } from '@/components/ui/button'
 import { signOut } from 'firebase/auth'
-import { FiCreditCard, FiGift, FiDollarSign, FiDroplet, FiGlobe, FiTrendingUp, FiHome, FiBriefcase, FiAirplay, FiLayers, FiCreditCard as FiCard } from 'react-icons/fi'
+import { FiCreditCard, FiGift, FiDollarSign, FiDroplet, FiGlobe, FiTrendingUp, FiHome, FiBriefcase, FiAirplay, FiLayers, FiCreditCard as FiCard, FiBook, FiTruck, FiHome as FiHomeIcon, FiDollarSign as FiDollarIcon, FiBookOpen, FiAward } from 'react-icons/fi'
 
 // Initialize Supabase client
 const supabaseClient = createClient(
@@ -309,7 +309,7 @@ export default function Header() {
                         <span>Ultra Premium</span>
                       </Link>
                       <Link href="/credit?category=premium" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
-                        <FiDollarSign className="text-blue-600 w-5 h-5" />
+                        <FiAward className="text-blue-600 w-5 h-5" />
                         <span>Premium</span>
                       </Link>
                       <Link href="/credit?category=cashback" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
@@ -470,6 +470,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiDollarIcon className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Personal Loan</span>
                   </Link>
                   <Link 
@@ -477,6 +478,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiHomeIcon className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Home Loan Refinance</span>
                   </Link>
                   <Link 
@@ -484,6 +486,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiTruck className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Auto Loan</span>
                   </Link>
                   <Link 
@@ -491,6 +494,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiTrendingUp className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Loan Against MF</span>
                   </Link>
                   <Link 
@@ -498,6 +502,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiBookOpen className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Education Loan</span>
                   </Link>
                 </div>
@@ -839,6 +844,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiDollarIcon className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Personal Loan</span>
                   </Link>
                   <Link 
@@ -846,6 +852,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiHomeIcon className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Home Loan Refinance</span>
                   </Link>
                   <Link 
@@ -853,6 +860,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiTruck className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Auto Loan</span>
                   </Link>
                   <Link 
@@ -860,6 +868,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiTrendingUp className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Loan Against MF</span>
                   </Link>
                   <Link 
@@ -867,6 +876,7 @@ export default function Header() {
                     className="flex items-center px-4 py-3 text-base text-black hover:bg-gray-50"
                     onClick={() => setIsLoansDropdownOpen(false)}
                   >
+                    <FiBookOpen className="text-blue-600 w-5 h-5" />
                     <span className="ml-3">Education Loan</span>
                   </Link>
                 </div>
