@@ -50,7 +50,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
       description: 'Compare credit cards with international lounge access. Find cards offering free airport lounge access worldwide. Get detailed comparisons of international lounge benefits and features.',
     },
     'all': {
-      title: 'Best Credit Cards in India | Compare & Apply',
+      title: 'Best Credit Cards and Loans in India | Compare & Apply',
       description: 'Compare and find the best credit cards in India. Get detailed comparisons of rewards, benefits, and features to choose the perfect credit card for your needs.',
     }
   }
