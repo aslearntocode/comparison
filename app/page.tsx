@@ -807,9 +807,7 @@ export default function Home() {
                   <Link href="/credit?category=fuel" className="col-span-1">
                     <div className="group bg-white hover:bg-gray-50 shadow-sm hover:shadow-md border-2 border-gray-200 hover:border-gray-300 rounded-xl transition-all duration-200 ease-in-out hover:scale-[1.02] p-2 md:p-3 h-12 md:h-14 text-sm gap-2 flex items-center cursor-pointer">
                       <div className="bg-gray-100 rounded-full p-1.5 md:p-1.5">
-                        <svg className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                        <FiDroplet className="w-4 h-4 md:w-4 md:h-4 text-[#4F46E5]" />
                       </div>
                       <span className="font-bold text-[#4F46E5] text-xs md:text-sm">Fuel</span>
                     </div>
@@ -916,7 +914,7 @@ export default function Home() {
                   Limited Time Offer
                 </span>
                 <h3 className="text-base md:text-xl lg:text-2xl font-bold">
-                  Get INR 750 for every successful IDFC First and Axis Bank application!
+                  Get INR 750 for every successful IDFC First and Axis Bank Credit Card application!
                 </h3>
               </div>
               <div className="flex gap-2 md:gap-3 mt-2">
