@@ -29,20 +29,20 @@ const lenders: Lender[] = [
     id: 1,
     name: "Volt Money",
     logo: "volt-logo.png",
-    interestRate: "9.5% - 11.5% p.a.",
-    processingFee: "Up to 0.5%",
-    loanAmount: "₹1 Lakh - ₹1 Crore",
-    tenure: "1 - 3 years",
+    interestRate: "10.5% p.a.",
+    processingFee: "₹999 + GST",
+    loanAmount: "₹10,000 - ₹5 Crores",
+    tenure: "3 years",
     features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   },
   {
     id: 2,
     name: "Mirae Asset Financial Services",
     logo: "MAFS-logo.png",
-    interestRate: "10.5% - 12.5% p.a.",
+    interestRate: "10.5% p.a.",
     processingFee: "₹999 + GST",
     loanAmount: "₹10,000 - ₹3 Crores",
-    tenure: "1 - 3 years",
+    tenure: "3 years",
     features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
   }
 ]
