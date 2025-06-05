@@ -396,10 +396,10 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
       emiOptions: 'Available on eligible purchases',
       additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for those spending ₹4L–₹8L annually, offering a sweet spot of benefits with an affordable annual fee',
-        'Occasional Travelers: Enjoy 4 free domestic lounge accesses every quarter and 2 complimentary international lounge entries each year',
-        'Lifestyle & Entertainment Enthusiasts: Get Buy 1 Get 1 on BookMyShow, golf privileges, and dining discounts through the Culinary Treats Program',
-        'Reward Collectors: Earn accelerated points on international and retail spends, with flexible redemption options'
+        'Mid-to-High Spenders',
+        'Occasional Travelers',
+        'Lifestyle & Entertainment Enthusiasts',
+        'Reward Collectors'
       ],
       notIdealFor: [
         'Users who spend less than ₹2–3 lakh annually',
