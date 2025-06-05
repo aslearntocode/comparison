@@ -327,7 +327,7 @@ function CreditProductComparisonContent() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search by rewards, annual fee, etc..."
+                  placeholder="Search by bank name, annual fee, etc..."
                   className="w-full px-3 md:px-6 py-1.5 md:py-3 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs md:text-base"
                 />
                 <div className="absolute right-3 md:right-4 top-1/2 transform -translate-y-1/2">

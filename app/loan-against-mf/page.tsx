@@ -449,7 +449,7 @@ function LoanAgainstMF() {
                   <span className="text-4xl text-orange-500"><i className="fas fa-hourglass-half"></i></span>
                   <div>
                     <h3 className="font-bold text-lg text-blue-900 mb-1">Loan Tenure</h3>
-                    <p className="text-gray-700 text-sm">The overdraft limit provided against your mutual funds has a tenure of 12 months and is renewed thereafter.</p>
+                    <p className="text-gray-700 text-sm">The overdraft limit provided against your mutual funds has a tenure of 12 to 36 months and is renewed thereafter.</p>
                   </div>
                 </div>
                 {/* Feature 9 */}
@@ -457,7 +457,7 @@ function LoanAgainstMF() {
                   <span className="text-4xl text-orange-500"><i className="fas fa-arrow-up"></i></span>
                   <div>
                     <h3 className="font-bold text-lg text-blue-900 mb-1">Higher Loan Value</h3>
-                    <p className="text-gray-700 text-sm">One place for all your financial requirements. With MAFS you can get a higher limit against your mutual funds portfolio value.</p>
+                    <p className="text-gray-700 text-sm">One place for all your financial requirements. You can get up to 80% of your mutual funds portfolio value as loan against your mutual funds.</p>
                   </div>
                 </div>
                 {/* Feature 10 */}
