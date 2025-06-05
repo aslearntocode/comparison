@@ -99,6 +99,7 @@ export default function PersonalLoansPageWrapper() {
 function PersonalLoans() {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false)
   const [eligibilityMessage, setEligibilityMessage] = useState<React.ReactNode>(null)
+  const [isCheckingEligibility, setIsCheckingEligibility] = useState(false)
   const router = useRouter()
   const searchParams = useSearchParams()
   const eligible = searchParams.get('eligible')
@@ -152,34 +153,34 @@ function PersonalLoans() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    const user = auth.currentUser;
-    if (!user) {
-      const currentPath = encodeURIComponent('/personal-loans');
-      router.push(`/login?redirect=${currentPath}`);
-      return;
-    }
-    
-    // Convert string inputs to numbers
-    const monthlyIncome = parseInt(formData.monthlyIncome.replace(/,/g, '')) || 0
-    const creditScore = parseInt(formData.creditScore) || 0
-    const currentEmi = parseInt(formData.currentEmi.replace(/,/g, '')) || 0
-    const loanAmount = parseInt(formData.loanAmount.replace(/,/g, '')) || 0
-    const loanTenure = parseInt(formData.loanTenure) || 0
-    const existingLoans = parseInt(formData.existingLoans) || 0
-
-    // Check eligibility using the utility function
-    const result = checkEligibility({
-      monthlyIncome,
-      employmentType: formData.employmentType as 'salaried' | 'self-employed' | 'business',
-      creditScore,
-      existingLoans,
-      currentEmi,
-      loanAmount,
-      loanTenure
-    })
-
+    setIsCheckingEligibility(true)
     try {
+      const user = auth.currentUser;
+      if (!user) {
+        const currentPath = encodeURIComponent('/personal-loans');
+        router.push(`/login?redirect=${currentPath}`);
+        return;
+      }
+      
+      // Convert string inputs to numbers
+      const monthlyIncome = parseInt(formData.monthlyIncome.replace(/,/g, '')) || 0
+      const creditScore = parseInt(formData.creditScore) || 0
+      const currentEmi = parseInt(formData.currentEmi.replace(/,/g, '')) || 0
+      const loanAmount = parseInt(formData.loanAmount.replace(/,/g, '')) || 0
+      const loanTenure = parseInt(formData.loanTenure) || 0
+      const existingLoans = parseInt(formData.existingLoans) || 0
+
+      // Check eligibility using the utility function
+      const result = checkEligibility({
+        monthlyIncome,
+        employmentType: formData.employmentType as 'salaried' | 'self-employed' | 'business',
+        creditScore,
+        existingLoans,
+        currentEmi,
+        loanAmount,
+        loanTenure
+      })
+
       // Save the eligibility check data to the database
       const response = await fetch('/api/personal-loans/eligibility', {
         method: 'POST',
@@ -242,6 +243,8 @@ function PersonalLoans() {
           An error occurred while saving your eligibility check. Please try again.
         </div>
       );
+    } finally {
+      setIsCheckingEligibility(false)
     }
   }
 
@@ -514,7 +517,9 @@ function PersonalLoans() {
                     <label htmlFor="terms" className="text-sm text-gray-700">I accept the <a href="#" className="text-green-700 underline">terms and conditions</a></label>
                   </div>
                   <DialogFooter>
-                    <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">Check Eligibility</Button>
+                    <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={isCheckingEligibility}>
+                      {isCheckingEligibility ? 'Checking...' : 'Check Eligibility'}
+                    </Button>
                   </DialogFooter>
                 </form>
                 {/* Show eligibility message if present */}
