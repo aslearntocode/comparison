@@ -54,7 +54,7 @@ const lenders: Lender[] = [
     processingFee: "Up to 2%",
     loanAmount: "₹2.5 - ₹25 Lakhs",
     tenure: "12 - 60 months",
-    features: ["Quick processing", "Competitive rates", "Flexible repayment"]
+    features: ["Quick processing", "Competitive rates", "Minimal paperwork"]
   },
   {
     id: 2,
@@ -64,7 +64,7 @@ const lenders: Lender[] = [
     processingFee: "Up to 2.5%",
     loanAmount: "₹25,000 - ₹15 Lakhs",
     tenure: "12 - 48 months",
-    features: ["Fast approval", "Minimal paperwork", "Attractive interest rates"]
+    features: ["Fast approval", "Minimal paperwork", "Salaried only"]
   },
   {
     id: 3,
@@ -73,8 +73,18 @@ const lenders: Lender[] = [
     interestRate: "11.49% - 19.99% p.a.",
     processingFee: "Up to 2%",
     loanAmount: "₹1 - ₹10 Lakhs",
-    tenure: "3 - 36 months",
-    features: ["Pay for what you use", "Disbursal in 1 to 2 days", "No Lock-In Period", "No Foreclosure Charges"]
+    tenure: "6 - 48 months",
+    features: ["Attractive interest rates", "Disbursal in 1 to 2 days", "No Lock-In Period", "No Foreclosure Charges","Salaried only"]
+  },
+  {
+    id: 4,
+    name: "CASHe",
+    logo: "CASHe-logo.png",
+    interestRate: "11.49% - 19.99% p.a.",
+    processingFee: "Up to 2%",
+    loanAmount: "₹50,000 - ₹3 Lakhs",
+    tenure: "9 - 18 months",
+    features: ["Fast approval", "Minimal paperwork", "Salaried only"]
   }
 ]
 
@@ -274,7 +284,7 @@ function PersonalLoans() {
         <section className="w-full bg-blue-700 text-white py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">Personal Loans (Coming Soon)</h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">Personal Loans</h1>
               <p className="text-lg md:text-xl text-white/90 mb-2">
                 Check eligibility and we will show you the offers that you are likely to get approved for
               </p>
@@ -575,7 +585,7 @@ function PersonalLoans() {
                         <span className="font-semibold">{lender.tenure}</span>
                       </div>
                       <div>
-                        <ul className="list-disc list-inside text-xs md:text-sm text-gray-700">
+                        <ul className="list-disc list-outside pl-4 text-xs md:text-sm text-gray-700 whitespace-normal break-words">
                           {lender.features.map((feature, index) => (
                             <li key={index}>{feature}</li>
                           ))}
@@ -617,7 +627,7 @@ function PersonalLoans() {
                   </div>
                   <div className="mt-2">
                     <span className="block font-semibold text-gray-700 mb-1">Key Features:</span>
-                    <ul className="list-disc list-inside text-sm text-gray-700">
+                    <ul className="list-disc list-outside pl-4 text-xs md:text-sm text-gray-700 whitespace-normal break-words">
                       {lender.features.map((feature, index) => (
                         <li key={index}>{feature}</li>
                       ))}
