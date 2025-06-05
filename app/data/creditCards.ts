@@ -558,64 +558,64 @@ Credit Score: 750+`,
     }
   },
   // Fintech Cards
-  {
-    id: 'uni-gold',
-    name: 'Uni Gold Credit Card',
-    bank: 'Uni',
-    category: 'fintech',
-    image: '/credit-cards/Uni-Gold.png',
-    apr: '42% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: false,
-    feedback: [],
-    categories: [
-      // 'best-credit-cards',
-      'rewards',
-      // 'domestic-lounge',
-      // 'international-lounge',
-      // 'fuel',
-      'fintech',
-      'lifetime-free'
-    ],
-    applyUrl: 'https://example.com/apply-uni-gold',
-    additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
-      welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
-      milestoneBenefits: [
-        '4,000 points on spending ₹4 lakh in an anniversary year',
-        '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
-      ],
-      airportLounge: 'Airport Lounge Access:\n• 4 complimentary domestic lounge accesses per quarter (subject to spending ₹75,000 in the previous quarter)\n• 2 complimentary international lounge accesses per year via Priority Pass or DreamFolks membership',
-      fuelSurcharge: '1% waiver on fuel transactions up to ₹4,000',
-      insuranceCover: [
-        'Chip and PIN Security for enhanced security at merchant outlets'
-      ],
-      movieBenefits: 'Buy 1, get 1 free on movie or event tickets (up to ₹500 off on the second ticket), twice a month via BookMyShow',
-      diningPrivileges: [
-        'Exclusive offers through the ICICI Bank Culinary Treats Programme'
-      ],
-      minimumSpend: '₹5,00,000 for annual fee waiver',
-      creditLimit: 'Customized as per profile',
-      domesticTransactionFee: 'Nil',
-      internationalTransactionFee: '3.5% + GST',
-      interestRate: '3.5% per month (42% p.a.)',
-      emiOptions: 'Available on eligible purchases',
-      additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
-      idealFor: [
-        'Mid-to-High Spenders',
-        'Occasional Travelers',
-        'Lifestyle & Entertainment Enthusiasts',
-        'Reward Collectors'
-      ],
-      notIdealFor: [
-        'Users who spend less than ₹2–3 lakh annually',
-        'Frequent international flyers who require unlimited lounge access',
-        'Users seeking zero annual fee or basic cashback cards'
-      ],
-      summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
-    }
-  },
+  // {
+  //   id: 'uni-gold',
+  //   name: 'Uni Gold Credit Card',
+  //   bank: 'Uni',
+  //   category: 'fintech',
+  //   image: '/credit-cards/Uni-Gold.png',
+  //   apr: '42% p.a.',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: false,
+  //   feedback: [],
+  //   categories: [
+  //     // 'best-credit-cards',
+  //     'rewards',
+  //     // 'domestic-lounge',
+  //     // 'international-lounge',
+  //     // 'fuel',
+  //     'fintech',
+  //     'lifetime-free'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-uni-gold',
+  //   additionalDetails: {
+  //     rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
+  //     welcomeBonus: 'Welcome Vouchers worth over ₹9,000:\n• Tata CLiQ voucher worth ₹3,000\n• EaseMyTrip vouchers worth ₹6,000\n\nComplimentary Bose IE2 Headphones upon payment of joining fee',
+  //     milestoneBenefits: [
+  //       '4,000 points on spending ₹4 lakh in an anniversary year',
+  //       '2,000 points for every additional ₹1 lakh spent thereafter, up to a maximum of 20,000 points per year'
+  //     ],
+  //     airportLounge: 'Airport Lounge Access:\n• 4 complimentary domestic lounge accesses per quarter (subject to spending ₹75,000 in the previous quarter)\n• 2 complimentary international lounge accesses per year via Priority Pass or DreamFolks membership',
+  //     fuelSurcharge: '1% waiver on fuel transactions up to ₹4,000',
+  //     insuranceCover: [
+  //       'Chip and PIN Security for enhanced security at merchant outlets'
+  //     ],
+  //     movieBenefits: 'Buy 1, get 1 free on movie or event tickets (up to ₹500 off on the second ticket), twice a month via BookMyShow',
+  //     diningPrivileges: [
+  //       'Exclusive offers through the ICICI Bank Culinary Treats Programme'
+  //     ],
+  //     minimumSpend: '₹5,00,000 for annual fee waiver',
+  //     creditLimit: 'Customized as per profile',
+  //     domesticTransactionFee: 'Nil',
+  //     internationalTransactionFee: '3.5% + GST',
+  //     interestRate: '3.5% per month (42% p.a.)',
+  //     emiOptions: 'Available on eligible purchases',
+  //     additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
+  //     idealFor: [
+  //       'Mid-to-High Spenders',
+  //       'Occasional Travelers',
+  //       'Lifestyle & Entertainment Enthusiasts',
+  //       'Reward Collectors'
+  //     ],
+  //     notIdealFor: [
+  //       'Users who spend less than ₹2–3 lakh annually',
+  //       'Frequent international flyers who require unlimited lounge access',
+  //       'Users seeking zero annual fee or basic cashback cards'
+  //     ],
+  //     summary: 'Perfect for mid-to-high spenders who travel occasionally and enjoy a balanced mix of lifestyle perks and reward flexibility.',
+  //   }
+  // },
   // {
   //   id: 'onecard',
   //   name: 'OneCard',
@@ -668,54 +668,54 @@ Credit Score: 750+`,
   //     summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
   //   }
   // },
-  {
-    id: 'kiwi',
-    name: 'Kiwi Credit Card',
-    bank: 'Kiwi',
-    category: 'upi',
-    image: '/credit-cards/Kiwi.png',
-    apr: '43.2% p.a.',
-    annualFee: '₹0',
-    joiningFee: '₹0',
-    rupay: true,
-    feedback: [],
-    categories: [
-      'upi',
-      'lifetime-free',
-      'fintech'
-    ],
-    applyUrl: 'https://example.com/apply-kiwi',
-    additionalDetails: {
-      rewardsProgram: 'Standard Cashback:\n• Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\n• Each Kiwi is worth ₹0.25, redeemable instantly into linked bank account\n\nNeon Subscription Program:\n• ₹999 annually (waived for cards issued via Kiwi app between July 1, 2024, and March 31, 2025)\n• Enhanced cashback based on annual spend:\n  - ₹50,000: 3% cashback + 1 domestic lounge access\n  - ₹1,00,000: 4% cashback + 2 domestic lounge accesses\n  - ₹1,50,000: 5% cashback + 3 domestic lounge accesses',
-      welcomeBonus: 'No specific welcome bonus',
-      milestoneBenefits: [
-        'Spend ₹50,000 annually: 3% cashback + 1 domestic lounge access',
-        'Spend ₹1,00,000 annually: 4% cashback + 2 domestic lounge accesses',
-        'Spend ₹1,50,000 annually: 5% cashback + 3 domestic lounge accesses'
-      ],
-      airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
-      internationalTransactionFee: '3.5% of the transaction amount',
-      interestRate: '3.6% per month (43.2% annually)',
-      additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
-      idealFor: [
-        'First-time credit card users',
-        'People who prefer UPI payments',
-        'Salaried professionals & self-employed (income above ₹25,000/month)',
-        'Reward seekers',
-        'Those looking for credit flexibility'
-      ],
-      notIdealFor: [
-        'People with poor or no credit history (requires CIBIL 720+)',
-        'Heavy international spenders',
-        'Users who prefer physical cards',
-        'Low-income individuals',
-        'People looking for premium lifestyle benefits'
-      ],
-      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
-      fuelSurcharge: 'Not specified',
-      eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
-    }
-  },
+  // {
+  //   id: 'kiwi',
+  //   name: 'Kiwi Credit Card',
+  //   bank: 'Kiwi',
+  //   category: 'upi',
+  //   image: '/credit-cards/Kiwi.png',
+  //   apr: '43.2% p.a.',
+  //   annualFee: '₹0',
+  //   joiningFee: '₹0',
+  //   rupay: true,
+  //   feedback: [],
+  //   categories: [
+  //     'upi',
+  //     'lifetime-free',
+  //     'fintech'
+  //   ],
+  //   applyUrl: 'https://example.com/apply-kiwi',
+  //   additionalDetails: {
+  //     rewardsProgram: 'Standard Cashback:\n• Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\n• Each Kiwi is worth ₹0.25, redeemable instantly into linked bank account\n\nNeon Subscription Program:\n• ₹999 annually (waived for cards issued via Kiwi app between July 1, 2024, and March 31, 2025)\n• Enhanced cashback based on annual spend:\n  - ₹50,000: 3% cashback + 1 domestic lounge access\n  - ₹1,00,000: 4% cashback + 2 domestic lounge accesses\n  - ₹1,50,000: 5% cashback + 3 domestic lounge accesses',
+  //     welcomeBonus: 'No specific welcome bonus',
+  //     milestoneBenefits: [
+  //       'Spend ₹50,000 annually: 3% cashback + 1 domestic lounge access',
+  //       'Spend ₹1,00,000 annually: 4% cashback + 2 domestic lounge accesses',
+  //       'Spend ₹1,50,000 annually: 5% cashback + 3 domestic lounge accesses'
+  //     ],
+  //     airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
+  //     internationalTransactionFee: '3.5% of the transaction amount',
+  //     interestRate: '3.6% per month (43.2% annually)',
+  //     additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
+  //     idealFor: [
+  //       'First-time credit card users',
+  //       'People who prefer UPI payments',
+  //       'Salaried professionals & self-employed (income above ₹25,000/month)',
+  //       'Reward seekers',
+  //       'Those looking for credit flexibility'
+  //     ],
+  //     notIdealFor: [
+  //       'People with poor or no credit history (requires CIBIL 720+)',
+  //       'Heavy international spenders',
+  //       'Users who prefer physical cards',
+  //       'Low-income individuals',
+  //       'People looking for premium lifestyle benefits'
+  //     ],
+  //     summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
+  //     fuelSurcharge: 'Not specified',
+  //     eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
+  //   }
+  // },
   // {
   //   id: 'slice',
   //   name: 'Slice Credit Card',
