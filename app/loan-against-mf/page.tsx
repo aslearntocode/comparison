@@ -570,7 +570,11 @@ function LoanAgainstMF() {
                       ))}
                     </ul>
                   </div>
-                  {showApply(lender.id) && (
+                  {(!eligible || eligible === 'no_offers') ? (
+                    <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4" onClick={() => handleScroll(eligibilityRef)}>
+                      Check Eligibility
+                    </Button>
+                  ) : (
                     <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4">Apply Now</Button>
                   )}
                 </div>
