@@ -335,6 +335,10 @@ export default function Header() {
                         <FiBriefcase className="text-blue-600 w-5 h-5" />
                         <span>UPI</span>
                       </Link>
+                      <Link href="/credit?category=virtual" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
+                        <FiCard className="text-blue-600 w-5 h-5" />
+                        <span>Virtual</span>
+                      </Link>
                       <Link href="/credit?category=domestic-lounge" className="flex items-center gap-x-3 px-2 py-1 text-base text-black hover:bg-gray-50 rounded" onClick={() => setIsCreditDropdownOpen(false)}>
                         <FiAirplay className="text-blue-600 w-5 h-5" />
                         <span>Domestic Lounge</span>
@@ -779,6 +783,13 @@ export default function Header() {
                     onClick={() => setIsCreditDropdownOpen(false)}
                   >
                     UPI
+                  </Link>
+                  <Link 
+                    href="/credit?category=virtual" 
+                    className="flex items-center px-4 py-1 text-sm text-black hover:bg-gray-50"
+                    onClick={() => setIsCreditDropdownOpen(false)}
+                  >
+                    Virtual
                   </Link>
                   <Link 
                     href="/credit?category=domestic-lounge" 

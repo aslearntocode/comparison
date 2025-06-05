@@ -8,7 +8,7 @@ export interface UserFeedback {
   cardName: string;
 }
 
-export type CardCategory = 'ultra-premium' | 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured' | 'premium' | 'upi' | 'rewards' | 'cashback' | 'fuel' | 'lifetime-free' | 'forex' | 'emi' | 'domestic-lounge' | 'international-lounge' | 'airlines' | 'hotels' | 'secured';
+export type CardCategory = 'ultra-premium' | 'hotels' | 'airlines' | 'fintech' | 'lifestyle' | 'secured' | 'premium' | 'upi' | 'rewards' | 'cashback' | 'fuel' | 'lifetime-free' | 'forex' | 'emi' | 'domestic-lounge' | 'international-lounge' | 'airlines' | 'hotels' | 'secured' | 'virtual';
 
 export interface CreditCard {
   id: string;
@@ -668,54 +668,100 @@ Credit Score: 750+`,
   //     summary: 'A premium metal credit card offering luxury travel experiences and lifestyle privileges, ideal for high-income individuals and frequent travelers.',
   //   }
   // },
-  // {
-  //   id: 'kiwi',
-  //   name: 'Kiwi Credit Card',
-  //   bank: 'Kiwi',
-  //   category: 'upi',
-  //   image: '/credit-cards/Kiwi.png',
-  //   apr: '43.2% p.a.',
-  //   annualFee: '₹0',
-  //   joiningFee: '₹0',
-  //   rupay: true,
-  //   feedback: [],
-  //   categories: [
-  //     'upi',
-  //     'lifetime-free',
-  //     'fintech'
-  //   ],
-  //   applyUrl: 'https://example.com/apply-kiwi',
-  //   additionalDetails: {
-  //     rewardsProgram: 'Standard Cashback:\n• Earn 2 Kiwis (reward points) for every ₹50 spent on UPI transactions\n• Each Kiwi is worth ₹0.25, redeemable instantly into linked bank account\n\nNeon Subscription Program:\n• ₹999 annually (waived for cards issued via Kiwi app between July 1, 2024, and March 31, 2025)\n• Enhanced cashback based on annual spend:\n  - ₹50,000: 3% cashback + 1 domestic lounge access\n  - ₹1,00,000: 4% cashback + 2 domestic lounge accesses\n  - ₹1,50,000: 5% cashback + 3 domestic lounge accesses',
-  //     welcomeBonus: 'No specific welcome bonus',
-  //     milestoneBenefits: [
-  //       'Spend ₹50,000 annually: 3% cashback + 1 domestic lounge access',
-  //       'Spend ₹1,00,000 annually: 4% cashback + 2 domestic lounge accesses',
-  //       'Spend ₹1,50,000 annually: 5% cashback + 3 domestic lounge accesses'
-  //     ],
-  //     airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
-  //     internationalTransactionFee: '3.5% of the transaction amount',
-  //     interestRate: '3.6% per month (43.2% annually)',
-  //     additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
-  //     idealFor: [
-  //       'First-time credit card users',
-  //       'People who prefer UPI payments',
-  //       'Salaried professionals & self-employed (income above ₹25,000/month)',
-  //       'Reward seekers',
-  //       'Those looking for credit flexibility'
-  //     ],
-  //     notIdealFor: [
-  //       'People with poor or no credit history (requires CIBIL 720+)',
-  //       'Heavy international spenders',
-  //       'Users who prefer physical cards',
-  //       'Low-income individuals',
-  //       'People looking for premium lifestyle benefits'
-  //     ],
-  //     summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
-  //     fuelSurcharge: 'Not specified',
-  //     eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
-  //   }
-  // },
+  {
+    id: 'kiwi',
+    name: 'Kiwi Credit Card',
+    bank: 'Kiwi',
+    category: 'upi',
+    image: '/credit-cards/Kiwi.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'virtual',
+      'upi',
+      'lifetime-free',
+      'fintech'
+    ],
+    applyUrl: 'https://example.com/apply-kiwi',
+    additionalDetails: {
+      rewardsProgram: '• 1.5% cashback on scan & pay transactions\n• 0.5% cashback on online transactions\n• Exclusive offers on Swiggy, Zomato, Zepto',
+      welcomeBonus: 'No specific welcome bonus',
+      milestoneBenefits: [
+        'NA'
+      ],
+      airportLounge: 'Complimentary domestic lounge access upon achieving specific annual spend milestones',
+      internationalTransactionFee: '3.5% of the transaction amount',
+      interestRate: '3.6% per month (43.2% annually)',
+      // additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
+      idealFor: [
+        'First-time credit card users',
+        'People who prefer UPI payments',
+        'Salaried professionals & self-employed (income above ₹25,000/month)',
+        'Reward seekers',
+        'Those looking for credit flexibility'
+      ],
+      notIdealFor: [
+        'People with poor or no credit history (requires CIBIL 720+)',
+        'Heavy international spenders',
+        'Users who prefer physical cards',
+        'People looking for premium lifestyle benefits'
+      ],
+      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
+    }
+  },
+  {
+    id: 'kiwi-neon',
+    name: 'Kiwi Credit Card with Neon Membership',
+    bank: 'Kiwi',
+    category: 'upi',
+    image: '/credit-cards/Kiwi.png',
+    apr: '43.2% p.a.',
+    annualFee: '₹999',
+    joiningFee: '₹999',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'upi',
+      'virtual',
+      // 'lifetime-free',
+      'fintech'
+    ],
+    applyUrl: 'https://example.com/apply-kiwi',
+    additionalDetails: {
+      rewardsProgram: 'Kiwi Neon Membership (₹999/Yr):\n• Flat 2% cashback on all Credit on UPI transactions\n• 5% cashback when you spend ₹1.5L in a year\n• Complimentary lounge access\n• Exclusive offers on Swiggy, Zomato, and other platforms',
+      welcomeBonus: 'No specific welcome bonus',
+      milestoneBenefits: [
+        '5% cashback on achieving annual spend of ₹1.5L (Neon Membership)',
+        // 'Complimentary lounge access (Neon Membership)'
+      ],
+      airportLounge: 'Complimentary domestic lounge access with Neon Membership',
+      internationalTransactionFee: '3.5% of the transaction amount',
+      interestRate: '3.6% per month (43.2% annually)',
+      additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
+      idealFor: [
+        'First-time credit card users',
+        'People who prefer UPI payments',
+        'Salaried professionals & self-employed (income above ₹25,000/month)',
+        'Reward seekers',
+        'Those looking for credit flexibility'
+      ],
+      notIdealFor: [
+        'People with poor or no credit history (requires CIBIL 720+)',
+        'Heavy international spenders',
+        'Users who prefer physical cards',
+        'Low-income individuals',
+        'People looking for premium lifestyle benefits'
+      ],
+      summary: 'A virtual RuPay credit card that revolutionizes UPI payments with credit, offering instant issuance, lifetime free usage, and seamless integration with UPI for everyday transactions.',
+      fuelSurcharge: 'Not specified',
+      eligibilityCriteria: 'Age: 25 to 60 years.\nIncome: Minimum ₹25,000 per month.\nOccupation: Salaried or self-employed individuals.\nCredit Score: Minimum CIBIL score of 720.'
+    }
+  },
   // {
   //   id: 'slice',
   //   name: 'Slice Credit Card',

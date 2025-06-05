@@ -255,6 +255,7 @@ function CreditProductComparisonContent() {
       case 'lifestyle': return 'Lifestyle Credit Cards'
       case 'secured': return 'Secured Credit Cards'
       case 'ultra-premium': return 'Ultra Premium Credit Cards'
+      case 'virtual': return 'Virtual Credit Cards'
       default: return 'Credit Cards'
     }
   }
@@ -376,12 +377,15 @@ function CreditProductComparisonContent() {
                     <div className="md:hidden px-2 py-3 w-full overflow-x-hidden">
                       <div className="flex flex-col w-full">
                         <div className="flex items-start gap-2 mb-2 w-full">
-                          <div className="relative w-full max-w-[80px]" style={{ aspectRatio: '7/4' }}>
+                          <div
+                            className="relative flex items-center justify-center bg-white rounded-lg overflow-hidden"
+                            style={{ width: 80, height: 48, minWidth: 80, minHeight: 48, maxWidth: 80, maxHeight: 48 }}
+                          >
                             <Image
                               src={card.image}
                               alt={card.name}
                               fill
-                              className="object-contain rounded-lg"
+                              className="object-contain w-full h-full"
                             />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -462,13 +466,16 @@ function CreditProductComparisonContent() {
                     {/* Desktop View */}
                     <div className="hidden md:grid md:grid-cols-5 gap-2 px-3 py-2" style={{ gridTemplateColumns: '2fr 1fr 1fr 0.7fr 1.2fr' }}>
                       <Link href={`/credit/${card.id}`} className="flex items-center gap-4 col-span-1 group cursor-pointer">
-                        <div className="w-32 h-20 flex items-center justify-center overflow-hidden bg-white rounded-lg">
+                        <div
+                          className="flex items-center justify-center bg-white rounded-lg overflow-hidden"
+                          style={{ width: 120, height: 80, minWidth: 120, minHeight: 80, maxWidth: 120, maxHeight: 80 }}
+                        >
                           <Image
                             src={card.image}
                             alt={card.name}
                             width={120}
                             height={80}
-                            className="object-contain w-auto h-full mx-auto rounded-lg"
+                            className="object-contain w-full h-full"
                           />
                         </div>
                         <div>
