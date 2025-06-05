@@ -126,11 +126,7 @@ Income: ITR > ₹15 lakhs/annum`
 • 4 Reward Points per ₹150 spent on all retail purchases
 • Applicable to insurance, utilities, education, and rent payments
 • No reward points on fuel transactions
-• Cap of 2,000 points per day for insurance payments
-
-Redemption:
-• Points can be redeemed for flights, hotel bookings, premium products, and vouchers via SmartBuy
-• Each Reward Point worth ₹0.50 when redeemed on SmartBuy`,
+• Cap of 2,000 points per day for insurance payments`,
       welcomeBonus: '• 2,500 Reward Points upon payment of the joining fee\n\nRenewal Benefits:\n• 2,500 Reward Points upon payment of the annual fee',
       milestoneBenefits: [
         '10,000 bonus reward points on spending ₹5 lakhs in an anniversary year',
@@ -373,7 +369,7 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     ],
     applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd85tsS6cslGgx2C2y4WXOzk%2Fa3c%2BjMBvVnuZMD1VAjP6zNyShZGj2WW0JvQh4wS29C0%3D',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments\n\nRedemption:\n• Points can be redeemed for a variety of products, vouchers, and even converted to air miles',
+      rewardsProgram: 'Earning Rate:\n• 2 points per ₹100 on domestic retail spends (excluding fuel)\n• 4 points per ₹100 on international spends\n• 1 point per ₹100 on utilities and insurance payments',
       welcomeBonus: 'Welcome Benefits:\n• Welcome vouchers worth ₹9,000\n• Complimentary Bose IE2 Headphones\n• Premium lifestyle vouchers',
       milestoneBenefits: [
         '4,000 points on spending ₹4 lakh in an anniversary year',
@@ -436,7 +432,7 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     ],
     applyUrl: 'https://example.com/apply-emeralde-private-metal',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments\n\nRedemption:\n• 1 Reward Point = up to ₹1 for flights, hotels, and select brand vouchers\n• ₹0.60 for rewards catalogue\n• ₹0.40 for statement credit\n\nCaps:\n• 1,000 points per category per statement cycle for grocery, education, and utilities\n• 5,000 points per statement cycle for insurance payments',
+      rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments',
       welcomeBonus: 'Welcome Benefits:\n• 12,500 ICICI Reward Points\n• Taj Epicure Membership\n• EazyDiner Prime Membership\n• Luxury gift vouchers worth ₹15,000',
       milestoneBenefits: [
         '₹3,000 EaseMyTrip Voucher on spending ₹4 lakh annually',
