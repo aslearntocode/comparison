@@ -252,11 +252,11 @@
       "is_lifetime_free":0
     },
     {
-      "card_name":"Kiwi RuPay Credit Card",
-      "joining_fee":0,
-      "annual_fee":0,
+      "card_name":"Kiwi Credit Card with Neon Membership",
+      "joining_fee":999,
+      "annual_fee":999,
       "annual_fee_waiver_criteria":0,
-      "is_lifetime_free":1
+      "is_lifetime_free":0
     },
     {
       "card_name":"Edge CSB RuPay Credit Card",
