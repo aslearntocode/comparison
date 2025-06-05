@@ -26,38 +26,38 @@ interface Lender {
 }
 
 const lenders: Lender[] = [
+  // {
+  //   id: 1,
+  //   name: "HDFC Bank",
+  //   logo: "hdfc-logo.png",
+  //   interestRate: "10.5% - 24% p.a.",
+  //   processingFee: "Up to 2.5%",
+  //   loanAmount: "₹50,000 - ₹40 Lakhs",
+  //   tenure: "12 - 60 months",
+  //   features: ["Quick disbursal", "Minimal documentation", "Flexible EMI options"]
+  // },
+  // {
+  //   id: 2,
+  //   name: "ICICI Bank",
+  //   logo: "icici-logo.png",
+  //   interestRate: "10.75% - 19% p.a.",
+  //   processingFee: "Up to 2.25%",
+  //   loanAmount: "₹50,000 - ₹50 Lakhs",
+  //   tenure: "12 - 60 months",
+  //   features: ["Instant approval", "Zero prepayment charges", "Online account management"]
+  // },
   {
     id: 1,
-    name: "HDFC Bank",
-    logo: "hdfc-logo.png",
-    interestRate: "10.5% - 24% p.a.",
-    processingFee: "Up to 2.5%",
-    loanAmount: "₹50,000 - ₹40 Lakhs",
-    tenure: "12 - 60 months",
-    features: ["Quick disbursal", "Minimal documentation", "Flexible EMI options"]
-  },
-  {
-    id: 2,
-    name: "ICICI Bank",
-    logo: "icici-logo.png",
-    interestRate: "10.75% - 19% p.a.",
-    processingFee: "Up to 2.25%",
-    loanAmount: "₹50,000 - ₹50 Lakhs",
-    tenure: "12 - 60 months",
-    features: ["Instant approval", "Zero prepayment charges", "Online account management"]
-  },
-  {
-    id: 3,
     name: "Axis Bank",
     logo: "axis-logo.png",
     interestRate: "10.49% - 22% p.a.",
     processingFee: "Up to 2%",
-    loanAmount: "₹50,000 - ₹40 Lakhs",
+    loanAmount: "₹2.5 - ₹25 Lakhs",
     tenure: "12 - 60 months",
     features: ["Quick processing", "Competitive rates", "Flexible repayment"]
   },
   {
-    id: 4,
+    id: 2,
     name: "InCred Finance",
     logo: "incred-logo.png",
     interestRate: "11% - 24% p.a.",
@@ -67,14 +67,14 @@ const lenders: Lender[] = [
     features: ["Fast approval", "Minimal paperwork", "Attractive interest rates"]
   },
   {
-    id: 5,
-    name: "Freo Money",
-    logo: "freo-logo.png",
-    interestRate: "12% - 24% p.a.",
+    id: 3,
+    name: "Mirae Asset Financial Services",
+    logo: "MAFS-logo.png",
+    interestRate: "11.49% - 19.99% p.a.",
     processingFee: "Up to 2%",
-    loanAmount: "₹10,000 - ₹5 Lakhs",
+    loanAmount: "₹1 - ₹10 Lakhs",
     tenure: "3 - 36 months",
-    features: ["Pay for what you use", "Quick disbursal", "Flexible repayment options"]
+    features: ["Pay for what you use", "Disbursal in 1 to 2 days", "No Lock-In Period", "No Foreclosure Charges"]
   }
 ]
 
@@ -337,7 +337,7 @@ function PersonalLoans() {
               <div className="hidden md:flex flex-1 max-w-xl flex-col gap-6 justify-start self-start mt-0">
                 <div>
                   <div className="text-lg font-semibold text-green-700 mb-2">Personal Loan</div>
-                  <h1 className="text-2xl md:text-4xl font-bold text-blue-900 leading-tight mb-3">Turn your Dreams into Reality<br />with Personal Loans up to ₹50 Lakh!</h1>
+                  <h1 className="text-2xl md:text-4xl font-bold text-blue-900 leading-tight mb-3">Turn your Dreams into Reality<br />with Loans up to ₹50 Lakhs!</h1>
                   <div className="hidden md:block">
                     <p className="text-gray-700 text-lg mb-6">
                       Financial Health is a platform where we show the best offers through our trusted lending partners. All loan applications are approved and sanctioned by our NBFC/Bank partners registered with the RBI.

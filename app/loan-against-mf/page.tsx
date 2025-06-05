@@ -63,16 +63,7 @@ function LoanAgainstMF() {
   const eligible = searchParams.get('eligible')
 
   let filteredLenders = lenders
-  let showApply = (id: number) => false
-  if (eligible === 'volt') {
-    filteredLenders = lenders.filter(l => l.name === 'Volt Money')
-    showApply = (id: number) => filteredLenders.some(l => l.id === id)
-  } else if (eligible === 'mirae') {
-    filteredLenders = lenders.filter(l => l.name === 'Mirae Asset Financial Services')
-    showApply = (id: number) => filteredLenders.some(l => l.id === id)
-  } else if (eligible === 'no_offers') {
-    filteredLenders = []
-  }
+  let showApply = (id: number) => true
 
   const [formData, setFormData] = useState({
     mfPortfolioValue: '',
@@ -497,18 +488,18 @@ function LoanAgainstMF() {
             {/* Desktop: Table style */}
             <div className="hidden md:block">
               <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 w-full min-w-0 mx-auto">
-                <div className="grid grid-cols-7 gap-2 mb-4 px-3 py-2 bg-gray-50 rounded-lg text-sm font-semibold text-gray-700" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1fr auto' }}>
-                  <div>Lender</div>
-                  <div>Interest Rate</div>
-                  <div>Processing Fee</div>
-                  <div>Loan Amount</div>
-                  <div>Tenure</div>
-                  <div>Key Features</div>
-                  <div></div>
+                <div className="grid grid-cols-7 gap-2 mb-4 px-3 py-2 bg-gray-50 rounded-lg text-sm font-semibold text-gray-700">
+                  <div className="text-left">Lender</div>
+                  <div className="text-left">Interest Rate</div>
+                  <div className="text-left">Processing Fee</div>
+                  <div className="text-left">Loan Amount</div>
+                  <div className="text-left">Tenure</div>
+                  <div className="text-left">Key Features</div>
+                  <div className="text-left"></div>
                 </div>
                 <div className="space-y-0">
                   {filteredLenders.map((lender) => (
-                    <div key={lender.id} className="grid grid-cols-7 gap-2 items-center px-2 py-4 md:py-2 md:px-3 border-b last:border-b-0 hover:bg-gray-50 rounded-lg transition-colors" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1fr auto' }}>
+                    <div key={lender.id} className="grid grid-cols-7 gap-2 items-center px-2 py-4 md:py-2 md:px-3 border-b last:border-b-0 hover:bg-gray-50 rounded-lg transition-colors" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1.5fr auto' }}>
                       {/* Lender Logo & Name */}
                       <div className="flex items-center gap-3">
                         <img src={`/bank-logos/${lender.logo}`} alt={lender.name} className="h-8 w-auto" style={{ maxWidth: 48 }} />
@@ -533,10 +524,8 @@ function LoanAgainstMF() {
                           ))}
                         </ul>
                       </div>
-                      <div>
-                        {showApply(lender.id) && (
-                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
-                        )}
+                      <div className="flex justify-center items-center">
+                        <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
                       </div>
                     </div>
                   ))}
