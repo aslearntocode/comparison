@@ -220,7 +220,7 @@ function LoanAgainstMF() {
   const faqRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
 
-  const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
+  const handleScroll = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
@@ -248,19 +248,19 @@ function LoanAgainstMF() {
             <div className="flex w-full rounded-none bg-white">
               <button
                 className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-                onClick={() => handleScroll(eligibilityRef as React.RefObject<HTMLDivElement>)}
+                onClick={() => handleScroll(eligibilityRef)}
               >
                 Eligibility Check
               </button>
               <button
                 className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-                onClick={() => handleScroll(calculatorRef as React.RefObject<HTMLDivElement>)}
+                onClick={() => handleScroll(calculatorRef)}
               >
                 Features & Benefits
               </button>
               <button
                 className="flex-1 py-3 text-blue-700 text-base md:text-lg font-medium hover:bg-blue-50 focus:bg-blue-100 transition-colors"
-                onClick={() => handleScroll(lendersRef as React.RefObject<HTMLDivElement>)}
+                onClick={() => handleScroll(lendersRef)}
               >
                 Lending Partners
               </button>
@@ -489,13 +489,13 @@ function LoanAgainstMF() {
             <div className="hidden md:block">
               <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 w-full min-w-0 mx-auto">
                 <div className="grid grid-cols-7 gap-2 mb-4 px-3 py-2 bg-gray-50 rounded-lg text-sm font-semibold text-gray-700">
-                  <div className="text-left">Lender</div>
-                  <div className="text-left">Interest Rate</div>
-                  <div className="text-left">Processing Fee</div>
+                  <div className="text-center">Lender</div>
+                  <div className="text-center">Interest Rate</div>
+                  <div className="text-center">Processing Fee</div>
                   <div className="text-left">Loan Amount</div>
                   <div className="text-left">Tenure</div>
                   <div className="text-left">Key Features</div>
-                  <div className="text-left"></div>
+                  <div className="text-center"></div>
                 </div>
                 <div className="space-y-0">
                   {filteredLenders.map((lender) => (
@@ -525,7 +525,13 @@ function LoanAgainstMF() {
                         </ul>
                       </div>
                       <div className="flex justify-center items-center">
-                        <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
+                        {(!eligible || eligible === 'no_offers') ? (
+                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto" onClick={() => handleScroll(eligibilityRef)}>
+                            Check Eligibility
+                          </Button>
+                        ) : (
+                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
+                        )}
                       </div>
                     </div>
                   ))}
