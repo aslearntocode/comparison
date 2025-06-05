@@ -99,10 +99,10 @@
     },
     {
           "bank": "Kiwi",
-          "reward_program": "Kiwis",
-          "conversion_value": "2 Kiwis per ₹100 spent; 1 Kiwi = ₹0.25",
-          "notes": "Certain categories like telecom, utilities, government services are excluded from earning rewards.",
-          "highest_value": "Utilizing UPI payments for everyday purchases to maximize Kiwi rewards."
+          "reward_program": "Cashback",
+          "conversion_value": "Straight Cashback",
+          "notes": "NA",
+          "highest_value": "Utilizing UPI payments for everyday purchases to maximize rewards."
     },
   {
     "bank": "HSBC India",
