@@ -363,6 +363,10 @@ function PersonalLoans() {
               </div>
               {/* Mobile: Heading and offer above form */}
               <div className="block md:hidden flex-1 max-w-xl px-0 pt-4 pb-2">
+                <div className="mb-2">
+                  <div className="text-lg font-semibold text-green-700 mb-1">Personal Loan</div>
+                  <h1 className="text-2xl font-bold text-blue-900 leading-tight mb-1">Turn your Dreams into Reality<br />with Loans up to ₹50 Lakhs!</h1>
+                </div>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm w-fit mb-4">
                   <span className="font-medium text-blue-900">On every successful application, customers will earn <span className="bg-blue-600 text-white px-2 py-1 rounded">Amazon vouchers worth INR 500 to 2500</span>.</span>
                 </div>

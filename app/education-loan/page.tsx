@@ -27,24 +27,24 @@ interface Lender {
 const lenders: Lender[] = [
   {
     id: 1,
-    name: "HDFC Bank",
-    logo: "/bank-logos/hdfc-logo.png",
+    name: "GyanDhan",
+    logo: "/bank-logos/gyandhan-logo.png",
     interestRate: "8.5% - 9.5% p.a.",
     processingFee: "Up to 0.5%",
     loanAmount: "₹2 Lakhs - ₹50 Lakhs",
     tenure: "1 - 15 years",
     features: ["Quick disbursal", "Minimal documentation", "Flexible EMI options"]
   },
-  {
-    id: 2,
-    name: "ICICI Bank",
-    logo: "/bank-logos/icici-logo.png",
-    interestRate: "8.75% - 9.25% p.a.",
-    processingFee: "Up to 0.5%",
-    loanAmount: "₹2 Lakhs - ₹50 Lakhs",
-    tenure: "1 - 15 years",
-    features: ["Instant approval", "Zero prepayment charges", "Online account management"]
-  },
+  // {
+  //   id: 2,
+  //   name: "ICICI Bank",
+  //   logo: "/bank-logos/icici-logo.png",
+  //   interestRate: "8.75% - 9.25% p.a.",
+  //   processingFee: "Up to 0.5%",
+  //   loanAmount: "₹2 Lakhs - ₹50 Lakhs",
+  //   tenure: "1 - 15 years",
+  //   features: ["Instant approval", "Zero prepayment charges", "Online account management"]
+  // },
   {
     id: 3,
     name: "Axis Bank",
