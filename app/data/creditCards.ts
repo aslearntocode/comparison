@@ -695,12 +695,12 @@ Credit Score: 750+`,
       idealFor: [
         'First-time credit card users',
         'People who prefer UPI payments',
-        'Salaried professionals & self-employed (income above ₹25,000/month)',
+        'Salaried professionals & self-employed',
         'Reward seekers',
         'Those looking for credit flexibility'
       ],
       notIdealFor: [
-        'People with poor or no credit history (requires CIBIL 720+)',
+        'People with poor or no credit history',
         'Heavy international spenders',
         'Users who prefer physical cards',
         'People looking for premium lifestyle benefits'
@@ -746,7 +746,7 @@ Credit Score: 750+`,
         'Those looking for credit flexibility'
       ],
       notIdealFor: [
-        'People with poor or no credit history (requires CIBIL 720+)',
+        'People with poor or no credit history',
         'Heavy international spenders',
         'Users who prefer physical cards',
         'Low-income individuals',
