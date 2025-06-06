@@ -312,7 +312,7 @@ function LoanAgainstMF() {
                       className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <Label htmlFor="acceptTerms" className="text-sm text-gray-600">
-                      I agree to the terms and conditions
+                      I accept the <Link href="/terms" className="text-green-700 underline">terms and conditions</Link>
                     </Label>
                   </div>
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
