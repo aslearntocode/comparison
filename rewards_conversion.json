@@ -189,27 +189,6 @@
         "highest_value": "Flight/hotel bookings via Kotak White travel portal (up to ₹0.75 per White Mile)"
       },    
     {
-      "bank": "Indian Bank",
-      "reward_program": "Indian Bank Rewards",
-      "conversion_value": "₹1.00 per point (1 point per ₹200 spent)",
-      "notes": "Redeemable after 500 points as statement credit.",
-      "highest_value": "Cashback against statement"
-    },
-    {
-          "bank": "Uni Cards",
-          "reward_program": "Uni GoldX Rewards",
-          "conversion_value": "1% of transaction value in 24K digital gold",
-          "notes": "Earn 1% back in 24K digital gold on eligible transactions. Redemption is facilitated through the Uni Store, with gold prices applicable at the time of conversion.",
-          "highest_value": "Accumulating digital gold via Uni Store for long-term investment."
-    },
-    {
-          "bank": "Slice",
-          "reward_program": "Monies",
-          "conversion_value": "1 money per ₹1 spent; redemption value varies",
-          "notes": "Earn 1 money for every ₹1 spent. Redemption value for cashback varies based on the amount of Monies accumulated in your account.",
-          "highest_value": "Redeeming Monies for cashback through the Slice app when a substantial amount is accumulated."
-    },
-    {
           "bank": "Kiwi",
           "reward_program": "Cashback",
           "conversion_value": "Straight Cashback",
