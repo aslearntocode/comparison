@@ -68,19 +68,15 @@ function LoanAgainstMF() {
   let showApply = (id: number) => true
 
   const [formData, setFormData] = useState({
-    mfPortfolioValue: '',
+    name: '',
     loanAmount: '',
-    employmentType: '',
-    monthlyIncome: '',
     acceptTerms: false
   })
 
   const resetForm = () => {
     setFormData({
-      mfPortfolioValue: '',
+      name: '',
       loanAmount: '',
-      employmentType: '',
-      monthlyIncome: '',
       acceptTerms: false
     })
   }
@@ -114,12 +110,7 @@ function LoanAgainstMF() {
     }
     
     // Convert string inputs to numbers
-    const mfPortfolioValue = parseInt(formData.mfPortfolioValue.replace(/,/g, '')) || 0
     const loanAmount = parseInt(formData.loanAmount.replace(/,/g, '')) || 0
-    const monthlyIncome = parseInt(formData.monthlyIncome.replace(/,/g, '')) || 0
-
-    // Basic eligibility check
-    const isEligible = mfPortfolioValue > 0 && loanAmount > 0 && monthlyIncome > 0 && loanAmount <= mfPortfolioValue * 0.5
 
     try {
       // Save the eligibility check data to the database
@@ -131,16 +122,10 @@ function LoanAgainstMF() {
         body: JSON.stringify({
           firebase_user_id: user.uid,
           email: user.email,
-          display_name: user.displayName,
-          phone_number: user.phoneNumber,
-          mutual_fund_portfolio_value: mfPortfolioValue,
+          display_name: formData.name,
           loan_amount: loanAmount,
-          loan_tenure_months: 36, // Default to 3 years
-          monthly_income: monthlyIncome,
-          employment_type: formData.employmentType,
-          mutual_fund_holdings: [], // This would be populated with actual holdings in a real scenario
-          eligibility_status: isEligible,
-          interest_rate: isEligible ? (loanAmount <= 1000000 ? 9.5 : 10.5) : null
+          eligibility_status: true,
+          interest_rate: loanAmount <= 1000000 ? 9.5 : 10.5
         }),
       });
 
@@ -153,27 +138,12 @@ function LoanAgainstMF() {
 
       // Update URL with eligibility parameter
       const params = new URLSearchParams()
-      if (isEligible) {
-        if (loanAmount <= 1000000) { // 10 Lakhs
-          params.set('eligible', 'volt')
-        } else {
-          params.set('eligible', 'mirae')
-        }
+      if (loanAmount <= 1000000) { // 10 Lakhs
+        params.set('eligible', 'volt')
       } else {
-        params.set('eligible', 'no_offers')
+        params.set('eligible', 'mirae')
       }
       router.push(`/loan-against-mf?${params.toString()}`)
-      
-      // Set eligibility message if no offers
-      if (!isEligible) {
-        setEligibilityMessage(
-          <div>
-            We don't have an eligible offer for you right now. Please check back later or contact our support team for assistance.
-          </div>
-        )
-      } else {
-        setEligibilityMessage(null)
-      }
       
       // Close the dialog and reset form
       setIsEligibilityOpen(false)
@@ -305,15 +275,15 @@ function LoanAgainstMF() {
               <div className="flex-1 max-w-xl w-full bg-white rounded-2xl shadow-lg p-6 md:p-8 scroll-mt-24">
                 <h2 className="text-2xl md:text-2xl font-extrabold text-blue-900 mb-6 text-center">Check Your Eligibility</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="mfPortfolioValue">Mutual Fund Portfolio Value</Label>
+                      <Label htmlFor="name">Full Name</Label>
                       <Input
-                        id="mfPortfolioValue"
+                        id="name"
                         type="text"
-                        placeholder="Enter portfolio value"
-                        value={formData.mfPortfolioValue}
-                        onChange={(e) => handleInputChange('mfPortfolioValue', e.target.value)}
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange('name', e.target.value)}
                         onFocus={checkLogin}
                         required
                       />
@@ -326,38 +296,6 @@ function LoanAgainstMF() {
                         placeholder="Enter loan amount"
                         value={formData.loanAmount}
                         onChange={(e) => handleInputChange('loanAmount', e.target.value)}
-                        onFocus={checkLogin}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="employmentType">Employment Type</Label>
-                      <Select
-                        value={formData.employmentType}
-                        onValueChange={(value) => handleInputChange('employmentType', value)}
-                        onOpenChange={(open) => {
-                          if (open) checkLogin();
-                        }}
-                        required
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select employment type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="salaried">Salaried</SelectItem>
-                          <SelectItem value="self-employed">Self Employed</SelectItem>
-                          {/* <SelectItem value="business">Business</SelectItem> */}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="monthlyIncome">Monthly Income</Label>
-                      <Input
-                        id="monthlyIncome"
-                        type="text"
-                        placeholder="Enter monthly income"
-                        value={formData.monthlyIncome}
-                        onChange={(e) => handleInputChange('monthlyIncome', e.target.value)}
                         onFocus={checkLogin}
                         required
                       />

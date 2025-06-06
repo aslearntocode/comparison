@@ -10,13 +10,7 @@ export async function POST(request: Request) {
       firebase_user_id,
       email,
       display_name,
-      phone_number,
-      mutual_fund_portfolio_value,
       loan_amount,
-      loan_tenure_months,
-      monthly_income,
-      employment_type,
-      mutual_fund_holdings,
       eligibility_status,
       interest_rate
     } = data;
@@ -58,8 +52,6 @@ export async function POST(request: Request) {
           first_name: display_name?.split(' ')[0] || 'User', // Use first part of display name or default
           last_name: display_name?.split(' ').slice(1).join(' ') || '', // Use rest of display name or empty
           email,
-          phone_number: phone_number || '', // Use phone number if available
-          date_of_birth: '1990-01-01', // Default date of birth
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()
         })
@@ -92,10 +84,7 @@ export async function POST(request: Request) {
     const insertData = {
       user_id,
       firebase_user_id,
-      mutual_fund_portfolio_value,
       loan_amount,
-      loan_tenure_months,
-      mutual_fund_holdings: mutual_fund_holdings || [], // Ensure it's an array
       eligibility_status,
       interest_rate,
       created_at: new Date().toISOString()
