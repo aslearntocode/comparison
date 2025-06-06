@@ -22,6 +22,25 @@ import FeeAndRewardsCarousel from '@/components/FeeAndRewardsCarousel'
 import BankingPartners from '@/components/BankingPartners'
 import { FiCreditCard, FiGift, FiDollarSign, FiDroplet, FiGlobe, FiTrendingUp, FiHome, FiBriefcase, FiAirplay, FiLayers, FiCreditCard as FiCard, FiBook, FiTruck, FiHome as FiHomeIcon, FiDollarSign as FiDollarIcon, FiBookOpen, FiAward } from 'react-icons/fi'
 
+const AnnouncementBanner = () => {
+  return (
+    <div className="bg-blue-50 border-b border-blue-100">
+      <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center text-center">
+          <p className="text-sm text-blue-800">
+            <span className="font-semibold">🔗 New Partnership Announcement</span>
+            <span className="mx-2">-</span>
+            We're excited to join hands with "Volt Money" to make financial access easier for you. Explore offerings on{' '}
+            <Link href="/loan-against-mf" className="text-blue-600 hover:text-blue-800 underline">
+              Loan Against Mutual Funds
+            </Link>.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface AllocationItem {
   name: string;
   value: number;
@@ -590,9 +609,9 @@ export default function Home() {
   }, [notificationMessages.length]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-white">
       <Header />
-      
+      <AnnouncementBanner />
       {/* Floating Info Cards */}
       <div className="fixed right-4 top-52 md:top-44 z-50 flex flex-col gap-4">
         {/* Amazon Voucher Card */}
@@ -1286,7 +1305,7 @@ export default function Home() {
 
       {/* Banking Partners Section */}
       <BankingPartners />
-    </div>
+    </main>
   )
 }
 
