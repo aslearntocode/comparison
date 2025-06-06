@@ -354,7 +354,7 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
   // Airlines Cards
   {
     id: 'axis-privilege',
-    name: 'Axis Bank Privilege Credit Card',
+    name: 'Axis Privilege Credit Card',
     bank: 'Axis Bank',
     category: 'airlines',
     image: '/credit-cards/Axis-Privilege.png',
@@ -729,7 +729,7 @@ Credit Score: 750+`,
     ],
     applyUrl: 'https://example.com/apply-kiwi',
     additionalDetails: {
-      rewardsProgram: 'Kiwi Neon Membership (₹999/Yr):\n• Flat 2% cashback on all Credit on UPI transactions\n• 5% cashback when you spend ₹1.5L in a year\n• Complimentary lounge access\n• Exclusive offers on Swiggy, Zomato, and other platforms',
+      rewardsProgram: '• Flat 2% cashback on all Credit on UPI transactions\n• 5% cashback when you spend ₹1.5L in a year\n• Exclusive offers on Swiggy, Zomato, and other platforms',
       welcomeBonus: 'No specific welcome bonus',
       milestoneBenefits: [
         '5% cashback on achieving annual spend of ₹1.5L (Neon Membership)',
@@ -738,11 +738,10 @@ Credit Score: 750+`,
       airportLounge: 'Complimentary domestic lounge access with Neon Membership',
       internationalTransactionFee: '3.5% of the transaction amount',
       interestRate: '3.6% per month (43.2% annually)',
-      additionalServices: 'Late Payment Fees:\n• Up to ₹500 due: ₹0\n• ₹501–₹5,000 due: ₹500\n• ₹5,001–₹10,000 due: ₹750\n• Above ₹10,000 due: ₹1,200\n\nCash Advance Fee: 2.5% of the transaction amount',
       idealFor: [
         'First-time credit card users',
         'People who prefer UPI payments',
-        'Salaried professionals & self-employed (income above ₹25,000/month)',
+        'Salaried professionals & self-employed',
         'Reward seekers',
         'Those looking for credit flexibility'
       ],

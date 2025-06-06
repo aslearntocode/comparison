@@ -191,9 +191,9 @@
     {
           "bank": "Kiwi",
           "reward_program": "Cashback",
-          "conversion_value": "Straight Cashback",
-          "notes": "NA",
-          "highest_value": "Utilizing UPI payments for everyday purchases to maximize rewards."
+          "conversion_value": "₹0.25 per Kiwi",
+          "notes": "Cashback through Kiwis can be sent to the Bank Account directly",
+          "highest_value": "Utilizing Scan & Pay payments for everyday purchases to maximize rewards."
     },
       {
         "bank": "HSBC Bank India",

@@ -322,14 +322,14 @@ function CreditProductComparisonContent() {
               Compare and find the best credit cards tailored to your needs
             </p>
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto relative z-10 mt-1 md:mt-0">
+            <div className="max-w-2xl mx-auto relative z-10 mt-8 md:mt-0">
               <div className="relative">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by bank name, annual fee, etc..."
-                  className="w-full px-3 md:px-6 py-1.5 md:py-3 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs md:text-base"
+                  className="w-full px-3 md:px-6 py-1.5 md:py-3 rounded-xl bg-white shadow-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs md:text-base max-w-[280px] md:max-w-none mx-auto md:mx-0"
                 />
                 <div className="absolute right-3 md:right-4 top-1/2 transform -translate-y-1/2">
                   <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
