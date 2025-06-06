@@ -71,6 +71,16 @@ const bankingPartners = [
     name: 'Volt Money',
     logo: '/bank-logos/volt-logo.png',
     alt: 'Volt Money Logo'
+  },
+  {
+    name: 'Kiwi',
+    logo: '/bank-logos/kiwi-logo.png',
+    alt: 'Kiwi Logo'
+  },
+  {
+    name: 'Gyan Dhan',
+    logo: '/bank-logos/gyandhan-logo.png',
+    alt: 'Gyan Dhan Logo'
   }
 ];
 
