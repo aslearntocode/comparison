@@ -140,20 +140,6 @@
         "highest_value": "Statement credit or lifestyle vouchers (₹0.25 per point)"
       },    
         {
-          "bank": "RBL Bank",
-          "reward_program": "Reward Points (RBL Credit Cards like Platinum Maxima, Popcorn Card)",
-          "conversion_value": "₹0.25 per point",
-          "notes": "Points can be redeemed for movie tickets, vouchers, or merchandise. Popcorn Card offers high movie-specific value.",
-          "highest_value": "Movie ticket redemptions or travel bookings (₹0.25 per point)"
-        },
-        {
-          "bank": "RBL Bank",
-          "reward_program": "Cashback (RBL Shoprite, Monthly Treats Card)",
-          "conversion_value": "5% – 10% cashback (capped)",
-          "notes": "High cashback on grocery and utility spends with monthly caps. Cashback is credited as statement balance.",
-          "highest_value": "10% cashback on groceries with Shoprite Card (up to ₹1,000/month cap)"
-        },
-        {
           "bank": "Standard Chartered Bank",
           "reward_program": "Reward Points (Manhattan, Platinum, Ultimate Cards)",
           "conversion_value": "₹0.25 – ₹1.00 per point",

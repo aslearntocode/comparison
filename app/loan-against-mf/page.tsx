@@ -22,6 +22,7 @@ interface Lender {
   loanAmount: string
   tenure: string
   features: string[]
+  url?: string
 }
 
 const lenders: Lender[] = [
@@ -33,7 +34,8 @@ const lenders: Lender[] = [
     processingFee: "₹999 + GST",
     loanAmount: "₹10,000 - ₹5 Crores",
     tenure: "3 years",
-    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
+    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval", "Higher Approval Rate"],
+    url: "https://voltmoney.in/check-loan-eligibility-against-mutual-funds-partner/Platform?platform=FINANCIALHEALTH&showHome=false&showVoltDefaultHeader=false&isRedirection=true"
   },
   {
     id: 2,
@@ -188,6 +190,17 @@ function LoanAgainstMF() {
           {error instanceof Error ? error.message : 'Failed to save eligibility check data. Please try again.'}
         </div>
       );
+    }
+  }
+
+  const handleApply = (lender: Lender) => {
+    if (!checkLogin()) return;
+    
+    if (lender.name === "Volt Money" && lender.url) {
+      window.open(lender.url, '_blank');
+    } else {
+      // Handle other lenders
+      router.push(`/loan-against-mf/eligibility?lender=${lender.id}`);
     }
   }
 
@@ -530,7 +543,7 @@ function LoanAgainstMF() {
                             Check Eligibility
                           </Button>
                         ) : (
-                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
+                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto" onClick={() => handleApply(lender)}>Apply Now</Button>
                         )}
                       </div>
                     </div>
@@ -575,7 +588,7 @@ function LoanAgainstMF() {
                       Check Eligibility
                     </Button>
                   ) : (
-                    <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4">Apply Now</Button>
+                    <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4" onClick={() => handleApply(lender)}>Apply Now</Button>
                   )}
                 </div>
               ))}
