@@ -209,6 +209,91 @@ function LoanAgainstMF() {
     }
   }
 
+  // FAQ data array
+  const faqs = [
+    {
+      question: "What is a Loan Against Mutual Funds?",
+      answer: (
+        <>
+          <p className="text-gray-600 text-sm">Loan Against Mutual Funds (LAMF) allows you to borrow money by pledging your mutual fund units as collateral. The process is fully digital - lien marking is done via CAMS or KFintech.</p>
+          <p className="text-gray-600 text-sm">It works like an overdraft: withdraw funds as needed, repay at your convenience, and pay interest only on the amount and duration used. A wide range of mutual funds from top AMCs are eligible.</p>
+        </>
+      )
+    },
+    {
+      question: "How much can I borrow?",
+      answer: (
+        <p className="text-gray-600 text-sm">You can typically borrow up to 50% of your mutual fund portfolio value. The exact amount depends on the type of mutual funds you hold and their current market value.</p>
+      )
+    },
+    {
+      question: "What are the interest rates?",
+      answer: (
+        <p className="text-gray-600 text-sm">Interest rates typically range from 9.5% to 11.5% per annum, which is generally lower than personal loans. The exact rate depends on your portfolio value and loan amount.</p>
+      )
+    },
+    {
+      question: "What is the loan tenure?",
+      answer: (
+        <p className="text-gray-600 text-sm">The loan tenure is usually between 1 to 3 years, giving you flexibility to repay the loan while keeping your mutual fund investments intact.</p>
+      )
+    },
+    {
+      question: "Can I continue earning returns on my mutual funds?",
+      answer: (
+        <p className="text-gray-600 text-sm">Yes, you continue to earn returns on your mutual fund investments even while they are pledged as collateral for the loan.</p>
+      )
+    },
+    {
+      question: "What documents are required?",
+      answer: (
+        <ul className="text-gray-600 text-sm list-disc list-inside mb-2">
+          <li>The whole process is 100% digital, hence you don't need any document in physical form. For quick processing, please keep below handy:
+            <ol className="list-decimal list-inside ml-4">
+              <li>PAN and Aadhar card number</li>
+              <li>Your mobile number linked with mutual fund investments</li>
+              <li>Bank account details for account verification and receiving the loan amount</li>
+              <li>Debit card or net banking details for setting up the mandate.</li>
+            </ol>
+          </li>
+        </ul>
+      )
+    },
+    {
+      question: "Do I have to pay interest on the complete line amount?",
+      answer: (
+        <ul className="text-gray-600 text-sm list-disc list-inside mb-2">
+          <li>No, you do not have to pay interest on the complete line amount.</li>
+          <li>Volt Money provides complete flexibility for the customer, and interest is only charged on the amount withdrawn.</li>
+          <li>Interest is calculated daily based on the loan outstanding at the end of each day. Let's look at a couple of scenarios to explain:
+            <ul className="list-decimal list-inside ml-4">
+              <li>If the loan amount at the end of the day is zero, no interest will be charged for that day.</li>
+              <li>If an amount is withdrawn, used and repaid within 10 days, you will only be charged interest for the 10 days of utilization.</li>
+            </ul>
+          </li>
+        </ul>
+      )
+    },
+    {
+      question: "What is lien marking/pledging of Mutual Funds?",
+      answer: (
+        <ul className="text-gray-600 text-sm list-disc list-inside mb-2">
+          <li>When you take a loan against your mutual funds, we lien mark/pledge your mutual fund units in the name of the lender, so that it cannot be redeemed/sold until you pay back the loan. The lien marking process is done 100% digitally and in real time.</li>
+        </ul>
+      )
+    },
+    {
+      question: "When will my funds be un-lienmarked?",
+      answer: (
+        <ul className="text-gray-600 text-sm list-disc list-inside mb-2">
+          <li>You have the flexibility to request the removal of the lien from your mutual fund units at any time. Depending on your current loan amount and utilization, you can choose to remove the lien from specific mutual fund units or from all the units you have pledged.</li>
+        </ul>
+      )
+    }
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
@@ -540,31 +625,28 @@ function LoanAgainstMF() {
             <div className="max-w-7xl mx-auto px-4">
               <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Frequently Asked Questions</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What is a Loan Against Mutual Funds?</h3>
-                  <p className="text-gray-600 text-sm">Loan Against Mutual Funds (LAMF) allows you to borrow money by pledging your mutual fund units as collateral. The process is fully digital - lien marking is done via CAMS or KFintech.</p>
-                  <p className="text-gray-600 text-sm">It works like an overdraft: withdraw funds as needed, repay at your convenience, and pay interest only on the amount and duration used. A wide range of mutual funds from top AMCs are eligible.</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">How much can I borrow?</h3>
-                  <p className="text-gray-600 text-sm">You can typically borrow up to 50% of your mutual fund portfolio value. The exact amount depends on the type of mutual funds you hold and their current market value.</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What are the interest rates?</h3>
-                  <p className="text-gray-600 text-sm">Interest rates typically range from 9.5% to 11.5% per annum, which is generally lower than personal loans. The exact rate depends on your portfolio value and loan amount.</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What is the loan tenure?</h3>
-                  <p className="text-gray-600 text-sm">The loan tenure is usually between 1 to 3 years, giving you flexibility to repay the loan while keeping your mutual fund investments intact.</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Can I continue earning returns on my mutual funds?</h3>
-                  <p className="text-gray-600 text-sm">Yes, you continue to earn returns on your mutual fund investments even while they are pledged as collateral for the loan.</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">What documents are required?</h3>
-                  <p className="text-gray-600 text-sm">The process is mostly digital and requires minimal documentation. You'll need your PAN card, Aadhaar card, and mutual fund statements. The lien marking process is handled digitally through CAMS or KFintech.</p>
-                </div>
+                {faqs.map((faq, idx) => (
+                  <div key={idx} className="border rounded-lg bg-white shadow-sm">
+                    <button
+                      className="w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center"
+                      onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                      aria-expanded={openFaq === idx}
+                      aria-controls={`faq-panel-${idx}`}
+                    >
+                      <span className="font-semibold text-lg text-gray-900">{faq.question}</span>
+                      <span className="ml-4 text-xl text-gray-500 transform transition-transform duration-200" style={{ transform: openFaq === idx ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                        <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 8L10 12L14 8" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </button>
+                    {openFaq === idx && (
+                      <div id={`faq-panel-${idx}`} className="px-6 pb-4 pt-0 animate-fade-in">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </section>
