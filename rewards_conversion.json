@@ -63,6 +63,13 @@
         "highest_value": "5% cashback on online spending up to ₹10,000 per billing cycle"
       },
       {
+        "bank": "SBI Card",
+        "reward_program": "Cashback (Reliance SBI Card)",
+        "conversion_value": "0.75% – 5% cashback",
+        "notes": "5% cashback on Reliance Retail spends (AJIO, Reliance Smart, Trends, etc.), 0.75% on other online spends. Cashback is auto-credited monthly and capped.",
+        "highest_value": "5% cashback on Reliance Retail brands (up to ₹500 per statement cycle)"
+      },
+      {
         "bank": "Axis Bank",
         "reward_program": "EDGE Rewards",
         "conversion_value": "₹0.20 – ₹0.25 per point",
