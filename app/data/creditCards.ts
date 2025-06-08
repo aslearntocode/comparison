@@ -1780,8 +1780,8 @@ Income: ITR > ₹6 lakhs/annum`
 //       'hotels',
 //       // 'rewards',
 //       'international-travel',
-//       'domestic-lounge',
-//       'international-lounge'
+//       // 'domestic-lounge',
+//       // 'international-lounge'
 //     ],
 //     applyUrl: 'https://example.com/apply-hsbc-taj',
 //     additionalDetails: {
@@ -3276,6 +3276,103 @@ Credit Score: Good`
         'People seeking premium travel benefits'
       ],
       summary: 'A lifestyle-focused credit card offering high rewards on online spends, multiple welcome benefits, and comprehensive membership perks across food delivery, travel, fitness, and healthcare platforms.'
+    }
+  },
+  {
+    id: 'reliance-sbi-base',
+    name: 'SBI Reliance Card',
+    bank: 'State Bank of India',
+    category: 'rewards',
+    image: '/credit-cards/SBI-Reliance.png',
+    apr: 'Not specified',
+    annualFee: '₹499 + GST',
+    joiningFee: '₹499 + GST',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'rewards',
+      'shopping',
+      'dining'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWI5ZjZjN',
+    additionalDetails: {
+      rewardsProgram: `
+• 5 Reward Points per ₹100 at Reliance Retail (excluding UPI)
+• 5 Reward Points per ₹100 on dining & movies
+• 1 Reward Point per ₹100 on other retail spends (excluding fuel, wallet loads, etc.)
+• 1 RP = ₹0.25`,
+      welcomeBonus: `Welcome Benefits:
+• ₹500 Reliance Retail voucher
+• ₹3,200 worth of discount vouchers across Reliance brands (delivered within 45 days of fee realization)`,
+      milestoneBenefits: [
+        '₹500 voucher on ₹25k Reliance Retail spend',
+        '₹750 voucher on ₹50k',
+        '₹1,000 voucher on ₹80k',
+        'Annual fee waiver on ₹1 lakh spend (Reliance Retail or overall eligible)'
+      ],
+      fuelSurcharge: '1% waiver on transactions between ₹500-₹4,000 (max ₹100/month)',
+      idealFor: [
+        'Frequent Reliance Retail shoppers',
+        'Dining and movie enthusiasts',
+        'Regular spenders'
+      ],
+      notIdealFor: [
+        'International travelers',
+        'Low spenders',
+        'Those who rarely shop at Reliance brands'
+      ],
+      summary: 'A co-branded credit card offering enhanced rewards on Reliance Retail purchases, dining, and movies with milestone benefits and welcome vouchers.'
+    }
+  },
+  {
+    id: 'reliance-sbi-prime',
+    name: 'SBI Reliance Card PRIME',
+    bank: 'State Bank of India',
+    category: 'premium',
+    image: '/credit-cards/SBI-Reliance.png',
+    apr: 'Not specified',
+    annualFee: '₹2,999 + GST',
+    joiningFee: '₹2,999 + GST',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'premium',
+      'rewards',
+      'shopping',
+      'dining',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWI5ZjZjN',
+    additionalDetails: {
+      rewardsProgram: `
+• 10 Reward Points per ₹100 at Reliance Retail (excluding UPI)
+• 5 Reward Points per ₹100 on dining, movies, domestic airlines, international spends
+• 2 Reward Points per ₹100 on other retail spends`,
+      welcomeBonus: `Welcome Benefits:
+• ₹3,000 Reliance Retail voucher
+• ₹11,999 additional vouchers across Reliance brands (delivered within 45 days)`,
+      milestoneBenefits: [
+        '₹1,500 voucher on ₹75k spend',
+        '₹2,250 voucher on ₹1.5 L spend',
+        '₹5,000 voucher on ₹3 L spend + annual fee waiver'
+      ],
+      airportLounge: '• 8 domestic visits/year (2 per quarter)\n• 4 international visits/year (2 per quarter)',
+      fuelSurcharge: '1% waiver on transactions between ₹500-₹4,000 (max ₹100/month)',
+      movieBenefits: '1 movie ticket/month (BookMyShow, ₹250)',
+      additionalServices: '• UPI-enabled via RuPay\n• Flexipay, balance transfer EMI options',
+      idealFor: [
+        'High-value Reliance Retail shoppers',
+        'Frequent travelers',
+        'Premium card seekers',
+        'Regular movie-goers'
+      ],
+      notIdealFor: [
+        'Budget-conscious consumers',
+        'Low spenders',
+        'Those who rarely shop at Reliance brands'
+      ],
+      summary: 'A premium co-branded credit card offering enhanced rewards on Reliance Retail purchases, comprehensive travel benefits, and exclusive lifestyle privileges.'
     }
   },
 ]; 
