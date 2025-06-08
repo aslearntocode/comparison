@@ -63,13 +63,15 @@ const questions: Question[] = [
   },
   {
     id: 'travel',
-    text: 'How often do you travel?',
+    text: 'How often do you travel? (Select up to 2)',
     options: [
       { value: 'never', label: 'Rarely' },
       { value: 'domestic', label: 'Domestic (Few times a year)' },
       { value: 'international', label: 'International (Few times a year)' },
       { value: 'frequent', label: 'Frequent Traveler' }
-    ]
+    ],
+    multiple: true,
+    maxSelections: 2
   },
   {
     id: 'preferences',
@@ -220,28 +222,42 @@ export default function CreditCardQuestionnaire() {
     }
 
     // Filter based on travel frequency
-    if (answers.travel === 'never') {
-      recommendedCards = recommendedCards.filter(card => 
-        !card.categories.includes('international-travel') &&
-        !card.categories.includes('domestic-lounge')
-      );
-    } else if (answers.travel === 'domestic') {
-      recommendedCards = recommendedCards.filter(card => 
-        card.categories.includes('domestic-lounge') ||
-        card.categories.includes('travel')
-      );
-    } else if (answers.travel === 'international' || answers.travel === 'frequent') {
-      recommendedCards = recommendedCards.filter(card => 
-        card.categories.includes('international-travel') ||
-        card.categories.includes('international-lounge') ||
-        card.categories.includes('airlines')
-      );
+    const travelFrequency = answers.travel as string[];
+    if (travelFrequency && travelFrequency.length > 0) {
+      recommendedCards = recommendedCards.filter(card => {
+        return travelFrequency.some(freq => {
+          if (freq === 'never') {
+            return !card.categories.includes('international-travel') &&
+                   !card.categories.includes('domestic-lounge');
+          } else if (freq === 'domestic') {
+            return card.categories.includes('domestic-lounge') ||
+                   card.categories.includes('travel');
+          } else if (freq === 'international' || freq === 'frequent') {
+            return card.categories.includes('international-travel') ||
+                   card.categories.includes('international-lounge') ||
+                   card.categories.includes('airlines');
+          }
+          return false;
+        });
+      });
     }
 
     // Filter based on preferences (multiple selection)
     const preferences = answers.preferences as string[];
     const annualSpend = answers['annual-spend'];
     let kiwiCard: CreditCard | undefined = undefined;
+    let idfcMayuraCard: CreditCard | undefined = undefined;
+
+    // Check for IDFC Mayura inclusion
+    if ((answers.fee === 'mid-fee' || answers.fee === 'high-fee') && 
+        preferences && 
+        preferences.some(pref => ['rewards', 'domestic-lounge', 'international-lounge', 'travel'].includes(pref))) {
+      idfcMayuraCard = creditCards.find(card => 
+        card.name.toLowerCase().includes('idfc') && 
+        card.name.toLowerCase().includes('mayura')
+      );
+    }
+
     if (preferences && preferences.includes('cashback') && (
       annualSpend === '1.5L-2.5L' || annualSpend === '2.5L-5L' || annualSpend === 'more-than-5L')
     ) {
@@ -263,6 +279,11 @@ export default function CreditCardQuestionnaire() {
     // Always include Kiwi Credit Card if the above condition is met
     if (kiwiCard && !recommendedCards.some(card => card.id === kiwiCard!.id)) {
       recommendedCards.unshift(kiwiCard);
+    }
+
+    // Always include IDFC Mayura if the above condition is met
+    if (idfcMayuraCard && !recommendedCards.some(card => card.id === idfcMayuraCard!.id)) {
+      recommendedCards.unshift(idfcMayuraCard);
     }
 
     // Exclude Axis IOCL Credit Card from all recommendations
