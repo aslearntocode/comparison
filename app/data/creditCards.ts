@@ -1523,7 +1523,7 @@ Income: ITR > ₹6 lakhs/annum`
   },
   {
     id: 'hdfc-rupay',
-    name: 'HDFC UPI RuPay Credit Card',
+    name: 'HDFC RuPay Credit Card',
     bank: 'HDFC Bank',
     category: 'upi',
     image: '/credit-cards/HDFC-UPI-Rupay.png',
@@ -1538,7 +1538,7 @@ Income: ITR > ₹6 lakhs/annum`
       'upi',
       // 'fintech'
     ],
-    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
+    applyUrl: 'https://wee.bnking.in/c/ZDUzZmY2M',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• Up to 3X CashPoints on spends\n• 1% on UPI transactions\n\nRedemption:\n• CashPoints can be redeemed for statement credit or other rewards for ₹0.25 per point',
       welcomeBonus: 'Not specified',
@@ -2328,7 +2328,7 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     categories: ['upi', 'cashback', 'domestic-lounge'],
     applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
+      rewardsProgram: `
 • 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
 • 5 coins for every UPI transaction via AU 0101 app
 • Cashback capped at ₹500 per statement cycle
@@ -2372,7 +2372,7 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
     categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
     applyUrl: 'https://wee.bnking.in/c/NGRiOGIwN',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
+      rewardsProgram: `• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
       welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
       milestoneBenefits: [
         "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
@@ -2519,7 +2519,18 @@ Credit Score: 750 or above (good to excellent)`
       movieBenefits: '25% discount (up to ₹100) on movie tickets twice a month on BookMyShow and Inox.',
       redemptionOptions: '',
       additionalServices: 'Can be linked to UPI for seamless payments.',
-      eligibilityCriteria: 'Minimum age: 21 years. Monthly income: ₹20,000 and above.'
+      eligibilityCriteria: 'Minimum age: 21 years. Monthly income: ₹20,000 and above.',
+      idealFor: [
+        'Individuals seeking a lifetime free (LTF) card with no annual fee (pre-approved via ICICI account)',
+        'Users who want UPI payments using a credit card—a convenient RuPay-enabled option',
+        'Occasional travellers who appreciate domestic airport + railway lounge access (1 complimentary each per quarter)'
+      ],
+      notIdealFor: [
+        'Frequent travellers needing international lounge access (only domestic included)',
+        'Users who expect strong cashback or high-value reward points—earn rate is only ~0.5%–1% effective',
+        'People prioritizing premium lifestyle perks—no golf privileges, high-end dining, or travel insurance beyond accident cover'
+      ],
+      summary: 'The ICICI Coral RuPay Credit Card is a no-frills, lifetime-free RuPay card that enables UPI usage via credit, offers modest rewards, and provides basic lounge access at no extra cost.'
     }
   },
   // {
