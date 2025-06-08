@@ -245,7 +245,7 @@ export default function CreditCardQuestionnaire() {
     if (preferences && preferences.includes('cashback') && (
       annualSpend === '1.5L-2.5L' || annualSpend === '2.5L-5L' || annualSpend === 'more-than-5L')
     ) {
-      kiwiCard = creditCards.find(card => card.name.toLowerCase().includes('kiwi'));
+      kiwiCard = creditCards.find(card => card.name.toLowerCase().includes('kiwi') && card.name.toLowerCase().includes('neon'));
     }
     if (preferences && preferences.length > 0) {
       recommendedCards = recommendedCards.filter(card => {

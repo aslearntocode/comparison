@@ -1318,11 +1318,8 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
 • 1% on other spends
 
 Redemption:
-• 6E Rewards can be redeemed for IndiGo flight bookings and other services via the IndiGo website or app
-
-Fuel Benefits:
-• Not specified`,
-      welcomeBonus: 'Welcome Benefits:\n• Complimentary IndiGo flight ticket worth ₹1,500 (on meeting spend criteria)\n• 6E Prime Add-on voucher worth ₹899',
+• 6E Rewards can be redeemed for IndiGo flight bookings and other services via the IndiGo website or app`,
+      welcomeBonus: '• Complimentary IndiGo flight ticket worth ₹1,500 (on meeting spend criteria)\n• 6E Prime Add-on voucher worth ₹899',
       airportLounge: 'Not specified',
       insuranceCover: [
         'Zero lost card liability on reporting'
@@ -2433,8 +2430,18 @@ Income: ITR > ₹6 lakhs/annum`
       movieBenefits: `25% discount on movie tickets up to ₹100 on Paytm mobile app (valid once per month).`,
       airportLounge: `4 complimentary railway lounge access visits per quarter.`,
       additionalServices: `Complimentary roadside assistance worth ₹1,399.\nFuel surcharge waiver of 1% at all fuel stations across India, up to ₹200/month.\n300+ merchant offers, all year long!\nUp to 20% discount at 1,500+ restaurants.\nExclusive merchant offers for every day of the week.`,
-      // No idealFor, notIdealFor, eligibility, or summary as not in screenshot
-    }
+      idealFor: [
+        'Young professionals & first-time credit card users',
+        'Users looking for a lifetime free card with decent rewards',
+        'Spends on online shopping, dining, and travel',
+        'People who want no annual or joining fees'
+      ],
+      notIdealFor: [
+        'Heavy travelers looking for airport lounge access',
+        'Users expecting high cashback or premium perks',
+        'Those who prefer flat-rate rewards over tiered structures'
+      ]
+    },
   },
   {
     id: 'idfc-first-ashva',

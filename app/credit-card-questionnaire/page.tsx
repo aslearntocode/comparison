@@ -1,3 +1,11 @@
+export const metadata = {
+  title: 'Credit Card Recommendation Questionnaire | Financial Health',
+  description: 'Answer a few simple questions to get personalized credit card recommendations based on your spending habits, preferences, and financial profile. Find the best credit card for you in India.',
+  alternates: {
+    canonical: 'https://www.financialhealth.co.in/credit-card-questionnaire',
+  },
+};
+
 import Header from "@/components/Header"
 import CreditCardQuestionnaire from "@/components/CreditCardQuestionnaire"
 
