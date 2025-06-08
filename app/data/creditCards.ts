@@ -2752,7 +2752,7 @@ Income: ITR > ₹12 lakhs/annum`
     rupay: false,
     feedback: [],
     categories: ['fuel'],
-    applyUrl: 'https://wee.bnking.in/c/NzE4MWRhZ',
+    applyUrl: 'https://wee.bnking.in/c/NjI3OWI5N',
     additionalDetails: {
       rewardsProgram: '• 5X rewards on BPCL fuel purchases, \n• 2X rewards on dining and groceries, \n• 1X rewards on all other spends',
       welcomeBonus: '₹500 as Welcome Bonus',
@@ -3083,6 +3083,147 @@ Credit Score: Good`
         'Low-Value Spenders'
       ],
       summary: 'A premium offering tailored for individuals seeking luxury, convenience, and substantial rewards. It combines high reward rates with exclusive lifestyle and travel privileges, making it ideal for high-spending professionals and frequent travelers.'
+    }
+  },
+  {
+    id: 'yes-bank-freo-visa',
+    name: 'YES FREO Visa Credit Card',
+    bank: 'YES BANK',
+    category: 'rewards',
+    image: '/credit-cards/Yes-Freo.png',
+    apr: 'Not specified',
+    annualFee: '₹399',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'rewards',
+      'cashback'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWUzZGYyZ',
+    additionalDetails: {
+      rewardsProgram: '• 1% cashback on all transactions',
+      welcomeBonus: 'No welcome bonus',
+      milestoneBenefits: [
+        'Annual fee waiver on spends of ₹1 Lakh'
+      ],
+      idealFor: [
+        'Regular spenders seeking simple cashback',
+        'First-time credit card users',
+        'Budget-conscious consumers'
+      ],
+      notIdealFor: [
+        'High spenders seeking premium benefits',
+        'Travel enthusiasts',
+        'Those looking for extensive lifestyle benefits'
+      ],
+      summary: 'A straightforward cashback credit card offering 1% rewards on all spends with a low annual fee and simple fee waiver criteria.'
+    }
+  },
+  {
+    id: 'yes-bank-freo-rupay',
+    name: 'YES FREO RuPay Credit Card',
+    bank: 'YES BANK',
+    category: 'rewards',
+    image: '/credit-cards/Yes-Freo.png',
+    apr: 'Not specified',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'rewards',
+      'lifetime-free',
+      'upi'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWUzZGYyZ',
+    additionalDetails: {
+      rewardsProgram: '• 4 Reward Points per ₹200 on select categories\n• 2 Reward Points per ₹200 on other spends',
+      welcomeBonus: 'No welcome bonus',
+      milestoneBenefits: [],
+      idealFor: [
+        'UPI payment users',
+        'Budget-conscious consumers',
+        'First-time credit card users'
+      ],
+      notIdealFor: [
+        'High spenders seeking premium benefits',
+        'International travelers',
+        'Those looking for extensive lifestyle benefits'
+      ],
+      summary: 'A lifetime-free RuPay credit card offering reward points on spends with no annual or joining fees.'
+    }
+  },
+  {
+    id: 'yes-bank-rupay-upi',
+    name: 'YES RuPay UPI Credit Card',
+    bank: 'YES BANK',
+    category: 'upi',
+    image: '/credit-cards/Yes-RuPay.png',
+    apr: 'Not specified',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'upi',
+      'lifetime-free',
+      'rewards'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWUzZGYyZ',
+    additionalDetails: {
+      rewardsProgram: '• 8 Reward Points per ₹200 on select categories\n• 2 Reward Points per ₹200 on other spends',
+      welcomeBonus: '2,000 Reward Points on first transaction',
+      milestoneBenefits: [
+        'Annual fee waiver on spends of ₹1 Lakh'
+      ],
+      idealFor: [
+        'UPI payment users',
+        'Digital payment enthusiasts',
+        'Regular spenders'
+      ],
+      notIdealFor: [
+        'International travelers',
+        'Those seeking premium lifestyle benefits',
+        'High-value spenders'
+      ],
+      summary: 'A lifetime-free RuPay credit card with UPI functionality, offering enhanced reward points and a welcome bonus.'
+    }
+  },
+  {
+    id: 'yes-bank-elite-plus',
+    name: 'YES ELITE+ Credit Card',
+    bank: 'YES BANK',
+    category: 'premium',
+    image: '/credit-cards/Yes-ElitePlus.png',
+    apr: 'Not specified',
+    annualFee: '₹999',
+    joiningFee: '₹999',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'premium',
+      'rewards'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZWUzZGYyZ',
+    additionalDetails: {
+      rewardsProgram: '• 6X Reward Points on select categories\n• 3X Reward Points on other spends\n• 5X Reward Points on special categories',
+      welcomeBonus: 'No welcome bonus',
+      milestoneBenefits: [
+        'Annual fee waiver on achieving 2 Lakhs spend',
+        'On spending ₹20,000 within 30 days of card activation, the ₹999 + GST joining fee is waived'
+      ],
+      idealFor: [
+        'Regular high spenders',
+        'Reward point maximizers',
+        'Premium card seekers'
+      ],
+      notIdealFor: [
+        'Budget-conscious consumers',
+        'First-time credit card users',
+        'Low spenders'
+      ],
+      summary: 'A premium credit card offering accelerated reward points across multiple categories with fee waiver on achieving spend milestones.'
     }
   },
 ]; 
