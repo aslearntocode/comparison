@@ -463,10 +463,10 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
       creditLimit: 'Up to ₹10,00,000',
       domesticTransactionFee: 'Nil',
       idealFor: [
-        'High Net-Worth Individuals: Perfect for those with significant annual spending who demand the finest in travel and lifestyle benefits',
-        'Luxury Travel Enthusiasts: Get unlimited domestic and international lounge access, comprehensive travel insurance, and premium concierge services',
-        'Golf Lovers: Enjoy unlimited complimentary golf rounds and lessons each month',
-        'Premium Dining Connoisseurs: Access exclusive dining privileges with Taj Epicure membership and EazyDiner Prime benefits'
+        'High Net-Worth Individuals',
+        'Luxury Travel Enthusiasts',
+        'Golf Lovers',
+        'Premium Dining Connoisseurs'
       ],
       notIdealFor: [
         'Users with annual spending below ₹6L',

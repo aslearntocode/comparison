@@ -913,6 +913,38 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Credit Card Questionnaire Section */}
+      <div className="w-full py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center">
+            <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 w-full max-w-xl md:max-w-3xl">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex-shrink-0">
+                  <svg className="w-6 h-6 md:w-8 md:h-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-base md:text-xl font-semibold text-gray-900 mb-1">Not sure which card is suitable for you?</h3>
+                  <p className="text-xs md:text-gray-600 md:text-sm">Answer a few questions to get personalized recommendations</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <Link 
+                    href="/credit-card-questionnaire"
+                    className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 border border-transparent text-sm md:text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 shadow-sm"
+                  >
+                    Find Your Card
+                    <svg className="ml-2 -mr-1 w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* IDFC First Bank Offer Banner */}
       <div className="relative bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
