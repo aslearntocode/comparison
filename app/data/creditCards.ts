@@ -72,7 +72,7 @@ export const creditCards: CreditCard[] = [
       'hotel',
       'hotels'
     ],
-    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
+    applyUrl: 'https://wee.bnking.in/c/Nzk3ZTBlN',
     additionalDetails: {
       rewardsProgram: 'Reward Points Structure:\n• 8 Marriott Bonvoy Points per ₹150 spent at Marriott Bonvoy hotels\n• 4 Marriott Bonvoy Points per ₹150 spent on travel, dining, and entertainment\n• 2 Marriott Bonvoy Points per ₹150 spent on all other eligible purchases\n\nPoints are earned on non-EMI retail spends and exclude wallet loads, gift/prepaid card loads, voucher purchases, government-related transactions, rental transactions, and EMI transactions.',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Marriott Bonvoy Silver Elite Status (priority check-in, late check-out, 10% bonus points on eligible hotel purchases)\n• 1 Free Night Award on first eligible spend transaction or fee levy (wallet reloads and EMI excluded)\n• 10 Elite Night Credits to fast-track to Gold Elite status',
@@ -325,7 +325,7 @@ Income: ITR > ₹6 lakhs/annum`
       'food-delivery',
       'lifestyle'
     ],
-    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
+    applyUrl: 'https://wee.bnking.in/c/MDc5Zjg1M',
     additionalDetails: {
       rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
       welcomeBonus: 'Welcome Benefits:\n• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
@@ -1456,7 +1456,7 @@ Income: ITR > ₹7.2 lakhs/annum`
       // 'lifestyle'
       // 'fintech'
     ],
-    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
+    applyUrl: 'https://wee.bnking.in/c/ZDIxMmU3O',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 5% NeuCoins on spending at Tata brands\n• 1.5% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
@@ -1497,7 +1497,7 @@ Income: ITR > ₹12 lakhs/annum`
       'upi',
       // 'fintech'
     ],
-    applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
+    applyUrl: 'https://wee.bnking.in/c/ZDIxMmU3O',
     additionalDetails: {
       rewardsProgram: 'Earning Rate:\n• 2% NeuCoins on spending at Tata brands\n• 1% NeuCoins on UPI spends\n\nRedemption:\n• NeuCoins can be redeemed across Tata brands and partner merchants',
       welcomeBonus: 'Not specified',
