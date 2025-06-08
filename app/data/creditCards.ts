@@ -2138,226 +2138,226 @@ Income: ITR > ₹6 lakhs/annum`
 //       summary: 'A premium credit card offering comprehensive lifestyle benefits including lounge access, hotel privileges, dining memberships, and golf access, ideal for affluent individuals seeking premium lifestyle and travel benefits.'
 //     }
 //   },
-  // {
-  //   id: 'jupiter-edge-csb',
-  //   name: 'Jupiter Edge CSB  RuPay Credit Card',
-  //   bank: 'CSB Bank',
-  //   category: 'upi',
-  //   image: '/credit-cards/Jupiter.png',
-  //   apr: 'Not specified',
-  //   annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
-  //   joiningFee: '₹0',
-  //   rupay: true,
-  //   feedback: [],
-  //   categories: [
-  //     'upi',
-  //     'lifetime-free',
-  //     'rewards'
-  //   ],
-  //   applyUrl: 'https://example.com/apply-jupiter-edge-csb',
-  //   additionalDetails: {
-  //     rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
-  //     welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
-  //     milestoneBenefits: [],
-  //     airportLounge: '1 complimentary domestic airport lounge access per quarter',
-  //     fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹3,000, capped at ₹100 per month',
-  //     insuranceCover: [
-  //       'Personal accident and total permanent disability cover up to ₹10 lakh'
-  //     ],
-  //     additionalServices: 'Card management via Jupiter app: set limits, freeze/unfreeze, reset PIN, and more.',
-  //     idealFor: [
-  //       'Individuals who prefer UPI payments but want to earn credit card rewards',
-  //       'Users seeking a no-fee credit card with flexible cashback options',
-  //       'Those who spend regularly in categories like Shopping, Travel, or Dining'
-  //     ],
-  //     notIdealFor: [
-  //       'Users looking for premium travel benefits or higher reward rates',
-  //       'Individuals who prefer cashback on all categories without the need to select a preferred category'
-  //     ],
-  //     summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
-  //   }
-  // },
-//   {
-//     id: 'au-zenith-plus',
-//     name: 'AU Zenith+ Credit Card (Metal)',
-//     bank: 'AU Small Finance Bank',
-//     category: 'premium',
-//     image: '/credit-cards/AU_Zenith+.png',
-//     apr: 'Not specified',
-//     annualFee: '₹4,999 + taxes',
-//     joiningFee: '₹4,999 + taxes',
-//     rupay: false,
-//     feedback: [],
-//     categories: ['premium', 'travel', 'lifestyle'],
-//     applyUrl: 'https://example.com/apply-au-zenith-plus',
-//     additionalDetails: {
-//       rewardsProgram: `Earning Rate:
-// • 2 Reward Points per ₹100 on dining, travel, and international spends
-// • 1 Reward Point per ₹100 on other retail spends
-// • No Reward Points on fuel, EMI transactions, and certain other categories.
+  {
+    id: 'jupiter-edge-csb',
+    name: 'Jupiter Edge CSB  RuPay Credit Card',
+    bank: 'CSB Bank',
+    category: 'upi',
+    image: '/credit-cards/Jupiter.png',
+    apr: 'Not specified',
+    annualFee: '₹0 (Lifetime Free for the first 2 lakh customers)',
+    joiningFee: '₹0',
+    rupay: true,
+    feedback: [],
+    categories: [
+      'upi',
+      'lifetime-free',
+      'rewards'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/YWI0YzVhZ',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:\n• 2% cashback on spends in your selected category (Shopping, Travel, or Dining)\n• 0.4% cashback on all other spends, including UPI transactions\n\nRedemption Options:\n• Cashback: Redeem Jewels as a statement credit\n• Digital Gold: Convert Jewels into digital gold\n• Gift Vouchers: Redeem for vouchers from various partner brands\n\nRedemption Conditions: A minimum of 100 Jewels is required for redemption. Jewels do not expire.`,
+      welcomeBonus: '₹250 voucher on first UPI transaction of ₹2,000 or more (Amazon, Flipkart, Swiggy, Zomato, Myntra, etc.)',
+      milestoneBenefits: [],
+      airportLounge: '1 complimentary domestic airport lounge access per quarter',
+      fuelSurcharge: '1% waiver on fuel transactions between ₹400 and ₹3,000, capped at ₹100 per month',
+      insuranceCover: [
+        'Personal accident and total permanent disability cover up to ₹10 lakh'
+      ],
+      additionalServices: 'Card management via Jupiter app: set limits, freeze/unfreeze, reset PIN, and more.',
+      idealFor: [
+        'Individuals who prefer UPI payments but want to earn credit card rewards',
+        'Users seeking a no-fee credit card with flexible cashback options',
+        'Those who spend regularly in categories like Shopping, Travel, or Dining'
+      ],
+      notIdealFor: [
+        'Users looking for premium travel benefits or higher reward rates',
+        'Individuals who prefer cashback on all categories without the need to select a preferred category'
+      ],
+      summary: 'A no-fee RuPay credit card with UPI functionality, flexible category-based cashback, and digital-first management via the Jupiter app.'
+    }
+  },
+  {
+    id: 'au-zenith-plus',
+    name: 'AU Zenith+ Credit Card (Metal)',
+    bank: 'AU Small Finance Bank',
+    category: 'premium',
+    image: '/credit-cards/AU_Zenith+.png',
+    apr: 'Not specified',
+    annualFee: '₹4,999 + taxes',
+    joiningFee: '₹4,999 + taxes',
+    rupay: false,
+    feedback: [],
+    categories: ['premium', 'travel', 'lifestyle'],
+    applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 2 Reward Points per ₹100 on dining, travel, and international spends
+• 1 Reward Point per ₹100 on other retail spends
+• No Reward Points on fuel, EMI transactions, and certain other categories.
 
-// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-// • Gift Vouchers (various brands)
-// • Merchandise
-// • Mobile/DTH Recharge
-// • Travel Bookings (flights, hotels, buses)
-// • Movie Tickets`,
-//       welcomeBonus: 'Choice of ₹5,000 luxury brand vouchers (Taj Hotels, Michael Kors, Tata Cliq, etc.) OR 5,000 Reward Points upon activation via AU 0101 App, Net Banking, customer care, or chatbot AURO.',
-//       milestoneBenefits: [
-//         'Monthly: 1,000 bonus Reward Points for ₹75,000+ spend in a statement month (excludes rent, education, government, insurance, utility, fuel).',
-//         'Annual: Complimentary Taj Epicure Membership on ₹12 lakh spend in a card anniversary year.'
-//       ],
-//       airportLounge: '16 complimentary domestic and 16 international airport lounge visits annually',
-//       fuelSurcharge: '1% waiver (max ₹1,000 per statement cycle)',
-//       insuranceCover: [
-//         'Air accident cover up to ₹2 crore',
-//         'Card liability and credit shield up to ₹15 lakh',
-//         'Purchase protection up to ₹50,000'
-//       ],
-//       idealFor: [
-//         'Individuals with a monthly net income of ₹2.5 lakh or more',
-//         'Frequent travelers and luxury lifestyle seekers'
-//       ],
-//       notIdealFor: [
-//         'Users with annual spends below ₹8 lakh',
-//         'Those seeking low or no annual fee cards'
-//       ],
-//       summary: 'A luxury metal credit card for high-income individuals, offering premium travel, lifestyle, and reward benefits. Low forex markup: 0.99% + GST (~1.168%).'
-//     }
-//   },
-//   {
-//     id: 'au-vetta',
-//     name: 'AU Vetta Credit Card',
-//     bank: 'AU Small Finance Bank',
-//     category: 'premium',
-//     image: '/credit-cards/AU_Vetta.png',
-//     apr: 'Not specified',
-//     annualFee: '₹2,999 + taxes',
-//     joiningFee: '₹2,999 + taxes',
-//     rupay: false,
-//     feedback: [],
-//     categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
-//     applyUrl: 'https://example.com/apply-au-vetta',
-//     additionalDetails: {
-//       rewardsProgram: `Earning Rate:
-// • 2 Reward Points per ₹100 on travel, dining, and international spends
-// • 1 Reward Point per ₹100 on other retail spends
-// • No Reward Points on fuel, EMI transactions, and select categories
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Choice of ₹5,000 luxury brand vouchers (Taj Hotels, Michael Kors, Tata Cliq, etc.) OR 5,000 Reward Points upon activation via AU 0101 App, Net Banking, customer care, or chatbot AURO.',
+      milestoneBenefits: [
+        'Monthly: 1,000 bonus Reward Points for ₹75,000+ spend in a statement month (excludes rent, education, government, insurance, utility, fuel).',
+        'Annual: Complimentary Taj Epicure Membership on ₹12 lakh spend in a card anniversary year.'
+      ],
+      airportLounge: '16 complimentary domestic and 16 international airport lounge visits annually',
+      fuelSurcharge: '1% waiver (max ₹1,000 per statement cycle)',
+      insuranceCover: [
+        'Air accident cover up to ₹2 crore',
+        'Card liability and credit shield up to ₹15 lakh',
+        'Purchase protection up to ₹50,000'
+      ],
+      idealFor: [
+        'Individuals with a monthly net income of ₹2.5 lakh or more',
+        'Frequent travelers and luxury lifestyle seekers'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹8 lakh',
+        'Those seeking low or no annual fee cards'
+      ],
+      summary: 'A luxury metal credit card for high-income individuals, offering premium travel, lifestyle, and reward benefits. Low forex markup: 0.99% + GST (~1.168%).'
+    }
+  },
+  {
+    id: 'au-vetta',
+    name: 'AU Vetta Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'premium',
+    image: '/credit-cards/AU_Vetta.png',
+    apr: 'Not specified',
+    annualFee: '₹2,999 + taxes',
+    joiningFee: '₹2,999 + taxes',
+    rupay: false,
+    feedback: [],
+    categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
+    applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 2 Reward Points per ₹100 on travel, dining, and international spends
+• 1 Reward Point per ₹100 on other retail spends
+• No Reward Points on fuel, EMI transactions, and select categories
 
-// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-// • Gift Vouchers (various brands)
-// • Merchandise
-// • Mobile/DTH Recharge
-// • Travel Bookings (flights, hotels, buses)
-// • Movie Tickets`,
-//       welcomeBonus: 'Details not specified',
-//       milestoneBenefits: [],
-//       airportLounge: 'Complimentary domestic and international airport lounge visits',
-//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹100 per statement cycle)',
-//       insuranceCover: [
-//         'Comprehensive protection including air accident and card liability covers'
-//       ],
-//       idealFor: [
-//         'Individuals with moderate to high spending patterns',
-//         'Travel enthusiasts seeking lounge access'
-//       ],
-//       notIdealFor: [
-//         'Users with annual spends below ₹1.5 lakh',
-//         'Those seeking detailed reward structures'
-//       ],
-//       summary: 'A premium card for mid-to-high spenders, offering travel perks, insurance benefits, and 2 complimentary railway lounge visits per quarter.'
-//     }
-//   },
-//   {
-//     id: 'au-altura-plus',
-//     name: 'AU Altura+ Credit Card',
-//     bank: 'AU Small Finance Bank',
-//     category: 'lifestyle',
-//     image: '/credit-cards/AU_Altura+.png',
-//     apr: 'Not specified',
-//     annualFee: '₹499 + taxes',
-//     joiningFee: '₹499 + taxes',
-//     rupay: false,
-//     feedback: [],
-//     categories: ['lifestyle', 'cashback', 'rewards'],
-//     applyUrl: 'https://example.com/apply-au-altura-plus',
-//     additionalDetails: {
-//       rewardsProgram: `Earning Rate:
-// • 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
-// • 2X Reward Points on online transactions
-// • 1 Reward Point per ₹100 on utility, telecom, and insurance spends
-// • 500 bonus Reward Points on monthly retail spends of ₹20,000 or more
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Details not specified',
+      milestoneBenefits: [],
+      airportLounge: 'Complimentary domestic and international airport lounge visits',
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹100 per statement cycle)',
+      insuranceCover: [
+        'Comprehensive protection including air accident and card liability covers'
+      ],
+      idealFor: [
+        'Individuals with moderate to high spending patterns',
+        'Travel enthusiasts seeking lounge access'
+      ],
+      notIdealFor: [
+        'Users with annual spends below ₹1.5 lakh',
+        'Those seeking detailed reward structures'
+      ],
+      summary: 'A premium card for mid-to-high spenders, offering travel perks, insurance benefits, and 2 complimentary railway lounge visits per quarter.'
+    }
+  },
+  {
+    id: 'au-altura-plus',
+    name: 'AU Altura+ Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'lifestyle',
+    image: '/credit-cards/AU_Altura+.png',
+    apr: 'Not specified',
+    annualFee: '₹499 + taxes',
+    joiningFee: '₹499 + taxes',
+    rupay: false,
+    feedback: [],
+    categories: ['lifestyle', 'cashback', 'rewards'],
+    applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 1.5% cashback on POS retail spends (max ₹100 per statement cycle)
+• 2X Reward Points on online transactions
+• 1 Reward Point per ₹100 on utility, telecom, and insurance spends
+• 500 bonus Reward Points on monthly retail spends of ₹20,000 or more
 
-// Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-// • Gift Vouchers (various brands)
-// • Merchandise
-// • Mobile/DTH Recharge
-// • Travel Bookings (flights, hotels, buses)
-// • Movie Tickets`,
-//       welcomeBonus: 'Details not specified',
-//       milestoneBenefits: ['500 bonus reward points on monthly retail spends of ₹20,000 or more'],
-//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹150 per statement cycle)',
-//       insuranceCover: [
-//         'Lost card liability cover'
-//       ],
-//       idealFor: [
-//         'Individuals with regular online and POS retail spends',
-//         'Those seeking a balance between cashback and rewards'
-//       ],
-//       notIdealFor: [
-//         'Users with monthly spends below ₹20,000',
-//         'Those seeking higher cashback limits'
-//       ],
-//       summary: 'A lifestyle card for everyday spenders, offering a mix of cashback and reward points, and 2 complimentary railway lounge visits per quarter.'
-//     }
-//   },
-//   {
-//     id: 'au-spont',
-//     name: 'AU Spont Credit Card',
-//     bank: 'AU Small Finance Bank',
-//     category: 'upi',
-//     image: '/credit-cards/AU_Spont.png',
-//     apr: 'Not specified',
-//     annualFee: '₹299 + GST',
-//     joiningFee: '₹299 + GST',
-//     rupay: true,
-//     feedback: [],
-//     categories: ['upi', 'cashback', 'domestic-lounge'],
-//     applyUrl: 'https://example.com/apply-au-spont',
-//     additionalDetails: {
-//       rewardsProgram: `Earning Rate:
-// • 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
-// • 5 coins for every UPI transaction via AU 0101 app
-// • Cashback capped at ₹500 per statement cycle
+Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
+      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+• Gift Vouchers (various brands)
+• Merchandise
+• Mobile/DTH Recharge
+• Travel Bookings (flights, hotels, buses)
+• Movie Tickets`,
+      welcomeBonus: 'Details not specified',
+      milestoneBenefits: ['500 bonus reward points on monthly retail spends of ₹20,000 or more'],
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000 (max ₹150 per statement cycle)',
+      insuranceCover: [
+        'Lost card liability cover'
+      ],
+      idealFor: [
+        'Individuals with regular online and POS retail spends',
+        'Those seeking a balance between cashback and rewards'
+      ],
+      notIdealFor: [
+        'Users with monthly spends below ₹20,000',
+        'Those seeking higher cashback limits'
+      ],
+      summary: 'A lifestyle card for everyday spenders, offering a mix of cashback and reward points, and 2 complimentary railway lounge visits per quarter.'
+    }
+  },
+  {
+    id: 'au-spont',
+    name: 'AU Spont Credit Card',
+    bank: 'AU Small Finance Bank',
+    category: 'upi',
+    image: '/credit-cards/AU_Spont.png',
+    apr: 'Not specified',
+    annualFee: '₹299 + GST',
+    joiningFee: '₹299 + GST',
+    rupay: true,
+    feedback: [],
+    categories: ['upi', 'cashback', 'domestic-lounge'],
+    applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 1% cashback on all transactions including UPI, e-commerce, POS, and contactless payments
+• 5 coins for every UPI transaction via AU 0101 app
+• Cashback capped at ₹500 per statement cycle
 
-// Exclusions: No cashback on fuel, rent, government, education, cash withdrawals, EMIs, and insurance spends`,
-//       redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.
-// Coins earned from UPI transactions can be redeemed against various rewards in the AU Rewardz catalogue.`,
-//       welcomeBonus: 'Not specified',
-//       milestoneBenefits: [],
-//       airportLounge: '2 complimentary domestic airport lounge visits per quarter upon achieving ₹30,000 spends in the previous quarter',
-//       fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000',
-//       insuranceCover: [
-//         'Standard credit card insurance coverage'
-//       ],
-//       additionalServices: 'Additional Benefits:\n• 2 complimentary railway lounge accesses per calendar quarter\n• Cash withdrawal fee: 2.5% of withdrawn amount or ₹500, whichever is higher',
-//       idealFor: [
-//         'Digital payment enthusiasts who frequently use UPI',
-//         'Budget-conscious users seeking low fees',
-//         'First-time credit card holders',
-//         'Frequent domestic travelers'
-//       ],
-//       notIdealFor: [
-//         'High spenders seeking premium rewards',
-//         'International travelers',
-//         'Users with high fuel, rent, or insurance payments'
-//       ],
-//       summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
-//     }
-//   },
+Exclusions: No cashback on fuel, rent, government, education, cash withdrawals, EMIs, and insurance spends`,
+      redemptionOptions: `Redeem cashback as statement credit or for partner offers via AU platform.
+Coins earned from UPI transactions can be redeemed against various rewards in the AU Rewardz catalogue.`,
+      welcomeBonus: 'Not specified',
+      milestoneBenefits: [],
+      airportLounge: '2 complimentary domestic airport lounge visits per quarter upon achieving ₹30,000 spends in the previous quarter',
+      fuelSurcharge: '1% waiver on transactions between ₹400 and ₹5,000',
+      insuranceCover: [
+        'Standard credit card insurance coverage'
+      ],
+      additionalServices: 'Additional Benefits:\n• 2 complimentary railway lounge accesses per calendar quarter\n• Cash withdrawal fee: 2.5% of withdrawn amount or ₹500, whichever is higher',
+      idealFor: [
+        'Digital payment enthusiasts who frequently use UPI',
+        'Budget-conscious users seeking low fees',
+        'First-time credit card holders',
+        'Frequent domestic travelers'
+      ],
+      notIdealFor: [
+        'High spenders seeking premium rewards',
+        'International travelers',
+        'Users with high fuel, rent, or insurance payments'
+      ],
+      summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
+    }
+  },
   // {
   //   id: "bob-tiara",
   //   name: "Bank of Baroda Tiara Credit Card",
