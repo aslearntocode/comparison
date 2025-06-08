@@ -246,16 +246,24 @@ export default function CreditCardQuestionnaire() {
     const preferences = answers.preferences as string[];
     const annualSpend = answers['annual-spend'];
     let kiwiCard: CreditCard | undefined = undefined;
-    let idfcMayuraCard: CreditCard | undefined = undefined;
+    let idfcCard: CreditCard | undefined = undefined;
 
-    // Check for IDFC Mayura inclusion
-    if ((answers.fee === 'mid-fee' || answers.fee === 'high-fee') && 
-        preferences && 
+    // Check for IDFC card inclusion
+    if (preferences && 
         preferences.some(pref => ['rewards', 'domestic-lounge', 'international-lounge', 'travel'].includes(pref))) {
-      idfcMayuraCard = creditCards.find(card => 
-        card.name.toLowerCase().includes('idfc') && 
-        card.name.toLowerCase().includes('mayura')
-      );
+      if (answers.fee === 'high-fee') {
+        // For fees > 5K, suggest Mayura
+        idfcCard = creditCards.find(card => 
+          card.name.toLowerCase().includes('idfc') && 
+          card.name.toLowerCase().includes('mayura')
+        );
+      } else if (answers.fee === 'mid-fee') {
+        // For fees < 5K, suggest Ashva
+        idfcCard = creditCards.find(card => 
+          card.name.toLowerCase().includes('idfc') && 
+          card.name.toLowerCase().includes('ashva')
+        );
+      }
     }
 
     if (preferences && preferences.includes('cashback') && (
@@ -281,9 +289,9 @@ export default function CreditCardQuestionnaire() {
       recommendedCards.unshift(kiwiCard);
     }
 
-    // Always include IDFC Mayura if the above condition is met
-    if (idfcMayuraCard && !recommendedCards.some(card => card.id === idfcMayuraCard!.id)) {
-      recommendedCards.unshift(idfcMayuraCard);
+    // Always include IDFC card if the above condition is met
+    if (idfcCard && !recommendedCards.some(card => card.id === idfcCard!.id)) {
+      recommendedCards.unshift(idfcCard);
     }
 
     // Exclude Axis IOCL Credit Card from all recommendations
