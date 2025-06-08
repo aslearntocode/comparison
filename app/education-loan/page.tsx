@@ -59,7 +59,7 @@ const lenders: Lender[] = [
   }
 ]
 
-export default function EducationLoanPage() {
+function EducationLoan() {
   const [isEligibilityOpen, setIsEligibilityOpen] = useState(false)
   const [eligibilityMessage, setEligibilityMessage] = useState<React.ReactNode>(null)
   const router = useRouter()
@@ -524,5 +524,13 @@ export default function EducationLoanPage() {
         )}
       </main>
     </div>
+  )
+}
+
+export default function EducationLoanPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EducationLoan />
+    </Suspense>
   )
 }
