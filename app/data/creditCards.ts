@@ -3159,7 +3159,7 @@ Credit Score: Good`
     name: 'YES RuPay UPI Credit Card',
     bank: 'YES BANK',
     category: 'upi',
-    image: '/credit-cards/Yes-RuPay.png',
+    image: '/credit-cards/Yes-Rupay.png',
     apr: 'Not specified',
     annualFee: '₹0',
     joiningFee: '₹0',
