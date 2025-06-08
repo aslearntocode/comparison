@@ -64,6 +64,18 @@ CREATE TABLE loan_against_mutual_funds (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Education Loans table
+CREATE TABLE education_loans (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES users(id),
+    firebase_user_id VARCHAR(128) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    has_college_letter BOOLEAN NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Example insert statements for testing
 
 -- Insert a user
