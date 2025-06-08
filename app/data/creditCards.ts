@@ -3226,4 +3226,56 @@ Credit Score: Good`
       summary: 'A premium credit card offering accelerated reward points across multiple categories with fee waiver on achieving spend milestones.'
     }
   },
+  {
+    id: 'yes-bank-popclub',
+    name: 'YES POP Club Credit Card',
+    bank: 'YES BANK',
+    category: 'rewards',
+    image: '/credit-cards/Yes-Pop.png',
+    apr: '46-48% p.a.',
+    annualFee: '₹399 + GST',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'rewards',
+      'lifestyle',
+      'online-shopping'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/ZmFiY2I1M',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 10 POPcoins per ₹100 on online spends (~10% equivalent)
+• 2 POPcoins per ₹100 on offline spends (~2%)
+• Bonus POPcoins for UPI via POP UPI app: +5%`,
+      welcomeBonus: `Welcome Benefits (≈₹5,000 value):
+• 500 Bonus POPcoins on activation
+• 5 free Blinkit deliveries
+• ₹750 Cleartrip voucher + free rebook/cancellation at ₹1 fee
+• ₹500 Cult.fitness voucher
+• 3-month Zomato Gold Mini membership
+• 2 Rapido bike rides (₹100 value)
+• 6-month PharmEasy Plus membership`,
+      milestoneBenefits: [
+        'Spend ₹1,50,000/year and receive:',
+        'Annual fee waiver',
+        'Extra 1,500 POPcoins (~₹375)'
+      ],
+      fuelSurcharge: '1% waiver on fuel transactions',
+      interestRate: '3.8-3.99% monthly on revolving credit (~46-48% APR)',
+      idealFor: [
+        'Online shoppers',
+        'Food delivery users',
+        'Fitness enthusiasts',
+        'Regular travelers',
+        'UPI payment users'
+      ],
+      notIdealFor: [
+        'Low spenders',
+        'Those who don\'t use online services',
+        'People seeking premium travel benefits'
+      ],
+      summary: 'A lifestyle-focused credit card offering high rewards on online spends, multiple welcome benefits, and comprehensive membership perks across food delivery, travel, fitness, and healthcare platforms.'
+    }
+  },
 ]; 
