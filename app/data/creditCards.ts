@@ -2358,54 +2358,54 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       summary: 'An entry-level RuPay credit card offering straightforward 1% cashback on all spends, UPI rewards, and complimentary lounge access, ideal for digital payment enthusiasts and budget-conscious users.'
     }
   },
-  // {
-  //   id: "bob-tiara",
-  //   name: "Bank of Baroda Tiara Credit Card",
-  //   bank: "Bank of Baroda",
-  //   category: "lifestyle",
-  //   image: "/credit-cards/BOB_Tiara.png",
-  //   apr: "3.49% per month",
-  //   annualFee: "₹2,499 + GST",
-  //   joiningFee: "₹2,499 + GST",
-  //   rupay: true,
-  //   feedback: [],
-  //   categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
-  //   applyUrl: 'https://example.com/apply-bob-tiara',
-  //   additionalDetails: {
-  //     rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
-  //     welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
-  //     milestoneBenefits: [
-  //       "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
-  //     ],
-  //     airportLounge: "Unlimited complimentary domestic airport lounge visits on spending ₹40,000 in previous quarter",
-  //     fuelSurcharge: "1% waiver on transactions between ₹400-₹5,000 (max ₹250 per statement)",
-  //     insuranceCover: [
-  //       "Zero liability on lost card reporting"
-  //     ],
-  //     diningPrivileges: [
-  //       "5X Reward Points on dining spends"
-  //     ],
-  //     minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
-  //     creditLimit: "Based on credit assessment",
-  //     domesticTransactionFee: "Standard",
-  //     internationalTransactionFee: "2% forex mark-up",
-  //     interestRate: "3.49% per month",
-  //     emiOptions: "Smart EMI available for purchases above ₹2,500 (6 months to 4 years)",
-  //     additionalServices: "UPI transactions reward points capped at ₹500 per statement cycle",
-  //     idealFor: [
-  //       "Frequent travelers",
-  //       "Dining enthusiasts",
-  //       "Online shoppers",
-  //       "Entertainment lovers"
-  //     ],
-  //     notIdealFor: [
-  //       "Low spenders",
-  //       "Those who don't use UPI"
-  //     ],
-  //     summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
-  //     redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
-  //   }
-  // },
+  {
+    id: "bob-tiara",
+    name: "Bank of Baroda Tiara Credit Card",
+    bank: "Bank of Baroda",
+    category: "lifestyle",
+    image: "/credit-cards/BOB_Tiara.png",
+    apr: "3.49% per month",
+    annualFee: "₹2,499 + GST",
+    joiningFee: "₹2,499 + GST",
+    rupay: true,
+    feedback: [],
+    categories: ["lifestyle", "rewards", "travel", "dining", "upi"],
+    applyUrl: 'https://wee.bnking.in/c/NGRiOGIwN',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:\n• 5X Reward Points on dining, travel, and international spends\n• 3 Reward Points per ₹100 on other retail spends\n• UPI transactions reward points capped at ₹500 per statement cycle\n\nReward Point Value:\n• 1 Reward Point = ₹0.25`,
+      welcomeBonus: "Complimentary Memberships:\n• Annual memberships to Amazon Prime, Disney+ Hotstar, and Gaana Plus\n• 3-month Swiggy One membership\n• 6-month Fitpass Pro membership\n\nDiscount Vouchers:\n• Quarterly discounts up to ₹1,500 on leading brands like Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon",
+      milestoneBenefits: [
+        "Quarterly discounts up to ₹1,500 on Nykaa, Flipkart, Myntra, BookMyShow, and Lakmé Salon"
+      ],
+      airportLounge: "Unlimited complimentary domestic airport lounge visits on spending ₹40,000 in previous quarter",
+      fuelSurcharge: "1% waiver on transactions between ₹400-₹5,000 (max ₹250 per statement)",
+      insuranceCover: [
+        "Zero liability on lost card reporting"
+      ],
+      diningPrivileges: [
+        "5X Reward Points on dining spends"
+      ],
+      minimumSpend: "₹25,000 in first 60 days for joining fee waiver",
+      creditLimit: "Based on credit assessment",
+      domesticTransactionFee: "Standard",
+      internationalTransactionFee: "2% forex mark-up",
+      interestRate: "3.49% per month",
+      emiOptions: "Smart EMI available for purchases above ₹2,500 (6 months to 4 years)",
+      additionalServices: "UPI transactions reward points capped at ₹500 per statement cycle",
+      idealFor: [
+        "Frequent travelers",
+        "Dining enthusiasts",
+        "Online shoppers",
+        "Entertainment lovers"
+      ],
+      notIdealFor: [
+        "Low spenders",
+        "Those who don't use UPI"
+      ],
+      summary: "A lifestyle-focused credit card offering premium entertainment memberships, dining rewards, and travel benefits with UPI support",
+      redemptionOptions: "Reward points can be redeemed for various benefits and statement credits"
+    }
+  },
   {
     id: 'idfc-first-millennia',
     name: 'IDFC FIRST Millennia Credit Card',
@@ -2556,68 +2556,70 @@ Credit Score: 750 or above (good to excellent)`
   //     travelLifestyleBenefits: 'Comprehensive travel and lifestyle benefits with premium memberships'
   //   }
   // },
-  // {
-  //   id: 'hsbc-live-plus',
-  //   name: 'HSBC Live+ Credit Card',
-  //   bank: 'HSBC',
-  //   category: 'cashback',
-  //   image: '/credit-cards/HSBC-Live+.png',
-  //   apr: '3.5% per month (42% p.a.)',
-  //   annualFee: '₹999',
-  //   joiningFee: '₹999',
-  //   rupay: false,
-  //   feedback: [],
-  //   categories: ['cashback', 'lifestyle'],
-  //   additionalDetails: {
-  //     rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
-  //     welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
-  //     airportLounge: '4 complimentary domestic airport lounge visits per year',
-  //     milestoneBenefits: [
-  //       'Annual fee waiver on spending ₹3.5 lakh or more'
-  //     ],
-  //     diningPrivileges: [
-  //       '10% cashback on dining',
-  //       'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
-  //     ],
-  //     idealFor: [
-  //       'Daily spenders',
-  //       'Food and grocery shoppers',
-  //       'Online shoppers',
-  //       'Cashback seekers'
-  //     ],
-  //     summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
-  //     additionalServices: 'Exclusive monthly offers on popular platforms'
-  //   }
-  // },
-  // {
-  //   id: 'hsbc-visa-platinum',
-  //   name: 'HSBC Visa Platinum Credit Card',
-  //   bank: 'HSBC',
-  //   category: 'rewards',
-  //   image: '/credit-cards/HSBC-VISA-Platinum.png',
-  //   apr: '3.5% per month (42% p.a.)',
-  //   annualFee: '₹0',
-  //   joiningFee: '₹0',
-  //   rupay: false,
-  //   feedback: [],
-  //   categories: ['rewards', 'lifetime-free'],
-  //   additionalDetails: {
-  //     rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
-  //     welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
-  //     diningPrivileges: [
-  //       'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
-  //     ],
-  //     fuelSurcharge: 'Fuel surcharge waiver up to ₹3,000 annually',
-  //     idealFor: [
-  //       'Entry-level users',
-  //       'Reward seekers',
-  //       'Budget-conscious users',
-  //       'Movie enthusiasts'
-  //     ],
-  //     summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
-  //     additionalServices: 'Regular offers on dining and entertainment'
-  //   }
-  // },
+  {
+    id: 'hsbc-live-plus',
+    name: 'HSBC Live+ Credit Card',
+    bank: 'HSBC',
+    category: 'cashback',
+    image: '/credit-cards/HSBC-Live+.png',
+    apr: '3.5% per month (42% p.a.)',
+    annualFee: '₹999',
+    joiningFee: '₹999',
+    rupay: false,
+    feedback: [],
+    categories: ['cashback', 'lifestyle'],
+    applyUrl: 'https://wee.bnking.in/c/MWRiNWMyM',
+    additionalDetails: {
+      rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
+      welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
+      airportLounge: '4 complimentary domestic airport lounge visits per year',
+      milestoneBenefits: [
+        'Annual fee waiver on spending ₹3.5 lakh or more'
+      ],
+      diningPrivileges: [
+        '10% cashback on dining',
+        'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
+      ],
+      idealFor: [
+        'Daily spenders',
+        'Food and grocery shoppers',
+        'Online shoppers',
+        'Cashback seekers'
+      ],
+      summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
+      additionalServices: 'Exclusive monthly offers on popular platforms'
+    }
+  },
+  {
+    id: 'hsbc-visa-platinum',
+    name: 'HSBC Visa Platinum Credit Card',
+    bank: 'HSBC',
+    category: 'rewards',
+    image: '/credit-cards/HSBC-VISA-Platinum.png',
+    apr: '3.5% per month (42% p.a.)',
+    annualFee: '₹0',
+    joiningFee: '₹0',
+    rupay: false,
+    feedback: [],
+    categories: ['rewards', 'lifetime-free'],
+    applyUrl: 'https://wee.bnking.in/c/OTUzYmEyN',
+    additionalDetails: {
+      rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
+      welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
+      diningPrivileges: [
+        'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
+      ],
+      fuelSurcharge: 'Fuel surcharge waiver up to ₹3,000 annually',
+      idealFor: [
+        'Entry-level users',
+        'Reward seekers',
+        'Budget-conscious users',
+        'Movie enthusiasts'
+      ],
+      summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
+      additionalServices: 'Regular offers on dining and entertainment'
+    }
+  },
   {
     id: 'hdfc-indigo-xl',
     name: 'HDFC IndiGo 6E Rewards XL Credit Card',
