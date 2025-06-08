@@ -2424,6 +2424,7 @@ Income: ITR > ₹6 lakhs/annum`
     ],
     applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
     additionalDetails: {
+      summary: `A lifetime free credit card designed for young earners and online shoppers. It offers reward points on every spend, with no annual or joining fees, and decent benefits on shopping, dining, and travel.`,
       welcomeBonus: `Welcome voucher worth ₹500 on spending ₹5,000 or more within 30 days of card generation.\n5% cashback (up to ₹1,000) on the transaction value of first EMI done within 30 days of card generation.`,
       rewardsProgram: `3X Reward points on online & offline spends up to ₹20,000.\nUp to 10X Reward points on spend >₹20,000 & on your birthday.\n1X Reward points on UPI spends up to ₹2,000.\n3X Reward points on UPI spends >₹2,000.\nReward points that don't expire.`,
       milestoneBenefits: [],
