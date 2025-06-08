@@ -242,15 +242,15 @@ Income: ITR > ₹6 lakhs/annum`
       welcomeBonus: '1,000 CashPoints upon payment of the joining fee',
       milestoneBenefits: ['₹1,000 worth of gift vouchers on spends of ₹1,00,000 and above in each calendar quarter'],
       idealFor: [
-        'Frequent Online Shoppers: Perfect for those who regularly shop on Amazon, Flipkart, Myntra, Swiggy, Zomato, and Uber',
-        'Dining Enthusiasts: Great for users who can benefit from up to 20% discount at partner restaurants via Swiggy Dineout',
-        'Fuel Users: Suitable for those who want fuel surcharge waiver benefits',
-        'Milestone Seekers: Ideal for users who can meet the spending thresholds for welcome and milestone benefits'
+        'Frequent Online Shoppers',
+        'Dining Enthusiasts',
+        'Fuel Users',
+        'Milestone Seekers'
       ],
       notIdealFor: [
-        'Low Spenders: Annual fee of ₹1,000 + GST, waived only on annual spends of ₹1 lakh or more',
-        'Travel Enthusiasts: No complimentary airport lounge access',
-        'Universal Spenders: No cashback on fuel, EMI, wallet loads, rent payments, and government-related transactions'
+        'Low Spenders',
+        'Travel Enthusiasts',
+        'Universal Spenders'
       ],
       summary: 'A lifestyle-focused credit card offering enhanced cashback on popular e-commerce, entertainment, and food delivery platforms with quarterly milestone benefits, ideal for frequent online shoppers and dining enthusiasts.',
       fuelSurcharge: '1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, with a maximum waiver of ₹250 per billing cycle',
@@ -533,10 +533,10 @@ Credit Score: 750+`
       emiOptions: 'Available on eligible purchases',
       additionalServices: 'Golf Privileges:\n• Up to 4 complimentary rounds of golf per month, based on spending ₹50,000 in the previous month',
       idealFor: [
-        'Mid-to-High Spenders: Perfect for those spending ₹4L–₹8L annually, offering a sweet spot of benefits with an affordable annual fee',
-        'Occasional Travelers: Enjoy 4 free domestic lounge accesses every quarter and 2 complimentary international lounge entries each year',
-        'Lifestyle & Entertainment Enthusiasts: Get Buy 1 Get 1 on BookMyShow, golf privileges, and dining discounts through the Culinary Treats Program',
-        'Reward Collectors: Earn accelerated points on international and retail spends, with flexible redemption options'
+        'Mid-to-High Spenders',
+        'Occasional Travelers',
+        'Lifestyle & Entertainment Enthusiasts',
+        'Reward Collectors'
       ],
       notIdealFor: [
         'Users who spend less than ₹2–3 lakh annually',
@@ -2240,18 +2240,18 @@ Exclusions: No points on fuel, EMI, rent, education, government, insurance, util
     categories: ['premium', 'travel', 'domestic-lounge', 'international-lounge'],
     applyUrl: 'https://wee.bnking.in/c/NjYzN2EzN',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
+      rewardsProgram: `
 • 2 Reward Points per ₹100 on travel, dining, and international spends
 • 1 Reward Point per ₹100 on other retail spends
 • No Reward Points on fuel, EMI transactions, and select categories
 
 Exclusions: No points on fuel, EMI, rent, education, government, insurance, utility bills.`,
-      redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
-• Gift Vouchers (various brands)
-• Merchandise
-• Mobile/DTH Recharge
-• Travel Bookings (flights, hotels, buses)
-• Movie Tickets`,
+//       redemptionOptions: `Redeem Reward Points via AU Rewardz portal for:
+// • Gift Vouchers (various brands)
+// • Merchandise
+// • Mobile/DTH Recharge
+// • Travel Bookings (flights, hotels, buses)
+// • Movie Tickets`,
       welcomeBonus: 'Details not specified',
       milestoneBenefits: [],
       airportLounge: 'Complimentary domestic and international airport lounge visits',
