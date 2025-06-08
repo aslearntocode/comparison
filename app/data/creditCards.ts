@@ -882,7 +882,7 @@ Credit Score: 750+`,
       'international-lounge',
       'metal'
     ],
-    applyUrl: 'https://wee.bnking.in/c/OTljNWRiZ',
+    applyUrl: 'https://wee.bnking.in/c/ZWMwN2JkM',
     additionalDetails: {
       rewardsProgram: `Reward Points Earning Structure:
 • Base Rate: 1 Reward Point per ₹150 spent on:
@@ -1143,7 +1143,7 @@ Documentation: Identity Proof: Aadhaar Card, PAN Card, or Passport; Address Proo
     rupay: true,
     feedback: [],
     categories: ['fuel', 'budget'],
-    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
+    applyUrl: 'https://wee.bnking.in/c/MjdmNDM2Y',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 21X Reward Points per ₹150 on HPCL fuel spends
@@ -1183,7 +1183,7 @@ Exclusions: No points on fuel surcharge, EMI, rent, wallet loads, and select cat
     rupay: true,
     feedback: [],
     categories: ['fuel', 'budget'],
-    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
+    applyUrl: 'https://wee.bnking.in/c/MjdmNDM2Y',
     additionalDetails: {
       rewardsProgram: `Earning Rate:
 • 30X Reward Points per ₹150 on HPCL fuel, grocery, utility, and FASTag spends
@@ -2461,7 +2461,7 @@ Income: ITR > ₹6 lakhs/annum`
       'travel',
       'metal'
     ],
-    applyUrl: 'https://www.customer.zetapp.in/customer/login?hash=8ore7hMR8m1vq1agUcUaXQiDXTmYIq2WGOYWD1lGX3j%2FxEWwDk%2BIVxxQPau6bOcHRhcWnbkn3dx3TrPGRCDS0B6Ls6jgjwVw9TJCj2yQd866ty9%2FryGKsqZF4EPXMKZjfTKNpgaLA6pF%2BwJwhQr1TbUSYyb7HewD9rxqiklU7Fc%3D',
+    applyUrl: 'https://wee.bnking.in/c/ODVlN2VmO',
     additionalDetails: {
       summary: "A premium metal credit card blending India's heritage with modern luxury, offering lifestyle, travel, and entertainment benefits for affluent individuals.",
       rewardsProgram: `Earn 5X reward points on monthly spends below ₹20,000.\nEarn 10X reward points on monthly spends above ₹20,000 and on your birthday.\nReward points can be redeemed for a variety of options (₹0.25 per point).`,
