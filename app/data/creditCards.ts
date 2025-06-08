@@ -3375,4 +3375,61 @@ Credit Score: Good`
       summary: 'A premium co-branded credit card offering enhanced rewards on Reliance Retail purchases, comprehensive travel benefits, and exclusive lifestyle privileges.'
     }
   },
+  {
+    id: 'hsbc-travel-one',
+    name: 'HSBC Travel One Credit Card',
+    bank: 'HSBC Bank',
+    category: 'premium',
+    image: '/credit-cards/HSBC-TravelOne.png',
+    apr: 'Not specified',
+    annualFee: '₹4,999 + GST',
+    joiningFee: '₹4,999 + GST',
+    rupay: false,
+    feedback: [],
+    categories: [
+      'premium',
+      'rewards',
+      'international-travel',
+      'domestic-lounge',
+      'international-lounge'
+    ],
+    applyUrl: 'https://wee.bnking.in/c/OTdjZDdmO',
+    additionalDetails: {
+      rewardsProgram: `Earning Rate:
+• 6X Reward Points on international spends
+• 3X Reward Points on domestic spends
+• 2X Reward Points on utility bill payments
+• 1X Reward Points on fuel spends`,
+      welcomeBonus: `Welcome Benefits:
+• 10,000 Reward Points on first transaction
+• Complimentary airport meet and greet service (2 times per year)
+• Complimentary airport transfers (2 times per year)
+• Amazon eGift Voucher worth ₹250 on online application with video KYC`,
+      milestoneBenefits: [
+        '₹12 lakh annual spend → Earn 10,000 bonus reward points',
+        'Fee waiver on ₹8 lakh annual spend'
+      ],
+      airportLounge: '• Unlimited domestic lounge access\n• 4 international lounge visits per year',
+      fuelSurcharge: '1% waiver on transactions between ₹400-₹4,000 (max ₹250 per statement)',
+      insuranceCover: [
+        'Air accident cover of ₹1 Crore',
+        'Lost baggage insurance of ₹50,000',
+        'Flight delay insurance of ₹5,000',
+        'Purchase protection insurance'
+      ],
+      additionalServices: '• Instant EMI conversion\n• Cash on EMI\n• Balance transfer facility\n• Secure online payments',
+      idealFor: [
+        'Frequent international travelers',
+        'High spenders',
+        'Those seeking comprehensive travel benefits',
+        'Regular utility bill payers'
+      ],
+      notIdealFor: [
+        'Budget-conscious consumers',
+        'Low spenders',
+        'Those who rarely travel'
+      ],
+      summary: 'A premium travel-focused credit card offering enhanced rewards on international spends, comprehensive travel benefits, and exclusive lifestyle privileges.'
+    }
+  },
 ]; 
