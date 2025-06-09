@@ -1041,6 +1041,12 @@ export default function Home() {
             >
               Know More
             </a>
+            <div className="flex items-center justify-center mt-3 w-full">
+              <span className="inline-flex items-center px-4 py-2 rounded-full font-bold text-base bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent shadow-sm animate-pulse">
+                <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M16 12h.01" /></svg>
+                Apply now and get INR 1000 for every successful application
+              </span>
+            </div>
           </div>
         </div>
       </div>
