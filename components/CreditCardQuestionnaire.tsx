@@ -21,11 +21,34 @@ const questions: Question[] = [
     id: 'score',
     text: 'What is your current credit score (approximate)?',
     options: [
-      { value: '<600', label: 'Below 600' },
-      { value: '600-650', label: '600 - 650' },
+      { value: '<600', label: 'Below 650' },
       { value: '650-699', label: '650 - 699' },
-      { value: '700+', label: '700 or above' },
+      { value: '700+', label: '700 - 749' },
+      { value: '750+', label: '750 or above' }
     ]
+  },
+  {
+    id: 'brands',
+    text: 'Which credit card brands do you prefer? (Select up to 3)',
+    options: [
+      { value: 'hdfc', label: 'HDFC Bank' },
+      { value: 'axis', label: 'Axis Bank' },
+      { value: 'icici', label: 'ICICI Bank' },
+      { value: 'hsbc', label: 'HSBC Bank' },
+      { value: 'sbi', label: 'State Bank of India' },
+      { value: 'bob', label: 'Bank of Baroda' },
+      { value: 'yes', label: 'YES BANK' },
+      { value: 'idfc', label: 'IDFC FIRST Bank' },
+      { value: 'citi', label: 'Citi Bank' },
+      { value: 'kotak', label: 'Kotak Mahindra Bank' },
+      { value: 'standard', label: 'Standard Chartered Bank' },
+      { value: 'indusind', label: 'IndusInd Bank' },
+      { value: 'bank-of-maharashtra', label: 'Bank of Maharashtra' },
+      { value: 'bank-of-rajasthan', label: 'Bank of Rajasthan' },
+      { value: 'bank-of-india', label: 'Bank of India' }
+    ],
+    multiple: true,
+    maxSelections: 3
   },
   {
     id: 'fee',
@@ -153,6 +176,15 @@ export default function CreditCardQuestionnaire() {
     // If score is less than 700, suggest secured cards and show analysis link
     if (score === '<600' || score === '600-650' || score === '650-699') {
       return { type: 'low-score', cards: [] };
+    }
+
+    // Filter based on brand preferences
+    const selectedBrands = answers.brands as string[];
+    if (selectedBrands && selectedBrands.length > 0) {
+      recommendedCards = recommendedCards.filter(card => {
+        const bankName = card.bank.toLowerCase();
+        return selectedBrands.some(brand => bankName.includes(brand.toLowerCase()));
+      });
     }
 
     // Filter based on fee structure

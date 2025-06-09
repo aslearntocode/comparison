@@ -3380,7 +3380,7 @@ Credit Score: Good`
   },
   {
     id: 'hsbc-travel-one',
-    name: 'HSBC Travel One Credit Card',
+    name: 'HSBC TravelOne Credit Card',
     bank: 'HSBC Bank',
     category: 'premium',
     image: '/credit-cards/HSBC-TravelOne.png',
