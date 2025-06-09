@@ -247,6 +247,26 @@ export default function CreditCardQuestionnaire() {
     const annualSpend = answers['annual-spend'];
     let kiwiCard: CreditCard | undefined = undefined;
     let idfcCard: CreditCard | undefined = undefined;
+    let hsbcTravelOneCard: CreditCard | undefined = undefined;
+
+    // Check for HSBC TravelOne card inclusion
+    const hasLoungeAccess = preferences && (preferences.includes('domestic-lounge') || preferences.includes('international-lounge'));
+    const hasTravelFrequency = answers.travel && (answers.travel as string[]).some(freq => ['domestic', 'international'].includes(freq));
+    const hasHighSpend = answers['annual-spend'] === '2.5L-5L' || answers['annual-spend'] === 'more-than-5L';
+    const hasHighScore = answers.score === '700+';
+    const hasHighFee = answers.fee === 'mid-fee' || answers.fee === 'high-fee';
+
+    if (hasHighScore && hasHighFee && hasLoungeAccess && hasTravelFrequency && hasHighSpend) {
+      hsbcTravelOneCard = creditCards.find(card => 
+        card.name.toLowerCase().includes('hsbc') && 
+        card.name.toLowerCase().includes('travelone')
+      );
+      
+      // Add to recommendations immediately if found
+      if (hsbcTravelOneCard) {
+        recommendedCards.unshift(hsbcTravelOneCard);
+      }
+    }
 
     // Check for IDFC card inclusion
     if (preferences && 
@@ -271,6 +291,7 @@ export default function CreditCardQuestionnaire() {
     ) {
       kiwiCard = creditCards.find(card => card.name.toLowerCase().includes('kiwi') && card.name.toLowerCase().includes('neon'));
     }
+
     if (preferences && preferences.length > 0) {
       recommendedCards = recommendedCards.filter(card => {
         return preferences.some(pref => {
@@ -284,6 +305,7 @@ export default function CreditCardQuestionnaire() {
         });
       });
     }
+
     // Always include Kiwi Credit Card if the above condition is met
     if (kiwiCard && !recommendedCards.some(card => card.id === kiwiCard!.id)) {
       recommendedCards.unshift(kiwiCard);

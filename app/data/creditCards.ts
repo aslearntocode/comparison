@@ -3395,7 +3395,7 @@ Credit Score: Good`
     ],
     applyUrl: 'https://wee.bnking.in/c/OTdjZDdmO',
     additionalDetails: {
-      rewardsProgram: `Earning Rate:
+      rewardsProgram: `
 • 6X Reward Points on international spends
 • 3X Reward Points on domestic spends
 • 2X Reward Points on utility bill payments
