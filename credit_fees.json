@@ -483,10 +483,17 @@
       "is_lifetime_free":0
     },
     {
-      "card_name":"HSBC Visa Platinum Credit Card",
+      "card_name":"HSBC Platinum Credit Card",
       "joining_fee":0,
       "annual_fee":0,
       "annual_fee_waiver_criteria":0,
       "is_lifetime_free":1
+    },
+    {
+      "card_name":"HSBC TravelOne Credit Card",
+      "joining_fee":4999,
+      "annual_fee":4999,
+      "annual_fee_waiver_criteria":800000,
+      "is_lifetime_free":0
     }
   ]

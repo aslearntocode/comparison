@@ -1000,6 +1000,51 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Team's Choice for Travel Card - HSBC TravelOne */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden p-6 md:p-10 gap-8">
+          {/* Card Image */}
+          <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
+            <img
+              src="/credit-cards/HSBC-TravelOne.png"
+              alt="HSBC TravelOne Card"
+              className="w-64 h-auto rounded-xl shadow-md"
+              style={{ minWidth: '200px', maxWidth: '260px', transform: 'rotate(-10deg)' }}
+            />
+          </div>
+          {/* Card Details */}
+          <div className="flex-1 flex flex-col justify-center items-start">
+            <h2 className="text-2xl md:text-3xl font-bold text-indigo-800 mb-2">Team's Choice for Travel Card</h2>
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">HSBC TravelOne Credit Card</h3>
+            <ul className="mb-4 space-y-2">
+              <li className="flex items-center text-base text-gray-700">
+                <span className="text-green-600 mr-2">✔</span>
+                Complimentary international & domestic lounge access
+              </li>
+              <li className="flex items-center text-base text-gray-700">
+                <span className="text-green-600 mr-2">✔</span>
+                Earn accelerated air miles & travel rewards
+              </li>
+              <li className="flex items-center text-base text-gray-700">
+                <span className="text-green-600 mr-2">✔</span>
+                Convert reward points to leading airlines & hotels
+              </li>
+              <li className="flex items-center text-base text-gray-700">
+                <span className="text-green-600 mr-2">✔</span>
+                Fee Waived after 8L annual spend
+              </li>
+            </ul>
+            <a
+              href="https://www.financialhealth.co.in/credit/hsbc-travel-one"
+              className="text-indigo-700 font-semibold hover:underline text-base"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Know More
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Credit Score Analysis Section */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
