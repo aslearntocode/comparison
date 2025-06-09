@@ -2581,14 +2581,14 @@ Credit Score: 750 or above (good to excellent)`
     categories: ['cashback', 'lifestyle'],
     applyUrl: 'https://wee.bnking.in/c/MWRiNWMyM',
     additionalDetails: {
-      rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\nUnlimited 1.5% cashback on other retail purchases',
+      rewardsProgram: '10% cashback (up to ₹1,000/month) on dining, groceries, and food delivery\n• Unlimited 1.5% cashback on other retail purchases',
       welcomeBonus: '₹1,000 cashback on spending ₹20,000 within the first 30 days',
       airportLounge: '4 complimentary domestic airport lounge visits per year',
       milestoneBenefits: [
         'Annual fee waiver on spending ₹3.5 lakh or more'
       ],
       diningPrivileges: [
-        '10% cashback on dining',
+        // '10% cashback on dining',
         'Exclusive monthly offers on platforms like Amazon, Blinkit, and Pharmeasy'
       ],
       idealFor: [
@@ -2597,13 +2597,13 @@ Credit Score: 750 or above (good to excellent)`
         'Online shoppers',
         'Cashback seekers'
       ],
-      summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.',
-      additionalServices: 'Exclusive monthly offers on popular platforms'
+      summary: 'An everyday cashback credit card focused on daily spending with attractive rewards.'
+      // additionalServices: 'Exclusive monthly offers on popular platforms'
     }
   },
   {
     id: 'hsbc-visa-platinum',
-    name: 'HSBC Visa Platinum Credit Card',
+    name: 'HSBC Platinum Credit Card',
     bank: 'HSBC',
     category: 'rewards',
     image: '/credit-cards/HSBC-VISA-Platinum.png',
@@ -2615,7 +2615,7 @@ Credit Score: 750 or above (good to excellent)`
     categories: ['rewards', 'lifetime-free'],
     applyUrl: 'https://wee.bnking.in/c/OTUzYmEyN',
     additionalDetails: {
-      rewardsProgram: '2 reward points per ₹150 spent\n5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
+      rewardsProgram: '2 reward points per ₹150 spent\n• 5X rewards on annual spends above ₹4 lakh (up to 15,000 bonus points)',
       welcomeBonus: 'Amazon voucher worth ₹500 on spending ₹5,000 within 30 days',
       diningPrivileges: [
         'Buy One Get One free offer on BookMyShow on Saturdays (up to ₹250)'
@@ -2626,6 +2626,9 @@ Credit Score: 750 or above (good to excellent)`
         'Reward seekers',
         'Budget-conscious users',
         'Movie enthusiasts'
+      ],
+      notIdealFor: ['Frequent International Travelers',
+        'High Spenders Seeking Premium Rewards'
       ],
       summary: 'A lifetime free credit card offering basic rewards and benefits for entry-level users.',
       additionalServices: 'Regular offers on dining and entertainment'
