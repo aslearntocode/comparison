@@ -1000,52 +1000,108 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Team's Choice for Travel Card - HSBC TravelOne */}
+      {/* Team's Choice Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-        <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden p-6 md:p-10 gap-8">
-          {/* Card Image */}
-          <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
-            <img
-              src="/credit-cards/HSBC-TravelOne.png"
-              alt="HSBC TravelOne Card"
-              className="w-64 h-auto rounded-xl shadow-md"
-              style={{ minWidth: '200px', maxWidth: '260px', transform: 'rotate(-10deg)' }}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* HSBC TravelOne Card */}
+          <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden p-6 md:p-10 gap-8">
+            {/* Card Image */}
+            <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
+              <img
+                src="/credit-cards/HSBC-TravelOne.png"
+                alt="HSBC TravelOne Card"
+                className="w-32 h-auto rounded-xl shadow-md"
+                style={{ minWidth: '80px', maxWidth: '120px', transform: 'rotate(-10deg)' }}
+              />
+            </div>
+            {/* Card Details */}
+            <div className="flex-1 flex flex-col justify-center items-start">
+              <h2 className="text-xl md:text-2xl font-bold text-indigo-800 mb-2">Team's Choice for Travel</h2>
+              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-4">HSBC TravelOne Credit Card</h3>
+              <ul className="mb-4 pl-0 space-y-2">
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Complimentary international & domestic lounge access
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Earn accelerated air miles & travel rewards
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Convert reward points to leading airlines & hotels
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Fee Waived after 8L annual spend
+                </li>
+              </ul>
+              <a
+                href="https://www.financialhealth.co.in/credit/hsbc-travel-one"
+                className="text-indigo-700 font-semibold hover:underline text-base"
+              >
+                Know More
+              </a>
+              {/* Apply Now Gradient Message */}
+              <div className="mt-4 rounded-full bg-white flex items-center px-4 py-2 shadow-sm w-full max-w-none md:max-w-[350px] text-left">
+                <svg className="w-5 h-5 mr-2 text-yellow-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
+                </svg>
+                <span className="font-bold text-sm md:text-base bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+                  Apply now and get INR 1000 for successful application
+                </span>
+              </div>
+            </div>
           </div>
-          {/* Card Details */}
-          <div className="flex-1 flex flex-col justify-center items-start">
-            <h2 className="text-2xl md:text-3xl font-bold text-indigo-800 mb-2">Team's Choice for Travel Card</h2>
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">HSBC TravelOne Credit Card</h3>
-            <ul className="mb-4 space-y-2">
-              <li className="flex items-center text-base text-gray-700">
-                <span className="text-green-600 mr-2">✔</span>
-                Complimentary international & domestic lounge access
-              </li>
-              <li className="flex items-center text-base text-gray-700">
-                <span className="text-green-600 mr-2">✔</span>
-                Earn accelerated air miles & travel rewards
-              </li>
-              <li className="flex items-center text-base text-gray-700">
-                <span className="text-green-600 mr-2">✔</span>
-                Convert reward points to leading airlines & hotels
-              </li>
-              <li className="flex items-center text-base text-gray-700">
-                <span className="text-green-600 mr-2">✔</span>
-                Fee Waived after 8L annual spend
-              </li>
-            </ul>
-            <a
-              href="https://www.financialhealth.co.in/credit/hsbc-travel-one"
-              className="text-indigo-700 font-semibold hover:underline text-base"
-              target="_blank" rel="noopener noreferrer"
-            >
-              Know More
-            </a>
-            <div className="flex items-center justify-center mt-3 w-full">
-              <span className="inline-flex items-center px-4 py-2 rounded-full font-bold text-base bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent shadow-sm animate-pulse">
-                <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7V5a2 2 0 012-2h12a2 2 0 012 2v2" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M16 12h.01" /></svg>
-                Apply now and get INR 1000 for every successful application
-              </span>
+
+          {/* HDFC Marriott Bonvoy Card */}
+          <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden p-6 md:p-10 gap-8">
+            {/* Card Image */}
+            <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
+              <img
+                src="/credit-cards/HDFC-Regalia-Marriott.png"
+                alt="HDFC Marriott Bonvoy Card"
+                className="w-48 h-auto rounded-xl shadow-md"
+                style={{ minWidth: '160px', maxWidth: '200px', transform: 'rotate(-10deg)' }}
+              />
+            </div>
+            {/* Card Details */}
+            <div className="flex-1 flex flex-col justify-center items-start">
+              <h2 className="text-xl md:text-2xl font-bold text-indigo-800 mb-2">Team's Choice for Hotels</h2>
+              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-4">HDFC Regalia Marriott Bonvoy Credit Card</h3>
+              <ul className="mb-4 pl-0 space-y-2">
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  8X Marriott Bonvoy Points at Marriott hotels
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Complimentary Silver Elite Status
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  Free Night Awards on milestone spends
+                </li>
+                <li className="flex items-center text-base text-gray-700 pl-0 ml-0">
+                  <span className="text-green-600 mr-2">✔</span>
+                  24 Airport Lounge visits annually
+                </li>
+              </ul>
+              <a
+                href="https://www.financialhealth.co.in/credit/hdfc-regalia-marriott"
+                className="text-indigo-700 font-semibold hover:underline text-base"
+              >
+                Know More
+              </a>
+              {/* Apply Now Gradient Message */}
+              <div className="mt-4 rounded-full bg-white flex items-center px-4 py-2 shadow-sm w-full max-w-none md:max-w-[350px] text-left">
+                <svg className="w-5 h-5 mr-2 text-yellow-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <rect x="4" y="4" width="16" height="16" rx="4" strokeWidth="2" />
+                </svg>
+                <span className="font-bold text-sm md:text-base bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+                  Apply now and get INR 1000 for successful application
+                </span>
+              </div>
             </div>
           </div>
         </div>

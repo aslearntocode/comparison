@@ -391,6 +391,19 @@ export default function CreditCardQuestionnaire() {
       );
     }
 
+    // Ensure we have at least 3 cards by adding more general recommendations if needed
+    if (recommendedCards.length < 3) {
+      const additionalCards = creditCards
+        .filter(card => 
+          !recommendedCards.some(rec => rec.id === card.id) && // Don't add cards we already have
+          !card.categories.includes('ultra-premium') &&
+          !card.categories.includes('secured')
+        )
+        .slice(0, 3 - recommendedCards.length); // Only take as many as we need
+      
+      recommendedCards = [...recommendedCards, ...additionalCards];
+    }
+
     // Sort by relevance and return top 3
     return { type: 'normal', cards: recommendedCards.slice(0, 3) };
   };
@@ -471,8 +484,8 @@ export default function CreditCardQuestionnaire() {
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Recommended Credit Cards for You</h2>
         {recommendedCards.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recommendedCards.map((card) => (
-              <div key={card.id} className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full">
+            {recommendedCards.map((card, index) => (
+              <div key={`${card.id}-${index}`} className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col h-full">
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-center justify-between mb-4">
                     <img src={card.image} alt={card.name} className="h-12 object-contain" />
@@ -520,14 +533,25 @@ export default function CreditCardQuestionnaire() {
           </div>
         )}
         {recommendedCards.length > 0 && (
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center space-y-4">
             <Button 
-              onClick={resetQuestionnaire}
-              variant="outline"
-              className="px-6"
+              onClick={() => {
+                const cardIds = recommendedCards.map(card => card.id).join(',');
+                router.push(`/credit/compare?cards=${cardIds}`);
+              }}
+              className="px-6 bg-blue-600 hover:bg-blue-700 text-white"
             >
-              Start Over
+              Compare Recommended Cards
             </Button>
+            <div>
+              <Button 
+                onClick={resetQuestionnaire}
+                variant="outline"
+                className="px-6"
+              >
+                Start Over
+              </Button>
+            </div>
           </div>
         )}
       </div>

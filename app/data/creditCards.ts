@@ -234,7 +234,7 @@ Income: ITR > ₹6 lakhs/annum`
     ],
     applyUrl: 'https://wee.bnking.in/c/ZWY0NWQ5M',
     additionalDetails: {
-      rewardsProgram: `Cashback Structure:
+      rewardsProgram: `
 • 5% Cashback on Amazon, BookMyShow, Cult.fit, Flipkart, Myntra, Sony LIV, Swiggy, Tata CLiQ, Uber and Zomato
 • 1% cashback on other spends
 • ₹1,000 worth gift vouchers on spends of ₹1,00,000 and above in each calendar quarter
@@ -288,16 +288,16 @@ Income: ITR > ₹6 lakhs/annum`
       milestoneBenefits: ['Spend ₹50,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
       fuelSurcharge: '1% waiver on transactions between ₹400-₹5,000',
       idealFor: [
-        'Online Shoppers: Perfect for those who frequently shop on Amazon, Flipkart, BigBasket, Reliance Smart SuperStore, or order food via Swiggy',
-        'Budget-Conscious Users: Ideal for those seeking low annual fees with reasonable waiver options',
-        'Credit History Builders: Suitable for beginners with relaxed eligibility criteria',
-        'Dining Enthusiasts: Great for users who can benefit from dining discounts at partner restaurants'
+        'Online Shoppers',
+        'Budget-Conscious Users',
+        'Credit History Builders',
+        'Dining Enthusiasts'
       ],
       notIdealFor: [
-        'Travel Enthusiasts: No complimentary lounge access or travel insurance',
-        'High Spenders: Those seeking premium perks might prefer HDFC Millennia or Regalia cards',
-        'Reward Point Maximizers: Low redemption value (1 CashPoint = ₹0.25) and minimum redemption threshold',
-        'Universal Spenders: No rewards on fuel, wallet loads, voucher purchases, rent payments, or government transactions'
+        'Travel Enthusiasts',
+        'High Spenders',
+        'Reward Point Maximizers',
+        'Universal Spenders'
       ],
       summary: 'A rewarding cashback credit card with strong benefits on everyday spending categories like online shopping, grocery, and food delivery, ideal for online shoppers and budget-conscious users.',
       eligibilityCriteria: `Salaried Individuals:
@@ -327,8 +327,8 @@ Income: ITR > ₹6 lakhs/annum`
     ],
     applyUrl: 'https://wee.bnking.in/c/MDc5Zjg1M',
     additionalDetails: {
-      rewardsProgram: 'Cashback Structure:\n• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
-      welcomeBonus: 'Welcome Benefits:\n• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
+      rewardsProgram: '• 10% Cashback on Swiggy application (Food ordering, Instamart, Dineout & Genie)\n• 5% Cashback on online spends across online MCCs\n• 1% Cashback on other categories\n\nSwiggy One Benefits:\n• Unlimited benefits across restaurants, Instamart and Genie orders on Swiggy\n• Free delivery and exclusive discounts from select restaurants',
+      welcomeBonus: '• Complimentary Swiggy One Membership for 3 months\n• 500 reward points on first transaction\n• 10% cashback up to ₹500 on first Swiggy order\n• 5% cashback up to ₹250 on first online transaction',
       milestoneBenefits: ['Spend ₹2,00,000 or more in a year, before your Credit Card renewal date and get your renewal fee waived off'],
       additionalServices: 'Card Activation Process:\n• Making a transaction using the Credit Card\n• To use the card via OTP or IVR, setting PIN for the card, and enabling card controls such as online transactions, enabling international transactions etc.\n\nImportant Notes:\n• Cardholder is eligible for welcome benefit on card activation\n• The customers need to claim \'Swiggy One\' on Swiggy app post card activation to unlock the benefit\n• This option will be available on the Swiggy app within 2-3 days of card activation',
       summary: 'A co-branded credit card offering premium benefits for Swiggy users with enhanced cashback on food delivery, Instamart, and online shopping.',
@@ -432,25 +432,21 @@ Self-Employed: Age 21–65 years, ITR > ₹6 Lakhs/annum`
     ],
     applyUrl: 'https://example.com/apply-emeralde-private-metal',
     additionalDetails: {
-      rewardsProgram: 'Earning Rate:\n• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments',
-      welcomeBonus: 'Welcome Benefits:\n• 12,500 ICICI Reward Points\n• Taj Epicure Membership\n• EazyDiner Prime Membership\n• Luxury gift vouchers worth ₹15,000',
+      rewardsProgram: '• 6 ICICI Reward Points per ₹200 on retail spends\n• Applicable to grocery, education, utilities, and insurance payments',
+      welcomeBonus: '• 12,500 ICICI Reward Points\n• Taj Epicure Membership\n• EazyDiner Prime Membership\n• Luxury gift vouchers worth ₹15,000',
       milestoneBenefits: [
         '₹3,000 EaseMyTrip Voucher on spending ₹4 lakh annually',
         'Additional ₹3,000 Voucher on reaching ₹8 lakh annual spend',
         'Total travel vouchers worth ₹6,000 per year'
       ],
-      airportLounge: 'Travel & Lifestyle Benefits:\n\nUnlimited Airport Lounge Access:\n• Domestic: via Mastercard\n• International: via Priority Pass for primary and add-on cardholders\n\nGolf Privileges:\n• Unlimited complimentary rounds and lessons each month\n\nBookMyShow Offer:\n• Buy 1 ticket, get up to ₹750 off on the second ticket, twice a month\n\nConcierge Services:\n• 24x7 assistance for travel bookings, reservations, and more',
+      airportLounge: 'Travel & Lifestyle Benefits:\n\nUnlimited Airport Lounge Access:\n• Domestic: via Mastercard\n• International: via Priority Pass for primary and add-on cardholders\n\nGolf Privileges:\n• Unlimited complimentary rounds and lessons each month\n\nConcierge Services:\n• 24x7 assistance for travel bookings, reservations, and more',
       insuranceCover: [
         'Air Accident Cover: ₹3 crore',
         'Purchase Protection: ₹1.4 lakh',
         'Credit Shield: ₹1 lakh',
-        'Travel Inconvenience Covers:',
-        '• Baggage loss/delay',
-        '• Passport loss',
-        '• Missed connections',
-        '• Flight delays'
+        'Travel Inconvenience Covers'
       ],
-      additionalServices: 'Additional Features:\n\n• Foreign Currency Mark-up: 2% + GST\n• Fuel Surcharge Waiver: 1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle\n• Zero Cancellation Charges: Refunds up to ₹12,000 annually for flight/hotel bookings canceled (maximum of two transactions per year)',
+      additionalServices: '• Foreign Currency Mark-up: 2% + GST\n• Fuel Surcharge Waiver: 1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle\n• Zero Cancellation Charges: Refunds up to ₹12,000 annually for flight/hotel bookings canceled (maximum of two transactions per year)\n\nBookMyShow Offer: Buy 1 ticket, get up to ₹750 off on the second ticket, twice a month',
       fuelSurcharge: '1% on transactions up to ₹4,000; maximum waiver of ₹1,000 per statement cycle',
       internationalTransactionFee: '2% + GST',
       interestRate: '3.49% per month',
@@ -2473,9 +2469,9 @@ Coins earned from UPI transactions can be redeemed against various rewards in th
       insuranceCover: [`Comprehensive travel insurance coverage up to $1,200.`, `Roadside Assistance (RSA) available up to four times a year.`, `Personal accident and lost card liability cover up to ₹50,000.`, `Trip cancellation insurance of up to ₹25,000 per instance, twice a year.`],
       redemptionOptions: `• Value: Each Reward Point = ₹0.25\n• Redemption Options:\n  - Online transactions\n  - Gift vouchers (Amazon, Flipkart, Myntra, BigBasket)\n  - Merchandise purchases\n  - Flight, hotel, and movie bookings\n• Redemption Fee: ₹99 + GST per request\n• Expiry: Points do not expire\n\nEffective Cashback Rates:\n• 1X Rewards: ~0.17% cashback\n• 3X Rewards: ~0.50% cashback\n• 5X Rewards: ~0.83% cashback\n• 10X Rewards: ~1.67% cashback`,
       idealFor: [
-        'Affluent Individuals: Those seeking a premium credit card experience with a blend of traditional aesthetics and modern benefits.',
-        'Frequent Travelers: Individuals who travel domestically and internationally, benefiting from lounge accesses and travel insurance.',
-        'Lifestyle Enthusiasts: Users who enjoy golf, movies, and exclusive lifestyle privileges.'
+        'Affluent Individuals',
+        'Frequent Travelers',
+        'Lifestyle Enthusiasts'
       ],
       notIdealFor: [
         'Budget-Conscious Users: Those who may not fully utilize the premium benefits relative to the annual fee.',
