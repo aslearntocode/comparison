@@ -528,9 +528,9 @@ function CreditVsLoanAssessmentContent() {
                           ) : form.loan_type === 'personal_loan' ? (
                             <a href="/personal-loans" className="text-blue-700 underline font-semibold">View and apply for Personal Loans</a>
                           ) : form.loan_type === 'home_loan' ? (
-                            <a href="/home-loans" className="text-blue-700 underline font-semibold">View and apply for Home Loans</a>
+                            <a href="/home-loans-refinance" className="text-blue-700 underline font-semibold">View and apply for Home Loans</a>
                           ) : form.loan_type === 'car_loan' ? (
-                            <a href="/car-loans" className="text-blue-700 underline font-semibold">View and apply for Car Loans</a>
+                            <a href="/auto-loan" className="text-blue-700 underline font-semibold">View and apply for Car Loans</a>
                           ) : (
                             <a href="/loans" className="text-blue-700 underline font-semibold">View and apply for Loans</a>
                           )}
