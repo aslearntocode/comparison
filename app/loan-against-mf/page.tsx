@@ -45,7 +45,8 @@ const lenders: Lender[] = [
     processingFee: "₹999 + GST",
     loanAmount: "₹10,000 - ₹3 Crores",
     tenure: "3 years",
-    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"]
+    features: ["Quick disbursal", "No documentation", "Pay for the Used Limit", "Instant approval","Higher Approval Rate"],
+    url: "https://transact.miraeassetfin.com/register?ref=4qS4RzOBx%2FKSGBqlUWk30w%3D%3D"
   }
 ]
 
@@ -166,7 +167,7 @@ function LoanAgainstMF() {
   const handleApply = (lender: Lender) => {
     if (!checkLogin()) return;
     
-    if (lender.name === "Volt Money" && lender.url) {
+    if (lender.url) {
       window.open(lender.url, '_blank');
     } else {
       // Handle other lenders
