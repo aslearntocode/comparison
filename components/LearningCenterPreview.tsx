@@ -13,6 +13,14 @@ interface Article {
 
 const articles: Article[] = [
   {
+    title: "HSBC TravelOne Credit Card Review",
+    description: "Learn about the HSBC TravelOne Credit Card, including its rewards program, benefits, and how to apply.",
+    path: "/learning-center/credit-cards/hsbc-travelone",
+    category: "Credit Cards",
+    icon: "💳",
+    date: "June 14, 2025"
+  },
+  {
     title: "Loan Against Mutual Funds",
     description: "Learn about Loan Against Mutual Funds (LAMF) - a smart way to access liquidity without selling your investments.",
     path: "/learning-center/personal-loans/lamf",
@@ -27,14 +35,6 @@ const articles: Article[] = [
     category: "Credit Cards",
     icon: "💳",
     date: "May 15, 2025"
-  },
-  {
-    title: "Credit Card Interest Calculation",
-    description: "Understand how credit card interest is calculated and ways to minimize charges",
-    path: "/learning-center/credit-cards/interest-calculation",
-    category: "Credit Cards",
-    icon: "💳",
-    date: "May 12, 2025"
   }
 ];
 

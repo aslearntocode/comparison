@@ -245,6 +245,14 @@ const articles: Article[] = [
     category: 'Personal Loans',
     readTime: '10 min read',
     link: '/learning-center/personal-loans/lamf'
+  },
+  {
+    id: '30',
+    title: 'HSBC TravelOne Credit Card Review',
+    description: 'Learn about the HSBC TravelOne Credit Card, including its rewards program, benefits, and how to apply.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/hsbc-travelone'
   }
 ]
 
