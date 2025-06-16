@@ -55,6 +55,13 @@ export function checkEligibility(input: EligibilityInput): EligibilityResult {
     }
   }
 
+  if (input.monthlyIncome < 35000) {
+    return {
+      eligibleFor: 'no_offers',
+      reasons: ['Monthly income below ₹35,000']
+    }
+  }
+
   if (input.currentEmi >= input.monthlyIncome * 0.75) {
     return {
       eligibleFor: 'no_offers',

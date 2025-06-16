@@ -229,7 +229,7 @@ function PersonalLoans() {
           <div>
             We don't have an eligible offer for you right now. Please look at our{' '}
             <Link href="/credit-score-main/score/" className="text-blue-600 hover:underline font-medium">
-              credit score
+              credit score analysis
             </Link>
             {' '}that can help you improve your credit score and overall, credit profile.
           </div>
