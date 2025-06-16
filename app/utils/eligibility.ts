@@ -6,16 +6,43 @@ export interface EligibilityInput {
   currentEmi: number
   loanAmount: number
   loanTenure: number
+  dob: string
 }
 
 export interface EligibilityResult {
-  eligibleFor: 'incred' | 'banks' | 'none' | 'no_offers'
+  eligibleFor: 'mirae' | 'incred' | 'banks' | 'none' | 'no_offers'
   reasons: string[]
+}
+
+function calculateAge(dob: string): number {
+  const birthDate = new Date(dob)
+  const today = new Date()
+  let age = today.getFullYear() - birthDate.getFullYear()
+  const m = today.getMonth() - birthDate.getMonth()
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--
+  }
+  return age
 }
 
 export function checkEligibility(input: EligibilityInput): EligibilityResult {
   const reasons: string[] = []
-  let eligibleFor: 'incred' | 'banks' | 'none' | 'no_offers' = 'none'
+  let eligibleFor: 'mirae' | 'incred' | 'banks' | 'none' | 'no_offers' = 'none'
+
+  // Mirae Asset logic
+  const age = calculateAge(input.dob)
+  if (
+    age >= 22 &&
+    age <= 55 &&
+    input.employmentType === 'salaried' &&
+    input.monthlyIncome > 35000 &&
+    input.creditScore > 700
+  ) {
+    return {
+      eligibleFor: 'mirae',
+      reasons: []
+    }
+  }
 
   // Helper function to add reasons
   const addReason = (reason: string) => reasons.push(reason)

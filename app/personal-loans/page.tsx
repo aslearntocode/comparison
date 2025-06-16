@@ -46,26 +46,26 @@ const lenders: Lender[] = [
   //   tenure: "12 - 60 months",
   //   features: ["Instant approval", "Zero prepayment charges", "Online account management"]
   // },
-  {
-    id: 1,
-    name: "Axis Bank",
-    logo: "axis-logo.png",
-    interestRate: "10.49% - 22% p.a.",
-    processingFee: "Up to 2%",
-    loanAmount: "₹2.5 - ₹25 Lakhs",
-    tenure: "12 - 60 months",
-    features: ["Quick processing", "Competitive rates", "Minimal paperwork"]
-  },
-  {
-    id: 2,
-    name: "InCred Finance",
-    logo: "incred-logo.png",
-    interestRate: "11% - 24% p.a.",
-    processingFee: "Up to 2.5%",
-    loanAmount: "₹25,000 - ₹15 Lakhs",
-    tenure: "12 - 48 months",
-    features: ["Fast approval", "Minimal paperwork", "Salaried only"]
-  },
+  // {
+  //   id: 1,
+  //   name: "Axis Bank",
+  //   logo: "axis-logo.png",
+  //   interestRate: "10.49% - 22% p.a.",
+  //   processingFee: "Up to 2%",
+  //   loanAmount: "₹2.5 - ₹25 Lakhs",
+  //   tenure: "12 - 60 months",
+  //   features: ["Quick processing", "Competitive rates", "Minimal paperwork"]
+  // },
+  // {
+  //   id: 2,
+  //   name: "InCred Finance",
+  //   logo: "incred-logo.png",
+  //   interestRate: "11% - 24% p.a.",
+  //   processingFee: "Up to 2.5%",
+  //   loanAmount: "₹25,000 - ₹15 Lakhs",
+  //   tenure: "12 - 48 months",
+  //   features: ["Fast approval", "Minimal paperwork", "Salaried only"]
+  // },
   {
     id: 3,
     name: "Mirae Asset Financial Services",
@@ -75,17 +75,17 @@ const lenders: Lender[] = [
     loanAmount: "₹1 - ₹10 Lakhs",
     tenure: "6 - 48 months",
     features: ["Attractive interest rates", "Disbursal in 1 to 2 days", "No Lock-In Period", "No Foreclosure Charges","Salaried only"]
-  },
-  {
-    id: 4,
-    name: "CASHe",
-    logo: "CASHe-logo.png",
-    interestRate: "11.49% - 19.99% p.a.",
-    processingFee: "Up to 2%",
-    loanAmount: "₹50,000 - ₹3 Lakhs",
-    tenure: "9 - 18 months",
-    features: ["Fast approval", "Minimal paperwork", "Salaried only"]
   }
+  // {
+  //   id: 4,
+  //   name: "CASHe",
+  //   logo: "CASHe-logo.png",
+  //   interestRate: "11.49% - 19.99% p.a.",
+  //   processingFee: "Up to 2%",
+  //   loanAmount: "₹50,000 - ₹3 Lakhs",
+  //   tenure: "9 - 18 months",
+  //   features: ["Fast approval", "Minimal paperwork", "Salaried only"]
+  // }
 ]
 
 export default function PersonalLoansPageWrapper() {
@@ -112,13 +112,16 @@ function PersonalLoans() {
   } else if (eligible === 'banks') {
     filteredLenders = lenders.filter(l => l.name !== 'InCred Finance')
     showApply = (id: number) => filteredLenders.some(l => l.id === id)
+  } else if (eligible === 'mirae') {
+    filteredLenders = lenders.filter(l => l.name === 'Mirae Asset Financial Services')
+    showApply = (id: number) => filteredLenders.some(l => l.id === id)
   } else if (eligible === 'no_offers') {
     filteredLenders = []
   }
 
   const [formData, setFormData] = useState({
     name: '',
-    gender: '',
+    dob: '',
     monthlyIncome: '',
     employmentType: '',
     creditScore: '',
@@ -132,7 +135,7 @@ function PersonalLoans() {
   const resetForm = () => {
     setFormData({
       name: '',
-      gender: '',
+      dob: '',
       monthlyIncome: '',
       employmentType: '',
       creditScore: '',
@@ -178,7 +181,8 @@ function PersonalLoans() {
         existingLoans,
         currentEmi,
         loanAmount,
-        loanTenure
+        loanTenure,
+        dob: formData.dob
       })
 
       // Save the eligibility check data to the database
@@ -190,8 +194,9 @@ function PersonalLoans() {
         body: JSON.stringify({
           firebase_user_id: user.uid,
           email: user.email,
-          display_name: user.displayName,
+          display_name: formData.name,
           phone_number: user.phoneNumber,
+          dob: formData.dob ? new Date(formData.dob).toISOString().split('T')[0] : null,
           monthly_income: monthlyIncome,
           employment_type: formData.employmentType,
           credit_score: creditScore,
@@ -267,12 +272,12 @@ function PersonalLoans() {
     return () => unlockScroll();
   }, [isEligibilityOpen]);
 
-  const lendersRef = useRef<HTMLDivElement>(null)
-  const eligibilityRef = useRef<HTMLDivElement>(null)
-  const calculatorRef = useRef<HTMLDivElement>(null)
-  const sliderRef = useRef<HTMLDivElement>(null)
+  const lendersRef = useRef<HTMLDivElement | null>(null)
+  const eligibilityRef = useRef<HTMLDivElement | null>(null)
+  const calculatorRef = useRef<HTMLDivElement | null>(null)
+  const sliderRef = useRef<HTMLDivElement | null>(null)
 
-  const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
+  const handleScroll = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
@@ -331,7 +336,7 @@ function PersonalLoans() {
         )}
 
         {/* Back Button below hero section, only when filtered */}
-        {(eligible === 'incred' || eligible === 'banks') && (
+        {(eligible === 'incred' || eligible === 'banks' || eligible === 'mirae' || eligible === 'no_offers') && (
           <div className="max-w-7xl mx-auto px-4 mt-4">
             <Link href="/personal-loans" className="inline-flex items-center text-blue-600 hover:underline font-medium mb-4">
               <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -394,23 +399,16 @@ function PersonalLoans() {
                         required
                       />
                     </div>
-                    {/* Gender */}
+                    {/* Date of Birth */}
                     <div className="col-span-1">
-                      <Label htmlFor="gender">Gender <span className="text-red-500">*</span></Label>
-                      <Select
-                        value={formData.gender}
-                        onValueChange={(value) => handleInputChange('gender', value)}
+                      <Label htmlFor="dob">Date of Birth <span className="text-red-500">*</span></Label>
+                      <Input
+                        id="dob"
+                        type="date"
+                        value={formData.dob}
+                        onChange={e => handleInputChange('dob', e.target.value)}
                         required
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select gender" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="M">Male</SelectItem>
-                          <SelectItem value="F">Female</SelectItem>
-                          <SelectItem value="O">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      />
                     </div>
                     <div className="grid gap-2">
                       <Label htmlFor="monthlyIncome">Monthly Income</Label>
@@ -564,45 +562,50 @@ function PersonalLoans() {
             {/* Desktop: Table style */}
             <div className="hidden md:block">
               <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 w-full min-w-0 mx-auto">
-                <div className="grid grid-cols-7 gap-2 mb-4 px-3 py-2 bg-gray-50 rounded-lg text-sm font-semibold text-gray-700" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1fr auto' }}>
-                  <div>Lender</div>
-                  <div>Interest Rate</div>
-                  <div>Processing Fee</div>
-                  <div>Loan Amount</div>
-                  <div>Tenure</div>
-                  <div>Key Features</div>
-                  <div></div>
+                <div className="grid grid-cols-7 gap-2 mb-4 px-3 py-2 bg-gray-50 rounded-lg text-sm font-semibold text-gray-700">
+                  <div className="text-center">Lender</div>
+                  <div className="text-center">Interest Rate</div>
+                  <div className="text-center">Processing Fee</div>
+                  <div className="text-left">Loan Amount</div>
+                  <div className="text-left">Tenure</div>
+                  <div className="text-left">Key Features</div>
+                  <div className="text-center"></div>
                 </div>
                 <div className="space-y-0">
                   {filteredLenders.map((lender) => (
-                    <div key={lender.id} className="grid grid-cols-7 gap-2 items-center px-2 py-4 md:py-2 md:px-3 border-b last:border-b-0 hover:bg-gray-50 rounded-lg transition-colors" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1fr auto' }}>
+                    <div key={lender.id} className="grid grid-cols-7 gap-2 items-center px-2 py-4 md:py-2 md:px-3 border-b last:border-b-0 hover:bg-gray-50 rounded-lg transition-colors" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1.5fr auto' }}>
                       {/* Lender Logo & Name */}
                       <div className="flex items-center gap-3">
                         <img src={`/bank-logos/${lender.logo}`} alt={lender.name} className="h-8 w-auto" style={{ maxWidth: 48 }} />
                         <span className="font-semibold text-base md:text-sm">{lender.name}</span>
                       </div>
-                      <div>
+                      <div className="text-center">
                         <span className="font-semibold">{lender.interestRate}</span>
                       </div>
-                      <div>
+                      <div className="text-center">
                         <span className="font-semibold">{lender.processingFee}</span>
                       </div>
-                      <div>
+                      <div className="text-left">
                         <span className="font-semibold">{lender.loanAmount}</span>
                       </div>
-                      <div>
+                      <div className="text-left">
                         <span className="font-semibold">{lender.tenure}</span>
                       </div>
-                      <div>
-                        <ul className="list-disc list-outside pl-4 text-xs md:text-sm text-gray-700 whitespace-normal break-words">
+                      <div className="text-left">
+                        <ul className="list-disc list-inside text-xs md:text-sm text-gray-700">
                           {lender.features.map((feature, index) => (
                             <li key={index}>{feature}</li>
                           ))}
                         </ul>
                       </div>
-                      <div>
+                      <div className="flex justify-center items-center">
                         {showApply(lender.id) && (
                           <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
+                        )}
+                        {(!eligible || eligible === 'no_offers') && (
+                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto" onClick={() => handleScroll(eligibilityRef)}>
+                            Check Eligibility
+                          </Button>
                         )}
                       </div>
                     </div>
@@ -644,6 +647,11 @@ function PersonalLoans() {
                   </div>
                   {showApply(lender.id) && (
                     <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4">Apply Now</Button>
+                  )}
+                  {(!eligible || eligible === 'no_offers') && (
+                    <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4" onClick={() => handleScroll(eligibilityRef)}>
+                      Check Eligibility
+                    </Button>
                   )}
                 </div>
               ))}

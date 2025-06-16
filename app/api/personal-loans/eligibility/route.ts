@@ -11,6 +11,7 @@ export async function POST(request: Request) {
       email,
       display_name,
       phone_number,
+      dob,
       monthly_income,
       employment_type,
       credit_score,
@@ -60,7 +61,7 @@ export async function POST(request: Request) {
           last_name: display_name?.split(' ').slice(1).join(' ') || '', // Use rest of display name or empty
           email,
           phone_number: phone_number || '', // Use phone number if available
-          date_of_birth: '1990-01-01', // Default date of birth
+          date_of_birth: dob, // DOB is already in YYYY-MM-DD format
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()
         })
@@ -93,6 +94,8 @@ export async function POST(request: Request) {
     const insertData = {
       user_id,
       firebase_user_id,
+      Name: display_name,
+      DOB: dob,
       monthly_income,
       employment_type,
       credit_score,
