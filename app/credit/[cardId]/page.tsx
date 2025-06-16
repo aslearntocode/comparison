@@ -502,6 +502,8 @@ export default function CreditCardDetail({ params }: { params: Promise<{ cardId:
 
   // Utility to calculate health points
   function getHealthPoints(card: any): number {
+    if (card.id === 'kiwi') return 300;
+    if (card.id === 'kiwi-neon') return 500;
     const isLifetimeFree = card.category === 'lifetime-free' || card.categories?.includes('lifetime-free') || card.annualFee.replace(/[^0-9]/g, '') === '0' || card.annualFee.toLowerCase().includes('lifetime free') || card.annualFee.trim() === '';
     if (isLifetimeFree) return 100;
     const feeMatch = card.annualFee.replace(/[^0-9]/g, '');

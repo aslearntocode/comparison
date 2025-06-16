@@ -677,7 +677,7 @@ Credit Score: 750+`,
       'lifetime-free',
       'fintech'
     ],
-    applyUrl: 'https://example.com/apply-kiwi',
+    applyUrl: 'https://join.gokiwi.in/?utm_source=FinancialHealth',
     additionalDetails: {
       rewardsProgram: '• 1.5% cashback on scan & pay transactions\n• 0.5% cashback on online transactions\n• Exclusive offers on Swiggy, Zomato, Zepto',
       welcomeBonus: 'No specific welcome bonus',
@@ -722,7 +722,7 @@ Credit Score: 750+`,
       // 'lifetime-free',
       'fintech'
     ],
-    applyUrl: 'https://example.com/apply-kiwi',
+    applyUrl: 'https://join.gokiwi.in/?utm_source=FinancialHealth',
     additionalDetails: {
       rewardsProgram: '• Flat 2% cashback on all Credit on UPI transactions\n• 0.5% cashback on online transactions\n• Exclusive offers on Swiggy, Zomato, and other platforms',
       welcomeBonus: 'No specific welcome bonus',
