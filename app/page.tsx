@@ -30,9 +30,9 @@ const AnnouncementBanner = () => {
           <p className="text-sm text-blue-800">
             <span className="font-semibold">🔗 New Partnership Announcement</span>
             <span className="mx-2">-</span>
-            We're excited to join hands with "GyanDhan" to make financial access easier for you. Explore offerings on{' '}
-            <Link href="/education-loan" className="text-blue-600 hover:text-blue-800 underline">
-              Education Loan
+            We're excited to join hands with "Kiwi" to get you the best credit card offers. Explore offerings on{' '}
+            <Link href="/credit/kiwi-neon" className="text-blue-600 hover:text-blue-800 underline">
+              Credit Cards
             </Link>.
           </p>
         </div>
