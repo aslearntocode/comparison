@@ -253,6 +253,14 @@ const articles: Article[] = [
     category: 'Credit Cards',
     readTime: '10 min read',
     link: '/learning-center/credit-cards/hsbc-travelone'
+  },
+  {
+    id: '31',
+    title: 'Kiwi Credit Card Review',
+    description: 'Learn about the Kiwi Credit Card, including its rewards program, benefits, and how to apply.',
+    category: 'Credit Cards',
+    readTime: '10 min read',
+    link: '/learning-center/credit-cards/kiwi-card'
   }
 ]
 
@@ -314,12 +322,12 @@ function LearningCenter() {
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center pt-10">
-              <h1 className="text-4xl font-bold text-white mb-3 font-serif tracking-wide">
+              <h1 className="text-xl md:text-4xl font-bold text-white mb-3 font-serif tracking-wide">
                 Learning Center
               </h1>
               
-              <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
-                Explore our comprehensive guides and articles to enhance your investment knowledge
+              <p className="text-sm md:text-lg text-white/90 max-w-3xl mx-auto mb-8 font-sans">
+                Explore our comprehensive guides and articles to understand more about credit cards and personal loans
               </p>
             </div>
           </div>
