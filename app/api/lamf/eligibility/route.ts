@@ -52,6 +52,8 @@ export async function POST(request: Request) {
           first_name: display_name?.split(' ')[0] || 'User', // Use first part of display name or default
           last_name: display_name?.split(' ').slice(1).join(' ') || '', // Use rest of display name or empty
           email,
+          phone_number: '', // Provide default empty string for phone number
+          date_of_birth: new Date('1990-01-01').toISOString().split('T')[0], // Provide default date of birth
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()
         })

@@ -600,7 +600,16 @@ function PersonalLoans() {
                       </div>
                       <div className="flex justify-center items-center">
                         {showApply(lender.id) && (
-                          <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto">Apply Now</Button>
+                          <Button 
+                            className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto"
+                            onClick={() => {
+                              if (lender.name === 'Mirae Asset Financial Services') {
+                                window.open('https://pl.miraeassetfin.com/mafs/personal-loan/register?data="eyJlbWFpbElkIjoiIiwibW9iaWxlTm8iOiIiLCJwYW4iOiIiLCJzb3VyY2VfcmVmIjoiTjAwMDUzNSIsInV0bUNhbXBhaWduIjoicGFydG5lcl9yZWRpcmVjdCIsInV0bU1lZGl1bSI6ImRpeSIsInV0bVNvdXJjZSI6IkZpbmFuY2lhbGhlYWx0aCJ9', '_blank');
+                              }
+                            }}
+                          >
+                            Apply Now
+                          </Button>
                         )}
                         {(!eligible || eligible === 'no_offers') && (
                           <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto" onClick={() => handleScroll(eligibilityRef)}>
@@ -646,7 +655,16 @@ function PersonalLoans() {
                     </ul>
                   </div>
                   {showApply(lender.id) && (
-                    <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4">Apply Now</Button>
+                    <Button 
+                      className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4"
+                      onClick={() => {
+                        if (lender.name === 'Mirae Asset Financial Services') {
+                          window.open('https://pl.miraeassetfin.com/mafs/personal-loan/register?data="eyJlbWFpbElkIjoiIiwibW9iaWxlTm8iOiIiLCJwYW4iOiIiLCJzb3VyY2VfcmVmIjoiTjAwMDUzNSIsInV0bUNhbXBhaWduIjoicGFydG5lcl9yZWRpcmVjdCIsInV0bU1lZGl1bSI6ImRpeSIsInV0bVNvdXJjZSI6IkZpbmFuY2lhbGhlYWx0aCJ9', '_blank');
+                        }
+                      }}
+                    >
+                      Apply Now
+                    </Button>
                   )}
                   {(!eligible || eligible === 'no_offers') && (
                     <Button className="bg-blue-600 text-white hover:bg-blue-700 w-full mt-4" onClick={() => handleScroll(eligibilityRef)}>
