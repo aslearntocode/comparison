@@ -148,8 +148,9 @@ function CreditVsLoanAssessmentContent() {
     try {
       console.log('Starting assessment submission for user:', user.uid);
 
-      // First get the assessment from the API
-      const response = await fetch('/api/analyze/credit-assessment', {
+      // First get the assessment from the Azure backend API
+      const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://172.210.82.112:5000';
+      const response = await fetch(`${backendUrl}/assess-credit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -200,6 +201,20 @@ function CreditVsLoanAssessmentContent() {
       };
 
       console.log('Prepared Supabase data:', supabaseData);
+      console.log('Supabase client:', supabase);
+
+      // Test Supabase connection first
+      const { data: testData, error: testError } = await supabase
+        .from('credit_assessments')
+        .select('id')
+        .limit(1);
+      
+      if (testError) {
+        console.error('Supabase table test error:', testError);
+        throw new Error(`Supabase table access error: ${testError.message}`);
+      }
+      
+      console.log('Supabase table test successful:', testData);
 
       // Save to Supabase with better error handling
       const { data: insertData, error: supabaseError } = await supabase
@@ -214,9 +229,10 @@ function CreditVsLoanAssessmentContent() {
           errorCode: supabaseError.code,
           errorMessage: supabaseError.message,
           errorDetails: supabaseError.details,
+          errorHint: supabaseError.hint,
           data: supabaseData
         });
-        throw new Error(`Failed to save assessment: ${supabaseError.message}`);
+        throw new Error(`Failed to save assessment: ${supabaseError.message || 'Unknown error'}`);
       }
 
       console.log('Successfully saved assessment:', insertData);

@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     // Use config if available, else fallback to env
-    const baseUrl = config?.backendUrl || process.env.NEXT_PUBLIC_API_URL || 'http://172.210.82.112:5000';
+    const baseUrl = config?.backendUrl || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
     const backendUrl = baseUrl.replace(/\/$/, '') + '/assess-credit';
     console.log('Proxying to:', backendUrl);
     console.log('Request body:', body);
