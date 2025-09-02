@@ -148,8 +148,8 @@ function CreditVsLoanAssessmentContent() {
     try {
       console.log('Starting assessment submission for user:', user.uid);
 
-      // First get the assessment from the Azure backend API
-      const response = await fetch('http://172.210.82.112:5000/assess-credit', {
+      // First get the assessment from the API
+      const response = await fetch('/api/analyze/credit-assessment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
