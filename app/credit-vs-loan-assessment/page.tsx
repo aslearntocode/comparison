@@ -148,21 +148,18 @@ function CreditVsLoanAssessmentContent() {
     try {
       console.log('Starting assessment submission for user:', user.uid);
 
-      // First get the assessment from the Azure backend API
-      const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://172.210.82.112:5000';
-      const response = await fetch(`${backendUrl}/assess-credit`, {
+      // First get the assessment from the API (using Next.js proxy to handle Mixed Content issues)
+      const apiUrl = '/api/analyze/credit-assessment';
+      console.log('Using API URL:', apiUrl);
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          reason: form.reason,
-          loan_type: form.loan_type,
-          credit_score: parseInt(form.credit_score),
-          income: parseInt(form.income),
-          current_emi: parseInt(form.current_emi),
-          existing_cards: parseInt(form.existing_cards),
-          credit_card_outstanding: parseInt(form.credit_card_outstanding),
-          ever_defaulted: form.ever_defaulted,
-          mortgage: form.mortgage,
+          ...form,
+          income: form.income,
+          current_emi: form.current_emi,
+          credit_card_outstanding: form.credit_card_outstanding,
+          credit_Score: form.credit_score,
         }),
       });
 
