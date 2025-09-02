@@ -148,16 +148,20 @@ function CreditVsLoanAssessmentContent() {
     try {
       console.log('Starting assessment submission for user:', user.uid);
 
-      // First get the assessment from the API
-      const response = await fetch('/api/analyze/credit-assessment', {
+      // First get the assessment from the Azure backend API
+      const response = await fetch('http://172.210.82.112:5000/assess-credit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...form,
-          income: form.income,
-          current_emi: form.current_emi,
-          credit_card_outstanding: form.credit_card_outstanding,
-          credit_Score: form.credit_score,
+          reason: form.reason,
+          loan_type: form.loan_type,
+          credit_score: parseInt(form.credit_score),
+          income: parseInt(form.income),
+          current_emi: parseInt(form.current_emi),
+          existing_cards: parseInt(form.existing_cards),
+          credit_card_outstanding: parseInt(form.credit_card_outstanding),
+          ever_defaulted: form.ever_defaulted,
+          mortgage: form.mortgage,
         }),
       });
 
